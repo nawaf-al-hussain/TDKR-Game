@@ -1836,7 +1836,7 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 981472,
+   "bytes": 981628,
    "verts": 21908,
    "tris": 13650,
    "tier": "district",
@@ -2063,7 +2063,7 @@
     {
      "name": "GC_City_Plane",
      "texs": [
-      "water"
+      "GothamCity_asphalt_tile"
      ],
      "verts": 136,
      "tris": 229,
