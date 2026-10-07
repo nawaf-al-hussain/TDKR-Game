@@ -1,20 +1,25 @@
 #!/usr/bin/env python3
-"""Full-city LOD-aware GLB exporter for the GitHub Pages viewer.
+"""Full-city LOD-aware GLB exporter v2 for the GitHub Pages viewer.
 
-Reads raw/l_gothamcity/*.bdae (+ actors/Batarang showcase), classifies each file
-into viewer tiers (hero / fp / low / district), packs geometry-only GLBs with
-per-mesh nodes + per-mesh materials, and writes textures as external JPEGs.
+v2 fixes texture mapping (v1 bound one texture per FILE via filename token
+overlap, collapsing dozens of props onto shared atlases). v2 binds textures
+PER MESH using the game's own ground truth:
 
-Output (site staging):
-  site/models/<name>.glb        geometry-only, one node+mesh+material per mesh
-  site/models/tex/<Base>.jpg    external textures (viewer assigns material.map)
-  site/models/manifest.json     tiers, per-file stats, texture mapping
-  site/models/batarang.glb      self-contained easter egg (embedded texture)
+  0. uv-verified OVERRIDE table (island/bridge/roads bakes)
+  1. footer material name <-> pool candidate (token containment)
+  2. unique diffuse candidate in the file's string pool
+  3. per-mesh UV-fit scoring among pool candidates
+  4. bake-atlas family fallback for footprint/longdist files
+  5. None -> neutral dark material
 
+GLB layout: one node per FILE, one mesh with one PRIMITIVE per source mesh,
+each primitive referencing a material NAMED after its texture (viewer maps
+material.name -> models/tex/<name>.jpg).
+
+Output: site/models/*.glb, site/models/tex/*.jpg, site/models/manifest.json
 Usage: python3 export_city.py [--dry] [--max-glb-mb 4]
 """
 import argparse
-import io
 import json
 import os
 import re
@@ -22,10 +27,10 @@ import struct
 import sys
 
 import numpy as np
-from PIL import Image
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bdae_extract import parse_meshes, write_glb  # noqa: E402
+from bdae_extract import parse_meshes  # noqa: E402
+from tex_bind import diffuse_candidates, resolve_file, find_png  # noqa: E402
 
 RAW = "/home/z/my-project/download/TDKR_assets/raw"
 PNG = "/home/z/my-project/download/TDKR_assets/textures_png"
@@ -33,15 +38,11 @@ SITE = "/home/z/my-project/work/site"
 MODELS = os.path.join(SITE, "models")
 TEXD = os.path.join(MODELS, "tex")
 
-BAD_TEX = ("_nrm", "lightmap", "_lm", "_mask", "_refl", "sampler", "shadow",
-           "_bump", "_spec", "_gloss", "_opacity", "_height", "_normal")
-
 OVERRIDE_TEX = {
-    # proven bindings (uv-verified renders + showcase pipeline)
+    # uv-verified bindings (probe renders, previous session)
     "GC_island1_LongDist": "GC_Island1_LongDist_Low",
     "GC_Island2_LongDist": "GC_Island2_LongDist_low",
     "GC_LongDist_Island1_Roads": "BakeGroup_Island1_Roads0",
-    "GC_LongDist_Island2_Roads": "GC_LongDist_Island2_Roads",
     "GC_Bigbridge": "bridge_1",
     "GC_Bigbridge_LongDist": "bridge_tile",
     "GC_Broken_BigBridge": "bridge_1",
@@ -55,12 +56,23 @@ OVERRIDE_TEX = {
     "GC_Railway_Island2_LongDist": "GC_Residential_Props_Railroad",
 }
 
+SKIP_FILES = {"GC_Irradiance_Volume", "GC_Refl_Test",
+              "GC_Island1_ReflOccluder", "GC_Island2_ReflOccluder"}
+
+# textures rendered at 2048 (city-wide bakes)
+HERO_TEX = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
+            "GC_LongDist_Island2_Roads", "BakeGroup_Island1_Roads0",
+            "GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
+            "GC_LongDist_Island1_FP3", "GC_LongDist_Island2_FP1",
+            "GC_LongDist_Island2_FP2", "GC_LongDist_Island2_FP3",
+            "GC_LongDist_Island1_Roads"}
+
 
 def classify(name):
     n = name.lower()
-    if "collision" in n:
+    if "collision" in n or name in SKIP_FILES:
         return "skip"
-    if "_low" in n or n.endswith("low"):
+    if n.endswith("_low") or n.endswith("low"):
         return "low"
     if "bigbridge" in n:
         return "hero"
@@ -78,55 +90,15 @@ def fp_island(name):
     return "island1" if "island1" in n or "_1_" in n else "island2"
 
 
-def find_texture(path, base):
-    """Resolve the diffuse/baked texture for a bdae file.
-    1. explicit overrides (uv-verified bindings)
-    2. self-reference: a pool string equal to the file base that exists on disk
-    3. token-overlap scoring (dropping the meaningless 'gc' prefix), min score 1
-    LongDist footprint atlases live in ZIP_SPLIT chunks (open item) -> None."""
-    if base in OVERRIDE_TEX:
-        c = os.path.join(PNG, "l_gothamcity_tex", OVERRIDE_TEX[base] + ".png")
-        if os.path.exists(c):
-            return OVERRIDE_TEX[base]
-    strs = [m.group().decode() for m in re.finditer(rb"[ -~]{4,}", open(path, "rb").read())]
-
-    def toks(s):
-        return {t for t in re.split(r"[^a-z0-9]+", s.lower()) if t} - {"gc"}
-
-    def exists(cand):
-        for sub in ("l_gothamcity_tex", "actors_tex"):
-            if os.path.exists(os.path.join(PNG, sub, cand + ".png")):
-                return True
-        return False
-
-    bt = toks(base)
-    best, bs = None, 0
-    for s in strs:
-        if not s.endswith(".tga") or any(k in s.lower() for k in BAD_TEX):
-            continue
-        cand = s[:-4]
-        if not exists(cand):
-            continue
-        if cand == base:
-            return cand
-        sc = len(bt & toks(cand))
-        # prefix bonus for compound names (diner~dinner, citybg~city_bkg)
-        for a in bt:
-            for b in toks(cand):
-                n = 0
-                for x, y in zip(a, b):
-                    if x != y:
-                        break
-                    n += 1
-                if n >= 4:
-                    sc += 1
-                    break
-        if sc > bs:
-            best, bs = cand, sc
-    return best if bs >= 1 else None
+def file_pool(path):
+    """diffuse texture candidates referenced by the file's own string pool"""
+    d = open(path, "rb").read()
+    strs = [m.group().decode() for m in re.finditer(rb"[ -~]{4,}", d)]
+    return sorted({s[:-4] for s in strs if s.endswith(".tga")})
 
 
 def jpg_from_png(png_path, out_path, max_dim, quality):
+    from PIL import Image
     im = Image.open(png_path).convert("RGB")
     if max(im.size) > max_dim:
         im.thumbnail((max_dim, max_dim), Image.LANCZOS)
@@ -135,12 +107,14 @@ def jpg_from_png(png_path, out_path, max_dim, quality):
 
 
 class GlbBuilder:
-    """Geometry-only GLB: every mesh becomes its own node + mesh + material."""
+    """Geometry-only GLB: one node per file, one primitive per source mesh,
+    per-primitive materials named after their texture."""
 
     def __init__(self):
         self.buf = bytearray()
         self.offset = 0
         self.views, self.accessors, self.meshes, self.nodes, self.materials = [], [], [], [], []
+        self._mat_by_tex = {}
 
     def _add(self, data, align=4):
         pad = (-len(self.buf)) % align
@@ -151,19 +125,26 @@ class GlbBuilder:
         self.offset += len(data)
         return start, len(data)
 
-    def add_material(self, name, color):
-        self.materials.append(dict(
-            name=name, doubleSided=True,
-            pbrMetallicRoughness=dict(baseColorFactor=list(color) + [1.0],
-                                      metallicFactor=0.0, roughnessFactor=1.0)))
-        return len(self.materials) - 1
+    def material_for(self, tex):
+        """dedup materials by texture name; tex=None -> dark neutral"""
+        if tex in self._mat_by_tex:
+            return self._mat_by_tex[tex]
+        if tex is None:
+            mat = dict(name="__dark", doubleSided=True,
+                       pbrMetallicRoughness=dict(baseColorFactor=[0.055, 0.07, 0.10, 1.0],
+                                                 metallicFactor=0.0, roughnessFactor=1.0))
+        else:
+            mat = dict(name=tex, doubleSided=True,
+                       pbrMetallicRoughness=dict(baseColorFactor=[1.0, 1.0, 1.0, 1.0],
+                                                 metallicFactor=0.0, roughnessFactor=1.0))
+        self.materials.append(mat)
+        mid = len(self.materials) - 1
+        self._mat_by_tex[tex] = mid
+        return mid
 
-    def add_file(self, name, mesh_list, mat_id, yup=True):
-        """One node + one mesh with one PRIMITIVE per source mesh (all sharing
-        mat_id). Viewer maps gltf.scene.children[i] <-> manifest files[i] by order.
-        (GLTFLoader sanitizes node names, so name-based matching is unreliable.)"""
+    def add_file(self, name, mesh_list, per_mesh_tex, yup=True):
         prims = []
-        for m in mesh_list:
+        for m, tex in zip(mesh_list, per_mesh_tex):
             if yup:
                 pos = m["pos"][:, [0, 2, 1]].copy()
                 pos[:, 2] = -m["pos"][:, 1]
@@ -193,7 +174,7 @@ class GlbBuilder:
             a.append(dict(bufferView=base + 3, componentType=5125, count=len(idx), type="SCALAR"))
             prims.append(dict(attributes=dict(POSITION=len(a) - 4, NORMAL=len(a) - 3,
                                               TEXCOORD_0=len(a) - 2),
-                              indices=len(a) - 1, material=mat_id, mode=4))
+                              indices=len(a) - 1, material=self.material_for(tex), mode=4))
         mi = len(self.meshes)
         self.meshes.append(dict(name=name, primitives=prims))
         self.nodes.append(dict(mesh=mi, name=name))
@@ -202,7 +183,7 @@ class GlbBuilder:
         pad = (-len(self.buf)) % 4
         self.buf.extend(b"\0" * pad)
         gltf = dict(
-            asset=dict(version="2.0", generator="tdkr-export-city"),
+            asset=dict(version="2.0", generator="tdkr-export-city-v2"),
             scene=0, scenes=[dict(nodes=list(range(len(self.nodes))))],
             nodes=self.nodes, meshes=self.meshes, materials=self.materials,
             accessors=self.accessors, bufferViews=self.views,
@@ -227,13 +208,12 @@ def main():
 
     city_dir = os.path.join(RAW, "l_gothamcity")
     files = sorted(f for f in os.listdir(city_dir) if f.endswith(".bdae.bin"))
-    entries, skipped = [], 0
+    entries = []
     print(f"scanning {len(files)} city bdae files ...")
     for fn in files:
         base = fn[:-len(".bdae.bin")]
         cat = classify(base)
         if cat == "skip":
-            skipped += 1
             continue
         p = os.path.join(city_dir, fn)
         try:
@@ -242,37 +222,42 @@ def main():
             meshes = []
         if not meshes:
             continue
-        tex = find_texture(p, base)
+        pool = file_pool(p)
+        if base in OVERRIDE_TEX and find_png(OVERRIDE_TEX[base]):
+            per_mesh = [OVERRIDE_TEX[base]] * len(meshes)
+        else:
+            per_mesh = resolve_file(base, meshes, pool)
         verts = int(sum(m["count"] for m in meshes))
         tris = int(sum(m["numIdx"] // 3 for m in meshes))
-        gbytes = verts * 32 + tris * 12  # pos+nrm+uv+u32 idx
-        entries.append(dict(base=base, cat=cat, tex=tex, verts=verts, tris=tris,
-                            nmesh=len(meshes), gbytes=gbytes, path=p, meshes=meshes))
+        gbytes = verts * 32 + tris * 12
+        texs = sorted({t for t in per_mesh if t})
+        entries.append(dict(base=base, cat=cat, texs=texs, per_mesh=per_mesh,
+                            verts=verts, tris=tris, nmesh=len(meshes),
+                            gbytes=gbytes, path=p, meshes=meshes))
 
     from collections import Counter
     c = Counter(e["cat"] for e in entries)
     tv = sum(e["verts"] for e in entries)
     tt = sum(e["tris"] for e in entries)
-    ntex = len({e["tex"] for e in entries if e["tex"]})
-    print(f"parsed: {len(entries)} files ({skipped} collision skipped) | "
-          f"{tv:,} verts {tt:,} tris | {ntex} unique textures")
+    textured = sum(1 for e in entries if e["texs"])
+    print(f"parsed: {len(entries)} files | {tv:,} verts {tt:,} tris | "
+          f"{textured} files with textures | "
+          f"{len({t for e in entries for t in e['texs']})} unique textures")
     for k, v in sorted(c.items()):
         sub = [e for e in entries if e["cat"] == k]
         print(f"  {k:<9} {v:>4} files  {sum(e['verts'] for e in sub):>9,}v "
-              f"{sum(e['tris'] for e in sub):>8,}t  texless={sum(1 for e in sub if not e['tex'])}")
-    untex = [e["base"] for e in entries if not e["tex"]]
-    if untex:
-        print(f"  texture-less files ({len(untex)}): {untex[:8]}{' ...' if len(untex) > 8 else ''}")
+              f"{sum(e['tris'] for e in sub):>8,}t  texless={sum(1 for e in sub if not e['texs'])}")
     if args.dry:
         for e in entries:
             print(f"  [{e['cat']:<8}] {e['base']:<52} {e['verts']:>7}v {e['tris']:>7}t "
-                  f"tex={e['tex']}")
+                  f"tex={','.join(e['texs'][:3]) or '-'}"
+                  f"{'…' if len(e['texs']) > 3 else ''}")
         return
 
     # ---------------- pack tiers into GLBs ----------------
     os.makedirs(MODELS, exist_ok=True)
     os.makedirs(TEXD, exist_ok=True)
-    plan = []  # (glb_name, [entries])
+    plan = []
 
     for e in [x for x in entries if x["cat"] == "hero"]:
         plan.append((e["base"], [e]))
@@ -286,67 +271,57 @@ def main():
     if low:
         plan.append(("city_low", low))
 
-    # districts: cluster by texture first, then bin-pack clusters by geometry bytes
     dist = [x for x in entries if x["cat"] == "district"]
     cap = int(args.max_glb_mb * 1024 * 1024)
-    bytex = {}
-    for e in dist:
-        bytex.setdefault(e["tex"] or "__none__", []).append(e)
+    cur, cur_b = [], 0
     bins = []
-    for tex, group in sorted(bytex.items(), key=lambda kv: -sum(x["gbytes"] for x in kv[1])):
-        cur, cur_b = [], 0
-        for e in sorted(group, key=lambda x: -x["gbytes"]):
-            if cur and cur_b + e["gbytes"] > cap:
-                bins.append(cur)
-                cur, cur_b = [], 0
-            cur.append(e)
-            cur_b += e["gbytes"]
-        if cur:
+    for e in sorted(dist, key=lambda x: -x["gbytes"]):
+        if cur and cur_b + e["gbytes"] > cap:
             bins.append(cur)
+            cur, cur_b = [], 0
+        cur.append(e)
+        cur_b += e["gbytes"]
+    if cur:
+        bins.append(cur)
     for i, b in enumerate(bins):
         plan.append((f"district_{i:02d}", b))
 
-    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt)
+    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=2)
     tex_used = {}
     for glb_name, group in plan:
         gb = GlbBuilder()
         for e in group:
-            color = (0.55, 0.60, 0.70) if not e["tex"] else (1.0, 1.0, 1.0)
-            mid = gb.add_material(e["tex"] or e["base"], color)
-            gb.add_file(e["base"], e["meshes"], mid)
+            gb.add_file(e["base"], e["meshes"], e["per_mesh"])
         glb_file = glb_name + ".glb"
         size = gb.write(os.path.join(MODELS, glb_file))
         manifest["glbs"].append(dict(
             file="models/" + glb_file, bytes=size,
             verts=sum(e["verts"] for e in group), tris=sum(e["tris"] for e in group),
             tier=group[0]["cat"] if len({e["cat"] for e in group}) == 1 else "district",
-            files=[dict(name=e["base"], tex=e["tex"], verts=e["verts"], tris=e["tris"],
+            files=[dict(name=e["base"], texs=e["texs"], verts=e["verts"], tris=e["tris"],
                         meshes=e["nmesh"]) for e in group]))
         for e in group:
-            if e["tex"]:
-                tex_used[e["tex"]] = max(tex_used.get(e["tex"], 0), e["gbytes"])
+            for t in e["texs"]:
+                tex_used[t] = max(tex_used.get(t, 0), e["gbytes"])
         print(f"  + {glb_file:<28} {size/1024:>7.0f} KB  {len(group)} files  "
               f"{sum(e['tris'] for e in group):>7,} tris")
 
     # ---------------- textures -> external JPEG ----------------
-    hero_tex = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
-                "GC_LongDist_Island2_Roads", "BakeGroup_Island1_Roads0"}
     for tex in sorted(tex_used):
-        src = os.path.join(PNG, "l_gothamcity_tex", tex + ".png")
-        if not os.path.exists(src):
-            src = os.path.join(PNG, "actors_tex", tex + ".png")
-        if not os.path.exists(src):
+        src = find_png(tex)
+        if not src:
             print(f"  !! texture missing on disk: {tex}")
             continue
-        hero = tex in hero_tex
+        hero = tex in HERO_TEX
         n = tex + ".jpg"
         sz = jpg_from_png(src, os.path.join(TEXD, n), 2048 if hero else 1024,
                           82 if hero else 78)
-        print(f"  tex {n:<40} {sz/1024:>6.0f} KB{' (hero 2048)' if hero else ''}")
+        print(f"  tex {n:<48} {sz/1024:>6.0f} KB{' (hero 2048)' if hero else ''}")
 
     # ---------------- batarang showcase (self-contained) ----------------
     bat = os.path.join(RAW, "actors", "Batarang.bdae.bin")
     if os.path.exists(bat):
+        from bdae_extract import write_glb
         meshes = parse_meshes(bat, verbose=False)
         if meshes:
             write_glb(meshes, os.path.join(PNG, "actors_tex", "Batarang.png"),
