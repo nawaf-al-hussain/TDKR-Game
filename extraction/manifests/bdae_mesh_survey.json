@@ -1,0 +1,8852 @@
+[
+ {
+  "archive": "l_gothamcity",
+  "file": "BeastTest",
+  "n": 5,
+  "verts": 1492,
+  "tris": 1442,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "Footprint_VB_Reflections",
+  "n": 1,
+  "verts": 34,
+  "tris": 16,
+  "mats": [
+   "Material__0"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Anim_Crane_BoxDrop_Collision",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Anim_Crane_BoxDrop_Mesh",
+  "n": 10,
+  "verts": 222,
+  "tris": 124,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Bigbridge",
+  "n": 3,
+  "verts": 6400,
+  "tris": 396,
+  "mats": [
+   "Material__3219",
+   "Material__53"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Bigbridge_1_islands_LongDist",
+  "n": 1,
+  "verts": 2084,
+  "tris": 1268,
+  "mats": [
+   "BigBridge_Long_Dist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Bigbridge_2_islands_LongDist",
+  "n": 1,
+  "verts": 2084,
+  "tris": 1268,
+  "mats": [
+   "BigBridge_Long_Dist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Bigbridge_3_LongDist",
+  "n": 1,
+  "verts": 2040,
+  "tris": 1240,
+  "mats": [
+   "BigBridge_Long_Dist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Bigbridge_LongDist",
+  "n": 2,
+  "verts": 4996,
+  "tris": 3422,
+  "mats": [
+   "Material__53"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Broken_BigBridge",
+  "n": 3,
+  "verts": 3562,
+  "tris": 380,
+  "mats": [
+   "Material__3219",
+   "Material__53"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Broken_BigBridge_LongDist",
+  "n": 1,
+  "verts": 4756,
+  "tris": 3230,
+  "mats": [
+   "Material__53"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_CityBG",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Material__9"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_City_Plane",
+  "n": 1,
+  "verts": 136,
+  "tris": 229,
+  "mats": [
+   "Ground_material1"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Diner",
+  "n": 8,
+  "verts": 5699,
+  "tris": 3436,
+  "mats": [
+   "Material__31",
+   "diner",
+   "diner1",
+   "diner_floor",
+   "motel"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Diner_Collision",
+  "n": 1,
+  "verts": 190,
+  "tris": 140,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Diner_Logo",
+  "n": 5,
+  "verts": 317,
+  "tris": 211,
+  "mats": [
+   "Material__0",
+   "Material__1",
+   "windows"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_FX_RedLight",
+  "n": 2,
+  "verts": 10,
+  "tris": 8,
+  "mats": [
+   "Material__37"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_FX_YellowLight",
+  "n": 2,
+  "verts": 10,
+  "tris": 8,
+  "mats": [
+   "Material__37"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_FootPrint_CA_LongDist",
+  "n": 1,
+  "verts": 625,
+  "tris": 353,
+  "mats": [
+   "CA_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_FootPrint_LA_LongDist",
+  "n": 1,
+  "verts": 343,
+  "tris": 189,
+  "mats": [
+   "_8_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_FootPrint_LPOL_Reflections",
+  "n": 2,
+  "verts": 22,
+  "tris": 16,
+  "mats": [
+   "Material__4540"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AA_BigBuiding_Collision",
+  "n": 1,
+  "verts": 1571,
+  "tris": 215,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AA_LongDist",
+  "n": 1,
+  "verts": 427,
+  "tris": 281,
+  "mats": [
+   "_4_-_Defaultsss"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AA_Reflections",
+  "n": 1,
+  "verts": 46,
+  "tris": 32,
+  "mats": [
+   "Reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AC_Collision",
+  "n": 1,
+  "verts": 1734,
+  "tris": 14,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AC_LongDist",
+  "n": 1,
+  "verts": 1024,
+  "tris": 647,
+  "mats": [
+   "long_dist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AC_Reflection",
+  "n": 1,
+  "verts": 75,
+  "tris": 40,
+  "mats": [
+   "reflection"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AF_Collision",
+  "n": 1,
+  "verts": 998,
+  "tris": 12,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AF_LongDist",
+  "n": 1,
+  "verts": 865,
+  "tris": 471,
+  "mats": [
+   "LPLD"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AF_Reflections",
+  "n": 1,
+  "verts": 106,
+  "tris": 54,
+  "mats": [
+   "reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AG_LongDist",
+  "n": 1,
+  "verts": 640,
+  "tris": 364,
+  "mats": [
+   "longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AG_Reflections",
+  "n": 1,
+  "verts": 160,
+  "tris": 82,
+  "mats": [
+   "reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AH_LongDist",
+  "n": 1,
+  "verts": 1836,
+  "tris": 1120,
+  "mats": [
+   "longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AH_Reflections",
+  "n": 1,
+  "verts": 349,
+  "tris": 215,
+  "mats": [
+   "reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AJ_Collision",
+  "n": 1,
+  "verts": 2886,
+  "tris": 16,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AJ_LongDist",
+  "n": 1,
+  "verts": 2490,
+  "tris": 1322,
+  "mats": [
+   "logdist_mid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AJ_Reflections",
+  "n": 1,
+  "verts": 1224,
+  "tris": 651,
+  "mats": [
+   "Material__6726"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AWT_LongDist",
+  "n": 1,
+  "verts": 1253,
+  "tris": 823,
+  "mats": [
+   "AWT_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AWT_Wayne_Logo_Collision",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AWT_Wayne_Logo_Damage",
+  "n": 2,
+  "verts": 1085,
+  "tris": 601,
+  "mats": [
+   "Details_2",
+   "Material__3213"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_AWT_Wayne_Logo_Damage_Collision",
+  "n": 1,
+  "verts": 68,
+  "tris": 42,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CA_Reflections",
+  "n": 2,
+  "verts": 90,
+  "tris": 54,
+  "mats": [
+   "Material__64"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CB_Collision",
+  "n": 2,
+  "verts": 1236,
+  "tris": 191,
+  "mats": [
+   "GConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CB_LongDist",
+  "n": 1,
+  "verts": 188,
+  "tris": 102,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CB_Reflection",
+  "n": 4,
+  "verts": 273,
+  "tris": 187,
+  "mats": [
+   "Material__4498"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CC_Collision",
+  "n": 1,
+  "verts": 165,
+  "tris": 70,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CC_LongDist",
+  "n": 1,
+  "verts": 200,
+  "tris": 106,
+  "mats": [
+   "GC_Footprint_CC_LongDist_mat"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CC_Reflection",
+  "n": 1,
+  "verts": 564,
+  "tris": 378,
+  "mats": [
+   "Material__3283"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CD_Collisions",
+  "n": 1,
+  "verts": 1305,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CD_LongDist",
+  "n": 1,
+  "verts": 186,
+  "tris": 102,
+  "mats": [
+   "_3_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CD_Reflections",
+  "n": 1,
+  "verts": 505,
+  "tris": 268,
+  "mats": [
+   "Material__4588"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CE_LongDist",
+  "n": 1,
+  "verts": 1127,
+  "tris": 683,
+  "mats": [
+   "GC_Footprint_CE_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CE_Reflection",
+  "n": 1,
+  "verts": 750,
+  "tris": 418,
+  "mats": [
+   "Material__4536"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CF_Collision",
+  "n": 1,
+  "verts": 438,
+  "tris": 6,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CF_LongDist",
+  "n": 1,
+  "verts": 2027,
+  "tris": 1201,
+  "mats": [
+   "_5_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CF_Reflection",
+  "n": 1,
+  "verts": 920,
+  "tris": 488,
+  "mats": [
+   "Material__6003"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CG",
+  "n": 1,
+  "verts": 179,
+  "tris": 54,
+  "mats": [
+   "floor_blend"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CG_LongDist",
+  "n": 1,
+  "verts": 184,
+  "tris": 94,
+  "mats": [
+   "GC_Footprint_CFCG_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CG_Reflection",
+  "n": 1,
+  "verts": 292,
+  "tris": 146,
+  "mats": [
+   "Material__6003"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CH_Collision",
+  "n": 1,
+  "verts": 1007,
+  "tris": 2,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CH_LongDist",
+  "n": 1,
+  "verts": 663,
+  "tris": 397,
+  "mats": [
+   "GC_Footprint_CH_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CJ_Collision",
+  "n": 1,
+  "verts": 2949,
+  "tris": 36,
+  "mats": [
+   "GMetal"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CJ_LongDist",
+  "n": 1,
+  "verts": 3279,
+  "tris": 1317,
+  "mats": [
+   "cj_Longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CJ_Reflections",
+  "n": 1,
+  "verts": 674,
+  "tris": 384,
+  "mats": [
+   "Material__6118"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CJ_Scaffolding",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "Standardmaterial4"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CL_Collision",
+  "n": 1,
+  "verts": 3742,
+  "tris": 8,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CL_LongDist",
+  "n": 1,
+  "verts": 1157,
+  "tris": 500,
+  "mats": [
+   "GC_Footprint_CL_LongDist_mat"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CL_Reflections",
+  "n": 1,
+  "verts": 567,
+  "tris": 321,
+  "mats": [
+   "Material__6018"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CM_Collision",
+  "n": 1,
+  "verts": 3855,
+  "tris": 2,
+  "mats": [
+   "Box"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CM_LongDist",
+  "n": 1,
+  "verts": 2316,
+  "tris": 1052,
+  "mats": [
+   "cm_longDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CM_Reflection",
+  "n": 1,
+  "verts": 601,
+  "tris": 320,
+  "mats": [
+   "Material__6029"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CN_Collision",
+  "n": 1,
+  "verts": 2637,
+  "tris": 8,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CN_LongDist",
+  "n": 1,
+  "verts": 213,
+  "tris": 102,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_CN_Reflection",
+  "n": 1,
+  "verts": 281,
+  "tris": 205,
+  "mats": [
+   "Material__4498"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DA_Collision",
+  "n": 1,
+  "verts": 2672,
+  "tris": 241,
+  "mats": [
+   "Box"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DA_Elevators",
+  "n": 2,
+  "verts": 348,
+  "tris": 172,
+  "mats": [
+   "Details_01"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DA_LongDist",
+  "n": 1,
+  "verts": 411,
+  "tris": 211,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DA_Reflections",
+  "n": 2,
+  "verts": 110,
+  "tris": 80,
+  "mats": [
+   "Material__3616"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DB_Collision",
+  "n": 1,
+  "verts": 3968,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DB_LongDist",
+  "n": 1,
+  "verts": 462,
+  "tris": 245,
+  "mats": [
+   "_3_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DB_Reflection",
+  "n": 1,
+  "verts": 133,
+  "tris": 89,
+  "mats": [
+   "Material__4167"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DC_Collision",
+  "n": 1,
+  "verts": 8414,
+  "tris": 78,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DC_LongDist",
+  "n": 1,
+  "verts": 870,
+  "tris": 450,
+  "mats": [
+   "_5_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DC_Reflection",
+  "n": 1,
+  "verts": 540,
+  "tris": 352,
+  "mats": [
+   "Material__4167"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DD_Collision",
+  "n": 1,
+  "verts": 2690,
+  "tris": 14,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DD_LongDist",
+  "n": 1,
+  "verts": 391,
+  "tris": 242,
+  "mats": [
+   "_5_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DD_Reflection",
+  "n": 1,
+  "verts": 190,
+  "tris": 108,
+  "mats": [
+   "Material__4365"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DF_Collision",
+  "n": 1,
+  "verts": 27102,
+  "tris": 24,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DF_LongDist",
+  "n": 1,
+  "verts": 2241,
+  "tris": 1149,
+  "mats": [
+   "_3_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DF_Reflection",
+  "n": 1,
+  "verts": 1905,
+  "tris": 980,
+  "mats": [
+   "Material__4167"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DG_Collision",
+  "n": 1,
+  "verts": 14696,
+  "tris": 2607,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DG_LongDist",
+  "n": 1,
+  "verts": 904,
+  "tris": 452,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DG_Reflection",
+  "n": 1,
+  "verts": 1029,
+  "tris": 556,
+  "mats": [
+   "Material__4167"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DH_Collision",
+  "n": 1,
+  "verts": 14490,
+  "tris": 95,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DH_LongDist",
+  "n": 1,
+  "verts": 1215,
+  "tris": 633,
+  "mats": [
+   "_3_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DH_Reflection",
+  "n": 1,
+  "verts": 988,
+  "tris": 494,
+  "mats": [
+   "Material__4167"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DMUS_Collision",
+  "n": 1,
+  "verts": 4030,
+  "tris": 76,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DMUS_LongDist",
+  "n": 1,
+  "verts": 1579,
+  "tris": 828,
+  "mats": [
+   "_8_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DMUS_Reflection",
+  "n": 1,
+  "verts": 198,
+  "tris": 150,
+  "mats": [
+   "_9_-_Default15"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DMUS_table",
+  "n": 1,
+  "verts": 416,
+  "tris": 256,
+  "mats": [
+   "Cutscene"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DMUS_table_collision",
+  "n": 1,
+  "verts": 172,
+  "tris": 86,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DSE_Collision",
+  "n": 1,
+  "verts": 8002,
+  "tris": 2,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DSE_LongDist",
+  "n": 1,
+  "verts": 497,
+  "tris": 202,
+  "mats": [
+   "LODs"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_DSE_Reflection",
+  "n": 1,
+  "verts": 382,
+  "tris": 212,
+  "mats": [
+   "_8_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GA_LongDist",
+  "n": 1,
+  "verts": 142,
+  "tris": 62,
+  "mats": [
+   "_0_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GA_Reflections",
+  "n": 1,
+  "verts": 32,
+  "tris": 16,
+  "mats": [
+   "ID-8"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GB_LongDist",
+  "n": 1,
+  "verts": 649,
+  "tris": 548,
+  "mats": [
+   "Material__21fgh"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GB_Reflection",
+  "n": 1,
+  "verts": 292,
+  "tris": 200,
+  "mats": [
+   "Material__21fgh1"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GC_Collision",
+  "n": 1,
+  "verts": 1688,
+  "tris": 130,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GC_LongDist",
+  "n": 1,
+  "verts": 136,
+  "tris": 98,
+  "mats": [
+   "_8_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GD_Collision",
+  "n": 1,
+  "verts": 4001,
+  "tris": 356,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GD_LongDist",
+  "n": 1,
+  "verts": 505,
+  "tris": 473,
+  "mats": [
+   "LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GD_Reflection",
+  "n": 1,
+  "verts": 152,
+  "tris": 126,
+  "mats": [
+   "Material__77"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GF_LongDist",
+  "n": 1,
+  "verts": 184,
+  "tris": 98,
+  "mats": [
+   "_3_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_GF_Reflections",
+  "n": 1,
+  "verts": 18,
+  "tris": 12,
+  "mats": [
+   "Material__4554"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IA_Collision",
+  "n": 1,
+  "verts": 1662,
+  "tris": 96,
+  "mats": [
+   "GDirt"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IA_LongDist",
+  "n": 1,
+  "verts": 203,
+  "tris": 138,
+  "mats": [
+   "GC_LOD_Atlas"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IA_Reflection",
+  "n": 1,
+  "verts": 132,
+  "tris": 96,
+  "mats": [
+   "shop_reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IB_Collision",
+  "n": 1,
+  "verts": 1485,
+  "tris": 15,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IB_LongDist",
+  "n": 1,
+  "verts": 233,
+  "tris": 159,
+  "mats": [
+   "GC_LOD_Atlas"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IB_Reflection",
+  "n": 1,
+  "verts": 128,
+  "tris": 86,
+  "mats": [
+   "shop_reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IC_Collision",
+  "n": 1,
+  "verts": 2088,
+  "tris": 60,
+  "mats": [
+   "GDirt"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IC_Logo_Collision",
+  "n": 1,
+  "verts": 19,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IC_LongDist",
+  "n": 1,
+  "verts": 156,
+  "tris": 86,
+  "mats": [
+   "GC_LOD_Atlas"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IC_Reflection",
+  "n": 1,
+  "verts": 150,
+  "tris": 119,
+  "mats": [
+   "shop_reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ID_Collision",
+  "n": 1,
+  "verts": 2421,
+  "tris": 81,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ID_LongDist",
+  "n": 1,
+  "verts": 346,
+  "tris": 211,
+  "mats": [
+   "GC_LOD_Atlas"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ID_Reflection",
+  "n": 1,
+  "verts": 177,
+  "tris": 157,
+  "mats": [
+   "shop_reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IE_Collision",
+  "n": 1,
+  "verts": 1267,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IE_LongDist",
+  "n": 1,
+  "verts": 530,
+  "tris": 365,
+  "mats": [
+   "LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_IE_Reflection",
+  "n": 1,
+  "verts": 250,
+  "tris": 205,
+  "mats": [
+   "shop_reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LA_Collision",
+  "n": 2,
+  "verts": 3647,
+  "tris": 512,
+  "mats": [
+   "GWetConcrete",
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LA_Reflections",
+  "n": 2,
+  "verts": 74,
+  "tris": 40,
+  "mats": [
+   "Material__24"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LB_LongDist",
+  "n": 1,
+  "verts": 626,
+  "tris": 285,
+  "mats": [
+   "LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LB_Reflection",
+  "n": 2,
+  "verts": 48,
+  "tris": 32,
+  "mats": [
+   "Material__359"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LC_Collision",
+  "n": 1,
+  "verts": 1186,
+  "tris": 66,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LC_LongDist",
+  "n": 1,
+  "verts": 984,
+  "tris": 372,
+  "mats": [
+   "longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LC_Reflections",
+  "n": 2,
+  "verts": 100,
+  "tris": 100,
+  "mats": [
+   "Material__4177"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LE_Collision",
+  "n": 1,
+  "verts": 2530,
+  "tris": 540,
+  "mats": [
+   "GDirt"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LE_LongDist",
+  "n": 1,
+  "verts": 160,
+  "tris": 106,
+  "mats": [
+   "_8_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LE_Reflections",
+  "n": 1,
+  "verts": 10,
+  "tris": 8,
+  "mats": [
+   "refl"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LF_Collision",
+  "n": 1,
+  "verts": 1923,
+  "tris": 164,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LF_LongDist",
+  "n": 1,
+  "verts": 489,
+  "tris": 376,
+  "mats": [
+   "longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LF_Reflections",
+  "n": 1,
+  "verts": 30,
+  "tris": 18,
+  "mats": [
+   "Material__4540"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LG_Collision",
+  "n": 1,
+  "verts": 10147,
+  "tris": 6,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LG_LongDist",
+  "n": 1,
+  "verts": 2633,
+  "tris": 934,
+  "mats": [
+   "longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LG_Reflections",
+  "n": 1,
+  "verts": 134,
+  "tris": 78,
+  "mats": [
+   "_4_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LPOL_Collision",
+  "n": 1,
+  "verts": 555,
+  "tris": 10,
+  "mats": [
+   "Box"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_LPOL_LongDist",
+  "n": 1,
+  "verts": 222,
+  "tris": 98,
+  "mats": [
+   "LPOL_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_STD_Collision",
+  "n": 1,
+  "verts": 2318,
+  "tris": 1,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_STD_Decals",
+  "n": 1,
+  "verts": 92,
+  "tris": 46,
+  "mats": [
+   "Material__18442"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_STD_Reflection",
+  "n": 1,
+  "verts": 57,
+  "tris": 49,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_STD_Volumetric",
+  "n": 17,
+  "verts": 218,
+  "tris": 168,
+  "mats": [
+   "Material__18443",
+   "Material__18445"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VA_Collision",
+  "n": 1,
+  "verts": 1128,
+  "tris": 2,
+  "mats": [
+   "GMetal"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VA_Diner_Clean",
+  "n": 1,
+  "verts": 2279,
+  "tris": 11,
+  "mats": [
+   "Material__31"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VA_Diner_Cracks",
+  "n": 1,
+  "verts": 601,
+  "tris": 54,
+  "mats": [
+   "diner_floor2"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VA_Diner_Mesh",
+  "n": 2,
+  "verts": 36,
+  "tris": 16,
+  "mats": [
+   "Material__31"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VA_Dinner_Clean_low",
+  "n": 1,
+  "verts": 1216,
+  "tris": 35,
+  "mats": [
+   "Material__31"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VA_LongDist",
+  "n": 1,
+  "verts": 269,
+  "tris": 129,
+  "mats": [
+   "_3_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VA_Reflection",
+  "n": 2,
+  "verts": 62,
+  "tris": 58,
+  "mats": [
+   "Material__2"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VB_LongDist",
+  "n": 1,
+  "verts": 181,
+  "tris": 88,
+  "mats": [
+   "VB_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VB_Reflection",
+  "n": 2,
+  "verts": 84,
+  "tris": 62,
+  "mats": [
+   "Material__1248"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VB_collision",
+  "n": 1,
+  "verts": 2580,
+  "tris": 10,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VC_LongDist",
+  "n": 1,
+  "verts": 201,
+  "tris": 75,
+  "mats": [
+   "GC_Footprint_VC_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VC_Reflection",
+  "n": 2,
+  "verts": 64,
+  "tris": 54,
+  "mats": [
+   "Material__0"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VD_Reflection",
+  "n": 2,
+  "verts": 232,
+  "tris": 200,
+  "mats": [
+   "Material__4167"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VD_collision",
+  "n": 1,
+  "verts": 3269,
+  "tris": 94,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_Collision",
+  "n": 1,
+  "verts": 8785,
+  "tris": 2,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_Furnal",
+  "n": 8,
+  "verts": 7554,
+  "tris": 4576,
+  "mats": [
+   "Material__4173"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_Furnal_Collision",
+  "n": 1,
+  "verts": 664,
+  "tris": 104,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_Furnal_LongDist",
+  "n": 8,
+  "verts": 7554,
+  "tris": 4576,
+  "mats": [
+   "Material__4173"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_Light_Pole_Collision",
+  "n": 1,
+  "verts": 18,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_Light_Pole_LOD05",
+  "n": 1,
+  "verts": 870,
+  "tris": 516,
+  "mats": [
+   "Material__4173"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_LongDist",
+  "n": 1,
+  "verts": 6397,
+  "tris": 3296,
+  "mats": [
+   "long_dist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_Reflection",
+  "n": 1,
+  "verts": 536,
+  "tris": 362,
+  "mats": [
+   "Material__4213"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VPOW_Volumetric",
+  "n": 8,
+  "verts": 44,
+  "tris": 32,
+  "mats": [
+   "Material__4209",
+   "Material__4211"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VRS_Collision",
+  "n": 6,
+  "verts": 15159,
+  "tris": 1208,
+  "mats": [
+   "GDirt",
+   "GWetConcrete",
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VRS_LongDist",
+  "n": 1,
+  "verts": 2990,
+  "tris": 2148,
+  "mats": [
+   "longidst"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_VRS_Reflection",
+  "n": 2,
+  "verts": 989,
+  "tris": 498,
+  "mats": [
+   "Material__4240"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZA_Collision",
+  "n": 1,
+  "verts": 2596,
+  "tris": 30,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZA_LongDist",
+  "n": 1,
+  "verts": 442,
+  "tris": 243,
+  "mats": [
+   "longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZA_Reflection",
+  "n": 2,
+  "verts": 374,
+  "tris": 188,
+  "mats": [
+   "Material__4168"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZB_Collision",
+  "n": 1,
+  "verts": 823,
+  "tris": 2,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZB_LongDist",
+  "n": 1,
+  "verts": 208,
+  "tris": 108,
+  "mats": [
+   "LODGL"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZB_Reflection",
+  "n": 1,
+  "verts": 212,
+  "tris": 106,
+  "mats": [
+   "Material__4169"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZC_Collision",
+  "n": 1,
+  "verts": 1401,
+  "tris": 9,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZC_Reflection",
+  "n": 2,
+  "verts": 244,
+  "tris": 122,
+  "mats": [
+   "Material__4168"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZD_Collision",
+  "n": 1,
+  "verts": 1678,
+  "tris": 24,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZD_LongDist",
+  "n": 1,
+  "verts": 758,
+  "tris": 430,
+  "mats": [
+   "LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZD_Reflection",
+  "n": 2,
+  "verts": 495,
+  "tris": 271,
+  "mats": [
+   "Material__4179"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZE_Collision",
+  "n": 1,
+  "verts": 11429,
+  "tris": 2,
+  "mats": [
+   "GMetal"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZE_Reflection",
+  "n": 1,
+  "verts": 1312,
+  "tris": 570,
+  "mats": [
+   "Material__4206"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZE_garagewindows",
+  "n": 2,
+  "verts": 320,
+  "tris": 128,
+  "mats": [
+   "buildings2"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZF_collision",
+  "n": 1,
+  "verts": 5286,
+  "tris": 110,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Footprint_ZF_reflection",
+  "n": 2,
+  "verts": 1653,
+  "tris": 918,
+  "mats": [
+   "Material__4207"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Glowplane_LODD",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__4175"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Irradiance_Volume",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "SimpleModulate"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Island1_ReflOccluder",
+  "n": 1,
+  "verts": 28,
+  "tris": 28,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Island2_Collision",
+  "n": 1,
+  "verts": 6062,
+  "tris": 518,
+  "mats": [
+   "Box"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Island2_LongDist",
+  "n": 23,
+  "verts": 35385,
+  "tris": 22592,
+  "mats": [
+   "Material__4248",
+   "Material__4249",
+   "Material__4250",
+   "Material__4251",
+   "Material__4274"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Island2_LongDist_LOW",
+  "n": 9,
+  "verts": 13417,
+  "tris": 7969,
+  "mats": [
+   "Island2_Low",
+   "Material__4274"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Island2_ReflOccluder",
+  "n": 1,
+  "verts": 26,
+  "tris": 26,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_LongDist_Island1_FP1",
+  "n": 13,
+  "verts": 14701,
+  "tris": 8456,
+  "mats": [
+   "Material__4249"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_LongDist_Island1_FP2",
+  "n": 12,
+  "verts": 10849,
+  "tris": 4658,
+  "mats": [
+   "Material__4250"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_LongDist_Island1_FP3",
+  "n": 14,
+  "verts": 15123,
+  "tris": 6704,
+  "mats": [
+   "Material__4251"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_LongDist_Island1_Roads",
+  "n": 9,
+  "verts": 16361,
+  "tris": 10345,
+  "mats": [
+   "Material__4248",
+   "Material__4271"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_LongDist_Island2_FP1",
+  "n": 3,
+  "verts": 7702,
+  "tris": 3293,
+  "mats": [
+   "Material__4249"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_LongDist_Island2_FP2",
+  "n": 8,
+  "verts": 12482,
+  "tris": 5907,
+  "mats": [
+   "Material__4250"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_LongDist_Island2_FP3",
+  "n": 4,
+  "verts": 6987,
+  "tris": 3107,
+  "mats": [
+   "Material__4251"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_LongDist_Island2_Roads",
+  "n": 8,
+  "verts": 14224,
+  "tris": 10422,
+  "mats": [
+   "Material__4248",
+   "Material__4274"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Monorail_Island1_LongDist",
+  "n": 1,
+  "verts": 2675,
+  "tris": 1584,
+  "mats": [
+   "Ground_material8"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Monorail_Island2_LongDist",
+  "n": 1,
+  "verts": 4561,
+  "tris": 2908,
+  "mats": [
+   "Ground_material8"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Logo_BuildingLogoText_01_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Logo_BuildingLogoText_02_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Logo_BuildingLogo_01",
+  "n": 2,
+  "verts": 73,
+  "tris": 39,
+  "mats": [
+   "Material__76",
+   "Material__81"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Logo_BuildingLogo_01_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Logo_BuildingLogo_02",
+  "n": 3,
+  "verts": 84,
+  "tris": 56,
+  "mats": [
+   "Material__76",
+   "Material__81"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Logo_BuildingLogo_02_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Logo_BuildingLogo_02_low",
+  "n": 2,
+  "verts": 16,
+  "tris": 12,
+  "mats": [
+   "Material__76",
+   "Material__81"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_ParkLightpole_collision",
+  "n": 1,
+  "verts": 16,
+  "tris": 8,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_01_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_02_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_03_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_04_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_05_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_06_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_Industrial_01_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_Industrial_02_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_Industrial_03_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_Industrial_04_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_Industrial_05_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Plant_Industrial_06_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_01_S",
+  "n": 1,
+  "verts": 104,
+  "tris": 46,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_02_L_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_02_M_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_02_S_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_03_L_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_03_M",
+  "n": 1,
+  "verts": 183,
+  "tris": 48,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_03_M_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_03_M_low",
+  "n": 1,
+  "verts": 113,
+  "tris": 23,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_03_S_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_04_L_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_04_M_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_04_S_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_05_L_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_05_M_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_05_S_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_05_XL_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_06_L_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_06_M_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_06_S_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_07_L_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_07_M_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_07_S_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_01_L",
+  "n": 1,
+  "verts": 289,
+  "tris": 162,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_01_L_low",
+  "n": 1,
+  "verts": 170,
+  "tris": 82,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_01_M",
+  "n": 1,
+  "verts": 201,
+  "tris": 110,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_01_M_low",
+  "n": 1,
+  "verts": 176,
+  "tris": 100,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_01_S",
+  "n": 1,
+  "verts": 104,
+  "tris": 46,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_02_L_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_02_M_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_02_S",
+  "n": 1,
+  "verts": 223,
+  "tris": 28,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_02_S_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_03_L",
+  "n": 1,
+  "verts": 253,
+  "tris": 88,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_03_L_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_03_L_low",
+  "n": 1,
+  "verts": 122,
+  "tris": 27,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_03_M",
+  "n": 1,
+  "verts": 183,
+  "tris": 48,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_03_M_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_03_M_low",
+  "n": 1,
+  "verts": 113,
+  "tris": 23,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_03_S_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_04_L_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_04_M_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_04_S",
+  "n": 1,
+  "verts": 243,
+  "tris": 75,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_04_S_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_04_S_low",
+  "n": 1,
+  "verts": 138,
+  "tris": 52,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_05_L_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_05_M_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_05_S_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_05_XL_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_06_L_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_06_M_Collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_06_S_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_07_L_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_07_M_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_Tree_Industrial_07_S_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_01",
+  "n": 3,
+  "verts": 104,
+  "tris": 86,
+  "mats": [
+   "Material__62",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_01_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_01_low",
+  "n": 2,
+  "verts": 56,
+  "tris": 48,
+  "mats": [
+   "Material__62",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_02_blue",
+  "n": 2,
+  "verts": 16,
+  "tris": 34,
+  "mats": [
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_02_blue_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_02_blue_low",
+  "n": 2,
+  "verts": 16,
+  "tris": 34,
+  "mats": [
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_02_red",
+  "n": 3,
+  "verts": 169,
+  "tris": 56,
+  "mats": [
+   "Material__76",
+   "Material__78"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_02_red_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_02_red_low",
+  "n": 2,
+  "verts": 16,
+  "tris": 34,
+  "mats": [
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_03",
+  "n": 4,
+  "verts": 108,
+  "tris": 100,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_03_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_03_low",
+  "n": 3,
+  "verts": 60,
+  "tris": 62,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_04",
+  "n": 4,
+  "verts": 107,
+  "tris": 100,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_04_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_04_low",
+  "n": 3,
+  "verts": 59,
+  "tris": 62,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_05",
+  "n": 4,
+  "verts": 113,
+  "tris": 112,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_05_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_05_low",
+  "n": 3,
+  "verts": 65,
+  "tris": 74,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_06",
+  "n": 4,
+  "verts": 110,
+  "tris": 100,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_06_Collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_06_low",
+  "n": 3,
+  "verts": 62,
+  "tris": 62,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_07",
+  "n": 1,
+  "verts": 12,
+  "tris": 8,
+  "mats": [
+   "Material__72"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_07_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_07_low",
+  "n": 1,
+  "verts": 12,
+  "tris": 8,
+  "mats": [
+   "Material__72"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_08_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_09",
+  "n": 4,
+  "verts": 110,
+  "tris": 100,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_09_Animated_low",
+  "n": 3,
+  "verts": 62,
+  "tris": 62,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_09_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_09_low",
+  "n": 3,
+  "verts": 62,
+  "tris": 62,
+  "mats": [
+   "Material__62",
+   "Material__71",
+   "Material__76"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_10",
+  "n": 1,
+  "verts": 8,
+  "tris": 6,
+  "mats": [
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_10_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_10_low",
+  "n": 1,
+  "verts": 8,
+  "tris": 6,
+  "mats": [
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_11",
+  "n": 1,
+  "verts": 8,
+  "tris": 6,
+  "mats": [
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_11_Animated_low",
+  "n": 1,
+  "verts": 8,
+  "tris": 6,
+  "mats": [
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_11_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_11_low",
+  "n": 1,
+  "verts": 8,
+  "tris": 6,
+  "mats": [
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_12",
+  "n": 5,
+  "verts": 223,
+  "tris": 194,
+  "mats": [
+   "Material__62",
+   "Material__80"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_12_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Prop_VNeonSign_12_low",
+  "n": 4,
+  "verts": 220,
+  "tris": 200,
+  "mats": [
+   "Material__62",
+   "Material__79",
+   "Material__80"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Props_Monorail",
+  "n": 1,
+  "verts": 902,
+  "tris": 544,
+  "mats": [
+   "Material__264"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Props_Monorail_Collision",
+  "n": 1,
+  "verts": 880,
+  "tris": 542,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Props_Monorail_Train",
+  "n": 1,
+  "verts": 3149,
+  "tris": 1820,
+  "mats": [
+   "Material__265"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Props_Monorail_Train_Collision",
+  "n": 1,
+  "verts": 3101,
+  "tris": 280,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Props_UnderConstructionArea_Collision",
+  "n": 1,
+  "verts": 192,
+  "tris": 132,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Railway_Island1_Collision",
+  "n": 1,
+  "verts": 9581,
+  "tris": 398,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Railway_Island1_Reflection",
+  "n": 1,
+  "verts": 263,
+  "tris": 267,
+  "mats": [
+   "shop_reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Railway_Island2_Collision",
+  "n": 1,
+  "verts": 8451,
+  "tris": 2287,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Railway_Island2_LongDist",
+  "n": 1,
+  "verts": 802,
+  "tris": 784,
+  "mats": [
+   "GC_Railway_Island2_LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Railway_Island2_Reflection",
+  "n": 1,
+  "verts": 196,
+  "tris": 198,
+  "mats": [
+   "shop_reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Refl_Test",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Res_Prop_Streetlight",
+  "n": 1,
+  "verts": 220,
+  "tris": 146,
+  "mats": [
+   "Material__31"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Res_Prop_Streetlight_Collision",
+  "n": 1,
+  "verts": 36,
+  "tris": 20,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Crate",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Crate2",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Crate3",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Gotham_Spotlight",
+  "n": 3,
+  "verts": 239,
+  "tris": 158,
+  "mats": [
+   "Material__325"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Gotham_Spotlight_Collision",
+  "n": 1,
+  "verts": 16,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Green_Light",
+  "n": 1,
+  "verts": 26,
+  "tris": 22,
+  "mats": [
+   "Material__326"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Light_Pillar2",
+  "n": 1,
+  "verts": 270,
+  "tris": 230,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Light_Pillar2_Collision",
+  "n": 1,
+  "verts": 45,
+  "tris": 43,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Light_Pillar3_Collision",
+  "n": 1,
+  "verts": 91,
+  "tris": 61,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Light_Pillar_Collision",
+  "n": 1,
+  "verts": 29,
+  "tris": 25,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_NewsPaperBox2_Collision",
+  "n": 1,
+  "verts": 16,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_NewsPaperBox_Collision",
+  "n": 1,
+  "verts": 16,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_RoadBlock",
+  "n": 1,
+  "verts": 40,
+  "tris": 26,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_RoadBlock_Cone",
+  "n": 1,
+  "verts": 55,
+  "tris": 46,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_RoadBlock_Cone_Collision",
+  "n": 1,
+  "verts": 7,
+  "tris": 4,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Props_Traffic_Light_No_Illumination",
+  "n": 3,
+  "verts": 504,
+  "tris": 324,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Residential_Shop_Drugs_NeonSign_Collision",
+  "n": 1,
+  "verts": 26,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Smal_Bridge_LongDist",
+  "n": 1,
+  "verts": 398,
+  "tris": 292,
+  "mats": [
+   "GC_sb1_longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Small_Bridge_Island2_Collision",
+  "n": 1,
+  "verts": 1410,
+  "tris": 80,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Small_Bridge_Island2_LongDist",
+  "n": 1,
+  "verts": 354,
+  "tris": 254,
+  "mats": [
+   "GC_sb2_longdist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_Water_Island2",
+  "n": 2,
+  "verts": 629,
+  "tris": 299,
+  "mats": [
+   "Material__4206",
+   "Material__4207"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_bridge_1_LongDist",
+  "n": 1,
+  "verts": 176,
+  "tris": 96,
+  "mats": [
+   "GC_LOD_Atlas"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_footprint_AB_Collision",
+  "n": 1,
+  "verts": 1622,
+  "tris": 26,
+  "mats": [
+   "GWetConcrete"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_footprint_AB_LongDist",
+  "n": 1,
+  "verts": 1325,
+  "tris": 887,
+  "mats": [
+   "LongDist"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_footprint_AB_reflection",
+  "n": 1,
+  "verts": 38,
+  "tris": 24,
+  "mats": [
+   "Reflections"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_footprint_AWT_Wayne_Logo",
+  "n": 3,
+  "verts": 442,
+  "tris": 191,
+  "mats": [
+   "Material__3213",
+   "Material__3220"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_footprint_AWT_garage_door",
+  "n": 1,
+  "verts": 12,
+  "tris": 6,
+  "mats": [
+   "Material__3223"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_footprint_AWT_garage_door_collision",
+  "n": 1,
+  "verts": 12,
+  "tris": 6,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_footprint_aa_elevator",
+  "n": 1,
+  "verts": 174,
+  "tris": 86,
+  "mats": [
+   "Standardmaterial3"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_footprint_aa_elevator_collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_island1_Collision",
+  "n": 1,
+  "verts": 7303,
+  "tris": 1349,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_island1_LongDist",
+  "n": 54,
+  "verts": 43001,
+  "tris": 27736,
+  "mats": [
+   "Material__4248",
+   "Material__4249",
+   "Material__4250",
+   "Material__4251",
+   "Material__4271"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_island1_LongDist_LOW",
+  "n": 14,
+  "verts": 11095,
+  "tris": 7951,
+  "mats": [
+   "Island1_Low",
+   "Material__4271"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GC_water",
+  "n": 2,
+  "verts": 629,
+  "tris": 313,
+  "mats": [
+   "Material__4206",
+   "Material__4207"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GothamCity_Map",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "_0_-_Default"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "GothamCity_Map_Collision",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Ground"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_01",
+  "n": 2,
+  "verts": 492,
+  "tris": 246,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_01_PullDown_Collision",
+  "n": 1,
+  "verts": 26,
+  "tris": 20,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_01_PullDown_Mesh",
+  "n": 1,
+  "verts": 492,
+  "tris": 246,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_01_low",
+  "n": 2,
+  "verts": 224,
+  "tris": 112,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_05",
+  "n": 2,
+  "verts": 492,
+  "tris": 246,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_05_low",
+  "n": 2,
+  "verts": 224,
+  "tris": 112,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_07",
+  "n": 2,
+  "verts": 492,
+  "tris": 246,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_07_low",
+  "n": 2,
+  "verts": 224,
+  "tris": 112,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_10",
+  "n": 2,
+  "verts": 542,
+  "tris": 272,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_10_low",
+  "n": 2,
+  "verts": 384,
+  "tris": 194,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_Industrial_01",
+  "n": 2,
+  "verts": 492,
+  "tris": 246,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_Industrial_01_low",
+  "n": 2,
+  "verts": 224,
+  "tris": 112,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_Industrial_11",
+  "n": 2,
+  "verts": 492,
+  "tris": 246,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardRoof_Industrial_11_low",
+  "n": 2,
+  "verts": 224,
+  "tris": 112,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallSmall_01_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallSmall_03",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallSmall_04",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallSmall_Industrial_01",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallSmall_Industrial_02",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallSmall_Industrial_04",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallSmall_Industrial_05",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallTall_01_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallTall_07",
+  "n": 2,
+  "verts": 44,
+  "tris": 22,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallTall_Industrial_04",
+  "n": 2,
+  "verts": 44,
+  "tris": 22,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWallTall_Industrial_05",
+  "n": 2,
+  "verts": 44,
+  "tris": 22,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWall_01_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWall_02",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWall_06",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "Material__62"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWall_Industrial_05",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_BillboardWall_Industrial_06",
+  "n": 2,
+  "verts": 64,
+  "tris": 32,
+  "mats": [
+   "b_industrial"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_01",
+  "n": 2,
+  "verts": 321,
+  "tris": 194,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_01_Collision",
+  "n": 1,
+  "verts": 50,
+  "tris": 36,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_01_low",
+  "n": 2,
+  "verts": 185,
+  "tris": 94,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad",
+  "n": 2,
+  "verts": 134,
+  "tris": 74,
+  "mats": [
+   "Material__69",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad_01",
+  "n": 2,
+  "verts": 134,
+  "tris": 74,
+  "mats": [
+   "Material__69",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad_02",
+  "n": 2,
+  "verts": 134,
+  "tris": 74,
+  "mats": [
+   "Material__69",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad_03",
+  "n": 2,
+  "verts": 134,
+  "tris": 74,
+  "mats": [
+   "Material__69",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad_04",
+  "n": 2,
+  "verts": 134,
+  "tris": 74,
+  "mats": [
+   "Material__69",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad_05",
+  "n": 2,
+  "verts": 134,
+  "tris": 74,
+  "mats": [
+   "Material__69",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad_06",
+  "n": 2,
+  "verts": 134,
+  "tris": 74,
+  "mats": [
+   "Material__69",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad_07",
+  "n": 2,
+  "verts": 134,
+  "tris": 74,
+  "mats": [
+   "Material__69",
+   "Material__71"
+  ]
+ },
+ {
+  "archive": "l_gothamcity",
+  "file": "HC_Prop_Busstop_Ad_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "Batarang",
+  "n": 2,
+  "verts": 268,
+  "tris": 340,
+  "mats": [
+   "bdae"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "BatarangEMP",
+  "n": 2,
+  "verts": 282,
+  "tris": 332,
+  "mats": [
+   "add",
+   "bdae"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "Blind_prisoner",
+  "n": 4,
+  "verts": 2617,
+  "tris": 3824,
+  "mats": [
+   "Blind_prisoner"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "Blind_prisoner_low",
+  "n": 3,
+  "verts": 1499,
+  "tris": 2110,
+  "mats": [
+   "Blind_prisoner"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "Checkpoint_New_orange",
+  "n": 3,
+  "verts": 40,
+  "tris": 45,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "Grapnel_Gun",
+  "n": 2,
+  "verts": 1982,
+  "tris": 1457,
+  "mats": [
+   "Grapnel_Gun"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "HE_grenade",
+  "n": 1,
+  "verts": 643,
+  "tris": 624,
+  "mats": [
+   "bdae"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "Heckler_Koch_Assault_Rifle",
+  "n": 16,
+  "verts": 1138,
+  "tris": 871,
+  "mats": [
+   "Material__11",
+   "Material__12"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "MC_Shadow",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__25"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "Occluder",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "SimpleModulate"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "OccluderBox",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "SimpleModulate"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "OccluderCylinder",
+  "n": 1,
+  "verts": 38,
+  "tris": 32,
+  "mats": [
+   "SimpleModulate"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "OccluderPlane",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "SimpleModulate"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "RocketLauncher",
+  "n": 4,
+  "verts": 100,
+  "tris": 128,
+  "mats": [
+   "Material__11",
+   "Material__12"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "SmokeGrenade",
+  "n": 1,
+  "verts": 778,
+  "tris": 1368,
+  "mats": [
+   "smkGrenade-glitch-mat"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "SniperRifel",
+  "n": 16,
+  "verts": 1047,
+  "tris": 779,
+  "mats": [
+   "Material__11",
+   "Material__12"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "StunGrenade",
+  "n": 1,
+  "verts": 778,
+  "tris": 1368,
+  "mats": [
+   "StunGrenade-glitch-mat"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "WalkingStick",
+  "n": 1,
+  "verts": 221,
+  "tris": 248,
+  "mats": [
+   "Grapnel_Gun"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "batman",
+  "n": 3,
+  "verts": 2037,
+  "tris": 2774,
+  "mats": [
+   "Batman",
+   "Cape"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "batman_low",
+  "n": 3,
+  "verts": 1350,
+  "tris": 1956,
+  "mats": [
+   "Cape"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "collectibles_Blueprint",
+  "n": 3,
+  "verts": 50,
+  "tris": 44,
+  "mats": [
+   "_6_-_Default",
+   "blueprint"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "collectibles_Briefcase",
+  "n": 3,
+  "verts": 354,
+  "tris": 144,
+  "mats": [
+   "_6_-_Default",
+   "briefcase"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "collectibles_Graffiti",
+  "n": 3,
+  "verts": 16,
+  "tris": 8,
+  "mats": [
+   "_6_-_Default",
+   "graffiti"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "collectibles_Graffiti2",
+  "n": 3,
+  "verts": 16,
+  "tris": 8,
+  "mats": [
+   "_6_-_Default",
+   "graffiti"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "collectibles_PoliceFile",
+  "n": 3,
+  "verts": 34,
+  "tris": 22,
+  "mats": [
+   "_6_-_Default",
+   "police-folder"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "collectibles_USBStick",
+  "n": 2,
+  "verts": 8,
+  "tris": 4,
+  "mats": [
+   "_6_-_Default"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "flashGrenade",
+  "n": 2,
+  "verts": 643,
+  "tris": 624,
+  "mats": [
+   "bdae"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "muzzleflash_01",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "rocket",
+  "n": 1,
+  "verts": 61,
+  "tris": 76,
+  "mats": [
+   "Grapnel_Gun"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "rockpile",
+  "n": 1,
+  "verts": 278,
+  "tris": 329,
+  "mats": [
+   "_0_-_Default"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "rockpile_collision",
+  "n": 1,
+  "verts": 187,
+  "tris": 329,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "turret_collision",
+  "n": 1,
+  "verts": 55,
+  "tris": 60,
+  "mats": [
+   "ColorMaterial"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "turret_mesh",
+  "n": 8,
+  "verts": 2569,
+  "tris": 1552,
+  "mats": [
+   "_4_-_Default",
+   "_4_-_Default1"
+  ]
+ },
+ {
+  "archive": "actors",
+  "file": "weapons_knife",
+  "n": 1,
+  "verts": 234,
+  "tris": 168,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "Heli_spot_mesh",
+  "n": 1,
+  "verts": 25,
+  "tris": 24,
+  "mats": [
+   "Material__245"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "MilitaryJeep",
+  "n": 11,
+  "verts": 1413,
+  "tris": 695,
+  "mats": [
+   "Material__79",
+   "_3232",
+   "hummer"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "MilitaryJeep_collision",
+  "n": 1,
+  "verts": 29,
+  "tris": 46,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "MilitaryTruck",
+  "n": 12,
+  "verts": 1981,
+  "tris": 1005,
+  "mats": [
+   "Material__124",
+   "Material__125",
+   "Material__79",
+   "Material__90"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "MilitaryTruck_collision",
+  "n": 1,
+  "verts": 64,
+  "tris": 76,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "MilitaryTruck_destroied",
+  "n": 15,
+  "verts": 2910,
+  "tris": 1536,
+  "mats": [
+   "_7_-_Default"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "Military_helicopter",
+  "n": 8,
+  "verts": 1577,
+  "tris": 1308,
+  "mats": [
+   "Material__245",
+   "Material__327",
+   "_6_-_Default",
+   "body"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "Military_helicopter_collision",
+  "n": 1,
+  "verts": 58,
+  "tris": 60,
+  "mats": [
+   "ColorMaterial"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "Military_helicopter_crash",
+  "n": 2,
+  "verts": 1950,
+  "tris": 1433,
+  "mats": [
+   "body",
+   "interior-mat"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "Military_helicopter_crash_collision",
+  "n": 1,
+  "verts": 32,
+  "tris": 30,
+  "mats": [
+   "SolidNoEdge"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "PoliceHeli_Crashed_Mesh",
+  "n": 2,
+  "verts": 1950,
+  "tris": 1433,
+  "mats": [
+   "body",
+   "interior-mat"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "PoliceHeli_Mesh",
+  "n": 8,
+  "verts": 862,
+  "tris": 1059,
+  "mats": [
+   "Material__245",
+   "Material__327",
+   "_6_-_Default",
+   "body"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "PoliceHeli_collision",
+  "n": 1,
+  "verts": 100,
+  "tris": 68,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "SwatVan",
+  "n": 11,
+  "verts": 2421,
+  "tris": 1608,
+  "mats": [
+   "Swat",
+   "brakes",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "SwatVan_collision",
+  "n": 1,
+  "verts": 78,
+  "tris": 48,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficCarSUV",
+  "n": 13,
+  "verts": 2107,
+  "tris": 1626,
+  "mats": [
+   "Material__52",
+   "brakes",
+   "interior",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficCarSUV_collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 20,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficCarTaxi",
+  "n": 11,
+  "verts": 1336,
+  "tris": 1226,
+  "mats": [
+   "Material__74",
+   "brakes",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficCarTaxi_collision",
+  "n": 1,
+  "verts": 40,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficCoupe",
+  "n": 12,
+  "verts": 1672,
+  "tris": 1510,
+  "mats": [
+   "brakes",
+   "coupe",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficCoupe_Collision",
+  "n": 1,
+  "verts": 40,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficHatch",
+  "n": 12,
+  "verts": 1406,
+  "tris": 1358,
+  "mats": [
+   "Material__57",
+   "brakes",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficHatch_collision",
+  "n": 1,
+  "verts": 36,
+  "tris": 24,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficPolice",
+  "n": 12,
+  "verts": 2630,
+  "tris": 2080,
+  "mats": [
+   "Material__61",
+   "brakes",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficPolice_collision",
+  "n": 1,
+  "verts": 40,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficPolice_shadow",
+  "n": 1,
+  "verts": 6,
+  "tris": 4,
+  "mats": [
+   "Material__53"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficSedan",
+  "n": 6,
+  "verts": 193,
+  "tris": 154,
+  "mats": [
+   "SimpleModulate_ZWrite",
+   "brakes",
+   "lights",
+   "sedan"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficSedan_Collision",
+  "n": 1,
+  "verts": 40,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficSedan_Door",
+  "n": 6,
+  "verts": 574,
+  "tris": 19,
+  "mats": [
+   "Material__79",
+   "Material__90",
+   "interior"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficSedan_Door_Collision",
+  "n": 1,
+  "verts": 36,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficSedan_Door_SD",
+  "n": 1,
+  "verts": 109,
+  "tris": 43,
+  "mats": [
+   "sedan"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficSedan_Door_WS",
+  "n": 2,
+  "verts": 30,
+  "tris": 32,
+  "mats": [
+   "SimpleModulate_ZWrite",
+   "sedan_windows"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficTruck",
+  "n": 12,
+  "verts": 1531,
+  "tris": 1084,
+  "mats": [
+   "Material__67",
+   "brakes",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficTruck_collision",
+  "n": 1,
+  "verts": 44,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficVan",
+  "n": 12,
+  "verts": 1552,
+  "tris": 1259,
+  "mats": [
+   "Material__70",
+   "brakes",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "TrafficVan_collision",
+  "n": 1,
+  "verts": 32,
+  "tris": 20,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "Tumbler",
+  "n": 5,
+  "verts": 36,
+  "tris": 18,
+  "mats": [
+   "coronas"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "Tumbler_collision",
+  "n": 1,
+  "verts": 26,
+  "tris": 40,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "Tumbler_shadow",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Shadow"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "banes_van_collision",
+  "n": 1,
+  "verts": 25,
+  "tris": 16,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "banes_van_doors_mesh",
+  "n": 2,
+  "verts": 591,
+  "tris": 358,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "banes_van_mesh",
+  "n": 16,
+  "verts": 4189,
+  "tris": 3063,
+  "mats": [
+   "Material__79",
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "banes_van_nodoors_mesh",
+  "n": 14,
+  "verts": 3598,
+  "tris": 2705,
+  "mats": [
+   "Material__79",
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "batpod_collision",
+  "n": 1,
+  "verts": 47,
+  "tris": 44,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "batpod_mesh",
+  "n": 22,
+  "verts": 15387,
+  "tris": 10729,
+  "mats": [
+   "Batpod"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "boxuri",
+  "n": 2,
+  "verts": 48,
+  "tris": 24,
+  "mats": [
+   "Material__67",
+   "Swat"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "car_batman_crash_collision",
+  "n": 1,
+  "verts": 28,
+  "tris": 20,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "car_batman_crash_mesh_morph",
+  "n": 2,
+  "verts": 12,
+  "tris": 6,
+  "mats": [
+   "Material__46",
+   "Material__79"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "helicopter_generic",
+  "n": 8,
+  "verts": 862,
+  "tris": 1059,
+  "mats": [
+   "Material__245",
+   "Material__327",
+   "_6_-_Default",
+   "body"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "limousine",
+  "n": 11,
+  "verts": 986,
+  "tris": 888,
+  "mats": [
+   "ColorMaterial_00000000",
+   "Limo-Mat",
+   "brakes",
+   "lights"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "limousine_collision",
+  "n": 1,
+  "verts": 36,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "monorail_01",
+  "n": 3,
+  "verts": 898,
+  "tris": 514,
+  "mats": [
+   "Material__265",
+   "fx_coronas"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "monorail_02",
+  "n": 1,
+  "verts": 381,
+  "tris": 206,
+  "mats": [
+   "Material__265"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "monorail_03",
+  "n": 3,
+  "verts": 886,
+  "tris": 514,
+  "mats": [
+   "Material__265",
+   "fx_coronas"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "theBat_Anim",
+  "n": 1,
+  "verts": 11252,
+  "tris": 32,
+  "mats": [
+   "theBat-body_mat"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "theBat_collision",
+  "n": 1,
+  "verts": 26,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "vehicles",
+  "file": "train_locomotive",
+  "n": 6,
+  "verts": 9810,
+  "tris": 5682,
+  "mats": [
+   "ColorMaterial_00000000",
+   "Material__89",
+   "lights"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Alert_Post",
+  "n": 8,
+  "verts": 286,
+  "tris": 150,
+  "mats": [
+   "Material__449",
+   "Material__450"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Alert_Post_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Barricade",
+  "n": 19,
+  "verts": 622,
+  "tris": 332,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Barricade2",
+  "n": 19,
+  "verts": 622,
+  "tris": 332,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Barricade_Collision_Final",
+  "n": 1,
+  "verts": 24,
+  "tris": 36,
+  "mats": [
+   "Walk"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Barricade_Collision_Start",
+  "n": 1,
+  "verts": 20,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Detonator",
+  "n": 1,
+  "verts": 311,
+  "tris": 241,
+  "mats": [
+   "Detonator"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Explosive_Pack",
+  "n": 1,
+  "verts": 1272,
+  "tris": 750,
+  "mats": [
+   "barrel_red"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Explosive_Pack_green",
+  "n": 1,
+  "verts": 1272,
+  "tris": 750,
+  "mats": [
+   "barrel_green"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "FX_Rain",
+  "n": 2,
+  "verts": 104,
+  "tris": 52,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "FlippedPlane",
+  "n": 3,
+  "verts": 12,
+  "tris": 6,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_FX_Corona_v01",
+  "n": 2,
+  "verts": 24,
+  "tris": 20,
+  "mats": [
+   "Material__32",
+   "Material__36"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_FX_Corona_v02",
+  "n": 2,
+  "verts": 24,
+  "tris": 20,
+  "mats": [
+   "Material__32",
+   "Material__36"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_FX_Corona_v03",
+  "n": 2,
+  "verts": 24,
+  "tris": 20,
+  "mats": [
+   "Material__32",
+   "Material__36"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_FX_Corona_v04",
+  "n": 2,
+  "verts": 24,
+  "tris": 20,
+  "mats": [
+   "Material__32",
+   "Material__36"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_FX_Corona_v05",
+  "n": 2,
+  "verts": 24,
+  "tris": 20,
+  "mats": [
+   "Material__32",
+   "Material__36"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_Residential_Prop_Streetlight_Corona",
+  "n": 4,
+  "verts": 32,
+  "tris": 24,
+  "mats": [
+   "Material__30",
+   "Material__31",
+   "Material__32",
+   "Material__36"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_Residential_Prop_Streetlight_Corona_v2",
+  "n": 4,
+  "verts": 32,
+  "tris": 24,
+  "mats": [
+   "Material__30",
+   "Material__31",
+   "Material__32",
+   "Material__36"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_Residential_Prop_Streetlight_Corona_v3",
+  "n": 4,
+  "verts": 32,
+  "tris": 24,
+  "mats": [
+   "Material__30",
+   "Material__31",
+   "Material__32",
+   "Material__36"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_Skybox",
+  "n": 7,
+  "verts": 606,
+  "tris": 900,
+  "mats": [
+   "MoonRelection",
+   "_2_-_Default",
+   "_3_-_Default",
+   "_4_-_Default",
+   "_4_-_Defaulta",
+   "_4_-_Defaultab",
+   "_4_-_Defaultaba"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_Skybox_Island2",
+  "n": 7,
+  "verts": 606,
+  "tris": 900,
+  "mats": [
+   "MoonRelection",
+   "_2_-_Default",
+   "_3_-_Default",
+   "_4_-_Default",
+   "_4_-_Defaulta",
+   "_4_-_Defaultab",
+   "_4_-_Defaultaba"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GC_Skybox_WithFog",
+  "n": 5,
+  "verts": 186,
+  "tris": 268,
+  "mats": [
+   "Material__5",
+   "_4_-_Default",
+   "_4_-_Defaulta",
+   "_4_-_Defaultab"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "GroundOilTank",
+  "n": 1,
+  "verts": 648,
+  "tris": 526,
+  "mats": [
+   "Material__40"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "MilitaryLaser_Beam",
+  "n": 3,
+  "verts": 16,
+  "tris": 8,
+  "mats": [
+   "_9_-_Default"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "MilitaryLaser_collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "MilitaryLaser_morph",
+  "n": 4,
+  "verts": 12252,
+  "tris": 5110,
+  "mats": [
+   "_3_-_Default"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Military_Streetlight_Corona",
+  "n": 2,
+  "verts": 16,
+  "tris": 12,
+  "mats": [
+   "Material__30",
+   "Material__32"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Military_Streetlight_Corona_Animated",
+  "n": 2,
+  "verts": 16,
+  "tris": 12,
+  "mats": [
+   "Material__30",
+   "Material__32"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Simple_C4_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Stash",
+  "n": 4,
+  "verts": 131,
+  "tris": 72,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Stash_Collision",
+  "n": 1,
+  "verts": 26,
+  "tris": 20,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Stash_cable_mesh",
+  "n": 3,
+  "verts": 58,
+  "tris": 54,
+  "mats": [
+   "ColorMaterial"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "Stash_released",
+  "n": 2,
+  "verts": 875,
+  "tris": 374,
+  "mats": [
+   "Material__449",
+   "Material__450"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "StorageBox",
+  "n": 20,
+  "verts": 968,
+  "tris": 648,
+  "mats": [
+   "StorageBox",
+   "StorageBox_add"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "ThePitCargo",
+  "n": 11,
+  "verts": 668,
+  "tris": 318,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "ThePitCargo_Collision",
+  "n": 1,
+  "verts": 132,
+  "tris": 108,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "WaterDrop",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "WaterSplash",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "batarangEMP_pickup",
+  "n": 13,
+  "verts": 1330,
+  "tris": 1562,
+  "mats": [
+   "pickup-add",
+   "pickup-glitch-mat"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "batarang_pickup",
+  "n": 7,
+  "verts": 454,
+  "tris": 878,
+  "mats": [
+   "pickup-add",
+   "pickup-glitch-mat"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "debug_irradiance_sphere",
+  "n": 1,
+  "verts": 559,
+  "tris": 960,
+  "mats": [
+   "_1_-_Default"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "destroyable_crate_collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "destroyable_crate_mesh",
+  "n": 26,
+  "verts": 731,
+  "tris": 318,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "destroyable_crate_mesh_end",
+  "n": 1,
+  "verts": 751,
+  "tris": 604,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "destroyable_crates_collision",
+  "n": 1,
+  "verts": 40,
+  "tris": 24,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "destroyable_crates_mesh",
+  "n": 52,
+  "verts": 1493,
+  "tris": 636,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "destroyable_crates_mesh_end",
+  "n": 1,
+  "verts": 1403,
+  "tris": 564,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_gadgetvision",
+  "n": 1,
+  "verts": 25,
+  "tris": 32,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_punch",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "_4_-_Defaults"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water",
+  "n": 1,
+  "verts": 884,
+  "tris": 1352,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim1",
+  "n": 1,
+  "verts": 2088,
+  "tris": 696,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim2",
+  "n": 1,
+  "verts": 2232,
+  "tris": 744,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim3",
+  "n": 1,
+  "verts": 2232,
+  "tris": 744,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim4",
+  "n": 1,
+  "verts": 2016,
+  "tris": 672,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim5",
+  "n": 1,
+  "verts": 2088,
+  "tris": 696,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim6",
+  "n": 1,
+  "verts": 156,
+  "tris": 52,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim7",
+  "n": 1,
+  "verts": 156,
+  "tris": 52,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim8",
+  "n": 1,
+  "verts": 192,
+  "tris": 64,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "distort_water_morph_anim9",
+  "n": 1,
+  "verts": 192,
+  "tris": 64,
+  "mats": [
+   "xxx"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "electric_pannel_morph",
+  "n": 2,
+  "verts": 190,
+  "tris": 48,
+  "mats": [
+   "Material__326"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "electric_pannell",
+  "n": 2,
+  "verts": 188,
+  "tris": 48,
+  "mats": [
+   "Material__326"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "electric_pannell_morph",
+  "n": 2,
+  "verts": 188,
+  "tris": 48,
+  "mats": [
+   "Material__326"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "flashBangs_pickup",
+  "n": 3,
+  "verts": 2062,
+  "tris": 2102,
+  "mats": [
+   "pickup-add",
+   "pickup-glitch-mat"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "garbage_shelter",
+  "n": 1,
+  "verts": 1073,
+  "tris": 795,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "garbagecan_round_onfire",
+  "n": 1,
+  "verts": 69,
+  "tris": 62,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "garbagecan_round_onfire_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "garbagecan_taper_onfire",
+  "n": 1,
+  "verts": 68,
+  "tris": 60,
+  "mats": [
+   "Material__449"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "garbagecan_taper_onfire_Collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "gc_irr",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "Material__142"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "heliOilTank",
+  "n": 9,
+  "verts": 871,
+  "tris": 640,
+  "mats": [
+   "Material__40"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "mine_blue",
+  "n": 1,
+  "verts": 1024,
+  "tris": 364,
+  "mats": [
+   "mine_blue"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "mine_collision",
+  "n": 1,
+  "verts": 355,
+  "tris": 364,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "mine_red",
+  "n": 1,
+  "verts": 1024,
+  "tris": 364,
+  "mats": [
+   "mine_red"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "securityDevice",
+  "n": 8,
+  "verts": 52,
+  "tris": 26,
+  "mats": [
+   "_3_-_Default",
+   "_4_-_Default"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "smokeGrenades_pickup",
+  "n": 2,
+  "verts": 236,
+  "tris": 290,
+  "mats": [
+   "pickup-add",
+   "pickup-glitch-mat"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "stunGrenades_pickup",
+  "n": 2,
+  "verts": 509,
+  "tris": 580,
+  "mats": [
+   "StnGrenade-glitch-mat",
+   "_0_-_Default"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "surveillance_camera",
+  "n": 3,
+  "verts": 514,
+  "tris": 578,
+  "mats": [
+   "Material__449",
+   "Material__451"
+  ]
+ },
+ {
+  "archive": "commons",
+  "file": "wayneTechPoints",
+  "n": 2,
+  "verts": 30,
+  "tris": 22,
+  "mats": [
+   "Material__452",
+   "coin_add"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "CG_SE_RoomsDoor_01",
+  "n": 2,
+  "verts": 48,
+  "tris": 24,
+  "mats": [
+   "Material__1450"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "CG_SE_RoomsDoor_02",
+  "n": 2,
+  "verts": 44,
+  "tris": 22,
+  "mats": [
+   "Material__1450"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "CG_SE_RoomsDoor_03",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "Material__1450"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_SE_ExitDoor_01",
+  "n": 1,
+  "verts": 134,
+  "tris": 70,
+  "mats": [
+   "Material__1454"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_SE_mainRoomDoor_01",
+  "n": 2,
+  "verts": 48,
+  "tris": 24,
+  "mats": [
+   "Material__1450"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_SE_mainRoomDoor_02",
+  "n": 2,
+  "verts": 48,
+  "tris": 24,
+  "mats": [
+   "Material__1450"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_SE_mainRoomDoor_03",
+  "n": 2,
+  "verts": 48,
+  "tris": 24,
+  "mats": [
+   "Material__1450"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_SE_mainRoomDoor_04",
+  "n": 2,
+  "verts": 48,
+  "tris": 24,
+  "mats": [
+   "Material__1450"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_Dome",
+  "n": 96,
+  "verts": 2364,
+  "tris": 1306,
+  "mats": [
+   "Material__1461"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_DoubleDoor",
+  "n": 2,
+  "verts": 48,
+  "tris": 24,
+  "mats": [
+   "Material__1450"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_FinalAnim",
+  "n": 23,
+  "verts": 6342,
+  "tris": 4510,
+  "mats": [
+   "Material__1450",
+   "Material__1453",
+   "Material__1454",
+   "Material__1461",
+   "Material__1463",
+   "Material__1488"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_FinalMesh",
+  "n": 23,
+  "verts": 6342,
+  "tris": 4510,
+  "mats": [
+   "Material__1450",
+   "Material__1453",
+   "Material__1454",
+   "Material__1461",
+   "Material__1463",
+   "Material__1488"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_Final_finish_Collision",
+  "n": 1,
+  "verts": 2226,
+  "tris": 2106,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_Main_Entrance_Room",
+  "n": 2,
+  "verts": 40,
+  "tris": 20,
+  "mats": [
+   "Material__1520"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_Main_Entrance_Room_Low",
+  "n": 32,
+  "verts": 2910,
+  "tris": 2193,
+  "mats": [
+   "Material__1274",
+   "Material__1454",
+   "Material__1457",
+   "Material__1476",
+   "Material__1488"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_Main_Entrance_Room_NavMesh",
+  "n": 1,
+  "verts": 1371,
+  "tris": 724,
+  "mats": [
+   "Walk"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_PoliceAdditive",
+  "n": 5,
+  "verts": 262,
+  "tris": 149,
+  "mats": [
+   "Material__1477"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_Props_Monitor_Collision_End",
+  "n": 1,
+  "verts": 120,
+  "tris": 60,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_Props_Monitor_Collision_Start",
+  "n": 1,
+  "verts": 120,
+  "tris": 60,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "GC_StockExchange_SingleDoorArc",
+  "n": 1,
+  "verts": 24,
+  "tris": 12,
+  "mats": [
+   "Material__1339"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "SE_FakeGotham_LPLD",
+  "n": 16,
+  "verts": 7764,
+  "tris": 3907,
+  "mats": [
+   "Material__4272"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "SE_FakeGotham_LPLD_LOW",
+  "n": 12,
+  "verts": 3415,
+  "tris": 2486,
+  "mats": [
+   "Material__4272"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "SE_Skybox",
+  "n": 1,
+  "verts": 592,
+  "tris": 960,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_stockexchange",
+  "file": "box_collision_test",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Ground"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_Skybox",
+  "n": 1,
+  "verts": 121,
+  "tris": 220,
+  "mats": [
+   "Material__5"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_centralcomputer",
+  "n": 1,
+  "verts": 48,
+  "tris": 18,
+  "mats": [
+   "Material__272"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_centralcomputer_collision",
+  "n": 1,
+  "verts": 34,
+  "tris": 48,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_chow_room_LOD04",
+  "n": 1,
+  "verts": 6471,
+  "tris": 88,
+  "mats": [
+   "Material__211"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_chow_room_LOD04_low",
+  "n": 1,
+  "verts": 4651,
+  "tris": 2542,
+  "mats": [
+   "Material__297"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks01_LOD03",
+  "n": 1,
+  "verts": 8046,
+  "tris": 56,
+  "mats": [
+   "Material__259"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks01_LOD03_low",
+  "n": 1,
+  "verts": 4038,
+  "tris": 1482,
+  "mats": [
+   "Material__302"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks02_LOD03",
+  "n": 1,
+  "verts": 8746,
+  "tris": 16,
+  "mats": [
+   "Material__259"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks02_LOD03_low",
+  "n": 1,
+  "verts": 5129,
+  "tris": 1669,
+  "mats": [
+   "Material__302"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks03_LOD03",
+  "n": 1,
+  "verts": 5848,
+  "tris": 88,
+  "mats": [
+   "Material__211"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks03_LOD03_low",
+  "n": 1,
+  "verts": 2664,
+  "tris": 88,
+  "mats": [
+   "Material__297"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks04_LOD03",
+  "n": 1,
+  "verts": 10266,
+  "tris": 38,
+  "mats": [
+   "Material__259"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks04_LOD03_low",
+  "n": 1,
+  "verts": 3188,
+  "tris": 108,
+  "mats": [
+   "Material__297"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks_top_LOD03",
+  "n": 1,
+  "verts": 5606,
+  "tris": 918,
+  "mats": [
+   "Material__259"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_desks_top_LOD03_low",
+  "n": 1,
+  "verts": 2571,
+  "tris": 668,
+  "mats": [
+   "Material__302"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_garadge_glass",
+  "n": 1,
+  "verts": 12,
+  "tris": 4,
+  "mats": [
+   "Material__267"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_garadge_glass_low",
+  "n": 1,
+  "verts": 8,
+  "tris": 4,
+  "mats": [
+   "Material__303"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_lightning",
+  "n": 2,
+  "verts": 92,
+  "tris": 50,
+  "mats": [
+   "_1_-_Default",
+   "_6_-_Default"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_neon_destroy",
+  "n": 1,
+  "verts": 28,
+  "tris": 16,
+  "mats": [
+   "Material__211"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_neon_destroy_collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_neon_destroy_low",
+  "n": 1,
+  "verts": 28,
+  "tris": 16,
+  "mats": [
+   "Material__297"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_spotlight_sky",
+  "n": 3,
+  "verts": 277,
+  "tris": 218,
+  "mats": [
+   "Material__156",
+   "Material__247"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_spotlight_sky_low",
+  "n": 3,
+  "verts": 277,
+  "tris": 218,
+  "mats": [
+   "Material__156",
+   "Material__247"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_spotlight_tower",
+  "n": 5,
+  "verts": 281,
+  "tris": 220,
+  "mats": [
+   "Material__156",
+   "Material__247",
+   "Material__297"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_spotlight_tower_collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Stop"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_spotlight_tower_low",
+  "n": 5,
+  "verts": 281,
+  "tris": 220,
+  "mats": [
+   "Material__156",
+   "Material__247",
+   "Material__265"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_water_islands",
+  "n": 1,
+  "verts": 108,
+  "tris": 161,
+  "mats": [
+   "Material__206"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_water_islands_low",
+  "n": 1,
+  "verts": 108,
+  "tris": 161,
+  "mats": [
+   "Material__206"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_Policestation_window_frame_LOD02",
+  "n": 1,
+  "verts": 3768,
+  "tris": 1992,
+  "mats": [
+   "Material__156"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_01",
+  "n": 1,
+  "verts": 2440,
+  "tris": 288,
+  "mats": [
+   "Material__211"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_01_Collisions",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_01_low",
+  "n": 1,
+  "verts": 1672,
+  "tris": 288,
+  "mats": [
+   "Material__297"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_coronas",
+  "n": 202,
+  "verts": 1832,
+  "tris": 1428,
+  "mats": [
+   "Material__249",
+   "Material__265"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_farcity",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Material__295"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_garage_int_LOD02",
+  "n": 1,
+  "verts": 9067,
+  "tris": 954,
+  "mats": [
+   "Material__211"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_garage_int_LOD02_low",
+  "n": 1,
+  "verts": 5711,
+  "tris": 2600,
+  "mats": [
+   "Material__297"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_glass_upstairs",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__267"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_glass_upstairs_low",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__303"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_radiost_int_LOD02",
+  "n": 1,
+  "verts": 9438,
+  "tris": 60,
+  "mats": [
+   "Material__259"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_radiost_int_LOD02_low",
+  "n": 1,
+  "verts": 4454,
+  "tris": 60,
+  "mats": [
+   "Material__302"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_reflection",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Material__285"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "GC_SpBuilding_PoliceStation_roof_glass_low",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__303"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "box_collision_test",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "desk_window",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__267"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "desk_window_collision",
+  "n": 1,
+  "verts": 8,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "desk_window_low",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__303"
+  ]
+ },
+ {
+  "archive": "l_policestation",
+  "file": "window_animation",
+  "n": 1,
+  "verts": 336,
+  "tris": 144,
+  "mats": [
+   "Material__156"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Box2",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Material__2415"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "FencePlaceHolder_Collision",
+  "n": 2,
+  "verts": 16,
+  "tris": 20,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "FencePlaceHolder_Collision2",
+  "n": 1,
+  "verts": 8,
+  "tris": 10,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "GC_Residential_Props_UtilityBox",
+  "n": 1,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Material__345"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "GC_ThePit",
+  "n": 28,
+  "verts": 8436,
+  "tris": 7932,
+  "mats": [
+   "_2_-_Default"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "GC_ThePit_Collision",
+  "n": 5,
+  "verts": 387,
+  "tris": 161,
+  "mats": [
+   "Ground"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "R1_Vent",
+  "n": 1,
+  "verts": 363,
+  "tris": 241,
+  "mats": [
+   "Material__1469"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "R1_Vent_Low",
+  "n": 1,
+  "verts": 363,
+  "tris": 241,
+  "mats": [
+   "Material__1469"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Rock",
+  "n": 1,
+  "verts": 73,
+  "tris": 54,
+  "mats": [
+   "Material__1046"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "RockPile2",
+  "n": 64,
+  "verts": 4454,
+  "tris": 3456,
+  "mats": [
+   "Material__1046"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room1_Collision",
+  "n": 4,
+  "verts": 4198,
+  "tris": 1866,
+  "mats": [
+   "GConcrete",
+   "GWater",
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room1_Coronas",
+  "n": 5,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Material__1549"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room1_FlareLight",
+  "n": 6,
+  "verts": 197,
+  "tris": 250,
+  "mats": [
+   "Material__2469",
+   "Material__2494"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room1_LightRays",
+  "n": 6,
+  "verts": 197,
+  "tris": 250,
+  "mats": [
+   "Material__2469",
+   "Material__2494"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room1_Water",
+  "n": 1,
+  "verts": 24,
+  "tris": 22,
+  "mats": [
+   "Material__2466"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room1_WaterDrop",
+  "n": 15,
+  "verts": 74,
+  "tris": 44,
+  "mats": [
+   "Material__1356",
+   "Material__1559"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room1_refl",
+  "n": 5,
+  "verts": 20,
+  "tris": 10,
+  "mats": [
+   "Material__1549"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room2",
+  "n": 12,
+  "verts": 11736,
+  "tris": 832,
+  "mats": [
+   "Material__1562",
+   "Material__1689",
+   "Material__1693",
+   "Material__2058"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room2_Coronas",
+  "n": 18,
+  "verts": 152,
+  "tris": 82,
+  "mats": [
+   "Material__2049",
+   "Material__2065"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room2_Low",
+  "n": 7,
+  "verts": 6407,
+  "tris": 256,
+  "mats": [
+   "Material__1562",
+   "Material__1689",
+   "Material__2058"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room2_Valve1",
+  "n": 1,
+  "verts": 406,
+  "tris": 220,
+  "mats": [
+   "Material__1588"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room2_Valve2",
+  "n": 1,
+  "verts": 381,
+  "tris": 220,
+  "mats": [
+   "Material__1588"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room2_Vent",
+  "n": 2,
+  "verts": 726,
+  "tris": 482,
+  "mats": [
+   "Material__1576"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room2_Vent_Low",
+  "n": 2,
+  "verts": 726,
+  "tris": 482,
+  "mats": [
+   "Material__1576"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3",
+  "n": 2,
+  "verts": 128,
+  "tris": 108,
+  "mats": [
+   "Material__2062"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_AnimatedLight",
+  "n": 6,
+  "verts": 592,
+  "tris": 724,
+  "mats": [
+   "Material__1643",
+   "Material__1990",
+   "Material__2034"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_Batman",
+  "n": 1,
+  "verts": 1191,
+  "tris": 468,
+  "mats": [
+   "Material__1905"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_Batman_Collision",
+  "n": 1,
+  "verts": 38,
+  "tris": 28,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_Collision",
+  "n": 1,
+  "verts": 25,
+  "tris": 25,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_Coronas",
+  "n": 6,
+  "verts": 52,
+  "tris": 28,
+  "mats": [
+   "Material__1989",
+   "Material__1990"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_Door",
+  "n": 2,
+  "verts": 254,
+  "tris": 96,
+  "mats": [
+   "Material__2411"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_Door_Collision",
+  "n": 1,
+  "verts": 96,
+  "tris": 48,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_Door_Low",
+  "n": 2,
+  "verts": 254,
+  "tris": 96,
+  "mats": [
+   "Material__2411"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_LightBulb_Green",
+  "n": 2,
+  "verts": 85,
+  "tris": 92,
+  "mats": [
+   "Material__1643",
+   "Material__2063"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_LightBulb_Off",
+  "n": 1,
+  "verts": 81,
+  "tris": 90,
+  "mats": [
+   "Material__1643"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_LightBulb_Red",
+  "n": 3,
+  "verts": 89,
+  "tris": 94,
+  "mats": [
+   "Material__1643",
+   "Material__2063"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room3_Low",
+  "n": 2,
+  "verts": 128,
+  "tris": 108,
+  "mats": [
+   "Material__2062"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room4",
+  "n": 19,
+  "verts": 25864,
+  "tris": 10464,
+  "mats": [
+   "Material__1909",
+   "Material__1989",
+   "Material__2013",
+   "Material__2022",
+   "Material__2025",
+   "Material__2032"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room4_Chains_Morph",
+  "n": 9,
+  "verts": 1728,
+  "tris": 576,
+  "mats": [
+   "Material__1989"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room4_Coronas",
+  "n": 3,
+  "verts": 26,
+  "tris": 14,
+  "mats": [
+   "Material__1989",
+   "Material__1990"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room4_Low",
+  "n": 15,
+  "verts": 24895,
+  "tris": 9872,
+  "mats": [
+   "Material__1909",
+   "Material__1989",
+   "Material__2013",
+   "Material__2022",
+   "Material__2025"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room4_Smoke",
+  "n": 7,
+  "verts": 232,
+  "tris": 230,
+  "mats": [
+   "Material__2018",
+   "Material__2437"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room4_Vent",
+  "n": 1,
+  "verts": 489,
+  "tris": 224,
+  "mats": [
+   "Material__1905"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room4_Vent_Low",
+  "n": 1,
+  "verts": 489,
+  "tris": 224,
+  "mats": [
+   "Material__1905"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room5",
+  "n": 2,
+  "verts": 851,
+  "tris": 510,
+  "mats": [
+   "Material__2260",
+   "Material__2265"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room5_Collision",
+  "n": 9,
+  "verts": 4612,
+  "tris": 4235,
+  "mats": [
+   "GDirt",
+   "GMetal",
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room5_Coronas",
+  "n": 32,
+  "verts": 128,
+  "tris": 64,
+  "mats": [
+   "Material__2273"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room5_Gate",
+  "n": 2,
+  "verts": 412,
+  "tris": 180,
+  "mats": [
+   "Material__1951"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room5_Low",
+  "n": 2,
+  "verts": 851,
+  "tris": 510,
+  "mats": [
+   "Material__2260",
+   "Material__2265"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room6",
+  "n": 11,
+  "verts": 2305,
+  "tris": 1222,
+  "mats": [
+   "Material__2227",
+   "Material__2337",
+   "Material__2344"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room6_Collision",
+  "n": 1,
+  "verts": 278,
+  "tris": 152,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room6_Coronas",
+  "n": 9,
+  "verts": 90,
+  "tris": 48,
+  "mats": [
+   "Material__2273",
+   "Material__2344"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room6_Gate",
+  "n": 1,
+  "verts": 212,
+  "tris": 96,
+  "mats": [
+   "Material__2227"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Room6_Low",
+  "n": 2,
+  "verts": 1675,
+  "tris": 262,
+  "mats": [
+   "Material__2227",
+   "Material__2337"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "TP_Skybox",
+  "n": 2,
+  "verts": 161,
+  "tris": 260,
+  "mats": [
+   "Material__5"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_1_2",
+  "n": 16,
+  "verts": 2385,
+  "tris": 1430,
+  "mats": [
+   "Material__1379",
+   "Material__1481",
+   "Material__1554",
+   "Material__1556",
+   "Material__1557",
+   "Material__2054"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_1_2_Collision",
+  "n": 13,
+  "verts": 1817,
+  "tris": 1274,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_1_2_Coronas",
+  "n": 9,
+  "verts": 70,
+  "tris": 38,
+  "mats": [
+   "Material__1356",
+   "Material__1549"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_1_2_Low",
+  "n": 10,
+  "verts": 1873,
+  "tris": 1050,
+  "mats": [
+   "Material__1379",
+   "Material__1481",
+   "Material__1554",
+   "Material__1556",
+   "Material__1557"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_1_2_Picaturi",
+  "n": 4,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Material__1356"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_2_3",
+  "n": 3,
+  "verts": 5577,
+  "tris": 522,
+  "mats": [
+   "Material__1568",
+   "Material__1689",
+   "Material__1693"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_2_3_Collision",
+  "n": 5,
+  "verts": 1008,
+  "tris": 742,
+  "mats": [
+   "GDirt",
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_2_3_Low",
+  "n": 2,
+  "verts": 5501,
+  "tris": 414,
+  "mats": [
+   "Material__1568",
+   "Material__1689"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_2_3_Picaturi",
+  "n": 20,
+  "verts": 100,
+  "tris": 60,
+  "mats": [
+   "Material__2049"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_3_4",
+  "n": 1,
+  "verts": 6440,
+  "tris": 984,
+  "mats": [
+   "Material__1951"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_3_4_Collision",
+  "n": 2,
+  "verts": 1326,
+  "tris": 790,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_3_4_Coronas",
+  "n": 6,
+  "verts": 52,
+  "tris": 28,
+  "mats": [
+   "Material__1989",
+   "Material__1990"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_3_4_Low",
+  "n": 1,
+  "verts": 6440,
+  "tris": 984,
+  "mats": [
+   "Material__1951"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_3_4_Picaturi",
+  "n": 6,
+  "verts": 30,
+  "tris": 18,
+  "mats": [
+   "Material__1989"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_4_5",
+  "n": 11,
+  "verts": 2142,
+  "tris": 1506,
+  "mats": [
+   "Material__1643",
+   "Material__1905",
+   "Material__1935",
+   "Material__2022",
+   "Material__2044"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_4_5_Collision",
+  "n": 4,
+  "verts": 1802,
+  "tris": 1604,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_4_5_Coronas",
+  "n": 12,
+  "verts": 104,
+  "tris": 56,
+  "mats": [
+   "Material__1989",
+   "Material__1990",
+   "Material__2273",
+   "Material__2433"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_4_5_Gate",
+  "n": 1,
+  "verts": 336,
+  "tris": 156,
+  "mats": [
+   "Material__1951"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_4_5_Low",
+  "n": 11,
+  "verts": 2142,
+  "tris": 1506,
+  "mats": [
+   "Material__1643",
+   "Material__1905",
+   "Material__1935",
+   "Material__2022",
+   "Material__2044"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_5_6",
+  "n": 1,
+  "verts": 960,
+  "tris": 42,
+  "mats": [
+   "Material__2342"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_5_6_Coronas",
+  "n": 9,
+  "verts": 78,
+  "tris": 42,
+  "mats": [
+   "Material__2273",
+   "Material__2344"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_5_6_Gate",
+  "n": 1,
+  "verts": 212,
+  "tris": 96,
+  "mats": [
+   "Material__2227"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "Tunel_5_6_Low",
+  "n": 1,
+  "verts": 960,
+  "tris": 42,
+  "mats": [
+   "Material__2342"
+  ]
+ },
+ {
+  "archive": "l_thepit",
+  "file": "box_collision_test",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Ground"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_part2_dark",
+  "n": 9,
+  "verts": 4306,
+  "tris": 1866,
+  "mats": [
+   "Material__160",
+   "Material__329",
+   "bdae_for_export"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_part2_dark_low",
+  "n": 1,
+  "verts": 156,
+  "tris": 10,
+  "mats": [
+   "Material__2522"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_part2_light",
+  "n": 1,
+  "verts": 618,
+  "tris": 10,
+  "mats": [
+   "Material__160"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_part2_light_low",
+  "n": 1,
+  "verts": 156,
+  "tris": 10,
+  "mats": [
+   "Material__2522"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_part3_dark",
+  "n": 2,
+  "verts": 3077,
+  "tris": 944,
+  "mats": [
+   "Material__160"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_part3_dark_low",
+  "n": 7,
+  "verts": 1857,
+  "tris": 940,
+  "mats": [
+   "Material__2520",
+   "Material__2522",
+   "Material__2523",
+   "Material__2526",
+   "Material__2527"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_part3_light",
+  "n": 2,
+  "verts": 3077,
+  "tris": 944,
+  "mats": [
+   "Material__160"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_part3_light_low",
+  "n": 2,
+  "verts": 1742,
+  "tris": 632,
+  "mats": [
+   "Material__2522"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_vent_animation",
+  "n": 2,
+  "verts": 286,
+  "tris": 124,
+  "mats": [
+   "Material__409",
+   "Material__419"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "ROOM_03_vent_animation_low",
+  "n": 2,
+  "verts": 286,
+  "tris": 124,
+  "mats": [
+   "Material__2526",
+   "Material__419"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM01_coronas",
+  "n": 6,
+  "verts": 56,
+  "tris": 44,
+  "mats": [
+   "Material__2558",
+   "Material__349",
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02",
+  "n": 1,
+  "verts": 12457,
+  "tris": 268,
+  "mats": [
+   "bdae_for_export"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_bars_gate",
+  "n": 1,
+  "verts": 112,
+  "tris": 84,
+  "mats": [
+   "Material__160"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_bars_gate_collision",
+  "n": 1,
+  "verts": 230,
+  "tris": 116,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_bars_gate_low",
+  "n": 1,
+  "verts": 112,
+  "tris": 84,
+  "mats": [
+   "Material__2517"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_coronas",
+  "n": 13,
+  "verts": 100,
+  "tris": 74,
+  "mats": [
+   "Material__349",
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_gate_door",
+  "n": 1,
+  "verts": 112,
+  "tris": 68,
+  "mats": [
+   "Material__160"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_gate_door_low",
+  "n": 1,
+  "verts": 112,
+  "tris": 68,
+  "mats": [
+   "Material__2517"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_low",
+  "n": 1,
+  "verts": 4357,
+  "tris": 268,
+  "mats": [
+   "Material__2516"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_ventanim",
+  "n": 3,
+  "verts": 317,
+  "tris": 151,
+  "mats": [
+   "Material__409",
+   "Material__417",
+   "Material__419"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM02_ventanim_low",
+  "n": 3,
+  "verts": 317,
+  "tris": 151,
+  "mats": [
+   "Material__2519",
+   "Material__417",
+   "Material__419"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM03",
+  "n": 1,
+  "verts": 955,
+  "tris": 656,
+  "mats": [
+   "Material__159"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM03_water_reflection",
+  "n": 1,
+  "verts": 2627,
+  "tris": 252,
+  "mats": [
+   "Material__426"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04",
+  "n": 1,
+  "verts": 1089,
+  "tris": 32,
+  "mats": [
+   "Material__409"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_collision",
+  "n": 7,
+  "verts": 167,
+  "tris": 116,
+  "mats": [
+   "GMetal"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_coronas",
+  "n": 13,
+  "verts": 156,
+  "tris": 130,
+  "mats": [
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_low",
+  "n": 1,
+  "verts": 804,
+  "tris": 32,
+  "mats": [
+   "Material__2540"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_nopassing_fence_col",
+  "n": 1,
+  "verts": 8,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_pannell_fall_collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "GMetal"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_pannell_fall_morph",
+  "n": 3,
+  "verts": 1425,
+  "tris": 431,
+  "mats": [
+   "Material__160",
+   "Material__2495",
+   "Material__329"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_pannell_fall_morph_low",
+  "n": 3,
+  "verts": 1425,
+  "tris": 431,
+  "mats": [
+   "Material__2536",
+   "Material__2539",
+   "Material__2542"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_uv_anim_light",
+  "n": 1,
+  "verts": 160,
+  "tris": 96,
+  "mats": [
+   "Material__2545"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_ventanim",
+  "n": 3,
+  "verts": 334,
+  "tris": 140,
+  "mats": [
+   "Material__409",
+   "Material__419",
+   "Material__489"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_ventanim_low",
+  "n": 3,
+  "verts": 334,
+  "tris": 140,
+  "mats": [
+   "Material__2540",
+   "Material__419",
+   "Material__489"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_ventfall",
+  "n": 1,
+  "verts": 181,
+  "tris": 88,
+  "mats": [
+   "Material__409"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_ventfall_low",
+  "n": 1,
+  "verts": 181,
+  "tris": 88,
+  "mats": [
+   "Material__2540"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_warning_light",
+  "n": 1,
+  "verts": 64,
+  "tris": 39,
+  "mats": [
+   "Material__2543"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM04_warning_light2",
+  "n": 1,
+  "verts": 64,
+  "tris": 39,
+  "mats": [
+   "Material__2543"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM05",
+  "n": 2,
+  "verts": 10859,
+  "tris": 18,
+  "mats": [
+   "Material__2477",
+   "Material__2480"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM05_Reflection",
+  "n": 1,
+  "verts": 384,
+  "tris": 192,
+  "mats": [
+   "Material__2493"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM05_collision",
+  "n": 5,
+  "verts": 1339,
+  "tris": 918,
+  "mats": [
+   "GWetConcrete",
+   "Solid",
+   "Stop"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM05_coronas",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM05_low",
+  "n": 5,
+  "verts": 19565,
+  "tris": 6735,
+  "mats": [
+   "Material__2546",
+   "Material__2547",
+   "Material__2550",
+   "Material__2553"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM05_wall_explosion",
+  "n": 16,
+  "verts": 635,
+  "tris": 294,
+  "mats": [
+   "Material__2477",
+   "Material__491"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM05_wall_explosion_collision",
+  "n": 1,
+  "verts": 50,
+  "tris": 44,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM05_wall_explosion_low",
+  "n": 18,
+  "verts": 701,
+  "tris": 322,
+  "mats": [
+   "Material__2550",
+   "Material__2553"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_ROOM_03_coronas",
+  "n": 22,
+  "verts": 264,
+  "tris": 220,
+  "mats": [
+   "Material__2551",
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_anim_advertising",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__2513"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_anim_advertising2",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Material__2513"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_catwoman_electric_pannel_morph",
+  "n": 2,
+  "verts": 972,
+  "tris": 324,
+  "mats": [
+   "bdae_for_export",
+   "fx"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_catwoman_electric_pannel_morph_low",
+  "n": 5,
+  "verts": 106,
+  "tris": 54,
+  "mats": [
+   "Material__326",
+   "Material__337",
+   "Material__342",
+   "Material__349"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_collision",
+  "n": 2,
+  "verts": 118,
+  "tris": 80,
+  "mats": [
+   "Solid",
+   "Solid1"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_electric_pannell_morph",
+  "n": 5,
+  "verts": 106,
+  "tris": 54,
+  "mats": [
+   "Material__326",
+   "Material__337",
+   "Material__342",
+   "Material__349"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_electric_pannell_morph_low",
+  "n": 5,
+  "verts": 106,
+  "tris": 54,
+  "mats": [
+   "Material__326",
+   "Material__337",
+   "Material__342",
+   "Material__349"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_elevator",
+  "n": 1,
+  "verts": 931,
+  "tris": 516,
+  "mats": [
+   "Material__409"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_elevator_low",
+  "n": 1,
+  "verts": 931,
+  "tris": 516,
+  "mats": [
+   "Material__2526"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_highgargoyle",
+  "n": 1,
+  "verts": 799,
+  "tris": 1144,
+  "mats": [
+   "bdae_for_export"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_light_destroy",
+  "n": 2,
+  "verts": 375,
+  "tris": 152,
+  "mats": [
+   "Material__354",
+   "Material__409"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_light_destroy_anim_low",
+  "n": 1,
+  "verts": 449,
+  "tris": 156,
+  "mats": [
+   "Material__2526"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_light_destroy_low",
+  "n": 1,
+  "verts": 363,
+  "tris": 142,
+  "mats": [
+   "Material__2526"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_lowgargoyle",
+  "n": 1,
+  "verts": 688,
+  "tris": 1107,
+  "mats": [
+   "bdae_for_export"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_mesh",
+  "n": 1,
+  "verts": 1137,
+  "tris": 165,
+  "mats": [
+   "Material__178"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_mesh_low",
+  "n": 1,
+  "verts": 787,
+  "tris": 58,
+  "mats": [
+   "Material__2513"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_panell_fall",
+  "n": 2,
+  "verts": 100,
+  "tris": 44,
+  "mats": [
+   "Material__326",
+   "bdae_for_export"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_panell_fall_collision_after",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "GMetal"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_panell_fall_collision_initial",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Stop"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_panell_fall_low",
+  "n": 2,
+  "verts": 90,
+  "tris": 44,
+  "mats": [
+   "Material__326",
+   "bdae_for_export"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_poolwater",
+  "n": 2,
+  "verts": 3562,
+  "tris": 700,
+  "mats": [
+   "Material__2490",
+   "Material__426"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_poolwater_low",
+  "n": 2,
+  "verts": 3112,
+  "tris": 1290,
+  "mats": [
+   "Material__2490",
+   "Material__426"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_smallgargoyles",
+  "n": 1,
+  "verts": 120,
+  "tris": 40,
+  "mats": [
+   "Material__176"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_train_collision",
+  "n": 1,
+  "verts": 20,
+  "tris": 12,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_train_light_interior",
+  "n": 1,
+  "verts": 2890,
+  "tris": 1598,
+  "mats": [
+   "Material__2547"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_01_02",
+  "n": 1,
+  "verts": 5258,
+  "tris": 992,
+  "mats": [
+   "Material__409"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_01_02_coronas",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_01_02_low",
+  "n": 1,
+  "verts": 2224,
+  "tris": 146,
+  "mats": [
+   "Material__2519"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_02_03",
+  "n": 1,
+  "verts": 5337,
+  "tris": 1076,
+  "mats": [
+   "Material__409"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_02_03_collision",
+  "n": 1,
+  "verts": 50,
+  "tris": 44,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_02_03_coronas",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_02_03_low",
+  "n": 1,
+  "verts": 2116,
+  "tris": 146,
+  "mats": [
+   "Material__2519"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_03_04",
+  "n": 1,
+  "verts": 5239,
+  "tris": 992,
+  "mats": [
+   "Material__409"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_03_04_coronas",
+  "n": 1,
+  "verts": 12,
+  "tris": 10,
+  "mats": [
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_03_04_low",
+  "n": 1,
+  "verts": 2022,
+  "tris": 618,
+  "mats": [
+   "Material__2519"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_04_05_collision",
+  "n": 2,
+  "verts": 322,
+  "tris": 186,
+  "mats": [
+   "Stop"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_tunnel_04_05_coronas",
+  "n": 5,
+  "verts": 60,
+  "tris": 50,
+  "mats": [
+   "Material__354"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_water_surface",
+  "n": 1,
+  "verts": 92,
+  "tris": 118,
+  "mats": [
+   "Material__2490"
+  ]
+ },
+ {
+  "archive": "l_underground",
+  "file": "underground_window_collision",
+  "n": 1,
+  "verts": 92,
+  "tris": 80,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Complex_Collision",
+  "n": 1,
+  "verts": 1430,
+  "tris": 42,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Complex_Collision_simple",
+  "n": 1,
+  "verts": 4,
+  "tris": 2,
+  "mats": [
+   "Walk"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_LPLD",
+  "n": 1,
+  "verts": 2458,
+  "tris": 68,
+  "mats": [
+   "Material__1737"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Skybox",
+  "n": 2,
+  "verts": 241,
+  "tris": 380,
+  "mats": [
+   "Material__5"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Water",
+  "n": 1,
+  "verts": 68,
+  "tris": 97,
+  "mats": [
+   "Material__2006"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Zone_01_Low",
+  "n": 1,
+  "verts": 2554,
+  "tris": 68,
+  "mats": [
+   "Material__1737"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Zone_04",
+  "n": 1,
+  "verts": 2659,
+  "tris": 1309,
+  "mats": [
+   "Material__1737"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Zone_04_Low",
+  "n": 1,
+  "verts": 1868,
+  "tris": 922,
+  "mats": [
+   "Material__1737"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Zone_08",
+  "n": 1,
+  "verts": 1225,
+  "tris": 52,
+  "mats": [
+   "Material__1819"
+  ]
+ },
+ {
+  "archive": "l_military",
+  "file": "Military_Zone_09",
+  "n": 1,
+  "verts": 1325,
+  "tris": 560,
+  "mats": [
+   "Material__1704"
+  ]
+ },
+ {
+  "archive": "l_stadion",
+  "file": "ST_skybox",
+  "n": 1,
+  "verts": 15,
+  "tris": 15,
+  "mats": [
+   "_5_-_Default23"
+  ]
+ },
+ {
+  "archive": "l_stadion",
+  "file": "ST_skybox_00",
+  "n": 1,
+  "verts": 15,
+  "tris": 15,
+  "mats": [
+   "_5_-_Default23"
+  ]
+ },
+ {
+  "archive": "l_stadion",
+  "file": "ST_stadium_Animated",
+  "n": 1,
+  "verts": 8,
+  "tris": 4,
+  "mats": [
+   "Material__1842"
+  ]
+ },
+ {
+  "archive": "l_stadion",
+  "file": "ST_stadium_Collision",
+  "n": 1,
+  "verts": 3077,
+  "tris": 16,
+  "mats": [
+   "Solid"
+  ]
+ },
+ {
+  "archive": "l_stadion",
+  "file": "ST_stadium_LongDist",
+  "n": 26,
+  "verts": 17116,
+  "tris": 10793,
+  "mats": [
+   "Material__17",
+   "Material__1851",
+   "Material__1854"
+  ]
+ },
+ {
+  "archive": "l_stadion",
+  "file": "ST_stadium_Volumetric",
+  "n": 18,
+  "verts": 231,
+  "tris": 176,
+  "mats": [
+   "Material__1843",
+   "Material__21"
+  ]
+ },
+ {
+  "archive": "l_batcave",
+  "file": "batcave",
+  "n": 8,
+  "verts": 8016,
+  "tris": 7318,
+  "mats": [
+   "_a",
+   "fence1",
+   "glass",
+   "room_01",
+   "steps1"
+  ]
+ },
+ {
+  "archive": "l_batcave",
+  "file": "batcave_Low",
+  "n": 4,
+  "verts": 7600,
+  "tris": 7032,
+  "mats": [
+   "_a_LOW",
+   "glass",
+   "mon_03"
+  ]
+ },
+ {
+  "archive": "l_batcave",
+  "file": "batcave_Skybox",
+  "n": 5,
+  "verts": 206,
+  "tris": 308,
+  "mats": [
+   "Material__5",
+   "_4_-_Default",
+   "_4_-_Defaulta",
+   "_4_-_Defaultab"
+  ]
+ },
+ {
+  "archive": "l_batcave",
+  "file": "batcave_refl",
+  "n": 1,
+  "verts": 97,
+  "tris": 63,
+  "mats": [
+   "refl"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_01_City_Survey_mesh",
+  "n": 2,
+  "verts": 1389,
+  "tris": 2008,
+  "mats": [
+   "Batman",
+   "Cape"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_02_Fall_On_Car_mesh",
+  "n": 2,
+  "verts": 1389,
+  "tris": 2008,
+  "mats": [
+   "Batman",
+   "Cape"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_03_Heli_SE_Entrance_anim_01_TEST",
+  "n": 1,
+  "verts": 1121,
+  "tris": 1576,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_03_Heli_SE_Entrance_mesh",
+  "n": 1,
+  "verts": 1121,
+  "tris": 1576,
+  "mats": [
+   "_4_-_Default"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_03_Heli_SE_Entrance_mesh_01",
+  "n": 1,
+  "verts": 1121,
+  "tris": 1576,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_03_Heli_SE_Entrance_mesh_01_TEST",
+  "n": 1,
+  "verts": 1121,
+  "tris": 1576,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_03_Heli_SE_Entrance_mesh_02",
+  "n": 1,
+  "verts": 1121,
+  "tris": 1576,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_03_Seq02_Mesh",
+  "n": 1,
+  "verts": 1121,
+  "tris": 1576,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_03_Seq02_Mesh_TEST",
+  "n": 1,
+  "verts": 1121,
+  "tris": 1576,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "cinematics",
+  "file": "Cutscene_03_Seq02_anim_TEST",
+  "n": 1,
+  "verts": 1121,
+  "tris": 1576,
+  "mats": [
+   "Batman"
+  ]
+ },
+ {
+  "archive": "l_menu",
+  "file": "MM_Cave",
+  "n": 2,
+  "verts": 6569,
+  "tris": 10866,
+  "mats": [
+   "Material__2",
+   "_9_-_Default"
+  ]
+ },
+ {
+  "archive": "l_menu",
+  "file": "MM_City",
+  "n": 2,
+  "verts": 1788,
+  "tris": 210,
+  "mats": [
+   "Material__12",
+   "Material__2"
+  ]
+ },
+ {
+  "archive": "l_menu",
+  "file": "MM_Pit",
+  "n": 2,
+  "verts": 7268,
+  "tris": 2778,
+  "mats": [
+   "Material__2",
+   "_9_-_Default"
+  ]
+ }
+]

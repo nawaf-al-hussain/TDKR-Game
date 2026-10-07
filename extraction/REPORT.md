@@ -60,16 +60,42 @@ Full inventory: `_textures_manifest.csv`.
 - Reflection envmaps: `new_envmap`, `old_envmap`, `testEnvMap`, `testEnvMap_IND`
 - Contact sheet: `contact_sheets/_SKYBOXES_and_ENV.jpg`
 
-## 3. Level / scene data (files/data/*.gla)
+## 3. Level / scene data (files/data/*.gla) — BDAE format reverse-engineered
 
-Chunks are named `*.bdae` — Gameloft proprietary binary asset format:
-- `GC_Bigbridge*.bdae` (+ `_collision`, `_LongDist` LOD variants)
-- `GC_Anim_Crane_BoxDrop_{Anim,Collision,Mesh}.bdae` — animation/mesh/collision triplets
-- `FX_BLightning_A.bdae` — effects
-- `Footprint_*_Reflections.bdae`, building/prop meshes per district
-- Extracted raw under `raw/<archive>/` — geometry parsing is the next RE step (formats TBD).
+Chunks are named `*.bdae` — **Binary DAE**: Gameloft's compiled COLLADA, opening with
+magic `BRES` (version 0xFFFE, little-endian):
 
-Largest: `l_gothamcity.gla` = 208 MB, 1,071 chunks (the whole Gotham island set).
+```
+header (14 u32): [BRES][0xFFFE][root=0x3C][fileSize][strCount][0][...]
+  +0x1C poolA offset   +0x20 bounds/scene   +0x24 instances   +0x28 geometry   +0x38 poolB/scene names
+geometry section = CHAIN of mesh blocks:
+  geo header (u32s): [f0=footer anchor][f1=stream end][k desc pairs]…[0x10][1][COUNT][ndw]…
+  vertex stream: COUNT × stride(=8+4·ndw) ending at geoBase+f1
+    +0  pos    3×f32
+    +12 normal 11-11-10 packed snorm (x/1023, y/1023, z/511 — decodes to |n|=1.000)
+    +16 uv     2×u16 unorm /65535 (top-left origin)
+    +20 extra  (24B meshes: lightmap-uv/tangent dword)
+  AABB (6×f32) + descriptors precede the stream
+  footer: [maxIdx][numIdx][stride][0][0][material name NUL-padded to 4][indices: numIdx×u16]
+  next mesh header = align4(footer+0x1C+numIdx·2)
+```
+
+Validation used: footer maxIdx < COUNT, position plausibility ≥ 0.98, all positions
+finite, AABB match. **Survey: 853 of 1,247 .bdae files yield meshes — 1,236,030 verts,
+509,302 triangles game-wide**, incl. `GC_island1_LongDist` (54 meshes / 27.7K tris),
+`GC_Island2_LongDist` (22.6K), both road networks, `GC_Bigbridge`, batcave, the Pit
+rooms, stadium, and every vehicle/actor prop.
+
+Texture binding: the long-distance city meshes UV-map directly into **baked night
+lightmap atlases** (e.g. `GC_Island1_LongDist_Low.tga` 2048² — the island's night
+lighting is visible inside the atlas). Collision meshes (`*_Collision.bdae`) store an
+interleaved triangle soup `[pos][2 packed dwords]` followed by a `Solid` marker + u16
+index list. Still open: scene-graph node transforms (island placement), material→
+DiffuseMap parameter tables, ZIP_SPLIT long-distance texture reassembly, skinned
+actor vertex formats (stride 52: blend shapes/weights).
+
+Extracted showcase GLBs (Y-up, textures embedded): `meshes_glb/*.glb` — rendered live
+by the Gotham City Explorer web app's "Real BDAE meshes" mode.
 
 ## 4. Audio (files/data/sounds.gla + sounds.xml)
 
@@ -95,6 +121,11 @@ Largest: `l_gothamcity.gla` = 208 MB, 1,071 chunks (the whole Gotham island set)
 - `scripts/codec_test.py` — codec identification harness (ETC1 vs PVRTC vs BC1 vs ATC)
 - `scripts/make_sheets.py` — contact sheets
 - `scripts/convert_audio.sh` — MS ADPCM WAV → OGG
+- `scripts/bdae_probe.py` — BRES header/section dumper + byte-region classifier
+- `scripts/bdae_mesh_scan.py` — stride/anchor brute-forcer with rendered verification plots
+- `scripts/bdae_extract.py` — BDAE mesh-block chain parser → GLB exporter (Y-up, embedded textures)
+- `scripts/bdae_survey.py` — batch survey of all .bdae files (mesh/vert/tri stats → JSON)
+- `scripts/export_showcase.py` — exports the five web-app showcase GLBs
 
 ## 7. Reproduction recipe (for any remaining chunk)
 

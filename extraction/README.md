@@ -30,13 +30,21 @@ extraction/
 │   ├── codec_test.py          # codec ID harness (proved ETC1 vs PVRTC/BC1/ATC)
 │   ├── tex_convert.py         # PVR2/ETC1/RGB565/RGB888/BGR888 → PNG (+ textures manifest)
 │   ├── make_sheets.py         # thumbnail contact sheets per archive
-│   └── convert_audio.sh       # MS-ADPCM WAV → OGG Vorbis (parallel ffmpeg)
+│   ├── convert_audio.sh       # MS-ADPCM WAV → OGG Vorbis (parallel ffmpeg)
+│   ├── bdae_probe.py          # BRES header/section dumper + byte-region classifier
+│   ├── bdae_mesh_scan.py      # stride/anchor brute-forcer + rendered verification plots
+│   ├── bdae_extract.py        # BDAE mesh-block chain parser → GLB exporter (Y-up + textures)
+│   ├── bdae_survey.py         # batch survey of all .bdae files (stats → JSON)
+│   ├── bdae_uv_verify.py      # UV-sampled texture render (proves UV + lightmap binding)
+│   └── export_showcase.py     # exports the five web-app showcase GLBs
 ├── manifests/
 │   ├── gla_chunks_manifest.csv    # 7,731 chunks: archive, name, offset, size, magic, sha256[:16]
-│   └── textures_manifest.csv      # 1,186 textures: archive, name, w×h, bpp, codec
+│   ├── textures_manifest.csv      # 1,186 textures: archive, name, w×h, bpp, codec
+│   └── bdae_mesh_survey.json      # per-file mesh stats: 853 files, 1.24M verts, 509K tris
 └── previews/
     ├── contact_sheets/*.jpg   # one thumbnail sheet per texture archive (14 sheets)
-    └── skyboxes/*.png         # full-res skybox / envmap / vertical-fog samples (16)
+    ├── skyboxes/*.png         # full-res skybox / envmap / vertical-fog samples (16)
+    └── meshes/*.png           # island1 top/side views, UV-textured verification renders
 ```
 
 ## Reproduction pipeline
@@ -52,14 +60,18 @@ python3 scripts/tex_convert.py
 ./scripts/convert_audio.sh
 # 4. optional visual QA
 python3 scripts/make_sheets.py
+# 5. BDAE meshes: survey all files, then export showcase GLBs (numpy + pillow)
+python3 scripts/bdae_survey.py
+python3 scripts/export_showcase.py
 ```
 
-Requirements: Python 3.10+, `texture2ddecoder`, `pillow`, `ffmpeg`.
+Requirements: Python 3.10+, `numpy`, `pillow`, `texture2ddecoder`, `ffmpeg`.
 
 ## Key findings (see REPORT.md for detail)
 
 - `.gla` = big-endian index container: 16-byte TOC + alphabetical NUL name pool + contiguous chunks; 27/27 archives parse with perfect contiguity.
 - Textures = 52-byte PVR v2 header wrapping **ETC1** (4bpp, 971), RGB565 (205), BGR888 (8, incl. 3 Gotham skyboxes), RGBA8888 (2).
 - Skyboxes are single-surface dome/panorama maps (no cubemaps); 33 skybox/env/fog assets inventoried.
-- Level chunks are `*.bdae` (Gameloft scene/mesh/animation format — parsing is the next RE milestone).
+- `.bdae` = **BRES / Binary DAE** (compiled COLLADA): chained mesh blocks, `[pos 3×f32][normal 11-11-10][uv 2×u16]` vertices, u16 indices, material name in footer — 853 files / 1.24M verts / 509K tris extracted, city rendered live in the companion web app.
+- Static + collision mesh geometry is fully parsed; still open: scene-graph node transforms, material→DiffuseMap tables, skinned actor vertex formats, Vxvs audio streams.
 - Audio is MS-ADPCM WAV (ffmpeg-decodable) + 3 proprietary `Vxvs` streams.
