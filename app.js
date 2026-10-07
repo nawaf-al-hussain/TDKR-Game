@@ -2,10 +2,46 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+/* ============================================================================
+   v4 RENDERER — port of the game's own LightMapDC shader chain.
+
+   The game's shipped GLSL (effects/LightMapDC-f.glsl, -v.glsl — recovered
+   verbatim from the .gla) renders the night city as:
+
+       LightMapColor = texture2D(LightMap, vCoord1) * 2.0;
+       Color         = DiffuseMapColor * LightMapColor;          // (no LIGHTING)
+       FogFactor     = (-viewZ - FogStartEnd.x) * FogStartEnd.y;  // linear, VS
+       fY            = worldHeight * VerticalFogHeight + FogFactor * 0.5;
+       vFogColor     = mix(VERTICAL_FOG_COLOR, FogColor, fY);     // warm->night
+       Color         = mix(Color.rgb, vFogColor.rgb, FogFactor * vFogColor.a);
+
+   City bakes bind LightMap = UNBOUND (0xFFFFFFFF) -> engine supplies white ->
+   Color = bake * 2.0.  Bakes are authored dark (mean ~0.11) for exactly this.
+   The 2012 GLES2 pipeline did ALL of this in gamma space (no sRGB decode), so
+   we sample textures raw (NoColorSpace) and write gl_FragColor raw.
+
+   Material names from the v4 exporter carry the shading mode:
+       '<tex>|2x'  LightMapDC  -> uMult = 2.0
+       '<tex>|d'   StandardDiffuseDC etc -> uMult = 1.0
+       '__dark'    untextured
+   ========================================================================== */
+
+/* ---------------- engine constants (from the GLSL + game-scale tuning) ---- */
+const FOG = {
+  start: 220,          // view-depth where fog begins            (FogStartEnd.x)
+  end: 1900,           // view-depth where fog is full           (1/FogStartEnd.y)
+  night: [0.05, 0.085, 0.16],    // FogColor — night haze blue
+  nightA: 0.94,
+  warm: [0.93, 0.76, 0.47],      // VERTICAL_FOG_COLOR — street sodium glow
+  warmA: 0.35,
+  vfogH: 300,          // vertical fog transition height (world units)
+};
+FOG.scale = 1 / (FOG.end - FOG.start);
+
 /* ---------------- state ---------------- */
 const state = {
-  tiers: {},          // tier -> { enabled, glbs:[{file, tris, verts, files, loaded}] }
-  groups: new Map(),  // glb file -> THREE.Group
+  tiers: {},
+  groups: new Map(),
   manager: null,
   wire: false,
   orbit: true,
@@ -26,17 +62,18 @@ try {
 }
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.setSize(innerWidth, innerHeight);
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.35;
+// gamma-space engine parity: no tonemap, raw output from our shader
+renderer.toneMapping = THREE.NoToneMapping;
 
 const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x070b14, 0.00055);
+scene.fog = new THREE.Fog(
+  new THREE.Color(...FOG.night), FOG.start, FOG.end); // for built-in fallback mats
 
 const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 1, 12000);
 camera.position.set(650, 420, 760);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-window.__v = { scene, camera, controls, state }; // debug hook
+window.__v = { scene, camera, controls, state, FOG }; // debug hook
 controls.enableDamping = true;
 controls.dampingFactor = 0.06;
 controls.maxPolarAngle = Math.PI * 0.55;
@@ -56,8 +93,8 @@ new THREE.TextureLoader().load('skybox.jpg', (t) => {
   t.mapping = THREE.EquirectangularReflectionMapping;
   t.colorSpace = THREE.SRGBColorSpace;
   scene.background = t;
-  scene.backgroundIntensity = 0.25;
-  scene.backgroundBlurriness = 0.5;
+  scene.backgroundIntensity = 0.5;
+  scene.backgroundBlurriness = 0.08;
 });
 
 addEventListener('resize', () => {
@@ -65,6 +102,69 @@ addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
 });
+
+/* ---------------- the engine's shader ---------------- */
+const cityVert = /* glsl */`
+varying vec2 vUv;
+varying float vDepth;
+varying vec3 vWorld;
+void main() {
+  vUv = uv;
+  vec4 mv = modelViewMatrix * vec4(position, 1.0);
+  vDepth = -mv.z;
+  vWorld = (modelMatrix * vec4(position, 1.0)).xyz;
+  gl_Position = projectionMatrix * mv;
+}`;
+
+const cityFrag = /* glsl */`
+precision mediump float;
+uniform sampler2D map;
+uniform float uMult;
+uniform vec3  uFogColor;
+uniform float uFogAlpha;
+uniform vec3  uVFogColor;
+uniform float uVFogAlpha;
+uniform float uFogStart;
+uniform float uFogScale;
+uniform float uVFogInv;
+varying vec2 vUv;
+varying float vDepth;
+varying vec3 vWorld;
+void main() {
+  // LightMapDC-FS: DiffuseMapColor * (texture2D(LightMap, vCoord1) * 2.0)
+  vec3 col = texture2D(map, vUv).rgb * uMult;
+  // LightMapDC-VS: FogFactor = (-viewZ - start) * scale
+  float f = clamp((vDepth - uFogStart) * uFogScale, 0.0, 1.0);
+  // fY = height * VerticalFogHeight + FogFactor * 0.5
+  float fY = clamp(vWorld.y * uVFogInv + f * 0.5, 0.0, 1.0);
+  vec4 fogC = mix(vec4(uVFogColor, uVFogAlpha), vec4(uFogColor, uFogAlpha), fY);
+  col = mix(col, fogC.rgb, f * fogC.a);
+  gl_FragColor = vec4(col, 1.0);
+}`;
+
+/* shared fog uniform OBJECTS (mutated live -> every material follows) */
+const fogUniforms = {
+  uFogColor:  { value: new THREE.Color(...FOG.night) },
+  uFogAlpha:  { value: FOG.nightA },
+  uVFogColor: { value: new THREE.Color(...FOG.warm) },
+  uVFogAlpha: { value: FOG.warmA },
+  uFogStart:  { value: FOG.start },
+  uFogScale:  { value: FOG.scale },
+  uVFogInv:   { value: 1 / FOG.vfogH },
+};
+
+function makeCityMaterial(tex, uMult) {
+  return new THREE.ShaderMaterial({
+    uniforms: {
+      map: { value: tex },
+      uMult: { value: uMult },
+      ...fogUniforms,
+    },
+    vertexShader: cityVert,
+    fragmentShader: cityFrag,
+    side: THREE.DoubleSide,
+  });
+}
 
 /* ---------------- texture cache ---------------- */
 const texLoader = new THREE.TextureLoader();
@@ -77,8 +177,9 @@ function getTex(name) {
           // game samples PVR data top-down (v=0 = first memory row); three.js
           // defaults to flipY=true which would vertically flip every mapping.
           t.flipY = false;
-          t.colorSpace = THREE.SRGBColorSpace;
-          t.anisotropy = 4;
+          // 2012 GLES2: no sRGB decode — sample raw, shade in gamma space.
+          t.colorSpace = THREE.NoColorSpace;
+          t.anisotropy = 8;
           res(t);
         },
         undefined, () => res(null));
@@ -97,20 +198,21 @@ async function loadGLB(entry, tierName) {
   group.name = entry.file;
   group.visible = state.tiers[tierName].enabled;
 
-  // v2 exporter: every PRIMITIVE carries a material NAMED after its texture
-  // ('__dark' when untextured). GLTFLoader preserves material names, so we map
-  // material.name -> models/tex/<name>.jpg directly. No order/name matching of
-  // nodes needed any more.
   root.traverse((obj) => {
     if (!obj.isMesh) return;
-    const texName = obj.material?.name && obj.material.name !== '__dark'
-      ? obj.material.name : null;
+    const raw = obj.material?.name || '';
+    const isDark = raw === '__dark';
+    const pipe = raw.split('|');
+    const texName = !isDark && pipe[0] ? pipe[0] : null;
+    const mode = !isDark && pipe[1] === '2x' ? 2.0 : 1.0;
     const texPromise = texName ? getTex(texName) : Promise.resolve(null);
     obj.material = new THREE.MeshLambertMaterial({ color: 0x101623, side: THREE.DoubleSide });
     texPromise.then((tex) => {
-      obj.material = tex
-        ? new THREE.MeshBasicMaterial({ map: tex, side: THREE.DoubleSide })
-        : new THREE.MeshLambertMaterial({ color: new THREE.Color().setHSL(0.6, 0.3, 0.10), side: THREE.DoubleSide });
+      if (tex) {
+        obj.material = makeCityMaterial(tex, mode);
+      } else {
+        obj.material = new THREE.MeshLambertMaterial({ color: new THREE.Color().setHSL(0.6, 0.3, 0.10), side: THREE.DoubleSide });
+      }
       obj.material.wireframe = state.wire;
     });
   });
@@ -267,6 +369,7 @@ function clearStatus() { $('load-status').textContent = ''; }
     (state.tiers[tier] ??= { enabled: false, glbs: [], loaded: false }).glbs.push(g);
   }
   state.tiers.hero.enabled = true;
+  state.tiers.fp.enabled = true;   // street-level detail (per-building FP meshes)
   buildTierButtons();
 
   const heroGlbs = state.tiers.hero.glbs;
