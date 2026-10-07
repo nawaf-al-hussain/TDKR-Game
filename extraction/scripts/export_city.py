@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
-"""Full-city LOD-aware GLB exporter v2 for the GitHub Pages viewer.
+"""Full-city LOD-aware GLB exporter v3 — GROUND TRUTH bindings.
 
-v2 fixes texture mapping (v1 bound one texture per FILE via filename token
-overlap, collapsing dozens of props onto shared atlases). v2 binds textures
-PER MESH using the game's own ground truth:
+v3 replaces ALL texture heuristics with the game's own data, decoded from the
+BRES material system (see ground_truth.py):
 
-  0. uv-verified OVERRIDE table (island/bridge/roads bakes)
-  1. footer material name <-> pool candidate (token containment)
-  2. unique diffuse candidate in the file's string pool
-  3. per-mesh UV-fit scoring among pool candidates
-  4. bake-atlas family fallback for footprint/longdist files
-  5. None -> neutral dark material
+  - per-file texture list (ordered, from the meta section)
+  - per render unit: material -> technique -> sampler records
+  - sampler value block: [ptr->Coord0_scaleoffset vec4, wraps..., texIdx]
+  - mesh footer material name joins mesh -> unit -> DiffuseMap texture index
 
-GLB layout: one node per FILE, one mesh with one PRIMITIVE per source mesh,
-each primitive referencing a material NAMED after its texture (viewer maps
-material.name -> models/tex/<name>.jpg).
+Binding ladder per mesh:
+  0. ground-truth DiffuseMap (deterministic, 97% of hero/low/district meshes)
+  1. same name minus '_alpha' suffix (alpha variant shares RGB art)
+  2. UV-fit among the file's own texture list that exists on disk
+  3. footprint files: UV-fit among the island's bake family (FP1/2/3, Roads)
+  4. None -> dark material
 
-Output: site/models/*.glb, site/models/tex/*.jpg, site/models/manifest.json
-Usage: python3 export_city.py [--dry] [--max-glb-mb 4]
+Also applies Coord0_scaleoffset (uv' = uv*scale + offset) when non-identity,
+keeps v2 geometry fixes (water z-shift, MAX_EXTENT, tiers).
+
+Viewer contract: material.name == texture stem; viewer maps it to
+models/tex/<name>.jpg with flipY=false (game samples PVR top-down).
 """
 import argparse
 import json
@@ -30,53 +33,24 @@ import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bdae_extract import parse_meshes  # noqa: E402
-from tex_bind import diffuse_candidates, resolve_file, find_png  # noqa: E402
+from tex_bind import find_png, edge_map  # noqa: E402
 
 RAW = "/home/z/my-project/download/TDKR_assets/raw"
 PNG = "/home/z/my-project/download/TDKR_assets/textures_png"
 SITE = "/home/z/my-project/work/site"
 MODELS = os.path.join(SITE, "models")
 TEXD = os.path.join(MODELS, "tex")
-
-OVERRIDE_TEX = {
-    # uv-verified bindings (probe renders, previous session)
-    "GC_island1_LongDist": "GC_Island1_LongDist_Low",
-    "GC_Island2_LongDist": "GC_Island2_LongDist_low",
-    "GC_LongDist_Island1_Roads": "BakeGroup_Island1_Roads0",
-    "GC_Bigbridge": "bridge_1",
-    "GC_Bigbridge_LongDist": "bridge_tile",
-    "GC_Broken_BigBridge": "bridge_1",
-    "GC_Broken_BigBridge_LongDist": "bridge_tile",
-    "GC_Bigbridge_1_islands_LongDist": "bridge_tile",
-    "GC_Bigbridge_2_islands_LongDist": "bridge_tile",
-    "GC_Bigbridge_3_LongDist": "bridge_tile",
-    "GC_Small_Bridge_Island2_LongDist": "bridge_tile",
-    "GC_Monorail_Island1_LongDist": "GC_Residential_Props_Monorail",
-    "GC_Monorail_Island2_LongDist": "GC_Residential_Props_Monorail",
-    "GC_Railway_Island2_LongDist": "GC_Residential_Props_Railroad",
-    # city ground plane: UV-fit picks 'water' (busy beats flat textures on
-    # big planes) — the base streets are asphalt
-    "GC_City_Plane": "GothamCity_asphalt_tile",
-}
+GT_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ground_truth_city.json")
 
 SKIP_FILES = {"GC_Irradiance_Volume", "GC_Refl_Test",
               "GC_Island1_ReflOccluder", "GC_Island2_ReflOccluder",
-              # non-world assets: giant pause-map UI quad, monorail
-              # animation-path geometry, skyline backdrop / bridge LOD piece
-              # missing their scene-graph transforms (land mid-city)
               "GothamCity_Map", "GC_Props_Monorail", "GC_CityBG",
               "GC_bridge_1_LongDist"}
 
-# max plausible world-space extent for a static city chunk (units)
 MAX_EXTENT = 2500
-
-# harbor water slab spans z 15..170 in the raw asset, flooding the streets
-# (ground is z 0..60); its scene-node offset lives in the .irr files we do
-# not parse, so shift it down to sit below street level as a harbor
 WATER_FILES = {"GC_water", "GC_Water_Island2"}
-WATER_Z_SHIFT = 160  # subtracted from the raw z (slab drops below street level)
+WATER_Z_SHIFT = 160
 
-# textures rendered at 2048 (city-wide bakes)
 HERO_TEX = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
             "GC_LongDist_Island2_Roads", "BakeGroup_Island1_Roads0",
             "GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
@@ -84,24 +58,32 @@ HERO_TEX = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
             "GC_LongDist_Island2_FP2", "GC_LongDist_Island2_FP3",
             "GC_LongDist_Island1_Roads"}
 
-# day-lit textures that need dimming for the night viewer (multiplied into JPEG)
 DIM_TEX = {"GothamCity_asphalt_tile": 0.42, "GothamCity_sand_tile": 0.42,
-           "water": 0.55}
+           "water": 0.55, "GC_road_plane": 0.42}
+
+BAD_FIT = re.compile(r"(nrm|lightmap|sampler|shadow|bump|spec|gloss|opacity|height"
+                     r"|normal|refl|rfl|font|emissive|corona|_mask)", re.I)
+BAKE_TARGET = re.compile(r"(LongDist|CompleteMap)", re.I)
+
+# ground-truth textures absent from shipped data (runtime bakes) -> best
+# on-disk equivalent for the viewer
+MISSING_TEX_FALLBACK = {
+    "GC_road_plane": "GothamCity_asphalt_tile",     # city ground plane
+    "GC_Bigbridge_3_LongDist": "bridge_tile",       # bridge islands bake
+}
 
 
 def classify(name):
     n = name.lower()
     if "collision" in n or name in SKIP_FILES:
         return "skip"
-    if n.endswith("_low") or n.endswith("low"):
+    if n.endswith("low"):
         return "low"
-    if "bigbridge" in n:
-        return "hero"
-    if "roads" in n:
+    if "bigbridge" in n or "roads" in n:
         return "hero"
     if "longdist" in n and ("island1" in n or "island2" in n):
         return "hero"
-    if "fp" in n and "longdist" in n or re.search(r"fp\d", n) or "footprint" in n:
+    if re.search(r"fp\d", n) or "footprint" in n:
         return "fp"
     return "district"
 
@@ -111,11 +93,20 @@ def fp_island(name):
     return "island1" if "island1" in n or "_1_" in n else "island2"
 
 
-def file_pool(path):
-    """diffuse texture candidates referenced by the file's own string pool"""
-    d = open(path, "rb").read()
-    strs = [m.group().decode() for m in re.finditer(rb"[ -~]{4,}", d)]
-    return sorted({s[:-4] for s in strs if s.endswith(".tga")})
+ISLAND_BAKES = {
+    "island1": ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
+                "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
+                "GC_Island1_LongDist_Low",
+                "BakeGroup_Island1_A0", "BakeGroup_Island1_B0",
+                "BakeGroup_Island1_Roads0", "BakeGroup_Island1_Landmarks0",
+                "BakeGroup_Island1_ATLAS_low0"],
+    "island2": ["GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
+                "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads",
+                "GC_Island2_LongDist_low",
+                "BakeGroup_Island2_A0", "BakeGroup_Island2_B0",
+                "BakeGroup_Island2_Roads0", "BakeGroup_Island2_Landmarks0",
+                "BakeGroup_Island2_ATLAS_low0"],
+}
 
 
 def jpg_from_png(png_path, out_path, max_dim, quality, dim=1.0):
@@ -127,6 +118,34 @@ def jpg_from_png(png_path, out_path, max_dim, quality, dim=1.0):
         im = ImageEnhance.Brightness(im).enhance(dim)
     im.save(out_path, "JPEG", quality=quality, optimize=True)
     return os.path.getsize(out_path)
+
+
+def uv_fit(uv, name):
+    """edge-magnitude ratio score: >1 = samples detail-rich regions"""
+    em = edge_map(name)
+    if em is None:
+        return -1.0
+    e, (h, w) = em
+    u = np.clip(uv[:, 0] * (w - 1), 0, w - 1).astype(np.int32)
+    v = np.clip(uv[:, 1] * (h - 1), 0, h - 1).astype(np.int32)
+    s = e[v, u]
+    if len(s) > 20000:
+        s = s[:: len(s) // 20000]
+    return float(s.mean())
+
+
+def apply_scaleoffset(mesh, so):
+    """Coord0_scaleoffset stored as (offU, offV, scaleU, scaleV); identity (0,0,1,1)"""
+    if not so or len(so) != 4:
+        return
+    ou, ov, su, sv = so
+    if su <= 0 or sv <= 0:          # degenerate/none
+        return
+    if abs(ou) < 1e-6 and abs(ov) < 1e-6 and abs(su - 1) < 1e-6 and abs(sv - 1) < 1e-6:
+        return                       # identity
+    uv = mesh["uv"]
+    mesh["uv"] = np.column_stack([(uv[:, 0] * su + ou) % 1.0,
+                                  (uv[:, 1] * sv + ov) % 1.0]).astype(np.float32)
 
 
 class GlbBuilder:
@@ -149,7 +168,6 @@ class GlbBuilder:
         return start, len(data)
 
     def material_for(self, tex):
-        """dedup materials by texture name; tex=None -> dark neutral"""
         if tex in self._mat_by_tex:
             return self._mat_by_tex[tex]
         if tex is None:
@@ -206,7 +224,7 @@ class GlbBuilder:
         pad = (-len(self.buf)) % 4
         self.buf.extend(b"\0" * pad)
         gltf = dict(
-            asset=dict(version="2.0", generator="tdkr-export-city-v2"),
+            asset=dict(version="2.0", generator="tdkr-export-city-v3"),
             scene=0, scenes=[dict(nodes=list(range(len(self.nodes))))],
             nodes=self.nodes, meshes=self.meshes, materials=self.materials,
             accessors=self.accessors, bufferViews=self.views,
@@ -229,9 +247,11 @@ def main():
     ap.add_argument("--max-glb-mb", type=float, default=4.0)
     args = ap.parse_args()
 
+    gt = json.load(open(GT_JSON))
     city_dir = os.path.join(RAW, "l_gothamcity")
     files = sorted(f for f in os.listdir(city_dir) if f.endswith(".bdae.bin"))
     entries = []
+    gt_stats = dict(gt_bind=0, alpha_fix=0, pool_fit=0, bake_fit=0, dark=0)
     print(f"scanning {len(files)} city bdae files ...")
     for fn in files:
         base = fn[:-len(".bdae.bin")]
@@ -252,11 +272,51 @@ def main():
         elif max((m["mx"] - m["mn"]).max() for m in meshes) > MAX_EXTENT:
             print(f"  skip (out-of-world extent): {base}")
             continue
-        pool = file_pool(p)
-        if base in OVERRIDE_TEX and find_png(OVERRIDE_TEX[base]):
-            per_mesh = [OVERRIDE_TEX[base]] * len(meshes)
-        else:
-            per_mesh = resolve_file(base, meshes, pool)
+
+        g = gt.get(base, {})
+        gt_meshes = {m["offset"]: m for m in g.get("meshes", [])}
+        file_texlist = [t for t in g.get("textures", [])]
+        gt_names = {m.get("diffuse") for m in g.get("meshes", [])}
+        allow_water = any(t and "water" in t.lower() for t in gt_names)
+        pool_avail = [t for t in file_texlist
+                      if find_png(t) and not BAD_FIT.search(t)
+                      and (allow_water or t.lower() != "water")]
+        bake_fam = (ISLAND_BAKES[fp_island(base)]
+                    if cat == "fp" or any(t and BAKE_TARGET.search(t) for t in gt_names)
+                    else [])
+
+        per_mesh = []
+        for m in meshes:
+            gm = gt_meshes.get(m["offset"], {})
+            so = gm.get("scaleoffset")
+            apply_scaleoffset(m, so)   # engine's own UV transform
+            tex = gm.get("diffuse")
+            how = "gt"
+            if tex and not find_png(tex):
+                alt = MISSING_TEX_FALLBACK.get(tex)
+                if alt is None:
+                    alt = re.sub(r"_alpha$", "", tex, flags=re.I)
+                if find_png(alt):
+                    tex, how = alt, "alpha-fix"
+                elif len(pool_avail) == 1:
+                    tex, how = pool_avail[0], "pool-single"
+                elif pool_avail:
+                    scored = sorted(((uv_fit(m["uv"], t), t) for t in pool_avail), reverse=True)
+                    if scored and scored[0][0] >= 0.9:
+                        tex, how = scored[0][1], "pool-fit"
+                    else:
+                        tex, how = None, "dark"
+                else:
+                    tex, how = None, "dark"
+            if tex is None and bake_fam:
+                scored = sorted(((uv_fit(m["uv"], t), t) for t in bake_fam), reverse=True)
+                if scored and scored[0][0] >= 1.2:
+                    tex, how = scored[0][1], "bake-fit"
+            gt_stats[{"gt": "gt_bind", "alpha-fix": "alpha_fix", "pool-single": "pool_fit",
+                      "pool-fit": "pool_fit", "bake-fit": "bake_fit",
+                      "dark": "dark"}.get(how, "dark")] += 1
+            per_mesh.append(tex)
+
         verts = int(sum(m["count"] for m in meshes))
         tris = int(sum(m["numIdx"] // 3 for m in meshes))
         gbytes = verts * 32 + tris * 12
@@ -273,6 +333,7 @@ def main():
     print(f"parsed: {len(entries)} files | {tv:,} verts {tt:,} tris | "
           f"{textured} files with textures | "
           f"{len({t for e in entries for t in e['texs']})} unique textures")
+    print(f"binding method: {gt_stats}")
     for k, v in sorted(c.items()):
         sub = [e for e in entries if e["cat"] == k]
         print(f"  {k:<9} {v:>4} files  {sum(e['verts'] for e in sub):>9,}v "
@@ -288,19 +349,15 @@ def main():
     os.makedirs(MODELS, exist_ok=True)
     os.makedirs(TEXD, exist_ok=True)
     plan = []
-
     for e in [x for x in entries if x["cat"] == "hero"]:
         plan.append((e["base"], [e]))
-
     for isl in ("island1", "island2"):
         sub = [x for x in entries if x["cat"] == "fp" and fp_island(x["base"]) == isl]
         if sub:
             plan.append((f"fp_{isl}", sub))
-
     low = [x for x in entries if x["cat"] == "low"]
     if low:
         plan.append(("city_low", low))
-
     dist = [x for x in entries if x["cat"] == "district"]
     cap = int(args.max_glb_mb * 1024 * 1024)
     cur, cur_b = [], 0
@@ -316,7 +373,7 @@ def main():
     for i, b in enumerate(bins):
         plan.append((f"district_{i:02d}", b))
 
-    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=2)
+    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=3)
     tex_used = {}
     for glb_name, group in plan:
         gb = GlbBuilder()
