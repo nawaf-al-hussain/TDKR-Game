@@ -13,11 +13,27 @@ the [`main` branch → `extraction/`](https://github.com/nawaf-al-hussain/TDKR-G
 |---|---|---|
 | Skyline | islands, roads, bridges, monorail — the game's own LongDist night-lightmap bake | ~120k |
 | Footprints | island footprint detail layer | ~51k |
-| District props | 78 buildings/props/interiors | ~14k |
-| Low-detail LOD | ultra-far fallbacks | ~18k |
+| District props | ~70 buildings/props/interiors | ~14k |
+| Low-detail LOD | near-LOD island copies, per-mesh FP/roads bakes | ~16k |
 
-348,136 verts · 202,857 tris total, streaming as 34 GLB files (~13.4 MB) with 35
-external JPEG textures (~5 MB). Textures are the game's baked night lightmaps.
+346,960 verts · 202,137 tris total, streaming as 25 GLB files (~13.3 MB) with 80
+external JPEG textures. Textures are the game's baked night lightmaps.
+
+### How textures are bound (v2)
+
+Each `.bdae` mesh carries its own material name in its footer; each file's
+string pool lists the `.tga` textures its materials reference. The exporter
+resolves textures **per mesh**:
+
+1. uv-verified overrides (island/road/bridge bakes)
+2. footer material name ↔ pool candidate match
+3. unique diffuse candidate in the file's pool
+4. per-mesh UV-fit scoring among pool candidates
+5. island bake-atlas fallback for footprint/LongDist chunks, else dark
+
+The 87 ZIP_SPLIT textures (zip-wrapped `rgb.pvr` + `alpha.pvr`) — including the
+`GC_LongDist_Island*_FP1/2/3` footprint atlases — are decoded by
+[`tex_split_convert.py`](https://github.com/nawaf-al-hussain/TDKR-Game/blob/main/extraction/scripts/tex_split_convert.py).
 
 ## Pipeline
 
