@@ -162,7 +162,7 @@
   },
   {
    "file": "models/GC_Island2_LongDist.glb",
-   "bytes": 1419792,
+   "bytes": 1420432,
    "verts": 35385,
    "tris": 22592,
    "tier": "hero",
@@ -170,7 +170,11 @@
     {
      "name": "GC_Island2_LongDist",
      "texs": [
-      "GC_Island2_LongDist_low"
+      "GC_LongDist_Island2_FP1",
+      "GC_LongDist_Island2_FP2",
+      "GC_LongDist_Island2_FP3",
+      "GC_LongDist_Island2_Roads",
+      "GC_Residential_Props_Monorail"
      ],
      "verts": 35385,
      "tris": 22592,
@@ -180,7 +184,7 @@
   },
   {
    "file": "models/GC_LongDist_Island1_FP1.glb",
-   "bytes": 581780,
+   "bytes": 581300,
    "verts": 14701,
    "tris": 8456,
    "tier": "hero",
@@ -188,10 +192,7 @@
     {
      "name": "GC_LongDist_Island1_FP1",
      "texs": [
-      "GC_LongDist_Island1_FP1",
-      "GC_LongDist_Island1_FP3",
-      "GC_LongDist_Island1_Roads",
-      "GC_Residential_Props_Monorail"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 14701,
      "tris": 8456,
@@ -201,7 +202,7 @@
   },
   {
    "file": "models/GC_LongDist_Island1_FP2.glb",
-   "bytes": 412268,
+   "bytes": 411784,
    "verts": 10849,
    "tris": 4658,
    "tier": "hero",
@@ -209,10 +210,7 @@
     {
      "name": "GC_LongDist_Island1_FP2",
      "texs": [
-      "GC_LongDist_Island1_FP1",
-      "GC_LongDist_Island1_FP3",
-      "GC_LongDist_Island1_Roads",
-      "GC_Residential_Props_Monorail"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 10849,
      "tris": 4658,
@@ -222,7 +220,7 @@
   },
   {
    "file": "models/GC_LongDist_Island1_FP3.glb",
-   "bytes": 574884,
+   "bytes": 574400,
    "verts": 15123,
    "tris": 6704,
    "tier": "hero",
@@ -230,10 +228,7 @@
     {
      "name": "GC_LongDist_Island1_FP3",
      "texs": [
-      "GC_LongDist_Island1_FP2",
-      "GC_LongDist_Island1_FP3",
-      "GC_LongDist_Island1_Roads",
-      "GC_Residential_Props_Monorail"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 15123,
      "tris": 6704,
@@ -243,7 +238,7 @@
   },
   {
    "file": "models/GC_LongDist_Island1_Roads.glb",
-   "bytes": 654400,
+   "bytes": 654564,
    "verts": 16361,
    "tris": 10345,
    "tier": "hero",
@@ -251,7 +246,8 @@
     {
      "name": "GC_LongDist_Island1_Roads",
      "texs": [
-      "BakeGroup_Island1_Roads0"
+      "GC_LongDist_Island1_Roads",
+      "GC_Residential_Props_Monorail"
      ],
      "verts": 16361,
      "tris": 10345,
@@ -261,7 +257,7 @@
   },
   {
    "file": "models/GC_LongDist_Island2_FP1.glb",
-   "bytes": 288680,
+   "bytes": 288520,
    "verts": 7702,
    "tris": 3293,
    "tier": "hero",
@@ -269,8 +265,7 @@
     {
      "name": "GC_LongDist_Island2_FP1",
      "texs": [
-      "GC_LongDist_Island2_FP1",
-      "GC_LongDist_Island2_Roads"
+      "GC_LongDist_Island2_FP1"
      ],
      "verts": 7702,
      "tris": 3293,
@@ -280,7 +275,7 @@
   },
   {
    "file": "models/GC_LongDist_Island2_FP2.glb",
-   "bytes": 476556,
+   "bytes": 476232,
    "verts": 12482,
    "tris": 5907,
    "tier": "hero",
@@ -288,9 +283,7 @@
     {
      "name": "GC_LongDist_Island2_FP2",
      "texs": [
-      "GC_LongDist_Island2_FP2",
-      "GC_LongDist_Island2_Roads",
-      "GC_Residential_Props_Monorail"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 12482,
      "tris": 5907,
@@ -300,7 +293,7 @@
   },
   {
    "file": "models/GC_LongDist_Island2_FP3.glb",
-   "bytes": 264400,
+   "bytes": 264076,
    "verts": 6987,
    "tris": 3107,
    "tier": "hero",
@@ -308,9 +301,7 @@
     {
      "name": "GC_LongDist_Island2_FP3",
      "texs": [
-      "GC_LongDist_Island2_FP2",
-      "GC_LongDist_Island2_Roads",
-      "GC_Residential_Props_Monorail"
+      "GC_LongDist_Island2_FP3"
      ],
      "verts": 6987,
      "tris": 3107,
@@ -320,7 +311,7 @@
   },
   {
    "file": "models/GC_LongDist_Island2_Roads.glb",
-   "bytes": 586720,
+   "bytes": 586408,
    "verts": 14224,
    "tris": 10422,
    "tier": "hero",
@@ -328,10 +319,8 @@
     {
      "name": "GC_LongDist_Island2_Roads",
      "texs": [
-      "GC_LongDist_Island2_FP1",
-      "GC_LongDist_Island2_FP2",
-      "GC_LongDist_Island2_FP3",
-      "GC_LongDist_Island2_Roads"
+      "GC_LongDist_Island2_Roads",
+      "GC_Residential_Props_Monorail"
      ],
      "verts": 14224,
      "tris": 10422,
@@ -377,7 +366,7 @@
   },
   {
    "file": "models/GC_Railway_Island2_LongDist.glb",
-   "bytes": 36232,
+   "bytes": 36228,
    "verts": 802,
    "tris": 784,
    "tier": "hero",
@@ -385,7 +374,7 @@
     {
      "name": "GC_Railway_Island2_LongDist",
      "texs": [
-      "GC_Residential_Props_Railroad"
+      "BakeGroup_Island2_Roads0"
      ],
      "verts": 802,
      "tris": 784,
@@ -395,7 +384,7 @@
   },
   {
    "file": "models/GC_Small_Bridge_Island2_LongDist.glb",
-   "bytes": 15532,
+   "bytes": 15548,
    "verts": 354,
    "tris": 254,
    "tier": "hero",
@@ -403,7 +392,7 @@
     {
      "name": "GC_Small_Bridge_Island2_LongDist",
      "texs": [
-      "bridge_tile"
+      "BakeGroup_Island2_Roads0"
      ],
      "verts": 354,
      "tris": 254,
@@ -413,7 +402,7 @@
   },
   {
    "file": "models/GC_island1_LongDist.glb",
-   "bytes": 1746776,
+   "bytes": 1747416,
    "verts": 43001,
    "tris": 27736,
    "tier": "hero",
@@ -421,7 +410,11 @@
     {
      "name": "GC_island1_LongDist",
      "texs": [
-      "GC_Island1_LongDist_Low"
+      "GC_LongDist_Island1_FP1",
+      "GC_LongDist_Island1_FP2",
+      "GC_LongDist_Island1_FP3",
+      "GC_LongDist_Island1_Roads",
+      "GC_Residential_Props_Monorail"
      ],
      "verts": 43001,
      "tris": 27736,
@@ -431,7 +424,7 @@
   },
   {
    "file": "models/fp_island2.glb",
-   "bytes": 3766068,
+   "bytes": 3762048,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -464,8 +457,7 @@
     {
      "name": "GC_FootPrint_LPOL_Reflections",
      "texs": [
-      "GC_Residential_BD_03_roof_01",
-      "GC_Z1_Props_Rooftop"
+      "GC_Shop_Reflections"
      ],
      "verts": 22,
      "tris": 16,
@@ -481,7 +473,7 @@
     {
      "name": "GC_Footprint_AA_Reflections",
      "texs": [
-      "GC_Residential_BD_03_roof_01"
+      "GC_Shop_Reflections"
      ],
      "verts": 46,
      "tris": 32,
@@ -490,7 +482,7 @@
     {
      "name": "GC_Footprint_AC_LongDist",
      "texs": [
-      "BakeGroup_Island1_Landmarks0"
+      "BakeGroup_Island2_B0"
      ],
      "verts": 1024,
      "tris": 647,
@@ -499,7 +491,7 @@
     {
      "name": "GC_Footprint_AC_Reflection",
      "texs": [
-      "GC_LongDist_Island1_FP3"
+      "GC_Shop_Reflections"
      ],
      "verts": 75,
      "tris": 40,
@@ -517,7 +509,7 @@
     {
      "name": "GC_Footprint_AF_Reflections",
      "texs": [
-      "GC_LongDist_Island2_FP1"
+      "GC_Shop_Reflections"
      ],
      "verts": 106,
      "tris": 54,
@@ -533,7 +525,7 @@
     {
      "name": "GC_Footprint_AG_Reflections",
      "texs": [
-      "BakeGroup_Island2_Roads0"
+      "GC_Shop_Reflections"
      ],
      "verts": 160,
      "tris": 82,
@@ -548,7 +540,9 @@
     },
     {
      "name": "GC_Footprint_AH_Reflections",
-     "texs": [],
+     "texs": [
+      "GC_Shop_Reflections"
+     ],
      "verts": 349,
      "tris": 215,
      "meshes": 1
@@ -563,7 +557,7 @@
     {
      "name": "GC_Footprint_AJ_Reflections",
      "texs": [
-      "GC_Z1_Shops_01"
+      "GC_Z1_Props_Rooftop_Alpha"
      ],
      "verts": 1224,
      "tris": 651,
@@ -579,6 +573,7 @@
     {
      "name": "GC_Footprint_AWT_Wayne_Logo_Damage",
      "texs": [
+      "GC_Footprint_AWT",
       "GC_footprint_GC_ceiling_T"
      ],
      "verts": 1085,
@@ -588,8 +583,7 @@
     {
      "name": "GC_Footprint_CA_Reflections",
      "texs": [
-      "GC_Park_grass",
-      "GC_Park_water"
+      "GC_Shop_Reflections"
      ],
      "verts": 90,
      "tris": 54,
@@ -617,7 +611,7 @@
     {
      "name": "GC_Footprint_CC_LongDist",
      "texs": [
-      "BakeGroup_Island1_ATLAS_low0"
+      "BakeGroup_Island2_Roads0"
      ],
      "verts": 200,
      "tris": 106,
@@ -626,7 +620,7 @@
     {
      "name": "GC_Footprint_CC_Reflection",
      "texs": [
-      "GC_Z1_Shops_02"
+      "GC_T_Windows_03"
      ],
      "verts": 564,
      "tris": 378,
@@ -650,9 +644,7 @@
     },
     {
      "name": "GC_Footprint_CE_LongDist",
-     "texs": [
-      "GC_LongDist_Island1_Roads"
-     ],
+     "texs": [],
      "verts": 1127,
      "tris": 683,
      "meshes": 1
@@ -660,7 +652,7 @@
     {
      "name": "GC_Footprint_CE_Reflection",
      "texs": [
-      "GC_Residential_BD_03_roof_01"
+      "GC_T_Windows_03_Refl"
      ],
      "verts": 750,
      "tris": 418,
@@ -678,7 +670,7 @@
     {
      "name": "GC_Footprint_CF_Reflection",
      "texs": [
-      "GC_Residential_BD_01_Windows_02_v"
+      "GC_Z1_Shops_02_Refl"
      ],
      "verts": 920,
      "tris": 488,
@@ -696,7 +688,7 @@
     {
      "name": "GC_Footprint_CG_Reflection",
      "texs": [
-      "GC_Cath_of_learning_Rooftop_ground"
+      "GC_Z1_Shops_02"
      ],
      "verts": 292,
      "tris": 146,
@@ -712,7 +704,7 @@
     {
      "name": "GC_Footprint_CJ_LongDist",
      "texs": [
-      "BakeGroup_Island1_Roads0"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 3279,
      "tris": 1317,
@@ -721,7 +713,7 @@
     {
      "name": "GC_Footprint_CJ_Reflections",
      "texs": [
-      "GC_Walls"
+      "GC_Z1_Shops_02_Refl"
      ],
      "verts": 674,
      "tris": 384,
@@ -729,9 +721,7 @@
     },
     {
      "name": "GC_Footprint_CJ_Scaffolding",
-     "texs": [
-      "GC_Footprint_GA_TH"
-     ],
+     "texs": [],
      "verts": 24,
      "tris": 12,
      "meshes": 1
@@ -748,7 +738,7 @@
     {
      "name": "GC_Footprint_CL_Reflections",
      "texs": [
-      "GC_Footprint_VD_Fence"
+      "GC_Z1_Shops_01"
      ],
      "verts": 567,
      "tris": 321,
@@ -757,7 +747,7 @@
     {
      "name": "GC_Footprint_CM_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP3"
+      "BakeGroup_Island2_Landmarks0"
      ],
      "verts": 2316,
      "tris": 1052,
@@ -766,7 +756,7 @@
     {
      "name": "GC_Footprint_CM_Reflection",
      "texs": [
-      "GC_CBCE_Atlas_ref"
+      "GC_Z1_Shops_01_Refl"
      ],
      "verts": 601,
      "tris": 320,
@@ -782,7 +772,7 @@
     {
      "name": "GC_Footprint_CN_Reflection",
      "texs": [
-      "GC_CBCE_Atlas"
+      "GC_T_Concrete_01"
      ],
      "verts": 281,
      "tris": 205,
@@ -791,7 +781,7 @@
     {
      "name": "GC_Footprint_DA_Elevators",
      "texs": [
-      "GC_footprint_AA_ground_02"
+      "GC_Residential_BD_03_details_01"
      ],
      "verts": 348,
      "tris": 172,
@@ -809,8 +799,7 @@
     {
      "name": "GC_Footprint_DA_Reflections",
      "texs": [
-      "GC_Residential_BD_03_wall_04",
-      "GC_Z1_Props_Rooftop"
+      "GC_Shop_Reflections"
      ],
      "verts": 110,
      "tris": 80,
@@ -818,7 +807,9 @@
     },
     {
      "name": "GC_Footprint_DB_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island2_FP3"
+     ],
      "verts": 462,
      "tris": 245,
      "meshes": 1
@@ -826,7 +817,7 @@
     {
      "name": "GC_Footprint_DB_Reflection",
      "texs": [
-      "GC_Footprint_VD_Fence"
+      "GC_Shop_Reflections"
      ],
      "verts": 133,
      "tris": 89,
@@ -844,7 +835,7 @@
     {
      "name": "GC_Footprint_DC_Reflection",
      "texs": [
-      "GC_Z1_Props_Rooftop_Alpha"
+      "GC_Shop_Reflections"
      ],
      "verts": 540,
      "tris": 352,
@@ -853,7 +844,7 @@
     {
      "name": "GC_Footprint_DD_LongDist",
      "texs": [
-      "BakeGroup_Island1_ATLAS_low0"
+      "GC_LongDist_Island2_FP3"
      ],
      "verts": 391,
      "tris": 242,
@@ -862,7 +853,7 @@
     {
      "name": "GC_Footprint_DD_Reflection",
      "texs": [
-      "GC_Footprint_VD_Items"
+      "GC_Z1_Props_Rooftop"
      ],
      "verts": 190,
      "tris": 108,
@@ -870,7 +861,9 @@
     },
     {
      "name": "GC_Footprint_DF_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island2_FP1"
+     ],
      "verts": 2241,
      "tris": 1149,
      "meshes": 1
@@ -878,7 +871,7 @@
     {
      "name": "GC_Footprint_DF_Reflection",
      "texs": [
-      "GC_Z1_Props_Rooftop_Alpha"
+      "GC_Shop_Reflections"
      ],
      "verts": 1905,
      "tris": 980,
@@ -896,7 +889,7 @@
     {
      "name": "GC_Footprint_DG_Reflection",
      "texs": [
-      "GC_Z1_Props_Rooftop_Alpha"
+      "GC_Shop_Reflections"
      ],
      "verts": 1029,
      "tris": 556,
@@ -904,7 +897,9 @@
     },
     {
      "name": "GC_Footprint_DH_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_B0"
+     ],
      "verts": 1215,
      "tris": 633,
      "meshes": 1
@@ -912,7 +907,7 @@
     {
      "name": "GC_Footprint_DH_Reflection",
      "texs": [
-      "GC_IndustrialProps"
+      "GC_Shop_Reflections"
      ],
      "verts": 988,
      "tris": 494,
@@ -921,7 +916,7 @@
     {
      "name": "GC_Footprint_DMUS_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP3"
+      "GC_LongDist_Island2_Roads"
      ],
      "verts": 1579,
      "tris": 828,
@@ -930,7 +925,7 @@
     {
      "name": "GC_Footprint_DMUS_Reflection",
      "texs": [
-      "GC_SXC_hedge"
+      "GC_refl_exterior"
      ],
      "verts": 198,
      "tris": 150,
@@ -957,7 +952,7 @@
     {
      "name": "GC_Footprint_DSE_Reflection",
      "texs": [
-      "GC_SXC_Brick_02"
+      "GC_Shop_Reflections"
      ],
      "verts": 382,
      "tris": 212,
@@ -965,7 +960,9 @@
     },
     {
      "name": "GC_Footprint_GA_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island2_FP2"
+     ],
      "verts": 142,
      "tris": 62,
      "meshes": 1
@@ -973,7 +970,7 @@
     {
      "name": "GC_Footprint_GA_Reflections",
      "texs": [
-      "GC_Footprint_GA_floor_T_00"
+      "GC_Shop_Reflections"
      ],
      "verts": 32,
      "tris": 16,
@@ -991,7 +988,7 @@
     {
      "name": "GC_Footprint_GB_Reflection",
      "texs": [
-      "GC_Footprint_GB_windows_01_TH"
+      "GC_Shop_Reflections"
      ],
      "verts": 292,
      "tris": 200,
@@ -1008,7 +1005,9 @@
     },
     {
      "name": "GC_Footprint_GD_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island2_FP2"
+     ],
      "verts": 505,
      "tris": 473,
      "meshes": 1
@@ -1016,7 +1015,7 @@
     {
      "name": "GC_Footprint_GD_Reflection",
      "texs": [
-      "GC_Cath_of_learning_Windows2_v"
+      "GC_Shop_Reflections"
      ],
      "verts": 152,
      "tris": 126,
@@ -1034,7 +1033,7 @@
     {
      "name": "GC_Footprint_GF_Reflections",
      "texs": [
-      "GC_Z1_Props_Street_Alpha"
+      "GC_Shop_Reflections"
      ],
      "verts": 18,
      "tris": 12,
@@ -1052,7 +1051,7 @@
     {
      "name": "GC_Footprint_IA_Reflection",
      "texs": [
-      "BakeGroup_Island1_ATLAS_low0"
+      "GC_Shop_Reflections"
      ],
      "verts": 132,
      "tris": 96,
@@ -1069,7 +1068,9 @@
     },
     {
      "name": "GC_Footprint_IB_Reflection",
-     "texs": [],
+     "texs": [
+      "GC_Shop_Reflections"
+     ],
      "verts": 128,
      "tris": 86,
      "meshes": 1
@@ -1077,7 +1078,7 @@
     {
      "name": "GC_Footprint_IC_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP2"
+      "GC_LongDist_Island2_FP1"
      ],
      "verts": 156,
      "tris": 86,
@@ -1086,7 +1087,7 @@
     {
      "name": "GC_Footprint_IC_Reflection",
      "texs": [
-      "GC_LongDist_Island1_FP2"
+      "GC_Shop_Reflections"
      ],
      "verts": 150,
      "tris": 119,
@@ -1095,7 +1096,7 @@
     {
      "name": "GC_Footprint_ID_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP2"
+      "GC_Island2_LongDist_low"
      ],
      "verts": 346,
      "tris": 211,
@@ -1104,7 +1105,7 @@
     {
      "name": "GC_Footprint_ID_Reflection",
      "texs": [
-      "BakeGroup_Island2_Roads0"
+      "GC_Shop_Reflections"
      ],
      "verts": 177,
      "tris": 157,
@@ -1113,7 +1114,7 @@
     {
      "name": "GC_Footprint_IE_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP2"
+      "GC_LongDist_Island2_FP1"
      ],
      "verts": 530,
      "tris": 365,
@@ -1122,7 +1123,7 @@
     {
      "name": "GC_Footprint_IE_Reflection",
      "texs": [
-      "BakeGroup_Island2_Roads0"
+      "GC_Shop_Reflections"
      ],
      "verts": 250,
      "tris": 205,
@@ -1131,8 +1132,7 @@
     {
      "name": "GC_Footprint_LA_Reflections",
      "texs": [
-      "GC_Park_grass",
-      "GC_Park_water"
+      "GC_Shop_Reflections"
      ],
      "verts": 74,
      "tris": 40,
@@ -1140,7 +1140,9 @@
     },
     {
      "name": "GC_Footprint_LB_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island2_FP1"
+     ],
      "verts": 626,
      "tris": 285,
      "meshes": 1
@@ -1164,8 +1166,7 @@
     {
      "name": "GC_Footprint_LC_Reflections",
      "texs": [
-      "GC_Residential_BD_01_Windows_01",
-      "GC_Residential_BD_04_Wall_02"
+      "GC_Z1_Props_Rooftop_Alpha"
      ],
      "verts": 100,
      "tris": 100,
@@ -1183,7 +1184,7 @@
     {
      "name": "GC_Footprint_LE_Reflections",
      "texs": [
-      "BakeGroup_Island2_ATLAS_low0"
+      "GC_Shop_Reflections"
      ],
      "verts": 10,
      "tris": 8,
@@ -1192,7 +1193,7 @@
     {
      "name": "GC_Footprint_LF_LongDist",
      "texs": [
-      "BakeGroup_Island1_Landmarks0"
+      "BakeGroup_Island2_A0"
      ],
      "verts": 489,
      "tris": 376,
@@ -1201,7 +1202,7 @@
     {
      "name": "GC_Footprint_LF_Reflections",
      "texs": [
-      "GC_Z1_Props_Rooftop"
+      "GC_Shop_Reflections"
      ],
      "verts": 30,
      "tris": 18,
@@ -1217,7 +1218,7 @@
     {
      "name": "GC_Footprint_LG_Reflections",
      "texs": [
-      "GC_LongDist_Island1_FP3"
+      "GC_Shop_Reflections"
      ],
      "verts": 134,
      "tris": 78,
@@ -1242,7 +1243,7 @@
     {
      "name": "GC_Footprint_STD_Reflection",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_Shop_Reflections"
      ],
      "verts": 57,
      "tris": 49,
@@ -1251,14 +1252,8 @@
     {
      "name": "GC_Footprint_STD_Volumetric",
      "texs": [
-      "GC_Footprint_GC_floor_T",
-      "GC_Footprint_STD_Net_T",
-      "GC_Footprint_STD_WhiteAsphalt_T",
-      "GC_Footprint_STD_alpha_T",
-      "GC_Footprint_STD_chairs_01_T",
       "GC_Footprint_STD_stuff_TH",
-      "GC_Z1_Props_Rooftop_Alpha",
-      "GC_Z1_Props_Street"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 218,
      "tris": 168,
@@ -1285,8 +1280,7 @@
     {
      "name": "GC_Footprint_VA_Diner_Mesh",
      "texs": [
-      "GC_Z1_Props_Rooftop_Alpha",
-      "GC_Z1_Props_Street"
+      "GC_Z1_Props_Rooftop_Alpha"
      ],
      "verts": 36,
      "tris": 16,
@@ -1302,7 +1296,7 @@
     {
      "name": "GC_Footprint_VA_Reflection",
      "texs": [
-      "GC_Z1_Props_Rooftop"
+      "GC_Shop_Reflections"
      ],
      "verts": 62,
      "tris": 58,
@@ -1334,7 +1328,7 @@
     {
      "name": "GC_Footprint_VC_Reflection",
      "texs": [
-      "GC_Z1_Props_Rooftop"
+      "GC_T_Concrete_01"
      ],
      "verts": 64,
      "tris": 54,
@@ -1343,7 +1337,7 @@
     {
      "name": "GC_Footprint_VD_Reflection",
      "texs": [
-      "GC_Footprint_VD_Fence"
+      "GC_Shop_Reflections"
      ],
      "verts": 232,
      "tris": 200,
@@ -1352,7 +1346,6 @@
     {
      "name": "GC_Footprint_VPOW_Furnal",
      "texs": [
-      "GC_Footprint_VD_Floor_2",
       "GC_footprint_Vpow_furnal"
      ],
      "verts": 7554,
@@ -1362,7 +1355,6 @@
     {
      "name": "GC_Footprint_VPOW_Furnal_LongDist",
      "texs": [
-      "GC_Footprint_VD_Floor_2",
       "GC_footprint_Vpow_furnal"
      ],
      "verts": 7554,
@@ -1372,7 +1364,7 @@
     {
      "name": "GC_Footprint_VPOW_Light_Pole_LOD05",
      "texs": [
-      "GC_Footprint_VD_Buildings"
+      "GC_footprint_Vpow_furnal"
      ],
      "verts": 870,
      "tris": 516,
@@ -1381,7 +1373,7 @@
     {
      "name": "GC_Footprint_VPOW_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "BakeGroup_Island2_Landmarks0"
      ],
      "verts": 6397,
      "tris": 3296,
@@ -1390,7 +1382,7 @@
     {
      "name": "GC_Footprint_VPOW_Reflection",
      "texs": [
-      "GC_Footprint_VD_Buildings_3"
+      "GC_Truck_01"
      ],
      "verts": 536,
      "tris": 362,
@@ -1400,7 +1392,7 @@
      "name": "GC_Footprint_VPOW_Volumetric",
      "texs": [
       "City_BKG",
-      "GC_FX_Water_Screen"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 44,
      "tris": 32,
@@ -1418,8 +1410,7 @@
     {
      "name": "GC_Footprint_VRS_Reflection",
      "texs": [
-      "GC_Park_atlas_tiles",
-      "GC_Z1_Props_Street_Alpha"
+      "GC_Shop_Reflections"
      ],
      "verts": 989,
      "tris": 498,
@@ -1435,8 +1426,7 @@
     {
      "name": "GC_Footprint_ZA_Reflection",
      "texs": [
-      "GC_Footprint_VD_Buildings_3",
-      "GC_Footprint_VD_Fence"
+      "LightMapSampler"
      ],
      "verts": 374,
      "tris": 188,
@@ -1454,7 +1444,7 @@
     {
      "name": "GC_Footprint_ZB_Reflection",
      "texs": [
-      "GC_Footprint_VD_Items"
+      "GC_Shop_Reflections"
      ],
      "verts": 212,
      "tris": 106,
@@ -1463,7 +1453,7 @@
     {
      "name": "GC_Footprint_ZC_Reflection",
      "texs": [
-      "GC_Footprint_VD_Fence"
+      "GC_Shop_Reflections"
      ],
      "verts": 244,
      "tris": 122,
@@ -1472,7 +1462,7 @@
     {
      "name": "GC_Footprint_ZD_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP3"
+      "BakeGroup_Island2_B0"
      ],
      "verts": 758,
      "tris": 430,
@@ -1491,7 +1481,7 @@
     {
      "name": "GC_Footprint_ZE_Reflection",
      "texs": [
-      "GC_Footprint_VD_Items"
+      "GC_Shop_Reflections"
      ],
      "verts": 1312,
      "tris": 570,
@@ -1500,8 +1490,7 @@
     {
      "name": "GC_Footprint_ZE_garagewindows",
      "texs": [
-      "GC_Footprint_VD_Floor_2",
-      "GC_IndustrialProps"
+      "GC_Footprint_VD_Buildings_2"
      ],
      "verts": 320,
      "tris": 128,
@@ -1510,8 +1499,7 @@
     {
      "name": "GC_Footprint_ZF_reflection",
      "texs": [
-      "GC_Footprint_VD_Buildings_2",
-      "GC_Footprint_VD_Fence"
+      "GC_Shop_Reflections"
      ],
      "verts": 1653,
      "tris": 918,
@@ -1527,7 +1515,7 @@
     {
      "name": "GC_footprint_AB_reflection",
      "texs": [
-      "GC_Z1_Props_Rooftop"
+      "GC_Shop_Reflections"
      ],
      "verts": 38,
      "tris": 24,
@@ -1536,8 +1524,8 @@
     {
      "name": "GC_footprint_AWT_Wayne_Logo",
      "texs": [
-      "GC_Footprint_GA_TH",
-      "GC_footprint_GC_ceiling_T"
+      "GC_Footprint_AWT",
+      "GC_Footprint_AWT_rfl"
      ],
      "verts": 442,
      "tris": 191,
@@ -1546,7 +1534,7 @@
     {
      "name": "GC_footprint_AWT_garage_door",
      "texs": [
-      "GC_footprint_GC_ceiling_T"
+      "GC_footprint_awt_marble"
      ],
      "verts": 12,
      "tris": 6,
@@ -1555,7 +1543,7 @@
     {
      "name": "GC_footprint_aa_elevator",
      "texs": [
-      "GC_footprint_AA_ground_02"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 174,
      "tris": 86,
@@ -1565,7 +1553,7 @@
   },
   {
    "file": "models/city_low.glb",
-   "bytes": 1180804,
+   "bytes": 1179528,
    "verts": 28495,
    "tris": 17614,
    "tier": "low",
@@ -1582,10 +1570,7 @@
     {
      "name": "GC_Island2_LongDist_LOW",
      "texs": [
-      "GC_LongDist_Island2_FP1",
-      "GC_LongDist_Island2_FP2",
-      "GC_LongDist_Island2_FP3",
-      "GC_LongDist_Island2_Roads",
+      "GC_Island2_LongDist_low",
       "GC_Residential_Props_Monorail"
      ],
      "verts": 13417,
@@ -1595,7 +1580,6 @@
     {
      "name": "GC_Prop_Logo_BuildingLogo_02_low",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 16,
@@ -1623,7 +1607,7 @@
     {
      "name": "GC_Prop_Tree_Industrial_03_M_low",
      "texs": [
-      "vegetation_industrial"
+      "trunk"
      ],
      "verts": 113,
      "tris": 23,
@@ -1632,6 +1616,7 @@
     {
      "name": "GC_Prop_VNeonSign_01_low",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 56,
@@ -1659,6 +1644,7 @@
     {
      "name": "GC_Prop_VNeonSign_03_low",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 60,
@@ -1668,6 +1654,7 @@
     {
      "name": "GC_Prop_VNeonSign_04_low",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 59,
@@ -1677,6 +1664,7 @@
     {
      "name": "GC_Prop_VNeonSign_05_low",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 65,
@@ -1686,6 +1674,7 @@
     {
      "name": "GC_Prop_VNeonSign_06_low",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 62,
@@ -1724,7 +1713,7 @@
     {
      "name": "GC_Prop_VNeonSign_10_low",
      "texs": [
-      "HC_Prop_BillboardRoof_01"
+      "FX_Coronas"
      ],
      "verts": 8,
      "tris": 6,
@@ -1732,14 +1721,18 @@
     },
     {
      "name": "GC_Prop_VNeonSign_11_Animated_low",
-     "texs": [],
+     "texs": [
+      "FX_Coronas"
+     ],
      "verts": 8,
      "tris": 6,
      "meshes": 1
     },
     {
      "name": "GC_Prop_VNeonSign_11_low",
-     "texs": [],
+     "texs": [
+      "FX_Coronas"
+     ],
      "verts": 8,
      "tris": 6,
      "meshes": 1
@@ -1756,10 +1749,7 @@
     {
      "name": "GC_island1_LongDist_LOW",
      "texs": [
-      "GC_LongDist_Island1_FP1",
-      "GC_LongDist_Island1_FP2",
-      "GC_LongDist_Island1_FP3",
-      "GC_LongDist_Island1_Roads",
+      "GC_Island1_LongDist_Low",
       "GC_Residential_Props_Monorail"
      ],
      "verts": 11095,
@@ -1769,7 +1759,6 @@
     {
      "name": "HC_Prop_BillboardRoof_01_low",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 224,
@@ -1779,7 +1768,6 @@
     {
      "name": "HC_Prop_BillboardRoof_05_low",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 224,
@@ -1789,7 +1777,6 @@
     {
      "name": "HC_Prop_BillboardRoof_07_low",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 224,
@@ -1799,7 +1786,7 @@
     {
      "name": "HC_Prop_BillboardRoof_10_low",
      "texs": [
-      "FX_Coronas"
+      "HC_Prop_BillboardRoof_01"
      ],
      "verts": 384,
      "tris": 194,
@@ -1836,7 +1823,7 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 981628,
+   "bytes": 981164,
    "verts": 21908,
    "tris": 13650,
    "tier": "district",
@@ -1845,7 +1832,8 @@
      "name": "GC_Diner",
      "texs": [
       "GC_Diner_Floor",
-      "GC_Residential_Dinner_objects"
+      "GC_Residential_Dinner_objects",
+      "GC_T_Concrete_01"
      ],
      "verts": 5699,
      "tris": 3436,
@@ -1854,7 +1842,7 @@
     {
      "name": "GC_Props_Monorail_Train",
      "texs": [
-      "GC_Residential_Props_Monorail"
+      "GC_Residential_Props_Locomotive"
      ],
      "verts": 3149,
      "tris": 1820,
@@ -1872,6 +1860,7 @@
     {
      "name": "GC_water",
      "texs": [
+      "GothamCity_sand_tile",
       "water"
      ],
      "verts": 629,
@@ -1881,6 +1870,7 @@
     {
      "name": "GC_Water_Island2",
      "texs": [
+      "GothamCity_sand_tile",
       "water"
      ],
      "verts": 629,
@@ -1890,7 +1880,6 @@
     {
      "name": "HC_Prop_BillboardRoof_10",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 542,
@@ -1909,7 +1898,6 @@
     {
      "name": "HC_Prop_BillboardRoof_01",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 492,
@@ -1928,7 +1916,6 @@
     {
      "name": "HC_Prop_BillboardRoof_05",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 492,
@@ -1938,7 +1925,6 @@
     {
      "name": "HC_Prop_BillboardRoof_07",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 492,
@@ -1984,8 +1970,7 @@
     {
      "name": "HC_Prop_Busstop_01",
      "texs": [
-      "GC_Z1_Props_Street",
-      "GC_Z1_Props_Street_Alpha"
+      "GC_Z1_Props_Street"
      ],
      "verts": 321,
      "tris": 194,
@@ -1994,7 +1979,7 @@
     {
      "name": "GC_Railway_Island1_Reflection",
      "texs": [
-      "GC_LongDist_Island1_FP2"
+      "GC_Shop_Reflections"
      ],
      "verts": 263,
      "tris": 267,
@@ -2012,7 +1997,6 @@
     {
      "name": "GC_Residential_Props_Gotham_Spotlight",
      "texs": [
-      "FX_Coronas",
       "GC_Z1_Props_Rooftop"
      ],
      "verts": 239,
@@ -2037,7 +2021,9 @@
     },
     {
      "name": "GC_Railway_Island2_Reflection",
-     "texs": [],
+     "texs": [
+      "GC_Shop_Reflections"
+     ],
      "verts": 196,
      "tris": 198,
      "meshes": 1
@@ -2054,7 +2040,7 @@
     {
      "name": "GC_Prop_Tree_Industrial_02_S",
      "texs": [
-      "vegetation_industrial"
+      "trunk"
      ],
      "verts": 223,
      "tris": 28,
@@ -2090,6 +2076,7 @@
     {
      "name": "HC_Prop_Busstop_Ad",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 134,
@@ -2099,6 +2086,7 @@
     {
      "name": "HC_Prop_Busstop_Ad_01",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 134,
@@ -2108,6 +2096,7 @@
     {
      "name": "HC_Prop_Busstop_Ad_02",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 134,
@@ -2117,6 +2106,7 @@
     {
      "name": "HC_Prop_Busstop_Ad_03",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 134,
@@ -2126,6 +2116,7 @@
     {
      "name": "HC_Prop_Busstop_Ad_04",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 134,
@@ -2135,6 +2126,7 @@
     {
      "name": "HC_Prop_Busstop_Ad_05",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 134,
@@ -2144,6 +2136,7 @@
     {
      "name": "HC_Prop_Busstop_Ad_06",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 134,
@@ -2153,6 +2146,7 @@
     {
      "name": "HC_Prop_Busstop_Ad_07",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 134,
@@ -2162,6 +2156,7 @@
     {
      "name": "GC_Prop_VNeonSign_05",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 113,
@@ -2171,6 +2166,7 @@
     {
      "name": "GC_Prop_VNeonSign_06",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 110,
@@ -2190,6 +2186,7 @@
     {
      "name": "GC_Prop_VNeonSign_03",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 108,
@@ -2199,6 +2196,7 @@
     {
      "name": "GC_Prop_VNeonSign_04",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 107,
@@ -2208,6 +2206,7 @@
     {
      "name": "GC_Prop_VNeonSign_01",
      "texs": [
+      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 104,
@@ -2217,7 +2216,6 @@
     {
      "name": "GC_Prop_Logo_BuildingLogo_02",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 84,
@@ -2236,7 +2234,6 @@
     {
      "name": "HC_Prop_BillboardWallSmall_03",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 64,
@@ -2246,7 +2243,6 @@
     {
      "name": "HC_Prop_BillboardWallSmall_04",
      "texs": [
-      "FX_Coronas",
       "HC_Prop_BillboardRoof_01"
      ],
      "verts": 64,
@@ -2292,7 +2288,7 @@
     {
      "name": "HC_Prop_BillboardWall_02",
      "texs": [
-      "FX_Coronas"
+      "HC_Prop_BillboardRoof_01"
      ],
      "verts": 64,
      "tris": 32,
@@ -2301,7 +2297,7 @@
     {
      "name": "HC_Prop_BillboardWall_06",
      "texs": [
-      "FX_Coronas"
+      "HC_Prop_BillboardRoof_01"
      ],
      "verts": 64,
      "tris": 32,
@@ -2328,7 +2324,7 @@
     {
      "name": "GC_Residential_Props_RoadBlock_Cone",
      "texs": [
-      "GC_Z1_Props_Street_Alpha"
+      "GC_Z1_Props_Street"
      ],
      "verts": 55,
      "tris": 46,
@@ -2373,7 +2369,7 @@
     {
      "name": "GC_Residential_Props_Green_Light",
      "texs": [
-      "GC_Z1_Props_Rooftop_Alpha"
+      "GC_Z1_Props_Rooftop"
      ],
      "verts": 26,
      "tris": 22,
@@ -2400,7 +2396,7 @@
     {
      "name": "GC_Residential_Props_Crate",
      "texs": [
-      "GC_Z1_Props_Street_Alpha"
+      "GC_Z1_Props_Street"
      ],
      "verts": 20,
      "tris": 10,
@@ -2409,7 +2405,7 @@
     {
      "name": "GC_Residential_Props_Crate2",
      "texs": [
-      "GC_Z1_Props_Street_Alpha"
+      "GC_Z1_Props_Street"
      ],
      "verts": 20,
      "tris": 10,
@@ -2418,7 +2414,7 @@
     {
      "name": "GC_Residential_Props_Crate3",
      "texs": [
-      "GC_Z1_Props_Street_Alpha"
+      "GC_Z1_Props_Street"
      ],
      "verts": 20,
      "tris": 10,
@@ -2454,7 +2450,7 @@
     {
      "name": "GC_Prop_VNeonSign_10",
      "texs": [
-      "HC_Prop_BillboardRoof_01"
+      "FX_Coronas"
      ],
      "verts": 8,
      "tris": 6,
@@ -2462,7 +2458,9 @@
     },
     {
      "name": "GC_Prop_VNeonSign_11",
-     "texs": [],
+     "texs": [
+      "FX_Coronas"
+     ],
      "verts": 8,
      "tris": 6,
      "meshes": 1
@@ -2470,7 +2468,7 @@
     {
      "name": "GC_Glowplane_LODD",
      "texs": [
-      "GC_footprint_Vpow_furnal"
+      "FX_Coronas"
      ],
      "verts": 4,
      "tris": 2,
@@ -2481,5 +2479,5 @@
  ],
  "total_verts": 346960,
  "total_tris": 202137,
- "version": 2
+ "version": 3
 }

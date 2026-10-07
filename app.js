@@ -73,7 +73,14 @@ function getTex(name) {
   if (!texCache.has(name)) {
     texCache.set(name, new Promise((res) => {
       texLoader.load(`models/tex/${name}.jpg`,
-        (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; res(t); },
+        (t) => {
+          // game samples PVR data top-down (v=0 = first memory row); three.js
+          // defaults to flipY=true which would vertically flip every mapping.
+          t.flipY = false;
+          t.colorSpace = THREE.SRGBColorSpace;
+          t.anisotropy = 4;
+          res(t);
+        },
         undefined, () => res(null));
     }));
   }
