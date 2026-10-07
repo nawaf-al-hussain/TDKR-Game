@@ -54,10 +54,27 @@ OVERRIDE_TEX = {
     "GC_Monorail_Island1_LongDist": "GC_Residential_Props_Monorail",
     "GC_Monorail_Island2_LongDist": "GC_Residential_Props_Monorail",
     "GC_Railway_Island2_LongDist": "GC_Residential_Props_Railroad",
+    # city ground plane: UV-fit picks 'water' (busy beats flat textures on
+    # big planes) — the base streets are asphalt
+    "GC_City_Plane": "GothamCity_asphalt_tile",
 }
 
 SKIP_FILES = {"GC_Irradiance_Volume", "GC_Refl_Test",
-              "GC_Island1_ReflOccluder", "GC_Island2_ReflOccluder"}
+              "GC_Island1_ReflOccluder", "GC_Island2_ReflOccluder",
+              # non-world assets: giant pause-map UI quad, monorail
+              # animation-path geometry, skyline backdrop / bridge LOD piece
+              # missing their scene-graph transforms (land mid-city)
+              "GothamCity_Map", "GC_Props_Monorail", "GC_CityBG",
+              "GC_bridge_1_LongDist"}
+
+# max plausible world-space extent for a static city chunk (units)
+MAX_EXTENT = 2500
+
+# harbor water slab spans z 15..170 in the raw asset, flooding the streets
+# (ground is z 0..60); its scene-node offset lives in the .irr files we do
+# not parse, so shift it down to sit below street level as a harbor
+WATER_FILES = {"GC_water", "GC_Water_Island2"}
+WATER_Z_SHIFT = 160  # subtracted from the raw z (slab drops below street level)
 
 # textures rendered at 2048 (city-wide bakes)
 HERO_TEX = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
@@ -66,6 +83,10 @@ HERO_TEX = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
             "GC_LongDist_Island1_FP3", "GC_LongDist_Island2_FP1",
             "GC_LongDist_Island2_FP2", "GC_LongDist_Island2_FP3",
             "GC_LongDist_Island1_Roads"}
+
+# day-lit textures that need dimming for the night viewer (multiplied into JPEG)
+DIM_TEX = {"GothamCity_asphalt_tile": 0.42, "GothamCity_sand_tile": 0.42,
+           "water": 0.55}
 
 
 def classify(name):
@@ -97,11 +118,13 @@ def file_pool(path):
     return sorted({s[:-4] for s in strs if s.endswith(".tga")})
 
 
-def jpg_from_png(png_path, out_path, max_dim, quality):
-    from PIL import Image
+def jpg_from_png(png_path, out_path, max_dim, quality, dim=1.0):
+    from PIL import Image, ImageEnhance
     im = Image.open(png_path).convert("RGB")
     if max(im.size) > max_dim:
         im.thumbnail((max_dim, max_dim), Image.LANCZOS)
+    if dim != 1.0:
+        im = ImageEnhance.Brightness(im).enhance(dim)
     im.save(out_path, "JPEG", quality=quality, optimize=True)
     return os.path.getsize(out_path)
 
@@ -222,6 +245,13 @@ def main():
             meshes = []
         if not meshes:
             continue
+        if base in WATER_FILES:
+            for m in meshes:
+                m["pos"] = m["pos"] - np.array([0, 0, WATER_Z_SHIFT], np.float32)
+                m["mn"], m["mx"] = m["pos"].min(0), m["pos"].max(0)
+        elif max((m["mx"] - m["mn"]).max() for m in meshes) > MAX_EXTENT:
+            print(f"  skip (out-of-world extent): {base}")
+            continue
         pool = file_pool(p)
         if base in OVERRIDE_TEX and find_png(OVERRIDE_TEX[base]):
             per_mesh = [OVERRIDE_TEX[base]] * len(meshes)
@@ -315,7 +345,7 @@ def main():
         hero = tex in HERO_TEX
         n = tex + ".jpg"
         sz = jpg_from_png(src, os.path.join(TEXD, n), 2048 if hero else 1024,
-                          82 if hero else 78)
+                          82 if hero else 78, dim=DIM_TEX.get(tex, 1.0))
         print(f"  tex {n:<48} {sz/1024:>6.0f} KB{' (hero 2048)' if hero else ''}")
 
     # ---------------- batarang showcase (self-contained) ----------------
