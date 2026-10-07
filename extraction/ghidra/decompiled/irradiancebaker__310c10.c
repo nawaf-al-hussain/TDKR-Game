@@ -222,3 +222,4 @@ void _ZN15IrradianceBaker8BakeNodeEPN6glitch5scene10ISceneNodeE(undefined4 param
   return;
 }
 
+

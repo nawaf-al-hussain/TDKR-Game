@@ -27,3 +27,4 @@ void _ZN15CWeatherManager11SetFogColorERKN6glitch4core8vector4dIfEE
   return;
 }
 
+

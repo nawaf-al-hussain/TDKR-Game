@@ -39,3 +39,4 @@ void _ZNK6glitch5video13CGenericBaker4bakeERKNS0_20SBatchBakerInputDescERKNS0_21
   return;
 }
 
+

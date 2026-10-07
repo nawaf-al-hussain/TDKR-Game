@@ -19,3 +19,4 @@ _ZN15CWeatherManager4SaveEP13CMemoryStream
   return 1;
 }
 
+

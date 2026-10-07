@@ -69,3 +69,4 @@ short _ZN6glitch5video14IShaderManager20removeAllBatchBakersEv(int param_1)
   return sVar7;
 }
 
+

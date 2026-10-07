@@ -15,3 +15,4 @@ int * _ZNK6glitch5video14IShaderManager16createBatchBakerEPKNS0_7IShaderE
   return param_1;
 }
 
+

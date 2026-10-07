@@ -15,3 +15,4 @@ _ZN15CWeatherManager4LoadEP13CMemoryStream
   return 1;
 }
 
+

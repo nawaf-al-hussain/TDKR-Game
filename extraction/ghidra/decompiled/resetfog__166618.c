@@ -8,3 +8,4 @@ _Z8ResetFogP9lua_State(undefined4 param_1,undefined4 param_2,undefined4 param_3,
   return 0;
 }
 
+

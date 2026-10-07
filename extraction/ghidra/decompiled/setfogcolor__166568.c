@@ -28,3 +28,4 @@ undefined4 _Z11SetFogColorP9lua_State(undefined4 param_1)
   return 0;
 }
 
+

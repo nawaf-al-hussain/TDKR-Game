@@ -19,3 +19,4 @@ int * _ZN18CTemplateBakeGroupD0Ev(int *param_1)
   return param_1;
 }
 
+

@@ -78,3 +78,4 @@ void _ZN15CWeatherManager25ApplyIlluminationSettingsEv(int param_1)
   return;
 }
 
+

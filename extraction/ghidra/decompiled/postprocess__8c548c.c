@@ -1,0 +1,10 @@
+// _ZN6glitch5scene17CSegmentOptimizer11postProcessEPNS0_13CSceneManagerERSt6vectorINS0_9SDrawInfoENS_4core10SAllocatorIS5_LNS_6memory13E_MEMORY_HINTE0EEEEPNS0_11SRenderTreeE @ 008c548c
+
+void _ZN6glitch5scene17CSegmentOptimizer11postProcessEPNS0_13CSceneManagerERSt6vectorINS0_9SDrawInfoENS_4core10SAllocatorIS5_LNS_6memory13E_MEMORY_HINTE0EEEEPNS0_11SRenderTreeE
+               (void)
+
+{
+  return;
+}
+
+

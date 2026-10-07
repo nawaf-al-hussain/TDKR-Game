@@ -69,3 +69,4 @@ void _ZN15CWeatherManager22LoadGlobalIlluminationEP13CMemoryStream(int param_1,u
   return;
 }
 
+

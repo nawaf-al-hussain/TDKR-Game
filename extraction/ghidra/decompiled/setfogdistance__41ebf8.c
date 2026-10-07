@@ -37,3 +37,4 @@ void _ZN15CWeatherManager14SetFogDistanceEff(undefined4 param_1,float param_2,fl
   return;
 }
 
+

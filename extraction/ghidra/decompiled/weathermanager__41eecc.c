@@ -25,3 +25,4 @@ void _ZN15CWeatherManager18SetLevelPropertiesEP24CTemplateLevelProperties(int *p
   return;
 }
 
+

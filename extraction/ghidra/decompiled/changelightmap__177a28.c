@@ -14,3 +14,4 @@ _Z14ChangeLightMapP9lua_State
   return 0;
 }
 
+

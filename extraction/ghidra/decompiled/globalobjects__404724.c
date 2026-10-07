@@ -6,3 +6,4 @@ void _ZN6CLevel21CopyGlobalObjectsDataEP13CMemoryStream(void)
   return;
 }
 
+

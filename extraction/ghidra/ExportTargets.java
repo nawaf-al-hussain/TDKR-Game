@@ -14,7 +14,9 @@ public class ExportTargets extends GhidraScript {
         "globalobjects", "gol_", "loadglobalobject",
         // phase 2: preset/stream format + zone scene graph
         "templatelevelproperties", "saveload", "irradiancevolume", "zonesmanager",
-        "dictionary"
+        "dictionary",
+        // phase 3: preset base classes + postprocess LUT loading
+        "levelinit", "globalillum", "colorcorrection", "postprocess"
     };
 
     @Override

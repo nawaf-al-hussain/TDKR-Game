@@ -23,3 +23,4 @@ void _ZN15CWeatherManager5ResetEv(int param_1)
   return;
 }
 
+

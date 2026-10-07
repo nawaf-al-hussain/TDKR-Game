@@ -58,3 +58,4 @@ void _ZN15CWeatherManagerC1EP24CTemplateLevelProperties(undefined4 *param_1,unde
   return;
 }
 
+

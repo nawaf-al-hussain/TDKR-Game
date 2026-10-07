@@ -6,3 +6,4 @@ void _ZN15CWeatherManager6ReInitEv(void)
   return;
 }
 
+

@@ -17,3 +17,4 @@ void _ZN24CComponentBeastBakeGroup4LoadEP13CMemoryStream
   return;
 }
 
+

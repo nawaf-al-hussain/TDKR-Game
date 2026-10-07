@@ -8,3 +8,4 @@ int * _ZN6glitch5video11IBatchBakerD0Ev(int *param_1)
   return param_1;
 }
 
+

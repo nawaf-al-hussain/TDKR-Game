@@ -27,3 +27,4 @@ void _ZN15CWeatherManager15SetIlluminationEP25CComponentBaseGlobalIllum(int *par
   return;
 }
 
+

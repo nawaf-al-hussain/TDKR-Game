@@ -18,3 +18,4 @@ void _ZNK24CComponentBeastBakeGroup3NewEv(void)
   return;
 }
 
+

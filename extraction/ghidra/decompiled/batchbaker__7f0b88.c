@@ -7,3 +7,4 @@ void _ZN6glitch5video11IBatchBakerD1Ev(int *param_1)
   return;
 }
 
+

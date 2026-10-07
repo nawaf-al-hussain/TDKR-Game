@@ -13,3 +13,4 @@ int * _ZN24CComponentBeastBakeGroupD0Ev(int *param_1)
   return param_1;
 }
 
+

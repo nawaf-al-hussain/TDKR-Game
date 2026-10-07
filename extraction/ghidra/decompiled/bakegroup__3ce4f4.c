@@ -20,3 +20,4 @@ int * _ZNK24CComponentBeastBakeGroup5CloneEv
   return piVar1;
 }
 
+

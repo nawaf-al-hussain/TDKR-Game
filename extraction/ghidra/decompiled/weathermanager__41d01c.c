@@ -69,3 +69,4 @@ void _ZN15CWeatherManager4InitEv(int param_1)
   return;
 }
 
+

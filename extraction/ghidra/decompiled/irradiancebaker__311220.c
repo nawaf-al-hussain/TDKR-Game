@@ -67,3 +67,4 @@ void _ZN15IrradianceBaker8BakeMeshEN5boost13intrusive_ptrIN6glitch5scene5IMeshEE
   return;
 }
 
+

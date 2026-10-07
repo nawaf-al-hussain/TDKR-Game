@@ -8,3 +8,4 @@ _ZN15CWeatherManager15IsWeatherEffectERSbIcSt11char_traitsIcEN6glitch4core10SAll
   return *(undefined1 *)(param_1 + 0x28);
 }
 
+

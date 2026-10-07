@@ -49,3 +49,4 @@ int * _ZNK6glitch5video7IShader13getBatchBakerEv(int *param_1,int param_2)
   return param_1;
 }
 
+

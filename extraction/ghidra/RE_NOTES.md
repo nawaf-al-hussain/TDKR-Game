@@ -73,3 +73,33 @@ Binary: `libKRHP.so` — extracted from `TDKR_v1.1.6b.apk` (committed at repo ro
 7. **Engine**: glitch (Irrlicht fork). Lua 5.1 embedded (747 bound functions, full list in lua_api.txt). Level flow: Lua `RequireLoadLevel(name,idx)` -> `Application::RequireLoadLevel`.
 8. **Data formats identified**: `gol.bin` = "DICT"+"GO" persistent global-object state (CLevel::LoadGlobalObjects/SaveGlobalObjects); scene graph = CZonesManager zones -> CGameObject w/ component streams (each component Load(CMemoryStream*)); BEAST light components per object (Area/Directional/Omni/Skylight/Spot/Window).
 9. Decompiles banked in decompiled/ (+ key/ via /dev/shm workaround when quota hit 0).
+
+## Findings — session 2, part 2 (lean re-analysis + phase-3 pass; 447 funcs exported)
+
+10. **`CTemplateLevelProperties::Load` @0x2023bc** (templatelevelproperties__2123bc.c) is a thin shell:
+    `CComponentLevelInit::Load(this)` -> float +0xa8, string +0xac, float +0xb0, float +0xb4,
+    **`CComponentBaseGlobalIllum::Load(this+0xb8)`**, int +0x128.
+11. **`CComponentLevelInit::Load` @0x2118f0** (levelinit__2118f0.c) = mission/container config:
+    6 strings, bool, string, then N x CContainerMission (stride 0x3c: 4 strings, bool, string,
+    int, 2 strings, int, 4 strings, bool), bool, string, bool, 24 floats, bool.
+12. **`CComponentBaseGlobalIllum::Load` @0x212000 = THE illumination/fog preset stream** (globalillum__212000.c):
+    +0x04 bool enable; +0x08 int; +0x0c,+0x10 float; +0x14..17 RGBA; +0x18,+0x1c float;
+    +0x20..23 RGBA; vector{int,int}[count] (zone->GI map); +0x30/+0x31 bool;
+    +0x34,+0x38,+0x3c THREE texture-name strings (ColorGrading/LUT candidates!);
+    +0x40..+0x4c 4 floats (atlas transform, matches weather preset +0x40..+0x4c);
+    +0x50 texture-name string (weather preset +0x50 sky/env tex); +0x54,+0x58 floats;
+    +0x5c..5f RGBA; +0x60,+0x64,+0x68 floats (fogStart, fogEnd, ...; preset +0x5c/+0x60);
+    +0x6c..6f RGBA.
+    => weather preset entries ARE GI-component snapshots; CWeatherManager ctor harvests them.
+13. **lvc index format** (key_13CZonesManager16LoadIndexZoneMapEPKc.c): `<level>.index.bin` =
+    [u32 LE count][count x 13B {u32 key=lvc offset (RB-tree key), u32 a, u32 b, u8 flag(0=>auto-id)}].
+    GothamCity: 23 records. Suffix ".index" appended to base name in code (6-char memcpy).
+14. **DICT container**: parsed by `CMemoryStream::GetDictionary` @0x34c130 / SetDictionary @0x34c4f8
+    (dictionary__34c130.c/__34c4f8.c) - string interning tables (char + wchar) + bool.
+15. **CWeatherManager::Load** @0x41e8dc (weathermanager__41e8dc.c): reads bool enable@+4,
+    byte@+0x28, int presetIndex@+8; preset ptr = table[+0xc][idx]. Table itself filled by
+    ctor from CTemplateLevelProperties (weathermanager__41ce18.c) - to trace next.
+16. Ghidra re-run recipe (proven, ~12 min total): setup_ghidra.sh; analyzeHeadless import
+    -preScript LeanAnalysis.java -postScript ExportTargets.java (~10 min); second pass
+    `-process lib_libKRHP.so -noanalysis -postScript ExportTargets.java` after adding
+    keywords (~1.5 min). 447 functions decompiled, all banked in decompiled/.

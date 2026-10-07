@@ -1,0 +1,17 @@
+// _ZN18CPostProcessEffectD1Ev @ 0046a4e0
+
+int * _ZN18CPostProcessEffectD1Ev(int *param_1)
+
+{
+  *param_1 = DAT_0046a51c + 0x46a4f8;
+  _ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_MEMORY_HINTE0EEEED2Ev
+            (param_1 + 0xf);
+  _ZN5boost13intrusive_ptrIN6glitch5video9CMaterialEED2Ev(param_1 + 0xd);
+  _ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_MEMORY_HINTE0EEEED2Ev
+            (param_1 + 6);
+  _ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_MEMORY_HINTE0EEEED2Ev
+            (param_1 + 5);
+  return param_1;
+}
+
+
