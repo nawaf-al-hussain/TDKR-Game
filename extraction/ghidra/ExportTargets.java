@@ -11,7 +11,10 @@ public class ExportTargets extends GhidraScript {
         "setfogcolor", "setfogdistance", "resetfog", "buildcolorgradingtexture",
         "colorgrading", "irradiancebaker", "changelightmap", "bakegroup",
         "batchbaker", "weathermanager", "footprint", "lightmapatlas",
-        "globalobjects", "gol_", "loadglobalobject"
+        "globalobjects", "gol_", "loadglobalobject",
+        // phase 2: preset/stream format + zone scene graph
+        "templatelevelproperties", "saveload", "irradiancevolume", "zonesmanager",
+        "dictionary"
     };
 
     @Override

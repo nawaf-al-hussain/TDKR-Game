@@ -25,6 +25,10 @@ TARGETS = [
     "weathermanager",
     "footprint",
     "lightmapatlas",
+    # phase 2 targets: preset/stream format + zone scene graph
+    "templatelevelproperties",
+    "saveload",
+    "irradiancevolume",
 ]
 
 if not os.path.isdir(OUT_DIR):
