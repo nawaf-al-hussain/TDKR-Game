@@ -1,5 +1,24 @@
 #!/usr/bin/env python3
-"""Full-city LOD-aware GLB exporter v3 — GROUND TRUTH bindings.
+"""Full-city LOD-aware GLB exporter v4 — GROUND TRUTH bindings + ENGINE SHADING.
+
+v4 adds the game's own shading model, recovered from the shipped GLSL
+(effects/LightMapDC-v.glsl, LightMapDC-f.glsl — plain text in the .gla):
+
+    LightMapColor  = texture2D(LightMap, vCoord1) * 2.0;
+    Color          = DiffuseMapColor * LightMapColor;
+
+City bakes bind LightMap = UNBOUND (texIdx 0xFFFFFFFF) -> engine supplies a
+white texture -> Color = bake * 2.0 (overbright night look).  Bakes are
+authored dark (mean ~0.11) for exactly this reason.
+
+Per-primitive material NAME now encodes the shading mode:
+
+    '<tex>|2x'  LightMapDC technique  -> viewer multiplies by 2.0
+    '<tex>|d'   StandardDiffuseDC etc -> viewer shows diffuse at 1.0
+    '__dark'    untextured
+
+Viewer contract unchanged otherwise: texture stem -> models/tex/<name>.jpg,
+flipY=false (PVR top-down).
 
 v3 replaces ALL texture heuristics with the game's own data, decoded from the
 BRES material system (see ground_truth.py):
@@ -167,25 +186,28 @@ class GlbBuilder:
         self.offset += len(data)
         return start, len(data)
 
-    def material_for(self, tex):
-        if tex in self._mat_by_tex:
-            return self._mat_by_tex[tex]
+    def material_for(self, tex, mode="d"):
+        key = (tex, mode)
+        if key in self._mat_by_tex:
+            return self._mat_by_tex[key]
         if tex is None:
             mat = dict(name="__dark", doubleSided=True,
                        pbrMetallicRoughness=dict(baseColorFactor=[0.055, 0.07, 0.10, 1.0],
                                                  metallicFactor=0.0, roughnessFactor=1.0))
         else:
-            mat = dict(name=tex, doubleSided=True,
+            # v4: shading mode rides in the material name -> viewer parses it
+            mat = dict(name=f"{tex}|{mode}", doubleSided=True,
                        pbrMetallicRoughness=dict(baseColorFactor=[1.0, 1.0, 1.0, 1.0],
                                                  metallicFactor=0.0, roughnessFactor=1.0))
         self.materials.append(mat)
         mid = len(self.materials) - 1
-        self._mat_by_tex[tex] = mid
+        self._mat_by_tex[key] = mid
         return mid
 
     def add_file(self, name, mesh_list, per_mesh_tex, yup=True):
         prims = []
-        for m, tex in zip(mesh_list, per_mesh_tex):
+        for m, bind in zip(mesh_list, per_mesh_tex):
+            tex, mode = bind if isinstance(bind, tuple) else (bind, "d")
             if yup:
                 pos = m["pos"][:, [0, 2, 1]].copy()
                 pos[:, 2] = -m["pos"][:, 1]
@@ -215,7 +237,7 @@ class GlbBuilder:
             a.append(dict(bufferView=base + 3, componentType=5125, count=len(idx), type="SCALAR"))
             prims.append(dict(attributes=dict(POSITION=len(a) - 4, NORMAL=len(a) - 3,
                                               TEXCOORD_0=len(a) - 2),
-                              indices=len(a) - 1, material=self.material_for(tex), mode=4))
+                              indices=len(a) - 1, material=self.material_for(tex, mode), mode=4))
         mi = len(self.meshes)
         self.meshes.append(dict(name=name, primitives=prims))
         self.nodes.append(dict(mesh=mi, name=name))
@@ -291,6 +313,17 @@ def main():
             so = gm.get("scaleoffset")
             apply_scaleoffset(m, so)   # engine's own UV transform
             tex = gm.get("diffuse")
+            # v4 fix: some texIdx slots resolve to SAMPLER-name strings
+            # (e.g. Reflections-fx DiffuseMap -> 'LightMapSampler' runtime
+            # atlas).  Those are not shipped textures -> unbind and let the
+            # fallback ladder pick the island bake family instead.
+            if tex and (tex.endswith("Sampler") or tex.endswith("sampler")):
+                tex = None
+            # v4 shading mode from the engine's own technique binding:
+            #   LightMapDC with LightMap unbound -> bake * 2.0 (GLSL: *2.0)
+            #   anything else (StandardDiffuseDC, ...) -> diffuse * 1.0
+            tech = gm.get("technique") or ""
+            mode = "2x" if "LightMapDC" in tech else "d"
             how = "gt"
             if tex and not find_png(tex):
                 alt = MISSING_TEX_FALLBACK.get(tex)
@@ -309,18 +342,21 @@ def main():
                 else:
                     tex, how = None, "dark"
             if tex is None and bake_fam:
+                # v4: bake-fit only on an EXTREMELY strong edge-match — a wrong
+                # atlas-cell guess renders as an amplified garbage patch (x2),
+                # far worse than the honest dark fallback.
                 scored = sorted(((uv_fit(m["uv"], t), t) for t in bake_fam), reverse=True)
-                if scored and scored[0][0] >= 1.2:
+                if scored and scored[0][0] >= 2.2:
                     tex, how = scored[0][1], "bake-fit"
             gt_stats[{"gt": "gt_bind", "alpha-fix": "alpha_fix", "pool-single": "pool_fit",
                       "pool-fit": "pool_fit", "bake-fit": "bake_fit",
                       "dark": "dark"}.get(how, "dark")] += 1
-            per_mesh.append(tex)
+            per_mesh.append((tex, mode))
 
         verts = int(sum(m["count"] for m in meshes))
         tris = int(sum(m["numIdx"] // 3 for m in meshes))
         gbytes = verts * 32 + tris * 12
-        texs = sorted({t for t in per_mesh if t})
+        texs = sorted({t for t, _ in per_mesh if t})
         entries.append(dict(base=base, cat=cat, texs=texs, per_mesh=per_mesh,
                             verts=verts, tris=tris, nmesh=len(meshes),
                             gbytes=gbytes, path=p, meshes=meshes))
@@ -373,7 +409,7 @@ def main():
     for i, b in enumerate(bins):
         plan.append((f"district_{i:02d}", b))
 
-    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=3)
+    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=4)
     tex_used = {}
     for glb_name, group in plan:
         gb = GlbBuilder()
@@ -394,6 +430,14 @@ def main():
               f"{sum(e['tris'] for e in group):>7,} tris")
 
     # ---------------- textures -> external JPEG ----------------
+    # v4: DIM_TEX applies ONLY when every usage is diffuse-mode ('d'); textures
+    # rendered through the LightMapDC x2.0 overbright path keep native levels.
+    tex_modes = {}
+    for glb_name, group in plan:
+        for e in group:
+            for tex, mode in e["per_mesh"]:
+                if tex:
+                    tex_modes.setdefault(tex, set()).add(mode)
     for tex in sorted(tex_used):
         src = find_png(tex)
         if not src:
@@ -401,8 +445,9 @@ def main():
             continue
         hero = tex in HERO_TEX
         n = tex + ".jpg"
+        dim = DIM_TEX.get(tex, 1.0) if tex_modes.get(tex, {"d"}) <= {"d"} else 1.0
         sz = jpg_from_png(src, os.path.join(TEXD, n), 2048 if hero else 1024,
-                          82 if hero else 78, dim=DIM_TEX.get(tex, 1.0))
+                          82 if hero else 78, dim=dim)
         print(f"  tex {n:<48} {sz/1024:>6.0f} KB{' (hero 2048)' if hero else ''}")
 
     # ---------------- batarang showcase (self-contained) ----------------
