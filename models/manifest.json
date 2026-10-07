@@ -1836,9 +1836,9 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 989200,
-   "verts": 22084,
-   "tris": 13746,
+   "bytes": 930924,
+   "verts": 20650,
+   "tris": 13038,
    "tier": "district",
    "files": [
     {
@@ -1868,24 +1868,6 @@
      "verts": 1492,
      "tris": 1442,
      "meshes": 5
-    },
-    {
-     "name": "GC_water",
-     "texs": [
-      "water"
-     ],
-     "verts": 629,
-     "tris": 313,
-     "meshes": 2
-    },
-    {
-     "name": "GC_Water_Island2",
-     "texs": [
-      "water"
-     ],
-     "verts": 629,
-     "tris": 299,
-     "meshes": 2
     },
     {
      "name": "HC_Prop_BillboardRoof_10",
@@ -2067,15 +2049,6 @@
      ],
      "verts": 136,
      "tris": 229,
-     "meshes": 1
-    },
-    {
-     "name": "GC_bridge_1_LongDist",
-     "texs": [
-      "GC_Island1_LongDist_Low"
-     ],
-     "verts": 176,
-     "tris": 96,
      "meshes": 1
     },
     {
@@ -2488,7 +2461,7 @@
    ]
   }
  ],
- "total_verts": 347136,
- "total_tris": 202233,
+ "total_verts": 345702,
+ "total_tris": 201525,
  "version": 2
 }
