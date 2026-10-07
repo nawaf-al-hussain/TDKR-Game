@@ -3,17 +3,35 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 /* ============================================================================
-   v4 RENDERER — port of the game's own LightMapDC shader chain.
+   v5 RENDERER — exact port of the game's LightmapVCBlendDC TEXTURE_FOG chain.
 
-   The game's shipped GLSL (effects/LightMapDC-f.glsl, -v.glsl — recovered
-   verbatim from the .gla) renders the night city as:
+   Everything below is RECOVERED DATA, not tuning:
 
-       LightMapColor = texture2D(LightMap, vCoord1) * 2.0;
-       Color         = DiffuseMapColor * LightMapColor;          // (no LIGHTING)
-       FogFactor     = (-viewZ - FogStartEnd.x) * FogStartEnd.y;  // linear, VS
-       fY            = worldHeight * VerticalFogHeight + FogFactor * 0.5;
-       vFogColor     = mix(VERTICAL_FOG_COLOR, FogColor, fY);     // warm->night
-       Color         = mix(Color.rgb, vFogColor.rgb, FogFactor * vFogColor.a);
+   · GothamCity.lvc.bin 'DICT' container (big-endian, CMemoryStream::BeginRead
+     @0x3ae97c) -> CTemplateLevelProperties 0x2657 ->
+     CComponentBaseGlobalIllum::Load @0x212000, field-for-field:
+
+       fogColor RGBA = (64, 102, 119, 160)      -> glitch global param FogColor
+       fogStart/fogEnd = 0.0 / 140.0            -> FogStartEnd = (s*start, 1/(s*(end-start)))
+       fog texture   = "gc_verticalfog.tga"      (CLAMP-wrapped, decoded from
+                                                  l_gothamcity_tex, ETC2 RGB)
+       FogMap vec4   = (-1210, -220, 1/1520, -1/1130)  world-space projection
+       VerticalFogHeight = 0.013,  VerticalFogAlpha = 0.65
+
+   · Shipped GLSL (effects/LightmapVCBlendDC-v/-f.glsl + glsl.config.bin):
+
+       FogFactor   = (-viewZ - FogStartEnd.x) * FogStartEnd.y;
+       fY          = worldZ * VerticalFogHeight + FogFactor * FOG_DECAY;  // FOG_DECAY 0.5
+       FogUV       = ((World*Position).xy - FogMap.xy) * FogMap.zw;
+       FogMapColor = vec4(texture2D(FogTexture, FogUV).rgb, VerticalFogAlpha);
+       fogCol2     = mix(FogMapColor, FogColor, clamp(fY, 0, 1));
+       Color       = mix(Color, fogCol2, clamp(FogFactor, 0, 1) * fogCol2.a);
+
+   The fog texture is a top-down atlas of Gotham's district glow — distant
+   geometry melts into THAT (city-lit haze), which is the TDKR night look.
+
+   Game world is Z-up; viewer is Y-up (export maps game(x,y,z)->view(x,z,-y)),
+   so in-shader: gameY = -world.z, height = world.y.
 
    City bakes bind LightMap = UNBOUND (0xFFFFFFFF) -> engine supplies white ->
    Color = bake * 2.0.  Bakes are authored dark (mean ~0.11) for exactly this.
@@ -26,15 +44,17 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
        '__dark'    untextured
    ========================================================================== */
 
-/* ---------------- engine constants (from the GLSL + game-scale tuning) ---- */
+/* ------- engine constants — extracted from GothamCity.lvc.bin GI preset ---- */
 const FOG = {
-  start: 220,          // view-depth where fog begins            (FogStartEnd.x)
-  end: 1900,           // view-depth where fog is full           (1/FogStartEnd.y)
-  night: [0.05, 0.085, 0.16],    // FogColor — night haze blue
-  nightA: 0.94,
-  warm: [0.93, 0.76, 0.47],      // VERTICAL_FOG_COLOR — street sodium glow
-  warmA: 0.35,
-  vfogH: 300,          // vertical fog transition height (world units)
+  start: 0.0,                    // GI +0x0c  (fogStart)
+  end: 140.0,                    // GI +0x10  (fogEnd), x config scale (=1 here)
+  color: [64 / 255, 102 / 255, 119 / 255],  // GI +0x14 RGBA(64,102,119,160)
+  colorA: 160 / 255,
+  vfogHeight: 0.013,             // GI +0x58 -> global param (VerticalFogHeight)
+  vfogAlpha: 0.65,               // GI +0x54 -> global param (VerticalFogAlpha)
+  fogDecay: 0.5,                 // glsl.config.bin #define FOG_DECAY 0.5
+  map: [-1210, -220, 1 / 1520, -1 / 1130],   // GI +0x40..+0x4c world projection
+  mapTex: 'models/tex/GC_VerticalFOG.png',
 };
 FOG.scale = 1 / (FOG.end - FOG.start);
 
@@ -67,7 +87,16 @@ renderer.toneMapping = THREE.NoToneMapping;
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(
-  new THREE.Color(...FOG.night), FOG.start, FOG.end); // for built-in fallback mats
+  new THREE.Color(...FOG.color), FOG.start, FOG.end); // exact GI fog, fallback mats
+
+/* the game's world-projected fog/glow map (gc_verticalfog.tga, ETC2-decoded) */
+const fogTexLoader = new THREE.TextureLoader();
+fogTexLoader.load(FOG.mapTex, (t) => {
+  t.flipY = false;                                  // PVR-style top-first upload
+  t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping;    // setWrap(0..2, CLAMPE) in native
+  t.colorSpace = THREE.NoColorSpace;                // gamma-space pipeline
+  fogUniforms.uFogTex.value = t;
+});
 
 const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 1, 12000);
 camera.position.set(650, 420, 760);
@@ -103,16 +132,31 @@ addEventListener('resize', () => {
   renderer.setSize(innerWidth, innerHeight);
 });
 
-/* ---------------- the engine's shader ---------------- */
+/* ---------------- the engine's shader (exact LightmapVCBlendDC port) ------ */
 const cityVert = /* glsl */`
 varying vec2 vUv;
 varying float vDepth;
 varying vec3 vWorld;
+varying float vFogFactor;
+varying float vFogY;
+varying vec2  vFogUV;
+uniform float uFogStart;
+uniform float uFogScale;
+uniform float uVFogHeight;
+uniform float uFogDecay;
+uniform vec4  uFogMap;
 void main() {
   vUv = uv;
+  vec4 wp = modelMatrix * vec4(position, 1.0);
+  vWorld = wp.xyz;
   vec4 mv = modelViewMatrix * vec4(position, 1.0);
   vDepth = -mv.z;
-  vWorld = (modelMatrix * vec4(position, 1.0)).xyz;
+  // FogFactor = (-viewZ - FogStartEnd.x) * FogStartEnd.y   (start=0)
+  vFogFactor = (vDepth - uFogStart) * uFogScale;
+  // fY = worldZ(up) * VerticalFogHeight + FogFactor * FOG_DECAY
+  vFogY = vWorld.y * uVFogHeight + vFogFactor * uFogDecay;
+  // FogUV = ((World*Position).xy - FogMap.xy) * FogMap.zw ; game Y = -view Z
+  vFogUV = (vec2(vWorld.x, -vWorld.z) - uFogMap.xy) * uFogMap.zw;
   gl_Position = projectionMatrix * mv;
 }`;
 
@@ -120,37 +164,42 @@ const cityFrag = /* glsl */`
 precision mediump float;
 uniform sampler2D map;
 uniform float uMult;
+uniform sampler2D uFogTex;
 uniform vec3  uFogColor;
 uniform float uFogAlpha;
-uniform vec3  uVFogColor;
+uniform float uVFogHeight;
 uniform float uVFogAlpha;
 uniform float uFogStart;
 uniform float uFogScale;
-uniform float uVFogInv;
+uniform float uFogDecay;
+uniform vec4  uFogMap;
 varying vec2 vUv;
 varying float vDepth;
 varying vec3 vWorld;
+varying float vFogFactor;
+varying float vFogY;
+varying vec2  vFogUV;
 void main() {
   // LightMapDC-FS: DiffuseMapColor * (texture2D(LightMap, vCoord1) * 2.0)
   vec3 col = texture2D(map, vUv).rgb * uMult;
-  // LightMapDC-VS: FogFactor = (-viewZ - start) * scale
-  float f = clamp((vDepth - uFogStart) * uFogScale, 0.0, 1.0);
-  // fY = height * VerticalFogHeight + FogFactor * 0.5
-  float fY = clamp(vWorld.y * uVFogInv + f * 0.5, 0.0, 1.0);
-  vec4 fogC = mix(vec4(uVFogColor, uVFogAlpha), vec4(uFogColor, uFogAlpha), fY);
-  col = mix(col, fogC.rgb, f * fogC.a);
+  // exact TEXTURE_FOG path (LightmapVCBlendDC-f.glsl):
+  vec4 FogMapColor = vec4(texture2D(uFogTex, vFogUV).rgb, uVFogAlpha);
+  vec4 fogCol2 = mix(FogMapColor, vec4(uFogColor, uFogAlpha), clamp(vFogY, 0.0, 1.0));
+  col = mix(col, fogCol2.rgb, clamp(vFogFactor, 0.0, 1.0) * fogCol2.a);
   gl_FragColor = vec4(col, 1.0);
 }`;
 
 /* shared fog uniform OBJECTS (mutated live -> every material follows) */
 const fogUniforms = {
-  uFogColor:  { value: new THREE.Color(...FOG.night) },
-  uFogAlpha:  { value: FOG.nightA },
-  uVFogColor: { value: new THREE.Color(...FOG.warm) },
-  uVFogAlpha: { value: FOG.warmA },
-  uFogStart:  { value: FOG.start },
-  uFogScale:  { value: FOG.scale },
-  uVFogInv:   { value: 1 / FOG.vfogH },
+  uFogTex:     { value: null },                 // filled when GC_VerticalFOG loads
+  uFogColor:   { value: new THREE.Color(...FOG.color) },
+  uFogAlpha:   { value: FOG.colorA },
+  uVFogHeight: { value: FOG.vfogHeight },
+  uVFogAlpha:  { value: FOG.vfogAlpha },
+  uFogStart:   { value: FOG.start },
+  uFogScale:   { value: FOG.scale },
+  uFogDecay:   { value: FOG.fogDecay },
+  uFogMap:     { value: new THREE.Vector4(...FOG.map) },
 };
 
 function makeCityMaterial(tex, uMult) {
@@ -162,6 +211,26 @@ function makeCityMaterial(tex, uMult) {
     },
     vertexShader: cityVert,
     fragmentShader: cityFrag,
+    side: THREE.DoubleSide,
+  });
+}
+
+function makeTexlessCityMaterial() {
+  // untextured geometry — same fog chain, flat engine fallback albedo
+  return new THREE.ShaderMaterial({
+    uniforms: { ...fogUniforms },
+    vertexShader: cityVert,
+    fragmentShader: /* glsl */`precision mediump float;
+      uniform vec3 uFogColor; uniform float uFogAlpha; uniform sampler2D uFogTex;
+      uniform float uVFogAlpha; uniform vec4 uFogMap;
+      varying vec3 vWorld; varying float vFogFactor; varying float vFogY; varying vec2 vFogUV;
+      void main() {
+        vec3 col = vec3(0.063, 0.086, 0.137);   // Lambert fallback 0x101623
+        vec4 FogMapColor = vec4(texture2D(uFogTex, vFogUV).rgb, uVFogAlpha);
+        vec4 fogCol2 = mix(FogMapColor, vec4(uFogColor, uFogAlpha), clamp(vFogY,0.0,1.0));
+        col = mix(col, fogCol2.rgb, clamp(vFogFactor,0.0,1.0) * fogCol2.a);
+        gl_FragColor = vec4(col, 1.0);
+      }`,
     side: THREE.DoubleSide,
   });
 }
@@ -211,7 +280,7 @@ async function loadGLB(entry, tierName) {
       if (tex) {
         obj.material = makeCityMaterial(tex, mode);
       } else {
-        obj.material = new THREE.MeshLambertMaterial({ color: new THREE.Color().setHSL(0.6, 0.3, 0.10), side: THREE.DoubleSide });
+        obj.material = makeTexlessCityMaterial();
       }
       obj.material.wireframe = state.wire;
     });
