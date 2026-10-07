@@ -118,3 +118,82 @@ Binary: `libKRHP.so` — extracted from `TDKR_v1.1.6b.apk` (committed at repo ro
     for that pair -> owning function = the DICT/lvc reader that feeds CTemplateLevelProperties.
 19. Ghidra image-base note: symbol vaddrs (readelf) are offset by +0x10000 vs Ghidra listing
     (e.g. LoadLevelInitCheckPoint 0x3e3108 -> Ghidra 0x3f3108). Map addresses accordingly.
+
+## Findings — session 3 (DICT reader located; lvc parsed; night fog + LUT extracted)
+
+20. **MOVW/MOVT scan came up empty** (scripts/scan_movw_movt.py in extraction/re/):
+    15,934 ARM + 2,542 Thumb movw/movt immediates in libKRHP.so, ZERO hit 0x4944/0x5443.
+    All 4 "DICT" byte-strings in the .so are libcurl URL-scheme strings. The magic is
+    compared as **0x44494354** (FourCC spelled 'D'<<24|'I'<<16|'C'<<8|'T') — the halves
+    are 0x4449/0x4354, not 0x4944/0x5443.
+21. **The DICT reader = CMemoryStream::BeginRead** (Ghidra 0x3ae97c, banked
+    decompiled/). Exact stream format (ALL primitives BIG-ENDIAN — ReadInt @0x349914
+    composes b0<<24|b1<<16|b2<<8|b3; ReadFloat likewise BE):
+    `[u32 'DICT'=0x44494354][u32 tblOff][u8 flag]`, optional wide table if flag,
+    then at tblOff: `[u32 countC][count x {u32 len, bytes}]` char-string table,
+    then **read pos = 9** — the object stream starts right after the header.
+22. **ReadString** (@0x34a0d4): if stream+0x34 == 0 -> INLINE (u32 len + bytes);
+    else interned: +0x35==0 -> charTable[idx] (+0x1c vec), else wcharTable[idx].
+    +0x34 is set only by SetDictionary (HandleZoneLoadRequests injects shared
+    tables into zone sub-streams). Top-level lvc stream: ctor bool=1 -> interned.
+23. **CMemoryStream ctor bool = "uses dictionary"** (LoadLevelProperties passes 1).
+24. **CLevel::LoadLevelProperties(path)** @Ghidra 0x499954 (banked): opens the lvc,
+    BeginRead, skips ReadShort+ReadShort+ReadInt, reads typeId==**0x2657** ->
+    CTemplateLevelProperties::Load. In GothamCity.lvc.bin: header 9B, then
+    'NV'(0x4E56), 3, objCount=14917, typeId 0x2657 @0x11, template from 0x15.
+25. **CTemplateLevelProperties::Load** (@0x2123bc): CComponentLevelInit::Load
+    (6 strings, bool, string, int N, N x {4 str, bool, str, int, 2 str, int,
+    4 str, bool}, bool, string, bool, **25 floats** (+0x3c..+0x9c), bool) ->
+    float, string, float, float -> **CComponentBaseGlobalIllum::Load** -> int.
+    (note 11's "24 floats" was off by one — that desync corrupted earlier parses.)
+    GothamCity values: LevelInit strings = Lua bootstrap (#0), botond helpers,
+    'gothamcity.lv', 'STR_FPS_LEVEL_GOTHAM', 'l_gothamcity.gla',
+    'menu_bg_gotham.swf', bool1=1, 'batman.bdae'; 20 missions; str7=
+    '020_gothamcity.xml'; 25 floats [80,79,500,95,125,140,200,150,180,0.2,5,10,
+    20,40,60,90,120,160,200,300,2,30,5,25,0.3]; bool4=1; f_a8=25;
+    s_ac='gothamcity_minimap.swf'; f_b0=1.07; f_b4=0.4; final int=31004 (0x791C
+    = first .index.bin key -> cross-validates the parse).
+26. **CComponentBaseGlobalIllum::Load stream order** (the night preset, id=0):
+    enable(0), id(0), f0c=0, f10=140, RGBA(64,102,119,160), f18=75, f1c=200,
+    RGBA(0,0,0,255), 0 zone-pairs, bool,bool(0,0), 3 EMPTY LUT strings (-1),
+    atlas floats(-1210,-220,1520,-1130), fogTex='gc_verticalfog.tga',
+    f54=0.65, f58=0.013, RGBA(50,60,60,255), floats(0,0,1), RGBA(230,230,255,255).
+27. **Field semantics via CWeatherManager** (SetIllumination @0x41d250 +
+    ApplyIlluminationSettings @0x41eccc): preset entries ARE GI components
+    (table = TLP->GI list, searched by GI+0x08==id). Copies: GI+0x0c->mgr+0x5c
+    fogStart, +0x10->+0x60 fogEnd, +0x14->+0x64 fogColor(SColor), +0x18/+0x1c/
+    +0x20->+0x68..0x70, +0x58->+0x74 intensity(+0xd8 lerp slot).
+    ApplyIlluminationSettings: getTexture(GI+0x50) CLAMP-wrapped -> param
+    *(u16*)(mgr+0x48); vec4(+0x40,+0x44,1/+0x48,1/+0x4c) -> param mgr+0x4a
+    (**FogMap** = world-space projection of the fog texture!); +0x74 -> mgr+0x4c;
+    +0x54 -> mgr+0x4e; SColor mgr+0x64 -> param app+0x172 (**FogColor**);
+    vec3(start*s, 1/((end-start)*s)) -> param app+0x172+2 (**FogStartEnd**);
+    scale s = *(float*)(configSingleton+0x1c) — singleton ptr @Ghidra 0xc17f18,
+    runtime-initialized (BSS), value not statically recoverable; s=1 assumed.
+28. **Shipped fog math** (effects/LightmapVCBlendDC-v/-f.glsl + glsl.config.bin:
+    `#define VERTICAL_FOG_COLOR vec4(0.93,0.76,0.47,0.35)`,
+    `#define VERTICAL_FOG_HEIGHT 18.0`, `#define FOG_DECAY 0.5`):
+    VS: FogFactor=(-viewZ-FogStartEnd.x)*FogStartEnd.y;
+        fY = worldZ*VerticalFogHeight + FogFactor*FOG_DECAY;
+        FogUV = ((World*Position).xy - FogMap.xy) * FogMap.zw;
+    FS: FogMapColor=vec4(tex2D(FogTexture,FogUV).rgb, VerticalFogAlpha);
+        fogCol2=mix(FogMapColor, FogColor, clamp(fY,0,1));
+        Color=mix(Color, fogCol2, clamp(FogFactor,0,1)*fogCol2.a);
+    World is Z-UP (height = World[.z row]).
+29. **gc_verticalfog.tga found + decoded**: l_gothamcity_tex/GC_VerticalFOG.tga.bin
+    (also _IND, _Island2). Container: 52B wrapper {52,1024,1024,10 mips,fcc=0x136,
+    699064,4}, mips ASCENDING (small first), mip0 (1024x1024) LAST,
+    **ETC2 RGB** (not PVRTC — smoothness probe 0.50 vs 6+ for everything else).
+    Image = top-down atlas of Gotham district glow (street lights) over deep navy
+    haze — THE night-haze look. Decoded -> gh-pages models/tex/GC_VerticalFOG.png
+    (probe_pvr_formats.py; smoothness-scored brute force).
+30. **LUT (ColorGrading)**: GI LUT strings are EMPTY for GothamCity. The grade
+    comes from the Lua bootstrap (string #0):
+    PostProcessingEffectAdd("ColorCorrection", {extra_texture="000_default.tga",
+    time_to_fade_in=0}) — night LUT = 000_default.tga; lightning flashes =
+    023_lighting.tga (BLightning()); intro = 022_GothamCity.tga (commented out).
+    LUT textures not in l_gothamcity_tex (294 files) — likely inside
+    effects/DefaultEffects.bdae or the ZIP_SPLIT set; next session.
+31. **Viewer ported (v5, gh-pages 75277eb)**: exact TEXTURE_FOG path, extracted
+    values, axis-mapped (game(x,y,z)->view(x,z,-y); FogUV u=(x+1210)/1520,
+    v=(z-220)/1130), manifest.json v5 carries the fog block. Live check OK.
