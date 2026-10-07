@@ -1836,9 +1836,9 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 990612,
-   "verts": 22096,
-   "tris": 13756,
+   "bytes": 989200,
+   "verts": 22084,
+   "tris": 13746,
    "tier": "district",
    "files": [
     {
@@ -2434,15 +2434,6 @@
      "meshes": 1
     },
     {
-     "name": "GC_CityBG",
-     "texs": [
-      "City_BKG"
-     ],
-     "verts": 12,
-     "tris": 10,
-     "meshes": 1
-    },
-    {
      "name": "GC_Prop_VNeonSign_07",
      "texs": [
       "HC_Prop_BillboardRoof_01"
@@ -2497,7 +2488,7 @@
    ]
   }
  ],
- "total_verts": 347148,
- "total_tris": 202243,
+ "total_verts": 347136,
+ "total_tris": 202233,
  "version": 2
 }
