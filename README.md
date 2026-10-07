@@ -60,8 +60,11 @@ All game assets live under `com.gameloft.android.AMAZ.GloftKRAS/files/`:
 
 ## Research Starting Points
 
-1. **Save/progress system** — `Controls.bin`, `oconf.bar`, and the `.cache` files
-2. **Level structure** — header parsing of `.gla` containers (level-specific pairs: `l_X.gla` + `l_X_tex.gla`)
-3. **Difficulty & economy tuning** — inside `game_config.gla` and per-level packs
-4. **Audio events** — `sounds.xml` maps triggers to the `sounds.gla` bank
-5. **GPU scalability** — `options/` XMLs reveal the internal quality-tier system
+1. **Asset extraction (DONE)** — see [`extraction/`](extraction/): full `.gla` container
+   format cracked, 7,731 chunks + 1,186 textures + 3,110 sounds extracted, formats
+   documented in [`extraction/REPORT.md`](extraction/REPORT.md)
+2. **Save/progress system** — `Controls.bin`, `oconf.bar`, and the `.cache` files
+3. **Level structure** — `*.bdae` scene/mesh chunks inside the level packs (next RE milestone)
+4. **Difficulty & economy tuning** — inside `game_config.gla` and per-level packs
+5. **Audio events** — `sounds.xml` maps triggers to the `sounds.gla` bank
+6. **GPU scalability** — `options/` XMLs reveal the internal quality-tier system
