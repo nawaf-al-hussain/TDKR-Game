@@ -1836,9 +1836,9 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 1027792,
-   "verts": 23002,
-   "tris": 14302,
+   "bytes": 990612,
+   "verts": 22096,
+   "tris": 13756,
    "tier": "district",
    "files": [
     {
@@ -1868,15 +1868,6 @@
      "verts": 1492,
      "tris": 1442,
      "meshes": 5
-    },
-    {
-     "name": "GC_Props_Monorail",
-     "texs": [
-      "GC_Residential_Props_Monorail"
-     ],
-     "verts": 902,
-     "tris": 544,
-     "meshes": 1
     },
     {
      "name": "GC_water",
@@ -2502,20 +2493,11 @@
      "verts": 4,
      "tris": 2,
      "meshes": 1
-    },
-    {
-     "name": "GothamCity_Map",
-     "texs": [
-      "Gotham_City_map"
-     ],
-     "verts": 4,
-     "tris": 2,
-     "meshes": 1
     }
    ]
   }
  ],
- "total_verts": 348054,
- "total_tris": 202789,
+ "total_verts": 347148,
+ "total_tris": 202243,
  "version": 2
 }
