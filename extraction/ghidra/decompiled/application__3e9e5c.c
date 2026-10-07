@@ -1,0 +1,108 @@
+// _ZN11ApplicationC1Ev @ 003e9e5c
+
+int * _ZN11ApplicationC1Ev(int *param_1)
+
+{
+  int iVar1;
+  undefined1 *puVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar4 = DAT_003ea3f0;
+  iVar3 = DAT_003ea3ec;
+  _ZN3glf3AppC1ENS0_12CreationFlagE(param_1,0);
+  iVar1 = DAT_003ea3f4;
+  iVar3 = iVar3 + 0x3e9ef0;
+  *param_1 = iVar4 + 0x3e9f00;
+  param_1[0x47bd] = 0;
+  param_1[0x47be] = (int)(param_1 + 0x47be);
+  param_1[0x47bf] = (int)(param_1 + 0x47be);
+  param_1[0x47c0] = 0;
+  param_1[0x47c1] = 0;
+  param_1[0x47c2] = 0;
+  param_1[0x47cb] = 0;
+  *(undefined1 *)(param_1 + 0x47c5) = 0;
+  param_1[0x47c6] = 0;
+  param_1[0x47c7] = 0;
+  param_1[0x47c8] = 0;
+  param_1[0x47c9] = 0;
+  *(undefined1 *)(param_1 + 0x47ca) = 0;
+  param_1[0x47cc] = 0;
+  param_1[0x47cd] = 0;
+  param_1[0x47ce] = 0;
+  param_1[0x47cf] = 0;
+  param_1[0x47d3] = 0;
+  param_1[0x47d0] = 0;
+  param_1[0x47d1] = 0;
+  param_1[0x47d2] = 0;
+  param_1[0x47d4] = 0;
+  param_1[0x47d8] = 0;
+  param_1[0x47d5] = 0;
+  param_1[0x47d6] = 0;
+  param_1[0x47d7] = 0;
+  param_1[0x47d9] = 0;
+  param_1[0x47dd] = 0;
+  param_1[0x47da] = 0;
+  iVar4 = *(int *)(iVar1 + 0x3ea1c4);
+  param_1[0x47db] = 0;
+  param_1[0x47dc] = 0;
+  *(undefined1 *)((int)param_1 + 0x11f86) = 0;
+  param_1[0x47e2] = 0;
+  param_1[0x47e3] = -1;
+  *(undefined1 *)(param_1 + 0x47e5) = 0;
+  param_1[0x47e6] = 0;
+  param_1[0x47e7] = 0;
+  param_1[0x47e8] = 0;
+  param_1[0x47ec] = iVar4 + 0xc;
+  *(undefined1 *)(param_1 + 0x47f0) = 0;
+  *(undefined1 *)((int)param_1 + 0x11fc1) = 0;
+  param_1[0x47ef] = 0;
+  *(undefined1 *)((int)param_1 + 0x11fc2) = 0;
+  *(undefined1 *)((int)param_1 + 0x11fc3) = 0;
+  *(undefined1 *)(param_1 + 0x47f1) = 0;
+  *(undefined1 *)((int)param_1 + 0x11fc5) = 0;
+  *(undefined1 *)((int)param_1 + 0x11fc7) = 0;
+  *(undefined1 *)(param_1 + 0x47f2) = 0;
+  *(undefined1 *)((int)param_1 + 0x11fc9) = 0;
+  param_1[0x47f9] = (int)(param_1 + 0x47f9);
+  param_1[0x47fa] = (int)(param_1 + 0x47f9);
+  param_1[0x47fd] = 0;
+  param_1[0x47fb] = 0;
+  param_1[0x4804] = -1;
+  param_1[0x47fe] = 0;
+  param_1[0x4805] = -1;
+  *(undefined1 *)((int)param_1 + 0x12025) = 0;
+  param_1[0x4806] = 0;
+  *(undefined1 *)(param_1 + 0x4807) = 0;
+  *(undefined1 *)(param_1 + 0x4809) = 0;
+  *(undefined1 *)((int)param_1 + 0x12026) = 0;
+  *(undefined1 *)(param_1 + 0x480b) = 0;
+  puVar2 = (undefined1 *)_Z11CustomAllocjPKci(400,iVar3,0x32a);
+  *puVar2 = 0;
+  *(undefined4 *)(puVar2 + 0xc) = 0;
+  *(undefined4 *)(puVar2 + 4) = 0;
+  puVar2[8] = 0xff;
+  param_1[0x480a] = (int)puVar2;
+  iVar4 = _Z11CustomAllocjPKci(0x38,iVar3,0x32c);
+  _ZN13CMemoryStreamC1Ei(iVar4,0x4000);
+  param_1[0x47ee] = iVar4;
+  _Z11CustomAllocjPKci(0xc4,iVar3,0x32f);
+  _ZN13CGameSettingsC1Ev();
+  param_1[0x4808] = 0;
+  param_1[0x47f5] = -1;
+  *(undefined1 *)((int)param_1 + 0x11f81) = 0;
+  param_1[0x47f4] = -1;
+  *(undefined1 *)((int)param_1 + 0x11f83) = 0;
+  param_1[0x47f3] = -1;
+  *(undefined1 *)(param_1 + 0x47ed) = 0;
+  *(undefined1 *)((int)param_1 + 0x11fb5) = 0;
+  param_1[0x47df] = 0;
+  *(undefined1 *)(param_1 + 0x47e0) = 0;
+  *(undefined1 *)(param_1 + 0x47f6) = 0;
+  *(undefined1 *)((int)param_1 + 0x11f82) = 0;
+  *(undefined1 *)((int)param_1 + 0x11f85) = 0;
+  _ZN5MPool8InitPoolEv();
+  return param_1;
+}
+
+

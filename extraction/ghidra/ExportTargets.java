@@ -16,7 +16,9 @@ public class ExportTargets extends GhidraScript {
         "templatelevelproperties", "saveload", "irradiancevolume", "zonesmanager",
         "dictionary",
         // phase 3: preset base classes + postprocess LUT loading
-        "levelinit", "globalillum", "colorcorrection", "postprocess"
+        "levelinit", "globalillum", "colorcorrection", "postprocess",
+        // phase 4: level template load chain (lvc/DICT)
+        "loadlevelinit", "requireloadlevel", "checkloadlevel", "loadlevelsstatus", "application"
     };
 
     @Override

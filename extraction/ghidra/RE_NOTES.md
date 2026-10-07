@@ -103,3 +103,18 @@ Binary: `libKRHP.so` — extracted from `TDKR_v1.1.6b.apk` (committed at repo ro
     -preScript LeanAnalysis.java -postScript ExportTargets.java (~10 min); second pass
     `-process lib_libKRHP.so -noanalysis -postScript ExportTargets.java` after adding
     keywords (~1.5 min). 447 functions decompiled, all banked in decompiled/.
+17. **Level load chain traced** (pass 3, 590 funcs total):
+    - Lua `RequireLoadLevel(name)` -> `Application::RequireLoadLevel` (just records name+mission idx)
+    -> `Application::CheckLoadLevel` = SAVEGAME management (EncryptAndSave/DecryptAndLoad
+    checkpoints with key sizes 0xb4/0x16/0x1d; saves gol.bin-style state; NOT the lvc path).
+    - `Application::LoadLevelInitCheckPoint` (key str via DAT_003f31d8, key 0xb4) -> CLevel::Load;
+    `LoadLevelInitGlobalData` (key 0x16) -> CLevel::LoadGlobalObjects etc.
+    - **savegame files are ENCRYPTED** via `Application::DecryptAndLoad(path,int,stream)` /
+    `EncryptAndSave(path,int,stream)`.
+    - lvc (.lvc suffix strings @0xb44cd0/0xb44fb4, `shop.lvc` @0xb365fc, `data/game_config.gla`
+    @0xb3f9c8) loading happens deeper (GS_Loading game state / CLevel ctor) - NOT yet found.
+18. **DICT parser location**: "DICT" fourcc occurs 4x in .rodata only; code compares via
+    movw/movt immediates (e.g. movw Rd,#0x4944 + movt Rd,#0x5443). Next session: scan .text
+    for that pair -> owning function = the DICT/lvc reader that feeds CTemplateLevelProperties.
+19. Ghidra image-base note: symbol vaddrs (readelf) are offset by +0x10000 vs Ghidra listing
+    (e.g. LoadLevelInitCheckPoint 0x3e3108 -> Ghidra 0x3f3108). Map addresses accordingly.
