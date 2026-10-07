@@ -90,23 +90,21 @@ async function loadGLB(entry, tierName) {
   group.name = entry.file;
   group.visible = state.tiers[tierName].enabled;
 
-  // exporter guarantees gltf.scene.children[i] <-> entry.files[i] (one node per
-  // file, one primitive per mesh). GLTFLoader sanitizes ':' out of names, so we
-  // map by ORDER, never by name.
-  const kids = [...root.children];
-  entry.files.forEach((f, i) => {
-    const node = kids[i];
-    if (!node) return;
-    const texPromise = f.tex ? getTex(f.tex) : Promise.resolve(null);
-    node.traverse((obj) => {
-      if (!obj.isMesh) return;
-      obj.material = new THREE.MeshLambertMaterial({ color: 0x101623, side: THREE.DoubleSide });
-      texPromise.then((tex) => {
-        obj.material = tex
-          ? new THREE.MeshBasicMaterial({ map: tex, side: THREE.DoubleSide })
-          : new THREE.MeshLambertMaterial({ color: new THREE.Color().setHSL(0.6, 0.3, 0.10), side: THREE.DoubleSide });
-        obj.material.wireframe = state.wire;
-      });
+  // v2 exporter: every PRIMITIVE carries a material NAMED after its texture
+  // ('__dark' when untextured). GLTFLoader preserves material names, so we map
+  // material.name -> models/tex/<name>.jpg directly. No order/name matching of
+  // nodes needed any more.
+  root.traverse((obj) => {
+    if (!obj.isMesh) return;
+    const texName = obj.material?.name && obj.material.name !== '__dark'
+      ? obj.material.name : null;
+    const texPromise = texName ? getTex(texName) : Promise.resolve(null);
+    obj.material = new THREE.MeshLambertMaterial({ color: 0x101623, side: THREE.DoubleSide });
+    texPromise.then((tex) => {
+      obj.material = tex
+        ? new THREE.MeshBasicMaterial({ map: tex, side: THREE.DoubleSide })
+        : new THREE.MeshLambertMaterial({ color: new THREE.Color().setHSL(0.6, 0.3, 0.10), side: THREE.DoubleSide });
+      obj.material.wireframe = state.wire;
     });
   });
   group.add(root);
