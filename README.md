@@ -1,8 +1,18 @@
-# The Dark Knight Rises — Private Research Archive
+# The Dark Knight Rises — Research Archive
 
 **Game:** The Dark Knight Rises (Gameloft, 2012) — delisted mobile title
-**Purpose:** Private analysis of game mechanics, data formats, and engine structure
-**Status:** PRIVATE repository — do not distribute, re-host, or share contents
+**Purpose:** Analysis of game mechanics, data formats, and engine structure
+**Status:** Public research archive · live viewer: https://nawaf-al-hussain.github.io/TDKR-Game/
+
+## 🦇 Gotham City in the browser
+
+The city's `.bdae` meshes are fully parsed — **fly the real Gotham geometry live**:
+
+> **[GOTHAM CITY VIEWER →](https://nawaf-al-hussain.github.io/TDKR-Game/)**
+
+255 non-collision city meshes · 348,136 vertices · 202,857 triangles · the game's
+own baked night lightmaps, streaming as 34 GLB files (~18 MB total).
+Format spec in [`extraction/REPORT.md`](extraction/REPORT.md) §3.
 
 ## Provenance & Attestation
 
@@ -64,7 +74,10 @@ All game assets live under `com.gameloft.android.AMAZ.GloftKRAS/files/`:
    format cracked, 7,731 chunks + 1,186 textures + 3,110 sounds extracted, formats
    documented in [`extraction/REPORT.md`](extraction/REPORT.md)
 2. **Save/progress system** — `Controls.bin`, `oconf.bar`, and the `.cache` files
-3. **Level structure** — `*.bdae` scene/mesh chunks inside the level packs (next RE milestone)
+3. **Level structure (DONE for static geometry)** — `.bdae` = BRES/Binary DAE,
+   mesh chain spec + parser in [`extraction/`](extraction/); full city rendered
+   in the [live viewer](https://nawaf-al-hussain.github.io/TDKR-Game/). Still open:
+   scene-graph transforms, material→DiffuseMap tables, skinned actor vertex formats
 4. **Difficulty & economy tuning** — inside `game_config.gla` and per-level packs
 5. **Audio events** — `sounds.xml` maps triggers to the `sounds.gla` bank
 6. **GPU scalability** — `options/` XMLs reveal the internal quality-tier system

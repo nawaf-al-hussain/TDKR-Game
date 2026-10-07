@@ -36,7 +36,8 @@ extraction/
 │   ├── bdae_extract.py        # BDAE mesh-block chain parser → GLB exporter (Y-up + textures)
 │   ├── bdae_survey.py         # batch survey of all .bdae files (stats → JSON)
 │   ├── bdae_uv_verify.py      # UV-sampled texture render (proves UV + lightmap binding)
-│   └── export_showcase.py     # exports the five web-app showcase GLBs
+│   ├── export_showcase.py     # exports the five web-app showcase GLBs
+│   └── export_city.py         # full-city LOD-aware Pages export (tiered GLBs + JPEG atlases)
 ├── manifests/
 │   ├── gla_chunks_manifest.csv    # 7,731 chunks: archive, name, offset, size, magic, sha256[:16]
 │   ├── textures_manifest.csv      # 1,186 textures: archive, name, w×h, bpp, codec
@@ -63,6 +64,8 @@ python3 scripts/make_sheets.py
 # 5. BDAE meshes: survey all files, then export showcase GLBs (numpy + pillow)
 python3 scripts/bdae_survey.py
 python3 scripts/export_showcase.py
+# 6. full-city export for the GitHub Pages viewer (stages work/site/)
+python3 scripts/export_city.py
 ```
 
 Requirements: Python 3.10+, `numpy`, `pillow`, `texture2ddecoder`, `ffmpeg`.
@@ -72,6 +75,7 @@ Requirements: Python 3.10+, `numpy`, `pillow`, `texture2ddecoder`, `ffmpeg`.
 - `.gla` = big-endian index container: 16-byte TOC + alphabetical NUL name pool + contiguous chunks; 27/27 archives parse with perfect contiguity.
 - Textures = 52-byte PVR v2 header wrapping **ETC1** (4bpp, 971), RGB565 (205), BGR888 (8, incl. 3 Gotham skyboxes), RGBA8888 (2).
 - Skyboxes are single-surface dome/panorama maps (no cubemaps); 33 skybox/env/fog assets inventoried.
-- `.bdae` = **BRES / Binary DAE** (compiled COLLADA): chained mesh blocks, `[pos 3×f32][normal 11-11-10][uv 2×u16]` vertices, u16 indices, material name in footer — 853 files / 1.24M verts / 509K tris extracted, city rendered live in the companion web app.
-- Static + collision mesh geometry is fully parsed; still open: scene-graph node transforms, material→DiffuseMap tables, skinned actor vertex formats, Vxvs audio streams.
+- `.bdae` = **BRES / Binary DAE** (compiled COLLADA): chained mesh blocks, `[pos 3×f32][normal 11-11-10][uv 2×u16]` vertices, u16 indices, material name in footer — 853 files / 1.24M verts / 509K tris extracted.
+- **Full city live on GitHub Pages**: 255 non-collision `l_gothamcity` meshes (348K verts / 203K tris) stream as 34 geometry-only GLBs + 35 external JPEG lightmaps at https://nawaf-al-hussain.github.io/TDKR-Game/ — tiered skyline/footprints/districts/LOD loading via `scripts/export_city.py`.
+- Static + collision mesh geometry is fully parsed; still open: scene-graph node transforms, material→DiffuseMap tables, ZIP_SPLIT long-distance texture reassembly, skinned actor vertex formats, Vxvs audio streams.
 - Audio is MS-ADPCM WAV (ffmpeg-decodable) + 3 proprietary `Vxvs` streams.

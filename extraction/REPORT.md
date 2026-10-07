@@ -94,8 +94,17 @@ index list. Still open: scene-graph node transforms (island placement), material
 DiffuseMap parameter tables, ZIP_SPLIT long-distance texture reassembly, skinned
 actor vertex formats (stride 52: blend shapes/weights).
 
-Extracted showcase GLBs (Y-up, textures embedded): `meshes_glb/*.glb` — rendered live
-by the Gotham City Explorer web app's "Real BDAE meshes" mode.
+Extracted showcase GLBs (Y-up, textures embedded): `meshes_glb/*.glb`.
+
+**Full-city viewer (GitHub Pages):** `scripts/export_city.py` classifies the 255
+non-collision `l_gothamcity` meshes into tiers (skyline / footprints / districts /
+low-LOD), exports 34 geometry-only GLBs (13.4 MB — one node per file, one primitive
+per mesh, order-mapped to the manifest) + 35 external JPEG lightmaps (~5 MB), and
+streams them at **https://nawaf-al-hussain.github.io/TDKR-Game/** (Three.js r170,
+progressive tier loading, mesh browser, panorama sky from `GC_Skybox_City`).
+Texture binding: uv-verified overrides (island↔`*_LongDist_Low` atlases,
+roads↔`BakeGroup_*`, bridges↔`bridge_tile`) + token-overlap heuristic for the
+remaining props; footprint atlases stuck in ZIP_SPLIT render as night silhouettes.
 
 ## 4. Audio (files/data/sounds.gla + sounds.xml)
 
