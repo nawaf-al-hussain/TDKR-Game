@@ -420,7 +420,7 @@
   },
   {
    "file": "models/fp_island2.glb",
-   "bytes": 3761320,
+   "bytes": 3760848,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -549,9 +549,7 @@
     },
     {
      "name": "GC_Footprint_AJ_LongDist",
-     "texs": [
-      "BakeGroup_Island2_Landmarks0"
-     ],
+     "texs": [],
      "verts": 2490,
      "tris": 1322,
      "meshes": 1
@@ -596,7 +594,7 @@
     {
      "name": "GC_Footprint_CB_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP1"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 188,
      "tris": 102,
@@ -682,7 +680,7 @@
     {
      "name": "GC_Footprint_CG_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP1"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 184,
      "tris": 94,
@@ -866,9 +864,7 @@
     },
     {
      "name": "GC_Footprint_DF_LongDist",
-     "texs": [
-      "BakeGroup_Island2_Roads0"
-     ],
+     "texs": [],
      "verts": 2241,
      "tris": 1149,
      "meshes": 1
@@ -1255,7 +1251,7 @@
     {
      "name": "GC_Footprint_STD_Volumetric",
      "texs": [
-      "GC_Footprint_STD_stuff_TH"
+      "BakeGroup_Island2_Landmarks0"
      ],
      "verts": 218,
      "tris": 168,
@@ -1397,7 +1393,7 @@
     {
      "name": "GC_Footprint_VPOW_Volumetric",
      "texs": [
-      "City_BKG"
+      "BakeGroup_Island1_Landmarks0"
      ],
      "verts": 44,
      "tris": 32,
@@ -2477,5 +2473,5 @@
  ],
  "total_verts": 346960,
  "total_tris": 202137,
- "version": 8
+ "version": 9
 }
