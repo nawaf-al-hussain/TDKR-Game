@@ -420,7 +420,7 @@
   },
   {
    "file": "models/fp_island2.glb",
-   "bytes": 3760980,
+   "bytes": 3761320,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -434,14 +434,18 @@
     },
     {
      "name": "GC_FootPrint_CA_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 625,
      "tris": 353,
      "meshes": 1
     },
     {
      "name": "GC_FootPrint_LA_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 343,
      "tris": 189,
      "meshes": 1
@@ -473,7 +477,9 @@
     },
     {
      "name": "GC_Footprint_AC_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 1024,
      "tris": 647,
      "meshes": 1
@@ -489,7 +495,9 @@
     },
     {
      "name": "GC_Footprint_AF_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 865,
      "tris": 471,
      "meshes": 1
@@ -505,7 +513,9 @@
     },
     {
      "name": "GC_Footprint_AG_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 640,
      "tris": 364,
      "meshes": 1
@@ -521,7 +531,9 @@
     },
     {
      "name": "GC_Footprint_AH_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 1836,
      "tris": 1120,
      "meshes": 1
@@ -537,7 +549,9 @@
     },
     {
      "name": "GC_Footprint_AJ_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Landmarks0"
+     ],
      "verts": 2490,
      "tris": 1322,
      "meshes": 1
@@ -554,7 +568,7 @@
     {
      "name": "GC_Footprint_AWT_LongDist",
      "texs": [
-      "GC_Footprint_AWT"
+      "BakeGroup_Island1_Landmarks0"
      ],
      "verts": 1253,
      "tris": 823,
@@ -631,7 +645,9 @@
     },
     {
      "name": "GC_Footprint_CE_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 1127,
      "tris": 683,
      "meshes": 1
@@ -647,7 +663,9 @@
     },
     {
      "name": "GC_Footprint_CF_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 2027,
      "tris": 1201,
      "meshes": 1
@@ -681,14 +699,18 @@
     },
     {
      "name": "GC_Footprint_CH_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 663,
      "tris": 397,
      "meshes": 1
     },
     {
      "name": "GC_Footprint_CJ_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_A0"
+     ],
      "verts": 3279,
      "tris": 1317,
      "meshes": 1
@@ -711,7 +733,9 @@
     },
     {
      "name": "GC_Footprint_CL_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_A0"
+     ],
      "verts": 1157,
      "tris": 500,
      "meshes": 1
@@ -727,7 +751,9 @@
     },
     {
      "name": "GC_Footprint_CM_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_A0"
+     ],
      "verts": 2316,
      "tris": 1052,
      "meshes": 1
@@ -786,7 +812,9 @@
     },
     {
      "name": "GC_Footprint_DB_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 462,
      "tris": 245,
      "meshes": 1
@@ -802,7 +830,9 @@
     },
     {
      "name": "GC_Footprint_DC_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 870,
      "tris": 450,
      "meshes": 1
@@ -818,7 +848,9 @@
     },
     {
      "name": "GC_Footprint_DD_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 391,
      "tris": 242,
      "meshes": 1
@@ -834,7 +866,9 @@
     },
     {
      "name": "GC_Footprint_DF_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Roads0"
+     ],
      "verts": 2241,
      "tris": 1149,
      "meshes": 1
@@ -850,7 +884,9 @@
     },
     {
      "name": "GC_Footprint_DG_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_A0"
+     ],
      "verts": 904,
      "tris": 452,
      "meshes": 1
@@ -866,7 +902,9 @@
     },
     {
      "name": "GC_Footprint_DH_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Landmarks0"
+     ],
      "verts": 1215,
      "tris": 633,
      "meshes": 1
@@ -966,7 +1004,9 @@
     },
     {
      "name": "GC_Footprint_GD_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 505,
      "tris": 473,
      "meshes": 1
@@ -983,7 +1023,7 @@
     {
      "name": "GC_Footprint_GF_LongDist",
      "texs": [
-      "GC_LongDist_Island2_FP2"
+      "BakeGroup_Island1_A0"
      ],
      "verts": 184,
      "tris": 98,
@@ -1000,7 +1040,9 @@
     },
     {
      "name": "GC_Footprint_IA_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 203,
      "tris": 138,
      "meshes": 1
@@ -1016,7 +1058,9 @@
     },
     {
      "name": "GC_Footprint_IB_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 233,
      "tris": 159,
      "meshes": 1
@@ -1033,7 +1077,7 @@
     {
      "name": "GC_Footprint_IC_LongDist",
      "texs": [
-      "GC_Footprint_IC"
+      "BakeGroup_Island1_A0"
      ],
      "verts": 156,
      "tris": 86,
@@ -1050,7 +1094,9 @@
     },
     {
      "name": "GC_Footprint_ID_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Landmarks0"
+     ],
      "verts": 346,
      "tris": 211,
      "meshes": 1
@@ -1066,7 +1112,9 @@
     },
     {
      "name": "GC_Footprint_IE_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Landmarks0"
+     ],
      "verts": 530,
      "tris": 365,
      "meshes": 1
@@ -1091,7 +1139,9 @@
     },
     {
      "name": "GC_Footprint_LB_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 626,
      "tris": 285,
      "meshes": 1
@@ -1107,7 +1157,9 @@
     },
     {
      "name": "GC_Footprint_LC_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 984,
      "tris": 372,
      "meshes": 1
@@ -1139,7 +1191,9 @@
     },
     {
      "name": "GC_Footprint_LF_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 489,
      "tris": 376,
      "meshes": 1
@@ -1155,7 +1209,9 @@
     },
     {
      "name": "GC_Footprint_LG_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_B0"
+     ],
      "verts": 2633,
      "tris": 934,
      "meshes": 1
@@ -1171,7 +1227,9 @@
     },
     {
      "name": "GC_Footprint_LPOL_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_A0"
+     ],
      "verts": 222,
      "tris": 98,
      "meshes": 1
@@ -1321,7 +1379,7 @@
     {
      "name": "GC_Footprint_VPOW_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP3"
+      "BakeGroup_Island1_Landmarks0"
      ],
      "verts": 6397,
      "tris": 3296,
@@ -1347,7 +1405,9 @@
     },
     {
      "name": "GC_Footprint_VRS_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Landmarks0"
+     ],
      "verts": 2990,
      "tris": 2148,
      "meshes": 1
@@ -1363,7 +1423,9 @@
     },
     {
      "name": "GC_Footprint_ZA_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 442,
      "tris": 243,
      "meshes": 1
@@ -1402,7 +1464,9 @@
     },
     {
      "name": "GC_Footprint_ZD_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 758,
      "tris": 430,
      "meshes": 1
@@ -1443,7 +1507,9 @@
     },
     {
      "name": "GC_footprint_AB_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 1325,
      "tris": 887,
      "meshes": 1
@@ -2411,5 +2477,5 @@
  ],
  "total_verts": 346960,
  "total_tris": 202137,
- "version": 7
+ "version": 8
 }
