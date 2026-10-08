@@ -420,7 +420,7 @@
   },
   {
    "file": "models/fp_island2.glb",
-   "bytes": 3760824,
+   "bytes": 3760980,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -743,7 +743,9 @@
     },
     {
      "name": "GC_Footprint_CN_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 213,
      "tris": 102,
      "meshes": 1
@@ -922,7 +924,7 @@
     {
      "name": "GC_Footprint_GA_LongDist",
      "texs": [
-      "GC_LongDist_Island2_FP2"
+      "BakeGroup_Island1_A0"
      ],
      "verts": 142,
      "tris": 62,
@@ -956,7 +958,7 @@
     {
      "name": "GC_Footprint_GC_LongDist",
      "texs": [
-      "GC_LongDist_Island2_FP2"
+      "BakeGroup_Island1_B0"
      ],
      "verts": 136,
      "tris": 98,
@@ -1247,7 +1249,7 @@
     {
      "name": "GC_Footprint_VB_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP1"
+      "BakeGroup_Island1_A0"
      ],
      "verts": 181,
      "tris": 88,
@@ -1265,7 +1267,7 @@
     {
      "name": "GC_Footprint_VC_LongDist",
      "texs": [
-      "GC_LongDist_Island2_FP1"
+      "BakeGroup_Island1_A0"
      ],
      "verts": 201,
      "tris": 75,
@@ -2409,38 +2411,5 @@
  ],
  "total_verts": 346960,
  "total_tris": 202137,
- "version": 6,
- "fog": {
-  "texture": "models/tex/GC_VerticalFOG.png",
-  "color": [
-   64,
-   102,
-   119,
-   160
-  ],
-  "start": 0.0,
-  "end": 154.0,
-  "scale": 1.1,
-  "fogMap": [
-   -1210,
-   -220,
-   0.0006578947368421052,
-   -0.0008849557522123894
-  ],
-  "vfogHeight": 0.013,
-  "vfogAlpha": 0.65,
-  "fogDecay": 0.5,
-  "source": "GothamCity.lvc.bin CComponentBaseGlobalIllum preset; scale = DeviceOptions::Singleton fogDistanceFactor = 1.1 (\"Fog distance factor\" GPU_5.xml; default 1.0 in ctor @0x4a91f0; libKRHP.so RE)"
- },
- "lut": {
-  "texture": "models/tex/LUT_000_default.png",
-  "lightning": "models/tex/LUT_023_lighting.png",
-  "size": [
-   512,
-   16
-  ],
-  "format": "RGB565 (PVR v1 wrapper fmt 19)",
-  "shader": "CCFS.glsl (effects.gla): u=(r/32)*0.9375+(0.03125/32)+floor(b*31.9999)/32, v=g",
-  "source": "Lua bootstrap PostProcessingEffectAdd(\"ColorCorrection\", extra_texture=\"000_default.tga\")"
- }
+ "version": 7
 }

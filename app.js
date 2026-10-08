@@ -76,10 +76,107 @@ FOG.scale = 1 / (FOG.end - FOG.start);
 //   u = r * 0.9375 + 0.03125*cellsize + b;   v = color.g;
 // (the 512x16 atlas stores 32 blue slices x 16 green rows; u,v are
 //  normalized so CCFS works on it directly at half resolution)
+//
+// v7: LIGHTNING + HURT — also extracted, not tuned:
+// · BLightning() in the GothamCity Lua bootstrap (lvc string #0) fires THREE
+//   one-shot ColorCorrection pulses of 023_lighting.tga plus a smart light:
+//     flash 1  fade_in 30ms, run 30ms, fade_out 30ms   light on  75ms off  45ms
+//     flash 2  fade_in 60ms, run 30ms, fade_out 150ms  light on 135ms off 135ms
+//     flash 3  fade_in 30ms, run 30ms, fade_out  90ms  light on 105ms off  75ms
+//   (PostProcessingEffectAdd('ColorCorrection', {extra_texture=
+//    '023_lighting.tga', time_to_fade_in=X, time_to_run=30, time_to_fade_out=Y})
+//   — CPostProcessEffect_ColorCorrection::Update @0x45ac88 state machine:
+//   fade-in -> run -> fade-out, then effect removed.)
+// · 023_lighting.tga mean (220,229,234) = near-white flash grade.
+// · Health blend (CPostProcessManager::BuildColorGradingTexture @0x458e18):
+//     t = (20 - GetHealth()) * (1/60) + 1.0        [DAT_004590c0 = 0.0166667]
+//     t = min(t, 1 - CHUDDisplay::GetHurtAlpha())
+//     t = clamp(t, 0.0, 1.0)                        [DAT_004590c4 = 0.0]
+//     draw LUT_normal(+0x50) blended toward LUT_hurt(+0x54) by 1-t at intensity
+//   LUT_hurt comes from the effect's second texture string; when absent the
+//   code falls back to '000_default.tga' (getHackTex @0x45a8d8) — so for the
+//   shipped night city the hurt LUT == normal LUT and the blend is a no-op
+//   unless a gameplay script supplies one. We keep the exact mechanism and
+//   drive uHurt from the effective hurtAlpha (keys [ and ]).
 const LUT = {
   tex: 'models/tex/LUT_000_default.png',
+  flashTex: 'models/tex/LUT_023_lighting.png',   // lightning flash grade (BLightning)
   cells: 32.0,
 };
+
+/* ---- BLightning: verbatim port of the Lua bootstrap sequence ------------- */
+// one-shot ColorCorrection pulse: state machine @0x45ac88 —
+//   fade-in over time_to_fade_in, hold time_to_run, fade-out over
+//   time_to_fade_out, then removed. Blend weight w(t) ramps 0->1->0.
+const LIGHTNING = {
+  pulses: [                        // [fade_in, run, fade_out] ms — from BLightning
+    [30, 30, 30],
+    [60, 30, 150],
+    [30, 30, 90],
+  ],
+  light: [75, 45, 135, 135, 105, 75],   // smart-light on/off ms, same source
+  minInterval: 5000, maxInterval: 15000, // --Wait(Random(5000, 15000)) in bootstrap
+};
+
+const lightningState = {
+  active: false,      // a 3-pulse strike is playing
+  pulse: -1,
+  t0: 0,
+  phase: 'idle',
+  nextStrike: performance.now() + 4000,
+  enabled: true,      // c_LightningEnable = true (bootstrap)
+  flash: 0.0,         // current grade blend 0..1 -> uFlash uniform
+  lightBoost: 0.0,    // current smart-light boost 0..1
+};
+
+function stepLightning(now) {
+  const L = lightningState;
+  if (!L.enabled) { L.flash = 0; L.lightBoost = 0; L.active = false; L.phase = 'idle'; return; }
+  if (!L.active && now >= L.nextStrike) {
+    L.active = true; L.pulse = -1; L.phase = 'gap'; L.t0 = now;
+  }
+  if (!L.active) { L.flash *= 0.0; return; }
+  if (L.phase === 'gap') {
+    L.pulse++;
+    if (L.pulse >= LIGHTNING.pulses.length) {
+      L.active = false;
+      L.flash = 0; L.lightBoost = 0;
+      L.nextStrike = now + LIGHTNING.minInterval +
+        Math.random() * (LIGHTNING.maxInterval - LIGHTNING.minInterval);
+      L.phase = 'idle';
+      return;
+    }
+    L.phase = 'pulse';
+    L.t0 = now;
+  }
+  if (L.phase === 'pulse') {
+    const [fi, run, fo] = LIGHTNING.pulses[L.pulse];
+    const t = now - L.t0;
+    const total = fi + run + fo;
+    let w;
+    if (t < fi) w = t / Math.max(fi, 1);            // fade in
+    else if (t < fi + run) w = 1.0;                 // run
+    else if (t < total) w = 1.0 - (t - fi - run) / Math.max(fo, 1);  // fade out
+    else { L.phase = 'gap'; L.t0 = now; w = 0.0; }
+    L.flash = Math.max(0, Math.min(1, w));
+    // smart light windows: pulses start at 0 / 120 / 390 ms (75+45, +135+135)
+    const starts = [0, LIGHTNING.light[0] + LIGHTNING.light[1],
+      LIGHTNING.light[0] + LIGHTNING.light[1] + LIGHTNING.light[2] + LIGHTNING.light[3]];
+    const s = starts[L.pulse];
+    const on = LIGHTNING.light[L.pulse * 2], off = LIGHTNING.light[L.pulse * 2 + 1];
+    const tl = now - (L.t0 - (now - L.t0)); // pulse start reference
+    const dt = t;                            // time since pulse start
+    L.lightBoost = dt >= s && dt < s + on ? 1.0 : 0.0;
+  }
+}
+
+function triggerLightning() {
+  lightningState.active = true;
+  lightningState.pulse = -1;
+  lightningState.phase = 'gap';
+  lightningState.t0 = performance.now();
+  lightningState.enabled = true;
+}
 
 /* ---------------- state ---------------- */
 const state = {
@@ -113,12 +210,20 @@ scene.fog = new THREE.Fog(
   new THREE.Color(...FOG.color), FOG.start, FOG.end); // exact GI fog, fallback mats
 
 /* ---- ColorCorrection post pass (CCFS.glsl port, NEAREST like the game) -- */
+// v7: the pass now carries the full effect stack:
+//   base grade 000_default (always on, fade_in=0)
+// + lightning flash: lerp toward CCFS(023_lighting) by uFlash (BLightning)
+// + hurt blend: lerp toward CCFS(uLUTHurt) by uHurt (BuildColorGradingTexture)
 const lutShader = {
   uniforms: {
     tDiffuse:   { value: null },
     uLUT:       { value: null },
+    uLUTFlash:  { value: null },
+    uLUTHurt:   { value: null },
     uCells:     { value: LUT.cells },
     uLutOn:     { value: 0.0 },   // flips to 1 once the LUT texture is loaded
+    uFlash:     { value: 0.0 },   // BLightning grade blend 0..1
+    uHurt:      { value: 0.0 },   // health/hurt blend 0..1 (1-t from the game)
   },
   vertexShader: /* glsl */`
     varying vec2 vUv;
@@ -127,32 +232,53 @@ const lutShader = {
     precision mediump float;
     uniform sampler2D tDiffuse;
     uniform sampler2D uLUT;
+    uniform sampler2D uLUTFlash;
+    uniform sampler2D uLUTHurt;
     uniform float uCells;
     uniform float uLutOn;
+    uniform float uFlash;
+    uniform float uHurt;
     varying vec2 vUv;
-    void main() {
-      vec4 color = texture2D(tDiffuse, vUv);
-      // CCFS.glsl (verbatim constants from effects.gla)
+    // CCFS.glsl (verbatim constants from effects.gla)
+    vec3 ccfs(sampler2D lut, vec4 color) {
       float cellsize = 1.0 / uCells;
       float r = color.r * cellsize;
       float b = floor(color.b * (uCells - 0.0001)) * cellsize;
       float u = r * 0.9375 + 0.03125 * cellsize + b;
       float v = color.g;
-      vec4 graded = texture2D(uLUT, vec2(u, v));
-      gl_FragColor = mix(color, vec4(graded.rgb, color.a), uLutOn);
+      return texture2D(lut, vec2(u, v)).rgb;
+    }
+    void main() {
+      vec4 color = texture2D(tDiffuse, vUv);
+      vec3 graded   = ccfs(uLUT, color);
+      vec3 gradedFl = ccfs(uLUTFlash, color);   // 023_lighting lightning grade
+      vec3 gradedHu = ccfs(uLUTHurt, color);    // hurt LUT (== normal for shipped Gotham)
+      vec3 out3 = mix(graded, gradedFl, uFlash);
+      out3 = mix(out3, gradedHu, uHurt);
+      gl_FragColor = mix(color, vec4(out3, color.a), uLutOn);
     }`,
 };
 const lutPass = new ShaderPass(lutShader);
 lutPass.renderToScreen = true;
-new THREE.TextureLoader().load(LUT.tex, (t) => {
-  t.flipY = false;                      // PVR top-first rows
-  t.magFilter = THREE.NearestFilter;    // game binds NEAREST for ColorGradingSampler
-  t.minFilter = THREE.NearestFilter;
-  t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping;
-  t.colorSpace = THREE.NoColorSpace;    // gamma-space pipeline parity
+function lutTexture(url) {
+  // the game binds NEAREST + CLAMP for ColorGradingSampler (CPostProcessManager)
+  return new Promise((res) => {
+    new THREE.TextureLoader().load(url, (t) => {
+      t.flipY = false;                      // PVR top-first rows
+      t.magFilter = THREE.NearestFilter;
+      t.minFilter = THREE.NearestFilter;
+      t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping;
+      t.colorSpace = THREE.NoColorSpace;    // gamma-space pipeline parity
+      res(t);
+    }, undefined, () => res(null));
+  });
+}
+Promise.all([lutTexture(LUT.tex), lutTexture(LUT.flashTex)]).then(([t, tf]) => {
   // NOTE: ShaderPass clones the shader uniforms -> mutate lutPass.uniforms
   lutPass.uniforms.uLUT.value = t;
-  lutPass.uniforms.uLutOn.value = 1.0;
+  lutPass.uniforms.uLUTHurt.value = t;   // hurt fallback = 000_default.tga (getHackTex)
+  lutPass.uniforms.uLUTFlash.value = tf || t;
+  if (t) lutPass.uniforms.uLutOn.value = 1.0;
 });
 
 /* the game's world-projected fog/glow map (gc_verticalfog.tga, ETC2-decoded) */
@@ -168,7 +294,7 @@ const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 1, 1200
 camera.position.set(650, 420, 760);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-window.__v = { scene, camera, controls, state, FOG, lutPass }; // debug hook
+window.__v = { scene, camera, controls, state, FOG, lutPass, lightningState, triggerLightning }; // debug hook
 controls.enableDamping = true;
 controls.dampingFactor = 0.06;
 controls.maxPolarAngle = Math.PI * 0.55;
@@ -457,6 +583,30 @@ $('btn-orbit').onclick = () => {
 };
 $('btn-reset').onclick = fitCamera;
 
+/* ---- BLightning / hurt controls (exact game data, keys) ------------------ */
+// L          = trigger a BLightning strike now (3 pulses + smart light)
+// Shift+L    = toggle c_LightningEnable (auto strikes, Random(5000,15000) ms)
+// [ / ]      = hurtAlpha down/up (health blend; the game computes it from
+//              GetHealth via CHUDDisplay::GetHurtAlpha — see notes above)
+addEventListener('keydown', (ev) => {
+  if (ev.key === 'l' || ev.key === 'L') {
+    if (ev.shiftKey) {
+      lightningState.enabled = !lightningState.enabled;
+      setStatus(lightningState.enabled ? 'lightning: auto (c_LightningEnable)'
+                                       : 'lightning: disabled');
+      setTimeout(clearStatus, 1600);
+    } else {
+      triggerLightning();
+    }
+  } else if (ev.key === '[' || ev.key === ']') {
+    const h = lutPass.uniforms.uHurt.value + (ev.key === ']' ? 0.1 : -0.1);
+    lutPass.uniforms.uHurt.value = Math.max(0, Math.min(1, h));
+    setStatus(`hurtAlpha = ${lutPass.uniforms.uHurt.value.toFixed(2)}  ` +
+              `(t = clamp((20-hp)/60+1,0,1), hurt = 1-t)`);
+    setTimeout(clearStatus, 2200);
+  }
+});
+
 function fitCamera() {
   const box = new THREE.Box3();
   let any = false;
@@ -546,9 +696,15 @@ function updateHUDTotals() {
 }
 
 const batarangPrev = { rotate: 0 };
+const MOON_BASE = 0.45;
 function animate(t) {
   requestAnimationFrame(animate);
   controls.update();
+  // BLightning: grade + smart-light windows (CWeatherManager-driven in-game;
+  // here the moon light plays the smartLightId role)
+  stepLightning(t);
+  lutPass.uniforms.uFlash.value = lightningState.flash;
+  moon.intensity = MOON_BASE + lightningState.lightBoost * 2.2;
   if (batarang?.visible) {
     batarang.rotation.y += 0.02;
     batarang.rotation.x = Math.sin(t * 0.0006) * 0.35;
