@@ -234,7 +234,9 @@ def _uv_score(page, so, uv, idx):
     su, sv, ou, ov = so
     t = np.column_stack([uv[:, 0] * su + ou, uv[:, 1] * sv + ov])
     u = np.clip(t[:, 0] * (w - 1), 0, w - 1).astype(np.int32)
-    v = np.clip(t[:, 1] * (h - 1), 0, h - 1).astype(np.int32)
+    # v10: page rows are top-down; game v is bottom-origin — flip the row index
+    # so scoring samples the TRUE tile (was validating at the mirrored tile).
+    v = (h - 1) - np.clip(t[:, 1] * (h - 1), 0, h - 1).astype(np.int32)
     s = e[v, u]
     if len(s) > 40000:
         s = s[:: len(s) // 40000]
@@ -253,10 +255,13 @@ def choose_bake_channel(mesh, page, so):
         return False
     e, (h, w) = pe
     # control: edge density of a uniform tile fill
-    u0, v0 = int(ou * (w - 1)), int(ov * (h - 1))
+    u0 = int(ou * (w - 1))
     u1 = min(w - 1, u0 + int(su * (w - 1)))
-    v1 = min(h - 1, v0 + int(sv * (h - 1)))
-    fill = float(e[v0:v1, u0:u1].mean() / (e.mean() + 1e-9))
+    # v10: control rect in flipped (top-down row) space to match _uv_score
+    rv0 = (h - 1) - int((ov + sv) * (h - 1))
+    rv1 = (h - 1) - int(ov * (h - 1))
+    rv0, rv1 = max(0, min(rv0, rv1)), min(h - 1, max(rv0, rv1))
+    fill = float(e[rv0:rv1, u0:u1].mean() / (e.mean() + 1e-9))
     cands = []
     if mesh.get("uvm") is not None:
         cands.append(("uvm", mesh["uvm"]))
@@ -292,7 +297,7 @@ def uv_fit(uv, name):
         return -1.0
     e, (h, w) = em
     u = np.clip(uv[:, 0] * (w - 1), 0, w - 1).astype(np.int32)
-    v = np.clip(uv[:, 1] * (h - 1), 0, h - 1).astype(np.int32)
+    v = (h - 1) - np.clip(uv[:, 1] * (h - 1), 0, h - 1).astype(np.int32)
     s = e[v, u]
     if len(s) > 20000:
         s = s[:: len(s) // 20000]
@@ -363,8 +368,20 @@ class GlbBuilder:
                 pos, nrm = m["pos"], m["nrm"]
             pos = np.ascontiguousarray(pos, np.float32)
             nrm = np.ascontiguousarray(nrm, np.float32)
-            uv = np.ascontiguousarray(m["uv"] if m.get("uv") is not None
-                                      else np.zeros((m["count"], 2), np.float32), np.float32)
+            if m.get("uv") is not None:
+                # v10 V-CONVENTION FIX: game GLES UVs are bottom-origin (v=0 =
+                # bottom row of the decoded page — proven by the FP1 full-page
+                # raster + plaza probe: coherent atlas only under v-bottom).
+                # glTF/three.js flipY=false sample v=0 at the TOP row, so the
+                # deployed viewer has been sampling every page VERTICALLY
+                # MIRRORED (symmetric content looked plausible; asymmetric
+                # bake pages showed other tiles' content = "wrong textures").
+                # Flip V once here — the single choke point for TEXCOORD_0.
+                uv = np.asarray(m["uv"], np.float32).copy()
+                uv[:, 1] = 1.0 - uv[:, 1]
+                uv = np.ascontiguousarray(uv)
+            else:
+                uv = np.ascontiguousarray(np.zeros((m["count"], 2), np.float32))
             idx = np.ascontiguousarray(m["idx"], np.uint32)
             sp, lp = self._add(pos.tobytes())
             sn, ln = self._add(nrm.tobytes())
@@ -678,12 +695,15 @@ def main():
         if not src:
             print(f"  !! texture missing on disk: {tex}")
             continue
-        hero = tex in HERO_TEX
+        # v10 QUALITY: every bake/atlas page ships at FULL 2048 source res
+        # (the fp tier's BakeGroup_* pages were downsampled to 1024 q78 —
+        # the "very low quality" report; sources are 2048x2048).
+        hero = tex in HERO_TEX or tex.lower().startswith("bakegroup_")
         n = tex + ".jpg"
         dim = DIM_TEX.get(tex, 1.0) if tex_modes.get(tex, {"d"}) <= {"d"} else 1.0
         sz = jpg_from_png(src, os.path.join(TEXD, n), 2048 if hero else 1024,
-                          82 if hero else 78, dim=dim)
-        print(f"  tex {n:<48} {sz/1024:>6.0f} KB{' (hero 2048)' if hero else ''}")
+                          88 if hero else 80, dim=dim)
+        print(f"  tex {n:<48} {sz/1024:>6.0f} KB{' (hero 2048 q88)' if hero else ''}")
 
     # ---------------- batarang showcase (self-contained) ----------------
     bat = os.path.join(RAW, "actors", "Batarang.bdae.bin")

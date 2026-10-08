@@ -460,3 +460,30 @@ Binary: `libKRHP.so` — extracted from `TDKR_v1.1.6b.apk` (committed at repo ro
     pow2 tiles), so2 = low-page (ATLAS_low0) tile for the trailing low-path
     component; page strings end .tga in the lvc string table (u32-indexed,
     big-endian lvc container).
+53. **V-CONVENTION (v10, session 8 — the definitive "wrong textures" fix)**:
+    Game GLES UVs are BOTTOM-origin. Proof: (a) GC_LongDist_Island1_FP1's own
+    bdae mesh UVs rastered onto its own 2048 page form a PERFECTLY coherent
+    atlas only under v-bottom (uv_ground_truth_render.py); (b) plaza probe:
+    triangles whose UVs hit the page's circular-plaza bbox render the plaza
+    under v-bottom (52% cov) vs noise under v-top (30%). The PVR/ETC2 decode
+    preserves stored row order (row0 = stored first row), and the engine's
+    effective pairing puts v=0 at the page BOTTOM on our decoded pages.
+    The viewer loads textures flipY=false (glTF: v=0 = TOP row) -> every page
+    was sampled VERTICALLY MIRRORED in v4-v9: symmetric content (window
+    grids, bridge_tile) looked plausible; asymmetric bake pages showed OTHER
+    tiles' content = user's persistent "wrong textures". Fix: exporter v10
+    flips V once at the GlbBuilder choke point (uv[:,1]=1-uv[:,1]); bdae
+    write_glb (batarang) same. Tile scoring (_uv_score/uv_fit/control rect)
+    now samples row (h-1)-v = the TRUE tile.
+54. **Address-correction note**: sessions 4-7 disasm targets were +0x10000
+    off the symtab (CComponentBeastBakeGroup::Load = 0x3be548 size 64, NOT
+    0x3ce548; CTemplateBakeGroup::Load = 0x48d870, not 0x49d870).
+    disasm_bake_v2.py re-disassembles the REAL functions: layouts unchanged
+    ({str,float,str,float} / (bool,int,9f,3bools,(str,float)x2)) — session
+    conclusions stand. CZone::ChangeLightMap @0x2b9208 (980B) = RUNTIME swap
+    only: iterates zone nodes, find("LightMap"/"LightmapTextureSampler"/
+    "LightMapSampler") in material/param names, splices the new page name —
+    not a static page->zone mapping source.
+55. **Texture quality (v10)**: BakeGroup_* fp-tier pages shipped 1024 q78
+    from 2048 sources = user's "very low quality". Now ALL bake pages
+    (BakeGroup_* + HERO_TEX) ship 2048 q88 (~1MB each); props 1024 q80.

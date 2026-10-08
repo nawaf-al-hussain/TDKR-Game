@@ -146,6 +146,10 @@ def write_glb(meshes, tex_path, out_path, name='mesh', yup=True, max_tex=2048):
             pos, nrm = m['pos'], m['nrm']
         for key, arr, comp in (('pos', pos, 3), ('nrm', nrm, 3), ('uv', m['uv'], 2)):
             a = arr.astype(np.float32)
+            if key == 'uv' and a is not None and len(a):
+                # v10: game UVs are bottom-origin; glTF samples v=0 at top row
+                a = a.copy()
+                a[:, 1] = 1.0 - a[:, 1]
             s, l = add(a.tobytes())
             views[(mi, key)] = (s, l, len(a))
         idx = m['idx'].astype(np.uint32)
