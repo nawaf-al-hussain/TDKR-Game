@@ -20,3 +20,16 @@ Stage Summary:
 - Engine truth finalized: pageUV = Coord1*so1 in GLES bottom-origin v; exporters must emit v' = 1-v for glTF. The "wrong textures" were never a binding-table problem for the island pages — they were a global V-mirror.
 - Key files: extraction/scripts/export_city.py (v10), extraction/re/bdae_extract.py, uv_ground_truth_render.py, plaza_probe.py, verify_glb_sampling.py, probe_litpool.py, disasm_bake_v2.py.
 - Disasm note: session 4-7 target addresses were +0x10000 off the real symbols (CComponentBeastBakeGroup::Load = 0x3be548 per symtab, not 0x3ce548); re-disassembled the real ones — layout conclusions unchanged ({str,float,str,float}). CZone::ChangeLightMap @0x2b9208 = runtime lightmap swap (finds "LightMap"/"LightmapTextureSampler"/"LightMapSampler" in node/material names, splices new page name) — not a static binding source.
+
+---
+Addendum (v10.1):
+- White wedges over the city root-caused: 79 meshes use the engine's
+  #SimpleAdditive-fx (glow planes, FX_Coronas light dots, diner logos,
+  STD/VPOW volumetrics); rendered opaque they were giant solid-white polys.
+- Exporter now tags these <tex>|add from the GT technique; viewer
+  makeAdditiveMaterial = AdditiveBlending + depthWrite:false, no fog chain
+  (local light sources). GC_CityBG additive backdrop stays skipped.
+- Verified on a local server: wedges gone, black sky restored; Skyline +
+  Footprints layers show aligned facades/roads/roundabout at full page res.
+- NOTE for future cache busting: GLB/tex/app.js URLs are stable across
+  deploys and GH Pages caches 10 min — verify via local server or wait.
