@@ -15,6 +15,7 @@ TARGETS = {
     'CBeastAreaComponent::Load':          0x2b164c,
     'CBeastDirectionalComponent::Load':   0x2b17e0,
     'CBeastObjectComponent::Load':        0x2b1ea4,
+    'CComponentBeastObjectComponent::Load': 0x2e1e8c,
     'CBeastObjectGlobalComponent::Load':  0x2b2a80,
     'CComponentBeastBakeGroup::Load':     0x3ce548,
     'CTemplateBakeGroup::Load':           0x49d870,

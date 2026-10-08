@@ -95,20 +95,29 @@ def parse_meshes(path, verbose=True):
         pos = np.zeros((count, 3), np.float32)
         nrm = np.zeros((count, 3), np.float32)
         uv = np.zeros((count, 2), np.float32)
+        uvm = np.zeros((count, 2), np.float32)
+        has_uvm = stride >= 16
         for i in range(count):
             o = start + i * stride
             pos[i] = struct.unpack_from('<3f', d, o)
             nrm[i] = decode_normal(struct.unpack_from('<I', d, o + 12)[0])
             u, v = struct.unpack_from('<2H', d, o + 16)
             uv[i] = (u / 65535.0, v / 65535.0)
+            if has_uvm:
+                um, vm = struct.unpack_from('<2H', d, o + 12)
+                uvm[i] = (um / 65535.0, vm / 65535.0)
         idx = np.frombuffer(d, np.uint16, numIdx, idx_off).astype(np.uint32)
         if not np.isfinite(pos).all() or not np.isfinite(pos[idx]).all():
             if verbose:
                 print(f'  mesh@{g:#x}: rejected (non-finite positions)')
             break
+        if stride < 20:
+            # 16B meshes: pos + ONE dword at +12 (uv OR normal — engine picks).
+            # +16 would read the NEXT vertex's position bytes -> garbage UVs.
+            uv = None
         meshes.append(dict(offset=g, count=count, stride=stride, numIdx=numIdx,
                            maxIdx=int(maxIdx), ndw=ndw, material=mat,
-                           pos=pos, nrm=nrm, uv=uv, idx=idx,
+                           pos=pos, nrm=nrm, uv=uv, uvm=uvm, has_uvm=has_uvm, idx=idx,
                            mn=pos.min(0), mx=pos.max(0)))
         if verbose:
             print(f'  mesh@{g:#x}: verts={count:6d} stride={stride} tris={numIdx//3:6d} '

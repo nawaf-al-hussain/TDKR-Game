@@ -417,3 +417,46 @@ Binary: `libKRHP.so` — extracted from `TDKR_v1.1.6b.apk` (committed at repo ro
     x unit-uv-max 0.7587). Reflection variants untouched. 42/55 fp _LongDist
     files bakegroup-bound (was 5), dark 40 -> 7, far-only five keep
     UV-fit pages. Headless: no page errors, all 7 shipped pages fetch 200.
+50. **Session 7 — v8 "wrong textures" root-caused (three independent defects)**:
+    a) *Wrong UV channel*: the fp _LongDist meshes store the BEAST bake UV
+       (Coord1) in the FIRST vertex dword (+12, u16 x2 /65535) — NOT in the
+       +16 stream the exporter used. Proof: GC_Footprint_IC_LongDist is a
+       16-byte-stride mesh (pos + ONE dword at +12, no normal); its +12
+       stream under so1 rasterizes EXACTLY onto the machinery content of its
+       assigned BakeGroup_Island1_A0 tile (visual overlay + 2.3x edge-score
+       over uniform-fill control), while +16 reads the NEXT VERTEX'S POSITION
+       bytes (out-of-vertex-bounds garbage). For 24B meshes (CA): +12 = uv,
+       +16 = second uv (Coord0/runtime complete-map), +20 = packed normal
+       (byte3 == 0 -> z~=0 up-axis normals for tower walls). v8 therefore
+       sampled the bake page with the complete-map layout -> smeared mosaics.
+    b) *Projection-bake landmarks*: VPOW-class meshes (st=16, +12 = normal)
+       have NO stored bake UV — the runtime derives Coord1 as a TOP-DOWN
+       PLANAR PROJECTION of position: uv1 = (pos.x-mn.x)/ext.x,
+       (pos.y-mn.y)/ext.y (game Z-up -> x,y = horizontal plane). Confirmed
+       visually: VPOW's normalized (x,y) wireframe locks onto the circular
+       machinery of its Landmarks0 tile.
+    c) *Mesh-binding offset pinned*: CComponentBeastObjectComponent::Load
+       @0x2e1e8c disassembly (capstone ARM): 4x ReadF32 (so1), ReadString
+       (page1), 4x ReadF32 (so2), tail-call ReadString (page2) — no mesh
+       index in this component. The mesh bdae string index lives at frame
+       base +84 (0x54) in the FOLLOWING component — derived empirically
+       (59/67 + 19/22 frames bind self-consistent infrastructure meshes at
+       dq=84: monorail->monorail, railway->railway, bridges->bridges). The
+       v1/v2 "first plausible bdae idx in [36,220)" scan was a false-positive
+       magnet (hc_prop_billboardwall_01's small string index collided with
+       W/H/hash u32s). bake_regions_v3.json = v2 records with mesh read at
+       fixed +84 (53 footprint bindings, mostly identical to v2 — v2 got 84
+       first for most frames, so v2 bindings were mostly right; the CHANNEL
+       bug was the real killer).
+51. **Exporter v9**: choose_bake_channel() — candidates {uvm (+12 stream),
+    top-down position projection}, edge-scored against the assigned tile;
+    higher wins, weak 0.6 floor only rejects degenerate candidates (dense
+    mosaic tiles make absolute thresholds meaningless — even correct
+    sampling barely beats the tile's mean edge density). Winner transformed
+    by so1 into page space and baked into TEXCOORD_0; material = page|2x.
+    bdae_extract: uvm stream added, st=16 uv=None (was out-of-bounds
+    garbage), GlbBuilder/apply_scaleoffset/uv_fit None-guarded.
+52. Engine frame cross-check: so1 == [scaleU, scaleV, offU, offV] (square
+    pow2 tiles), so2 = low-page (ATLAS_low0) tile for the trailing low-path
+    component; page strings end .tga in the lvc string table (u32-indexed,
+    big-endian lvc container).

@@ -1,0 +1,2049 @@
+[
+ {
+  "lvc": "GothamCity",
+  "off": 436817,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.749268,
+   0.623965
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.871826,
+   0.686619
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_bigbridge_3"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 552986,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.250119,
+   0.499603
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.498229,
+   0.499924
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_props_underconstructionarea"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 558007,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.874126,
+   0.749143
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.484131,
+   0.937195
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 580717,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.905518,
+   0.749268
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.840576,
+   0.825928
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 583947,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.874268,
+   0.811768
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.981201,
+   0.810303
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 686238,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.750244,
+   0.250242
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.748291,
+   0.500244
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ia"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 741431,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.74942,
+   0.749021
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.374601,
+   0.624599
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_ce"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 831219,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.000244,
+   0.250218
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.124901,
+   0.748925
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_gf"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 868652,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.499631,
+   0.874136
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.374756,
+   0.812242
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_ah"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 969096,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   -5e-06,
+   0.749995
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.00012,
+   0.624143
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ib"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1016112,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.624486,
+   0.874034
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.374593,
+   0.562131
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_lf"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1061648,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.874123,
+   0.499929
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.374694,
+   0.687182
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_zd"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1101708,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.249995,
+   0.749507
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.498167,
+   0.75012
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ch"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1171294,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.500244,
+   0.250244
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.623291,
+   0.500244
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_vb"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1238475,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.000244,
+   0.00012
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.498291,
+   0.25003
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_vc"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1304259,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.000244,
+   0.500244
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.498229,
+   0.625182
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_aa_elevator"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1304840,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.757561,
+   0.975334
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.996334,
+   0.676022
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_construction_truck"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1378091,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.750183,
+   0.000183
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.249725,
+   0.874725
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_da_elevators"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1438502,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.624756,
+   0.749268
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.374551,
+   0.874547
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_cn"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1512639,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.250244,
+   0.249839
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.498291,
+   0.875024
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ga"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1538676,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.499132,
+   0.499601
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.249756,
+   0.624744
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ga_anim"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1538784,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.874191,
+   0.842132
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.903038,
+   0.809867
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": "gc_footprint_gf_anim"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1538892,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.936737,
+   0.748853
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.872788,
+   0.79545
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": "gc_footprint_la"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1659464,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.499663,
+   0.749064
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.871826,
+   0.62496
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_ic"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1724425,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.873698,
+   0.624479
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.934045,
+   0.624853
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_ic_logo"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1803642,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.749268,
+   0.500109
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.374756,
+   0.936603
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_prop_parklightpole"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1836324,
+  "page": "BakeGroup_Island1_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.250244,
+   -5.5e-05
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.748291,
+   0.250244
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_diner_logo_lit"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 1913668,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.747803,
+   0.7478
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.374756,
+   0.749756
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_dc"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2119784,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.500219,
+   0.000128
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.000232,
+   0.49921
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_lc"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2155182,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.500186,
+   0.249722
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.62287,
+   0.624539
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_af"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2215000,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   -0.000428,
+   0.74936
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.748167,
+   0.375113
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_cf"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2407611,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   -0.000241,
+   0.499871
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.124943,
+   0.87402
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_dd"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2477826,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.25017,
+   0.00017
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.498167,
+   0.375225
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_gd"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2579528,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.750244,
+   0.000236
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.873291,
+   0.499742
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ag"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2633944,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.24962,
+   0.499593
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.623167,
+   0.374956
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ac"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2679110,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.746999,
+   0.499628
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.62289,
+   0.87294
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_lb"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2754283,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.250018,
+   0.748427
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.000244,
+   0.749268
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ab"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2795231,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.250244,
+   0.250244
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.873291,
+   0.375235
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ca"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 2952137,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.498595,
+   0.748215
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.622955,
+   0.749187
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_za"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3010549,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.749798,
+   0.249958
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.249756,
+   0.499756
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_db"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3115470,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.000149,
+   0.250149
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.249709,
+   0.749709
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_vd"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3202002,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.000244,
+   0.000244
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.623291,
+   0.250244
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_gc"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3242950,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.49838,
+   0.499365
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.747314,
+   0.624489
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3243545,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.950854,
+   0.810252
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.782925,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_flag_wall"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3243653,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.943042,
+   0.810252
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.779019,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_flag_pole"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3243761,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.989917,
+   0.802425
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.996304,
+   0.679901
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_flag_wall"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3243869,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.935229,
+   0.86494
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.775112,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_flag_wall"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3243977,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.935229,
+   0.857127
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.771206,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3249972,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.872661,
+   0.778928
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.484131,
+   0.874695
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": "gc_props_underconstructionarea"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3254993,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.872661,
+   0.747678
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.484131,
+   0.812195
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3255588,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.935229,
+   0.849315
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.7673,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_flag_wall"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3255696,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.935229,
+   0.841502
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.763394,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_flag_wall"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3255804,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.935229,
+   0.83369
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.759487,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_flag_wall"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3255912,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.935229,
+   0.825877
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.755581,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_residential_props_newspaperbox"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3272300,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.935303,
+   0.747803
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.965576,
+   0.810303
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": "gc_flag_wall"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3272408,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.935229,
+   0.818065
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.751675,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_flag_wall"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3272516,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.007324,
+   0.007324,
+   0.935229,
+   0.810252
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.003418,
+   0.003418,
+   0.747769,
+   0.995338
+  ],
+  "dims": [
+   32,
+   16
+  ],
+  "mesh": "gc_subway_entrance"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3275650,
+  "page": "BakeGroup_Island1_B0",
+  "so1": [
+   0.030762,
+   0.030762,
+   0.904053,
+   0.747803
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.015137,
+   0.015137,
+   0.949951,
+   0.810303
+  ],
+  "dims": [
+   128,
+   64
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3465704,
+  "page": "BakeGroup_Island1_Landmarks0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.500048,
+   4.8e-05
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.25015,
+   0.00015
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_awt"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3558304,
+  "page": "BakeGroup_Island1_Landmarks0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.499522,
+   0.500244
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.749995,
+   -0.000206
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_vpow"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3851777,
+  "page": "BakeGroup_Island1_Landmarks0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.000244,
+   0.000244
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.000244,
+   0.000143
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_vpow_volumetric"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 3937033,
+  "page": "BakeGroup_Island1_Landmarks0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.000244,
+   0.499482
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.500244,
+   0.000244
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 4649362,
+  "page": "BakeGroup_Island1_Roads0",
+  "so1": [
+   0.499512,
+   0.499512,
+   -0.000505,
+   0.497049
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.249326,
+   0.249766
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_monorail_island1"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 4784808,
+  "page": "BakeGroup_Island1_Roads0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.498257,
+   0.497293
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.124984,
+   0.624013
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_prop_tree_02_l"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 4945135,
+  "page": "BakeGroup_Island1_Roads0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.747803,
+   -0.000351
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.000244,
+   0.874253
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_bigbridge_1_islands"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 5033147,
+  "page": "BakeGroup_Island1_Roads0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.499268,
+   0.000235
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.125244,
+   0.499263
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_smal_bridge"
+ },
+ {
+  "lvc": "GothamCity",
+  "off": 5063217,
+  "page": "BakeGroup_Island1_Roads0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.499268,
+   0.250141
+  ],
+  "page_low": "BakeGroup_Island1_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.374756,
+   0.499677
+  ],
+  "dims": [
+   256,
+   128
+  ],
+  "mesh": "gc_footprint_vb_reflection"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 767871,
+  "page": "BakeGroup_Island2_Roads0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.498551,
+   -0.000947
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.49891,
+   0.499649
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_monorail_island2"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 957004,
+  "page": "BakeGroup_Island2_Roads0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.000244,
+   0.49925
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.250244,
+   0.749747
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_railway_island2"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 1185024,
+  "page": "BakeGroup_Island2_Roads0",
+  "so1": [
+   0.499512,
+   0.499512,
+   -0.000471,
+   -0.000356
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.24941,
+   0.499674
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "hc_prop_billboardroof_industrial_02"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 1365309,
+  "page": "BakeGroup_Island2_Roads0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.250244,
+   0.499246
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.873779,
+   0.500233
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_bigbridge_5_islands"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 1455541,
+  "page": "BakeGroup_Island2_Roads0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.000244,
+   0.749246
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.748779,
+   0.500233
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_small_bridge_island2"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 1487535,
+  "page": "BakeGroup_Island2_Roads0",
+  "so1": [
+   0.124512,
+   0.124512,
+   0.249982,
+   0.745833
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.062012,
+   0.062012,
+   0.375106,
+   0.746524
+  ],
+  "dims": [
+   256,
+   128
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 2055834,
+  "page": "BakeGroup_Island2_A0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.499938,
+   -6.2e-05
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   -5e-06,
+   0.499606
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_cj"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 2302983,
+  "page": "BakeGroup_Island2_A0",
+  "so1": [
+   0.499512,
+   0.499512,
+   -0.000406,
+   0.499193
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.49999,
+   0.250007
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_zf"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 2688142,
+  "page": "BakeGroup_Island2_A0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.000244,
+   -0.000361
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   6.6e-05,
+   0.749275
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_dg"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 2976509,
+  "page": "BakeGroup_Island2_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.49911,
+   0.499598
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.250165,
+   0.874677
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_lpol"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 2991335,
+  "page": "BakeGroup_Island2_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.748693,
+   0.498946
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.499143,
+   0.749143
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_cl"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 3068802,
+  "page": "BakeGroup_Island2_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.499268,
+   0.749756
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.499268,
+   0.874218
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_cm"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 3154002,
+  "page": "BakeGroup_Island2_A0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.74887,
+   0.748796
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.873779,
+   0.625091
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 3284776,
+  "page": "BakeGroup_Island2_Landmarks0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.000244,
+   0.000244
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.500244,
+   0.000243
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_std_volumetric"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 3523619,
+  "page": "BakeGroup_Island2_Landmarks0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.500244,
+   -0.000571
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.250244,
+   0.249811
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_vrs"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 3957396,
+  "page": "BakeGroup_Island2_Landmarks0",
+  "so1": [
+   0.499512,
+   0.499512,
+   -0.000203,
+   0.500106
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.250244,
+   0.00022
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_dh"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 4242285,
+  "page": "BakeGroup_Island2_Landmarks0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.499606,
+   0.50009
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.748705,
+   0.625165
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_id"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 4314276,
+  "page": "BakeGroup_Island2_Landmarks0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.749133,
+   0.499609
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.624023,
+   0.873968
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": "gc_footprint_ie"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 4356667,
+  "page": "BakeGroup_Island2_Landmarks0",
+  "so1": [
+   0.249512,
+   0.249512,
+   0.49918,
+   0.749741
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.124512,
+   0.124512,
+   0.624024,
+   0.748964
+  ],
+  "dims": [
+   512,
+   256
+  ],
+  "mesh": null
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 4601401,
+  "page": "BakeGroup_Island2_B0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.494555,
+   0.499737
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.000244,
+   0.250055
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_gb_glow"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 4745069,
+  "page": "BakeGroup_Island2_B0",
+  "so1": [
+   0.499512,
+   0.499512,
+   9.7e-05,
+   9.7e-05
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.00019,
+   0.00019
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_lg"
+ },
+ {
+  "lvc": "GothamCity_Island2",
+  "off": 5025851,
+  "page": "BakeGroup_Island2_B0",
+  "so1": [
+   0.499512,
+   0.499512,
+   0.499658,
+   -0.0006
+  ],
+  "page_low": "BakeGroup_Island2_ATLAS_low0",
+  "so2": [
+   0.249512,
+   0.249512,
+   0.749756,
+   0.249557
+  ],
+  "dims": [
+   1024,
+   512
+  ],
+  "mesh": "gc_footprint_ze_reflection"
+ }
+]

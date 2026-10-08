@@ -76,7 +76,7 @@ WATER_Z_SHIFT = 160
 # atlasLow.tga, ...} + mesh component {bdae, 4 bools}. These are the game's
 # OWN bake assignments — authoritative, no UV-fit guessing.
 BAKE_REGIONS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                 os.pardir, "re", "bake_regions_v2.json")
+                                 os.pardir, "re", "bake_regions_v3.json")
 
 # v8: code-verified record frame (session 6). CComponentBeastObjectComponent::
 # Load (@0x2e1e8c) reads {vec4 so1, string page, vec4 so2}; the runtime
@@ -195,6 +195,96 @@ def apply_bake_so(mesh, so):
                                   uv[:, 1] * sv + ov]).astype(np.float32)
 
 
+# ---- v9: Coord1 channel selection (session 7) ------------------------------
+# The engine's LightMapDC shader samples the bake page with vCoord1 =
+# Coord1*so1.xy + so1.zw.  The fp LongDist meshes store Coord1 in the FIRST
+# vertex dword (+12, u16 x2) — NOT in the +16 stream (that is Coord0, the
+# runtime complete-map UV; for 16B meshes +16 would read the NEXT vertex's
+# position bytes).  Landmark bake targets (VPOW...) store a normal at +12 and
+# derive Coord1 at runtime as a top-down planar projection of position.
+# Both candidates are content-scored against the assigned page tile (Sobel
+# edge density inside the rasterized UV mask vs a uniform-fill control).
+
+_page_edge_cache = {}
+
+def _page_edges(page):
+    if page in _page_edge_cache:
+        return _page_edge_cache[page]
+    from PIL import Image
+    p = find_png(page)
+    if p is None:
+        _page_edge_cache[page] = None
+        return None
+    im = Image.open(p).convert("L")
+    im.thumbnail((1024, 1024), Image.BILINEAR)
+    a = np.asarray(im, np.float32) / 255.0
+    gx = np.zeros_like(a); gy = np.zeros_like(a)
+    gx[:, 1:-1] = a[:, 2:] - a[:, :-2]
+    gy[1:-1, :] = a[2:, :] - a[:-2, :]
+    e = np.hypot(gx, gy)
+    _page_edge_cache[page] = (e, a.shape)
+    return _page_edge_cache[page]
+
+def _uv_score(page, so, uv, idx):
+    """edge density inside the so-transformed UV mask / page mean."""
+    pe = _page_edges(page)
+    if pe is None or uv is None or len(idx) < 9:
+        return -1.0
+    e, (h, w) = pe
+    su, sv, ou, ov = so
+    t = np.column_stack([uv[:, 0] * su + ou, uv[:, 1] * sv + ov])
+    u = np.clip(t[:, 0] * (w - 1), 0, w - 1).astype(np.int32)
+    v = np.clip(t[:, 1] * (h - 1), 0, h - 1).astype(np.int32)
+    s = e[v, u]
+    if len(s) > 40000:
+        s = s[:: len(s) // 40000]
+    return float(s.mean() / (e.mean() + 1e-9))
+
+def choose_bake_channel(mesh, page, so):
+    """Pick the Coord1 source for this mesh: stored +12 stream or top-down
+    position projection.  Returns True and rewrites mesh['uv'] into page
+    space when a channel aligns; False (mesh untouched) otherwise."""
+    su, sv, ou, ov = so
+    if not all(np.isfinite([su, sv, ou, ov])) or su <= 0.001 or sv <= 0.001:
+        return False
+    idx = mesh["idx"]
+    pe = _page_edges(page)
+    if pe is None:
+        return False
+    e, (h, w) = pe
+    # control: edge density of a uniform tile fill
+    u0, v0 = int(ou * (w - 1)), int(ov * (h - 1))
+    u1 = min(w - 1, u0 + int(su * (w - 1)))
+    v1 = min(h - 1, v0 + int(sv * (h - 1)))
+    fill = float(e[v0:v1, u0:u1].mean() / (e.mean() + 1e-9))
+    cands = []
+    if mesh.get("uvm") is not None:
+        cands.append(("uvm", mesh["uvm"]))
+    pos = mesh["pos"]
+    mn, mx = mesh["mn"], mesh["mx"]
+    proj = np.column_stack([(pos[:, 0] - mn[0]) / (mx[0] - mn[0] + 1e-6),
+                            (pos[:, 1] - mn[1]) / (mx[1] - mn[1] + 1e-6)]).astype(np.float32)
+    cands.append(("proj", proj))
+    best, best_uv, best_s = None, None, -1.0
+    for name, uv in cands:
+        s = _uv_score(page, so, uv, idx)
+        if s > best_s:
+            best, best_uv, best_s = name, uv, s
+    # The engine binding (page+so1 from the zone stream, mesh idx at frame+84)
+    # is authoritative — the score only CHOOSES the Coord1 source (stored +12
+    # stream vs top-down projection), it does not gate the binding: bake-page
+    # tiles are dense mosaics where even correct sampling barely beats the
+    # tile's mean edge density.  A weak floor rejects only catastrophic
+    # degenerate candidates.
+    if best is None or best_s < 0.6:
+        return False
+    t = np.column_stack([best_uv[:, 0] * su + ou,
+                         best_uv[:, 1] * sv + ov]).astype(np.float32)
+    mesh["uv"] = t
+    mesh["bake_channel"] = best
+    return True
+
+
 def uv_fit(uv, name):
     """edge-magnitude ratio score: >1 = samples detail-rich regions"""
     em = edge_map(name)
@@ -211,7 +301,7 @@ def uv_fit(uv, name):
 
 def apply_scaleoffset(mesh, so):
     """Coord0_scaleoffset stored as (offU, offV, scaleU, scaleV); identity (0,0,1,1)"""
-    if not so or len(so) != 4:
+    if not so or len(so) != 4 or mesh.get("uv") is None:
         return
     ou, ov, su, sv = so
     if su <= 0 or sv <= 0:          # degenerate/none
@@ -273,7 +363,8 @@ class GlbBuilder:
                 pos, nrm = m["pos"], m["nrm"]
             pos = np.ascontiguousarray(pos, np.float32)
             nrm = np.ascontiguousarray(nrm, np.float32)
-            uv = np.ascontiguousarray(m["uv"], np.float32)
+            uv = np.ascontiguousarray(m["uv"] if m.get("uv") is not None
+                                      else np.zeros((m["count"], 2), np.float32), np.float32)
             idx = np.ascontiguousarray(m["idx"], np.uint32)
             sp, lp = self._add(pos.tobytes())
             sn, ln = self._add(nrm.tobytes())
@@ -399,8 +490,8 @@ def main():
                         if nm in bake_groups:
                             bg = bake_groups[nm]
                             break
-                if bg:
-                    apply_bake_so(m, bg["so"])          # rect-relative refinement
+                if bg and choose_bake_channel(m, bg["page"], bg["so"]):
+                    # v9: TEXCOORD_0 = Coord1(bake uv or projection) * so1 -> page tile
                     fp_tex, fp_how = bg["page"], "bakegroup"
                     fp_mode = "2x"                       # bake pages authored for LM*2
                 elif dif and not dif.lower().endswith("sampler"):
@@ -414,7 +505,10 @@ def main():
                                  "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
                                  "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
                                  "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
-                        scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
+                        if m["uv"] is None:
+                            scored = []
+                        else:
+                            scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
                         if scored and scored[0][0] >= 0.9:
                             fp_tex, fp_how = scored[0][1], "fp-page-fit"  # page -> 2x (hero parity)
                             fp_mode = "2x"
@@ -454,7 +548,7 @@ def main():
                     tex, how = alt, "alpha-fix"
                 elif len(pool_avail) == 1:
                     tex, how = pool_avail[0], "pool-single"
-                elif pool_avail:
+                elif pool_avail and m["uv"] is not None:
                     scored = sorted(((uv_fit(m["uv"], t), t) for t in pool_avail), reverse=True)
                     if scored and scored[0][0] >= 0.9:
                         tex, how = scored[0][1], "pool-fit"
@@ -462,7 +556,7 @@ def main():
                         tex, how = None, "dark"
                 else:
                     tex, how = None, "dark"
-            if tex is None and bake_fam:
+            if tex is None and bake_fam and m["uv"] is not None:
                 # v4: bake-fit only on an EXTREMELY strong edge-match — a wrong
                 # atlas-cell guess renders as an amplified garbage patch (x2),
                 # far worse than the honest dark fallback.
@@ -530,7 +624,7 @@ def main():
     for i, b in enumerate(bins):
         plan.append((f"district_{i:02d}", b))
 
-    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=8)
+    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=9)
     tex_used = {}
     for glb_name, group in plan:
         gb = GlbBuilder()
