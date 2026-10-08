@@ -56,7 +56,7 @@ from tex_bind import find_png, edge_map  # noqa: E402
 
 RAW = "/home/z/my-project/download/TDKR_assets/raw"
 PNG = "/home/z/my-project/download/TDKR_assets/textures_png"
-SITE = "/home/z/my-project/work/ghpages"
+SITE = "/home/z/my-project/work/TDKR-site"
 MODELS = os.path.join(SITE, "models")
 TEXD = os.path.join(MODELS, "tex")
 GT_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ground_truth_city.json")
@@ -70,6 +70,14 @@ MAX_EXTENT = 2500
 WATER_FILES = {"GC_water", "GC_Water_Island2"}
 WATER_Z_SHIFT = 160
 
+# v7: exact per-object bake-page bindings extracted from the zone bake-group
+# streams (extraction/re/extract_bake_regions.py -> bake_regions.json).
+# CComponentBeastBakeGroup payloads: {page.tga, rect[u0 v0 u1 v1],
+# atlasLow.tga, ...} + mesh component {bdae, 4 bools}. These are the game's
+# OWN bake assignments — authoritative, no UV-fit guessing.
+BAKE_REGIONS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                 os.pardir, "re", "bake_regions.json")
+
 HERO_TEX = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
             "GC_LongDist_Island2_Roads", "BakeGroup_Island1_Roads0",
             "GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
@@ -77,8 +85,15 @@ HERO_TEX = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
             "GC_LongDist_Island2_FP2", "GC_LongDist_Island2_FP3",
             "GC_LongDist_Island1_Roads"}
 
-DIM_TEX = {"GothamCity_asphalt_tile": 0.42, "GothamCity_sand_tile": 0.42,
-           "water": 0.55, "GC_road_plane": 0.42}
+# v7: REMOVED — the DIM_TEX ground-plane dimming (asphalt/sand/road/water at
+# 0.42/0.55) contradicted the shipped shaders. GC_City_Plane (the ground) uses
+# StandardDiffuseDC: Color = Diffuse * vColor with vColor = white (no vertex
+# color stream in the 20B stride). The LightMapDC path multiplies by
+# LightMap*2.0 where LightMap = shipped LightMapSampler.tga — a FLAT 0.4706
+# gray (32x32, decoded from commons_tex) — net 0.941. Both render the ground
+# at native diffuse brightness. The v4 dim was pre-grade (fog+LUT) tuning
+# fudge and made the ground 2.4x too dark.
+DIM_TEX = {}
 
 BAD_FIT = re.compile(r"(nrm|lightmap|sampler|shadow|bump|spec|gloss|opacity|height"
                      r"|normal|refl|rfl|font|emissive|corona|_mask)", re.I)
@@ -137,6 +152,35 @@ def jpg_from_png(png_path, out_path, max_dim, quality, dim=1.0):
         im = ImageEnhance.Brightness(im).enhance(dim)
     im.save(out_path, "JPEG", quality=quality, optimize=True)
     return os.path.getsize(out_path)
+
+
+def load_bake_groups():
+    """mesh bdae stem -> dict(page, rect) from the zone bake-group streams.
+    Only records whose bake page ships on disk (the '-0' suffixed atlas pages)
+    yield a usable binding; runtime-only pages (no suffix) resolve to their
+    shipped '-0' twin when it exists (same bake, pre-baked copy)."""
+    try:
+        rows = json.load(open(BAKE_REGIONS_JSON))
+    except Exception:
+        return {}
+    out = {}
+    for r in rows:
+        mesh = r.get("mesh") or ""
+        page = (r.get("page") or "").replace(".tga", "")
+        shipped = (r.get("page_shipped") or "").replace(".tga", "")
+        cand = None
+        if page and find_png(page):
+            cand = page
+        elif page and find_png(page + "0"):
+            cand = page + "0"          # runtime 'A' -> shipped 'A0'
+        elif shipped and find_png(shipped) and "ATLAS_low" not in shipped:
+            cand = shipped
+        if cand and mesh:
+            prev = out.get(mesh)
+            # keep the first non-ATLAS_low binding per mesh
+            if prev is None or ("ATLAS_low" in prev["page"] and "ATLAS_low" not in cand):
+                out[mesh] = dict(page=cand, rect=r.get("rect"), density=r.get("density"))
+    return out
 
 
 def uv_fit(uv, name):
@@ -270,6 +314,9 @@ def main():
     args = ap.parse_args()
 
     gt = json.load(open(GT_JSON))
+    bake_groups = load_bake_groups()
+    if bake_groups:
+        print(f"bake-group exact page bindings: {len(bake_groups)} meshes")
     city_dir = os.path.join(RAW, "l_gothamcity")
     files = sorted(f for f in os.listdir(city_dir) if f.endswith(".bdae.bin"))
     entries = []
@@ -329,18 +376,32 @@ def main():
                 fp_tex, fp_mode, fp_how = None, "d", "dark"
                 if dif and not dif.lower().endswith("sampler"):
                     if dif.lower() == "gc_longdist":
-                        # runtime island bake: the shipped pages ARE that bake
-                        # (strict family: the GC_LongDist_Island* pages only —
-                        # BakeGroup_* atlases outcompete the true page on edge
-                        # density and misbind)
-                        pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
-                                 "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
-                                 "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
-                                 "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
-                        scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
-                        if scored and scored[0][0] >= 0.9:
-                            fp_tex, fp_how = scored[0][1], "fp-page-fit"  # page -> 2x (hero parity)
-                            fp_mode = "2x"
+                        # runtime island bake. v7: the zone bake-group streams
+                        # give the EXACT page for many footprints (the game's
+                        # own CComponentBeastBakeGroup assignment). Only the
+                        # files with no shipped bake-group page fall back to
+                        # UV-fit among the GC_LongDist island pages.
+                        obj_names = [base.lower()]
+                        stripped = re.sub(r"_longdist$", "", base.lower())
+                        if stripped != base.lower():
+                            obj_names.append(stripped)
+                        bg = None
+                        for nm in obj_names:
+                            if nm in bake_groups:
+                                bg = bake_groups[nm]
+                                break
+                        if bg:
+                            fp_tex, fp_how = bg["page"], "bakegroup"
+                            fp_mode = "2x"     # bake pages are authored for LM*2
+                        else:
+                            pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
+                                     "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
+                                     "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
+                                     "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
+                            scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
+                            if scored and scored[0][0] >= 0.9:
+                                fp_tex, fp_how = scored[0][1], "fp-page-fit"  # page -> 2x (hero parity)
+                                fp_mode = "2x"
                     else:
                         base2 = re.sub(
                             r"_(longdist(completemap|diffusemap|diffuse_map)?|longdistdiffusemap|longdist)$",
@@ -356,7 +417,7 @@ def main():
                                 fp_tex, fp_how = fam[0], "fp-family"  # same-footprint albedo family -> 1x
                 per_mesh.append((fp_tex, fp_mode))
                 gt_stats[{"gt": "gt_bind", "fp-family": "fp_family", "fp-page-fit": "bake_fit",
-                          "dark": "dark"}.get(fp_how, "dark")] += 1
+                          "bakegroup": "bake_fit", "dark": "dark"}.get(fp_how, "dark")] += 1
                 continue
 
             # v4 fix: some texIdx slots resolve to SAMPLER-name strings
@@ -453,7 +514,7 @@ def main():
     for i, b in enumerate(bins):
         plan.append((f"district_{i:02d}", b))
 
-    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=4)
+    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=7)
     tex_used = {}
     for glb_name, group in plan:
         gb = GlbBuilder()

@@ -277,3 +277,85 @@ Binary: `libKRHP.so` — extracted from `TDKR_v1.1.6b.apk` (committed at repo ro
     level shows dark buildings with lit windows, no daylight-bright boxes).
     Note: headless SwiftShader fps readings are meaningless (was 0-2 fps in
     v5 too under full load); check on real hardware.
+
+## Findings — session 5 (zone bake-group streams; ground lightmap truth; lightning + hurt wired)
+
+38. **lvc layout fully mapped**: `.index.bin` = N x 13B LE records
+    {u32 zoneId, u32 streamStart, u32 streamEnd|size, u8 flag(0=auto-id)};
+    zoneId values also appear inline in a 0x2667 record near the template.
+    Each zone = CTemplateZone record (typeId 0x2667, see 27/25) followed by a
+    contiguous OBJECT STREAM. Stream = [u32 sizeOrEnd][records]. Records =
+    [u32 BE typeId][payload] dispatched by CLevel::LoadNextObject @0x489ecc:
+    0x2657 LevelProperties, 0x2653 CTemplateOccluder, 0x2667 CTemplateZone
+    {bool,string(luascript),int,bool,int zoneId,9 floats pos/rot/scale,3 bools},
+    0x265f CTemplateMetaZone, 0x140869f CTemplateBakeGroup (template form —
+    ZERO instances in shipped Gotham data), 0x1011/0x2669/0x2661/0x2662/0x2664
+    (waypoint/portal/worldbox variants; 0x2664 = single int), 0x1404050/51,
+    0xd0bbb8 CWorldBox. Object/component plumbing:
+    CGameObjectManager::CreateObject @0x36774c walks per-class component
+    template lists (map<int,vector<TObjectData>>; TObjectData = {u8 flag, ptr,
+    u32 hash}); hash 0x152b87 = MESH component (inline: ReadString bdae +
+    4 bools), 0x14ca79 = CComponentBase (pos/rot/scale), 0x2ad2a046 = group
+    builtin, default -> CComponentFactory::CreateComponent(hash,obj,data)
+    @0x223e3c -> virtual Load(stream); unknown -> GenerateComponentTemplate
+    @0x368ac0. Component hashes seen special-cased: 0x17ac851f, 0x2ad2a046,
+    0x14ca79, 0x152b87.
+39. **CComponentBeastBakeGroup stream payload located in zone object streams**
+    (the template typeId 0x140869f is never used in shipped data; the
+    component data IS — as part of object records). Frame (byte-packed,
+    BIG-ENDIAN floats AND strings, verified across GothamCity + Island2):
+        [u32 strIdx 'BakeGroup_<isle>_<G>.tga']   bake page (runtime target)
+        [f32 u0][f32 v0][f32 u1][f32 v1]          bake region in page (Beast
+                                                  top-down projection rect) —
+                                                  whole-page bakes carry
+                                                  density floats (2,2,...)
+        [u32 strIdx 'BakeGroup_<isle>_<G>0.tga']  SHIPPED pre-baked twin
+                                                  ('-0' suffix = on disk)
+        [u32 1024][u32 512][s32 -1]               atlas sizes, empty string
+        [u32 hash 0x00018785 | 0x0001869f]
+        [u8 1][u32 objectId][12 x f32 pos/rot/scale + extras]
+        [u32 strIdx '<gc_footprint_xx>.bdae'][4 x u8]   mesh component
+        [u32 strIdx '<...>_collision.bdae'][4 x u8]     collision component
+    Extraction: extraction/re/extract_bake_regions.py -> bake_regions.json
+    (530 records, 119 distinct mesh bindings). Authoritative page assignments
+    recovered, e.g. gc_footprint_cn/ga/vb/vc -> BakeGroup_Island1_A0,
+    gc_footprint_gc -> BakeGroup_Island1_B0, gc_footprint_id/ie ->
+    Island2_Landmarks0, bridges/monorail/railway -> Island2_Roads0. Files
+    whose ONLY texture is the runtime target 'GC_LongDist' with no
+    bake-group record (cb/cc/cd/cg/gf/va/vpow) keep the v6 UV-fit fallback.
+    Bake pages measure mean 0.11-0.20 = authored for LightMapDC *2.0.
+    NOTE: footprint DISTRICT meshes carry absolute page UVs; the rects are
+    the per-object world-projection regions Beast baked into the page.
+40. **Ground-plane DIM_TEX fudge removed (root cause + shader truth)**:
+    GC_City_Plane (ground) = StandardDiffuseDC: `Color = Diffuse * vColor`
+    with NO vertex-color stream (20B stride = pos+nrm+uv) -> vColor = white
+    -> native 1.0. LightMapDC path: `Color = Diffuse * (LightMap*2.0)`;
+    materials binding the LightMapSampler.tga placeholder bind a FLAT
+    32x32 0.4706-gray texture (decoded commons_tex/LightMapSampler.png) ->
+    net 0.941. LPLD variant: `Color = Diffuse` at 1x. Water (NormalSpec-
+    Overbright/Water-f.glsl) = NRM1*NRM2*vColor (animated dual normal-map).
+    The v4-era DIM_TEX {asphalt/sand 0.42, water 0.55} pre-dated the exact
+    fog+LUT chain and rendered the ground 2.4x too dark -> removed.
+41. **Lightning + health blend wired (all constants extracted)**:
+    - BLightning (GothamCity lvc Lua string #0) = THREE one-shot
+      ColorCorrection pulses of 023_lighting.tga over the 000_default base:
+      (fade_in,run,fade_out)ms = (30,30,30) / (60,30,150) / (30,30,90),
+      smart light on/off = 75/45, 135/135, 105/75 ms; auto re-strike
+      cadence Random(5000,15000) ms (bootstrap comment).
+      CPostProcessEffect_ColorCorrection::Update @0x45ac88 = fade-in -> run
+      -> fade-out state machine (0/2/1), removal restores mgr +0x5c/+0x60 =
+      -1.0. 023_lighting LUT mean (220,229,234): flash lifts a 0.06 frame to
+      0.43 (verified headless).
+    - Health blend (BuildColorGradingTexture @0x458e18):
+      t = (20-health)*(1/60)+1 [DAT_004590c0=0.0166667]; t=min(t,1-hurtAlpha);
+      t=clamp(t,0,1) [DAT_004590c4=0]; render LUT(+0x50) blended toward
+      LUT(+0x54) by (1-t). Hurt LUT string absent for GothamCity ->
+      getHackTex fallback = '000_default.tga' (string @0xb44028) -> the
+      shipped night city hurt grade is a visual no-op; mechanism wired with
+      keys [ / ] (uHurt = 1-t).
+42. **Viewer v7 (site)**: dual-LUT CCFS pass (base 000_default + flash
+    023_lighting + hurt slot), BLightning sequencer (L key manual, Shift+L
+    auto toggle, moon light = smartLight stand-in), exact bake-group page
+    bindings in fp tier, native-brightness ground/water. Manifest v7.
+    Headless check: no page errors; flash/hurt/lutOn/off pixel A/B verified
+    via readPixels (screenshots are stale frames under SwiftShader 0fps).
