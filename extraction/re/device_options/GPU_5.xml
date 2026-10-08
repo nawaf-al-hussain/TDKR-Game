@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<attributes>
+
+	<!-- Geometry -->
+	<int desc="0=full geometry, 1=simplified geometry - REQUIRES RESTART" name="Geometry level" range="[0,1]" value="0"/>
+    <float desc="Size of streaming buffer - REQUIRES RESTART (in MB)" name="Streaming Buffer Size" range="[0.0,50.0]" value="9.5"/>
+
+    <int desc="Starting LOD level - REQUIRES_RESTART" name="LOD start level" range="[0,9]" value="0"/>
+	<int desc="Ending LOD level - REQUIRES_RESTART" name="LOD end level" range="[0,9]" value="0"/>
+    <float desc="REAL TIME" name="LOD distance factor" range="[0.01,5.0]" value="1.000000"/>
+	<float desc="REAL TIME" name="Coronas LOD distance factor" range="[0.01,5.0]" value="1.500000"/>
+    <float desc="REAL TIME" name="Fog distance factor" range="[0.01,1.0]" value="1.100000"/>
+    <float desc="REAL TIME" name="Camera Far factor" range="[0.01,5.0]" value="1.100000"/>
+	<float desc="REAL TIME" name="Update factor" range="[0.01,1.0]" value="1.0"/>
+
+	<!-- Shaders -->
+	<int desc="0=all, 1=some, 2=none - REQUIRES RESTART" name="DynamicLights" range="[0,2]" value="0"/>
+	<bool desc="REQUIRES RESTART" name="Irradiance" value="true"/>
+	<bool desc="REQUIRES RESTART" name="TexturedFog" value="true"/>
+	<bool desc="REQUIRES RESTART" name="VerticalFog" value="true"/>
+	<bool desc="REQUIRES RESTART" name="WaterMC" value="true"/>
+	<bool desc="REQUIRES RESTART" name="ActorsSpecular" value="true"/>
+	<bool desc="REQUIRES RESTART" name="BatmanSpecular" value="true"/>
+	<bool desc="REQUIRES RESTART" name="EnvironmentSpecular" value="true"/>
+	<bool desc="REQUIRES RESTART" name="AnimUV" value="true"/>
+	<bool desc="REQUIRES RESTART" name="SpheremapReflections" value="true"/>
+	<bool desc="REQUIRES RESTART" name="HardwareSkinning" value="true"/>
+	<bool desc="REQUIRES RESTART" name="RTTReflections" value="true"/>
+	<bool desc="REQUIRES RESTART" name="FresnelOnPixel" value="true"/>
+	<bool desc="REQUIRES RESTART" name="LowEndSonar" value="false"/>
+	<bool desc="REQUIRES RESTART" name="Rain" value="true"/>
+	
+	<bool desc="REQUIRES RESTART" name="Undef_NORMALMAP" value="false"/>
+	<bool desc="REQUIRES RESTART" name="Undef_FRESNEL" value="false"/>
+	<bool desc="REQUIRES RESTART" name="Undef_GLASS" value="false"/>
+	<bool desc="REQUIRES RESTART" name="Undef_SPHERE_REFLECTION" value="false"/>
+	<bool desc="REQUIRES RESTART" name="Undef_OUTLINE" value="false"/>
+	
+	<!-- Particles -->
+	<float desc="REAL TIME" name="ParticleDensity" range="[0.5,1.0]" value="1.000000"/>
+	<bool desc="REQUIRES RESTART" name="HighQualityParticles" value="true"/>
+    <!--Effects with flag RmOnLowDevice checked in component will be removed when HighQualityParticles is set to false/-->
+
+	<!-- Textures -->
+    <int desc="0=ETFT_NEAREST_MIPMAP_NEAREST, 1=ETFT_LINEAR_MIPMAP_NEAREST, 2=ETFT_NEAREST_MIPMAP_LINEAR, 3=ETFT_LINEAR_MIPMAP_LINEAR - REAL TIME" name="Texture MIN filter" range="[0,3]" value="1"/>
+    <int desc="REQUIRES RESTART" name="Anisotropy" value="4"/>
+	
+	<!-- Post Effects -->
+	<bool desc="All PP effects depend on this - REQUIRES RESTART" name="Enable post processing" value="true"/>
+    <bool desc="REAL TIME" name="Post Effects - Radial Blur" value="true"/>
+    <bool desc="REAL TIME" name="Post Effects - Gray" value="true"/>
+    <bool desc="REAL TIME" name="Post Effects - Hurt" value="true"/>
+    <bool desc="REAL TIME" name="Post Effects - Heat Haze" value="true"/>
+    <bool desc="REAL TIME" name="Post Effects - Color Correction" value="true"/>
+	<bool desc="REAL TIME" name="Post Effects - DoF" value="true"/>
+	<bool desc="REAL TIME" name="Enable distort effects" value="true"/>
+	<bool desc="REAL TIME only if enabled at startup" name="Enable road reflection RTT" value="true"/>
+
+</attributes>

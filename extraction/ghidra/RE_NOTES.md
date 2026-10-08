@@ -197,3 +197,83 @@ Binary: `libKRHP.so` — extracted from `TDKR_v1.1.6b.apk` (committed at repo ro
 31. **Viewer ported (v5, gh-pages 75277eb)**: exact TEXTURE_FOG path, extracted
     values, axis-mapped (game(x,y,z)->view(x,z,-y); FogUV u=(x+1210)/1520,
     v=(z-220)/1130), manifest.json v5 carries the fog block. Live check OK.
+
+## Findings — session 4 (fog scale pinned; LUT decoded + graded; fp brightness fixed)
+
+32. **Toolchain note**: host objdump has no ARM support; capstone per-function
+    decoding (dynsym FUNC entries, mode = LSB of st_value) is the reliable
+    disassembly route — linear .text disasm dies on literal pools; section
+    headers of libKRHP.so are partly FORGED (symbols below stated .text start;
+    program headers + 1:1 vaddr/fileoff mapping are authoritative).
+33. **config+0x1c singleton identified = DeviceOptions::Singleton**:
+    - access idiom (SetFogDistance @0x40ebf8, ApplyIlluminationSettings
+      @0x40eccc, BeginRenderReflections): `ldr rX,[pc,#imm]` (offset) +
+      `ldr rX,[pc,rX]` -> GOT slot **0xc07f18** (R_ARM_RELATIVE addend
+      0xc22ce4) -> `ldr rX,[rX]` = **DeviceOptions::Singleton** (BSS ptr,
+      dynsym: `_ZN13DeviceOptions9SingletonE` @0xc22ce4) -> `vldr s15,[rX,#0x1c]`.
+    - `DeviceOptions::C2` ctor @0x4a91ac: +0x1c default = **1.0f**
+      (`mov r3,#0x3f800000; str r3,[r0,#0x1c]` @0x4a91f0); +0x14/+0x18/+0x20
+      also 1.0; +0x10=9 (LOD end); +0x60=5.0; +0x64=9.5; +0x94=43.
+    - `DeviceOptions::LoadOptions(std::string&)` @0x4a9768 parses XML
+      attributes: strcmp keys -> atof -> fields. Key for +0x1c =
+      **"Fog distance factor"** (write @0x4a9bec). Full schema extracted:
+      LOD start/end level, LOD distance factor, Coronas LOD factor,
+      **Fog distance factor**, Camera Far factor, Update factor,
+      DynamicLights/HardwareSkinning/FresnelOnPixel/Undef_* shader bools,
+      ParticleDensity, HighQualityParticles, Texture MIN filter, Anisotropy,
+      Animation streaming cache size, Streaming Buffer Size, Max texture size,
+      Particles Buffers, TextureMemoryPoolSize, Mipmaps to skip, Enhanced 3D
+      sounds, Reverb, RmOnLowSFX/RmOnMedSFX, Enable post processing ...
+    - profile chain: LoadProfile @0x4ab878 -> LoadOptions(CPU_S/M*.xml,
+      MEM_{256,512,768}.xml) + LoadGpuProfile(gpuName) -> GPU_%d.xml;
+      per-device custom/*.xml. GPU profile XMLs ship in
+      files/data/options/ (OBB). **GPU_5.xml (top tier: iPad3/Adreno 320/
+      SGX543MP4 class) = "Fog distance factor" 1.1; all others 1.0**
+      (ctor default 1.0). => runtime scale s = 1.1 for the max-quality look:
+      fog (0,140) -> (0,154); FogStartEnd=(0, 1/154). Camera Far factor 1.1.
+    - DeviceOptions globals: Singleton 0xc22ce4 (GOT 0xc07f18), m_gpuName
+      std::string 0xc22ce8 (default "PowerVR SGX 544MP2" @0xb46c8c), three
+      0.5f defaults 0xc22cf4.
+34. **ColorGrading LUT textures FOUND + DECODED**: commons_tex.gla entries
+    `000_default.tga`, `022_GothamCity.tga`, `022_GothamCity_Industrial.tga`,
+    `023_lighting.tga`, `024_default.tga` (+ per-device clones
+    Galaxy_Nexus_*/GT-I9000_*/...), each exactly 16436 B. Container = **PVR v1
+    header** {hdrSize=52, H=16, W=512, mips=0, fmt=19, size=16384, bpp=16,
+    masks=0, magic='PVR!'} -> **512x16 RGB565 atlas** (16^3 LUT, half-res).
+    fmt=19=RGB565; verticalfog's fmt 0x136=ETC2-family (mip-chained).
+    LUT appearance: 32 vertical hue slices x 16 green rows; 023_lighting mean
+    (220,229,234) = near-white lightning flash grade; 000_default mean
+    (129,136,136) = subtle cool night grade. Decoded ->
+    gh-pages models/tex/LUT_000_default.png + LUT_023_lighting.png.
+35. **Shipped grading shader = CCFS.glsl** (effects.gla, 669 B, verbatim):
+        cells=32; cellsize=1/32; r=color.r*cellsize; v=color.g;
+        b=floor(color.b*31.9999)*cellsize;
+        u=r*0.9375 + 0.03125*cellsize + b;
+        Complete = texture2D(ColorGradingSampler, vec2(u,v));
+    CCFS2.glsl = 16-step variant (0.0625 cells, r_scale 0.94, r_off 0.001875).
+    The 512x16 atlas works directly with CCFS (u,v normalized; NEAREST
+    filtering per CPostProcessManager). Game binds ColorGradingSampler from
+    PostProcessManager texture array (+8); Lua bootstrap adds
+    PostProcessingEffectAdd("ColorCorrection", {extra_texture="000_default.tga"}).
+    Ported to viewer as EffectComposer: RenderPass -> ShaderPass(lutShader)
+    with UnsignedByteType RTT (engine's ColorGradingRTT parity), NEAREST.
+    (ShaderPass CLONES its shader uniforms — mutate lutPass.uniforms.)
+36. **Footprint textures identified as offline COMPLETE bakes**: shipped
+    per-footprint textures (GC_Footprint_AWT.tga 2048², GC_Footprint_IC.tga,
+    GC_Footprint_LB_Cinema.tga, ...) contain the final night lighting (lit
+    windows, glowing WAYNE sign; mean ~0.28 vs island bake pages ~0.11). The
+    gt diffuse names 'X_LongDist[CompleteMap|DiffuseMap]' are runtime Beast
+    bake targets; the shipped no-suffix textures ARE the bake content.
+    => fp tier renders them at 1x ('d'); the old technique-driven 2x made
+    them daylight-bright (the v5 "footprint-atlas brightness" bug).
+    Footprints whose bake target has no shipped equivalent (diffuse =
+    'GC_LongDist') bind by UV-fit >= 0.9 against the 8 GC_LongDist_Island*
+    pages at 2x (hero parity; strict page family — BakeGroup_* atlases
+    outcompete the true page on edge density and must be excluded).
+    Reflections-fx (LightMapSampler) footprints -> honest dark fallback.
+    Exporter: export_city.py fp ladder (gt / fp-family / fp-page-fit / dark).
+37. **Viewer v6 (gh-pages f4d9b42)**: LUT grade + fog 154 + fp rebinding;
+    A/B verified in headless Chrome (grade on = cooler night cast; street
+    level shows dark buildings with lit windows, no daylight-bright boxes).
+    Note: headless SwiftShader fps readings are meaningless (was 0-2 fps in
+    v5 too under full load); check on real hardware.

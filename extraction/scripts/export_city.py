@@ -56,7 +56,7 @@ from tex_bind import find_png, edge_map  # noqa: E402
 
 RAW = "/home/z/my-project/download/TDKR_assets/raw"
 PNG = "/home/z/my-project/download/TDKR_assets/textures_png"
-SITE = "/home/z/my-project/work/site"
+SITE = "/home/z/my-project/work/ghpages"
 MODELS = os.path.join(SITE, "models")
 TEXD = os.path.join(MODELS, "tex")
 GT_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ground_truth_city.json")
@@ -273,7 +273,7 @@ def main():
     city_dir = os.path.join(RAW, "l_gothamcity")
     files = sorted(f for f in os.listdir(city_dir) if f.endswith(".bdae.bin"))
     entries = []
-    gt_stats = dict(gt_bind=0, alpha_fix=0, pool_fit=0, bake_fit=0, dark=0)
+    gt_stats = dict(gt_bind=0, alpha_fix=0, pool_fit=0, bake_fit=0, dark=0, fp_family=0)
     print(f"scanning {len(files)} city bdae files ...")
     for fn in files:
         base = fn[:-len(".bdae.bin")]
@@ -308,11 +308,57 @@ def main():
                     else [])
 
         per_mesh = []
+        gt_stats = gt_stats  # noqa
         for m in meshes:
             gm = gt_meshes.get(m["offset"], {})
             so = gm.get("scaleoffset")
             apply_scaleoffset(m, so)   # engine's own UV transform
             tex = gm.get("diffuse")
+            tech = gm.get("technique") or ""
+            mode = "2x" if "LightMapDC" in tech else "d"
+            how = "gt"
+
+            # ---------------- fp tier: engine-faithful, name-driven ladder ----
+            # Shipped per-footprint textures (GC_Footprint_AWT.tga etc.) are the
+            # OFFLINE Beast bakes (complete maps: lit windows baked in, mean
+            # ~0.28 vs island-page ~0.11). In-game they render through the
+            # diffuse slot at 1x — the runtime LightMap slot is bound to the
+            # same bake. x2 on them = daylight-bright (the v5 viewer bug).
+            if cat == "fp":
+                dif = tex
+                fp_tex, fp_mode, fp_how = None, "d", "dark"
+                if dif and not dif.lower().endswith("sampler"):
+                    if dif.lower() == "gc_longdist":
+                        # runtime island bake: the shipped pages ARE that bake
+                        # (strict family: the GC_LongDist_Island* pages only —
+                        # BakeGroup_* atlases outcompete the true page on edge
+                        # density and misbind)
+                        pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
+                                 "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
+                                 "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
+                                 "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
+                        scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
+                        if scored and scored[0][0] >= 0.9:
+                            fp_tex, fp_how = scored[0][1], "fp-page-fit"  # page -> 2x (hero parity)
+                            fp_mode = "2x"
+                    else:
+                        base2 = re.sub(
+                            r"_(longdist(completemap|diffusemap|diffuse_map)?|longdistdiffusemap|longdist)$",
+                            "", dif, flags=re.I)
+                        if find_png(base2):
+                            fp_tex, fp_how = base2, "gt"            # complete bake -> 1x
+                        else:
+                            fam = [t for t in file_texlist
+                                   if t.lower().startswith(base2.lower())
+                                   and not BAD_FIT.search(t) and find_png(t)]
+                            if fam:
+                                fam.sort(key=len)
+                                fp_tex, fp_how = fam[0], "fp-family"  # same-footprint albedo family -> 1x
+                per_mesh.append((fp_tex, fp_mode))
+                gt_stats[{"gt": "gt_bind", "fp-family": "fp_family", "fp-page-fit": "bake_fit",
+                          "dark": "dark"}.get(fp_how, "dark")] += 1
+                continue
+
             # v4 fix: some texIdx slots resolve to SAMPLER-name strings
             # (e.g. Reflections-fx DiffuseMap -> 'LightMapSampler' runtime
             # atlas).  Those are not shipped textures -> unbind and let the
@@ -322,8 +368,6 @@ def main():
             # v4 shading mode from the engine's own technique binding:
             #   LightMapDC with LightMap unbound -> bake * 2.0 (GLSL: *2.0)
             #   anything else (StandardDiffuseDC, ...) -> diffuse * 1.0
-            tech = gm.get("technique") or ""
-            mode = "2x" if "LightMapDC" in tech else "d"
             how = "gt"
             if tex and not find_png(tex):
                 alt = MISSING_TEX_FALLBACK.get(tex)

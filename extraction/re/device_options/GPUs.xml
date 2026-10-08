@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<profiles>
+	<!-- iPhone 3Gs group -->
+	<gpu_set>
+		<gpu name="AMD Z430"/>
+		<gpu name="Adreno"/>		
+		<gpu name="Adreno 200"/>
+		<gpu name="Adreno (TM) 200"/>
+		<gpu name="PowerVR SGX 530"/>
+		<gpu name="GC860 core"/>
+		<gpu name="GC860 Graphics Engine"/>
+		<gpu name="VideoCore IV HW"/>
+		<gpu name="FIMG"/>
+		<gpu name="FIMG-3DSE v1.5"/>
+		
+		<screen_size max="640" profile="GPU_0"/>
+		<screen_size max="960" profile="GPU_0"/>
+		<screen_size max="1280" profile="GPU_0"/>
+		<screen_size max="2048" profile="GPU_0"/>
+		<screen_size max="4096" profile="GPU_0"/>
+	</gpu_set>
+	
+	<!-- iPhone 4 group -->
+	<gpu_set>
+		<gpu name="PowerVR SGX 535"/>
+		<gpu name="PowerVR SGX 540"/>
+		<gpu name="Adreno 205"/>
+		<gpu name="Adreno (TM) 205"/>	
+		<gpu name="GC1000 core"/>
+		<gpu name="GC1000 Graphics Engine"/>
+		
+		<screen_size max="640" profile="GPU_1"/>
+		<screen_size max="960" profile="GPU_1"/>
+		<screen_size max="1280" profile="GPU_0"/>
+		<screen_size max="2048" profile="GPU_0"/>
+		<screen_size max="4096" profile="GPU_0"/>
+	</gpu_set>	
+	
+	<!-- Tegra 2 not strong as iPhone 4s -->
+	<gpu_set>
+		<gpu name="Tegra2"/>
+		<gpu name="NVIDIA AP"/>
+		<gpu name="NVIDIA Tegra"/>		
+		
+		<screen_size max="640" profile="GPU_2"/>		
+		<screen_size max="960" profile="GPU_2"/>
+		<screen_size max="1280" profile="GPU_1"/>
+		<screen_size max="2048" profile="GPU_1"/>
+		<screen_size max="4096" profile="GPU_0"/>
+	</gpu_set>
+	
+	<!-- and Adreno 220 not strong as iPhone 4s -->
+	<gpu_set>		
+		<gpu name="Adreno 220"/>
+		<gpu name="Adreno (TM) 220"/>
+		
+		<screen_size max="640" profile="GPU_3"/>		
+		<screen_size max="960" profile="GPU_2"/>
+		<screen_size max="1280" profile="GPU_2"/>
+		<screen_size max="2048" profile="GPU_1"/>
+		<screen_size max="4096" profile="GPU_0"/>
+	</gpu_set>	
+
+	<!-- iPhone 4s + iPad 2 group 543MP2 -->
+	<gpu_set>
+		<gpu name="PowerVR SGX 543"/>
+		<gpu name="PowerVR SGX 544"/>
+		<gpu name="PowerVR SGX 544MP2"/>
+		<gpu name="Adreno 225"/>
+		<gpu name="Adreno (TM) 225"/>
+		<gpu name="Tegra3"/>
+		<gpu name="NVIDIA Tegra 3"/>
+		<gpu name="Mali-400MP"/>
+		<gpu name="Mali-400 MP"/>		
+		
+		<screen_size max="640" profile="GPU_5"/>
+		<screen_size max="960" profile="GPU_4"/>
+		<screen_size max="1280" profile="GPU_3"/>
+		<screen_size max="2048" profile="GPU_3"/>
+		<screen_size max="4096" profile="GPU_2"/>
+	</gpu_set>
+
+	<!-- iPad 3 group 543MP4 -->
+	<gpu_set>
+		<gpu name="PowerVR SGX 543MP4"/>
+		<gpu name="PowerVR SGX 544MP4"/>		
+		<gpu name="Adreno 320"/>
+		<gpu name="Adreno (TM) 320"/>
+		<gpu name="Adreno 330"/>
+		<gpu name="Adreno (TM) 330"/>
+		<gpu name="Mali-450MP"/>
+		<gpu name="Mali-T604MP"/>
+		<gpu name="Mali-T604 MP"/>		
+		
+		<screen_size max="640" profile="GPU_5"/>
+		<screen_size max="960" profile="GPU_5"/>
+		<screen_size max="1280" profile="GPU_5"/>
+		<screen_size max="2048" profile="GPU_4"/>
+		<screen_size max="4096" profile="GPU_3"/>
+	</gpu_set>
+
+</profiles>
