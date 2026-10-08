@@ -1,9 +1,13 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 
 /* ============================================================================
-   v5 RENDERER — exact port of the game's LightmapVCBlendDC TEXTURE_FOG chain.
+   v6 RENDERER — exact port of the game's LightmapVCBlendDC TEXTURE_FOG chain
+   + CCFS ColorCorrection grade (LUT decoded from commons_tex.gla).
 
    Everything below is RECOVERED DATA, not tuning:
 
@@ -44,10 +48,14 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
        '__dark'    untextured
    ========================================================================== */
 
-/* ------- engine constants — extracted from GothamCity.lvc.bin GI preset ---- */
+/* ------- engine constants — extracted, with pinned runtime scale --------- */
+// v6: fog scale pinned via DeviceOptions::Singleton (GOT 0xc07f18 -> BSS
+// 0xc22ce4; C2 ctor default 1.0f @0x4a91f0; DeviceOptions::LoadOptions key
+// "Fog distance factor" -> +0x1c). Shipped GPU_5.xml (top profile) = 1.1.
+// SetFogDistance: start' = start*s, end' = end*s -> FogStartEnd=(0, 1/154).
 const FOG = {
   start: 0.0,                    // GI +0x0c  (fogStart)
-  end: 140.0,                    // GI +0x10  (fogEnd), x config scale (=1 here)
+  end: 154.0,                    // GI +0x10 140.0 x GPU_5 "Fog distance factor" 1.1
   color: [64 / 255, 102 / 255, 119 / 255],  // GI +0x14 RGBA(64,102,119,160)
   colorA: 160 / 255,
   vfogHeight: 0.013,             // GI +0x58 -> global param (VerticalFogHeight)
@@ -57,6 +65,21 @@ const FOG = {
   mapTex: 'models/tex/GC_VerticalFOG.png',
 };
 FOG.scale = 1 / (FOG.end - FOG.start);
+
+/* ---- ColorGrading LUT (game's ColorCorrection post effect) -------------- */
+// Lua bootstrap: PostProcessingEffectAdd("ColorCorrection",
+//   {extra_texture="000_default.tga", time_to_fade_in=0})
+// LUT texture decoded from commons_tex.gla: 000_default.tga = PVR v1 wrapper
+// {h=16,w=512,mips=0,fmt=19(RGB565),bpp=16} -> 512x16 atlas, 16^3 LUT.
+// Shipped fragment shader CCFS.glsl (effects.gla), verbatim math:
+//   r = color.r * cellsize;  b = floor(color.b*31.9999) * cellsize;
+//   u = r * 0.9375 + 0.03125*cellsize + b;   v = color.g;
+// (the 512x16 atlas stores 32 blue slices x 16 green rows; u,v are
+//  normalized so CCFS works on it directly at half resolution)
+const LUT = {
+  tex: 'models/tex/LUT_000_default.png',
+  cells: 32.0,
+};
 
 /* ---------------- state ---------------- */
 const state = {
@@ -89,6 +112,49 @@ const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(
   new THREE.Color(...FOG.color), FOG.start, FOG.end); // exact GI fog, fallback mats
 
+/* ---- ColorCorrection post pass (CCFS.glsl port, NEAREST like the game) -- */
+const lutShader = {
+  uniforms: {
+    tDiffuse:   { value: null },
+    uLUT:       { value: null },
+    uCells:     { value: LUT.cells },
+    uLutOn:     { value: 0.0 },   // flips to 1 once the LUT texture is loaded
+  },
+  vertexShader: /* glsl */`
+    varying vec2 vUv;
+    void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+  fragmentShader: /* glsl */`
+    precision mediump float;
+    uniform sampler2D tDiffuse;
+    uniform sampler2D uLUT;
+    uniform float uCells;
+    uniform float uLutOn;
+    varying vec2 vUv;
+    void main() {
+      vec4 color = texture2D(tDiffuse, vUv);
+      // CCFS.glsl (verbatim constants from effects.gla)
+      float cellsize = 1.0 / uCells;
+      float r = color.r * cellsize;
+      float b = floor(color.b * (uCells - 0.0001)) * cellsize;
+      float u = r * 0.9375 + 0.03125 * cellsize + b;
+      float v = color.g;
+      vec4 graded = texture2D(uLUT, vec2(u, v));
+      gl_FragColor = mix(color, vec4(graded.rgb, color.a), uLutOn);
+    }`,
+};
+const lutPass = new ShaderPass(lutShader);
+lutPass.renderToScreen = true;
+new THREE.TextureLoader().load(LUT.tex, (t) => {
+  t.flipY = false;                      // PVR top-first rows
+  t.magFilter = THREE.NearestFilter;    // game binds NEAREST for ColorGradingSampler
+  t.minFilter = THREE.NearestFilter;
+  t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping;
+  t.colorSpace = THREE.NoColorSpace;    // gamma-space pipeline parity
+  // NOTE: ShaderPass clones the shader uniforms -> mutate lutPass.uniforms
+  lutPass.uniforms.uLUT.value = t;
+  lutPass.uniforms.uLutOn.value = 1.0;
+});
+
 /* the game's world-projected fog/glow map (gc_verticalfog.tga, ETC2-decoded) */
 const fogTexLoader = new THREE.TextureLoader();
 fogTexLoader.load(FOG.mapTex, (t) => {
@@ -102,7 +168,7 @@ const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 1, 1200
 camera.position.set(650, 420, 760);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-window.__v = { scene, camera, controls, state, FOG }; // debug hook
+window.__v = { scene, camera, controls, state, FOG, lutPass }; // debug hook
 controls.enableDamping = true;
 controls.dampingFactor = 0.06;
 controls.maxPolarAngle = Math.PI * 0.55;
@@ -130,7 +196,18 @@ addEventListener('resize', () => {
   camera.aspect = innerWidth / innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
+  composer.setSize(innerWidth, innerHeight);
 });
+
+/* composer: scene -> RTT -> CCFS color grade -> screen (game's post chain).
+   The 2012 GLES2 engine graded into a plain RGBA8 RTT (ColorGradingRTT) —
+   UnsignedByteType parity; HalfFloat RTTs are also 10x slower on software GL. */
+const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(
+  innerWidth * renderer.getPixelRatio(), innerHeight * renderer.getPixelRatio(),
+  { type: THREE.UnsignedByteType, colorSpace: THREE.NoColorSpace }));
+composer.addPass(new RenderPass(scene, camera));
+composer.addPass(lutPass);
+window.__v.composer = composer;
 
 /* ---------------- the engine's shader (exact LightmapVCBlendDC port) ------ */
 const cityVert = /* glsl */`
@@ -477,7 +554,7 @@ function animate(t) {
     batarang.rotation.x = Math.sin(t * 0.0006) * 0.35;
     batarang.position.y = 190 + Math.sin(t * 0.0009) * 12;
   }
-  renderer.render(scene, camera);
+  composer.render();
   frames++;
   if (t - tPrev >= 500) {
     $('st-fps').textContent = Math.round(frames * 1000 / (t - tPrev));
