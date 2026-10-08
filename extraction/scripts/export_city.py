@@ -482,7 +482,13 @@ def main():
             apply_scaleoffset(m, so)   # engine's own UV transform
             tex = gm.get("diffuse")
             tech = gm.get("technique") or ""
-            mode = "2x" if "LightMapDC" in tech else "d"
+            # v10.1: honor the engine's own blend technique — SimpleAdditive
+            # meshes (glow planes, coronas, diner logos, volumetrics) rendered
+            # opaque = giant white wedges over the city.
+            if "additive" in tech.lower():
+                mode = "add"
+            else:
+                mode = "2x" if "LightMapDC" in tech else "d"
             how = "gt"
 
             # v9: st=16 meshes (uv=None: pos + ONE dword at +12) — the +12
@@ -513,7 +519,7 @@ def main():
             # same bake. x2 on them = daylight-bright (the v5 viewer bug).
             if cat == "fp":
                 dif = tex
-                fp_tex, fp_mode, fp_how = None, "d", "dark"
+                fp_tex, fp_mode, fp_how = None, ("add" if "additive" in tech.lower() else "d"), "dark"
                 # v8: the zone bake-group record (so1 + page1) is the game's OWN
                 # binding for this object — applies to _LongDist render units of
                 # the same object (the Beast component sets the 'LightMap' slot
