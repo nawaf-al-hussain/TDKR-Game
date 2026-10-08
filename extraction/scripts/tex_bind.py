@@ -19,7 +19,7 @@ import numpy as np
 from PIL import Image
 
 PNG = "/home/z/my-project/download/TDKR_assets/textures_png"
-SUBS = ("l_gothamcity_tex", "actors_tex", "vehicles_tex", "commons_tex")
+SUBS = ("bakepages", "l_gothamcity_tex", "actors_tex", "vehicles_tex", "commons_tex")
 
 BAD_PAT = re.compile(r"(_nrm|lightmap|_lm$|_mask|sampler|shadow|_bump|_spec|_gloss|"
                      r"_opacity|_height|_normal|_refl|_Refl|_rfl|font|_Emissive)", re.I)

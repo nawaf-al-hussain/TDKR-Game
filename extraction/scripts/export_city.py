@@ -56,7 +56,7 @@ from tex_bind import find_png, edge_map  # noqa: E402
 
 RAW = "/home/z/my-project/download/TDKR_assets/raw"
 PNG = "/home/z/my-project/download/TDKR_assets/textures_png"
-SITE = "/home/z/my-project/work/TDKR-site"
+SITE = "/home/z/my-project/work/TDKR-Game/gh-pages"
 MODELS = os.path.join(SITE, "models")
 TEXD = os.path.join(MODELS, "tex")
 GT_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ground_truth_city.json")
@@ -76,7 +76,19 @@ WATER_Z_SHIFT = 160
 # atlasLow.tga, ...} + mesh component {bdae, 4 bools}. These are the game's
 # OWN bake assignments — authoritative, no UV-fit guessing.
 BAKE_REGIONS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                 os.pardir, "re", "bake_regions.json")
+                                 os.pardir, "re", "bake_regions_v2.json")
+
+# v8: code-verified record frame (session 6). CComponentBeastObjectComponent::
+# Load (@0x2e1e8c) reads {vec4 so1, string page, vec4 so2}; the runtime
+# CBeastObjectComponent::Load (@0x2a1ea4) then binds getTexture(page) into the
+# material 'LightMap' slot and copies so1 into Coord1_scaleoffset. Vertex
+# shader (LightMapDC-v.glsl):
+#     vCoord1 = (Coord1*Coord1_scaleoffset.xy + Coord1_scaleoffset.zw)
+#               * LightMapAtlas.xy + LightMapAtlas.zw
+# => pageUV = uv * so1.xy + so1.zw  (so1 = scaleU, scaleV, offU, offV;
+#    scaleU==scaleV: Beast tiles are square). The v1 "rect" was the discarded
+#    so2 (low/-0 path) misread as (u0,v0,u1,v1) — the u0==v0 pattern was
+#    simply square tiles. GF/VPOW's v7 UV-fit pages were wrong; now exact.
 
 HERO_TEX = {"GC_Island1_LongDist_Low", "GC_Island2_LongDist_low",
             "GC_LongDist_Island2_Roads", "BakeGroup_Island1_Roads0",
@@ -155,10 +167,9 @@ def jpg_from_png(png_path, out_path, max_dim, quality, dim=1.0):
 
 
 def load_bake_groups():
-    """mesh bdae stem -> dict(page, rect) from the zone bake-group streams.
-    Only records whose bake page ships on disk (the '-0' suffixed atlas pages)
-    yield a usable binding; runtime-only pages (no suffix) resolve to their
-    shipped '-0' twin when it exists (same bake, pre-baked copy)."""
+    """base mesh bdae stem -> {page, so} from the zone bake-group streams (v2
+    frame: so1 = Coord1_scaleoffset for the page the component binds via
+    getTexture). Only records whose page ships on disk yield a binding."""
     try:
         rows = json.load(open(BAKE_REGIONS_JSON))
     except Exception:
@@ -167,20 +178,21 @@ def load_bake_groups():
     for r in rows:
         mesh = r.get("mesh") or ""
         page = (r.get("page") or "").replace(".tga", "")
-        shipped = (r.get("page_shipped") or "").replace(".tga", "")
-        cand = None
-        if page and find_png(page):
-            cand = page
-        elif page and find_png(page + "0"):
-            cand = page + "0"          # runtime 'A' -> shipped 'A0'
-        elif shipped and find_png(shipped) and "ATLAS_low" not in shipped:
-            cand = shipped
-        if cand and mesh:
-            prev = out.get(mesh)
-            # keep the first non-ATLAS_low binding per mesh
-            if prev is None or ("ATLAS_low" in prev["page"] and "ATLAS_low" not in cand):
-                out[mesh] = dict(page=cand, rect=r.get("rect"), density=r.get("density"))
+        so1 = r.get("so1")
+        if mesh and page and so1 and find_png(page):
+            out.setdefault(mesh, dict(page=page, so=so1))
     return out
+
+
+def apply_bake_so(mesh, so):
+    """Rect-relative UV refinement (engine parity): uv' = uv*scale + offset.
+    so = (scaleU, scaleV, offU, offV) — the component's Coord1_scaleoffset."""
+    su, sv, ou, ov = so
+    if not all(np.isfinite([su, sv, ou, ov])) or su <= 0 or sv <= 0:
+        return
+    uv = mesh["uv"]
+    mesh["uv"] = np.column_stack([uv[:, 0] * su + ou,
+                                  uv[:, 1] * sv + ov]).astype(np.float32)
 
 
 def uv_fit(uv, name):
@@ -318,12 +330,12 @@ def main():
     if bake_groups:
         print(f"bake-group exact page bindings: {len(bake_groups)} meshes")
     city_dir = os.path.join(RAW, "l_gothamcity")
-    files = sorted(f for f in os.listdir(city_dir) if f.endswith(".bdae.bin"))
+    files = sorted(f for f in os.listdir(city_dir) if f.endswith(".bdae"))
     entries = []
     gt_stats = dict(gt_bind=0, alpha_fix=0, pool_fit=0, bake_fit=0, dark=0, fp_family=0)
     print(f"scanning {len(files)} city bdae files ...")
     for fn in files:
-        base = fn[:-len(".bdae.bin")]
+        base = fn[:-len(".bdae")]
         cat = classify(base)
         if cat == "skip":
             continue
@@ -374,34 +386,38 @@ def main():
             if cat == "fp":
                 dif = tex
                 fp_tex, fp_mode, fp_how = None, "d", "dark"
-                if dif and not dif.lower().endswith("sampler"):
+                # v8: the zone bake-group record (so1 + page1) is the game's OWN
+                # binding for this object — applies to _LongDist render units of
+                # the same object (the Beast component sets the 'LightMap' slot
+                # + Coord1_scaleoffset on ALL of the object's materials).
+                # Reflection/decal variants keep their own material bindings.
+                is_ld = base.lower().endswith("_longdist")
+                bg = None
+                if is_ld:
+                    stripped = re.sub(r"_longdist$", "", base.lower())
+                    for nm in (base.lower(), stripped):
+                        if nm in bake_groups:
+                            bg = bake_groups[nm]
+                            break
+                if bg:
+                    apply_bake_so(m, bg["so"])          # rect-relative refinement
+                    fp_tex, fp_how = bg["page"], "bakegroup"
+                    fp_mode = "2x"                       # bake pages authored for LM*2
+                elif dif and not dif.lower().endswith("sampler"):
                     if dif.lower() == "gc_longdist":
                         # runtime island bake. v7: the zone bake-group streams
                         # give the EXACT page for many footprints (the game's
                         # own CComponentBeastBakeGroup assignment). Only the
                         # files with no shipped bake-group page fall back to
                         # UV-fit among the GC_LongDist island pages.
-                        obj_names = [base.lower()]
-                        stripped = re.sub(r"_longdist$", "", base.lower())
-                        if stripped != base.lower():
-                            obj_names.append(stripped)
-                        bg = None
-                        for nm in obj_names:
-                            if nm in bake_groups:
-                                bg = bake_groups[nm]
-                                break
-                        if bg:
-                            fp_tex, fp_how = bg["page"], "bakegroup"
-                            fp_mode = "2x"     # bake pages are authored for LM*2
-                        else:
-                            pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
-                                     "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
-                                     "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
-                                     "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
-                            scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
-                            if scored and scored[0][0] >= 0.9:
-                                fp_tex, fp_how = scored[0][1], "fp-page-fit"  # page -> 2x (hero parity)
-                                fp_mode = "2x"
+                        pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
+                                 "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
+                                 "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
+                                 "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
+                        scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
+                        if scored and scored[0][0] >= 0.9:
+                            fp_tex, fp_how = scored[0][1], "fp-page-fit"  # page -> 2x (hero parity)
+                            fp_mode = "2x"
                     else:
                         base2 = re.sub(
                             r"_(longdist(completemap|diffusemap|diffuse_map)?|longdistdiffusemap|longdist)$",
@@ -514,7 +530,7 @@ def main():
     for i, b in enumerate(bins):
         plan.append((f"district_{i:02d}", b))
 
-    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=7)
+    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=8)
     tex_used = {}
     for glb_name, group in plan:
         gb = GlbBuilder()

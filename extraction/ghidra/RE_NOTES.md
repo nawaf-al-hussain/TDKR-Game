@@ -359,3 +359,61 @@ Binary: `libKRHP.so` — extracted from `TDKR_v1.1.6b.apk` (committed at repo ro
     bindings in fp tier, native-brightness ground/water. Manifest v7.
     Headless check: no page errors; flash/hurt/lutOn/off pixel A/B verified
     via readPixels (screenshots are stale frames under SwiftShader 0fps).
+
+## Findings — session 6 (FP-page origin traced; per-building rect-relative UVs; viewer v8)
+
+43. **Symbol-address correction**: libKRHP_symbols.txt carries +0x10000 shifts
+    for many functions vs the banked lib_libKRHP.so ELF symtab (sibling
+    GAND/AMAZ build). extraction/re/elf_syms.py + disasm_reader_seq.py read
+    the true ELF symtab (readelf -sW) — all session-6 addresses below are
+    TRUE addresses. (Ghidra decompile filenames keep the shifted addresses.)
+44. **CComponentBeastObjectComponent::Load @0x2e1e8c** reads:
+        vec4 so1 -> +0x04..0x10; string -> +0x14; vec4 so2 -> +0x18..0x24
+    (stream: [f32 x4][strIdx][f32 x4], BE). CBeastObjectComponent::Load
+    @0x2a1ea4 then: getTexture(pageStr) + getTexture('LightMapSampler.tga'),
+    copies so1 into Coord1_scaleoffset (+0x1c..0x28), fills ShaderParams with
+    getParameterID('LightMapAtlas') etc. — so2 is read but DISCARDED (it
+    belongs to the following {str 'ATLAS_low0', u32 W, u32 H, s32 -1}
+    low/-0-path component). String pool @0xb3b26c 'LightMap', 0xb3b310
+    'LightMapSampler.tga', 0xb3b324 'LightMapAtlas'.
+45. **LightMapDC-v.glsl (effects.gla) holds the exact UV chain**:
+        vCoord1 = (Coord1*Coord1_scaleoffset.xy + Coord1_scaleoffset.zw)
+                  * LightMapAtlas.xy + LightMapAtlas.zw
+    => pageUV = uv*so1.xy + so1.zw. so1 = (scaleU, scaleV, offU, offV) with
+    scaleU==scaleV ALWAYS (square Beast tiles) — the v1 "u0==v0 anomaly" was
+    the scale pair misread as rect coords, and the v1 'rect' was actually the
+    DISCARDED so2. Meshes carry NO bake UVs (Coord1 == unit diffuse UV, extra
+    stride-24/28 dwords duplicate Coord0) — the tile transform is entirely
+    object-level, hence 'rect-relative UV refinement' is required when
+    rendering bake pages with unit-UV meshes.
+46. **Record typeIds**: CLevel::LoadNextObject @0x499ecc: 0x2666 WayPoint,
+    0x265e light, 0x1011 IrradianceVolume, 0xbba MetaZone, 0x2653 Occluder,
+    0x2657 LevelProperties, 99999 (0x1869F) = CTemplateBakeGroup::Load
+    (@0x48d870: char,int,9f,3bools,(string,float)x2), 82000 refl-batch,
+    0xdbbb8 WorldBox, default -> CGameObjectManager::CreateObject @0x35774c
+    (component dispatch from the per-class TObjectData template list; stream
+    carries ONLY payloads in template order — hashes 0x152b87 mesh
+    (ReadString+4 bools), 0x14ca79 CComponentBase, 0x2ad2a046 group builtin).
+47. **extract_bake_regions_v2.py -> bake_regions_v2.json**: 89 frames
+    (GothamCity 67 + Island2 22), mesh-resolved 86; 54 footprint + 35
+    prop/bridge bindings with EXACT (page1, so1). Corrects v7 UV-fit errors:
+    gc_footprint_gf -> BakeGroup_Island1_A0 @(0.0002,0.2502) (v7 had
+    Island2_FP2!), gc_footprint_vpow -> Island1_Landmarks0 @(0.4995,0.5002)
+    (v7 had Island1_FP3). ~20 footprints that rendered dark (no shipped
+    per-footprint bake) now carry their true Beast tiles. CB/CC/CD/CG/VA
+    have NO bake component anywhere (CC x1059 / CD x394 instances =
+    mass-repeated far-only buildings) — their only lighting is the
+    GC_LongDist_Island* streaming pages (kept v7 UV-fit page binding).
+48. **Textures**: the 8 BakeGroup island pages are 2048^2 ETC1 mip-chained
+    (PVRv2 hdr: h,w,mips=11,flags=0x136); GC_LongDist_*_FP* + Roads pages +
+    26 more chunks are ZIP_SPLIT = [PK zip: 'SPLIT' marker, rgb.pvr 2048^2
+    ETC1, alpha.pvr 1024^2 ETC1] — batch_decode_tex.py now splits+decodes
+    (294/294 + 266/266). All 8 page1s + tiles verified non-overlapping
+    power-of-two grid per page.
+49. **Viewer v8 (manifest v8)**: exporter v8 — fp tier binds bake_regions_v2
+    (page1 + so1); per-mesh rect-relative UV refinement applied at export
+    (uv' = uv*so.xy+so.zw baked into GLB TEXCOORD_0; verified: VC uv
+    u[0.0002..0.2493] v[0.0001..0.1894] == tile(0.2495 @ 0.0002,0.0001)
+    x unit-uv-max 0.7587). Reflection variants untouched. 42/55 fp _LongDist
+    files bakegroup-bound (was 5), dark 40 -> 7, far-only five keep
+    UV-fit pages. Headless: no page errors, all 7 shipped pages fetch 200.

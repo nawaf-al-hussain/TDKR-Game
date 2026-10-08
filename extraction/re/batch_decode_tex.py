@@ -6,7 +6,7 @@ import numpy as np
 import texture2ddecoder as t2d
 from PIL import Image
 
-BASE = "/home/z/my-project/download/obb_extract/com.gameloft.android.AMAZ.GloftKRAS/files/textures"
+BASE = "/home/z/my-project/download/TDKR_assets/raw/textures"
 OUT = "/home/z/my-project/download/TDKR_assets/textures_png"
 
 ARCHIVES = {
@@ -61,9 +61,14 @@ for sub, arc in ARCHIVES.items():
             continue
         blob = d[off:off + sz]
         try:
+            if blob[:4] == b"PK\x03\x04":  # ZIP_SPLIT: SPLIT marker + rgb.pvr + alpha.pvr
+                import zipfile, io
+                z = zipfile.ZipFile(io.BytesIO(blob))
+                blob = z.read("rgb.pvr")
             hdr, h, w, mips, fmt, dsize, bpp = struct.unpack_from("<IIIIIII", blob, 0)[:7]
             if dsize > len(blob) - hdr or w == 0 or h == 0:
                 fail += 1
+                print(f"BADHDR {nm} hdr={hdr} {w}x{h} dsize={dsize} chunk={sz}", file=sys.stderr)
                 continue
             rgba = decode(blob[hdr:hdr + dsize], w, h, bpp, fmt)
             img = Image.frombytes("RGBA", (w, h), bytes(rgba), "raw", "BGRA")

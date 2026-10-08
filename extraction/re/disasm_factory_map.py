@@ -5,10 +5,10 @@ in the matching branch block. Output: sorted table of fourCC -> class."""
 import struct, sys
 from capstone import Cs, CS_ARCH_ARM, CS_MODE_ARM, CS_MODE_THUMB, CS_MODE_LITTLE_ENDIAN
 
-SO = "lib_libKRHP.so"
+SO = "/home/z/my-project/work/TDKR-Game/extraction/lib_libKRHP.so"
 d = open(SO, "rb").read()
 syms = {}
-for line in open("libKRHP_symbols.txt"):
+for line in open("/home/z/my-project/work/TDKR-Game/extraction/libKRHP_symbols.txt"):
     p = line.split()
     if len(p) >= 3 and p[1] == "FUNC":
         syms[int(p[0], 16)] = p[2]
