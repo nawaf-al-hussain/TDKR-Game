@@ -420,7 +420,7 @@
   },
   {
    "file": "models/fp_island2.glb",
-   "bytes": 3760848,
+   "bytes": 3761492,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -513,9 +513,7 @@
     },
     {
      "name": "GC_Footprint_AG_LongDist",
-     "texs": [
-      "BakeGroup_Island1_B0"
-     ],
+     "texs": [],
      "verts": 640,
      "tris": 364,
      "meshes": 1
@@ -594,7 +592,7 @@
     {
      "name": "GC_Footprint_CB_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP2"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 188,
      "tris": 102,
@@ -610,7 +608,7 @@
     {
      "name": "GC_Footprint_CC_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP2"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 200,
      "tris": 106,
@@ -643,9 +641,7 @@
     },
     {
      "name": "GC_Footprint_CE_LongDist",
-     "texs": [
-      "BakeGroup_Island1_A0"
-     ],
+     "texs": [],
      "verts": 1127,
      "tris": 683,
      "meshes": 1
@@ -680,7 +676,7 @@
     {
      "name": "GC_Footprint_CG_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP2"
+      "GC_LongDist_Island2_FP1"
      ],
      "verts": 184,
      "tris": 94,
@@ -958,7 +954,7 @@
     {
      "name": "GC_Footprint_GA_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island2_Roads"
      ],
      "verts": 142,
      "tris": 62,
@@ -1073,7 +1069,7 @@
     {
      "name": "GC_Footprint_IC_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_Footprint_IC"
      ],
      "verts": 156,
      "tris": 86,
@@ -1251,7 +1247,8 @@
     {
      "name": "GC_Footprint_STD_Volumetric",
      "texs": [
-      "BakeGroup_Island2_Landmarks0"
+      "BakeGroup_Island2_Landmarks0",
+      "GC_Footprint_STD_stuff_TH"
      ],
      "verts": 218,
      "tris": 168,
@@ -1285,7 +1282,7 @@
     {
      "name": "GC_Footprint_VA_LongDist",
      "texs": [
-      "GC_LongDist_Island1_FP1"
+      "GC_LongDist_Island2_Roads"
      ],
      "verts": 269,
      "tris": 129,
@@ -1419,9 +1416,7 @@
     },
     {
      "name": "GC_Footprint_ZA_LongDist",
-     "texs": [
-      "BakeGroup_Island1_B0"
-     ],
+     "texs": [],
      "verts": 442,
      "tris": 243,
      "meshes": 1
