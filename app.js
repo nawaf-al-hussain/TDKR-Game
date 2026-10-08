@@ -522,8 +522,8 @@ async function loadGLB(entry, tierName) {
 }
 
 /* ---------------- UI: tier buttons ---------------- */
-const TIER_LABEL = { hero: 'Skyline', fp: 'Footprints', low: 'Low-detail LOD', district: 'District props' };
-const TIER_ORDER = ['hero', 'fp', 'district', 'low'];
+const TIER_LABEL = { hero: 'Skyline', fp: 'Footprints', street: 'Street level', low: 'Low-detail LOD', district: 'District props' };
+const TIER_ORDER = ['hero', 'fp', 'street', 'district', 'low'];
 
 function buildTierButtons() {
   const nav = $('tiers');
@@ -690,6 +690,7 @@ function clearStatus() { $('load-status').textContent = ''; }
   }
   state.tiers.hero.enabled = true;
   state.tiers.fp.enabled = true;   // street-level detail (per-building FP meshes)
+  if (state.tiers.street) state.tiers.street.enabled = true;  // streamed zone geometry (roads/grass/props)
   buildTierButtons();
 
   const heroGlbs = state.tiers.hero.glbs;
@@ -706,6 +707,20 @@ function clearStatus() { $('load-status').textContent = ''; }
   updateHUDTotals();
   $('loader').classList.add('done');
   clearStatus();
+
+  // background-load the streamed street tier (non-blocking) — the ground
+  // geometry (roads/grass/crossings + street props) from the zone streams
+  if (state.tiers.street && state.tiers.street.enabled && !state.tiers.street.loaded) {
+    state.tiers.street.loaded = true;
+    (async () => {
+      for (const entry of state.tiers.street.glbs) {
+        if (!entry.loaded) {
+          try { await loadGLB(entry, 'street'); } catch (e) { console.warn('street glb failed', entry.file, e); }
+        }
+      }
+      updateHUDTotals();
+    })();
+  }
 })();
 
 /* ---------------- HUD + render loop ---------------- */

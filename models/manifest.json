@@ -31,6 +31,29 @@
   ],
   "district": [
    "models/district_00.glb"
+  ],
+  "street": [
+   "models/street_island1_00.glb",
+   "models/street_island1_01.glb",
+   "models/street_island1_02.glb",
+   "models/street_island1_03.glb",
+   "models/street_island1_04.glb",
+   "models/street_island1_05.glb",
+   "models/street_island1_06.glb",
+   "models/street_island1_07.glb",
+   "models/street_island1_08.glb",
+   "models/street_island2_00.glb",
+   "models/street_island2_01.glb",
+   "models/street_island2_02.glb",
+   "models/street_island2_03.glb",
+   "models/street_island2_04.glb",
+   "models/street_island2_05.glb",
+   "models/street_island2_06.glb",
+   "models/street_island2_07.glb",
+   "models/street_island2_08.glb",
+   "models/street_island2_09.glb",
+   "models/street_island2_10.glb",
+   "models/street_island2_11.glb"
   ]
  },
  "glbs": [
@@ -420,7 +443,7 @@
   },
   {
    "file": "models/fp_island2.glb",
-   "bytes": 3761496,
+   "bytes": 3761492,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -1544,7 +1567,7 @@
   },
   {
    "file": "models/city_low.glb",
-   "bytes": 1179884,
+   "bytes": 1179716,
    "verts": 28495,
    "tris": 17614,
    "tier": "low",
@@ -1814,7 +1837,7 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 981864,
+   "bytes": 981696,
    "verts": 21908,
    "tris": 13650,
    "tier": "district",
@@ -2464,9 +2487,324 @@
      "meshes": 1
     }
    ]
+  },
+  {
+   "file": "models/street_island1_00.glb",
+   "bytes": 124656,
+   "verts": 3473,
+   "tris": 4235,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_00",
+     "verts": 3473,
+     "tris": 4235,
+     "meshes": 6
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_01.glb",
+   "bytes": 2939448,
+   "verts": 79084,
+   "tris": 97706,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_01",
+     "verts": 79084,
+     "tris": 97706,
+     "meshes": 292
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_02.glb",
+   "bytes": 4013784,
+   "verts": 109949,
+   "tris": 133725,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_02",
+     "verts": 109949,
+     "tris": 133725,
+     "meshes": 331
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_03.glb",
+   "bytes": 798180,
+   "verts": 21878,
+   "tris": 26988,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_03",
+     "verts": 21878,
+     "tris": 26988,
+     "meshes": 56
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_04.glb",
+   "bytes": 4760304,
+   "verts": 131983,
+   "tris": 161104,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_04",
+     "verts": 131983,
+     "tris": 161104,
+     "meshes": 295
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_05.glb",
+   "bytes": 4717500,
+   "verts": 131229,
+   "tris": 159405,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_05",
+     "verts": 131229,
+     "tris": 159405,
+     "meshes": 284
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_06.glb",
+   "bytes": 382080,
+   "verts": 10705,
+   "tris": 12552,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_06",
+     "verts": 10705,
+     "tris": 12552,
+     "meshes": 25
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_07.glb",
+   "bytes": 3549208,
+   "verts": 102990,
+   "tris": 116875,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_07",
+     "verts": 102990,
+     "tris": 116875,
+     "meshes": 135
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_08.glb",
+   "bytes": 2132532,
+   "verts": 60140,
+   "tris": 72463,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_08",
+     "verts": 60140,
+     "tris": 72463,
+     "meshes": 93
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_00.glb",
+   "bytes": 84928,
+   "verts": 2578,
+   "tris": 2648,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_00",
+     "verts": 2578,
+     "tris": 2648,
+     "meshes": 2
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_01.glb",
+   "bytes": 1512736,
+   "verts": 42653,
+   "tris": 50838,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_01",
+     "verts": 42653,
+     "tris": 50838,
+     "meshes": 77
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_02.glb",
+   "bytes": 236364,
+   "verts": 6280,
+   "tris": 8087,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_02",
+     "verts": 6280,
+     "tris": 8087,
+     "meshes": 20
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_03.glb",
+   "bytes": 403692,
+   "verts": 11064,
+   "tris": 13939,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_03",
+     "verts": 11064,
+     "tris": 13939,
+     "meshes": 23
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_04.glb",
+   "bytes": 2156984,
+   "verts": 60927,
+   "tris": 73653,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_04",
+     "verts": 60927,
+     "tris": 73653,
+     "meshes": 84
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_05.glb",
+   "bytes": 1844720,
+   "verts": 48266,
+   "tris": 65543,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_05",
+     "verts": 48266,
+     "tris": 65543,
+     "meshes": 145
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_06.glb",
+   "bytes": 1199464,
+   "verts": 33324,
+   "tris": 41243,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_06",
+     "verts": 33324,
+     "tris": 41243,
+     "meshes": 58
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_07.glb",
+   "bytes": 3568476,
+   "verts": 100915,
+   "tris": 121256,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_07",
+     "verts": 100915,
+     "tris": 121256,
+     "meshes": 148
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_08.glb",
+   "bytes": 2456572,
+   "verts": 66791,
+   "tris": 82258,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_08",
+     "verts": 66791,
+     "tris": 82258,
+     "meshes": 210
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_09.glb",
+   "bytes": 590512,
+   "verts": 16525,
+   "tris": 20373,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_09",
+     "verts": 16525,
+     "tris": 20373,
+     "meshes": 23
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_10.glb",
+   "bytes": 4514320,
+   "verts": 126874,
+   "tris": 155870,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_10",
+     "verts": 126874,
+     "tris": 155870,
+     "meshes": 167
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_11.glb",
+   "bytes": 750052,
+   "verts": 20471,
+   "tris": 24960,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_11",
+     "verts": 20471,
+     "tris": 24960,
+     "meshes": 63
+    }
+   ]
   }
  ],
- "total_verts": 346960,
- "total_tris": 202137,
- "version": 9
+ "total_verts": 1535059,
+ "total_tris": 1647858,
+ "version": 10
 }
