@@ -420,7 +420,7 @@
   },
   {
    "file": "models/fp_island2.glb",
-   "bytes": 3761492,
+   "bytes": 3761496,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -1544,7 +1544,7 @@
   },
   {
    "file": "models/city_low.glb",
-   "bytes": 1179716,
+   "bytes": 1179884,
    "verts": 28495,
    "tris": 17614,
    "tier": "low",
@@ -1814,7 +1814,7 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 981696,
+   "bytes": 981864,
    "verts": 21908,
    "tris": 13650,
    "tier": "district",

@@ -438,6 +438,27 @@ function makeTexlessCityMaterial() {
   });
 }
 
+function makeAdditiveMaterial(tex) {
+  // SimpleAdditive-fx port: glow planes / coronas / logos / volumetrics.
+  // out = src + dst (gl.ONE, gl.ONE); the atlas IS the glow shape.
+  // No fog chain — these are local light sources (fog would gray them out).
+  return new THREE.ShaderMaterial({
+    uniforms: { map: { value: tex } },
+    vertexShader: cityVert,
+    fragmentShader: /* glsl */`precision mediump float;
+      uniform sampler2D map;
+      varying vec2 vUv;
+      void main() {
+        vec3 col = texture2D(map, vUv).rgb;
+        gl_FragColor = vec4(col, 1.0);
+      }`,
+    side: THREE.DoubleSide,
+    blending: THREE.AdditiveBlending,
+    transparent: true,
+    depthWrite: false,
+  });
+}
+
 /* ---------------- texture cache ---------------- */
 const texLoader = new THREE.TextureLoader();
 const texCache = new Map(); // name -> Promise<Texture|null>
@@ -476,11 +497,14 @@ async function loadGLB(entry, tierName) {
     const isDark = raw === '__dark';
     const pipe = raw.split('|');
     const texName = !isDark && pipe[0] ? pipe[0] : null;
+    const isAdd = !isDark && pipe[1] === 'add';
     const mode = !isDark && pipe[1] === '2x' ? 2.0 : 1.0;
     const texPromise = texName ? getTex(texName) : Promise.resolve(null);
     obj.material = new THREE.MeshLambertMaterial({ color: 0x101623, side: THREE.DoubleSide });
     texPromise.then((tex) => {
-      if (tex) {
+      if (isAdd && tex) {
+        obj.material = makeAdditiveMaterial(tex);
+      } else if (tex) {
         obj.material = makeCityMaterial(tex, mode);
       } else {
         obj.material = makeTexlessCityMaterial();
