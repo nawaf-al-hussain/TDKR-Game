@@ -468,6 +468,26 @@ def main():
             mode = "2x" if "LightMapDC" in tech else "d"
             how = "gt"
 
+            # v9: st=16 meshes (uv=None: pos + ONE dword at +12) — the +12
+            # stream is the mesh's only UV candidate (or a normal for
+            # projection-bake targets). Default to it so these meshes are not
+            # flat-dark; the bake-record path below overrides with page space.
+            had_uv = m.get("uv") is not None
+            if m.get("uv") is None:
+                m["uv"] = m.get("uvm")
+            # v9: st=16 infrastructure LongDist files (railway, small-bridge,
+            # monorail…) sit in the hero/low tiers but carry exact bake
+            # records like the fp tier — bind page+so1 through the same path.
+            # ONLY for originally uv-less (st=16) meshes: st>=20 meshes keep
+            # their own ground-truth bindings.
+            if (not had_uv and m.get("uv") is not None
+                    and base.lower() in bake_groups
+                    and choose_bake_channel(m, bake_groups[base.lower()]["page"],
+                                            bake_groups[base.lower()]["so"])):
+                per_mesh.append((bake_groups[base.lower()]["page"], "2x"))
+                gt_stats["bake_fit"] += 1
+                continue
+
             # ---------------- fp tier: engine-faithful, name-driven ladder ----
             # Shipped per-footprint textures (GC_Footprint_AWT.tga etc.) are the
             # OFFLINE Beast bakes (complete maps: lit windows baked in, mean
