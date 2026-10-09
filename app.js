@@ -786,7 +786,8 @@ function clearStatus() { $('load-status').textContent = ''; }
   // transforms are decoded.  They stay available as research toggles but no
   // longer render by default — they were the 'grass/roads on buildings'.
   if (state.tiers.street) state.tiers.street.enabled = true;
-  if (state.tiers.district) state.tiers.district.enabled = true;
+  // district props: several are authored in LOCAL space (unplaced) — keep
+  // off by default to avoid floating geometry over the city
   buildTierButtons();
 
   // stream the real city first: world-correct streets with the game's own

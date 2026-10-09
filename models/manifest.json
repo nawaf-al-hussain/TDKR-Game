@@ -2177,7 +2177,7 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 985224,
+   "bytes": 985064,
    "verts": 21908,
    "tris": 13650,
    "tier": "district",
@@ -2214,7 +2214,6 @@
     {
      "name": "GC_water",
      "texs": [
-      "GothamCity_sand_tile",
       "water"
      ],
      "verts": 629,
@@ -2224,7 +2223,6 @@
     {
      "name": "GC_Water_Island2",
      "texs": [
-      "GothamCity_sand_tile",
       "water"
      ],
      "verts": 629,
