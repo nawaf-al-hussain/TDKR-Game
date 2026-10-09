@@ -628,7 +628,8 @@
      "tris": 2908,
      "meshes": 1
     }
-   ]
+   ],
+   "frameWarning": "authored in the ISLAND-2 level frame (no placement record in the main lvc); research toggle only"
   },
   {
    "file": "models/GC_Railway_Island2_LongDist.glb",
@@ -647,7 +648,8 @@
      "tris": 784,
      "meshes": 1
     }
-   ]
+   ],
+   "frameWarning": "authored in the ISLAND-2 level frame (no placement record in the main lvc); overlaps island-1 by ~21k u^2 in this single-level view \u2014 research toggle only"
   },
   {
    "file": "models/GC_Small_Bridge_Island2_LongDist.glb",
@@ -666,7 +668,8 @@
      "tris": 254,
      "meshes": 1
     }
-   ]
+   ],
+   "frameWarning": "authored in the ISLAND-2 level frame (no placement record in the main lvc); research toggle only"
   },
   {
    "file": "models/fp_island2.glb",
@@ -2734,6 +2737,6 @@
  ],
  "total_verts": 1458279,
  "total_tris": 1602537,
- "version": 14,
+ "version": 15,
  "total_bytes": 53759408
 }
