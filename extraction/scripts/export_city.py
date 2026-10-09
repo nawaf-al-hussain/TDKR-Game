@@ -125,6 +125,8 @@ def classify(name):
         return "skip"
     if n.endswith("low"):
         return "low"
+    if LD_WORLD.match(name):
+        return "skyline"   # v13: world-placed island bake units (boot by default)
     if "bigbridge" in n or "roads" in n:
         return "hero"
     if "longdist" in n and ("island1" in n or "island2" in n):
@@ -138,6 +140,27 @@ def fp_island(name):
     n = name.lower()
     return "island1" if "island1" in n or "_1_" in n else "island2"
 
+
+# v13 SESSION-12 BREAKTHROUGH: the lvc DICT object stream (big-endian,
+# [name str][01][typeId u32][payload: int, TRS 9f, bools, (page,f),(page_low,f)])
+# carries the world placement of the LongDist bake units:
+#   CTemplateObject (typeId 0x2662) named 'gc_island1_longdist.bdae'
+#   @ GothamCity.lvc 0x55575: TRS pos=(-141.69, -681.15, 0.114) rot=0 scale=1.
+# The per-page FP assemblies (GC_LongDist_Island1_FP1/FP2/FP3/Roads) and the
+# LOW unit share the island's local frame (mesh-centroid correspondence
+# <= 0.5 units), so ONE transform places the whole island-1 skyline.
+# Island2 has NO object record — its CTemplateBakeGroup (typeId 0x1869f)
+# TRS is identity: island-2 bake geometry is authored origin-relative.
+# Validated: placed footprints overlap 8/9 street island1 chunks (up to
+# 28k units^2 XY each); sign checks confirm the offset direction.
+ISLAND_WORLD_OFFSET = {
+    "island1": (-141.69, -681.15, 0.114),
+    "island2": (0.0, 0.0, 0.0),
+}
+# only the island bake family — monorail/railway/bridges carry their own
+# lvc placement records (not yet decoded; they stay unplaced research units)
+LD_WORLD = re.compile(
+    r"(?i)^GC_(?:island([12])_LongDist.*|LongDist_Island([12])_(?:FP[123]|Roads))$")
 
 ISLAND_BAKES = {
     "island1": ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
@@ -587,6 +610,16 @@ def main():
             meshes = []
         if not meshes:
             continue
+        # v13: world-place the island LongDist bake units from the lvc
+        # CTemplateObject TRS (game Z-up coords — apply BEFORE the glTF
+        # Y-up conversion in add_file).
+        _ldm = LD_WORLD.match(base)
+        if _ldm:
+            _isl = "island" + (_ldm.group(1) or _ldm.group(2))
+            _off = np.array(ISLAND_WORLD_OFFSET[_isl], np.float32)
+            for _m in meshes:
+                _m["pos"] = _m["pos"] + _off
+                _m["mn"], _m["mx"] = _m["pos"].min(0), _m["pos"].max(0)
         if base in WATER_FILES:
             for m in meshes:
                 m["pos"] = m["pos"] - np.array([0, 0, WATER_Z_SHIFT], np.float32)
@@ -815,6 +848,9 @@ def main():
     os.makedirs(MODELS, exist_ok=True)
     os.makedirs(TEXD, exist_ok=True)
     plan = []
+    # v13: skyline tier — one GLB per world-placed island LongDist unit
+    for e in [x for x in entries if x["cat"] == "skyline"]:
+        plan.append((e["base"], [e]))
     for e in [x for x in entries if x["cat"] == "hero"]:
         plan.append((e["base"], [e]))
     for isl in ("island1", "island2"):
@@ -839,7 +875,7 @@ def main():
     for i, b in enumerate(bins):
         plan.append((f"district_{i:02d}", b))
 
-    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=11)
+    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=13)
     # v11: PRESERVE the street tier (exported separately by export_zone.py) —
     # the manifest is shared state; dropping it orphans the streamed city.
     _mprev = os.path.join(MODELS, "manifest.json")
@@ -912,6 +948,9 @@ def main():
                       os.path.join(MODELS, "batarang.glb"), "batarang")
             print(f"  + batarang.glb  {os.path.getsize(os.path.join(MODELS, 'batarang.glb'))//1024} KB (embedded tex)")
 
+    # v13: totals cover EVERY deployed GLB (incl. preserved street tier)
+    manifest["total_verts"] = sum(g["verts"] for g in manifest["glbs"])
+    manifest["total_tris"] = sum(g["tris"] for g in manifest["glbs"])
     for t in manifest["glbs"]:
         manifest["tiers"].setdefault(t["tier"], []).append(t["file"])
     with open(os.path.join(MODELS, "manifest.json"), "w") as f:

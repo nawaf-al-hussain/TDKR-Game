@@ -1,37 +1,5 @@
 {
  "tiers": {
-  "hero": [
-   "models/GC_Bigbridge.glb",
-   "models/GC_Bigbridge_1_islands_LongDist.glb",
-   "models/GC_Bigbridge_2_islands_LongDist.glb",
-   "models/GC_Bigbridge_3_LongDist.glb",
-   "models/GC_Bigbridge_LongDist.glb",
-   "models/GC_Broken_BigBridge.glb",
-   "models/GC_Broken_BigBridge_LongDist.glb",
-   "models/GC_Island2_LongDist.glb",
-   "models/GC_LongDist_Island1_FP1.glb",
-   "models/GC_LongDist_Island1_FP2.glb",
-   "models/GC_LongDist_Island1_FP3.glb",
-   "models/GC_LongDist_Island1_Roads.glb",
-   "models/GC_LongDist_Island2_FP1.glb",
-   "models/GC_LongDist_Island2_FP2.glb",
-   "models/GC_LongDist_Island2_FP3.glb",
-   "models/GC_LongDist_Island2_Roads.glb",
-   "models/GC_Monorail_Island1_LongDist.glb",
-   "models/GC_Monorail_Island2_LongDist.glb",
-   "models/GC_Railway_Island2_LongDist.glb",
-   "models/GC_Small_Bridge_Island2_LongDist.glb",
-   "models/GC_island1_LongDist.glb"
-  ],
-  "fp": [
-   "models/fp_island2.glb"
-  ],
-  "low": [
-   "models/city_low.glb"
-  ],
-  "district": [
-   "models/district_00.glb"
-  ],
   "street": [
    "models/street_island1_00.glb",
    "models/street_island1_01.glb",
@@ -54,9 +22,548 @@
    "models/street_island2_09.glb",
    "models/street_island2_10.glb",
    "models/street_island2_11.glb"
+  ],
+  "skyline": [
+   "models/GC_Island2_LongDist.glb",
+   "models/GC_LongDist_Island1_FP1.glb",
+   "models/GC_LongDist_Island1_FP2.glb",
+   "models/GC_LongDist_Island1_FP3.glb",
+   "models/GC_LongDist_Island1_Roads.glb",
+   "models/GC_LongDist_Island2_FP1.glb",
+   "models/GC_LongDist_Island2_FP2.glb",
+   "models/GC_LongDist_Island2_FP3.glb",
+   "models/GC_LongDist_Island2_Roads.glb",
+   "models/GC_island1_LongDist.glb"
+  ],
+  "hero": [
+   "models/GC_Bigbridge.glb",
+   "models/GC_Bigbridge_1_islands_LongDist.glb",
+   "models/GC_Bigbridge_2_islands_LongDist.glb",
+   "models/GC_Bigbridge_3_LongDist.glb",
+   "models/GC_Bigbridge_LongDist.glb",
+   "models/GC_Broken_BigBridge.glb",
+   "models/GC_Broken_BigBridge_LongDist.glb",
+   "models/GC_Monorail_Island1_LongDist.glb",
+   "models/GC_Monorail_Island2_LongDist.glb",
+   "models/GC_Railway_Island2_LongDist.glb",
+   "models/GC_Small_Bridge_Island2_LongDist.glb"
+  ],
+  "fp": [
+   "models/fp_island2.glb"
+  ],
+  "low": [
+   "models/city_low.glb"
+  ],
+  "district": [
+   "models/district_00.glb"
   ]
  },
  "glbs": [
+  {
+   "file": "models/street_island1_00.glb",
+   "bytes": 124504,
+   "verts": 3473,
+   "tris": 4235,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_00",
+     "verts": 3473,
+     "tris": 4235,
+     "meshes": 6
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_01.glb",
+   "bytes": 2939140,
+   "verts": 79084,
+   "tris": 97706,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_01",
+     "verts": 79084,
+     "tris": 97706,
+     "meshes": 292
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_02.glb",
+   "bytes": 4013300,
+   "verts": 109949,
+   "tris": 133725,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_02",
+     "verts": 109949,
+     "tris": 133725,
+     "meshes": 331
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_03.glb",
+   "bytes": 797712,
+   "verts": 21878,
+   "tris": 26988,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_03",
+     "verts": 21878,
+     "tris": 26988,
+     "meshes": 56
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_04.glb",
+   "bytes": 4760160,
+   "verts": 131983,
+   "tris": 161104,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_04",
+     "verts": 131983,
+     "tris": 161104,
+     "meshes": 295
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_05.glb",
+   "bytes": 4717032,
+   "verts": 131229,
+   "tris": 159405,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_05",
+     "verts": 131229,
+     "tris": 159405,
+     "meshes": 284
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_06.glb",
+   "bytes": 381276,
+   "verts": 10705,
+   "tris": 12552,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_06",
+     "verts": 10705,
+     "tris": 12552,
+     "meshes": 25
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_07.glb",
+   "bytes": 3548576,
+   "verts": 102990,
+   "tris": 116875,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_07",
+     "verts": 102990,
+     "tris": 116875,
+     "meshes": 135
+    }
+   ]
+  },
+  {
+   "file": "models/street_island1_08.glb",
+   "bytes": 2132384,
+   "verts": 60140,
+   "tris": 72463,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island1_08",
+     "verts": 60140,
+     "tris": 72463,
+     "meshes": 93
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_00.glb",
+   "bytes": 84928,
+   "verts": 2578,
+   "tris": 2648,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_00",
+     "verts": 2578,
+     "tris": 2648,
+     "meshes": 2
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_01.glb",
+   "bytes": 1512568,
+   "verts": 42653,
+   "tris": 50838,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_01",
+     "verts": 42653,
+     "tris": 50838,
+     "meshes": 77
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_02.glb",
+   "bytes": 236196,
+   "verts": 6280,
+   "tris": 8087,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_02",
+     "verts": 6280,
+     "tris": 8087,
+     "meshes": 20
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_03.glb",
+   "bytes": 403364,
+   "verts": 11064,
+   "tris": 13939,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_03",
+     "verts": 11064,
+     "tris": 13939,
+     "meshes": 23
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_04.glb",
+   "bytes": 2156512,
+   "verts": 60927,
+   "tris": 73653,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_04",
+     "verts": 60927,
+     "tris": 73653,
+     "meshes": 84
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_05.glb",
+   "bytes": 1844092,
+   "verts": 48266,
+   "tris": 65543,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_05",
+     "verts": 48266,
+     "tris": 65543,
+     "meshes": 145
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_06.glb",
+   "bytes": 1198832,
+   "verts": 33324,
+   "tris": 41243,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_06",
+     "verts": 33324,
+     "tris": 41243,
+     "meshes": 58
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_07.glb",
+   "bytes": 3567844,
+   "verts": 100915,
+   "tris": 121256,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_07",
+     "verts": 100915,
+     "tris": 121256,
+     "meshes": 148
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_08.glb",
+   "bytes": 2456100,
+   "verts": 66791,
+   "tris": 82258,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_08",
+     "verts": 66791,
+     "tris": 82258,
+     "meshes": 210
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_09.glb",
+   "bytes": 590044,
+   "verts": 16525,
+   "tris": 20373,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_09",
+     "verts": 16525,
+     "tris": 20373,
+     "meshes": 23
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_10.glb",
+   "bytes": 4513688,
+   "verts": 126874,
+   "tris": 155870,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_10",
+     "verts": 126874,
+     "tris": 155870,
+     "meshes": 167
+    }
+   ]
+  },
+  {
+   "file": "models/street_island2_11.glb",
+   "bytes": 749420,
+   "verts": 20471,
+   "tris": 24960,
+   "tier": "street",
+   "files": [
+    {
+     "name": "street_island2_11",
+     "verts": 20471,
+     "tris": 24960,
+     "meshes": 63
+    }
+   ]
+  },
+  {
+   "file": "models/GC_Island2_LongDist.glb",
+   "bytes": 1420444,
+   "verts": 35385,
+   "tris": 22592,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_Island2_LongDist",
+     "texs": [
+      "GC_LongDist_Island2_FP1",
+      "GC_LongDist_Island2_FP2",
+      "GC_LongDist_Island2_FP3",
+      "GC_LongDist_Island2_Roads",
+      "GC_Residential_Props_Monorail"
+     ],
+     "verts": 35385,
+     "tris": 22592,
+     "meshes": 23
+    }
+   ]
+  },
+  {
+   "file": "models/GC_LongDist_Island1_FP1.glb",
+   "bytes": 581352,
+   "verts": 14701,
+   "tris": 8456,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_LongDist_Island1_FP1",
+     "texs": [
+      "GC_LongDist_Island1_FP1"
+     ],
+     "verts": 14701,
+     "tris": 8456,
+     "meshes": 13
+    }
+   ]
+  },
+  {
+   "file": "models/GC_LongDist_Island1_FP2.glb",
+   "bytes": 411776,
+   "verts": 10849,
+   "tris": 4658,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_LongDist_Island1_FP2",
+     "texs": [
+      "GC_LongDist_Island1_FP2"
+     ],
+     "verts": 10849,
+     "tris": 4658,
+     "meshes": 12
+    }
+   ]
+  },
+  {
+   "file": "models/GC_LongDist_Island1_FP3.glb",
+   "bytes": 574528,
+   "verts": 15123,
+   "tris": 6704,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_LongDist_Island1_FP3",
+     "texs": [
+      "GC_LongDist_Island1_FP3"
+     ],
+     "verts": 15123,
+     "tris": 6704,
+     "meshes": 14
+    }
+   ]
+  },
+  {
+   "file": "models/GC_LongDist_Island1_Roads.glb",
+   "bytes": 654572,
+   "verts": 16361,
+   "tris": 10345,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_LongDist_Island1_Roads",
+     "texs": [
+      "GC_LongDist_Island1_Roads",
+      "GC_Residential_Props_Monorail"
+     ],
+     "verts": 16361,
+     "tris": 10345,
+     "meshes": 9
+    }
+   ]
+  },
+  {
+   "file": "models/GC_LongDist_Island2_FP1.glb",
+   "bytes": 288520,
+   "verts": 7702,
+   "tris": 3293,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_LongDist_Island2_FP1",
+     "texs": [
+      "GC_LongDist_Island2_FP1"
+     ],
+     "verts": 7702,
+     "tris": 3293,
+     "meshes": 3
+    }
+   ]
+  },
+  {
+   "file": "models/GC_LongDist_Island2_FP2.glb",
+   "bytes": 476236,
+   "verts": 12482,
+   "tris": 5907,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_LongDist_Island2_FP2",
+     "texs": [
+      "GC_LongDist_Island2_FP2"
+     ],
+     "verts": 12482,
+     "tris": 5907,
+     "meshes": 8
+    }
+   ]
+  },
+  {
+   "file": "models/GC_LongDist_Island2_FP3.glb",
+   "bytes": 264080,
+   "verts": 6987,
+   "tris": 3107,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_LongDist_Island2_FP3",
+     "texs": [
+      "GC_LongDist_Island2_FP3"
+     ],
+     "verts": 6987,
+     "tris": 3107,
+     "meshes": 4
+    }
+   ]
+  },
+  {
+   "file": "models/GC_LongDist_Island2_Roads.glb",
+   "bytes": 586416,
+   "verts": 14224,
+   "tris": 10422,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_LongDist_Island2_Roads",
+     "texs": [
+      "GC_LongDist_Island2_Roads",
+      "GC_Residential_Props_Monorail"
+     ],
+     "verts": 14224,
+     "tris": 10422,
+     "meshes": 8
+    }
+   ]
+  },
+  {
+   "file": "models/GC_island1_LongDist.glb",
+   "bytes": 1747568,
+   "verts": 43001,
+   "tris": 27736,
+   "tier": "skyline",
+   "files": [
+    {
+     "name": "GC_island1_LongDist",
+     "texs": [
+      "GC_LongDist_Island1_FP1",
+      "GC_LongDist_Island1_FP2",
+      "GC_LongDist_Island1_FP3",
+      "GC_LongDist_Island1_Roads",
+      "GC_Residential_Props_Monorail"
+     ],
+     "verts": 43001,
+     "tris": 27736,
+     "meshes": 54
+    }
+   ]
+  },
   {
    "file": "models/GC_Bigbridge.glb",
    "bytes": 41728,
@@ -77,7 +584,7 @@
   },
   {
    "file": "models/GC_Bigbridge_1_islands_LongDist.glb",
-   "bytes": 83068,
+   "bytes": 99896,
    "verts": 2084,
    "tris": 1268,
    "tier": "hero",
@@ -85,6 +592,7 @@
     {
      "name": "GC_Bigbridge_1_islands_LongDist",
      "texs": [
+      "BakeGroup_Island1_Roads0",
       "bridge_tile"
      ],
      "verts": 2084,
@@ -113,7 +621,7 @@
   },
   {
    "file": "models/GC_Bigbridge_3_LongDist.glb",
-   "bytes": 81308,
+   "bytes": 97780,
    "verts": 2040,
    "tris": 1240,
    "tier": "hero",
@@ -121,6 +629,7 @@
     {
      "name": "GC_Bigbridge_3_LongDist",
      "texs": [
+      "BakeGroup_Island1_A0",
       "bridge_tile"
      ],
      "verts": 2040,
@@ -184,176 +693,8 @@
    ]
   },
   {
-   "file": "models/GC_Island2_LongDist.glb",
-   "bytes": 1420444,
-   "verts": 35385,
-   "tris": 22592,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_Island2_LongDist",
-     "texs": [
-      "GC_LongDist_Island2_FP1",
-      "GC_LongDist_Island2_FP2",
-      "GC_LongDist_Island2_FP3",
-      "GC_LongDist_Island2_Roads",
-      "GC_Residential_Props_Monorail"
-     ],
-     "verts": 35385,
-     "tris": 22592,
-     "meshes": 23
-    }
-   ]
-  },
-  {
-   "file": "models/GC_LongDist_Island1_FP1.glb",
-   "bytes": 581300,
-   "verts": 14701,
-   "tris": 8456,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_LongDist_Island1_FP1",
-     "texs": [
-      "GC_LongDist_Island1_FP1"
-     ],
-     "verts": 14701,
-     "tris": 8456,
-     "meshes": 13
-    }
-   ]
-  },
-  {
-   "file": "models/GC_LongDist_Island1_FP2.glb",
-   "bytes": 411788,
-   "verts": 10849,
-   "tris": 4658,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_LongDist_Island1_FP2",
-     "texs": [
-      "GC_LongDist_Island1_FP2"
-     ],
-     "verts": 10849,
-     "tris": 4658,
-     "meshes": 12
-    }
-   ]
-  },
-  {
-   "file": "models/GC_LongDist_Island1_FP3.glb",
-   "bytes": 574404,
-   "verts": 15123,
-   "tris": 6704,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_LongDist_Island1_FP3",
-     "texs": [
-      "GC_LongDist_Island1_FP3"
-     ],
-     "verts": 15123,
-     "tris": 6704,
-     "meshes": 14
-    }
-   ]
-  },
-  {
-   "file": "models/GC_LongDist_Island1_Roads.glb",
-   "bytes": 654572,
-   "verts": 16361,
-   "tris": 10345,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_LongDist_Island1_Roads",
-     "texs": [
-      "GC_LongDist_Island1_Roads",
-      "GC_Residential_Props_Monorail"
-     ],
-     "verts": 16361,
-     "tris": 10345,
-     "meshes": 9
-    }
-   ]
-  },
-  {
-   "file": "models/GC_LongDist_Island2_FP1.glb",
-   "bytes": 288520,
-   "verts": 7702,
-   "tris": 3293,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_LongDist_Island2_FP1",
-     "texs": [
-      "GC_LongDist_Island2_FP1"
-     ],
-     "verts": 7702,
-     "tris": 3293,
-     "meshes": 3
-    }
-   ]
-  },
-  {
-   "file": "models/GC_LongDist_Island2_FP2.glb",
-   "bytes": 476236,
-   "verts": 12482,
-   "tris": 5907,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_LongDist_Island2_FP2",
-     "texs": [
-      "GC_LongDist_Island2_FP2"
-     ],
-     "verts": 12482,
-     "tris": 5907,
-     "meshes": 8
-    }
-   ]
-  },
-  {
-   "file": "models/GC_LongDist_Island2_FP3.glb",
-   "bytes": 264080,
-   "verts": 6987,
-   "tris": 3107,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_LongDist_Island2_FP3",
-     "texs": [
-      "GC_LongDist_Island2_FP3"
-     ],
-     "verts": 6987,
-     "tris": 3107,
-     "meshes": 4
-    }
-   ]
-  },
-  {
-   "file": "models/GC_LongDist_Island2_Roads.glb",
-   "bytes": 586416,
-   "verts": 14224,
-   "tris": 10422,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_LongDist_Island2_Roads",
-     "texs": [
-      "GC_LongDist_Island2_Roads",
-      "GC_Residential_Props_Monorail"
-     ],
-     "verts": 14224,
-     "tris": 10422,
-     "meshes": 8
-    }
-   ]
-  },
-  {
    "file": "models/GC_Monorail_Island1_LongDist.glb",
-   "bytes": 105780,
+   "bytes": 127340,
    "verts": 2675,
    "tris": 1584,
    "tier": "hero",
@@ -361,6 +702,7 @@
     {
      "name": "GC_Monorail_Island1_LongDist",
      "texs": [
+      "BakeGroup_Island1_Roads0",
       "GC_Residential_Props_Monorail"
      ],
      "verts": 2675,
@@ -371,7 +713,7 @@
   },
   {
    "file": "models/GC_Monorail_Island2_LongDist.glb",
-   "bytes": 182024,
+   "bytes": 218672,
    "verts": 4561,
    "tris": 2908,
    "tier": "hero",
@@ -379,6 +721,7 @@
     {
      "name": "GC_Monorail_Island2_LongDist",
      "texs": [
+      "BakeGroup_Island2_Roads0",
       "GC_Residential_Props_Monorail"
      ],
      "verts": 4561,
@@ -389,14 +732,17 @@
   },
   {
    "file": "models/GC_Railway_Island2_LongDist.glb",
-   "bytes": 36212,
+   "bytes": 42800,
    "verts": 802,
    "tris": 784,
    "tier": "hero",
    "files": [
     {
      "name": "GC_Railway_Island2_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Roads0",
+      "GC_Island2_LongDist_low"
+     ],
      "verts": 802,
      "tris": 784,
      "meshes": 1
@@ -405,14 +751,17 @@
   },
   {
    "file": "models/GC_Small_Bridge_Island2_LongDist.glb",
-   "bytes": 15532,
+   "bytes": 18540,
    "verts": 354,
    "tris": 254,
    "tier": "hero",
    "files": [
     {
      "name": "GC_Small_Bridge_Island2_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Landmarks0",
+      "BakeGroup_Island2_Roads0"
+     ],
      "verts": 354,
      "tris": 254,
      "meshes": 1
@@ -420,30 +769,8 @@
    ]
   },
   {
-   "file": "models/GC_island1_LongDist.glb",
-   "bytes": 1747432,
-   "verts": 43001,
-   "tris": 27736,
-   "tier": "hero",
-   "files": [
-    {
-     "name": "GC_island1_LongDist",
-     "texs": [
-      "GC_LongDist_Island1_FP1",
-      "GC_LongDist_Island1_FP2",
-      "GC_LongDist_Island1_FP3",
-      "GC_LongDist_Island1_Roads",
-      "GC_Residential_Props_Monorail"
-     ],
-     "verts": 43001,
-     "tris": 27736,
-     "meshes": 54
-    }
-   ]
-  },
-  {
    "file": "models/fp_island2.glb",
-   "bytes": 3761492,
+   "bytes": 3761992,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -458,7 +785,7 @@
     {
      "name": "GC_FootPrint_CA_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 625,
      "tris": 353,
@@ -467,7 +794,7 @@
     {
      "name": "GC_FootPrint_LA_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 343,
      "tris": 189,
@@ -484,7 +811,9 @@
     },
     {
      "name": "GC_Footprint_AA_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island1_FP1"
+     ],
      "verts": 427,
      "tris": 281,
      "meshes": 1
@@ -501,7 +830,7 @@
     {
      "name": "GC_Footprint_AC_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 1024,
      "tris": 647,
@@ -518,9 +847,7 @@
     },
     {
      "name": "GC_Footprint_AF_LongDist",
-     "texs": [
-      "BakeGroup_Island1_B0"
-     ],
+     "texs": [],
      "verts": 865,
      "tris": 471,
      "meshes": 1
@@ -536,7 +863,9 @@
     },
     {
      "name": "GC_Footprint_AG_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island1_FP2"
+     ],
      "verts": 640,
      "tris": 364,
      "meshes": 1
@@ -552,9 +881,7 @@
     },
     {
      "name": "GC_Footprint_AH_LongDist",
-     "texs": [
-      "BakeGroup_Island1_A0"
-     ],
+     "texs": [],
      "verts": 1836,
      "tris": 1120,
      "meshes": 1
@@ -570,7 +897,9 @@
     },
     {
      "name": "GC_Footprint_AJ_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island2_FP2"
+     ],
      "verts": 2490,
      "tris": 1322,
      "meshes": 1
@@ -587,7 +916,7 @@
     {
      "name": "GC_Footprint_AWT_LongDist",
      "texs": [
-      "BakeGroup_Island1_Landmarks0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 1253,
      "tris": 823,
@@ -664,7 +993,9 @@
     },
     {
      "name": "GC_Footprint_CE_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island1_FP3"
+     ],
      "verts": 1127,
      "tris": 683,
      "meshes": 1
@@ -681,7 +1012,7 @@
     {
      "name": "GC_Footprint_CF_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 2027,
      "tris": 1201,
@@ -699,7 +1030,7 @@
     {
      "name": "GC_Footprint_CG_LongDist",
      "texs": [
-      "GC_LongDist_Island2_FP1"
+      "GC_LongDist_Island2_Roads"
      ],
      "verts": 184,
      "tris": 94,
@@ -717,7 +1048,7 @@
     {
      "name": "GC_Footprint_CH_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 663,
      "tris": 397,
@@ -726,7 +1057,7 @@
     {
      "name": "GC_Footprint_CJ_LongDist",
      "texs": [
-      "BakeGroup_Island2_A0"
+      "GC_LongDist_Island2_FP3"
      ],
      "verts": 3279,
      "tris": 1317,
@@ -751,7 +1082,7 @@
     {
      "name": "GC_Footprint_CL_LongDist",
      "texs": [
-      "BakeGroup_Island2_A0"
+      "GC_LongDist_Island2_FP3"
      ],
      "verts": 1157,
      "tris": 500,
@@ -769,7 +1100,7 @@
     {
      "name": "GC_Footprint_CM_LongDist",
      "texs": [
-      "BakeGroup_Island2_A0"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 2316,
      "tris": 1052,
@@ -787,7 +1118,7 @@
     {
      "name": "GC_Footprint_CN_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 213,
      "tris": 102,
@@ -813,7 +1144,9 @@
     },
     {
      "name": "GC_Footprint_DA_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island1_FP3"
+     ],
      "verts": 411,
      "tris": 211,
      "meshes": 1
@@ -830,7 +1163,7 @@
     {
      "name": "GC_Footprint_DB_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 462,
      "tris": 245,
@@ -848,7 +1181,7 @@
     {
      "name": "GC_Footprint_DC_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 870,
      "tris": 450,
@@ -866,7 +1199,7 @@
     {
      "name": "GC_Footprint_DD_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 391,
      "tris": 242,
@@ -883,7 +1216,9 @@
     },
     {
      "name": "GC_Footprint_DF_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island2_FP1"
+     ],
      "verts": 2241,
      "tris": 1149,
      "meshes": 1
@@ -900,7 +1235,7 @@
     {
      "name": "GC_Footprint_DG_LongDist",
      "texs": [
-      "BakeGroup_Island2_A0"
+      "GC_LongDist_Island2_FP3"
      ],
      "verts": 904,
      "tris": 452,
@@ -917,9 +1252,7 @@
     },
     {
      "name": "GC_Footprint_DH_LongDist",
-     "texs": [
-      "BakeGroup_Island2_Landmarks0"
-     ],
+     "texs": [],
      "verts": 1215,
      "tris": 633,
      "meshes": 1
@@ -960,7 +1293,9 @@
     },
     {
      "name": "GC_Footprint_DSE_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island1_Roads"
+     ],
      "verts": 497,
      "tris": 202,
      "meshes": 1
@@ -977,7 +1312,7 @@
     {
      "name": "GC_Footprint_GA_LongDist",
      "texs": [
-      "GC_LongDist_Island2_Roads"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 142,
      "tris": 62,
@@ -994,7 +1329,9 @@
     },
     {
      "name": "GC_Footprint_GB_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island2_FP2"
+     ],
      "verts": 649,
      "tris": 548,
      "meshes": 1
@@ -1011,7 +1348,7 @@
     {
      "name": "GC_Footprint_GC_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 136,
      "tris": 98,
@@ -1020,7 +1357,7 @@
     {
      "name": "GC_Footprint_GD_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 505,
      "tris": 473,
@@ -1038,7 +1375,7 @@
     {
      "name": "GC_Footprint_GF_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 184,
      "tris": 98,
@@ -1056,7 +1393,7 @@
     {
      "name": "GC_Footprint_IA_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 203,
      "tris": 138,
@@ -1074,7 +1411,7 @@
     {
      "name": "GC_Footprint_IB_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 233,
      "tris": 159,
@@ -1092,7 +1429,7 @@
     {
      "name": "GC_Footprint_IC_LongDist",
      "texs": [
-      "GC_Footprint_IC"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 156,
      "tris": 86,
@@ -1110,7 +1447,7 @@
     {
      "name": "GC_Footprint_ID_LongDist",
      "texs": [
-      "BakeGroup_Island2_Landmarks0"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 346,
      "tris": 211,
@@ -1128,7 +1465,7 @@
     {
      "name": "GC_Footprint_IE_LongDist",
      "texs": [
-      "BakeGroup_Island2_Landmarks0"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 530,
      "tris": 365,
@@ -1155,7 +1492,7 @@
     {
      "name": "GC_Footprint_LB_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP2"
      ],
      "verts": 626,
      "tris": 285,
@@ -1173,7 +1510,7 @@
     {
      "name": "GC_Footprint_LC_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 984,
      "tris": 372,
@@ -1190,7 +1527,9 @@
     },
     {
      "name": "GC_Footprint_LE_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island1_FP3"
+     ],
      "verts": 160,
      "tris": 106,
      "meshes": 1
@@ -1207,7 +1546,7 @@
     {
      "name": "GC_Footprint_LF_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 489,
      "tris": 376,
@@ -1225,7 +1564,7 @@
     {
      "name": "GC_Footprint_LG_LongDist",
      "texs": [
-      "BakeGroup_Island2_B0"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 2633,
      "tris": 934,
@@ -1243,7 +1582,7 @@
     {
      "name": "GC_Footprint_LPOL_LongDist",
      "texs": [
-      "BakeGroup_Island2_A0"
+      "GC_LongDist_Island2_FP2"
      ],
      "verts": 222,
      "tris": 98,
@@ -1270,7 +1609,6 @@
     {
      "name": "GC_Footprint_STD_Volumetric",
      "texs": [
-      "BakeGroup_Island2_Landmarks0",
       "GC_Footprint_STD_stuff_TH"
      ],
      "verts": 218,
@@ -1305,7 +1643,7 @@
     {
      "name": "GC_Footprint_VA_LongDist",
      "texs": [
-      "GC_LongDist_Island2_Roads"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 269,
      "tris": 129,
@@ -1323,7 +1661,7 @@
     {
      "name": "GC_Footprint_VB_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 181,
      "tris": 88,
@@ -1341,7 +1679,7 @@
     {
      "name": "GC_Footprint_VC_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 201,
      "tris": 75,
@@ -1395,7 +1733,7 @@
     {
      "name": "GC_Footprint_VPOW_LongDist",
      "texs": [
-      "BakeGroup_Island1_Landmarks0"
+      "GC_LongDist_Island1_Roads"
      ],
      "verts": 6397,
      "tris": 3296,
@@ -1413,7 +1751,7 @@
     {
      "name": "GC_Footprint_VPOW_Volumetric",
      "texs": [
-      "BakeGroup_Island1_Landmarks0"
+      "City_BKG"
      ],
      "verts": 44,
      "tris": 32,
@@ -1422,7 +1760,7 @@
     {
      "name": "GC_Footprint_VRS_LongDist",
      "texs": [
-      "BakeGroup_Island2_Landmarks0"
+      "GC_LongDist_Island2_Roads"
      ],
      "verts": 2990,
      "tris": 2148,
@@ -1439,7 +1777,9 @@
     },
     {
      "name": "GC_Footprint_ZA_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island1_FP2"
+     ],
      "verts": 442,
      "tris": 243,
      "meshes": 1
@@ -1453,7 +1793,9 @@
     },
     {
      "name": "GC_Footprint_ZB_LongDist",
-     "texs": [],
+     "texs": [
+      "GC_LongDist_Island1_FP2"
+     ],
      "verts": 208,
      "tris": 108,
      "meshes": 1
@@ -1479,7 +1821,7 @@
     {
      "name": "GC_Footprint_ZD_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 758,
      "tris": 430,
@@ -1522,7 +1864,7 @@
     {
      "name": "GC_footprint_AB_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "GC_LongDist_Island1_FP1"
      ],
      "verts": 1325,
      "tris": 887,
@@ -1567,7 +1909,7 @@
   },
   {
    "file": "models/city_low.glb",
-   "bytes": 1179716,
+   "bytes": 1179872,
    "verts": 28495,
    "tris": 17614,
    "tier": "low",
@@ -1837,7 +2179,7 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 981696,
+   "bytes": 985064,
    "verts": 21908,
    "tris": 13650,
    "tier": "district",
@@ -1874,7 +2216,6 @@
     {
      "name": "GC_water",
      "texs": [
-      "GothamCity_sand_tile",
       "water"
      ],
      "verts": 629,
@@ -1884,7 +2225,6 @@
     {
      "name": "GC_Water_Island2",
      "texs": [
-      "GothamCity_sand_tile",
       "water"
      ],
      "verts": 629,
@@ -1908,6 +2248,16 @@
      "verts": 504,
      "tris": 324,
      "meshes": 3
+    },
+    {
+     "name": "GC_Smal_Bridge_LongDist",
+     "texs": [
+      "BakeGroup_Island1_Roads0",
+      "GC_Island2_LongDist_low"
+     ],
+     "verts": 398,
+     "tris": 292,
+     "meshes": 1
     },
     {
      "name": "HC_Prop_BillboardRoof_01",
@@ -1962,13 +2312,6 @@
      "verts": 492,
      "tris": 246,
      "meshes": 2
-    },
-    {
-     "name": "GC_Smal_Bridge_LongDist",
-     "texs": [],
-     "verts": 398,
-     "tris": 292,
-     "meshes": 1
     },
     {
      "name": "GC_Diner_Logo",
@@ -2487,324 +2830,9 @@
      "meshes": 1
     }
    ]
-  },
-  {
-   "file": "models/street_island1_00.glb",
-   "bytes": 124656,
-   "verts": 3473,
-   "tris": 4235,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_00",
-     "verts": 3473,
-     "tris": 4235,
-     "meshes": 6
-    }
-   ]
-  },
-  {
-   "file": "models/street_island1_01.glb",
-   "bytes": 2939448,
-   "verts": 79084,
-   "tris": 97706,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_01",
-     "verts": 79084,
-     "tris": 97706,
-     "meshes": 292
-    }
-   ]
-  },
-  {
-   "file": "models/street_island1_02.glb",
-   "bytes": 4013784,
-   "verts": 109949,
-   "tris": 133725,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_02",
-     "verts": 109949,
-     "tris": 133725,
-     "meshes": 331
-    }
-   ]
-  },
-  {
-   "file": "models/street_island1_03.glb",
-   "bytes": 798180,
-   "verts": 21878,
-   "tris": 26988,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_03",
-     "verts": 21878,
-     "tris": 26988,
-     "meshes": 56
-    }
-   ]
-  },
-  {
-   "file": "models/street_island1_04.glb",
-   "bytes": 4760304,
-   "verts": 131983,
-   "tris": 161104,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_04",
-     "verts": 131983,
-     "tris": 161104,
-     "meshes": 295
-    }
-   ]
-  },
-  {
-   "file": "models/street_island1_05.glb",
-   "bytes": 4717500,
-   "verts": 131229,
-   "tris": 159405,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_05",
-     "verts": 131229,
-     "tris": 159405,
-     "meshes": 284
-    }
-   ]
-  },
-  {
-   "file": "models/street_island1_06.glb",
-   "bytes": 382080,
-   "verts": 10705,
-   "tris": 12552,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_06",
-     "verts": 10705,
-     "tris": 12552,
-     "meshes": 25
-    }
-   ]
-  },
-  {
-   "file": "models/street_island1_07.glb",
-   "bytes": 3549208,
-   "verts": 102990,
-   "tris": 116875,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_07",
-     "verts": 102990,
-     "tris": 116875,
-     "meshes": 135
-    }
-   ]
-  },
-  {
-   "file": "models/street_island1_08.glb",
-   "bytes": 2132532,
-   "verts": 60140,
-   "tris": 72463,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island1_08",
-     "verts": 60140,
-     "tris": 72463,
-     "meshes": 93
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_00.glb",
-   "bytes": 84928,
-   "verts": 2578,
-   "tris": 2648,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_00",
-     "verts": 2578,
-     "tris": 2648,
-     "meshes": 2
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_01.glb",
-   "bytes": 1512736,
-   "verts": 42653,
-   "tris": 50838,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_01",
-     "verts": 42653,
-     "tris": 50838,
-     "meshes": 77
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_02.glb",
-   "bytes": 236364,
-   "verts": 6280,
-   "tris": 8087,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_02",
-     "verts": 6280,
-     "tris": 8087,
-     "meshes": 20
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_03.glb",
-   "bytes": 403692,
-   "verts": 11064,
-   "tris": 13939,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_03",
-     "verts": 11064,
-     "tris": 13939,
-     "meshes": 23
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_04.glb",
-   "bytes": 2156984,
-   "verts": 60927,
-   "tris": 73653,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_04",
-     "verts": 60927,
-     "tris": 73653,
-     "meshes": 84
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_05.glb",
-   "bytes": 1844720,
-   "verts": 48266,
-   "tris": 65543,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_05",
-     "verts": 48266,
-     "tris": 65543,
-     "meshes": 145
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_06.glb",
-   "bytes": 1199464,
-   "verts": 33324,
-   "tris": 41243,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_06",
-     "verts": 33324,
-     "tris": 41243,
-     "meshes": 58
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_07.glb",
-   "bytes": 3568476,
-   "verts": 100915,
-   "tris": 121256,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_07",
-     "verts": 100915,
-     "tris": 121256,
-     "meshes": 148
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_08.glb",
-   "bytes": 2456572,
-   "verts": 66791,
-   "tris": 82258,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_08",
-     "verts": 66791,
-     "tris": 82258,
-     "meshes": 210
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_09.glb",
-   "bytes": 590512,
-   "verts": 16525,
-   "tris": 20373,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_09",
-     "verts": 16525,
-     "tris": 20373,
-     "meshes": 23
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_10.glb",
-   "bytes": 4514320,
-   "verts": 126874,
-   "tris": 155870,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_10",
-     "verts": 126874,
-     "tris": 155870,
-     "meshes": 167
-    }
-   ]
-  },
-  {
-   "file": "models/street_island2_11.glb",
-   "bytes": 750052,
-   "verts": 20471,
-   "tris": 24960,
-   "tier": "street",
-   "files": [
-    {
-     "name": "street_island2_11",
-     "verts": 20471,
-     "tris": 24960,
-     "meshes": 63
-    }
-   ]
   }
  ],
  "total_verts": 1535059,
  "total_tris": 1647858,
- "version": 10
+ "version": 13
 }
