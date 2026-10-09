@@ -291,7 +291,8 @@ fogTexLoader.load(FOG.mapTex, (t) => {
 });
 
 const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 1, 12000);
-camera.position.set(650, 420, 760);
+// start at street level over island1 (GLB axes: x = game x, y = game z)
+camera.position.set(200, 260, 1500);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 window.__v = { scene, camera, controls, state, FOG, lutPass, lightningState, triggerLightning }; // debug hook
@@ -612,8 +613,8 @@ async function loadGLB(entry, tierName) {
 }
 
 /* ---------------- UI: tier buttons ---------------- */
-const TIER_LABEL = { hero: 'Skyline', fp: 'Footprints', street: 'Street level', low: 'Low-detail LOD', district: 'District props' };
-const TIER_ORDER = ['hero', 'fp', 'street', 'district', 'low'];
+const TIER_LABEL = { street: 'Street level', skyline: 'Skyline (baked city)', hero: 'Hero units', fp: 'Footprints', low: 'Low-detail LOD', district: 'District props' };
+const TIER_ORDER = ['street', 'skyline', 'hero', 'fp', 'district', 'low'];
 
 function buildTierButtons() {
   const nav = $('tiers');
@@ -778,39 +779,48 @@ function clearStatus() { $('load-status').textContent = ''; }
     const tier = g.tier || 'district';
     (state.tiers[tier] ??= { enabled: false, glbs: [], loaded: false }).glbs.push(g);
   }
-  state.tiers.hero.enabled = true;
-  state.tiers.fp.enabled = true;   // street-level detail (per-building FP meshes)
-  if (state.tiers.street) state.tiers.street.enabled = true;  // streamed zone geometry (roads/grass/props)
+  // v13 boot policy (session 12): STREET + SKYLINE boot together — the
+  // island LongDist bake units now carry their real world transforms,
+  // decoded from the lvc CTemplateObject records (session 12:
+  // island1 = (-141.69,-681.15,0.114); island2 authored origin-relative).
+  // Hero bridges/monorail/railway stay research toggles until their own
+  // lvc placement records are decoded.
+  if (state.tiers.street) state.tiers.street.enabled = true;
+  if (state.tiers.skyline) state.tiers.skyline.enabled = true;
+  // district props: several are authored in LOCAL space (unplaced) — keep
+  // off by default to avoid floating geometry over the city
   buildTierButtons();
 
-  const heroGlbs = state.tiers.hero.glbs;
+  // stream the real city first: world-correct streets with the game's own
+  // road/grass/prop materials
+  const streetGlbs = (state.tiers.street?.glbs || []);
   let done = 0;
-  setStatus(`assembling skyline · 0/${heroGlbs.length}`);
-  for (const entry of heroGlbs) {
-    await loadGLB(entry, 'hero');
+  setStatus(`streaming city · 0/${streetGlbs.length}`);
+  for (const entry of streetGlbs) {
+    if (!entry.loaded) {
+      try { await loadGLB(entry, 'street'); } catch (e) { console.warn('street glb failed', entry.file, e); }
+    }
     done++;
-    $('load-bar').style.width = `${(done / heroGlbs.length) * 100}%`;
-    setStatus(`assembling skyline · ${done}/${heroGlbs.length}`);
+    $('load-bar').style.width = `${(done / Math.max(streetGlbs.length,1)) * 100}%`;
+    setStatus(`streaming city · ${done}/${streetGlbs.length}`);
   }
-  state.tiers.hero.loaded = true;
-  fitCamera();
-  updateHUDTotals();
-  $('loader').classList.add('done');
-  clearStatus();
-
-  // background-load the streamed street tier (non-blocking) — the ground
-  // geometry (roads/grass/crossings + street props) from the zone streams
-  if (state.tiers.street && state.tiers.street.enabled && !state.tiers.street.loaded) {
-    state.tiers.street.loaded = true;
+  if (state.tiers.street) state.tiers.street.loaded = true;
+  // district props (world-authored landmarks) in the background
+  if (state.tiers.district && state.tiers.district.enabled && !state.tiers.district.loaded) {
+    state.tiers.district.loaded = true;
     (async () => {
-      for (const entry of state.tiers.street.glbs) {
+      for (const entry of state.tiers.district.glbs) {
         if (!entry.loaded) {
-          try { await loadGLB(entry, 'street'); } catch (e) { console.warn('street glb failed', entry.file, e); }
+          try { await loadGLB(entry, 'district'); } catch (e) { console.warn('district glb failed', entry.file, e); }
         }
       }
       updateHUDTotals();
     })();
   }
+  fitCamera();
+  updateHUDTotals();
+  $('loader').classList.add('done');
+  clearStatus();
 })();
 
 /* ---------------- HUD + render loop ---------------- */
