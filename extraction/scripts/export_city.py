@@ -56,7 +56,7 @@ from tex_bind import find_png, edge_map  # noqa: E402
 
 RAW = "/home/z/my-project/download/TDKR_assets/raw"
 PNG = "/home/z/my-project/download/TDKR_assets/textures_png"
-SITE = "/home/z/my-project/work/TDKR-Game/gh-pages"
+SITE = "/home/z/my-project/work/ghpages_site"
 MODELS = os.path.join(SITE, "models")
 TEXD = os.path.join(MODELS, "tex")
 GT_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ground_truth_city.json")
@@ -242,17 +242,20 @@ def _uv_score(page, so, uv, idx):
         s = s[:: len(s) // 40000]
     return float(s.mean() / (e.mean() + 1e-9))
 
-def choose_bake_channel(mesh, page, so):
-    """Pick the Coord1 source for this mesh: stored +12 stream or top-down
-    position projection.  Returns True and rewrites mesh['uv'] into page
-    space when a channel aligns; False (mesh untouched) otherwise."""
+def bake_coord1(mesh, page, so, floor=0.3):
+    """v11 ENGINE PARITY: the LightMap slot samples vCoord1 = Coord1*so1 on the
+    record's page — the engine multiplies Diffuse * LightMap * 2 (LightMapDC
+    GLSL).  The record (page+so1) is authoritative; the content score only
+    CHOOSES the Coord1 source (stored +12 stream vs top-down projection).
+    Returns (uv1_page_space, source) or (None, None); mesh['uv'] (Coord0 for
+    the DiffuseMap) is NEVER touched."""
     su, sv, ou, ov = so
     if not all(np.isfinite([su, sv, ou, ov])) or su <= 0.001 or sv <= 0.001:
-        return False
+        return None, None
     idx = mesh["idx"]
     pe = _page_edges(page)
     if pe is None:
-        return False
+        return None, None
     e, (h, w) = pe
     # control: edge density of a uniform tile fill
     u0 = int(ou * (w - 1))
@@ -275,19 +278,14 @@ def choose_bake_channel(mesh, page, so):
         s = _uv_score(page, so, uv, idx)
         if s > best_s:
             best, best_uv, best_s = name, uv, s
-    # The engine binding (page+so1 from the zone stream, mesh idx at frame+84)
-    # is authoritative — the score only CHOOSES the Coord1 source (stored +12
-    # stream vs top-down projection), it does not gate the binding: bake-page
-    # tiles are dense mosaics where even correct sampling barely beats the
-    # tile's mean edge density.  A weak floor rejects only catastrophic
-    # degenerate candidates.
-    if best is None or best_s < 0.6:
-        return False
+    # v11: score picks the SOURCE only — the binding itself comes from the
+    # record.  The low floor rejects only degenerate candidates (NaN/empty).
+    if best is None or best_s < floor:
+        return None, None
     t = np.column_stack([best_uv[:, 0] * su + ou,
                          best_uv[:, 1] * sv + ov]).astype(np.float32)
-    mesh["uv"] = t
     mesh["bake_channel"] = best
-    return True
+    return t, best
 
 
 def uv_fit(uv, name):
@@ -327,6 +325,7 @@ class GlbBuilder:
         self.offset = 0
         self.views, self.accessors, self.meshes, self.nodes, self.materials = [], [], [], [], []
         self._mat_by_tex = {}
+        self._uv1_count = 0
 
     def _add(self, data, align=4):
         pad = (-len(self.buf)) % align
@@ -337,17 +336,21 @@ class GlbBuilder:
         self.offset += len(data)
         return start, len(data)
 
-    def material_for(self, tex, mode="d"):
-        key = (tex, mode)
+    def material_for(self, tex, mode="d", lm=None):
+        # v11 contract: '<dif>|<lm>|<mode>' when a LightMap is bound, else
+        # '<tex>|<mode>' (unchanged from v4 for viewer back-compat).
+        name = f"{tex}|{lm}|{mode}" if (tex and lm) else (
+            f"{lm}|2x" if (lm and not tex) else
+            (f"{tex}|{mode}" if tex else "__dark"))
+        key = name
         if key in self._mat_by_tex:
             return self._mat_by_tex[key]
-        if tex is None:
+        if tex is None and lm is None:
             mat = dict(name="__dark", doubleSided=True,
                        pbrMetallicRoughness=dict(baseColorFactor=[0.055, 0.07, 0.10, 1.0],
                                                  metallicFactor=0.0, roughnessFactor=1.0))
         else:
-            # v4: shading mode rides in the material name -> viewer parses it
-            mat = dict(name=f"{tex}|{mode}", doubleSided=True,
+            mat = dict(name=name, doubleSided=True,
                        pbrMetallicRoughness=dict(baseColorFactor=[1.0, 1.0, 1.0, 1.0],
                                                  metallicFactor=0.0, roughnessFactor=1.0))
         self.materials.append(mat)
@@ -358,7 +361,11 @@ class GlbBuilder:
     def add_file(self, name, mesh_list, per_mesh_tex, yup=True):
         prims = []
         for m, bind in zip(mesh_list, per_mesh_tex):
-            tex, mode = bind if isinstance(bind, tuple) else (bind, "d")
+            if isinstance(bind, tuple) and len(bind) == 3:
+                tex, lm, mode = bind
+            else:
+                tex, mode = bind if isinstance(bind, tuple) else (bind, "d")
+                lm = None
             if yup:
                 pos = m["pos"][:, [0, 2, 1]].copy()
                 pos[:, 2] = -m["pos"][:, 1]
@@ -376,22 +383,32 @@ class GlbBuilder:
                 # deployed viewer has been sampling every page VERTICALLY
                 # MIRRORED (symmetric content looked plausible; asymmetric
                 # bake pages showed other tiles' content = "wrong textures").
-                # Flip V once here — the single choke point for TEXCOORD_0.
+                # Flip V once here — the single choke point for TEXCOORD_0/1.
                 uv = np.asarray(m["uv"], np.float32).copy()
                 uv[:, 1] = 1.0 - uv[:, 1]
                 uv = np.ascontiguousarray(uv)
             else:
                 uv = np.ascontiguousarray(np.zeros((m["count"], 2), np.float32))
+            uv1 = None
+            if lm and m.get("uv1") is not None:
+                uv1 = np.asarray(m["uv1"], np.float32).copy()
+                uv1[:, 1] = 1.0 - uv1[:, 1]
+                uv1 = np.ascontiguousarray(uv1)
             idx = np.ascontiguousarray(m["idx"], np.uint32)
             sp, lp = self._add(pos.tobytes())
             sn, ln = self._add(nrm.tobytes())
             su, lu = self._add(uv.tobytes())
             si, li = self._add(idx.tobytes())
+            s1 = l1 = None
+            if uv1 is not None:
+                s1, l1 = self._add(uv1.tobytes())
             base = len(self.views)
             self.views += [dict(buffer=0, byteOffset=sp, byteLength=lp),
                            dict(buffer=0, byteOffset=sn, byteLength=ln),
                            dict(buffer=0, byteOffset=su, byteLength=lu),
                            dict(buffer=0, byteOffset=si, byteLength=li)]
+            if s1 is not None:
+                self.views += [dict(buffer=0, byteOffset=s1, byteLength=l1)]
             mn, mx = pos.min(0), pos.max(0)
             a = self.accessors
             a.append(dict(bufferView=base, componentType=5126, count=len(pos), type="VEC3",
@@ -399,9 +416,14 @@ class GlbBuilder:
             a.append(dict(bufferView=base + 1, componentType=5126, count=len(nrm), type="VEC3"))
             a.append(dict(bufferView=base + 2, componentType=5126, count=len(uv), type="VEC2"))
             a.append(dict(bufferView=base + 3, componentType=5125, count=len(idx), type="SCALAR"))
-            prims.append(dict(attributes=dict(POSITION=len(a) - 4, NORMAL=len(a) - 3,
-                                              TEXCOORD_0=len(a) - 2),
-                              indices=len(a) - 1, material=self.material_for(tex, mode), mode=4))
+            attrs = dict(POSITION=len(a) - 4, NORMAL=len(a) - 3,
+                         TEXCOORD_0=len(a) - 2)
+            if uv1 is not None:
+                a.append(dict(bufferView=base + 4, componentType=5126, count=len(uv1), type="VEC2"))
+                attrs["TEXCOORD_1"] = len(a) - 1
+                self._uv1_count += 1
+            prims.append(dict(attributes=attrs,
+                              indices=len(a) - 1, material=self.material_for(tex, mode, lm), mode=4))
         mi = len(self.meshes)
         self.meshes.append(dict(name=name, primitives=prims))
         self.nodes.append(dict(mesh=mi, name=name))
@@ -479,7 +501,7 @@ def main():
         for m in meshes:
             gm = gt_meshes.get(m["offset"], {})
             so = gm.get("scaleoffset")
-            apply_scaleoffset(m, so)   # engine's own UV transform
+            apply_scaleoffset(m, so)   # engine's own UV transform (Coord0)
             tex = gm.get("diffuse")
             tech = gm.get("technique") or ""
             # v10.1: honor the engine's own blend technique — SimpleAdditive
@@ -491,97 +513,91 @@ def main():
                 mode = "2x" if "LightMapDC" in tech else "d"
             how = "gt"
 
+            # v11: resolve the object's Beast bake record (the game's OWN
+            # LightMap binding: page + Coord1_scaleoffset).  Applies to
+            # _LongDist render units of the same object.  uv0 (DiffuseMap
+            # Coord0) is untouched; uv1 = Coord1*so1 (page space).
+            is_ld = base.lower().endswith("_longdist")
+            bg = None
+            if base.lower() in bake_groups:
+                bg = bake_groups[base.lower()]
+            elif is_ld:
+                stripped = re.sub(r"_longdist$", "", base.lower())
+                if stripped in bake_groups:
+                    bg = bake_groups[stripped]
+            lm = None
+            if bg:
+                uv1, src = bake_coord1(m, bg["page"], bg["so"])
+                if uv1 is not None:
+                    m["uv1"] = uv1
+                    lm = bg["page"]
+
             # v9: st=16 meshes (uv=None: pos + ONE dword at +12) — the +12
-            # stream is the mesh's only UV candidate (or a normal for
-            # projection-bake targets). Default to it so these meshes are not
-            # flat-dark; the bake-record path below overrides with page space.
+            # stream is the mesh's only UV candidate.  It feeds BOTH Coord0
+            # (DiffuseMap) and Coord1 (LightMap, via so1) in the engine.
             had_uv = m.get("uv") is not None
             if m.get("uv") is None:
                 m["uv"] = m.get("uvm")
-            # v9: st=16 infrastructure LongDist files (railway, small-bridge,
-            # monorail…) sit in the hero/low tiers but carry exact bake
-            # records like the fp tier — bind page+so1 through the same path.
-            # ONLY for originally uv-less (st=16) meshes: st>=20 meshes keep
-            # their own ground-truth bindings.
-            if (not had_uv and m.get("uv") is not None
-                    and base.lower() in bake_groups
-                    and choose_bake_channel(m, bake_groups[base.lower()]["page"],
-                                            bake_groups[base.lower()]["so"])):
-                per_mesh.append((bake_groups[base.lower()]["page"], "2x"))
-                gt_stats["bake_fit"] += 1
-                continue
 
-            # ---------------- fp tier: engine-faithful, name-driven ladder ----
-            # Shipped per-footprint textures (GC_Footprint_AWT.tga etc.) are the
-            # OFFLINE Beast bakes (complete maps: lit windows baked in, mean
-            # ~0.28 vs island-page ~0.11). In-game they render through the
-            # diffuse slot at 1x — the runtime LightMap slot is bound to the
-            # same bake. x2 on them = daylight-bright (the v5 viewer bug).
+            # ---------------- fp tier: engine-faithful ladder ----------------
             if cat == "fp":
                 dif = tex
-                fp_tex, fp_mode, fp_how = None, ("add" if "additive" in tech.lower() else "d"), "dark"
-                # v8: the zone bake-group record (so1 + page1) is the game's OWN
-                # binding for this object — applies to _LongDist render units of
-                # the same object (the Beast component sets the 'LightMap' slot
-                # + Coord1_scaleoffset on ALL of the object's materials).
-                # Reflection/decal variants keep their own material bindings.
-                is_ld = base.lower().endswith("_longdist")
-                bg = None
-                if is_ld:
-                    stripped = re.sub(r"_longdist$", "", base.lower())
-                    for nm in (base.lower(), stripped):
-                        if nm in bake_groups:
-                            bg = bake_groups[nm]
-                            break
-                if bg and choose_bake_channel(m, bg["page"], bg["so"]):
-                    # v9: TEXCOORD_0 = Coord1(bake uv or projection) * so1 -> page tile
-                    fp_tex, fp_how = bg["page"], "bakegroup"
-                    fp_mode = "2x"                       # bake pages authored for LM*2
-                elif dif and not dif.lower().endswith("sampler"):
-                    if dif.lower() == "gc_longdist":
-                        # runtime island bake. v7: the zone bake-group streams
-                        # give the EXACT page for many footprints (the game's
-                        # own CComponentBeastBakeGroup assignment). Only the
-                        # files with no shipped bake-group page fall back to
-                        # UV-fit among the GC_LongDist island pages.
-                        pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
-                                 "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
-                                 "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
-                                 "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
-                        if m["uv"] is None:
-                            scored = []
-                        else:
-                            scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
-                        if scored and scored[0][0] >= 0.9:
-                            fp_tex, fp_how = scored[0][1], "fp-page-fit"  # page -> 2x (hero parity)
-                            fp_mode = "2x"
+                # v4 fix: some texIdx slots resolve to SAMPLER-name strings
+                # (runtime atlases) — not shipped textures -> drop to None.
+                if dif and (dif.endswith("Sampler") or dif.endswith("sampler")):
+                    dif = None
+                fp_tex, fp_lm, fp_mode, fp_how = None, None, ("add" if "additive" in tech.lower() else "2x"), "dark"
+                if dif and dif.lower() == "gc_longdist":
+                    # runtime island bake as the DIFFUSE slot (page not shipped).
+                    # v11: render the best-fit island page x2 (no lm multiply —
+                    # the record page IS this family; double multiply would
+                    # double-darken the approximation).
+                    pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
+                             "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
+                             "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
+                             "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
+                    if m["uv"] is None:
+                        scored = []
                     else:
-                        base2 = re.sub(
-                            r"_(longdist(completemap|diffusemap|diffuse_map)?|longdistdiffusemap|longdist)$",
-                            "", dif, flags=re.I)
-                        if find_png(base2):
-                            fp_tex, fp_how = base2, "gt"            # complete bake -> 1x
+                        scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
+                    if scored and scored[0][0] >= 0.9:
+                        fp_tex, fp_how = scored[0][1], "fp-page-fit"
+                        fp_mode = "2x"
+                elif dif:
+                    base2 = re.sub(
+                        r"_(longdist(completemap|diffusemap|diffuse_map)?|longdistdiffusemap|longdist)$",
+                        "", dif, flags=re.I)
+                    if find_png(base2):
+                        fp_tex, fp_how = base2, "gt"
+                    else:
+                        alt = MISSING_TEX_FALLBACK.get(dif) or re.sub(r"_alpha$", "", dif, flags=re.I)
+                        if find_png(alt):
+                            fp_tex, fp_how = alt, "alpha-fix"
                         else:
                             fam = [t for t in file_texlist
                                    if t.lower().startswith(base2.lower())
                                    and not BAD_FIT.search(t) and find_png(t)]
                             if fam:
                                 fam.sort(key=len)
-                                fp_tex, fp_how = fam[0], "fp-family"  # same-footprint albedo family -> 1x
-                per_mesh.append((fp_tex, fp_mode))
-                gt_stats[{"gt": "gt_bind", "fp-family": "fp_family", "fp-page-fit": "bake_fit",
-                          "bakegroup": "bake_fit", "dark": "dark"}.get(fp_how, "dark")] += 1
+                                fp_tex, fp_how = fam[0], "fp-family"
+                # v11: engine parity — Diffuse * LightMap * 2.  When the
+                # offline bake (dif) exists AND the Beast record page exists,
+                # BOTH bind.  Without dif, the lm page renders alone (x2).
+                if fp_tex is None and lm is not None:
+                    fp_tex, fp_lm, fp_how = lm, None, "bakegroup"
+                elif lm is not None:
+                    fp_lm = lm
+                    fp_how = fp_how + "+lm" if fp_how != "dark" else "bakegroup"
+                per_mesh.append((fp_tex, fp_lm, fp_mode))
+                gt_stats[{"gt": "gt_bind", "gt+lm": "gt_bind", "fp-family": "fp_family",
+                          "fp-page-fit": "bake_fit", "bakegroup": "bake_fit",
+                          "alpha-fix": "alpha_fix",
+                          "dark": "dark"}.get(fp_how, "dark")] += 1
                 continue
 
-            # v4 fix: some texIdx slots resolve to SAMPLER-name strings
-            # (e.g. Reflections-fx DiffuseMap -> 'LightMapSampler' runtime
-            # atlas).  Those are not shipped textures -> unbind and let the
-            # fallback ladder pick the island bake family instead.
+            # v4 fix: SAMPLER-name texIdx slots for non-fp files too.
             if tex and (tex.endswith("Sampler") or tex.endswith("sampler")):
                 tex = None
-            # v4 shading mode from the engine's own technique binding:
-            #   LightMapDC with LightMap unbound -> bake * 2.0 (GLSL: *2.0)
-            #   anything else (StandardDiffuseDC, ...) -> diffuse * 1.0
             how = "gt"
             if tex and not find_png(tex):
                 alt = MISSING_TEX_FALLBACK.get(tex)
@@ -600,21 +616,24 @@ def main():
                 else:
                     tex, how = None, "dark"
             if tex is None and bake_fam and m["uv"] is not None:
-                # v4: bake-fit only on an EXTREMELY strong edge-match — a wrong
-                # atlas-cell guess renders as an amplified garbage patch (x2),
-                # far worse than the honest dark fallback.
                 scored = sorted(((uv_fit(m["uv"], t), t) for t in bake_fam), reverse=True)
                 if scored and scored[0][0] >= 2.2:
                     tex, how = scored[0][1], "bake-fit"
+            # v11: attach the Beast LightMap when the object has a record —
+            # engine renders dif * lm * 2 (LightMapDC).
+            out_lm = lm if tex else None
+            if lm and not tex:
+                tex, how, out_lm = lm, "bakegroup", None
             gt_stats[{"gt": "gt_bind", "alpha-fix": "alpha_fix", "pool-single": "pool_fit",
                       "pool-fit": "pool_fit", "bake-fit": "bake_fit",
+                      "bakegroup": "bake_fit",
                       "dark": "dark"}.get(how, "dark")] += 1
-            per_mesh.append((tex, mode))
+            per_mesh.append((tex, out_lm, mode))
 
         verts = int(sum(m["count"] for m in meshes))
         tris = int(sum(m["numIdx"] // 3 for m in meshes))
-        gbytes = verts * 32 + tris * 12
-        texs = sorted({t for t, _ in per_mesh if t})
+        gbytes = verts * 32 + tris * 12 + sum(len(m['uv1']) * 8 for m in meshes if m.get('uv1') is not None)
+        texs = sorted({t for b in per_mesh for t in ([b[0]] if len(b) == 2 else [b[0], b[1]]) if t})
         entries.append(dict(base=base, cat=cat, texs=texs, per_mesh=per_mesh,
                             verts=verts, tris=tris, nmesh=len(meshes),
                             gbytes=gbytes, path=p, meshes=meshes))
@@ -624,10 +643,11 @@ def main():
     tv = sum(e["verts"] for e in entries)
     tt = sum(e["tris"] for e in entries)
     textured = sum(1 for e in entries if e["texs"])
+    lm_count = sum(1 for e in entries for b in e["per_mesh"] if len(b) == 3 and b[1])
     print(f"parsed: {len(entries)} files | {tv:,} verts {tt:,} tris | "
           f"{textured} files with textures | "
           f"{len({t for e in entries for t in e['texs']})} unique textures")
-    print(f"binding method: {gt_stats}")
+    print(f"binding method: {gt_stats} | lightmap-bound meshes: {lm_count}")
     for k, v in sorted(c.items()):
         sub = [e for e in entries if e["cat"] == k]
         print(f"  {k:<9} {v:>4} files  {sum(e['verts'] for e in sub):>9,}v "
@@ -667,7 +687,19 @@ def main():
     for i, b in enumerate(bins):
         plan.append((f"district_{i:02d}", b))
 
-    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=9)
+    manifest = dict(tiers={}, glbs=[], total_verts=tv, total_tris=tt, version=11)
+    # v11: PRESERVE the street tier (exported separately by export_zone.py) —
+    # the manifest is shared state; dropping it orphans the streamed city.
+    _mprev = os.path.join(MODELS, "manifest.json")
+    if os.path.exists(_mprev):
+        try:
+            _prev = json.load(open(_mprev))
+            _street = [g for g in _prev.get("glbs", []) if g.get("tier") == "street"]
+            if _street:
+                manifest["glbs"].extend(_street)
+                print(f"preserved street tier: {len(_street)} GLBs")
+        except Exception:
+            pass
     tex_used = {}
     for glb_name, group in plan:
         gb = GlbBuilder()
@@ -693,22 +725,29 @@ def main():
     tex_modes = {}
     for glb_name, group in plan:
         for e in group:
-            for tex, mode in e["per_mesh"]:
-                if tex:
-                    tex_modes.setdefault(tex, set()).add(mode)
+            for b in e["per_mesh"]:
+                if len(b) == 3:
+                    tex, lm, mode = b
+                else:
+                    tex, mode = b
+                    lm = None
+                for t in (tex, lm):
+                    if t:
+                        tex_modes.setdefault(t, set()).add(mode)
     for tex in sorted(tex_used):
         src = find_png(tex)
         if not src:
             print(f"  !! texture missing on disk: {tex}")
             continue
-        # v10 QUALITY: every bake/atlas page ships at FULL 2048 source res
-        # (the fp tier's BakeGroup_* pages were downsampled to 1024 q78 —
-        # the "very low quality" report; sources are 2048x2048).
-        hero = tex in HERO_TEX or tex.lower().startswith("bakegroup_")
+        # v10/v11 QUALITY: every bake/atlas page ships at FULL 2048 source res;
+        # v11: fp/district diffuse pages too (albedo atlases now visible —
+        # they must not be the blurry 1024 q78 of the v5 era).
+        hero = (tex in HERO_TEX or tex.lower().startswith("bakegroup_")
+                or tex.lower().startswith("gc_footprint"))
         n = tex + ".jpg"
         dim = DIM_TEX.get(tex, 1.0) if tex_modes.get(tex, {"d"}) <= {"d"} else 1.0
         sz = jpg_from_png(src, os.path.join(TEXD, n), 2048 if hero else 1024,
-                          88 if hero else 80, dim=dim)
+                          88 if hero else 85, dim=dim)
         print(f"  tex {n:<48} {sz/1024:>6.0f} KB{' (hero 2048 q88)' if hero else ''}")
 
     # ---------------- batarang showcase (self-contained) ----------------

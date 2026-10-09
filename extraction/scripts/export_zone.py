@@ -2,14 +2,21 @@
 """Zone-tier exporter: streamed street-level geometry from GothamCity*.zip
 (lod_data/lod_table) -> street GLBs for the viewer.
 
-v1 binding strategy (RE session 9):
-- vertex UVs are page-space; road ground strips sample the BAND-ATLAS pages
-  (GothamCity_Road_v1/v2_Island_N: v selects the road-type band, u tiles).
-- band fingerprint: a road segment's v-range fits one page band and u spans it.
-- park/dirt/sand/asphalt/crossings: uniform or decal pages scored by edge fit.
-- props (non-flat): Z1_Props_Street/Rooftop atlases + island bake pages.
-- segments whose binding is not decisive render __dark (engine fallback albedo),
-  preserving the night-city look instead of risking wrong-texture patches.
+v5 binding (session 10, structural — replaces the v4 edge-score heuristics
+that produced rainbow smears):
+
+The zone ground uses the LightMapDC technique: DiffuseMap = a horizontal BAND
+ATLAS (road cross-sections stacked vertically); a road piece's v-range spans
+sidewalk->asphalt->sidewalk = ONE cross-section GROUP of the atlas.  So the
+page assignment is a STRUCTURAL test, not a score:
+
+  1. detect each atlas's cross-section groups (dark separator rows)
+  2. a flat wide-u segment binds the page whose ONE group contains its
+     v-range (hard filter); among candidates the within-group edge score
+     only disambiguates (v1 vs v2 vs crossings)
+  3. small-UV-box flats tile albedo pages (grass/dirt/sand/asphalt)
+  4. props < 15u with decisive score -> Z1 atlases
+  5. everything else -> __dark (honest fallback, no more smears)
 
 Geometry layout (proved): segment = [u32 hdr][vBytes verts (stride 20/24)]
 [u16 strip indices with 0xffff cuts]; descriptor table in lod_table.bin
@@ -21,7 +28,7 @@ from PIL import Image
 
 ZONE = '/home/z/my-project/work/zone'
 PNG = '/home/z/my-project/download/TDKR_assets/textures_png'
-SITE = '/home/z/work/TDKR-Game/gh-pages'
+SITE = '/home/z/my-project/work/ghpages_site'
 MODELS = os.path.join(SITE, 'models')
 TEXD = os.path.join(MODELS, 'tex')
 
@@ -43,7 +50,43 @@ ISLANDS = {
                               'GC_Z1_Props_Rooftop', 'GC_Z1_Props_Rooftop_Alpha']),
 }
 FLAT_TEX = ['GC_Park_grass', 'GC_Park_dirt', 'GothamCity_sand_tile',
-            'GothamCity_asphalt_tile', 'gothamcity_roads_details']
+            'GothamCity_asphalt_tile']
+
+# v5: band-atlas cross-section groups (computed once per page)
+_band_cache = {}
+
+def _gray_rows(name, h=1024):
+    if name in _band_cache:
+        return _band_cache[name]
+    p = find_png(name)
+    if p is None:
+        _band_cache[name] = None
+        return None
+    im = Image.open(p).convert('L').resize((32, h), Image.BILINEAR)
+    _band_cache[name] = np.asarray(im, np.float32)
+    return _band_cache[name]
+
+def cross_sections(name, h=1024):
+    g = _gray_rows(name, h)
+    if g is None:
+        return []
+    row = g.mean(1)
+    dark = row < row.mean() * 0.62
+    edges = [0]
+    i = 0
+    while i < h:
+        if dark[i]:
+            j = i
+            while j < h and dark[j]:
+                j += 1
+            if j - i >= 2:
+                edges += [i, j]
+            i = j
+        else:
+            i += 1
+    edges.append(h)
+    edges = sorted(set(edges))
+    return [(a / h, b / h) for a, b in zip(edges[:-1], edges[1:]) if b - a > 20]
 
 
 def find_png(name):
@@ -167,15 +210,14 @@ def band_fit(page, u, v):
     return best, bands
 
 
-def bind_segment(seg, isl):
+def bind_segment(seg, isl, xsecs=None):
     """Returns (tex, mode) or (None, 'dark').
 
-    v2: the zone street tiles use the LightMapDC technique (zone materials DB:
-    'tiles_*' -> '#LightMapDC-fx_*'), i.e. the streamed ground is BAKE-LIT by
-    the island bake pages exactly like the LongDist Roads meshes. Flat ground
-    therefore binds the island's bake family at 2x; grass/dirt/sand tiles win
-    only when the UV box is small (tiled albedo + scaleoffset) and the score
-    is strong. Props keep the Z1 atlases / bake family."""
+    v5 STRUCTURAL binding — see module docstring.  The band-atlas page for a
+    road piece is the one whose cross-section GROUP contains the piece's
+    v-range; edge score only disambiguates among containing candidates.
+    The v4 global edge-score heuristic bound cross-band pages (rainbow
+    smears) — containment now gates everything."""
     if seg['uvw'] is None or np.all(seg['uvw'] == 0xffffffff):
         return None, 'dark'
     u, v = uv_of(seg)
@@ -184,19 +226,29 @@ def bind_segment(seg, isl):
     flat = zr < max(2.0, 0.06 * float(np.ptp(p[:, :2])))
     uspan, vspan = float(u.max() - u.min()), float(v.max() - v.min())
     if flat:
-        # tiled-albedo candidates: small UV box (tiled with scaleoffset)
         if uspan < 0.3 and vspan < 0.3:
+            # tiled albedo (grass/dirt/sand/asphalt)
             cands = [(score_uv(t, u, v), t) for t in FLAT_TEX]
             cands.sort(reverse=True)
             top = cands[0]
             if top[0] >= 1.1:
                 return top[1], 'd'
-        # bake-lit ground (roads, sidewalks, plazas): island bake family
-        cands = [(score_uv(t, u, v), t) for t in isl['bakes']]
-        cands.sort(reverse=True)
-        top = cands[0]
-        if top[0] >= 0.8:
-            return top[1], '2x'
+            return None, 'dark'
+        if vspan > 0.985 and uspan > 0.985:
+            return None, 'dark'   # full-page: bake/decals we cannot verify
+        # v5: cross-section containment over this island's band atlases
+        vmin, vmax = float(v.min()), float(v.max())
+        cands = []
+        for page, groups in (xsecs or {}).items():
+            for a, b in groups:
+                if vmin >= a - 0.008 and vmax <= b + 0.008:
+                    cands.append(page)
+                    break
+        if cands:
+            scored = sorted(((score_uv(t, u, v), t) for t in cands), reverse=True)
+            top = scored[0]
+            if top[0] >= 0.9:
+                return top[1], 'd'
         return None, 'dark'
     else:
         # vertical pieces: walls belong to the fp tier's complete-map bakes in
@@ -338,13 +390,24 @@ def main():
 
     used_tex = set()
     st_glbs = []
+    XSECS = {
+        'GothamCity_Road_v1_Island_1': cross_sections('GothamCity_Road_v1_Island_1'),
+        'GothamCity_Road_v2_Island_1': cross_sections('GothamCity_Road_v2_Island_1'),
+        'GothamCity_Road_Island_2': cross_sections('GothamCity_Road_Island_2'),
+        'gothamcity_roads_details': cross_sections('gothamcity_roads_details'),
+        'GothamCity_Road_Crossings_Island_1': cross_sections('GothamCity_Road_Crossings_Island_1'),
+        'GothamCity_Road_Crossings_Island_2': cross_sections('GothamCity_Road_Crossings_Island_2'),
+    }
     for islname, isl in ISLANDS.items():
+        xs = {k: v for k, v in XSECS.items()
+              if (isl['isl'] == '1' and ('Island_1' in k or 'details' in k))
+              or (isl['isl'] == '2' and ('Island_2' in k or 'details' in k))}
         segs = parse_island(islname)
         print(f'{islname}: {len(segs)} segments')
         binds = []
         stats = dict(dark=0, road=0, flat=0, prop=0, bake=0)
         for s in segs:
-            tex, mode = bind_segment(s, isl)
+            tex, mode = bind_segment(s, isl, xs)
             if tex is None:
                 stats['dark'] += 1
             elif mode == '2x':
@@ -396,7 +459,7 @@ def main():
     # merge into manifest (replace existing street tier)
     manifest['glbs'] = [g for g in manifest['glbs'] if g.get('tier') != 'street'] + st_glbs
     manifest['tiers']['street'] = [g['file'] for g in st_glbs]
-    manifest['version'] = 10
+    manifest['version'] = 11
     tv = sum(g['verts'] for g in manifest['glbs'])
     tt = sum(g['tris'] for g in manifest['glbs'])
     manifest['total_verts'] = tv
