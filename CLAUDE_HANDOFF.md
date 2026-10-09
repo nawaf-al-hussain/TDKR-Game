@@ -1,14 +1,14 @@
 # CLAUDE_HANDOFF.md — problem brief for an outside AI collaborator
 
-*Written 2026-10-09, updated after session 13. Everything below is verifiable
+*Written 2026-10-09, updated after session 14. Everything below is verifiable
 in this public repo: https://github.com/nawaf-al-hussain/TDKR-Game — live
 viewer: https://nawaf-al-hussain.github.io/TDKR-Game/*
 
-## 0. TL;DR — UPDATED AFTER SESSION 13 (same day)
+## 0. TL;DR — UPDATED AFTER SESSION 14 (same day)
 
 We are reverse-engineering Gameloft's delisted mobile game **The Dark Knight
 Rises (2012)** to rebuild its open-world Gotham City in a browser 3D viewer.
-Over 13 research sessions we cracked the container formats, geometry, texture
+Over 14 research sessions we cracked the container formats, geometry, texture
 decoding, material database, the bake/UV system, and the level placement
 records.
 
@@ -37,25 +37,59 @@ records.
   (+fog). `StandardDiffuseDC-f.glsl`: DiffuseMap only. **No third sampler →
   no runtime scene/island bake multiplication.** `page_low` in the bake
   records is the low-LOD variant of the same page (LOD swap).
+- **Session 14 corrections (after your round-2 review):**
+  - **The "+0.66 ZNCC" is RETRACTED.** Your suspicion of city-shaped density
+    was right. Full ±100u sweeps show (a) the ZNCC landscape is a broad
+    ridge (max +0.19 at an unrelated offset), and (b) the session-13 number
+    was a *framing artifact*: the FFT-ZNCC normalizes over the
+    shifted-grid-intersection window, so the same data/placement/math gives
+    **+0.6625 / +0.1558 / +0.0284** under three window conventions (the
+    last = direct windowed Pearson, the convention-free definition).
+    The honest discriminating evidence for the record TRS is now:
+    the **engine record itself** + **per-prim centroid correspondence**
+    (FP1/2/3 units vs the assembly: mean |d| 0.96/1.55/2.23 u, mean delta
+    VECTOR ≈ 0.1-1.1 u — a wrong frame would give a coherent offset) + raw
+    overlap (record 13,776 vs v13-offset 7,406 vs identity **0**).
+  - **Skyline material bindings verified at engine level**: every material
+    in every LongDist unit (island1+2, LOW variants) has **LightMap texIdx
+    = 0xFFFFFFFF (unbound)** → the engine itself renders them
+    Diffuse × white × 2.0.  The shipped GLB materials (`<page>|2x` for the
+    LightMapDC meshes, `<tex>|d` for the 5 monorail StandardDiffuseDC
+    meshes) are exact parity. No second sampler needed.
+  - **The deployed site was stale (v13 served while main held v14) and is
+    now fixed**: gh-pages branch redeployed at v14; a post-deploy smoke
+    test (`extraction/scripts/site_smoke_test.py`, 53 checks: infra files,
+    manifest parse, all 40 GLB sizes, all 51 textures, island-2 absence)
+    passes. It also caught: the restored index.html never linked
+    style.css (it is self-contained inline styles — style.css is a root
+    sentinel), and manifest v14 carried stale per-GLB byte sizes.
 
-**The remaining problem is now focused on blocker B:**
+**Blocker B — batch_info.bin LAYOUT SOLVED this session (value semantics
+still open):**
 
-1. **Street batch material index** — `batch_info.bin` (per-island files in
-   the zone zips). NEW hard evidence this session: both islands' files begin
-   with u32le **197**, and `(60483-4)/197 = 307.000`,
-   `(38616-4)/197 = 196.000` — EXACT integers for both files. Island-2
-   shows a repeating 196-byte record template. Engine-side:
-   `getBatchMaterial` @0x44ef08 shows `SBatch+0x8 = intrusive_ptr<CMaterial>`
-   (resolved at load). Hexdumps + candidate structure in §5B. This is where
-   we would most like your help.
-2. **Hero-unit placements** (bridges/monorail/railway): their names ARE
-   plain interned strings in the lvc (`gc_bigbridge_2_islands.bdae`,
-   `gc_monorail_island1.bdae`, `gc_railway_island1.bdae`, …). The 42
-   `0x14050` reflection records carry full TRSs for the `*_reflection.bdae`
-   files. The main (non-reflection) units are placed by the GENERIC object
-   path (`CGameObjectManager::CreateObject @0x36774c`, component factory
-   loop) — read order still to decode.
-3. Secondary: ground-material split (roads/grass one planar unit) and
+- `batch_info.bin = u32(197) + M × 197-byte records`, **one record per
+  material**: M = 307 (island1) / 196 (island2) = the EXACT material counts
+  of the zones' materials bdae (`source.dae` library_materials).
+- Record m's **first byte = m** (material index; 307/307 and 196/196,
+  wrapping mod 256).
+- The leading u32 **197 = the record stride in bytes**, NOT a record count —
+  and the SAME 197 is the last u32 of `stream_info.bin` (which is
+  `[6 × f32 streaming bbox][u32 X][u32 197]`; X = 234,466 / 303,832 open).
+- Inside a record: 196 slots, 0xFF in 13.4% (both islands), 0x00 in 68%,
+  values 0..254 saturating; 12–13-long ff runs; small f32 groups
+  (UV-rect-like) at in-record offsets ~75–115.
+- Full evidence + hexdumps + material name order:
+  **`extraction/re/batch_info_evidence14.md`** (plus
+  `batch_info_material_names14.txt`). This is where we would most like
+  your help: pin the slot/value semantics.
+
+**Also still open:**
+
+1. **Hero-unit placements** (bridges/monorail/railway): names ARE plain
+   interned strings in the lvc; the main (non-reflection) units are placed
+   by the GENERIC object path (`CGameObjectManager::CreateObject @0x36774c`,
+   component factory loop) — read order still to decode.
+2. Secondary: ground-material split (roads/grass one planar unit) and
    near-field geometry density.
 
 ## 1. Project context
@@ -82,16 +116,22 @@ ZIP_SPLIT rgb/alpha pairs) → `extraction/scripts/export_city.py` builds
 textured GLBs → `gh-pages/models/manifest.json` (tiers: street / skyline /
 hero / fp / district / low) → three.js viewer `gh-pages/app.js`.
 
-## 3. What the user sees TODAY (v14)
+## 3. What the user sees TODAY (v14, deployed and smoke-tested)
 
 - **Boots**: street tier (21 GLBs, world-placed, engine-correct road/grass/
   prop materials — ~600 near-tier building segments still dark, blocker B)
-  **+ skyline tier (5 island-1 LongDist GLBs, now at the engine's own
+  **+ skyline tier (5 island-1 LongDist GLBs at the engine's own
   TRS (-730,-1250,0))**.
 - Island-2 skyline units removed (no main-level record; they belonged to the
-  separate island-2 level and were floating in the wrong place).
-- `gh-pages/index.html` restored this session (the deployed site had lost
-  its entry point).
+  separate island-2 level and were floating in the wrong place). The
+  island-2 hero units (monorail/railway/small-bridge) remain as OFF-by-default
+  research toggles (local frames, generic-object records not yet decoded).
+- **Deploy = gh-pages branch @ v14, verified by
+  `extraction/scripts/site_smoke_test.py` (53/53 PASS)**. The gh-pages
+  branch had gone stale (v13 served while main held v14) — the smoke test
+  now guards every deploy. Hero-tier `GC_Railway_Island2_LongDist` overlaps
+  the island-1 area by 21k u² at local coords; it stays hidden by default
+  until its placement record is decoded.
 
 ## 4. The lvc DICT object stream — record-type dictionary (session 13, all from disasm)
 
@@ -130,84 +170,48 @@ each with a real world TRS), 4 bake-group templates. Full walk outputs:
 
 ## 5. THE BLOCKERS (all knowns, all unknowns)
 
-### B. Street batch material index (near-tier building albedo)
+### B. Street batch material index — LAYOUT SOLVED (session 14), value semantics open
 
 **What we need**: for each segment of the streamed street geometry, the
-material index into the zone material DB (fully cracked — 305+195 materials
-with exact DiffuseMap+LightMap via `source.dae` setparam chains).
+material index into the zone material DB (cracked in session 10 — now
+counted exactly: **307 island-1 / 196 island-2 materials**, from
+`source.dae` in each `<island>_materials.bdae`).
 
-**New hard evidence (session 13)**:
+**SOLVED this session (full evidence pack:
+`extraction/re/batch_info_evidence14.md`):**
 
-- Files: `work/zone/GothamCity/batch_info.bin` = 60,483 B;
-  `GothamCity_Island2/batch_info.bin` = 38,616 B (each island's zip carries
-  its own). Both begin with **u32le 197 (0xc5)**.
-- **(60483−4)/197 = 307.000** and **(38616−4)/197 = 196.000** — exact
-  integers for BOTH files. Island-2 then shows a repeating 196-byte record
-  template; island-1's 307-byte grid drifts by record 3, so treat
-  fixed-vs-variable carefully.
-- Oracle checks: lod_table segments = 1526 (island1) / 1020 (island2);
-  street-tier GLB mesh counts 1517/1020 — **NOT 197**. So records are not
-  per segment; 197 matches nothing counted so far (same value in both
-  islands!).
-- Engine side: `getBatchMaterial` @0x44ef08 reads `SBatch+0x8` =
-  `intrusive_ptr<CMaterial>` (already RESOLVED at load — so batch_info
-  entries map to material objects somewhere between the file and this
-  struct). Zone-streaming file-name table = static `char[16]` array in
-  `.rodata` @0xb40704: `{".zip", "stream_info.bin", "bih_data.bin",
-  "bih_struct.bin", "batch_info.bin", "_materials.bdae", "lod_table.bin",
-  "lod_data.bin", "lod_selector.bin"}` (16-byte stride, no pointers
-  reference it — indexed by enum at runtime). Source file:
-  **LevelStreaming_DB.cpp**. Loader classes:
-  `CDoubleBufferedLODStreaming<…>` ctor @0x45e190 (3× IReadFile),
-  `CDoubleBufferedDynamicBatchMesh<…>` ctor @0x45c750 (3× IReadFile);
-  both constructed via template/vtable paths (no direct BL xrefs).
-- **batch_info.bin header + first records (hexdump)** —
-  GothamCity (island 1), 60,483 B:
-  ```
-  00000000  c5 00 00 00 00 00 00 ff ff ff ff ff ff ff ff
-  0000000f  ff ff ff ff ff ff ff 01 02 ff ff ff ff ff ff
-  0000001e  ff ff ff ff 00 03 00 00 00 00 00 00 00 00 00
-  0000002d  06 00 03 00 14 00 0c 00 00 00 01 00 02 00 02
-  0000003c  00 14 00 10 00 00 00 03 00 14 00 0c 00 00 00
-  ...                              (record grid @307 B: rec1 @0x137 = all
-                                    zeros; rec2 @0x26a = ff-run then
-                                    00 03 00 00 00 00 00 00 00 00 00 06
-                                    00 03 00 14 00 0c 00 00 00 01 00 02
-                                    00 02 00 14 00 10 00 ...; rec3
-                                    @0x39d starts mid-floats:
-                                    8a ff df 3e = 0.4368, 19 02 e0 3e =
-                                    0.1406, 0b 5e 77 3f = 0.9650 …)
-  ```
-  Island2 (38,616 B), 196-byte template repeating from rec1:
-  ```
-  rec1 @0x0cc: 00 01 00 00 01 02 ff ff ff ff ff ff ff ff ff ff
-               ff ff ff ff 03 04 ff ff ff ff ff ff ff ff ff ff
-               ff ff 00 05 00 00 00 00 00 00 00 00 00 00 00 00
-  rec2 @0x190: 00 00 02 00 00 01 02 ff ff ff ff ff ff ff ff ff
-               ff ff ff ff 03 04 ff ff ff ff ff ff ff ff ff ff
-               ff ff 00 05 00 00 00 00 00 ...
-  rec3 @0x254: 00 00 00 03 00 00 01 02 ff ... (same template,
-               varying u8 prefix counter 01→02→03 …)
-  ```
-  (full dumps will be committed with the session-13 notes).
-- Candidate structure to test: `[u32 197][197 records][fixed 307/196 B]`
-  vs `[u32 197][bit-packed records]`. The `ff` runs look like all-ones
-  bit-fields; the `01 02 … 03 04 … 00 05` pairs look like small indices
-  (material ids? sub-mesh ids?).
+```
+batch_info.bin := u32(197) + M × 197-byte records      M = material count
+record(m)      := u8(m)  + 196 slot bytes
+```
 
-**Our concrete asks for you on B**:
-1. Given the header + template above, does `[u32 197]` + fixed-stride
-   records hold? What fields would explain `01 02 / 03 04 / 00 05` pairs
-   and the all-ones runs?
-2. In `lib_libKRHP.so`, the zone-streaming reader chain: we failed to find
-   direct xrefs to the `batch_info.bin` string (name table indexed by
-   enum). If you can suggest where `LevelStreaming_DB`-style code keeps the
-   enum→file mapping, or a `ReadBits(n)` helper used by
-   `CDoubleBufferedDynamicBatchMesh`, the field widths would fall out of
-   its call sites (this is exactly how the DICT stream fell).
-3. Sanity check: is `197` plausibly a *batch* count (material groups)
-   rather than segments? The material DB has 305 island-1 materials — 197
-   could be the subset actually used by the stream.
+- M = 307 (island1) / 196 (island2) — the exact division that motivated
+  the old "197 records of 307/196 B" reading was an arithmetic shadow of
+  this layout.
+- Record m starts with byte m (material index; verified 307/307 + 196/196,
+  mod 256 for m ≥ 256). The file header 197 = record stride, NOT a count;
+  stream_info.bin repeats it as its last u32 (it is
+  `[6×f32 bbox][u32 X][u32 197]`).
+- Slot bytes: 0xFF 13.4% (12–13-long runs), 0x00 68%, values 0..254
+  saturating; adjacent slots highly correlated; f32 groups (UV-rect-like)
+  around in-record offsets 75–115.
+
+**Remaining unknowns (the asks):**
+1. The semantics of the 196 slots and their byte values. Fixed engine pool
+   (both islands share the SAME slot count while segment counts differ
+   1,526 vs 1,020) is the leading hypothesis; 0 = free / FF = N/A / value
+   = per-(material, slot) segment count or weight — unresolved. A u16
+   reading of the slots does NOT produce clean values.
+2. The engine reader: `CLevelStreaming_DB::Load` @0x406dfc orchestrates;
+   the per-file parse is in non-exported helpers (bl targets 0x3dac58 ×8,
+   0x42e2bc ×7, 0x455e2c ×6). The stream-name table @0xb40704 has NO
+   absolute pointers in the whole image (full-file literal scan) — it is
+   reached via a computed base + enum index, so string-xref hunting is a
+   dead end; the enum-index code path in PrepareFiles/Load is the way in.
+3. stream_info's X u32 (234,466 / 303,832).
+4. Cross-check: match material m's slot values against the street GLB
+   per-mesh material bindings (gt DB) — if slot ≈ spatial batch, per-
+   (material, slot) mesh counts should track the byte values.
 
 ### Hero units (secondary)
 
@@ -254,18 +258,20 @@ python3 extraction/scripts/export_city.py --dry
 
 ## 8. Concrete asks (ranked)
 
-1. **batch_info.bin layout** (§5B): does `[u32 197][fixed-stride records]`
-   hold? Field hypothesis for the `01 02 / 03 04 / 00 05` pairs and
-   all-ones runs? Any pointer to a `ReadBits(n)`-style helper in the
-   zone-streaming chain (LevelStreaming_DB / CDoubleBufferedDynamicBatchMesh)
-   whose call sites would give the field widths?
+1. **batch_info.bin value semantics** (§5B): the layout is solved
+   (`u32 197 + M × 197-byte records`, record m starts with byte m; M =
+   material count). What are the 196 slots (fixed engine batch/LOD pool?),
+   and what does a slot byte mean (0x00 68%, 0xFF 13.4% in 12–13 runs,
+   values saturating at 254, f32 groups at offsets 75–115)? Evidence pack:
+   `extraction/re/batch_info_evidence14.md`.
 2. **Generic object records** (CreateObject component loop): read order for
    the non-special typeIds so the hero units (bridges/monorail/railway)
    get their world TRSs.
-3. Sanity checks welcome on the v14 skyline placement (ZNCC +0.66) and the
-   island-2 removal decision.
+3. Sanity checks welcome on the v14 skyline placement — with the ZNCC
+   retraction in mind, the load-bearing evidence is the engine record +
+   the per-prim centroid correspondence (`extraction/re/skyline_verify14.json`).
 4. Anything that looks wrong in the deployed pipeline that we've gone blind
-   to after 13 sessions of fixes (fresh eyes welcome).
+   to after 14 sessions of fixes (fresh eyes welcome).
 
 ## 9. Do-not-re-suggest list (all fixed and verified)
 
@@ -283,4 +289,14 @@ python3 extraction/scripts/export_city.py --dry
 - **Island-2 LongDist at identity / any main-level transform** — no record
   exists; those units belong to the separate island-2 level only.
 - A third runtime bake multiply for LongDist units — LightMapDC has exactly
-  2 samplers; the shipped bake pages are final.
+  2 samplers; the shipped bake pages are final. The LongDist materials'
+  LightMap sampler is UNBOUND (0xFFFFFFFF) in every unit — engine parity
+  is `<page>|2x` (×2 with white LM), already shipped.
+- **The session-13 "+0.66 ZNCC" as placement evidence** — retracted
+  (framing-dependent window artifact: +0.66 / +0.16 / +0.03 under three
+  window conventions). Density correlation does not discriminate skyline
+  placement in this city; use the engine record + centroid correspondence.
+- **batch_info.bin as "197 records of 307/196 B" (either orientation)** —
+  the layout is `u32(197) + M × 197 B`, one record per material, record m
+  starting with byte m. Any interpretation must reproduce
+  `body[197*m] == m` for all m.

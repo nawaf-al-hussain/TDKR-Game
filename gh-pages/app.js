@@ -779,12 +779,15 @@ function clearStatus() { $('load-status').textContent = ''; }
     const tier = g.tier || 'district';
     (state.tiers[tier] ??= { enabled: false, glbs: [], loaded: false }).glbs.push(g);
   }
-  // v13 boot policy (session 12): STREET + SKYLINE boot together — the
-  // island LongDist bake units now carry their real world transforms,
-  // decoded from the lvc CTemplateObject records (session 12:
-  // island1 = (-141.69,-681.15,0.114); island2 authored origin-relative).
-  // Hero bridges/monorail/railway stay research toggles until their own
-  // lvc placement records are decoded.
+  // v14 boot policy (session 13): STREET + SKYLINE boot together — the
+  // island-1 LongDist bake units carry the real world transform from the
+  // lvc 0x14051 AddLowPolyLongDistanceNode record
+  // (island1 = (-730,-1250,0), mesh gc_island1_longdist.bdae).
+  // Island-2 LongDist units belong to the SEPARATE island-2 level (no
+  // record in the main lvc) and are NOT part of this single-level view.
+  // Hero bridges/monorail/railway stay research toggles (local frames,
+  // off by default) until their generic-object placement records are
+  // decoded.
   if (state.tiers.street) state.tiers.street.enabled = true;
   if (state.tiers.skyline) state.tiers.skyline.enabled = true;
   // district props: several are authored in LOCAL space (unplaced) — keep
