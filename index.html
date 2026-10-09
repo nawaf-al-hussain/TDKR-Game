@@ -3,68 +3,89 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gotham City — BDAE Geometry Viewer</title>
-<meta name="description" content="Real-time 3D view of Gotham City geometry reverse-engineered from The Dark Knight Rises (Gameloft, 2012) .bdae meshes. Research/education.">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🦇</text></svg>">
+<title>Gotham City — TDKR (2012) viewer</title>
+<style>
+  :root { --bg:#0a0d12; --panel:#11151c; --line:#232a35; --fg:#cfd6e0;
+          --dim:#7d8794; --gold:#e8b34b; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--fg);
+              font:13px/1.4 system-ui, sans-serif; overflow:hidden; }
+  canvas#view { position:fixed; inset:0; width:100%; height:100%; display:block; }
+  #hud { position:fixed; left:10px; top:10px; display:flex; flex-direction:column;
+         gap:6px; z-index:5; max-height:96vh; }
+  .tier-btn { display:flex; align-items:center; gap:8px; background:var(--panel);
+              border:1px solid var(--line); color:var(--fg); padding:6px 10px;
+              border-radius:6px; cursor:pointer; user-select:none; }
+  .tier-btn .dot { width:8px; height:8px; border-radius:50%;
+                   background:#4da3ff; box-shadow:0 0 6px #4da3ff; }
+  .tier-btn .meta { color:var(--dim); font-size:11px; }
+  .tier-btn.off { opacity:.45; }
+  .tier-btn.off .dot { background:#555; box-shadow:none; }
+  .tier-btn.on { border-color:#3d7dcc; }
+  #toolbar { position:fixed; right:10px; top:10px; display:flex; gap:6px; z-index:5; }
+  #toolbar button { background:var(--panel); border:1px solid var(--line);
+                    color:var(--fg); padding:6px 10px; border-radius:6px;
+                    cursor:pointer; }
+  #toolbar button.on { border-color:#3d7dcc; }
+  #stats { position:fixed; right:10px; bottom:10px; color:var(--dim);
+           font-size:11px; text-align:right; z-index:5; }
+  #loader { position:fixed; inset:0; background:var(--bg); display:flex;
+            flex-direction:column; align-items:center; justify-content:center;
+            z-index:20; transition:opacity .6s; }
+  #loader.done { opacity:0; pointer-events:none; }
+  #load-bar-track { width:280px; height:6px; background:var(--line);
+                    border-radius:3px; overflow:hidden; margin-top:12px; }
+  #load-bar { height:100%; width:0; background:var(--gold); transition:width .3s; }
+  #load-status { color:var(--dim); margin-top:8px; }
+  #webgl-fail { color:#ff7b7b; margin-top:10px; }
+  .hidden { display:none !important; }
+  #browser { position:fixed; left:10px; bottom:10px; width:300px; max-height:46vh;
+             background:var(--panel); border:1px solid var(--line);
+             border-radius:8px; display:flex; flex-direction:column; z-index:6; }
+  #browser header { display:flex; align-items:center; gap:6px; padding:8px;
+                    border-bottom:1px solid var(--line); }
+  #browser header input { flex:1; background:#0c1016; border:1px solid var(--line);
+                          color:var(--fg); border-radius:4px; padding:4px 6px; }
+  #browser header button { background:none; border:none; color:var(--dim);
+                           cursor:pointer; }
+  #browser-list { overflow:auto; padding:6px; }
+  .mesh-row { display:flex; gap:6px; align-items:center; padding:3px 4px;
+              border-radius:4px; }
+  .mesh-row:hover { background:#171d26; }
+  .mesh-row.dimmed { opacity:.3; }
+  .mesh-row span { flex:1; overflow:hidden; text-overflow:ellipsis;
+                   white-space:nowrap; }
+</style>
 <script type="importmap">
 { "imports": {
-  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
-  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
-}}
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
 </script>
 </head>
 <body>
-<canvas id="view"></canvas>
-
-<header class="brand">
-  <h1>GOTHAM&nbsp;CITY</h1>
-  <p class="sub">real <code>.bdae</code> mesh geometry · <em>The Dark Knight Rises</em> (Gameloft, 2012)</p>
-  <p class="links"><a href="https://github.com/nawaf-al-hussain/TDKR-Game" target="_blank" rel="noopener">repo</a><span>·</span><a href="https://github.com/nawaf-al-hussain/TDKR-Game/blob/main/extraction/REPORT.md" target="_blank" rel="noopener">format report</a></p>
-</header>
-
-<div id="hud" class="hud">
-  <div><span id="st-fps">–</span> fps</div>
-  <div><span id="st-tris">–</span> tris</div>
-  <div><span id="st-calls">–</span> calls</div>
-  <div><span id="st-verts">–</span> verts</div>
-</div>
-
-<nav id="tiers" class="tiers"></nav>
-
-<aside id="browser" class="browser hidden">
-  <div class="browser-head">
-    <input id="search" type="search" placeholder="filter meshes…" autocomplete="off">
-    <button id="close-browser" title="close">✕</button>
+  <canvas id="view"></canvas>
+  <div id="hud"><div id="tiers"></div></div>
+  <div id="toolbar">
+    <button id="btn-wire">wire</button>
+    <button id="btn-orbit">orbit</button>
+    <button id="btn-browser">meshes</button>
+    <button id="btn-reset">reset</button>
   </div>
-  <div id="browser-list"></div>
-</aside>
-
-<div class="toolbar">
-  <button id="btn-browser" title="mesh browser">☰ meshes</button>
-  <button id="btn-wire" title="toggle wireframe">wireframe</button>
-  <button id="btn-orbit" class="on" title="toggle auto orbit">auto-orbit</button>
-  <button id="btn-reset" title="reset camera">reset view</button>
-</div>
-
-<p class="hint">drag&nbsp;orbit&nbsp;· right-drag&nbsp;pan · wheel&nbsp;zoom · <b>L</b>&nbsp;lightning&nbsp;· <b>⇧L</b>&nbsp;auto&nbsp;· <b>[</b>/<b>]</b>&nbsp;hurt&nbsp;grade</p>
-
-<p class="credit">reverse-engineered for research &amp; education — game content © Gameloft · Warner Bros. · DC. Not affiliated.</p>
-
-<div id="loader">
-  <div class="loader-inner">
-    <div class="loader-art"></div>
-    <h2>GOTHAM CITY</h2>
-    <p id="load-status">contacting the batcave…</p>
-    <div class="bar"><div id="load-bar"></div></div>
-    <noscript><p>This viewer needs JavaScript + WebGL.</p></noscript>
+  <div id="stats"><span id="st-fps"></span> <span id="st-tris"></span>
+    <span id="st-verts"></span> <span id="st-calls"></span></div>
+  <div id="browser" class="hidden">
+    <header>
+      <input id="search" placeholder="filter meshes…">
+      <button id="close-browser">✕</button>
+    </header>
+    <div id="browser-list"></div>
   </div>
-</div>
-
-<div id="webgl-fail" class="hidden">
-  <div>WebGL is unavailable in this browser.<br>The Gotham geometry can't be rendered here.</div>
-</div>
-
-<script type="module" src="app.js"></script>
+  <div id="loader">
+    <div style="font-size:16px;letter-spacing:.2em;color:var(--gold)">GOTHAM</div>
+    <div id="load-bar-track"><div id="load-bar"></div></div>
+    <div id="load-status">booting…</div>
+    <div id="webgl-fail" class="hidden">WebGL failed to start.</div>
+  </div>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
