@@ -288,6 +288,114 @@ def bake_coord1(mesh, page, so, floor=0.3):
     return t, best
 
 
+# ---- v12: authoritative footprint->bake-page map (session 11) --------------
+# The game's own assembly bdaes MERGE exactly the footprint LongDist meshes
+# whose top-down bake lives in that page: GC_LongDist_Island1_FP1.bdae
+# contains LA/AA/AB/.../CC/CD/GA/... — so 'GC_Footprint_GA_LongDist' binds
+# GC_LongDist_Island1_FP1.  Zero heuristics: read the lists straight from
+# the bdae string tables.  (Verified: CB->FP3, CC/CD/GA->FP1, GF/VA->FP3,
+# VPOW->Island1_Roads — the v7 UV-fit had GA/VA on the ROADS page, which the
+# user saw as grass/roads on buildings.)
+def load_fp_page_map():
+    import glob as _glob
+    out = {}
+    for p in _glob.glob(os.path.join(RAW, "l_gothamcity", "GC_LongDist_Island*_*.bdae")):
+        page = os.path.basename(p)[:-len(".bdae")]
+        try:
+            d = open(p, "rb").read()
+        except OSError:
+            continue
+        for s in set(x.decode() for x in re.findall(rb"[ -~]{6,}", d)):
+            mm = re.match(r"(?i)^GC_FootPrint?_([A-Z0-9]+?)(?:_LongDist)?$", s)
+            if mm:
+                out.setdefault(mm.group(1).upper(), page)
+    return out
+
+FP_PAGE_MAP = None   # lazy: built on first use in main()
+
+def footprint_page(base, mesh_name):
+    fid = None
+    for src in (mesh_name or "", base):
+        mm = re.match(r"(?i)GC_FootPrint?_([A-Z0-9]+?)(?:_LongDist.*)?$", src or "")
+        if mm:
+            fid = mm.group(1).upper()
+            break
+    if fid and FP_PAGE_MAP:
+        return FP_PAGE_MAP.get(fid)
+    return None
+
+# ---- v12: structural page match (session 11) -------------------------------
+# The GC_LongDist runtime bakes are TOP-DOWN complete maps of a city block:
+# the mesh's own Coord0 IS the position-projected page UV.  The correct page
+# is therefore the one whose CONTENT agrees with the mesh's own coverage
+# density (building blobs -> bright blocks, road strips -> bright lines).
+# We rasterize the mesh's uv0 triangle density, blur, and Pearson-correlate
+# against each candidate page's luminance inside the covered mask.  This is
+# deterministic and content-based — it replaces the v7 edge-density UV-fit
+# whose "samples detailed content" score literally bound building meshes to
+# the ROADS page (user-visible: grass/roads on buildings).
+_LUM_CACHE = {}
+
+def _page_lum(page):
+    if page in _LUM_CACHE:
+        return _LUM_CACHE[page]
+    from PIL import Image
+    p = find_png(page)
+    if p is None:
+        _LUM_CACHE[page] = None
+        return None
+    im = Image.open(p).convert("L")
+    im.thumbnail((512, 512), Image.BILINEAR)
+    a = np.asarray(im, np.float32) / 255.0
+    _LUM_CACHE[page] = a
+    return a
+
+def structural_page_match(mesh, pages, res=512, blur=6):
+    """Pearson corr(mesh uv0 coverage density, page luminance) per page.
+    Returns (best_page, {page: corr}) or (None, {}).  Uses the game's
+    bottom-origin v convention (image row = (res-1) - v) verified in session 8."""
+    from PIL import Image, ImageFilter
+    uv = mesh.get("uv")
+    idx = mesh.get("idx")
+    if uv is None or idx is None or len(idx) < 3:
+        return None, {}
+    pts = np.column_stack([np.clip(uv[:, 0], 0, 1), np.clip(uv[:, 1], 0, 1)]) * (res - 1)
+    tri = idx.reshape(-1, 3)
+    acc = np.zeros((res, res), np.float32)
+    # vertices + edge midpoints + centroids: cheap triangle-coverage proxy
+    for frac in (1.0, 0.5):
+        p0 = pts[tri[:, 0]]; p1 = pts[tri[:, 1]]; p2 = pts[tri[:, 2]]
+        for pset in (p0, p1, p2, (p0 + p1 + p2) / 3.0):
+            xi = np.clip(pset[:, 0].astype(np.int32), 0, res - 1)
+            yi = np.clip((res - 1) - pset[:, 1].astype(np.int32), 0, res - 1)
+            np.add.at(acc, (yi, xi), frac)
+    if acc.sum() < 100:
+        return None, {}
+    im = Image.fromarray((np.clip(acc / (acc.max() + 1e-9), 0, 1) * 255).astype(np.uint8))
+    D = np.asarray(im.filter(ImageFilter.GaussianBlur(blur)), np.float32) / 255.0
+    out = {}
+    best, best_pg = -2.0, None
+    for pg in pages:
+        L = _page_lum(pg)
+        if L is None:
+            continue
+        h, w = L.shape
+        Dp = np.asarray(Image.fromarray((D * 255).astype(np.uint8))
+                        .resize((w, h), Image.BILINEAR), np.float32) / 255.0
+        m = acc > 0
+        if w != res:
+            m = np.asarray(Image.fromarray((m * 255).astype(np.uint8))
+                           .resize((w, h), Image.NEAREST)) > 0
+        if m.sum() < 50:
+            continue
+        a = Dp[m] - Dp[m].mean()
+        b = L[m] - L[m].mean()
+        c = float((a * b).sum() / (np.sqrt((a * a).sum() * (b * b).sum()) + 1e-9))
+        out[pg] = round(c, 4)
+        if c > best:
+            best, best_pg = c, pg
+    return best_pg, out
+
 def uv_fit(uv, name):
     """edge-magnitude ratio score: >1 = samples detail-rich regions"""
     em = edge_map(name)
@@ -456,6 +564,9 @@ def main():
     args = ap.parse_args()
 
     gt = json.load(open(GT_JSON))
+    global FP_PAGE_MAP
+    FP_PAGE_MAP = load_fp_page_map()
+    print(f"footprint->bake-page map: {len(FP_PAGE_MAP)} entries from assembly bdaes")
     bake_groups = load_bake_groups()
     if bake_groups:
         print(f"bake-group exact page bindings: {len(bake_groups)} meshes")
@@ -480,6 +591,15 @@ def main():
             for m in meshes:
                 m["pos"] = m["pos"] - np.array([0, 0, WATER_Z_SHIFT], np.float32)
                 m["mn"], m["mx"] = m["pos"].min(0), m["pos"].max(0)
+            # v12: the water planes are the WHOLE-MAP rects — the gt sampler
+            # resolves to the riverbed sand tile (what the game scrolls water
+            # OVER), which rendered as a giant tan sheet under blue fog.
+            # Bind the shipped water texture instead.
+            g = gt.get(base) or {}
+            for gm in g.get("meshes", []):
+                gm["diffuse"] = "water"
+                gm["technique"] = "StandardDiffuseDC"
+            gt[base] = g
         elif max((m["mx"] - m["mn"]).max() for m in meshes) > MAX_EXTENT:
             print(f"  skip (out-of-world extent): {base}")
             continue
@@ -539,6 +659,57 @@ def main():
             if m.get("uv") is None:
                 m["uv"] = m.get("uvm")
 
+            # ---- v12: GC_LongDist runtime-bake meshes (fp + hero LongDist) --
+            # bdae truth (GC_Footprint_CB/GA/VA_LongDist.bdae): DiffuseMap =
+            # GC_LongDist.tga + #StandardDiffuseDC-fx, NO LightMap slot.  The
+            # shipped GC_LongDist_Island{1,2}_{FP1..3,Roads} pages are the
+            # pre-baked stand-ins.  The island page is chosen by STRUCTURAL
+            # content match (mesh coverage density vs page luminance) — the
+            # v7 edge-density UV-fit bound building meshes to the ROADS page.
+            # Their Beast bake-group records belong to the NEAR-tier render
+            # units (street/facade path) — never attached here.
+            is_bake_dif = bool(tex) and (not find_png(tex)) and (
+                tex.lower().replace("_completemap", "").replace("_diffusemap", "") == "gc_longdist"
+                # per-footprint runtime-bake aliases: 'GC_Footprint_AA_LongDist',
+                # 'GC_Footprint_DA_LongdistDiffuseMap' — albedo generated at
+                # runtime; the shipped stand-in is the footprint's assembly page.
+                or (cat == "fp" and "mask" not in tex.lower()
+                    and not BAD_FIT.search(tex)
+                    and footprint_page(base, m.get("name")) is not None))
+            if is_bake_dif:
+                # 1) AUTHORITATIVE: the game's assembly bdaes list exactly the
+                #    footprints baked into each page.
+                pg = footprint_page(base, m.get("name"))
+                how_pg = "assembly" if pg else None
+                scores = {}
+                # 2) fallback for unlisted footprints (CFCG etc.): structural
+                #    coverage-density match over all 8 pages.
+                if not pg:
+                    pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
+                             "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
+                             "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
+                             "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
+                    pg, scores = structural_page_match(m, pages)
+                    how_pg = "structural"
+                if pg:
+                    tex, how = pg, how_pg
+                    mode = "d" if "lightmapdc" not in tech.lower() else "2x"
+                else:
+                    tex, how = None, "dark"
+                if cat == "fp":
+                    per_mesh.append((tex, None, mode))
+                    gt_stats["structural" if pg else "dark"] = \
+                        gt_stats.get("structural" if pg else "dark", 0) + 1
+                    continue
+                # hero-tier bake meshes (GC_island1_LongDist etc.): same page
+                # binding, fall through to standard emit with lm rejected.
+                lm = None
+                out_lm = None
+                gt_stats["structural" if pg else "dark"] = \
+                    gt_stats.get("structural" if pg else "dark", 0) + 1
+                per_mesh.append((tex, None, mode))
+                continue
+
             # ---------------- fp tier: engine-faithful ladder ----------------
             if cat == "fp":
                 dif = tex
@@ -547,23 +718,7 @@ def main():
                 if dif and (dif.endswith("Sampler") or dif.endswith("sampler")):
                     dif = None
                 fp_tex, fp_lm, fp_mode, fp_how = None, None, ("add" if "additive" in tech.lower() else "2x"), "dark"
-                if dif and dif.lower() == "gc_longdist":
-                    # runtime island bake as the DIFFUSE slot (page not shipped).
-                    # v11: render the best-fit island page x2 (no lm multiply —
-                    # the record page IS this family; double multiply would
-                    # double-darken the approximation).
-                    pages = ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
-                             "GC_LongDist_Island1_FP3", "GC_LongDist_Island1_Roads",
-                             "GC_LongDist_Island2_FP1", "GC_LongDist_Island2_FP2",
-                             "GC_LongDist_Island2_FP3", "GC_LongDist_Island2_Roads"]
-                    if m["uv"] is None:
-                        scored = []
-                    else:
-                        scored = sorted(((uv_fit(m["uv"], t), t) for t in pages), reverse=True)
-                    if scored and scored[0][0] >= 0.9:
-                        fp_tex, fp_how = scored[0][1], "fp-page-fit"
-                        fp_mode = "2x"
-                elif dif:
+                if dif:
                     base2 = re.sub(
                         r"_(longdist(completemap|diffusemap|diffuse_map)?|longdistdiffusemap|longdist)$",
                         "", dif, flags=re.I)
@@ -580,17 +735,13 @@ def main():
                             if fam:
                                 fam.sort(key=len)
                                 fp_tex, fp_how = fam[0], "fp-family"
-                # v11: engine parity — Diffuse * LightMap * 2.  When the
-                # offline bake (dif) exists AND the Beast record page exists,
-                # BOTH bind.  Without dif, the lm page renders alone (x2).
-                if fp_tex is None and lm is not None:
-                    fp_tex, fp_lm, fp_how = lm, None, "bakegroup"
-                elif lm is not None:
-                    fp_lm = lm
-                    fp_how = fp_how + "+lm" if fp_how != "dark" else "bakegroup"
-                per_mesh.append((fp_tex, fp_lm, fp_mode))
-                gt_stats[{"gt": "gt_bind", "gt+lm": "gt_bind", "fp-family": "fp_family",
-                          "fp-page-fit": "bake_fit", "bakegroup": "bake_fit",
+                # v12: the bake pages are NEVER used as albedo — a fp mesh
+                # without a shipped diffuse stays dark (its appearance lives
+                # in the structural branch above or the near-tier units).
+                fp_mode = ("add" if "additive" in tech.lower() else
+                           ("2x" if "lightmapdc" in tech.lower() else "d"))
+                per_mesh.append((fp_tex, None, fp_mode))
+                gt_stats[{"gt": "gt_bind", "fp-family": "fp_family",
                           "alpha-fix": "alpha_fix",
                           "dark": "dark"}.get(fp_how, "dark")] += 1
                 continue
@@ -616,17 +767,18 @@ def main():
                 else:
                     tex, how = None, "dark"
             if tex is None and bake_fam and m["uv"] is not None:
-                scored = sorted(((uv_fit(m["uv"], t), t) for t in bake_fam), reverse=True)
-                if scored and scored[0][0] >= 2.2:
-                    tex, how = scored[0][1], "bake-fit"
-            # v11: attach the Beast LightMap when the object has a record —
-            # engine renders dif * lm * 2 (LightMapDC).
+                # v12: structural match against the island bake family —
+                # was: edge-density UV-fit (bound roads pages to buildings).
+                pg, _sc = structural_page_match(m, [t for t in bake_fam if find_png(t)])
+                if pg:
+                    tex, how = pg, "bake-structural"
+                else:
+                    tex, how = None, "dark"
+            # v12: bake pages are never an albedo substitute — lm-only bind
+            # (roads-on-buildings disease) removed; no-record meshes go dark.
             out_lm = lm if tex else None
-            if lm and not tex:
-                tex, how, out_lm = lm, "bakegroup", None
             gt_stats[{"gt": "gt_bind", "alpha-fix": "alpha_fix", "pool-single": "pool_fit",
-                      "pool-fit": "pool_fit", "bake-fit": "bake_fit",
-                      "bakegroup": "bake_fit",
+                      "pool-fit": "pool_fit", "bake-structural": "bake_fit",
                       "dark": "dark"}.get(how, "dark")] += 1
             per_mesh.append((tex, out_lm, mode))
 

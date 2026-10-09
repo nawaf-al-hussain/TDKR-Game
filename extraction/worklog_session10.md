@@ -19,3 +19,22 @@ Work Log:
 Stage Summary:
 - Engine-exact two-texture LightMapDC rendering for city tiers; street tier honest (no more garbage); LUTs fixed
 - Open: batch_info.bin bitstream (material index per batch — needs CInterleavedDataAllocator parse); 265 flat segments match no cross-section group; bih_data leaf payload role
+
+---
+Task ID: 11
+Agent: Super Z (main)
+Task: "EVERY FUCKING BUILDING IS WRONGLY TEXTURED. I CAN SEE GRASS/ROAD TEXTURES ON BUILDINGS."
+
+Work Log:
+- Reproduced live (playwright): building walls sampled top-down bake atlases; GA/VA literally bound to GC_LongDist_Island2_Roads by the v7 edge-density UV-fit
+- bdae truth: GC_Footprint_{CB,GA,VA}_LongDist.bdae = DiffuseMap GC_LongDist.tga + #StandardDiffuseDC-fx (x1, no LightMap) — v11's hardcoded 2x was wrong
+- Extracted the AUTHORITATIVE footprint->page map from the assembly bdaes (GC_LongDist_IslandX_FPY.bdae merge exactly the footprints baked into page Y; 54 entries)
+- export_city.py v12: assembly-map bindings (+ structural coverage-density fallback), bake-as-albedo paths removed in both ladders, water planes rebound to shipped water texture
+- Found the entire LongDist/fp layer authored in LOCAL coords (parse bbox ~+-100) — deployed as zero-transform piles at origin; placement needs the lvc/BRES node-graph decode
+- Viewer v12: boots the world-placed street tier first (real materials), hero/fp/district become research toggles; street tier v5 structural rebuild confirmed live
+- Deployed gh-pages ee62b00..8f7bab9 (+v12.2), verified headless: default view = clean night city, street-level = honest dark buildings + textured roads, ZERO grass/roads-on-buildings
+
+Stage Summary:
+- Wrong-texture class eliminated at the root (no UV-fit page selection anywhere)
+- Skyline placement blocked ONLY on the BRES node-graph transform decode (next session's #1)
+- Near-field richness blocked on batch_info.bin material index (then ~600 dark segments get real albedo)
