@@ -189,6 +189,10 @@ const state = {
 };
 
 const MANIFEST_URL = 'models/manifest.json';
+// session 15 cache-busting: bump APP_CACHE_VERSION on every release so the
+// MANIFEST fetch itself cannot be served stale (the gh-pages v13 regression).
+// GLB / texture URLs get ?v=<manifest.version> from the manifest itself.
+const APP_CACHE_VERSION = 'v15';
 const $ = (id) => document.getElementById(id);
 
 /* ---------------- renderer ---------------- */
@@ -539,7 +543,7 @@ const texCache = new Map(); // name -> Promise<Texture|null>
 function getTex(name) {
   if (!texCache.has(name)) {
     texCache.set(name, new Promise((res) => {
-      texLoader.load(`models/tex/${name}.jpg`,
+      texLoader.load(`models/tex/${name}.jpg?v=${state.manifestVersion || APP_CACHE_VERSION}`,
         (t) => {
           // game samples PVR data top-down (v=0 = first memory row); three.js
           // defaults to flipY=true which would vertically flip every mapping.
@@ -559,7 +563,8 @@ function getTex(name) {
 const gltfLoader = new GLTFLoader();
 
 async function loadGLB(entry, tierName) {
-  const gltf = await new Promise((res, rej) => gltfLoader.load(entry.file, res, undefined, rej));
+  const gltf = await new Promise((res, rej) => gltfLoader.load(
+    `${entry.file}?v=${state.manifestVersion || APP_CACHE_VERSION}`, res, undefined, rej));
   const root = gltf.scene;
   const group = new THREE.Group();
   group.name = entry.file;
@@ -645,6 +650,17 @@ async function toggleTier(tier, btn) {
     clearStatus();
     updateHUDTotals();
   }
+  // session 15: surface manifest frameWarnings (island-2-local hero units
+  // overlap island-1 by ~21k u² — must never show silently)
+  if (t.enabled) {
+    const warned = (t.glbs || []).filter((e) => e.frameWarning);
+    if (warned.length) {
+      const msg = `⚠ ${warned.length} unit(s) in ${TIER_LABEL[tier] || tier} carry a frame warning: ${warned[0].frameWarning}`;
+      setStatus(msg);
+      console.warn(msg, warned.map((e) => e.file));
+      setTimeout(clearStatus, 8000);
+    }
+  }
   for (const entry of t.glbs) {
     const g = state.groups.get(entry.file);
     if (g) g.visible = t.enabled;
@@ -659,9 +675,11 @@ function addBrowserRow(entry, tier) {
   row.className = 'mesh-row';
   row.dataset.file = entry.file;
   row.dataset.name = entry.file.toLowerCase();
+  const warn = entry.frameWarning ? ' ⚠' : '';
+  const title = entry.frameWarning ? `${entry.file} — ${entry.frameWarning}` : entry.file;
   const on = state.tiers[tier].enabled;
   row.innerHTML = `<input type="checkbox" ${on ? 'checked' : ''}>
-    <span class="nm" title="${entry.file}">${entry.file.replace('models/', '')}</span>
+    <span class="nm" title="${title}">${entry.file.replace('models/', '')}${warn}</span>
     <span class="tc">${(entry.tris / 1000).toFixed(1)}k</span>`;
   row.querySelector('input').onchange = (ev) => {
     const g = state.groups.get(entry.file);
@@ -769,11 +787,12 @@ function clearStatus() { $('load-status').textContent = ''; }
 (async function boot() {
   let manifest;
   try {
-    manifest = await (await fetch(MANIFEST_URL)).json();
+    manifest = await (await fetch(`${MANIFEST_URL}?v=${APP_CACHE_VERSION}`)).json();
   } catch (e) {
     setStatus('failed to load manifest.json — is this served over HTTP?');
     return;
   }
+  state.manifestVersion = `v${manifest.version}`;
   state.tiers = {};
   for (const g of manifest.glbs) {
     const tier = g.tier || 'district';

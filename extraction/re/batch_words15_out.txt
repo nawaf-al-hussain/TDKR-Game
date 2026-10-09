@@ -1,0 +1,814 @@
+
+===== GothamCity  M=307  words as LE u32 =====
+pos |   %ff   %zero  %byte  %u16  %big  %fsane  %fuv | distinct | note
+  0 |   0.0    0.0    0.0   0.0 100.0    0.0  92.8 |        5 | 
+  1 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  2 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  3 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  4 |   0.3    0.0    0.0   0.0  99.7    0.0   0.0 |        7 | 
+  5 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  6 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  7 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        1 | CONSTANT 0xffffff
+  8 |   0.0    0.0  100.0   0.0   0.0    0.0 100.0 |        4 | byte-ish max 5
+  9 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 10 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        1 | CONSTANT 0x60000
+ 11 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        4 | 
+ 12 |   0.0    0.3   99.7   0.0   0.0    0.0  99.7 |        2 | byte-ish max 12
+ 13 |   0.0    0.3    0.3   0.0  99.3    0.0  99.7 |        3 | 
+ 14 |   0.0    0.3    0.0   0.0  99.7    0.0  99.7 |        5 | 
+ 15 |   0.0    0.3   99.7   0.0   0.0    0.0  99.7 |        2 | byte-ish max 16
+ 16 |   0.0    0.3    3.3   0.0  96.4    0.0  99.7 |        4 | 
+ 17 |   0.0    0.3    0.0   0.0  99.7    0.0  99.7 |        6 | 
+ 18 |   0.0    4.2   95.8   0.0   0.0    0.0  95.8 |        2 | byte-ish max 20
+ 19 |   0.0    3.9   93.2   0.0   2.9    0.0  96.1 |        4 | byte-ish max 16
+ 20 |   0.0    3.9    0.3   0.0  95.8    0.0  96.1 |        5 | 
+ 21 |   0.0   97.1    2.9   0.0   0.0    0.0   2.9 |        2 | <- almost always 0
+ 22 |   0.0   97.1    0.0   0.0   2.9    0.0   2.9 |        2 | <- almost always 0
+ 23 |   0.0   97.1    0.0   0.0   2.9    0.0   2.9 |        2 | <- almost always 0
+ 24 |   0.0   96.4    0.0   0.0   3.6    2.9   3.6 |       12 | <- almost always 0
+ 25 |   0.0   96.1    0.3   0.0   3.6    3.6   3.9 |       13 | <- almost always 0
+ 26 |   0.0   99.7    0.3   0.0   0.0    0.0   0.3 |        2 | <- almost always 0
+ 27 |   0.0    3.6    0.0   0.0  96.4   94.1  96.1 |      291 | floaty: -3.92708..0.99959
+ 28 |   0.0    3.6    0.0   0.0  96.4   92.8  96.4 |      291 | floaty: 1.02734e-06..1.47775
+ 29 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 30 |   0.0    4.2    0.0   0.0  95.8   95.8  66.4 |      289 | floaty: -486.903..42.2123
+ 31 |   0.0    0.7    3.6   0.0  95.8   95.8  74.9 |      289 | floaty: -164.235..7.68147
+ 32 |   0.0   96.4    3.6   0.0   0.0    0.0   3.6 |        2 | <- almost always 0
+ 33 |   0.0    7.2    0.0   0.0  92.8   86.3  92.5 |      286 | floaty: -4.87881..0.63492
+ 34 |   0.0    4.2    2.9   0.0  92.8   86.3  94.8 |      285 | floaty: -5.0498..0.749843
+ 35 |   0.0   97.1    2.9   0.0   0.0    0.0   2.9 |        2 | <- almost always 0
+ 36 |   0.0    7.2    0.0   0.0  92.8   91.9  92.8 |      286 | floaty: 3.76916e-06..0.97077
+ 37 |   0.0    7.2    0.0   0.0  92.8   92.2  92.8 |      284 | floaty: 1.0479e-06..0.997552
+ 38 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 39 |   0.0   97.1    0.0   0.0   2.9    2.9   2.9 |       10 | <- almost always 0
+ 40 |   0.0    7.2   89.9   0.0   2.9    2.9  92.8 |       11 | byte-ish max 6
+ 41 |   0.0   10.1   89.9   0.0   0.0    0.0  89.9 |        2 | byte-ish max 1
+ 42 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 43 |   0.0   97.1    2.9   0.0   0.0    0.0   2.9 |        2 | <- almost always 0
+ 44 |   0.0   97.1    2.9   0.0   0.0    0.0   2.9 |        2 | <- almost always 0
+ 45 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 46 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 47 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 48 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+
+===== GothamCity  M=307  words as BE u32 =====
+pos |   %ff   %zero  %byte  %u16  %big  %fsane  %fuv | distinct | note
+  0 |   0.0    0.0    0.0  83.4  16.6    0.0  92.8 |        5 | 
+  1 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  2 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  3 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  4 |   0.3    0.0    0.0   0.0  99.7    0.0   0.0 |        7 | 
+  5 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  6 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  7 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        1 | CONSTANT 0xffffff00
+  8 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        4 | 
+  9 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 10 |   0.0    0.0    0.0 100.0   0.0    0.0 100.0 |        1 | CONSTANT 0x600
+ 11 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        4 | 
+ 12 |   0.0    0.3    0.0   0.0  99.7    0.0  99.7 |        2 | 
+ 13 |   0.0    0.3    0.0   0.0  99.7    0.0  99.7 |        3 | 
+ 14 |   0.0    0.3    0.0   0.0  99.7    0.0  99.7 |        5 | 
+ 15 |   0.0    0.3    0.0   0.0  99.7    0.0  99.7 |        2 | 
+ 16 |   0.0    0.3    0.0   0.0  99.7    0.0  99.7 |        4 | 
+ 17 |   0.0    0.3    0.0   0.0  99.7    0.0  99.7 |        6 | 
+ 18 |   0.0    4.2    0.0   0.0  95.8    0.0  95.8 |        2 | 
+ 19 |   0.0    3.9    0.0   0.0  96.1    0.0  96.1 |        4 | 
+ 20 |   0.0    3.9    0.0   0.0  96.1    0.0  96.1 |        5 | 
+ 21 |   0.0   97.1    0.0   0.0   2.9    0.0   2.9 |        2 | <- almost always 0
+ 22 |   0.0   97.1    0.0   0.0   2.9    0.0   2.9 |        2 | <- almost always 0
+ 23 |   0.0   97.1    0.0   0.0   2.9    0.0   2.9 |        2 | <- almost always 0
+ 24 |   0.0   96.4    0.0   0.0   3.6    2.9   3.6 |       12 | <- almost always 0
+ 25 |   0.0   96.1    0.0   0.0   3.9    3.6   3.9 |       13 | <- almost always 0
+ 26 |   0.0   99.7    0.0   0.0   0.3    0.0   0.3 |        2 | <- almost always 0
+ 27 |   0.0    3.6    0.0   0.0  96.4   94.1  96.1 |      291 | floaty: -3.92708..0.99959
+ 28 |   0.0    3.6    0.0   0.0  96.4   92.8  96.4 |      291 | floaty: 1.02734e-06..1.47775
+ 29 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 30 |   0.0    4.2    0.3   0.0  95.4   95.8  66.4 |      289 | floaty: -486.903..42.2123
+ 31 |   0.0    0.7    1.0   0.0  98.4   95.8  74.9 |      289 | floaty: -164.235..7.68147
+ 32 |   0.0   96.4    0.0   0.0   3.6    0.0   3.6 |        2 | <- almost always 0
+ 33 |   0.0    7.2    0.0   0.0  92.8   86.3  92.5 |      286 | floaty: -4.87881..0.63492
+ 34 |   0.0    4.2    0.0   0.0  95.8   86.3  94.8 |      285 | floaty: -5.0498..0.749843
+ 35 |   0.0   97.1    0.0   0.0   2.9    0.0   2.9 |        2 | <- almost always 0
+ 36 |   0.0    7.2    0.0   0.0  92.8   91.9  92.8 |      286 | floaty: 3.76916e-06..0.97077
+ 37 |   0.0    7.2    0.3   0.3  92.2   92.2  92.8 |      284 | floaty: 1.0479e-06..0.997552
+ 38 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 39 |   0.0   97.1    0.0   0.0   2.9    2.9   2.9 |       10 | <- almost always 0
+ 40 |   0.0    7.2    0.3   0.0  92.5    2.9  92.8 |       11 | 
+ 41 |   0.0   10.1    0.0   0.0  89.9    0.0  89.9 |        2 | 
+ 42 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 43 |   0.0   97.1    0.0   0.0   2.9    0.0   2.9 |        2 | <- almost always 0
+ 44 |   0.0   97.1    0.0   0.0   2.9    0.0   2.9 |        2 | <- almost always 0
+ 45 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 46 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 47 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 48 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+
+  0xff runs in payload: n=748
+  run-length hist: {1: 130, 2: 5, 12: 29, 13: 562, 14: 10, 15: 11, 29: 1}
+  start%4 (payload-relative): {0: 294, 1: 11, 2: 394, 3: 49}
+  start%4 (record-relative, byte0 included): {0: 49, 1: 294, 2: 11, 3: 394}
+  runs of exactly 12: 29, of which payload-u32-aligned: 0
+
+===== GothamCity_Island2  M=196  words as LE u32 =====
+pos |   %ff   %zero  %byte  %u16  %big  %fsane  %fuv | distinct | note
+  0 |   0.0    0.0    0.0   0.0 100.0    0.0  93.9 |        3 | 
+  1 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  2 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  3 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  4 |   0.5    0.0    0.0   0.0  99.5    0.0   0.0 |        5 | 
+  5 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  6 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  7 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        1 | CONSTANT 0xffffff
+  8 |   0.0    0.0  100.0   0.0   0.0    0.0 100.0 |        4 | byte-ish max 5
+  9 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 10 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        1 | CONSTANT 0x60000
+ 11 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        4 | 
+ 12 |   0.0    0.5   99.5   0.0   0.0    0.0  99.5 |        2 | byte-ish max 12
+ 13 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        2 | 
+ 14 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        4 | 
+ 15 |   0.0    0.5   99.5   0.0   0.0    0.0  99.5 |        2 | byte-ish max 16
+ 16 |   0.0    0.5    3.6   0.0  95.9    0.0  99.5 |        4 | 
+ 17 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        5 | 
+ 18 |   0.0    2.6   97.4   0.0   0.0    0.0  97.4 |        2 | byte-ish max 20
+ 19 |   0.0    2.0   94.4   0.0   3.6    0.0  98.0 |        4 | byte-ish max 16
+ 20 |   0.0    2.0    0.5   0.0  97.4    0.0  98.0 |        5 | 
+ 21 |   0.0   96.9    3.1   0.0   0.0    0.0   3.1 |        2 | <- almost always 0
+ 22 |   0.0   96.9    0.0   0.0   3.1    0.0   3.1 |        2 | <- almost always 0
+ 23 |   0.0   96.9    0.0   0.0   3.1    0.0   3.1 |        2 | <- almost always 0
+ 24 |   0.0   98.0    0.0   0.0   2.0    2.0   2.0 |        5 | <- almost always 0
+ 25 |   0.0   98.0    0.0   0.0   2.0    1.5   2.0 |        5 | <- almost always 0
+ 26 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 27 |   0.0    4.1    0.0   0.0  95.9   93.4  95.9 |      189 | floaty: 1.55476e-06..0.959175
+ 28 |   0.0    4.1    0.0   0.0  95.9   94.4  95.9 |      188 | floaty: 1.36994e-06..0.687635
+ 29 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 30 |   0.0    2.6    0.0   0.0  97.4   97.4  71.9 |      192 | floaty: -355.039..48.2686
+ 31 |   0.0    0.5    2.0   0.0  97.4   97.4  82.7 |      193 | floaty: -164.233..4.83309
+ 32 |   0.0   98.0    2.0   0.0   0.0    0.0   2.0 |        2 | <- almost always 0
+ 33 |   0.0    6.1    0.0   0.0  93.9   90.8  93.4 |      184 | floaty: -1.51325..1.06614
+ 34 |   0.0    2.6    3.6   0.0  93.9   86.2  96.9 |      186 | floaty: -2.59364..1.40324
+ 35 |   0.0   96.4    3.6   0.0   0.0    0.0   3.6 |        2 | <- almost always 0
+ 36 |   0.0    6.1    0.0   0.0  93.9   93.4  93.9 |      184 | floaty: 1.0143e-06..0.912549
+ 37 |   0.0    6.1    0.0   0.0  93.9   93.4  93.9 |      185 | floaty: 2.28333e-06..0.983052
+ 38 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 39 |   0.0   96.9    0.0   0.0   3.1    3.1   3.1 |        7 | <- almost always 0
+ 40 |   0.0    6.1   90.8   0.0   3.1    3.1  93.9 |        8 | byte-ish max 6
+ 41 |   0.0    9.2   90.8   0.0   0.0    0.0  90.8 |        2 | byte-ish max 1
+ 42 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 43 |   0.0   96.9    3.1   0.0   0.0    0.0   3.1 |        2 | <- almost always 0
+ 44 |   0.0   96.9    3.1   0.0   0.0    0.0   3.1 |        2 | <- almost always 0
+ 45 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 46 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 47 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 48 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+
+===== GothamCity_Island2  M=196  words as BE u32 =====
+pos |   %ff   %zero  %byte  %u16  %big  %fsane  %fuv | distinct | note
+  0 |   0.0    0.0    0.0 100.0   0.0    0.0  93.9 |        3 | 
+  1 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  2 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  3 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  4 |   0.5    0.0    0.0   0.0  99.5    0.0   0.0 |        5 | 
+  5 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  6 | 100.0    0.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0xffffffff
+  7 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        1 | CONSTANT 0xffffff00
+  8 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        4 | 
+  9 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 10 |   0.0    0.0    0.0 100.0   0.0    0.0 100.0 |        1 | CONSTANT 0x600
+ 11 |   0.0    0.0    0.0   0.0 100.0    0.0 100.0 |        4 | 
+ 12 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        2 | 
+ 13 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        2 | 
+ 14 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        4 | 
+ 15 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        2 | 
+ 16 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        4 | 
+ 17 |   0.0    0.5    0.0   0.0  99.5    0.0  99.5 |        5 | 
+ 18 |   0.0    2.6    0.0   0.0  97.4    0.0  97.4 |        2 | 
+ 19 |   0.0    2.0    0.0   0.0  98.0    0.0  98.0 |        4 | 
+ 20 |   0.0    2.0    0.0   0.0  98.0    0.0  98.0 |        5 | 
+ 21 |   0.0   96.9    0.0   0.0   3.1    0.0   3.1 |        2 | <- almost always 0
+ 22 |   0.0   96.9    0.0   0.0   3.1    0.0   3.1 |        2 | <- almost always 0
+ 23 |   0.0   96.9    0.0   0.0   3.1    0.0   3.1 |        2 | <- almost always 0
+ 24 |   0.0   98.0    0.0   0.0   2.0    2.0   2.0 |        5 | <- almost always 0
+ 25 |   0.0   98.0    0.0   0.0   2.0    1.5   2.0 |        5 | <- almost always 0
+ 26 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 27 |   0.0    4.1    0.0   0.0  95.9   93.4  95.9 |      189 | floaty: 1.55476e-06..0.959175
+ 28 |   0.0    4.1    0.0   0.0  95.9   94.4  95.9 |      188 | floaty: 1.36994e-06..0.687635
+ 29 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 30 |   0.0    2.6    0.5   0.0  96.9   97.4  71.9 |      192 | floaty: -355.039..48.2686
+ 31 |   0.0    0.5    0.5   0.0  99.0   97.4  82.7 |      193 | floaty: -164.233..4.83309
+ 32 |   0.0   98.0    0.0   0.0   2.0    0.0   2.0 |        2 | <- almost always 0
+ 33 |   0.0    6.1    0.0   0.0  93.9   90.8  93.4 |      184 | floaty: -1.51325..1.06614
+ 34 |   0.0    2.6    0.0   0.0  97.4   86.2  96.9 |      186 | floaty: -2.59364..1.40324
+ 35 |   0.0   96.4    0.0   0.0   3.6    0.0   3.6 |        2 | <- almost always 0
+ 36 |   0.0    6.1    1.0   0.0  92.9   93.4  93.9 |      184 | floaty: 1.0143e-06..0.912549
+ 37 |   0.0    6.1    0.0   0.0  93.9   93.4  93.9 |      185 | floaty: 2.28333e-06..0.983052
+ 38 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 39 |   0.0   96.9    0.0   0.0   3.1    3.1   3.1 |        7 | <- almost always 0
+ 40 |   0.0    6.1    0.0   0.0  93.9    3.1  93.9 |        8 | 
+ 41 |   0.0    9.2    0.0   0.0  90.8    0.0  90.8 |        2 | 
+ 42 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 43 |   0.0   96.9    0.0   0.0   3.1    0.0   3.1 |        2 | <- almost always 0
+ 44 |   0.0   96.9    0.0   0.0   3.1    0.0   3.1 |        2 | <- almost always 0
+ 45 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 46 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 47 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+ 48 |   0.0  100.0    0.0   0.0   0.0    0.0   0.0 |        1 | CONSTANT 0x0
+
+  0xff runs in payload: n=474
+  run-length hist: {1: 82, 2: 1, 12: 17, 13: 362, 14: 7, 15: 4, 29: 1}
+  start%4 (payload-relative): {0: 190, 1: 9, 2: 247, 3: 28}
+  start%4 (record-relative, byte0 included): {0: 28, 1: 190, 2: 9, 3: 247}
+  runs of exactly 12: 17, of which payload-u32-aligned: 0
+
+===== GothamCity byte profile (pos 0..196; rec-rel incl byte0) =====
+legend: .=mixed  f=always ff  F>=90% ff  0=always 00  O>=90% 00  S>=90% 254  U=always same value
+   0: ..U..UUUUUUUUUUUUU.FUUUUUUUUUUUUU.UUUUUUUUUUUUU.U
+  49: .UUU.U.U.U.U.UUU.U.U.U.U.UUU.UOU.U.UOUUUOUOUOUOUO
+  98: OOOOOOOOUUU........UUUU........OUUU........OUUU..
+ 147: ......UUUUOOOO.OOO.UUUUUUUOUUUOUUUUUUUUUUUUUUUUUU
+ 196: U
+segments with distinct structure:
+  pos   0: mixed distinct=256 min=0 max=255
+  pos   1: mixed distinct=2 min=0 max=1
+  pos   2: CONST 0x00
+  pos   3: mixed distinct=2 min=1 max=255
+  pos   4: mixed distinct=2 min=2 max=255
+  pos   5: CONST 0xff
+  pos   6: CONST 0xff
+  pos   7: CONST 0xff
+  pos   8: CONST 0xff
+  pos   9: CONST 0xff
+  pos  10: CONST 0xff
+  pos  11: CONST 0xff
+  pos  12: CONST 0xff
+  pos  13: CONST 0xff
+  pos  14: CONST 0xff
+  pos  15: CONST 0xff
+  pos  16: CONST 0xff
+  pos  17: CONST 0xff
+  pos  18: mixed distinct=4 min=1 max=255
+  pos  20: CONST 0xff
+  pos  21: CONST 0xff
+  pos  22: CONST 0xff
+  pos  23: CONST 0xff
+  pos  24: CONST 0xff
+  pos  25: CONST 0xff
+  pos  26: CONST 0xff
+  pos  27: CONST 0xff
+  pos  28: CONST 0xff
+  pos  29: CONST 0xff
+  pos  30: CONST 0xff
+  pos  31: CONST 0xff
+  pos  32: CONST 0x00
+  pos  33: mixed distinct=4 min=1 max=5
+  pos  34: CONST 0x00
+  pos  35: CONST 0x00
+  pos  36: CONST 0x00
+  pos  37: CONST 0x00
+  pos  38: CONST 0x00
+  pos  39: CONST 0x00
+  pos  40: CONST 0x00
+  pos  41: CONST 0x00
+  pos  42: CONST 0x00
+  pos  43: CONST 0x06
+  pos  44: CONST 0x00
+  pos  45: CONST 0x03
+  pos  46: CONST 0x00
+  pos  47: mixed distinct=4 min=12 max=28
+  pos  48: CONST 0x00
+  pos  49: mixed distinct=2 min=0 max=12
+  pos  50: CONST 0x00
+  pos  51: CONST 0x00
+  pos  52: CONST 0x00
+  pos  53: mixed distinct=3 min=0 max=16
+  pos  54: CONST 0x00
+  pos  55: mixed distinct=2 min=0 max=2
+  pos  56: CONST 0x00
+  pos  57: mixed distinct=3 min=0 max=3
+  pos  58: CONST 0x00
+  pos  59: mixed distinct=4 min=0 max=28
+  pos  60: CONST 0x00
+  pos  61: mixed distinct=2 min=0 max=16
+  pos  62: CONST 0x00
+  pos  63: CONST 0x00
+  pos  64: CONST 0x00
+  pos  65: mixed distinct=4 min=0 max=17
+  pos  66: CONST 0x00
+  pos  67: mixed distinct=3 min=0 max=2
+  pos  68: CONST 0x00
+  pos  69: mixed distinct=4 min=0 max=4
+  pos  70: CONST 0x00
+  pos  71: mixed distinct=4 min=0 max=28
+  pos  72: CONST 0x00
+  pos  73: mixed distinct=2 min=0 max=20
+  pos  74: CONST 0x00
+  pos  75: CONST 0x00
+  pos  76: CONST 0x00
+  pos  77: mixed distinct=4 min=0 max=17
+  pos  78: CONST 0x00
+  pos  80: CONST 0x00
+  pos  81: mixed distinct=4 min=0 max=4
+
+===== GothamCity_Island2 byte profile (pos 0..196; rec-rel incl byte0) =====
+legend: .=mixed  f=always ff  F>=90% ff  0=always 00  O>=90% 00  S>=90% 254  U=always same value
+   0: .UU..UUUUUUUUUUUUU.FUUUUUUUUUUUUU.UUUUUUUUUUUUU.U
+  49: .UUU.U.U.U.U.UUU.U.U.U.U.UUU.UOU.U.UOUUUOUOUOUOUO
+  98: OOOOOOOUUUU........UUUU........OUUU........OUUU..
+ 147: ......UUUUOOOO.OOO.UUUUUUUOUUUOUUUUUUUUUUUUUUUUUU
+ 196: U
+segments with distinct structure:
+  pos   0: mixed distinct=196 min=0 max=195
+  pos   1: CONST 0x00
+  pos   2: CONST 0x00
+  pos   3: mixed distinct=2 min=1 max=255
+  pos   4: mixed distinct=2 min=2 max=255
+  pos   5: CONST 0xff
+  pos   6: CONST 0xff
+  pos   7: CONST 0xff
+  pos   8: CONST 0xff
+  pos   9: CONST 0xff
+  pos  10: CONST 0xff
+  pos  11: CONST 0xff
+  pos  12: CONST 0xff
+  pos  13: CONST 0xff
+  pos  14: CONST 0xff
+  pos  15: CONST 0xff
+  pos  16: CONST 0xff
+  pos  17: CONST 0xff
+  pos  18: mixed distinct=3 min=2 max=255
+  pos  20: CONST 0xff
+  pos  21: CONST 0xff
+  pos  22: CONST 0xff
+  pos  23: CONST 0xff
+  pos  24: CONST 0xff
+  pos  25: CONST 0xff
+  pos  26: CONST 0xff
+  pos  27: CONST 0xff
+  pos  28: CONST 0xff
+  pos  29: CONST 0xff
+  pos  30: CONST 0xff
+  pos  31: CONST 0xff
+  pos  32: CONST 0x00
+  pos  33: mixed distinct=4 min=1 max=5
+  pos  34: CONST 0x00
+  pos  35: CONST 0x00
+  pos  36: CONST 0x00
+  pos  37: CONST 0x00
+  pos  38: CONST 0x00
+  pos  39: CONST 0x00
+  pos  40: CONST 0x00
+  pos  41: CONST 0x00
+  pos  42: CONST 0x00
+  pos  43: CONST 0x06
+  pos  44: CONST 0x00
+  pos  45: CONST 0x03
+  pos  46: CONST 0x00
+  pos  47: mixed distinct=4 min=12 max=28
+  pos  48: CONST 0x00
+  pos  49: mixed distinct=2 min=0 max=12
+  pos  50: CONST 0x00
+  pos  51: CONST 0x00
+  pos  52: CONST 0x00
+  pos  53: mixed distinct=2 min=0 max=1
+  pos  54: CONST 0x00
+  pos  55: mixed distinct=2 min=0 max=2
+  pos  56: CONST 0x00
+  pos  57: mixed distinct=2 min=0 max=2
+  pos  58: CONST 0x00
+  pos  59: mixed distinct=4 min=0 max=28
+  pos  60: CONST 0x00
+  pos  61: mixed distinct=2 min=0 max=16
+  pos  62: CONST 0x00
+  pos  63: CONST 0x00
+  pos  64: CONST 0x00
+  pos  65: mixed distinct=4 min=0 max=17
+  pos  66: CONST 0x00
+  pos  67: mixed distinct=3 min=0 max=2
+  pos  68: CONST 0x00
+  pos  69: mixed distinct=4 min=0 max=4
+  pos  70: CONST 0x00
+  pos  71: mixed distinct=4 min=0 max=28
+  pos  72: CONST 0x00
+  pos  73: mixed distinct=2 min=0 max=20
+  pos  74: CONST 0x00
+  pos  75: CONST 0x00
+  pos  76: CONST 0x00
+  pos  77: mixed distinct=4 min=0 max=17
+  pos  78: CONST 0x00
+  pos  80: CONST 0x00
+  pos  81: mixed distinct=4 min=0 max=4
+
+--- GothamCity record 0 (file offset 4) ---
+byte0 = 0x00 (expect 0x00)
+  w00 off=  1: LE ffff0000 int 4294901760 f            nan   BE 0000ffff int      65535 f            nan
+  w01 off=  5: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w02 off=  9: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w03 off= 13: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w04 off= 17: LE ff0201ff int 4278321663 f    -1.7281e+38   BE ff0102ff int 4278256383 f    -1.7281e+38
+  w05 off= 21: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w06 off= 25: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w07 off= 29: LE 00ffffff int   16777215 f    2.35099e-38   BE ffffff00 int 4294967040 f    2.35099e-38
+  w08 off= 33: LE 00000003 int          3 f     4.2039e-45   BE 03000000 int   50331648 f     4.2039e-45
+  w09 off= 37: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w10 off= 41: LE 00060000 int     393216 f    5.51013e-40   BE 00000600 int       1536 f    5.51013e-40
+  w11 off= 45: LE 00140003 int    1310723 f    1.83671e-39   BE 03001400 int   50336768 f    1.83671e-39
+  w12 off= 49: LE 0000000c int         12 f    1.68156e-44   BE 0c000000 int  201326592 f    1.68156e-44
+  w13 off= 53: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w14 off= 57: LE 00140003 int    1310723 f    1.83671e-39   BE 03001400 int   50336768 f    1.83671e-39
+  w15 off= 61: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w16 off= 65: LE 00010011 int      65553 f    9.18593e-41   BE 11000100 int  285212928 f    9.18593e-41
+  w17 off= 69: LE 00140004 int    1310724 f    1.83672e-39   BE 04001400 int   67113984 f    1.83672e-39
+  w18 off= 73: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w19 off= 77: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w20 off= 81: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w21 off= 85: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w22 off= 89: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w23 off= 93: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w24 off= 97: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w25 off=101: LE 00000006 int          6 f    8.40779e-45   BE 06000000 int  100663296 f    8.40779e-45
+  w26 off=105: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w27 off=109: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w28 off=113: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w29 off=117: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w30 off=121: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w31 off=125: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w32 off=129: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w33 off=133: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w34 off=137: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w35 off=141: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w36 off=145: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w37 off=149: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w38 off=153: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w39 off=157: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w40 off=161: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w41 off=165: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w42 off=169: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w43 off=173: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w44 off=177: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w45 off=181: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w46 off=185: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w47 off=189: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w48 off=193: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+
+--- GothamCity record 1 (file offset 201) ---
+byte0 = 0x01 (expect 0x01)
+  w00 off=  1: LE ffff0000 int 4294901760 f            nan   BE 0000ffff int      65535 f            nan
+  w01 off=  5: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w02 off=  9: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w03 off= 13: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w04 off= 17: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w05 off= 21: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w06 off= 25: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w07 off= 29: LE 00ffffff int   16777215 f    2.35099e-38   BE ffffff00 int 4294967040 f    2.35099e-38
+  w08 off= 33: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w09 off= 37: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w10 off= 41: LE 00060000 int     393216 f    5.51013e-40   BE 00000600 int       1536 f    5.51013e-40
+  w11 off= 45: LE 000c0003 int     786435 f    1.10203e-39   BE 03000c00 int   50334720 f    1.10203e-39
+  w12 off= 49: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w13 off= 53: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w14 off= 57: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w15 off= 61: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w16 off= 65: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w17 off= 69: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w18 off= 73: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w19 off= 77: LE 00000006 int          6 f    8.40779e-45   BE 06000000 int  100663296 f    8.40779e-45
+  w20 off= 81: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w21 off= 85: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w22 off= 89: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w23 off= 93: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w24 off= 97: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w25 off=101: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w26 off=105: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w27 off=109: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w28 off=113: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w29 off=117: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w30 off=121: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w31 off=125: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w32 off=129: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w33 off=133: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w34 off=137: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w35 off=141: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w36 off=145: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w37 off=149: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w38 off=153: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w39 off=157: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w40 off=161: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w41 off=165: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w42 off=169: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w43 off=173: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w44 off=177: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w45 off=181: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w46 off=185: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w47 off=189: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w48 off=193: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+
+--- GothamCity record 2 (file offset 398) ---
+byte0 = 0x02 (expect 0x02)
+  w00 off=  1: LE ff010000 int 4278255616 f    -1.7147e+38   BE 000001ff int        511 f    -1.7147e+38
+  w01 off=  5: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w02 off=  9: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w03 off= 13: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w04 off= 17: LE ff0302ff int 4278387455 f   -1.74144e+38   BE ff0203ff int 4278322175 f   -1.74144e+38
+  w05 off= 21: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w06 off= 25: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w07 off= 29: LE 00ffffff int   16777215 f    2.35099e-38   BE ffffff00 int 4294967040 f    2.35099e-38
+  w08 off= 33: LE 00000004 int          4 f    5.60519e-45   BE 04000000 int   67108864 f    5.60519e-45
+  w09 off= 37: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w10 off= 41: LE 00060000 int     393216 f    5.51013e-40   BE 00000600 int       1536 f    5.51013e-40
+  w11 off= 45: LE 00180003 int    1572867 f    2.20406e-39   BE 03001800 int   50337792 f    2.20406e-39
+  w12 off= 49: LE 0000000c int         12 f    1.68156e-44   BE 0c000000 int  201326592 f    1.68156e-44
+  w13 off= 53: LE 00020001 int     131073 f    1.83672e-40   BE 01000200 int   16777728 f    1.83672e-40
+  w14 off= 57: LE 00180002 int    1572866 f    2.20405e-39   BE 02001800 int   33560576 f    2.20405e-39
+  w15 off= 61: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w16 off= 65: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w17 off= 69: LE 00180003 int    1572867 f    2.20406e-39   BE 03001800 int   50337792 f    2.20406e-39
+  w18 off= 73: LE 00000014 int         20 f     2.8026e-44   BE 14000000 int  335544320 f     2.8026e-44
+  w19 off= 77: LE 00010011 int      65553 f    9.18593e-41   BE 11000100 int  285212928 f    9.18593e-41
+  w20 off= 81: LE 00180004 int    1572868 f    2.20406e-39   BE 04001800 int   67115008 f    2.20406e-39
+  w21 off= 85: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w22 off= 89: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w23 off= 93: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w24 off= 97: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w25 off=101: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w26 off=105: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w27 off=109: LE 37806719 int  931161881 f    1.53068e-05   BE 19678037 int  426213431 f    1.53068e-05
+  w28 off=113: LE 37800080 int  931135616 f     1.5259e-05   BE 80008037 int 2147516471 f     1.5259e-05
+  w29 off=117: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w30 off=121: LE 3eff32cf int 1056912079 f       0.498435   BE cf32ff3e int 3476225854 f       0.498435
+  w31 off=125: LE 3f000000 int 1056964608 f            0.5   BE 0000003f int         63 f            0.5
+  w32 off=129: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w33 off=133: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w34 off=137: LE 00000006 int          6 f    8.40779e-45   BE 06000000 int  100663296 f    8.40779e-45
+  w35 off=141: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w36 off=145: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w37 off=149: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w38 off=153: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w39 off=157: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w40 off=161: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w41 off=165: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w42 off=169: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w43 off=173: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w44 off=177: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w45 off=181: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w46 off=185: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w47 off=189: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w48 off=193: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+
+--- GothamCity record 306 (file offset 60286) ---
+byte0 = 0x32 (expect 0x32)
+  w00 off=  1: LE ff010001 int 4278255617 f    -1.7147e+38   BE 010001ff int   16777727 f    -1.7147e+38
+  w01 off=  5: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w02 off=  9: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w03 off= 13: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w04 off= 17: LE ff0302ff int 4278387455 f   -1.74144e+38   BE ff0203ff int 4278322175 f   -1.74144e+38
+  w05 off= 21: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w06 off= 25: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w07 off= 29: LE 00ffffff int   16777215 f    2.35099e-38   BE ffffff00 int 4294967040 f    2.35099e-38
+  w08 off= 33: LE 00000004 int          4 f    5.60519e-45   BE 04000000 int   67108864 f    5.60519e-45
+  w09 off= 37: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w10 off= 41: LE 00060000 int     393216 f    5.51013e-40   BE 00000600 int       1536 f    5.51013e-40
+  w11 off= 45: LE 00180003 int    1572867 f    2.20406e-39   BE 03001800 int   50337792 f    2.20406e-39
+  w12 off= 49: LE 0000000c int         12 f    1.68156e-44   BE 0c000000 int  201326592 f    1.68156e-44
+  w13 off= 53: LE 00020001 int     131073 f    1.83672e-40   BE 01000200 int   16777728 f    1.83672e-40
+  w14 off= 57: LE 00180002 int    1572866 f    2.20405e-39   BE 02001800 int   33560576 f    2.20405e-39
+  w15 off= 61: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w16 off= 65: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w17 off= 69: LE 00180003 int    1572867 f    2.20406e-39   BE 03001800 int   50337792 f    2.20406e-39
+  w18 off= 73: LE 00000014 int         20 f     2.8026e-44   BE 14000000 int  335544320 f     2.8026e-44
+  w19 off= 77: LE 00010011 int      65553 f    9.18593e-41   BE 11000100 int  285212928 f    9.18593e-41
+  w20 off= 81: LE 00180004 int    1572868 f    2.20406e-39   BE 04001800 int   67115008 f    2.20406e-39
+  w21 off= 85: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w22 off= 89: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w23 off= 93: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w24 off= 97: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w25 off=101: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w26 off=105: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w27 off=109: LE 3519b03a int  890875962 f    5.72534e-07   BE 3ab01935 int  984619317 f    5.72534e-07
+  w28 off=113: LE 349ad2bb int  882561723 f    2.88381e-07   BE bbd29a34 int 3151141428 f    2.88381e-07
+  w29 off=117: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w30 off=121: LE 3ee6cba7 int 1055312807 f       0.450772   BE a7cbe63e int 2815157822 f       0.450772
+  w31 off=125: LE 3f427d2c int 1061322028 f       0.759722   BE 2c7d423f int  746406463 f       0.759722
+  w32 off=129: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w33 off=133: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w34 off=137: LE 00000006 int          6 f    8.40779e-45   BE 06000000 int  100663296 f    8.40779e-45
+  w35 off=141: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w36 off=145: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w37 off=149: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w38 off=153: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w39 off=157: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w40 off=161: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w41 off=165: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w42 off=169: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w43 off=173: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w44 off=177: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w45 off=181: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w46 off=185: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w47 off=189: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w48 off=193: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+
+--- GothamCity_Island2 record 0 (file offset 4) ---
+byte0 = 0x00 (expect 0x00)
+  w00 off=  1: LE ffff0000 int 4294901760 f            nan   BE 0000ffff int      65535 f            nan
+  w01 off=  5: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w02 off=  9: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w03 off= 13: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w04 off= 17: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w05 off= 21: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w06 off= 25: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w07 off= 29: LE 00ffffff int   16777215 f    2.35099e-38   BE ffffff00 int 4294967040 f    2.35099e-38
+  w08 off= 33: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w09 off= 37: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w10 off= 41: LE 00060000 int     393216 f    5.51013e-40   BE 00000600 int       1536 f    5.51013e-40
+  w11 off= 45: LE 000c0003 int     786435 f    1.10203e-39   BE 03000c00 int   50334720 f    1.10203e-39
+  w12 off= 49: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w13 off= 53: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w14 off= 57: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w15 off= 61: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w16 off= 65: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w17 off= 69: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w18 off= 73: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w19 off= 77: LE 00000006 int          6 f    8.40779e-45   BE 06000000 int  100663296 f    8.40779e-45
+  w20 off= 81: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w21 off= 85: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w22 off= 89: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w23 off= 93: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w24 off= 97: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w25 off=101: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w26 off=105: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w27 off=109: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w28 off=113: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w29 off=117: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w30 off=121: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w31 off=125: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w32 off=129: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w33 off=133: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w34 off=137: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w35 off=141: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w36 off=145: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w37 off=149: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w38 off=153: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w39 off=157: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w40 off=161: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w41 off=165: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w42 off=169: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w43 off=173: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w44 off=177: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w45 off=181: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w46 off=185: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w47 off=189: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w48 off=193: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+
+--- GothamCity_Island2 record 1 (file offset 201) ---
+byte0 = 0x01 (expect 0x01)
+  w00 off=  1: LE 02010000 int   33619968 f    9.47742e-38   BE 00000102 int        258 f    9.47742e-38
+  w01 off=  5: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w02 off=  9: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w03 off= 13: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w04 off= 17: LE ff0403ff int 4278453247 f   -1.75479e+38   BE ff0304ff int 4278387967 f   -1.75479e+38
+  w05 off= 21: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w06 off= 25: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w07 off= 29: LE 00ffffff int   16777215 f    2.35099e-38   BE ffffff00 int 4294967040 f    2.35099e-38
+  w08 off= 33: LE 00000005 int          5 f    7.00649e-45   BE 05000000 int   83886080 f    7.00649e-45
+  w09 off= 37: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w10 off= 41: LE 00060000 int     393216 f    5.51013e-40   BE 00000600 int       1536 f    5.51013e-40
+  w11 off= 45: LE 001c0003 int    1835011 f     2.5714e-39   BE 03001c00 int   50338816 f     2.5714e-39
+  w12 off= 49: LE 0000000c int         12 f    1.68156e-44   BE 0c000000 int  201326592 f    1.68156e-44
+  w13 off= 53: LE 00020001 int     131073 f    1.83672e-40   BE 01000200 int   16777728 f    1.83672e-40
+  w14 off= 57: LE 001c0002 int    1835010 f     2.5714e-39   BE 02001c00 int   33561600 f     2.5714e-39
+  w15 off= 61: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w16 off= 65: LE 00020002 int     131074 f    1.83674e-40   BE 02000200 int   33554944 f    1.83674e-40
+  w17 off= 69: LE 001c0002 int    1835010 f     2.5714e-39   BE 02001c00 int   33561600 f     2.5714e-39
+  w18 off= 73: LE 00000014 int         20 f     2.8026e-44   BE 14000000 int  335544320 f     2.8026e-44
+  w19 off= 77: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w20 off= 81: LE 001c0003 int    1835011 f     2.5714e-39   BE 03001c00 int   50338816 f     2.5714e-39
+  w21 off= 85: LE 00000018 int         24 f    3.36312e-44   BE 18000000 int  402653184 f    3.36312e-44
+  w22 off= 89: LE 00010011 int      65553 f    9.18593e-41   BE 11000100 int  285212928 f    9.18593e-41
+  w23 off= 93: LE 001c0004 int    1835012 f     2.5714e-39   BE 04001c00 int   67116032 f     2.5714e-39
+  w24 off= 97: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w25 off=101: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w26 off=105: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w27 off=109: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w28 off=113: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w29 off=117: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w30 off=121: LE 39b7c313 int  968344339 f    0.000350498   BE 13c3b739 int  331593529 f    0.000350498
+  w31 off=125: LE 393666dd int  959866589 f    0.000173952   BE dd663639 int 3714463289 f    0.000173952
+  w32 off=129: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w33 off=133: LE 3ef65940 int 1056332096 f        0.48115   BE 4059f63e int 1079637566 f        0.48115
+  w34 off=137: LE c025fe32 int 3223715378 f       -2.59364   BE 32fe25c0 int  855516608 f       -2.59364
+  w35 off=141: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w36 off=145: LE 35882340 int  898114368 f     1.0143e-06   BE 40238835 int 1076070453 f     1.0143e-06
+  w37 off=149: LE 36193b41 int  907623233 f    2.28333e-06   BE 413b1936 int 1094392118 f    2.28333e-06
+  w38 off=153: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w39 off=157: LE 3f5e1a56 int 1063131734 f       0.867589   BE 561a5e3f int 1444568639 f       0.867589
+  w40 off=161: LE 3f14fd99 int 1058340249 f       0.581995   BE 99fd143f int 2583499839 f       0.581995
+  w41 off=165: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w42 off=169: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w43 off=173: LE 00000006 int          6 f    8.40779e-45   BE 06000000 int  100663296 f    8.40779e-45
+  w44 off=177: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w45 off=181: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w46 off=185: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w47 off=189: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w48 off=193: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+
+--- GothamCity_Island2 record 2 (file offset 398) ---
+byte0 = 0x02 (expect 0x02)
+  w00 off=  1: LE 02010000 int   33619968 f    9.47742e-38   BE 00000102 int        258 f    9.47742e-38
+  w01 off=  5: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w02 off=  9: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w03 off= 13: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w04 off= 17: LE ff0403ff int 4278453247 f   -1.75479e+38   BE ff0304ff int 4278387967 f   -1.75479e+38
+  w05 off= 21: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w06 off= 25: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w07 off= 29: LE 00ffffff int   16777215 f    2.35099e-38   BE ffffff00 int 4294967040 f    2.35099e-38
+  w08 off= 33: LE 00000005 int          5 f    7.00649e-45   BE 05000000 int   83886080 f    7.00649e-45
+  w09 off= 37: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w10 off= 41: LE 00060000 int     393216 f    5.51013e-40   BE 00000600 int       1536 f    5.51013e-40
+  w11 off= 45: LE 001c0003 int    1835011 f     2.5714e-39   BE 03001c00 int   50338816 f     2.5714e-39
+  w12 off= 49: LE 0000000c int         12 f    1.68156e-44   BE 0c000000 int  201326592 f    1.68156e-44
+  w13 off= 53: LE 00020001 int     131073 f    1.83672e-40   BE 01000200 int   16777728 f    1.83672e-40
+  w14 off= 57: LE 001c0002 int    1835010 f     2.5714e-39   BE 02001c00 int   33561600 f     2.5714e-39
+  w15 off= 61: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w16 off= 65: LE 00020002 int     131074 f    1.83674e-40   BE 02000200 int   33554944 f    1.83674e-40
+  w17 off= 69: LE 001c0002 int    1835010 f     2.5714e-39   BE 02001c00 int   33561600 f     2.5714e-39
+  w18 off= 73: LE 00000014 int         20 f     2.8026e-44   BE 14000000 int  335544320 f     2.8026e-44
+  w19 off= 77: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w20 off= 81: LE 001c0003 int    1835011 f     2.5714e-39   BE 03001c00 int   50338816 f     2.5714e-39
+  w21 off= 85: LE 00000018 int         24 f    3.36312e-44   BE 18000000 int  402653184 f    3.36312e-44
+  w22 off= 89: LE 00010011 int      65553 f    9.18593e-41   BE 11000100 int  285212928 f    9.18593e-41
+  w23 off= 93: LE 001c0004 int    1835012 f     2.5714e-39   BE 04001c00 int   67116032 f     2.5714e-39
+  w24 off= 97: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w25 off=101: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w26 off=105: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w27 off=109: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w28 off=113: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w29 off=117: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w30 off=121: LE 38cab67e int  952809086 f     9.6661e-05   BE 7eb6ca38 int 2125908536 f     9.6661e-05
+  w31 off=125: LE 38b27213 int  951218707 f    8.50895e-05   BE 1372b238 int  326283832 f    8.50895e-05
+  w32 off=129: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w33 off=133: LE bfc1b22e int 3217142318 f       -1.51325   BE 2eb2c1bf int  783466943 f       -1.51325
+  w34 off=137: LE 3fb39d5e int 1068735838 f        1.40324   BE 5e9db33f int 1587393343 f        1.40324
+  w35 off=141: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w36 off=145: LE 36f9d1aa int  922341802 f    7.44519e-06   BE aad1f936 int 2865887542 f    7.44519e-06
+  w37 off=149: LE 36fe4320 int  922632992 f     7.5776e-06   BE 2043fe36 int  541326902 f     7.5776e-06
+  w38 off=153: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w39 off=157: LE 3e7dbd3e int 1048427838 f       0.247792   BE 3ebd7d3e int 1052605758 f       0.247792
+  w40 off=161: LE 3f3fa084 int 1061134468 f       0.748543   BE 84a03f3f int 2225094463 f       0.748543
+  w41 off=165: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w42 off=169: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w43 off=173: LE 00000006 int          6 f    8.40779e-45   BE 06000000 int  100663296 f    8.40779e-45
+  w44 off=177: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w45 off=181: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w46 off=185: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w47 off=189: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w48 off=193: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+
+--- GothamCity_Island2 record 100 (file offset 19704) ---
+byte0 = 0x64 (expect 0x64)
+  w00 off=  1: LE 02010000 int   33619968 f    9.47742e-38   BE 00000102 int        258 f    9.47742e-38
+  w01 off=  5: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w02 off=  9: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w03 off= 13: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w04 off= 17: LE ffff03ff int 4294902783 f            nan   BE ff03ffff int 4278452223 f            nan
+  w05 off= 21: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w06 off= 25: LE ffffffff int 4294967295 f            nan   BE ffffffff int 4294967295 f            nan
+  w07 off= 29: LE 00ffffff int   16777215 f    2.35099e-38   BE ffffff00 int 4294967040 f    2.35099e-38
+  w08 off= 33: LE 00000004 int          4 f    5.60519e-45   BE 04000000 int   67108864 f    5.60519e-45
+  w09 off= 37: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w10 off= 41: LE 00060000 int     393216 f    5.51013e-40   BE 00000600 int       1536 f    5.51013e-40
+  w11 off= 45: LE 00180003 int    1572867 f    2.20406e-39   BE 03001800 int   50337792 f    2.20406e-39
+  w12 off= 49: LE 0000000c int         12 f    1.68156e-44   BE 0c000000 int  201326592 f    1.68156e-44
+  w13 off= 53: LE 00020001 int     131073 f    1.83672e-40   BE 01000200 int   16777728 f    1.83672e-40
+  w14 off= 57: LE 00180002 int    1572866 f    2.20405e-39   BE 02001800 int   33560576 f    2.20405e-39
+  w15 off= 61: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w16 off= 65: LE 00020002 int     131074 f    1.83674e-40   BE 02000200 int   33554944 f    1.83674e-40
+  w17 off= 69: LE 00180002 int    1572866 f    2.20405e-39   BE 02001800 int   33560576 f    2.20405e-39
+  w18 off= 73: LE 00000014 int         20 f     2.8026e-44   BE 14000000 int  335544320 f     2.8026e-44
+  w19 off= 77: LE 00000010 int         16 f    2.24208e-44   BE 10000000 int  268435456 f    2.24208e-44
+  w20 off= 81: LE 00180003 int    1572867 f    2.20406e-39   BE 03001800 int   50337792 f    2.20406e-39
+  w21 off= 85: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w22 off= 89: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w23 off= 93: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w24 off= 97: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w25 off=101: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w26 off=105: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w27 off=109: LE 396960e1 int  963207393 f    0.000222567   BE e1606939 int 3781191993 f    0.000222567
+  w28 off=113: LE 39585b1f int  962091807 f    0.000206333   BE 1f5b5839 int  526080057 f    0.000206333
+  w29 off=117: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w30 off=121: LE 3fd0efb2 int 1070657458 f        1.63231   BE b2efd03f int 3002060863 f        1.63231
+  w31 off=125: LE 407d1cc2 int 1081941186 f        3.95488   BE c21c7d40 int 3256646976 f        3.95488
+  w32 off=129: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w33 off=133: LE 377eb0b3 int  931049651 f    1.51807e-05   BE b3b07e37 int 3014688311 f    1.51807e-05
+  w34 off=137: LE 377f593c int  931092796 f      1.522e-05   BE 3c597f37 int 1012498231 f      1.522e-05
+  w35 off=141: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w36 off=145: LE 3f0052fd int 1056985853 f       0.501266   BE fd52003f int 4250009663 f       0.501266
+  w37 off=149: LE 3eff7daf int 1056931247 f       0.499006   BE af7dff3e int 2944270142 f       0.499006
+  w38 off=153: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w39 off=157: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w40 off=161: LE 00000006 int          6 f    8.40779e-45   BE 06000000 int  100663296 f    8.40779e-45
+  w41 off=165: LE 00000001 int          1 f     1.4013e-45   BE 01000000 int   16777216 f     1.4013e-45
+  w42 off=169: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w43 off=173: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w44 off=177: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w45 off=181: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w46 off=185: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w47 off=189: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0
+  w48 off=193: LE 00000000 int          0 f              0   BE 00000000 int          0 f              0

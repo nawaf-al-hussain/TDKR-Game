@@ -95,8 +95,27 @@ def main():
               and len(man["glbs"]) > 0, f"{len(man.get('glbs', []))} glbs")
         check("manifest has tiers", isinstance(man.get("tiers"), dict),
               ",".join(f"{k}:{len(v)}" for k, v in man.get("tiers", {}).items()))
+        # session 15: live version must match main's working-tree manifest
+        try:
+            local = json.load(open("/home/z/my-project/work/TDKR-Game"
+                                   "/gh-pages/models/manifest.json"))
+            check("live manifest version == main",
+                  local.get("version") == man.get("version"),
+                  f"live={man.get('version')} main={local.get('version')}")
+        except OSError:
+            pass
     else:
         check("manifest.json fetch", st == 200, f"status {st}")
+
+    # session 15: served app.js carries the cache-busting hooks and the
+    # frame-warning surfacing (regression guard for the stale-v13 class)
+    st, _, body = fetch(base + "app.js")
+    js = body.decode("utf-8", "replace") if st == 200 else ""
+    check("app.js has APP_CACHE_VERSION", "APP_CACHE_VERSION" in js)
+    check("app.js busts manifest URL", "MANIFEST_URL}?v=" in js
+          or "manifest.json?v=" in js)
+    check("app.js busts GLB URLs", "?v=" in js and "state.manifestVersion" in js)
+    check("app.js surfaces frameWarning", "frameWarning" in js)
 
     if man:
         glbs = man["glbs"]
@@ -105,10 +124,11 @@ def main():
         bad = stems & ISLAND2_SKYLINE
         check("no island-2 skyline GLBs in manifest", not bad, str(sorted(bad)))
 
-        # 4. every GLB
+        # 4. every GLB (fetch with the cache-bust suffix the viewer uses)
         if not args.skip_glbs:
+            bust = f"?v=v{man.get('version')}"
             for g in glbs:
-                url = base + g["file"]
+                url = base + g["file"] + bust
                 st, hd, _ = fetch(url, "GET")
                 size_ok = True
                 cl = hd.get("Content-Length") or hd.get("content-length")
@@ -117,7 +137,7 @@ def main():
                 check(f"GLB {g['file']}", st == 200 and size_ok,
                       f"status {st} len {cl} vs {g.get('bytes')}")
 
-        # 5. every texture (models/tex/<stem>.jpg)
+        # 5. every texture (models/tex/<stem>.jpg) — bust with manifest version
         texs = set()
         for g in glbs:
             for fe in g.get("files", []):
@@ -125,8 +145,9 @@ def main():
                     if t and t != "__dark":
                         texs.add(t)
         missing = []
+        bust = f"?v=v{man.get('version')}"
         for t in sorted(texs):
-            st, _, _ = fetch(f"{base}models/tex/{t}.jpg", "GET")
+            st, _, _ = fetch(f"{base}models/tex/{t}.jpg{bust}", "GET")
             if st != 200:
                 missing.append(f"{t}.jpg({st})")
         check(f"textures ({len(texs)} files)", not missing,

@@ -1,10 +1,10 @@
 # CLAUDE_HANDOFF.md — problem brief for an outside AI collaborator
 
-*Written 2026-10-09, updated after session 14. Everything below is verifiable
+*Written 2026-10-09, updated after session 15. Everything below is verifiable
 in this public repo: https://github.com/nawaf-al-hussain/TDKR-Game — live
 viewer: https://nawaf-al-hussain.github.io/TDKR-Game/*
 
-## 0. TL;DR — UPDATED AFTER SESSION 14 (same day)
+## 0. TL;DR — UPDATED AFTER SESSION 15 (same day)
 
 We are reverse-engineering Gameloft's delisted mobile game **The Dark Knight
 Rises (2012)** to rebuild its open-world Gotham City in a browser 3D viewer.
@@ -21,12 +21,20 @@ records.
   `ConstructColladaScene` → **`CLevel::AddLowPolyLongDistanceNode`**):
   `GothamCity.lvc @0x55545: objId=111989, TRS pos=(-730.0, -1250.0, 0.0)
   rot=(0,-0,0) scale=(1,1,1), mesh='gc_island1_longdist.bdae'`.
-  Validated by ZNCC of street-vertex density vs skyline roof density:
-  **+0.66 at this TRS** (-0.04 identity, +0.08 at the old value).
-  The session-12 value (-141.69, -681.15, 0.114) was **Batman's spawn
-  point** — a `0x2662 CSpawnPointObject` record for `batman.bdae`
-  (@0x5557d) whose bytes overlap the skyline record's mesh-name field;
-  the earlier scan read them as a "CTemplateObject" TRS.
+  Session 15 hardened this: **AddLowPolyLongDistanceNode @0x48b140 applies
+  NO further offset** (identity container node "LPLDBatchCollect" under the
+  scene root; sole caller LoadNextObject; the batch merger uses
+  updateAbsolutePosition). Two more negative tests were run and are
+  **honestly negative**: the roof/road sweep (fraction of road vertices
+  under roof footprints, ±60u) has **no sharp minimum at the record**
+  (@record 0.0276 vs landscape mean 0.0247 vs global min 0.0102 @(+60,+46);
+  constrained-by-building-coverage min 0.0231 @(-58,-10)) — like every
+  density metric in this one-blob city it cannot discriminate; the
+  placement rests on the engine record + centroid correspondence. The
+  round numbers: the same (-730,-1250,0) TRS is shared by the 0x14051
+  record and TWO 0x14050 reflection records (footprint_ic, railway) — an
+  authored far-field group origin; it matches NO stream_info/bih_struct
+  bbox corner or center.
 - **Island-2's LongDist units have NO record in the main level** — the only
   0x14051 in `GothamCity_Island2.lvc` (@0x58a0a, same TRS -730,-1250)
   belongs to the separate island-2 level. All 5 island-2 skyline GLBs were
@@ -170,48 +178,57 @@ each with a real world TRS), 4 bake-group templates. Full walk outputs:
 
 ## 5. THE BLOCKERS (all knowns, all unknowns)
 
-### B. Street batch material index — LAYOUT SOLVED (session 14), value semantics open
+### B. Street segment→material link — **SOLVED in session 15** (lod descriptor +40); batch_info = per-material parameter block
 
 **What we need**: for each segment of the streamed street geometry, the
 material index into the zone material DB (cracked in session 10 — now
 counted exactly: **307 island-1 / 196 island-2 materials**, from
 `source.dae` in each `<island>_materials.bdae`).
 
-**SOLVED this session (full evidence pack:
-`extraction/re/batch_info_evidence14.md`):**
+**SOLVED (session 15): the segment descriptor's u32 at +40 IS the material
+index.** All 1,526 island-1 segments: 139 distinct values, range 0..305 <
+307; all 1,020 island-2 segments: 88 distinct, 4..194 < 196.
+Cross-validation: the top value (74, 210 segments) resolves to a material
+whose LightMap is `BakeGroup_Island1_Roads0.tga`; next values resolve to
+Street/Railroad props — height-bucketed distributions are semantically
+correct. Script: `extraction/re/lod_segfield15.py`; per-material
+DiffuseMap/LightMap table: `extraction/re/mat_tex_{island}.json`
+(from `source.dae` setparam→surface→image chains).
 
-```
-batch_info.bin := u32(197) + M × 197-byte records      M = material count
-record(m)      := u8(m)  + 196 slot bytes
-```
+**batch_info.bin (layout from session 14, semantics narrowed in 15) =**
+`u32(197) + M × 197-byte records`, **one record per material — a fixed
+template parameter block, NOT the segment→material map** (that lives in
+the descriptor +40):
 
-- M = 307 (island1) / 196 (island2) — the exact division that motivated
-  the old "197 records of 307/196 B" reading was an arithmetic shadow of
-  this layout.
-- Record m starts with byte m (material index; verified 307/307 + 196/196,
-  mod 256 for m ≥ 256). The file header 197 = record stride, NOT a count;
-  stream_info.bin repeats it as its last u32 (it is
-  `[6×f32 bbox][u32 X][u32 197]`).
-- Slot bytes: 0xFF 13.4% (12–13-long runs), 0x00 68%, values 0..254
-  saturating; adjacent slots highly correlated; f32 groups (UV-rect-like)
-  around in-record offsets 75–115.
+- bytes 0–1: material index (u16 LE); rec 3/4: {1,255}/{2,255};
+- two 0xff sentinel regions (rec 5–16 and rec 20/21–31/32 — the "three
+  aligned -1 words" ×2);
+- rec 45–108: small-value u16-ish array (≤28; declaration-like, open);
+- **rec 109–156: four 12-byte vec3 f32 groups** (LE): per-technique UV
+  scale/offset-like params (Animated: ~1e-5 scroll pairs;
+  2Sided/Default/Reflection: (scaleU,scaleV) e.g. (42.2,0.25),
+  (-2.03,-1.04) + (offsetU,offsetV) ∈ [0,1]; ~unique per material);
+  BE decode rejected; f16 rejected.
+- Engine chain (symtab-true): CLevelStreaming_DB::Load @0x3f6dfc maps
+  zip members → this+{0xf0 stream_info, 0xf4 bih_data, 0xf8 bih_struct,
+  0xfc batch_info, 0x100 materials.bdae, 0x104 lod_table, 0x108 lod_data,
+  0x10c lod_selector}; **CDoubleBufferedDynamicBatchMesh ctor @0x45c750
+  consumes (stream_info, batch_info, materials)**; getBatchMaterial's
+  uint arg is UNUSED — SBatch+0x8 already holds the CMaterial.
+  Session-14's "helpers" 0x3dac58/0x42e2bc/0x455e2c were
+  misattributed (Application::GetInstance / CHUDDisplay::HideHint /
+  TrackingManager::AddEvent) — corrected.
+- Side result: **bih_struct = 100×100×1 regular grid**: [aabbox3d][100]
+  [100][1][10001×u32 LE offsets → BIH payload] (CRegularGridStreaming
+  ctor @0x45db7c).
 
-**Remaining unknowns (the asks):**
-1. The semantics of the 196 slots and their byte values. Fixed engine pool
-   (both islands share the SAME slot count while segment counts differ
-   1,526 vs 1,020) is the leading hypothesis; 0 = free / FF = N/A / value
-   = per-(material, slot) segment count or weight — unresolved. A u16
-   reading of the slots does NOT produce clean values.
-2. The engine reader: `CLevelStreaming_DB::Load` @0x406dfc orchestrates;
-   the per-file parse is in non-exported helpers (bl targets 0x3dac58 ×8,
-   0x42e2bc ×7, 0x455e2c ×6). The stream-name table @0xb40704 has NO
-   absolute pointers in the whole image (full-file literal scan) — it is
-   reached via a computed base + enum index, so string-xref hunting is a
-   dead end; the enum-index code path in PrepareFiles/Load is the way in.
-3. stream_info's X u32 (234,466 / 303,832).
-4. Cross-check: match material m's slot values against the street GLB
-   per-mesh material bindings (gt DB) — if slot ≈ spatial batch, per-
-   (material, slot) mesh counts should track the byte values.
+**Remaining unknowns:** the exact meaning of each vec3 group per
+technique, the u16 array, stream_info X (234,466/303,832), descriptor
++36 (0..3772, near-unique per segment). The stream-name table @0xb40704
+has NO absolute pointers in the whole image (literal scan, movw/movt scan,
+reloc scan all empty) — it is reached via a GOT-relative thunk with a
+`rsb r1, r1, #0xB4` backwards index, so string-xref hunting is a dead
+end; the enum-index code path in Load is the way in (done, §above).
 
 ### Hero units (secondary)
 
