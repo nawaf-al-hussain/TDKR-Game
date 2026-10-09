@@ -363,6 +363,35 @@ void main() {
   gl_Position = projectionMatrix * mv;
 }`;
 
+// v11: LightMapDC two-channel variant — TEXCOORD_0 feeds the DiffuseMap,
+// TEXCOORD_1 (game Coord1 * so1) feeds the shared island bake page.
+const cityVertLM = /* glsl */`
+attribute vec2 uv1;
+varying vec2 vUv;
+varying vec2 vUv1;
+varying float vDepth;
+varying vec3 vWorld;
+varying float vFogFactor;
+varying float vFogY;
+varying vec2  vFogUV;
+uniform float uFogStart;
+uniform float uFogScale;
+uniform float uVFogHeight;
+uniform float uFogDecay;
+uniform vec4  uFogMap;
+void main() {
+  vUv = uv;
+  vUv1 = uv1;
+  vec4 wp = modelMatrix * vec4(position, 1.0);
+  vWorld = wp.xyz;
+  vec4 mv = modelViewMatrix * vec4(position, 1.0);
+  vDepth = -mv.z;
+  vFogFactor = (vDepth - uFogStart) * uFogScale;
+  vFogY = vWorld.y * uVFogHeight + vFogFactor * uFogDecay;
+  vFogUV = (vec2(vWorld.x, -vWorld.z) - uFogMap.xy) * uFogMap.zw;
+  gl_Position = projectionMatrix * mv;
+}`;
+
 const cityFrag = /* glsl */`
 precision mediump float;
 uniform sampler2D map;
@@ -414,6 +443,50 @@ function makeCityMaterial(tex, uMult) {
     },
     vertexShader: cityVert,
     fragmentShader: cityFrag,
+    side: THREE.DoubleSide,
+  });
+}
+
+// v11 engine parity: LightMapDC = DiffuseMap(Coord0) * LightMap(Coord1) * 2.
+// The bake pages are the game's own per-object Beast tiles — multiplying the
+// albedo back in restores the building structure the bake-only render lost.
+function makeCityMaterialLM(tex, lmTex, uMult) {
+  return new THREE.ShaderMaterial({
+    uniforms: {
+      map: { value: tex },
+      lmap: { value: lmTex },
+      uMult: { value: uMult },
+      ...fogUniforms,
+    },
+    vertexShader: cityVertLM,
+    fragmentShader: /* glsl */`precision mediump float;
+      uniform sampler2D map;
+      uniform sampler2D lmap;
+      uniform float uMult;
+      uniform sampler2D uFogTex;
+      uniform vec3  uFogColor;
+      uniform float uFogAlpha;
+      uniform float uVFogHeight;
+      uniform float uVFogAlpha;
+      uniform float uFogStart;
+      uniform float uFogScale;
+      uniform float uFogDecay;
+      uniform vec4  uFogMap;
+      varying vec2 vUv;
+      varying vec2 vUv1;
+      varying float vDepth;
+      varying vec3 vWorld;
+      varying float vFogFactor;
+      varying float vFogY;
+      varying vec2  vFogUV;
+      void main() {
+        // LightMapDC-FS exact: DiffuseMapColor * texture2D(LightMap, vCoord1) * 2.0
+        vec3 col = texture2D(map, vUv).rgb * texture2D(lmap, vUv1).rgb * uMult;
+        vec4 FogMapColor = vec4(texture2D(uFogTex, vFogUV).rgb, uVFogAlpha);
+        vec4 fogCol2 = mix(FogMapColor, vec4(uFogColor, uFogAlpha), clamp(vFogY, 0.0, 1.0));
+        col = mix(col, fogCol2.rgb, clamp(vFogFactor, 0.0, 1.0) * fogCol2.a);
+        gl_FragColor = vec4(col, 1.0);
+      }`,
     side: THREE.DoubleSide,
   });
 }
@@ -496,14 +569,31 @@ async function loadGLB(entry, tierName) {
     const raw = obj.material?.name || '';
     const isDark = raw === '__dark';
     const pipe = raw.split('|');
-    const texName = !isDark && pipe[0] ? pipe[0] : null;
-    const isAdd = !isDark && pipe[1] === 'add';
-    const mode = !isDark && pipe[1] === '2x' ? 2.0 : 1.0;
+    // v11 contract: '<dif>|<lm>|<mode>' (lightmapped) or '<tex>|<mode>'
+    let texName = null, lmName = null, modeStr = 'd';
+    if (!isDark) {
+      if (pipe.length >= 3) {
+        texName = pipe[0] || null;
+        lmName = pipe[1] || null;
+        modeStr = pipe[2] || 'd';
+      } else {
+        texName = pipe[0] || null;
+        modeStr = pipe[1] || 'd';
+      }
+    }
+    const isAdd = !isDark && modeStr === 'add';
+    const mode = !isDark && modeStr === '2x' ? 2.0 : 1.0;
     const texPromise = texName ? getTex(texName) : Promise.resolve(null);
+    const lmPromise = lmName ? getTex(lmName) : Promise.resolve(null);
     obj.material = new THREE.MeshLambertMaterial({ color: 0x101623, side: THREE.DoubleSide });
-    texPromise.then((tex) => {
+    Promise.all([texPromise, lmPromise]).then(([tex, lm]) => {
       if (isAdd && tex) {
         obj.material = makeAdditiveMaterial(tex);
+      } else if (tex && lm) {
+        obj.material = makeCityMaterialLM(tex, lm, mode);
+      } else if (lm && !tex) {
+        // bake page alone (x2) — object whose DiffuseMap is a runtime bake
+        obj.material = makeCityMaterial(lm, 2.0);
       } else if (tex) {
         obj.material = makeCityMaterial(tex, mode);
       } else {

@@ -77,7 +77,7 @@
   },
   {
    "file": "models/GC_Bigbridge_1_islands_LongDist.glb",
-   "bytes": 83068,
+   "bytes": 99896,
    "verts": 2084,
    "tris": 1268,
    "tier": "hero",
@@ -85,6 +85,7 @@
     {
      "name": "GC_Bigbridge_1_islands_LongDist",
      "texs": [
+      "BakeGroup_Island1_Roads0",
       "bridge_tile"
      ],
      "verts": 2084,
@@ -113,7 +114,7 @@
   },
   {
    "file": "models/GC_Bigbridge_3_LongDist.glb",
-   "bytes": 81308,
+   "bytes": 97780,
    "verts": 2040,
    "tris": 1240,
    "tier": "hero",
@@ -121,6 +122,7 @@
     {
      "name": "GC_Bigbridge_3_LongDist",
      "texs": [
+      "BakeGroup_Island1_A0",
       "bridge_tile"
      ],
      "verts": 2040,
@@ -353,7 +355,7 @@
   },
   {
    "file": "models/GC_Monorail_Island1_LongDist.glb",
-   "bytes": 105780,
+   "bytes": 127340,
    "verts": 2675,
    "tris": 1584,
    "tier": "hero",
@@ -361,6 +363,7 @@
     {
      "name": "GC_Monorail_Island1_LongDist",
      "texs": [
+      "BakeGroup_Island1_Roads0",
       "GC_Residential_Props_Monorail"
      ],
      "verts": 2675,
@@ -371,7 +374,7 @@
   },
   {
    "file": "models/GC_Monorail_Island2_LongDist.glb",
-   "bytes": 182024,
+   "bytes": 218672,
    "verts": 4561,
    "tris": 2908,
    "tier": "hero",
@@ -379,6 +382,7 @@
     {
      "name": "GC_Monorail_Island2_LongDist",
      "texs": [
+      "BakeGroup_Island2_Roads0",
       "GC_Residential_Props_Monorail"
      ],
      "verts": 4561,
@@ -389,14 +393,16 @@
   },
   {
    "file": "models/GC_Railway_Island2_LongDist.glb",
-   "bytes": 36212,
+   "bytes": 36228,
    "verts": 802,
    "tris": 784,
    "tier": "hero",
    "files": [
     {
      "name": "GC_Railway_Island2_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Roads0"
+     ],
      "verts": 802,
      "tris": 784,
      "meshes": 1
@@ -405,14 +411,16 @@
   },
   {
    "file": "models/GC_Small_Bridge_Island2_LongDist.glb",
-   "bytes": 15532,
+   "bytes": 15548,
    "verts": 354,
    "tris": 254,
    "tier": "hero",
    "files": [
     {
      "name": "GC_Small_Bridge_Island2_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island2_Roads0"
+     ],
      "verts": 354,
      "tris": 254,
      "meshes": 1
@@ -443,7 +451,7 @@
   },
   {
    "file": "models/fp_island2.glb",
-   "bytes": 3761492,
+   "bytes": 3851300,
    "verts": 93738,
    "tris": 50969,
    "tier": "fp",
@@ -536,7 +544,9 @@
     },
     {
      "name": "GC_Footprint_AG_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 640,
      "tris": 364,
      "meshes": 1
@@ -587,7 +597,8 @@
     {
      "name": "GC_Footprint_AWT_LongDist",
      "texs": [
-      "BakeGroup_Island1_Landmarks0"
+      "BakeGroup_Island1_Landmarks0",
+      "GC_Footprint_AWT"
      ],
      "verts": 1253,
      "tris": 823,
@@ -664,7 +675,9 @@
     },
     {
      "name": "GC_Footprint_CE_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 1127,
      "tris": 683,
      "meshes": 1
@@ -805,6 +818,7 @@
     {
      "name": "GC_Footprint_DA_Elevators",
      "texs": [
+      "BakeGroup_Island1_A0",
       "GC_Residential_BD_03_details_01"
      ],
      "verts": 348,
@@ -977,6 +991,7 @@
     {
      "name": "GC_Footprint_GA_LongDist",
      "texs": [
+      "BakeGroup_Island1_A0",
       "GC_LongDist_Island2_Roads"
      ],
      "verts": 142,
@@ -1011,7 +1026,8 @@
     {
      "name": "GC_Footprint_GC_LongDist",
      "texs": [
-      "BakeGroup_Island1_B0"
+      "BakeGroup_Island1_B0",
+      "GC_LongDist_Island1_FP3"
      ],
      "verts": 136,
      "tris": 98,
@@ -1038,7 +1054,8 @@
     {
      "name": "GC_Footprint_GF_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "BakeGroup_Island1_A0",
+      "GC_LongDist_Island1_Roads"
      ],
      "verts": 184,
      "tris": 98,
@@ -1092,6 +1109,7 @@
     {
      "name": "GC_Footprint_IC_LongDist",
      "texs": [
+      "BakeGroup_Island1_A0",
       "GC_Footprint_IC"
      ],
      "verts": 156,
@@ -1323,7 +1341,8 @@
     {
      "name": "GC_Footprint_VB_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "BakeGroup_Island1_A0",
+      "GC_LongDist_Island2_Roads"
      ],
      "verts": 181,
      "tris": 88,
@@ -1332,6 +1351,7 @@
     {
      "name": "GC_Footprint_VB_Reflection",
      "texs": [
+      "BakeGroup_Island1_Roads0",
       "GC_Statues_Atlas"
      ],
      "verts": 84,
@@ -1341,7 +1361,8 @@
     {
      "name": "GC_Footprint_VC_LongDist",
      "texs": [
-      "BakeGroup_Island1_A0"
+      "BakeGroup_Island1_A0",
+      "GC_LongDist_Island2_Roads"
      ],
      "verts": 201,
      "tris": 75,
@@ -1395,7 +1416,8 @@
     {
      "name": "GC_Footprint_VPOW_LongDist",
      "texs": [
-      "BakeGroup_Island1_Landmarks0"
+      "BakeGroup_Island1_Landmarks0",
+      "GC_LongDist_Island2_Roads"
      ],
      "verts": 6397,
      "tris": 3296,
@@ -1413,7 +1435,8 @@
     {
      "name": "GC_Footprint_VPOW_Volumetric",
      "texs": [
-      "BakeGroup_Island1_Landmarks0"
+      "BakeGroup_Island1_Landmarks0",
+      "City_BKG"
      ],
      "verts": 44,
      "tris": 32,
@@ -1439,7 +1462,9 @@
     },
     {
      "name": "GC_Footprint_ZA_LongDist",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_B0"
+     ],
      "verts": 442,
      "tris": 243,
      "meshes": 1
@@ -1495,6 +1520,7 @@
     {
      "name": "GC_Footprint_ZE_Reflection",
      "texs": [
+      "BakeGroup_Island2_B0",
       "GC_Shop_Reflections"
      ],
      "verts": 1312,
@@ -1558,7 +1584,9 @@
     },
     {
      "name": "GC_footprint_aa_elevator",
-     "texs": [],
+     "texs": [
+      "BakeGroup_Island1_A0"
+     ],
      "verts": 174,
      "tris": 86,
      "meshes": 1
@@ -1567,7 +1595,7 @@
   },
   {
    "file": "models/city_low.glb",
-   "bytes": 1179716,
+   "bytes": 1179884,
    "verts": 28495,
    "tris": 17614,
    "tier": "low",
@@ -1837,7 +1865,7 @@
   },
   {
    "file": "models/district_00.glb",
-   "bytes": 981696,
+   "bytes": 981884,
    "verts": 21908,
    "tris": 13650,
    "tier": "district",
@@ -1910,6 +1938,15 @@
      "meshes": 3
     },
     {
+     "name": "GC_Smal_Bridge_LongDist",
+     "texs": [
+      "BakeGroup_Island1_Roads0"
+     ],
+     "verts": 398,
+     "tris": 292,
+     "meshes": 1
+    },
+    {
      "name": "HC_Prop_BillboardRoof_01",
      "texs": [
       "HC_Prop_BillboardRoof_01"
@@ -1962,13 +1999,6 @@
      "verts": 492,
      "tris": 246,
      "meshes": 2
-    },
-    {
-     "name": "GC_Smal_Bridge_LongDist",
-     "texs": [],
-     "verts": 398,
-     "tris": 292,
-     "meshes": 1
     },
     {
      "name": "GC_Diner_Logo",
@@ -2490,7 +2520,7 @@
   },
   {
    "file": "models/street_island1_00.glb",
-   "bytes": 124656,
+   "bytes": 124504,
    "verts": 3473,
    "tris": 4235,
    "tier": "street",
@@ -2505,7 +2535,7 @@
   },
   {
    "file": "models/street_island1_01.glb",
-   "bytes": 2939448,
+   "bytes": 2939140,
    "verts": 79084,
    "tris": 97706,
    "tier": "street",
@@ -2520,7 +2550,7 @@
   },
   {
    "file": "models/street_island1_02.glb",
-   "bytes": 4013784,
+   "bytes": 4013300,
    "verts": 109949,
    "tris": 133725,
    "tier": "street",
@@ -2535,7 +2565,7 @@
   },
   {
    "file": "models/street_island1_03.glb",
-   "bytes": 798180,
+   "bytes": 797712,
    "verts": 21878,
    "tris": 26988,
    "tier": "street",
@@ -2550,7 +2580,7 @@
   },
   {
    "file": "models/street_island1_04.glb",
-   "bytes": 4760304,
+   "bytes": 4760160,
    "verts": 131983,
    "tris": 161104,
    "tier": "street",
@@ -2565,7 +2595,7 @@
   },
   {
    "file": "models/street_island1_05.glb",
-   "bytes": 4717500,
+   "bytes": 4717032,
    "verts": 131229,
    "tris": 159405,
    "tier": "street",
@@ -2580,7 +2610,7 @@
   },
   {
    "file": "models/street_island1_06.glb",
-   "bytes": 382080,
+   "bytes": 381276,
    "verts": 10705,
    "tris": 12552,
    "tier": "street",
@@ -2595,7 +2625,7 @@
   },
   {
    "file": "models/street_island1_07.glb",
-   "bytes": 3549208,
+   "bytes": 3548576,
    "verts": 102990,
    "tris": 116875,
    "tier": "street",
@@ -2610,7 +2640,7 @@
   },
   {
    "file": "models/street_island1_08.glb",
-   "bytes": 2132532,
+   "bytes": 2132384,
    "verts": 60140,
    "tris": 72463,
    "tier": "street",
@@ -2640,7 +2670,7 @@
   },
   {
    "file": "models/street_island2_01.glb",
-   "bytes": 1512736,
+   "bytes": 1512568,
    "verts": 42653,
    "tris": 50838,
    "tier": "street",
@@ -2655,7 +2685,7 @@
   },
   {
    "file": "models/street_island2_02.glb",
-   "bytes": 236364,
+   "bytes": 236196,
    "verts": 6280,
    "tris": 8087,
    "tier": "street",
@@ -2670,7 +2700,7 @@
   },
   {
    "file": "models/street_island2_03.glb",
-   "bytes": 403692,
+   "bytes": 403364,
    "verts": 11064,
    "tris": 13939,
    "tier": "street",
@@ -2685,7 +2715,7 @@
   },
   {
    "file": "models/street_island2_04.glb",
-   "bytes": 2156984,
+   "bytes": 2156512,
    "verts": 60927,
    "tris": 73653,
    "tier": "street",
@@ -2700,7 +2730,7 @@
   },
   {
    "file": "models/street_island2_05.glb",
-   "bytes": 1844720,
+   "bytes": 1844092,
    "verts": 48266,
    "tris": 65543,
    "tier": "street",
@@ -2715,7 +2745,7 @@
   },
   {
    "file": "models/street_island2_06.glb",
-   "bytes": 1199464,
+   "bytes": 1198832,
    "verts": 33324,
    "tris": 41243,
    "tier": "street",
@@ -2730,7 +2760,7 @@
   },
   {
    "file": "models/street_island2_07.glb",
-   "bytes": 3568476,
+   "bytes": 3567844,
    "verts": 100915,
    "tris": 121256,
    "tier": "street",
@@ -2745,7 +2775,7 @@
   },
   {
    "file": "models/street_island2_08.glb",
-   "bytes": 2456572,
+   "bytes": 2456100,
    "verts": 66791,
    "tris": 82258,
    "tier": "street",
@@ -2760,7 +2790,7 @@
   },
   {
    "file": "models/street_island2_09.glb",
-   "bytes": 590512,
+   "bytes": 590044,
    "verts": 16525,
    "tris": 20373,
    "tier": "street",
@@ -2775,7 +2805,7 @@
   },
   {
    "file": "models/street_island2_10.glb",
-   "bytes": 4514320,
+   "bytes": 4513688,
    "verts": 126874,
    "tris": 155870,
    "tier": "street",
@@ -2790,7 +2820,7 @@
   },
   {
    "file": "models/street_island2_11.glb",
-   "bytes": 750052,
+   "bytes": 749420,
    "verts": 20471,
    "tris": 24960,
    "tier": "street",
@@ -2806,5 +2836,5 @@
  ],
  "total_verts": 1535059,
  "total_tris": 1647858,
- "version": 10
+ "version": 11
 }
