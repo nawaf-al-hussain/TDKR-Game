@@ -291,8 +291,7 @@ fogTexLoader.load(FOG.mapTex, (t) => {
 });
 
 const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 1, 12000);
-// start at street level over island1 (GLB axes: x = game x, y = game z)
-camera.position.set(200, 260, 1500);
+camera.position.set(650, 420, 760);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 window.__v = { scene, camera, controls, state, FOG, lutPass, lightningState, triggerLightning }; // debug hook
@@ -779,47 +778,39 @@ function clearStatus() { $('load-status').textContent = ''; }
     const tier = g.tier || 'district';
     (state.tiers[tier] ??= { enabled: false, glbs: [], loaded: false }).glbs.push(g);
   }
-  // v12 boot policy (session 11): the streamed STREET tier is the only
-  // world-placed, engine-material-bound city geometry today — the LongDist
-  // bake units (hero assemblies + fp footprints) are authored in LOCAL
-  // coordinates and pile up at the origin until the lvc node-graph
-  // transforms are decoded.  They stay available as research toggles but no
-  // longer render by default — they were the 'grass/roads on buildings'.
-  if (state.tiers.street) state.tiers.street.enabled = true;
-  // district props: several are authored in LOCAL space (unplaced) — keep
-  // off by default to avoid floating geometry over the city
+  state.tiers.hero.enabled = true;
+  state.tiers.fp.enabled = true;   // street-level detail (per-building FP meshes)
+  if (state.tiers.street) state.tiers.street.enabled = true;  // streamed zone geometry (roads/grass/props)
   buildTierButtons();
 
-  // stream the real city first: world-correct streets with the game's own
-  // road/grass/prop materials
-  const streetGlbs = (state.tiers.street?.glbs || []);
+  const heroGlbs = state.tiers.hero.glbs;
   let done = 0;
-  setStatus(`streaming city · 0/${streetGlbs.length}`);
-  for (const entry of streetGlbs) {
-    if (!entry.loaded) {
-      try { await loadGLB(entry, 'street'); } catch (e) { console.warn('street glb failed', entry.file, e); }
-    }
+  setStatus(`assembling skyline · 0/${heroGlbs.length}`);
+  for (const entry of heroGlbs) {
+    await loadGLB(entry, 'hero');
     done++;
-    $('load-bar').style.width = `${(done / Math.max(streetGlbs.length,1)) * 100}%`;
-    setStatus(`streaming city · ${done}/${streetGlbs.length}`);
+    $('load-bar').style.width = `${(done / heroGlbs.length) * 100}%`;
+    setStatus(`assembling skyline · ${done}/${heroGlbs.length}`);
   }
-  if (state.tiers.street) state.tiers.street.loaded = true;
-  // district props (world-authored landmarks) in the background
-  if (state.tiers.district && state.tiers.district.enabled && !state.tiers.district.loaded) {
-    state.tiers.district.loaded = true;
+  state.tiers.hero.loaded = true;
+  fitCamera();
+  updateHUDTotals();
+  $('loader').classList.add('done');
+  clearStatus();
+
+  // background-load the streamed street tier (non-blocking) — the ground
+  // geometry (roads/grass/crossings + street props) from the zone streams
+  if (state.tiers.street && state.tiers.street.enabled && !state.tiers.street.loaded) {
+    state.tiers.street.loaded = true;
     (async () => {
-      for (const entry of state.tiers.district.glbs) {
+      for (const entry of state.tiers.street.glbs) {
         if (!entry.loaded) {
-          try { await loadGLB(entry, 'district'); } catch (e) { console.warn('district glb failed', entry.file, e); }
+          try { await loadGLB(entry, 'street'); } catch (e) { console.warn('street glb failed', entry.file, e); }
         }
       }
       updateHUDTotals();
     })();
   }
-  fitCamera();
-  updateHUDTotals();
-  $('loader').classList.add('done');
-  clearStatus();
 })();
 
 /* ---------------- HUD + render loop ---------------- */
