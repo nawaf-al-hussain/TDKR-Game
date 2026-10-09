@@ -4,30 +4,33 @@
 https://github.com/nawaf-al-hussain/TDKR-Game — live viewer:
 https://nawaf-al-hussain.github.io/TDKR-Game/*
 
-## 0. TL;DR
+## 0. TL;DR — UPDATED AFTER SESSION 12 (same day)
 
 We are reverse-engineering Gameloft's delisted mobile game **The Dark Knight
 Rises (2012)** to rebuild its open-world Gotham City in a browser 3D viewer.
-Over 11 research sessions we cracked the container formats, geometry, texture
-decoding, material database, and the bake/UV system, and iteratively fixed a
-series of texture-misbinding bugs (the latest: buildings literally wearing
-grass/road atlas tiles — root-caused and fixed in session 11, deploy v12.2).
+Over 12 research sessions we cracked the container formats, geometry, texture
+decoding, material database, the bake/UV system, and — as of session 12 —
+**the lvc node-graph placement records**.
 
-**The remaining problem**: after all fixes, the default view of the city still
-looks fundamentally wrong. The only tier that boots is the streamed street
-tier (roads/sidewalks/props — correct materials). The actual *buildings* —
-both the ~600 near-tier building segments (dark, untextured) and the entire
-Gotham skyline (hidden by default) — are not rendered correctly. Two decode
-problems block us, both fully scoped:
+**Blocker A from the first version of this brief is SOLVED.** The LongDist
+skyline units are now placed at their real world coordinates, decoded from
+the lvc DICT object stream (`CTemplateObject` typeId 0x2662 records):
+island1 = (-141.69, -681.15, 0.114), island2 = identity. Deployed as v13:
+the viewer boots STREET + SKYLINE together. Full write-up:
+`extraction/re/RE_NOTES_session12.md`.
 
-1. **Node-graph world transforms** (where does the placement of the
-   "LongDist" building-bake units live?) — lvc/BRES scene graph, undecoded.
-2. **Street batch material index** (which of the 500 cracked materials does
-   each streamed zone segment use?) — `batch_info.bin` bitstream, undecoded.
+**The remaining problem** is now:
 
-Everything around these two holes is already solved and verified. We are
-looking for help on exactly these two decodes (plus two smaller visual
-fidelity items: ground-material split and near-field geometry density).
+1. **Street batch material index** (which of the 500 cracked materials does
+   each streamed zone segment use?) — `batch_info.bin` bitstream via
+   `CInterleavedDataAllocator`, undecoded. This leaves ~600 near-tier
+   building segments dark. This is THE remaining visual blocker.
+2. Placements for the hero units (bridges/monorail/railway) — their lvc
+   records exist in the extracted placement table but are not yet matched
+   to units (the generic `CGameObjectManager::CreateObject @0x36774c` read
+   order needs decoding).
+3. Secondary: ground-material split (roads/grass one planar unit) and
+   near-field geometry density.
 
 ## 1. Project context
 
