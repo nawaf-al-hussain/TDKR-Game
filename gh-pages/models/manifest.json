@@ -371,7 +371,7 @@
   },
   {
    "file": "models/GC_LongDist_Island1_FP1.glb",
-   "bytes": 581352,
+   "bytes": 580592,
    "verts": 14701,
    "tris": 8456,
    "tier": "skyline",
@@ -389,7 +389,7 @@
   },
   {
    "file": "models/GC_LongDist_Island1_FP2.glb",
-   "bytes": 411776,
+   "bytes": 411112,
    "verts": 10849,
    "tris": 4658,
    "tier": "skyline",
@@ -407,7 +407,7 @@
   },
   {
    "file": "models/GC_LongDist_Island1_FP3.glb",
-   "bytes": 574528,
+   "bytes": 573696,
    "verts": 15123,
    "tris": 6704,
    "tier": "skyline",
@@ -425,7 +425,7 @@
   },
   {
    "file": "models/GC_LongDist_Island1_Roads.glb",
-   "bytes": 654572,
+   "bytes": 654040,
    "verts": 16361,
    "tris": 10345,
    "tier": "skyline",
@@ -444,7 +444,7 @@
   },
   {
    "file": "models/GC_island1_LongDist.glb",
-   "bytes": 1747568,
+   "bytes": 1744440,
    "verts": 43001,
    "tris": 27736,
    "tier": "skyline",
@@ -1809,7 +1809,7 @@
   },
   {
    "file": "models/city_low.glb",
-   "bytes": 1179872,
+   "bytes": 1172664,
    "verts": 28495,
    "tris": 17614,
    "tier": "low",
@@ -2734,5 +2734,6 @@
  ],
  "total_verts": 1458279,
  "total_tris": 1602537,
- "version": 14
+ "version": 14,
+ "total_bytes": 53759408
 }
