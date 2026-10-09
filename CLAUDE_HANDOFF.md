@@ -1,34 +1,60 @@
 # CLAUDE_HANDOFF.md — problem brief for an outside AI collaborator
 
-*Written 2026-10-09. Everything below is verifiable in this public repo:
-https://github.com/nawaf-al-hussain/TDKR-Game — live viewer:
-https://nawaf-al-hussain.github.io/TDKR-Game/*
+*Written 2026-10-09, updated after session 13. Everything below is verifiable
+in this public repo: https://github.com/nawaf-al-hussain/TDKR-Game — live
+viewer: https://nawaf-al-hussain.github.io/TDKR-Game/*
 
-## 0. TL;DR — UPDATED AFTER SESSION 12 (same day)
+## 0. TL;DR — UPDATED AFTER SESSION 13 (same day)
 
 We are reverse-engineering Gameloft's delisted mobile game **The Dark Knight
 Rises (2012)** to rebuild its open-world Gotham City in a browser 3D viewer.
-Over 12 research sessions we cracked the container formats, geometry, texture
-decoding, material database, the bake/UV system, and — as of session 12 —
-**the lvc node-graph placement records**.
+Over 13 research sessions we cracked the container formats, geometry, texture
+decoding, material database, the bake/UV system, and the level placement
+records.
 
-**Blocker A from the first version of this brief is SOLVED.** The LongDist
-skyline units are now placed at their real world coordinates, decoded from
-the lvc DICT object stream (`CTemplateObject` typeId 0x2662 records):
-island1 = (-141.69, -681.15, 0.114), island2 = identity. Deployed as v13:
-the viewer boots STREET + SKYLINE together. Full write-up:
-`extraction/re/RE_NOTES_session12.md`.
+**Both earlier blockers are now closed or sharply narrowed:**
 
-**The remaining problem** is now:
+- **Blocker A (LongDist skyline world placement) — SOLVED in session 13, and
+  the session-12 result was WRONG.** The real record is a **typeId 0x14051**
+  entry in the lvc DICT object stream (handler: `CLevel::LoadNextObject`
+  branch @0x48ad00 → `CComponentBase::Load` + `CComponentMesh::Load` →
+  `ConstructColladaScene` → **`CLevel::AddLowPolyLongDistanceNode`**):
+  `GothamCity.lvc @0x55545: objId=111989, TRS pos=(-730.0, -1250.0, 0.0)
+  rot=(0,-0,0) scale=(1,1,1), mesh='gc_island1_longdist.bdae'`.
+  Validated by ZNCC of street-vertex density vs skyline roof density:
+  **+0.66 at this TRS** (-0.04 identity, +0.08 at the old value).
+  The session-12 value (-141.69, -681.15, 0.114) was **Batman's spawn
+  point** — a `0x2662 CSpawnPointObject` record for `batman.bdae`
+  (@0x5557d) whose bytes overlap the skyline record's mesh-name field;
+  the earlier scan read them as a "CTemplateObject" TRS.
+- **Island-2's LongDist units have NO record in the main level** — the only
+  0x14051 in `GothamCity_Island2.lvc` (@0x58a0a, same TRS -730,-1250)
+  belongs to the separate island-2 level. All 5 island-2 skyline GLBs were
+  REMOVED from the deployed site (v14). The island-1 family (5 GLBs) was
+  re-placed at the engine's own TRS. Deployed as **v14**.
+- **Q3 (runtime bake multiply) — CLOSED**: `LightMapDC-f.glsl` uses exactly
+  two samplers (DiffuseMap, LightMap), `Color = Diffuse * LightMap * 2.0`
+  (+fog). `StandardDiffuseDC-f.glsl`: DiffuseMap only. **No third sampler →
+  no runtime scene/island bake multiplication.** `page_low` in the bake
+  records is the low-LOD variant of the same page (LOD swap).
 
-1. **Street batch material index** (which of the 500 cracked materials does
-   each streamed zone segment use?) — `batch_info.bin` bitstream via
-   `CInterleavedDataAllocator`, undecoded. This leaves ~600 near-tier
-   building segments dark. This is THE remaining visual blocker.
-2. Placements for the hero units (bridges/monorail/railway) — their lvc
-   records exist in the extracted placement table but are not yet matched
-   to units (the generic `CGameObjectManager::CreateObject @0x36774c` read
-   order needs decoding).
+**The remaining problem is now focused on blocker B:**
+
+1. **Street batch material index** — `batch_info.bin` (per-island files in
+   the zone zips). NEW hard evidence this session: both islands' files begin
+   with u32le **197**, and `(60483-4)/197 = 307.000`,
+   `(38616-4)/197 = 196.000` — EXACT integers for both files. Island-2
+   shows a repeating 196-byte record template. Engine-side:
+   `getBatchMaterial` @0x44ef08 shows `SBatch+0x8 = intrusive_ptr<CMaterial>`
+   (resolved at load). Hexdumps + candidate structure in §5B. This is where
+   we would most like your help.
+2. **Hero-unit placements** (bridges/monorail/railway): their names ARE
+   plain interned strings in the lvc (`gc_bigbridge_2_islands.bdae`,
+   `gc_monorail_island1.bdae`, `gc_railway_island1.bdae`, …). The 42
+   `0x14050` reflection records carry full TRSs for the `*_reflection.bdae`
+   files. The main (non-reflection) units are placed by the GENERIC object
+   path (`CGameObjectManager::CreateObject @0x36774c`, component factory
+   loop) — read order still to decode.
 3. Secondary: ground-material split (roads/grass one planar unit) and
    near-field geometry density.
 
@@ -38,9 +64,10 @@ the viewer boots STREET + SKYLINE together. Full write-up:
   1.1.6b. Source: APK (7.8 MB) + OBB expansion (895 MB), both attached to
   release `v1.1.6b` in this repo (attestation in README §Provenance).
 - **Engine bits of interest**: native lib `lib_libKRHP.so` (ARM A32, not
-  Thumb), `lib_gameloop*`; Lua bootstrap embedded in the level config.
+  Thumb, committed at `extraction/lib_libKRHP.so`); Lua bootstrap embedded
+  in the level config.
 - **Deliverable**: a GitHub Pages three.js viewer streaming the extracted
-  city as GLBs (45 GLBs / 1.53M verts / 1.65M tris at last full deploy).
+  city as GLBs (v14: 40 GLBs, tiers street/skyline/hero/fp/low/district).
 - All RE artifacts (notes, decompilations, scripts, intermediate JSON) are
   committed under `extraction/` — this repo is the single source of truth.
 
@@ -50,120 +77,147 @@ the viewer boots STREET + SKYLINE together. Full write-up:
 n×16 index table + name pool + chunks: `game_config.gla`, `l_gothamcity.gla`,
 `l_gothamcity_tex.gla`, `commons_tex.gla`) → geometry chunks (.bdae meshes),
 zone-stream archive (`GothamCity*.zip`, 168.5 MB, inside `l_gothamcity.gla`),
-level config `.lvc` (BRES nodes + bake groups + zones), textures (PVR,
+level config `.lvc` (**DICT object stream** — see §4), textures (PVR,
 ZIP_SPLIT rgb/alpha pairs) → `extraction/scripts/export_city.py` builds
-textured GLBs → `gh-pages/models/manifest.json` (tiers: street / hero / fp /
-district / low) → three.js viewer `gh-pages/app.js`.
+textured GLBs → `gh-pages/models/manifest.json` (tiers: street / skyline /
+hero / fp / district / low) → three.js viewer `gh-pages/app.js`.
 
-## 3. What the user sees TODAY (v12.2) and why it "still looks wrong"
+## 3. What the user sees TODAY (v14)
 
-Deployed state (`origin/gh-pages` @ b500639, manifest internal version 11):
+- **Boots**: street tier (21 GLBs, world-placed, engine-correct road/grass/
+  prop materials — ~600 near-tier building segments still dark, blocker B)
+  **+ skyline tier (5 island-1 LongDist GLBs, now at the engine's own
+  TRS (-730,-1250,0))**.
+- Island-2 skyline units removed (no main-level record; they belonged to the
+  separate island-2 level and were floating in the wrong place).
+- `gh-pages/index.html` restored this session (the deployed site had lost
+  its entry point).
 
-- **Boots**: street tier only (21 GLBs, world-placed, engine-correct
-  road/grass/prop materials). v12 boot policy comment in `app.js` explains
-  why the other tiers are default-off.
-- **The ~600 near-tier building segments inside the street tier have no
-  albedo** — they render dark. The per-segment material index for the zone
-  stream is not decoded yet, so the exporter can only bind a conservative
-  dark fallback to them. This is blocker **B** below.
-- **The skyline (all LongDist bake units: hero assemblies + 54 footprint
-  meshes) is hidden by default** because every one of those units is authored
-  in LOCAL coordinates (bbox ≈ ±100 around origin; verified via
-  `parse_meshes`) — rendering them unplaced would pile city blocks at the
-  origin, which was the source of the original "grass/roads on buildings"
-  report. Their world placement lives in the lvc/BRES node graph, which is
-  not decoded yet. This is blocker **A** below.
-- District props default-off for the same reason.
+## 4. The lvc DICT object stream — record-type dictionary (session 13, all from disasm)
 
-Net effect: a flat streetscape with dark building shells and no towers. From
-the user's perspective, "everything looks wrong."
+Header: `'DICT'` magic, u32be tableOffset, wide-string flag byte, then from
+offset 9: `[u16][u16 version=3][u32 objcount][records…]`. Every record =
+`[u32be typeId][payload]`; strings are interned `[u32be index]` into a
+counted table at `tableOffset` (GothamCity.lvc: 1617 strings). All reads
+big-endian via `CMemoryStream` (ReadInt @0x339914, ReadFloat @0x339b94,
+ReadString @0x33a0d4, ReadChar @0x3395d8).
 
-## 4. Symptom history — what each texture complaint was and how it died
+| typeId  | Loader (disasm)                                | Payload read order |
+|---------|------------------------------------------------|--------------------|
+| 0x2657  | CTemplateLevelProperties::Load @0x2023bc (+ GI) | see `parse_lvc.py` |
+| 0x2667  | CTemplateZone::Load @0x48d5f4                   | bool, str, f, bool, int(zoneId), 9f TRS, 3b |
+| 0x265f  | CTemplateMetaZone::Load @0x48d708               | 4b, 3i, 9f, str    |
+| 0x2662  | CSpawnPointObject::Create @0x2a7840 (handler @0x48af5c) | bool, i objId, 9f TRS, 3b, str, str(Lua), 3b, i |
+| 0x2663  | marker object                                   | i objId, 9f TRS    |
+| 0x2664  | ref marker                                      | i                  |
+| 0x1869f | CTemplateBakeGroup::Load @0x48d870              | bool, i, 9f TRS, 3b, str(page), f, str(page_low), f |
+| 0x14050 | CComponentBase::Load @0x1fe924 + CComponentMesh::Load @0x2d6ddc → ConstructColladaScene → **AddBatchNodeReflection** (flag byte may redirect) | bool, i objId, 9f TRS, 3b, str(mesh), 4 chars |
+| 0x14051 | same → **CLevel::AddLowPolyLongDistanceNode**   | same               |
+| other   | → CGameObjectManager::CreateObject @0x36774c (generic, component factory loop) | complex |
 
-| # | User report | Root cause found | Session/commit |
-|---|-------------|------------------|----------------|
-| 1 | Wrong textures on models | fp meshes used UV-fit heuristic against 8 `GC_LongDist_*` atlas pages | pre-6 |
-| 2 | Wrong + low quality | V-convention: game UVs are bottom-origin; viewer `flipY=false` sampled every page vertically mirrored; bake pages re-encoded at 1024/q78 | session 8 (0c133e2) |
-| 3 | Still wrong assets | LongDist DiffuseMaps are *runtime bakes*, not shipped textures; fp meshes store bake UV (Coord1) in the FIRST vertex dword (+12), not +16 | session 7 (985da5d) |
-| 4 | Grass/roads ON BUILDINGS | (a) edge-density UV-fit scored road atlases highest and bound buildings to the Roads page; (b) bake pages were used as albedo substitutes (mode 2x); (c) bdae TRUTH says these are `StandardDiffuseDC-fx` ×1; (d) whole LongDist layer is local-coord → unplaced pile at origin | session 11 (3fa5a70) |
-| 5 | "Still everything looks wrong" | state described in §3 — dark near-tier buildings + hidden skyline | **current** |
+CComponentBase::Load read order (proved @0x1fe924):
+`bool, int objId, float×9 (pos xyz, rot-euler xyz DEGREES, scale xyz),
+bool×3`. The 0x14051/0x14050 handler multiplies the rotation by **π/180**
+(const @0x48b120) and builds a glitch quaternion.
 
-Fixed along the way and verified (do NOT re-litigate): `flipY` semantics, V
-origin, ZIP_SPLIT rgb/alpha PVR decode, LongDist pages as runtime bakes,
-per-footprint→assembly-bdae page map (54 entries, zero heuristics —
-`load_fp_page_map()` in export_city.py), bake-as-albedo prohibition,
-water-plane binding, LUT color grade (`000_default.tga`), lightning system,
-rainbow smears on street tier (structural cross-section binding, session 10),
-street-tier material bindings (zone material DB cracked via `source.dae`
-setparam chain — 305+195 materials with exact DiffuseMap+LightMap bindings).
+Counts in GothamCity.lvc: 23 zones, 226 spawn points, 24 markers, **1
+LongDistance record**, **42 reflection records** (one per
+`gc_footprint_*_reflection.bdae` + `gc_railway_island1_reflection.bdae`,
+each with a real world TRS), 4 bake-group templates. Full walk outputs:
+`extraction/re/lvc_records.json`, `lvc_island2_records.json`
+(script: `extraction/re/lvc_walk13.py`); raw dispatcher disasm:
+`extraction/ghidra/decompiled_r2/lnobj_full2.asm`.
 
-## 5. THE TWO BLOCKERS (all knowns, all unknowns)
-
-### A. Node-graph world transforms for LongDist units (skyline placement)
-
-**What we need**: the transform (translate/rotate/scale) that the engine
-applies to each LongDist bake unit (`GC_Footprint_*_LongDist.bdae` meshes,
-`GC_island1_LongDist`, hero assemblies, monorail/railway LongDist) so they
-can be rendered at their true world positions.
-
-**Knowns**:
-- All such units are local-authored: per-unit bbox ≈ ±100 units around
-  origin (`parse_meshes` in export_city.py).
-- The 530 bake-group frames in the lvc (see `extraction/re/
-  bake_regions_v2.json`, 89 records / 54 footprints, and
-  `bake_regions.json` 530 records) carry page+scale/offset (Coord1 = uv ×
-  so.xy + so.zw; loader verified: `CComponentBeastObjectComponent::Load`
-  @0x2e1e8c reads `{so1, page, so2}`) but **no world transform**.
-- `GothamCity.lvc` string table does **not** reference the footprint mesh
-  names at all — so placement is not a simple name→transform table there.
-- Candidate homes for the transforms: the **BRES node hierarchy** in
-  `GothamCity.lvc` (parsed: `extraction/re/lvc_gothamcity_parsed.json`,
-  `lvc_bakegroups.json`), bdae node/scene sections, or a separate placement
-  chunk inside `l_gothamcity.gla` we haven't identified.
-- Loader-side code we already have in `extraction/ghidra/decompiled/`:
-  `bakegroup__3ce548.c` (CComponentBeastBakeGroup::Load — reads only
-  `{string, float, string, float}`), `bakegroup__49d870.c`
-  (CTemplateBakeGroup::Load), `batchbaker__*.c`, `irradiancebaker__*.c`.
-  Beast component Load handlers: `CBeastAreaComponent::Load` @0x2b164c,
-  `CBeastDirectionalComponent::Load` @0x2b17e0,
-  `CBeastObjectComponent::Load` @0x2b1ea4 (~2.3 KB, biggest, may hold more
-  fields), `CBeastObjectGlobalComponent::Load` @0x2b2a80.
-- The street tier (zone stream) IS world-placed — so the zone stream carries
-  its own transforms; the contrast may help identify what the LongDist
-  layer lacks.
-
-**Tools that exist**: `extraction/re/find_zone_xrefs.py`, `find_zone_loader.py`,
-`disasm_beast_loads.py` (capstone ARM-A32 disassembler with ELF symtab
-annotation, targets preloaded), `parse_lvc.py`, `parse_lvc_bakegroups.py`,
-`xref_bl.py`, `elf_syms.py`, `scan_movw_movt.py`.
+## 5. THE BLOCKERS (all knowns, all unknowns)
 
 ### B. Street batch material index (near-tier building albedo)
 
 **What we need**: for each segment of the streamed street geometry, the
-material index into the zone material DB (which is fully cracked —
-`extraction/REPORT.md` §; exact DiffuseMap/LightMap per material id).
+material index into the zone material DB (fully cracked — 305+195 materials
+with exact DiffuseMap+LightMap via `source.dae` setparam chains).
 
-**Knowns**:
-- Streamed zone archives: `GothamCity*.zip` inside `l_gothamcity.gla`
-  (session 9, 0d1c1fc/60fcad3); islands 1+2 extracted: 1.19M verts /
-  1.45M tris.
-- Geometry layout proved: `lod_table`/`lod_data` segment descriptors,
-  24-byte-stride interleaved vertices (octahedral normals), u16 strip
-  indices (`extraction/re/` notes + zone scripts).
-- Per-segment material is NOT in the vertex data; the engine reads a packed
-  **`batch_info.bin`** via `CInterleavedDataAllocator` (native). We have not
-  decoded its bitstream. Loader code: see session 10 notes and
-  `extraction/scripts/disasm_zone_loader.py`.
-- Once decoded: ~600 dark near-tier building segments get real albedo from
-  the same DB — this is the single biggest visual win available.
+**New hard evidence (session 13)**:
 
-### C. (Secondary) Ground fidelity split + near-field density
+- Files: `work/zone/GothamCity/batch_info.bin` = 60,483 B;
+  `GothamCity_Island2/batch_info.bin` = 38,616 B (each island's zip carries
+  its own). Both begin with **u32le 197 (0xc5)**.
+- **(60483−4)/197 = 307.000** and **(38616−4)/197 = 196.000** — exact
+  integers for BOTH files. Island-2 then shows a repeating 196-byte record
+  template; island-1's 307-byte grid drifts by record 3, so treat
+  fixed-vs-variable carefully.
+- Oracle checks: lod_table segments = 1526 (island1) / 1020 (island2);
+  street-tier GLB mesh counts 1517/1020 — **NOT 197**. So records are not
+  per segment; 197 matches nothing counted so far (same value in both
+  islands!).
+- Engine side: `getBatchMaterial` @0x44ef08 reads `SBatch+0x8` =
+  `intrusive_ptr<CMaterial>` (already RESOLVED at load — so batch_info
+  entries map to material objects somewhere between the file and this
+  struct). Zone-streaming file-name table = static `char[16]` array in
+  `.rodata` @0xb40704: `{".zip", "stream_info.bin", "bih_data.bin",
+  "bih_struct.bin", "batch_info.bin", "_materials.bdae", "lod_table.bin",
+  "lod_data.bin", "lod_selector.bin"}` (16-byte stride, no pointers
+  reference it — indexed by enum at runtime). Source file:
+  **LevelStreaming_DB.cpp**. Loader classes:
+  `CDoubleBufferedLODStreaming<…>` ctor @0x45e190 (3× IReadFile),
+  `CDoubleBufferedDynamicBatchMesh<…>` ctor @0x45c750 (3× IReadFile);
+  both constructed via template/vtable paths (no direct BL xrefs).
+- **batch_info.bin header + first records (hexdump)** —
+  GothamCity (island 1), 60,483 B:
+  ```
+  00000000  c5 00 00 00 00 00 00 ff ff ff ff ff ff ff ff
+  0000000f  ff ff ff ff ff ff ff 01 02 ff ff ff ff ff ff
+  0000001e  ff ff ff ff 00 03 00 00 00 00 00 00 00 00 00
+  0000002d  06 00 03 00 14 00 0c 00 00 00 01 00 02 00 02
+  0000003c  00 14 00 10 00 00 00 03 00 14 00 0c 00 00 00
+  ...                              (record grid @307 B: rec1 @0x137 = all
+                                    zeros; rec2 @0x26a = ff-run then
+                                    00 03 00 00 00 00 00 00 00 00 00 06
+                                    00 03 00 14 00 0c 00 00 00 01 00 02
+                                    00 02 00 14 00 10 00 ...; rec3
+                                    @0x39d starts mid-floats:
+                                    8a ff df 3e = 0.4368, 19 02 e0 3e =
+                                    0.1406, 0b 5e 77 3f = 0.9650 …)
+  ```
+  Island2 (38,616 B), 196-byte template repeating from rec1:
+  ```
+  rec1 @0x0cc: 00 01 00 00 01 02 ff ff ff ff ff ff ff ff ff ff
+               ff ff ff ff 03 04 ff ff ff ff ff ff ff ff ff ff
+               ff ff 00 05 00 00 00 00 00 00 00 00 00 00 00 00
+  rec2 @0x190: 00 00 02 00 00 01 02 ff ff ff ff ff ff ff ff ff
+               ff ff ff ff 03 04 ff ff ff ff ff ff ff ff ff ff
+               ff ff 00 05 00 00 00 00 00 ...
+  rec3 @0x254: 00 00 00 03 00 00 01 02 ff ... (same template,
+               varying u8 prefix counter 01→02→03 …)
+  ```
+  (full dumps will be committed with the session-13 notes).
+- Candidate structure to test: `[u32 197][197 records][fixed 307/196 B]`
+  vs `[u32 197][bit-packed records]`. The `ff` runs look like all-ones
+  bit-fields; the `01 02 … 03 04 … 00 05` pairs look like small indices
+  (material ids? sub-mesh ids?).
 
-- User complaint: roads and grass are merged into a single planar unit in
-  the street tier; ground lacks fidelity; near-field visible geometry is too
-  sparse. Likely answers live in the same zone stream (more detailed
-  near-LOD segments, per-region material splits — the zone material DB
-  already separates road/sidewalk/grass/crossing materials). Do AFTER B.
+**Our concrete asks for you on B**:
+1. Given the header + template above, does `[u32 197]` + fixed-stride
+   records hold? What fields would explain `01 02 / 03 04 / 00 05` pairs
+   and the all-ones runs?
+2. In `lib_libKRHP.so`, the zone-streaming reader chain: we failed to find
+   direct xrefs to the `batch_info.bin` string (name table indexed by
+   enum). If you can suggest where `LevelStreaming_DB`-style code keeps the
+   enum→file mapping, or a `ReadBits(n)` helper used by
+   `CDoubleBufferedDynamicBatchMesh`, the field widths would fall out of
+   its call sites (this is exactly how the DICT stream fell).
+3. Sanity check: is `197` plausibly a *batch* count (material groups)
+   rather than segments? The material DB has 305 island-1 materials — 197
+   could be the subset actually used by the stream.
+
+### Hero units (secondary)
+
+Names are plain interned strings (NO hashing): `gc_bigbridge_2_islands.bdae`
+(str#169, 1 stream ref @0x5562c), `gc_monorail_island1.bdae` (@0x46f1e6),
+`gc_railway_island1.bdae` (@0x436ca5), `gc_water.bdae` (@0x4b01f),
+`gc_island1.bdae` (@0x3c139d), etc. The generic CreateObject path
+(component factory: `CComponentFactory::CreateComponent(int, CGameObject*,
+void*)` @0x223e3c, loop over 12-byte entries `[typeId][fn][flag]`) reads
+them. Read order for the generic payload = the next decode target.
 
 ## 6. Repo map (the paths that matter)
 
@@ -171,17 +225,19 @@ material index into the zone material DB (which is fully cracked —
 CLAUDE_HANDOFF.md              <- this file
 README.md                      <- provenance, viewer link, SHA256s
 extraction/REPORT.md           <- format spec (bdae, gla, textures)
-extraction/worklog_session10.md / re/RE_NOTES_session{9,10,11}.md
-extraction/scripts/            <- all exporters/decoders
-  export_city.py               <- master exporter (v12, load_fp_page_map)
-  restore_assets.py            <- OBB/zip -> raw .gla restore
-  zone_extract.py / disasm_zone_loader.py
+extraction/re/RE_NOTES_session{9,10,11,12,13}.md
 extraction/re/                 <- RE data + probes
-  bake_regions.json (530 recs) / bake_regions_v2.json (89 recs, 54 fp)
-  lvc_bakegroups.json / lvc_gothamcity_parsed.json
-  disasm_beast_loads.py / find_zone_xrefs.py / elf_syms.py
-extraction/ghidra/decompiled/  <- IDA/Ghidra-style .c per function
-gh-pages/                      <- viewer source (app.js, models/, manifest)
+  lvc_records.json             <- session-13 exact record walk (main lvc)
+  lvc_island2_records.json     <- island-2 lvc walk
+  lvc_name_refs.json           <- all stream refs to interesting names
+  bake_regions.json / bake_regions_v2.json / bake_regions_v3.json
+extraction/scripts/            <- all exporters/decoders (export_city.py v14)
+extraction/scripts/lvc_walk13.py      <- the sequential DICT parser
+extraction/scripts/lvc_scan13.py      <- name-reference scanner
+extraction/ghidra/decompiled_r2/ <- disasm listings (lnobj_full2.asm = the
+                                    FULL CLevel::LoadNextObject)
+extraction/lib_libKRHP.so      <- the native library itself
+gh-pages/                      <- viewer source (index.html, app.js, models/)
 ```
 
 ## 7. How to reproduce / inspect
@@ -192,27 +248,24 @@ git clone https://github.com/nawaf-al-hussain/TDKR-Game
 curl -LO https://github.com/nawaf-al-hussain/TDKR-Game/releases/download/v1.1.6b/TDKR_v1.1.6b_APK_OBB.zip
 # restore raw containers, then:
 python3 extraction/scripts/export_city.py --dry
-# live viewer (as deployed, v12.2):
+# live viewer (as deployed, v14):
 #   https://nawaf-al-hussain.github.io/TDKR-Game/
 ```
 
 ## 8. Concrete asks (ranked)
 
-1. **BRES/lvc node-graph decode**: where are the world transforms for the
-   LongDist bake units? Pointers: `GothamCity.lvc` (BRES), bdae node
-   sections, the four CBeast*Component::Load handlers listed in §5A, and
-   any chunk in `l_gothamcity.gla` that looks like a placement table. Any
-   struct-layout hypothesis for the node entries (offsets, counts, parent/
-   child chains) would immediately unblock the skyline.
-2. **batch_info.bin bitstream**: find `CInterleavedDataAllocator` in
-   `lib_libKRHP.so` and recover the per-batch material-index encoding
-   (field order, bit widths, alignment) so we can map each street segment
-   to its material id.
-3. Sanity-check our engine model for LongDist units: is `DiffuseMap =
-   GC_LongDist.tga` + `StandardDiffuseDC` (×1) really albedo-only, or does
-   the runtime multiply a scene bake (island lightmap) on top as well?
-4. Anything that looks wrong in the current deployed pipeline that we've
-   gone blind to after 11 sessions of fixes (fresh eyes welcome).
+1. **batch_info.bin layout** (§5B): does `[u32 197][fixed-stride records]`
+   hold? Field hypothesis for the `01 02 / 03 04 / 00 05` pairs and
+   all-ones runs? Any pointer to a `ReadBits(n)`-style helper in the
+   zone-streaming chain (LevelStreaming_DB / CDoubleBufferedDynamicBatchMesh)
+   whose call sites would give the field widths?
+2. **Generic object records** (CreateObject component loop): read order for
+   the non-special typeIds so the hero units (bridges/monorail/railway)
+   get their world TRSs.
+3. Sanity checks welcome on the v14 skyline placement (ZNCC +0.66) and the
+   island-2 removal decision.
+4. Anything that looks wrong in the deployed pipeline that we've gone blind
+   to after 13 sessions of fixes (fresh eyes welcome).
 
 ## 9. Do-not-re-suggest list (all fixed and verified)
 
@@ -224,3 +277,10 @@ python3 extraction/scripts/export_city.py --dry
 - Per-footprint LongDiffuseMap aliases as standalone textures (they are
   runtime bakes of the assembly pages).
 - Re-encoding textures below 2048/q88.
+- **Hash-hunting the lvc names** — the strings are plain interned strings.
+- **typeId 0x2662 as CTemplateObject** — it is CSpawnPointObject; the
+  (-141.69,-681.15) "island placement" was Batman's spawn point.
+- **Island-2 LongDist at identity / any main-level transform** — no record
+  exists; those units belong to the separate island-2 level only.
+- A third runtime bake multiply for LongDist units — LightMapDC has exactly
+  2 samplers; the shipped bake pages are final.

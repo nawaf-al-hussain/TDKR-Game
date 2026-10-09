@@ -141,26 +141,34 @@ def fp_island(name):
     return "island1" if "island1" in n or "_1_" in n else "island2"
 
 
-# v13 SESSION-12 BREAKTHROUGH: the lvc DICT object stream (big-endian,
-# [name str][01][typeId u32][payload: int, TRS 9f, bools, (page,f),(page_low,f)])
-# carries the world placement of the LongDist bake units:
-#   CTemplateObject (typeId 0x2662) named 'gc_island1_longdist.bdae'
-#   @ GothamCity.lvc 0x55575: TRS pos=(-141.69, -681.15, 0.114) rot=0 scale=1.
-# The per-page FP assemblies (GC_LongDist_Island1_FP1/FP2/FP3/Roads) and the
-# LOW unit share the island's local frame (mesh-centroid correspondence
-# <= 0.5 units), so ONE transform places the whole island-1 skyline.
-# Island2 has NO object record — its CTemplateBakeGroup (typeId 0x1869f)
-# TRS is identity: island-2 bake geometry is authored origin-relative.
-# Validated: placed footprints overlap 8/9 street island1 chunks (up to
-# 28k units^2 XY each); sign checks confirm the offset direction.
+# v14 SESSION-13 CORRECTION (supersedes the v13 block below): the DICT
+# stream record that places the island LongDist skyline is typeId 0x14051
+# (CLevel::LoadNextObject -> CComponentBase::Load + CComponentMesh::Load ->
+# ConstructColladaScene -> CLevel::AddLowPolyLongDistanceNode):
+#   @ GothamCity.lvc 0x55545: objId=111989,
+#   TRS pos=(-730.0, -1250.0, 0.0) rot=(0,-0,0) scale=(1,1,1),
+#   mesh='gc_island1_longdist.bdae'  (interned string #166)
+# Read order proved from disasm: CComponentBase::Load @0x1fe924 reads
+# {bool, int objId, 9f TRS, 3 bools}; CComponentMesh::Load @0x2d6ddc reads
+# {string mesh, 4 chars}; the rotation euler is degrees (handler multiplies
+# by pi/180 @0x48b120) and builds a glitch quaternion. ZNCC of street-vertex
+# density vs skyline roof density = +0.66 at this TRS (-0.04 identity,
+# +0.08 at the old v13 offset).
+# The v13 value (-141.69, -681.15, 0.114) was BATMAN'S SPAWN POINT: the
+# 0x2662 CSpawnPointObject record for 'batman.bdae' @0x5557d that follows
+# the skyline record — its payload overlaps the skyline record's mesh-name
+# field, which is what the session-12 scan misread as a CTemplateObject TRS.
+# Island-2's LongDist units have NO record in the main level; the single
+# 0x14051 in GothamCity_Island2.lvc (@0x58a0a, same TRS) places
+# 'gc_island2_longdist.bdae' in the SEPARATE island-2 level only. They are
+# NOT world-placed here (removed from the skyline tier in v14).
 ISLAND_WORLD_OFFSET = {
-    "island1": (-141.69, -681.15, 0.114),
-    "island2": (0.0, 0.0, 0.0),
+    "island1": (-730.0, -1250.0, 0.0),
+    "island2": (0.0, 0.0, 0.0),   # unplaced in the main level (research only)
 }
-# only the island bake family — monorail/railway/bridges carry their own
-# lvc placement records (not yet decoded; they stay unplaced research units)
+# only island-1's bake family is world-placed by the main lvc
 LD_WORLD = re.compile(
-    r"(?i)^GC_(?:island([12])_LongDist.*|LongDist_Island([12])_(?:FP[123]|Roads))$")
+    r"(?i)^GC_(?:island1_LongDist.*|LongDist_Island1_(?:FP[123]|Roads))$")
 
 ISLAND_BAKES = {
     "island1": ["GC_LongDist_Island1_FP1", "GC_LongDist_Island1_FP2",
