@@ -11,11 +11,13 @@ Fails (exit 1) when a deploy would repeat the v13 stale-branch regression:
 Run BEFORE pushing gh-pages, and again after, as the release gate.
 """
 import json
+import os
 import re
 import subprocess
 import sys
 
-REPO = "/home/z/my-project/work/TDKR-Game"
+REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                    os.pardir, os.pardir))
 
 
 def git(args):
@@ -34,7 +36,8 @@ def manifest_of(ref):
     try:
         return json.loads(out)
     except Exception as e:
-        print(f"FAIL: cannot parse manifest from {ref}: {e.strip()[:80]}")
+        msg = str(e).strip()[:80]
+        print(f"FAIL: cannot parse manifest from {ref}: {msg}")
         return None
 
 
