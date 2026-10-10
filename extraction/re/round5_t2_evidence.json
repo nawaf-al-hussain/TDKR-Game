@@ -1,0 +1,1188 @@
+{
+ "GothamCity": {
+  "n_segments": 1517,
+  "n_sampled": 1517,
+  "n_popA": 593,
+  "enrichment": {
+   "plus40": {
+    "billboards": {
+     "nseg": 183,
+     "mean": 1.193,
+     "median": 1.382
+    },
+    "building_footprint": {
+     "nseg": 174,
+     "mean": 0.985,
+     "median": 1.002
+    },
+    "building_landmark_misc": {
+     "nseg": 107,
+     "mean": 1.002,
+     "median": 1.0
+    },
+    "building_residential": {
+     "nseg": 113,
+     "mean": 1.005,
+     "median": 1.0
+    },
+    "coronas": {
+     "nseg": 62,
+     "mean": 0.003,
+     "median": 0.0
+    },
+    "flat": {
+     "nseg": 21,
+     "mean": 0.977,
+     "median": 1.001
+    },
+    "other": {
+     "nseg": 10,
+     "mean": 1.039,
+     "median": 1.056
+    },
+    "props_mono_rail": {
+     "nseg": 164,
+     "mean": 1.093,
+     "median": 1.078
+    },
+    "props_rooftop": {
+     "nseg": 166,
+     "mean": 1.075,
+     "median": 1.132
+    },
+    "props_street": {
+     "nseg": 261,
+     "mean": 1.149,
+     "median": 1.18
+    },
+    "road_band": {
+     "nseg": 40,
+     "mean": 1.037,
+     "median": 1.005
+    },
+    "trees": {
+     "nseg": 210,
+     "mean": 1.0,
+     "median": 1.0
+    }
+   },
+   "v5": {
+    "billboards": {
+     "nseg": 100,
+     "mean": 0.99,
+     "median": 1.0
+    },
+    "building_footprint": {
+     "nseg": 42,
+     "mean": 0.98,
+     "median": 1.0
+    },
+    "building_landmark_misc": {
+     "nseg": 13,
+     "mean": 1.026,
+     "median": 1.0
+    },
+    "building_residential": {
+     "nseg": 37,
+     "mean": 0.992,
+     "median": 1.0
+    },
+    "flat": {
+     "nseg": 2,
+     "mean": 1.0,
+     "median": 1.0
+    },
+    "other": {
+     "nseg": 3,
+     "mean": 1.002,
+     "median": 1.0
+    },
+    "props_mono_rail": {
+     "nseg": 9,
+     "mean": 0.945,
+     "median": 0.997
+    },
+    "props_rooftop": {
+     "nseg": 120,
+     "mean": 1.002,
+     "median": 1.0
+    },
+    "props_street": {
+     "nseg": 119,
+     "mean": 1.065,
+     "median": 1.094
+    },
+    "road_band": {
+     "nseg": 5,
+     "mean": 1.001,
+     "median": 1.0
+    },
+    "trees": {
+     "nseg": 143,
+     "mean": 1.0,
+     "median": 1.0
+    },
+    "unbound": {
+     "nseg": 1,
+     "mean": 1.094,
+     "median": 1.094
+    }
+   },
+   "null": {
+    "billboards": {
+     "nseg": 183,
+     "null_mean": 0.977,
+     "null_sd": 0.107
+    },
+    "building_footprint": {
+     "nseg": 174,
+     "null_mean": 0.99,
+     "null_sd": 0.113
+    },
+    "building_landmark_misc": {
+     "nseg": 107,
+     "null_mean": 0.992,
+     "null_sd": 0.092
+    },
+    "building_residential": {
+     "nseg": 113,
+     "null_mean": 1.033,
+     "null_sd": 0.099
+    },
+    "coronas": {
+     "nseg": 62,
+     "null_mean": 0.811,
+     "null_sd": 0.136
+    },
+    "flat": {
+     "nseg": 21,
+     "null_mean": 1.031,
+     "null_sd": 0.083
+    },
+    "other": {
+     "nseg": 10,
+     "null_mean": 1.03,
+     "null_sd": 0.067
+    },
+    "props_mono_rail": {
+     "nseg": 164,
+     "null_mean": 1.016,
+     "null_sd": 0.07
+    },
+    "props_rooftop": {
+     "nseg": 166,
+     "null_mean": 0.97,
+     "null_sd": 0.091
+    },
+    "props_street": {
+     "nseg": 261,
+     "null_mean": 0.971,
+     "null_sd": 0.089
+    },
+    "road_band": {
+     "nseg": 40,
+     "null_mean": 1.007,
+     "null_sd": 0.079
+    },
+    "trees": {
+     "nseg": 210,
+     "null_mean": 0.969,
+     "null_sd": 0.15
+    },
+    "unbound": {
+     "nseg": 6,
+     "null_mean": 0.846,
+     "null_sd": 0.081
+    }
+   },
+   "note": "mask_A (alpha/near-black); null ~1 by construction; >1 = UVs prefer content"
+  },
+  "verdict": {
+   "billboards": {
+    "n": 183,
+    "plus40": 1.193,
+    "v5": 0.99,
+    "null": 0.977,
+    "null_sd": 0.027,
+    "d_plus40_vs1": 7.2,
+    "d_v5_vs1": -0.4,
+    "wins": {
+     "plus40": 84,
+     "v5": 16
+    },
+    "verdict": "+40"
+   },
+   "building_footprint": {
+    "n": 174,
+    "plus40": 0.985,
+    "v5": 0.98,
+    "null": 0.99,
+    "null_sd": 0.03,
+    "d_plus40_vs1": -0.5,
+    "d_v5_vs1": -0.7,
+    "wins": {
+     "plus40": 26,
+     "v5": 16
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "building_landmark_misc": {
+    "n": 107,
+    "plus40": 1.002,
+    "v5": 1.026,
+    "null": 0.992,
+    "null_sd": 0.02,
+    "d_plus40_vs1": 0.1,
+    "d_v5_vs1": 1.3,
+    "wins": {
+     "plus40": 5,
+     "v5": 5
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "building_residential": {
+    "n": 113,
+    "plus40": 1.005,
+    "v5": 0.992,
+    "null": 1.033,
+    "null_sd": 0.028,
+    "d_plus40_vs1": 0.2,
+    "d_v5_vs1": -0.3,
+    "wins": {
+     "plus40": 21,
+     "v5": 3
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "coronas": {
+    "n": 62,
+    "plus40": 0.003,
+    "v5": null,
+    "null": 0.811,
+    "null_sd": 0.068,
+    "d_plus40_vs1": -14.6,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 0,
+     "v5": 0
+    },
+    "verdict": "anti-enriched (UVs avoid non-black content; page type breaks the mask -- metric inapplicable)"
+   },
+   "flat": {
+    "n": 21,
+    "plus40": 0.977,
+    "v5": 1.0,
+    "null": 1.031,
+    "null_sd": 0.046,
+    "d_plus40_vs1": -0.5,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 1,
+     "v5": 1
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "other": {
+    "n": 10,
+    "plus40": 1.039,
+    "v5": 1.002,
+    "null": 1.03,
+    "null_sd": 0.093,
+    "d_plus40_vs1": 0.4,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 3,
+     "v5": 0
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "props_mono_rail": {
+    "n": 164,
+    "plus40": 1.093,
+    "v5": 0.945,
+    "null": 1.016,
+    "null_sd": 0.018,
+    "d_plus40_vs1": 5.0,
+    "d_v5_vs1": -3.0,
+    "wins": {
+     "plus40": 3,
+     "v5": 6
+    },
+    "verdict": "+40"
+   },
+   "props_rooftop": {
+    "n": 166,
+    "plus40": 1.075,
+    "v5": 1.002,
+    "null": 0.97,
+    "null_sd": 0.034,
+    "d_plus40_vs1": 2.2,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 112,
+     "v5": 8
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "props_street": {
+    "n": 261,
+    "plus40": 1.149,
+    "v5": 1.065,
+    "null": 0.971,
+    "null_sd": 0.026,
+    "d_plus40_vs1": 5.7,
+    "d_v5_vs1": 2.5,
+    "wins": {
+     "plus40": 113,
+     "v5": 6
+    },
+    "verdict": "unresolved"
+   },
+   "road_band": {
+    "n": 40,
+    "plus40": 1.037,
+    "v5": 1.001,
+    "null": 1.007,
+    "null_sd": 0.041,
+    "d_plus40_vs1": 0.9,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 4,
+     "v5": 0
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "trees": {
+    "n": 210,
+    "plus40": 1.0,
+    "v5": 1.0,
+    "null": 0.969,
+    "null_sd": 0.033,
+    "d_plus40_vs1": 0.0,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 107,
+     "v5": 36
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   }
+  },
+  "popA": {
+   "n": 593,
+   "plus40_enr": 1.086,
+   "v5_enr": 1.009,
+   "null_enr": 0.982,
+   "null_sd": 0.019,
+   "plus40_raw": 0.959,
+   "v5_raw": 0.991,
+   "wins_enr": {
+    "plus40": 479,
+    "v5": 97
+   }
+  },
+  "geometry": {
+   "features": [
+    "zext",
+    "size_xy",
+    "up_frac",
+    "horiz_frac",
+    "area",
+    "planarity"
+   ],
+   "eta2_plus40": {
+    "zext": 0.107,
+    "size_xy": 0.126,
+    "up_frac": 0.505,
+    "horiz_frac": 0.383,
+    "area": 0.207,
+    "planarity": 0.424
+   },
+   "eta2_v5": {
+    "zext": 0.069,
+    "size_xy": 0.016,
+    "up_frac": 0.073,
+    "horiz_frac": 0.057,
+    "area": 0.033,
+    "planarity": 0.197
+   },
+   "centroid_cv": {
+    "plus40": 0.45,
+    "v5": 0.726,
+    "floor_plus40": 0.173,
+    "floor_v5": 0.771
+   },
+   "profile_by_coarse": {
+    "plus40": {
+     "props": {
+      "zext": 7.015,
+      "size_xy": 378.886,
+      "up_frac": 0.149,
+      "horiz_frac": 0.587,
+      "area": 878.515,
+      "planarity": 0.916
+     },
+     "buildings": {
+      "zext": 16.143,
+      "size_xy": 444.918,
+      "up_frac": 0.204,
+      "horiz_frac": 0.509,
+      "area": 3462.08,
+      "planarity": 0.938
+     },
+     "other": {
+      "zext": 4.969,
+      "size_xy": 246.061,
+      "up_frac": 0.139,
+      "horiz_frac": 0.472,
+      "area": 596.362,
+      "planarity": 0.926
+     },
+     "sidewalk_flat": {
+      "zext": 18.564,
+      "size_xy": 424.476,
+      "up_frac": 0.348,
+      "horiz_frac": 0.258,
+      "area": 7064.392,
+      "planarity": 0.938
+     },
+     "road": {
+      "zext": 5.848,
+      "size_xy": 566.833,
+      "up_frac": 0.295,
+      "horiz_frac": 0.357,
+      "area": 15767.057,
+      "planarity": 0.995
+     }
+    },
+    "v5": {
+     "sidewalk_flat": {
+      "zext": 3.807,
+      "size_xy": 396.814,
+      "up_frac": 0.122,
+      "horiz_frac": 0.635,
+      "area": 340.342,
+      "planarity": 0.871
+     },
+     "road": {
+      "zext": 8.374,
+      "size_xy": 462.535,
+      "up_frac": 0.169,
+      "horiz_frac": 0.498,
+      "area": 1220.453,
+      "planarity": 0.969
+     },
+     "props": {
+      "zext": 4.568,
+      "size_xy": 8.179,
+      "up_frac": 0.079,
+      "horiz_frac": 0.705,
+      "area": 130.797,
+      "planarity": 0.91
+     }
+    }
+   }
+  },
+  "footprint": {
+   "plus40": {
+    "billboards": {
+     "pass_": 82,
+     "n": 183,
+     "rate": 0.448
+    },
+    "building_footprint": {
+     "pass_": 19,
+     "n": 117,
+     "rate": 0.162
+    },
+    "building_landmark_misc": {
+     "pass_": 17,
+     "n": 50,
+     "rate": 0.34
+    },
+    "building_residential": {
+     "pass_": 36,
+     "n": 53,
+     "rate": 0.679
+    },
+    "props_mono_rail": {
+     "pass_": 18,
+     "n": 164,
+     "rate": 0.11
+    },
+    "props_rooftop": {
+     "pass_": 0,
+     "n": 10,
+     "rate": 0.0
+    },
+    "props_street": {
+     "pass_": 24,
+     "n": 261,
+     "rate": 0.092
+    },
+    "trees": {
+     "pass_": 80,
+     "n": 210,
+     "rate": 0.381
+    }
+   },
+   "v5": {
+    "billboards": {
+     "pass_": 4,
+     "n": 11,
+     "rate": 0.364
+    },
+    "building_footprint": {
+     "pass_": 8,
+     "n": 21,
+     "rate": 0.381
+    },
+    "building_landmark_misc": {
+     "pass_": 3,
+     "n": 10,
+     "rate": 0.3
+    },
+    "building_residential": {
+     "pass_": 3,
+     "n": 7,
+     "rate": 0.429
+    },
+    "props_mono_rail": {
+     "pass_": 0,
+     "n": 7,
+     "rate": 0.0
+    },
+    "props_rooftop": {
+     "pass_": 3,
+     "n": 8,
+     "rate": 0.375
+    },
+    "props_street": {
+     "pass_": 5,
+     "n": 96,
+     "rate": 0.052
+    },
+    "trees": {
+     "pass_": 30,
+     "n": 47,
+     "rate": 0.638
+    }
+   },
+   "null": {
+    "billboards": {
+     "n": 183,
+     "null": 0.421
+    },
+    "building_footprint": {
+     "n": 117,
+     "null": 0.311
+    },
+    "building_landmark_misc": {
+     "n": 50,
+     "null": 0.216
+    },
+    "building_residential": {
+     "n": 53,
+     "null": 0.427
+    },
+    "props_mono_rail": {
+     "n": 164,
+     "null": 0.17
+    },
+    "props_rooftop": {
+     "n": 10,
+     "null": 0.296
+    },
+    "props_street": {
+     "n": 261,
+     "null": 0.104
+    },
+    "trees": {
+     "n": 210,
+     "null": 0.538
+    }
+   },
+   "recheck": "see round5_footprint_recheck.json: round-4 20x null was estimator mismatch; matched single-perm null >= +40 rate"
+  },
+  "decisive_segments": {
+   "decisive": 347,
+   "unresolved": 1164,
+   "fam_verdicts": {
+    "billboards": "+40",
+    "building_footprint": "metric-silent (~1: full-bleed or no preference)",
+    "building_landmark_misc": "metric-silent (~1: full-bleed or no preference)",
+    "building_residential": "metric-silent (~1: full-bleed or no preference)",
+    "coronas": "anti-enriched (UVs avoid non-black content; page type breaks the mask -- metric inapplicable)",
+    "flat": "metric-silent (~1: full-bleed or no preference)",
+    "other": "metric-silent (~1: full-bleed or no preference)",
+    "props_mono_rail": "+40",
+    "props_rooftop": "metric-silent (~1: full-bleed or no preference)",
+    "props_street": "unresolved",
+    "road_band": "metric-silent (~1: full-bleed or no preference)",
+    "trees": "metric-silent (~1: full-bleed or no preference)"
+   }
+  }
+ },
+ "GothamCity_Island2": {
+  "n_segments": 1020,
+  "n_sampled": 1020,
+  "n_popA": 374,
+  "enrichment": {
+   "plus40": {
+    "billboards": {
+     "nseg": 90,
+     "mean": 1.179,
+     "median": 1.361
+    },
+    "building_footprint": {
+     "nseg": 235,
+     "mean": 0.997,
+     "median": 1.003
+    },
+    "building_landmark_misc": {
+     "nseg": 48,
+     "mean": 0.998,
+     "median": 1.0
+    },
+    "building_residential": {
+     "nseg": 25,
+     "mean": 0.951,
+     "median": 1.001
+    },
+    "coronas": {
+     "nseg": 21,
+     "mean": 0.0,
+     "median": 0.0
+    },
+    "flat": {
+     "nseg": 8,
+     "mean": 1.0,
+     "median": 1.0
+    },
+    "props_mono_rail": {
+     "nseg": 120,
+     "mean": 0.93,
+     "median": 0.918
+    },
+    "props_rooftop": {
+     "nseg": 100,
+     "mean": 1.102,
+     "median": 1.132
+    },
+    "props_street": {
+     "nseg": 264,
+     "mean": 1.169,
+     "median": 1.18
+    },
+    "road_band": {
+     "nseg": 27,
+     "mean": 1.036,
+     "median": 1.078
+    },
+    "trees": {
+     "nseg": 82,
+     "mean": 1.0,
+     "median": 1.0
+    }
+   },
+   "v5": {
+    "billboards": {
+     "nseg": 44,
+     "mean": 0.99,
+     "median": 1.0
+    },
+    "building_footprint": {
+     "nseg": 67,
+     "mean": 0.958,
+     "median": 1.0
+    },
+    "building_landmark_misc": {
+     "nseg": 9,
+     "mean": 0.976,
+     "median": 1.0
+    },
+    "building_residential": {
+     "nseg": 7,
+     "mean": 1.013,
+     "median": 1.0
+    },
+    "flat": {
+     "nseg": 3,
+     "mean": 1.0,
+     "median": 1.0
+    },
+    "props_mono_rail": {
+     "nseg": 2,
+     "mean": 1.009,
+     "median": 1.009
+    },
+    "props_rooftop": {
+     "nseg": 90,
+     "mean": 0.997,
+     "median": 1.0
+    },
+    "props_street": {
+     "nseg": 88,
+     "mean": 1.088,
+     "median": 1.094
+    },
+    "road_band": {
+     "nseg": 13,
+     "mean": 1.027,
+     "median": 1.0
+    },
+    "trees": {
+     "nseg": 51,
+     "mean": 1.001,
+     "median": 1.0
+    }
+   },
+   "null": {
+    "billboards": {
+     "nseg": 90,
+     "null_mean": 1.029,
+     "null_sd": 0.121
+    },
+    "building_footprint": {
+     "nseg": 235,
+     "null_mean": 0.992,
+     "null_sd": 0.102
+    },
+    "building_landmark_misc": {
+     "nseg": 48,
+     "null_mean": 1.014,
+     "null_sd": 0.082
+    },
+    "building_residential": {
+     "nseg": 25,
+     "null_mean": 0.996,
+     "null_sd": 0.107
+    },
+    "coronas": {
+     "nseg": 21,
+     "null_mean": 0.758,
+     "null_sd": 0.139
+    },
+    "flat": {
+     "nseg": 8,
+     "null_mean": 0.964,
+     "null_sd": 0.148
+    },
+    "props_mono_rail": {
+     "nseg": 120,
+     "null_mean": 1.012,
+     "null_sd": 0.04
+    },
+    "props_rooftop": {
+     "nseg": 100,
+     "null_mean": 0.964,
+     "null_sd": 0.094
+    },
+    "props_street": {
+     "nseg": 264,
+     "null_mean": 0.967,
+     "null_sd": 0.079
+    },
+    "road_band": {
+     "nseg": 27,
+     "null_mean": 0.969,
+     "null_sd": 0.14
+    },
+    "trees": {
+     "nseg": 82,
+     "null_mean": 0.973,
+     "null_sd": 0.128
+    }
+   },
+   "note": "mask_A (alpha/near-black); null ~1 by construction; >1 = UVs prefer content"
+  },
+  "verdict": {
+   "billboards": {
+    "n": 90,
+    "plus40": 1.179,
+    "v5": 0.99,
+    "null": 1.029,
+    "null_sd": 0.041,
+    "d_plus40_vs1": 4.4,
+    "d_v5_vs1": -0.2,
+    "wins": {
+     "plus40": 37,
+     "v5": 7
+    },
+    "verdict": "+40"
+   },
+   "building_footprint": {
+    "n": 235,
+    "plus40": 0.997,
+    "v5": 0.958,
+    "null": 0.992,
+    "null_sd": 0.02,
+    "d_plus40_vs1": -0.1,
+    "d_v5_vs1": -2.1,
+    "wins": {
+     "plus40": 57,
+     "v5": 10
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "building_landmark_misc": {
+    "n": 48,
+    "plus40": 0.998,
+    "v5": 0.976,
+    "null": 1.014,
+    "null_sd": 0.034,
+    "d_plus40_vs1": -0.1,
+    "d_v5_vs1": -0.7,
+    "wins": {
+     "plus40": 6,
+     "v5": 3
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "building_residential": {
+    "n": 25,
+    "plus40": 0.951,
+    "v5": 1.013,
+    "null": 0.996,
+    "null_sd": 0.053,
+    "d_plus40_vs1": -0.9,
+    "d_v5_vs1": 0.3,
+    "wins": {
+     "plus40": 6,
+     "v5": 1
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "coronas": {
+    "n": 21,
+    "plus40": 0.0,
+    "v5": null,
+    "null": 0.758,
+    "null_sd": 0.182,
+    "d_plus40_vs1": -5.5,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 0,
+     "v5": 0
+    },
+    "verdict": "anti-enriched (UVs avoid non-black content; page type breaks the mask -- metric inapplicable)"
+   },
+   "flat": {
+    "n": 8,
+    "plus40": 1.0,
+    "v5": 1.0,
+    "null": 0.964,
+    "null_sd": 0.109,
+    "d_plus40_vs1": 0.0,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 0,
+     "v5": 0
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "props_mono_rail": {
+    "n": 120,
+    "plus40": 0.93,
+    "v5": 1.009,
+    "null": 1.012,
+    "null_sd": 0.012,
+    "d_plus40_vs1": -5.7,
+    "d_v5_vs1": 0.7,
+    "wins": {
+     "plus40": 0,
+     "v5": 2
+    },
+    "verdict": "anti-enriched (UVs avoid non-black content; page type breaks the mask -- metric inapplicable)"
+   },
+   "props_rooftop": {
+    "n": 100,
+    "plus40": 1.102,
+    "v5": 0.997,
+    "null": 0.964,
+    "null_sd": 0.042,
+    "d_plus40_vs1": 2.4,
+    "d_v5_vs1": -0.1,
+    "wins": {
+     "plus40": 87,
+     "v5": 3
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "props_street": {
+    "n": 264,
+    "plus40": 1.169,
+    "v5": 1.088,
+    "null": 0.967,
+    "null_sd": 0.02,
+    "d_plus40_vs1": 8.3,
+    "d_v5_vs1": 4.3,
+    "wins": {
+     "plus40": 88,
+     "v5": 0
+    },
+    "verdict": "unresolved"
+   },
+   "road_band": {
+    "n": 27,
+    "plus40": 1.036,
+    "v5": 1.027,
+    "null": 0.969,
+    "null_sd": 0.049,
+    "d_plus40_vs1": 0.7,
+    "d_v5_vs1": 0.6,
+    "wins": {
+     "plus40": 9,
+     "v5": 1
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   },
+   "trees": {
+    "n": 82,
+    "plus40": 1.0,
+    "v5": 1.001,
+    "null": 0.973,
+    "null_sd": 0.041,
+    "d_plus40_vs1": -0.0,
+    "d_v5_vs1": 0.0,
+    "wins": {
+     "plus40": 43,
+     "v5": 8
+    },
+    "verdict": "metric-silent (~1: full-bleed or no preference)"
+   }
+  },
+  "popA": {
+   "n": 374,
+   "plus40_enr": 1.096,
+   "v5_enr": 1.012,
+   "null_enr": 0.974,
+   "null_sd": 0.016,
+   "plus40_raw": 0.974,
+   "v5_raw": 0.983,
+   "wins_enr": {
+    "plus40": 333,
+    "v5": 35
+   }
+  },
+  "geometry": {
+   "features": [
+    "zext",
+    "size_xy",
+    "up_frac",
+    "horiz_frac",
+    "area",
+    "planarity"
+   ],
+   "eta2_plus40": {
+    "zext": 0.169,
+    "size_xy": 0.068,
+    "up_frac": 0.401,
+    "horiz_frac": 0.353,
+    "area": 0.165,
+    "planarity": 0.638
+   },
+   "eta2_v5": {
+    "zext": 0.069,
+    "size_xy": 0.01,
+    "up_frac": 0.019,
+    "horiz_frac": 0.039,
+    "area": 0.019,
+    "planarity": 0.23
+   },
+   "centroid_cv": {
+    "plus40": 0.64,
+    "v5": 0.716,
+    "floor_plus40": 0.259,
+    "floor_v5": 0.658
+   },
+   "profile_by_coarse": {
+    "plus40": {
+     "props": {
+      "zext": 7.113,
+      "size_xy": 493.162,
+      "up_frac": 0.157,
+      "horiz_frac": 0.56,
+      "area": 1312.302,
+      "planarity": 0.93
+     },
+     "buildings": {
+      "zext": 15.119,
+      "size_xy": 519.235,
+      "up_frac": 0.235,
+      "horiz_frac": 0.458,
+      "area": 4723.007,
+      "planarity": 0.94
+     },
+     "road": {
+      "zext": 1.834,
+      "size_xy": 632.79,
+      "up_frac": 0.384,
+      "horiz_frac": 0.247,
+      "area": 8473.801,
+      "planarity": 0.999
+     },
+     "sidewalk_flat": {
+      "zext": 1.741,
+      "size_xy": 680.018,
+      "up_frac": 0.455,
+      "horiz_frac": 0.052,
+      "area": 8242.519,
+      "planarity": 0.996
+     }
+    },
+    "v5": {
+     "sidewalk_flat": {
+      "zext": 4.32,
+      "size_xy": 511.332,
+      "up_frac": 0.159,
+      "horiz_frac": 0.593,
+      "area": 1247.515,
+      "planarity": 0.872
+     },
+     "road": {
+      "zext": 8.942,
+      "size_xy": 586.544,
+      "up_frac": 0.189,
+      "horiz_frac": 0.473,
+      "area": 1457.107,
+      "planarity": 0.965
+     }
+    }
+   }
+  },
+  "footprint": {
+   "plus40": {
+    "billboards": {
+     "pass_": 44,
+     "n": 90,
+     "rate": 0.489
+    },
+    "building_footprint": {
+     "pass_": 29,
+     "n": 155,
+     "rate": 0.187
+    },
+    "building_landmark_misc": {
+     "pass_": 6,
+     "n": 20,
+     "rate": 0.3
+    },
+    "building_residential": {
+     "pass_": 2,
+     "n": 5,
+     "rate": 0.4
+    },
+    "props_mono_rail": {
+     "pass_": 2,
+     "n": 120,
+     "rate": 0.017
+    },
+    "props_rooftop": {
+     "pass_": 2,
+     "n": 8,
+     "rate": 0.25
+    },
+    "props_street": {
+     "pass_": 6,
+     "n": 264,
+     "rate": 0.023
+    },
+    "trees": {
+     "pass_": 29,
+     "n": 82,
+     "rate": 0.354
+    }
+   },
+   "v5": {
+    "billboards": {
+     "pass_": 12,
+     "n": 15,
+     "rate": 0.8
+    },
+    "building_footprint": {
+     "pass_": 3,
+     "n": 39,
+     "rate": 0.077
+    },
+    "building_landmark_misc": {
+     "pass_": 1,
+     "n": 2,
+     "rate": 0.5
+    },
+    "building_residential": {
+     "pass_": 2,
+     "n": 3,
+     "rate": 0.667
+    },
+    "props_mono_rail": {
+     "pass_": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "props_rooftop": {
+     "pass_": 0,
+     "n": 2,
+     "rate": 0.0
+    },
+    "props_street": {
+     "pass_": 0,
+     "n": 83,
+     "rate": 0.0
+    },
+    "trees": {
+     "pass_": 11,
+     "n": 14,
+     "rate": 0.786
+    }
+   },
+   "null": {
+    "billboards": {
+     "n": 90,
+     "null": 0.46
+    },
+    "building_footprint": {
+     "n": 155,
+     "null": 0.29
+    },
+    "building_landmark_misc": {
+     "n": 20,
+     "null": 0.275
+    },
+    "props_mono_rail": {
+     "n": 120,
+     "null": 0.148
+    },
+    "props_rooftop": {
+     "n": 8,
+     "null": 0.271
+    },
+    "props_street": {
+     "n": 264,
+     "null": 0.021
+    },
+    "trees": {
+     "n": 82,
+     "null": 0.468
+    }
+   },
+   "recheck": "see round5_footprint_recheck.json: round-4 20x null was estimator mismatch; matched single-perm null >= +40 rate"
+  },
+  "decisive_segments": {
+   "decisive": 90,
+   "unresolved": 930,
+   "fam_verdicts": {
+    "billboards": "+40",
+    "building_footprint": "metric-silent (~1: full-bleed or no preference)",
+    "building_landmark_misc": "metric-silent (~1: full-bleed or no preference)",
+    "building_residential": "metric-silent (~1: full-bleed or no preference)",
+    "coronas": "anti-enriched (UVs avoid non-black content; page type breaks the mask -- metric inapplicable)",
+    "flat": "metric-silent (~1: full-bleed or no preference)",
+    "props_mono_rail": "anti-enriched (UVs avoid non-black content; page type breaks the mask -- metric inapplicable)",
+    "props_rooftop": "metric-silent (~1: full-bleed or no preference)",
+    "props_street": "unresolved",
+    "road_band": "metric-silent (~1: full-bleed or no preference)",
+    "trees": "metric-silent (~1: full-bleed or no preference)"
+   }
+  }
+ }
+}

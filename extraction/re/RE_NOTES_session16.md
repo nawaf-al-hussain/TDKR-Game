@@ -60,6 +60,12 @@ The runtime material table is the render-record array inside
   AlphaMasking, NormalSpecOverbright, Reflections, TDKR-Vehicles,
   **LightmapVCBlendDC** (island-2 roads family, DiffuseMap UNBOUND,
   LightMap = Landmarks0 — bake-lit geometry).
+  **[CORRECTED session 18: LightmapVCBlendDC is 4+4 materials, ALL park-
+  ground grass/dirt/rock blends (T1/T2 = GC_Park_*), and ZERO street-stream
+  segments bind them via +40 on either island. Its fragment shader is
+  Color = LM(vCoord1)*2 * mix(Texture1, Texture2, vColor.a) *
+  vec4(vColor.rgb,1) — a vertex-colour alpha blend requiring vertex
+  colours its own (non-batched) streams must supply.]**
 - Output banked: `extraction/re/runtime_mats_{island}.json`.
 
 ## 3. DECISIVE: render probes (`render_probe16.py`, renders in work/probe16)
@@ -107,16 +113,28 @@ null 49.4%/47.3%, identity 100%). But the failure itself was informative:
   (`w3_coord1_test16.py`): **(a,d) = (offset 109 scale, offset 145 offset)
   wins for 40/40 island-1 and 40/40 island-2 materials** (b @121 and
   c @133 are other slots — the reviewer's letter labels were off by one).
+  **[RETRACTED session 17: the pairing-sweep metric was the degenerate
+  in-page test (scale ~1e-5 -> constant UV -> trivially in-page for ANY
+  pair). The real pair is scale@121 + offset@145 WRAPPED.]**
 
 **pageUV = w3_uv x a.xy + d.xy**: 100.00% inside [0,1]^2 on BOTH islands
 (577,017 / 469,133 vertices), per-material coherent tile rects
 (m90: [0.25,0.62]x[0.75,1.00] of Roads0, area 0.09; m229: area 0.01).
 d values sit on the 1/16 grid 3.7x over null (bake-atlas tile grid);
 w3 = 0 segments degrade gracefully to the flat d-tesel tint.
+**[RETRACTED session 17: the 100.0000% in-page number is a degenerate
+slot-109 artifact — the round-4 prescribed null showed ANY (a,d) pair is
+in-page (284/284 d+a<=1). Superseded by pageUV = w3 x scale@121 +
+offset@145 WRAPPED.]**
 
 Engine model (street tier): `Color = DiffuseMap(uv0) x LightMap(pageUV)
 x 2.0` with pageUV per-vertex from w3 — LightMapDC-f.glsl exact with
 Coord1 = w3, Coord1_scaleoffset = (a.xy, d.xy) from batch_info.
+**[CONFIRMED session 18, strengthened: the extracted LightMapDC-f.glsl
+has NO Overbright uniform and NO vertex-colour term — `LightMapColor =
+texture2D(LightMap, vCoord1) * 2.0` is a hardcoded literal and the vColor
+multiply is commented out by the authors ("ATICA - removed on 26.04 to
+save memory in batching"). The x2 is engine-exact, not an assumption.]**
 
 ## 5. +36 SOLVED (`plus36_probe16.py`)
 
@@ -168,8 +186,29 @@ TEXCOORD_1.
 1. Overbright: LightMapColor = LM*2 + vec4(Overbright) — find the
    technique param default (NormalSpecOverbright name suggests it matters);
    the current render is engine-exact only if Overbright = 0.
+   **[RESOLVED session 18: there is NO Overbright uniform in any shipped
+   GLSL; the x2 is a literal in LightMapDC/VCBlendDC. The street render is
+   engine-exact as shipped.]**
 2. The 8 unbound island-1 segments (3 missing textures + 5 dark) — identify.
 3. Hero-unit generic-object records (unchanged from session 15).
 4. Ground-material split: the streamed data has no park-floor/road-plane
    ground beyond what +40 binds; the big ground planes may be a separate
    non-streamed unit (GC_City_Plane) — reconcile with the v15 look.
+
+## Round-5 status ledger (tagged session 18)
+
+Every claim in this file whose status changed in sessions 17-18:
+
+| Claim (session 16) | Status now |
+|---|---|
+| +40 = per-segment material index; compiled bdae self-indexing 307/307, 196/196 | **STANDS** (round-5 added the geometry-profile + enrichment evidence; see ledger in session-17 file for the footprint retraction) |
+| (a,d)=(109,145) pairing, 40/40 wins | **RETRACTED s17** (degenerate in-page metric; real pair (121,145) wrapped) |
+| pageUV = w3·a(109)+d(145), 100.0000% in-page | **RETRACTED s17** (degenerate artifact) |
+| v5 band-atlas binding disqualified by agreement test | **STANDS** |
+| Render probes (lamp/monorail/railroad/trees/billboard) | **visual, unquantified** (tagged s17; unchanged) |
+| m74 = trunk diffuse + Roads0 lightmap (street trees) | **STANDS** |
+| LightMapDC = Diffuse × LM × 2 | **CONFIRMED s18 at shader level** (x2 hardcoded; no Overbright uniform; no vColor term — author comment) |
+| LightmapVCBlendDC = island-2 roads family | **CORRECTED s18** (8 park materials, 0 street segments; shader = vColor alpha blend) |
+| TEXCOORD_1 = w3·a+d in exporter v16 | **SUPERSEDED s17** by v16.1 (scale@121+offset@145 wrapped) |
+| "Overbright=0 assumption" / Next#1 | **RESOLVED s18** (no such uniform exists) |
+| Deploy `rm -rf models` fragility | **FIXED s17/s18** (deploy_site.py: incremental sync + explicit allowlist, deletes outside `models/*.glb` impossible, --dry-run) |

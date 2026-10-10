@@ -1,0 +1,92 @@
+{
+ "spatial_controls": {
+  "healthy_v17": {
+   "ok": true,
+   "reasons": [],
+   "mean": 12.79
+  },
+  "black": {
+   "ok": false,
+   "reasons": [
+    "mean luminance 0.00 < 8.0",
+    "near-black fraction 1.000 > 0.97",
+    "quadrant TL mean 0.00 < 4.0 (partial black frame)",
+    "quadrant TR mean 0.00 < 4.0 (partial black frame)",
+    "quadrant BL mean 0.00 < 4.0 (partial black frame)",
+    "quadrant BR mean 0.00 < 4.0 (partial black frame)"
+   ],
+   "mean": 0.0
+  },
+  "half_black_right": {
+   "ok": false,
+   "reasons": [
+    "mean luminance 6.47 < 8.0",
+    "quadrant TR mean 0.00 < 4.0 (partial black frame)",
+    "quadrant BR mean 0.00 < 4.0 (partial black frame)",
+    "left/right asymmetry 2.00 > 0.15 (half-dim render)"
+   ],
+   "mean": 6.47
+  },
+  "right_half_dim10": {
+   "ok": false,
+   "reasons": [
+    "left/right asymmetry 0.26 > 0.15 (half-dim render)"
+   ],
+   "mean": 11.47
+  },
+  "right_half_dim3": {
+   "ok": false,
+   "reasons": [
+    "mean luminance 7.97 < 8.0",
+    "quadrant TR mean 3.00 < 4.0 (partial black frame)",
+    "quadrant BR mean 3.00 < 4.0 (partial black frame)",
+    "left/right asymmetry 1.25 > 0.15 (half-dim render)"
+   ],
+   "mean": 7.97
+  }
+ },
+ "live_gate": {
+  "healthy_baseline": {
+   "removed": [],
+   "luminance_gate": "PASS",
+   "luminance_tail": "District pro\nmean luminance: 13.38 / 255   (threshold 8.0)\nspatial: mean 13.38, near-black 0.000, L/R asym 0.00, quadrants TL=13.09 TR=13.11 BL=13.71 BR=13.60\nLUMINANCE GATE PASS",
+   "url_gate": "PASS",
+   "url_tail": "pre-deploy URL gate: 98 referenced files, 0 missing\nDEPLOY GATE PASS \u2014 manifest v17, 263 meshes"
+  },
+  "lut_removed": {
+   "removed": [
+    "models/tex/LUT_000_default.png"
+   ],
+   "luminance_gate": "PASS",
+   "luminance_tail": "District pro\nmean luminance: 13.38 / 255   (threshold 8.0)\nspatial: mean 13.38, near-black 0.000, L/R asym 0.00, quadrants TL=13.09 TR=13.11 BL=13.71 BR=13.60\nLUMINANCE GATE PASS",
+   "url_gate": "FAIL",
+   "url_tail": "pre-deploy URL gate: 98 referenced files, 1 missing\n  MISSING: models/tex/LUT_000_default.png\nDEPLOY GATE FAILED \u2014 fix the missing files first"
+  },
+  "fog_removed": {
+   "removed": [
+    "models/tex/GC_VerticalFOG.png"
+   ],
+   "luminance_gate": "PASS",
+   "luminance_tail": "District pro\nmean luminance: 13.38 / 255   (threshold 8.0)\nspatial: mean 13.38, near-black 0.000, L/R asym 0.00, quadrants TL=13.09 TR=13.11 BL=13.71 BR=13.60\nLUMINANCE GATE PASS",
+   "url_gate": "FAIL",
+   "url_tail": "pre-deploy URL gate: 98 referenced files, 1 missing\n  MISSING: models/tex/GC_VerticalFOG.png\nDEPLOY GATE FAILED \u2014 fix the missing files first"
+  },
+  "broken_manifest": {
+   "removed": [],
+   "luminance_gate": "PASS",
+   "luminance_tail": "District pro\nmean luminance: 11.57 / 255   (threshold 8.0)\nspatial: mean 11.57, near-black 0.863, L/R asym 0.04, quadrants TL=9.64 TR=10.14 BL=13.95 BR=12.58\nLUMINANCE GATE PASS",
+   "url_gate": "FAIL",
+   "url_tail": "pre-deploy URL gate: 98 referenced files, 6 missing\n  MISSING: models/street_ISLAND999_MISSING1_00.glb\n  MISSING: models/street_ISLAND999_MISSING1_01.glb\n  MISSING: models/street_ISLAND999_MISSING1_02.glb\n  MISSING: models/street_ISLAND999_MISSING1_03.glb\n  MISSING: models/street_ISLAND999_MISSING1_04.glb\n  MISSING: models/street_ISLAND999_MISSING1_05.glb\nDEPLOY GATE FAILED \u2014 fix the missing files first"
+  }
+ },
+ "checks": {
+  "spatial_healthy_pass": true,
+  "spatial_black_fail": true,
+  "spatial_halfblack_fail": true,
+  "spatial_dimhalf_fail": true,
+  "baseline_lum_pass": true,
+  "aux_loss_caught_by_url_gate": true,
+  "broken_manifest_fail": true
+ },
+ "all_negative_controls": true
+}

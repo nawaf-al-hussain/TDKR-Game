@@ -120,19 +120,19 @@
    "overall": 0.6288,
    "sd_overall": 0.1416,
    "by_family_mean": {
+    "coronas": 0.5261,
+    "props_mono_rail": 0.6794,
+    "building_residential": 0.6999,
+    "road_band": 0.7008,
+    "unbound": 0.3756,
+    "building_landmark_misc": 0.6555,
+    "flat": 0.7277,
+    "building_footprint": 0.6283,
+    "billboards": 0.6212,
     "props_rooftop": 0.5716,
     "props_street": 0.5862,
-    "flat": 0.7277,
-    "unbound": 0.3756,
-    "road_band": 0.7008,
-    "building_residential": 0.6999,
-    "coronas": 0.5261,
-    "trees": 0.6543,
     "other": 0.6755,
-    "building_landmark_misc": 0.6555,
-    "billboards": 0.6212,
-    "props_mono_rail": 0.6794,
-    "building_footprint": 0.6283
+    "trees": 0.6543
    }
   },
   "popA_v5bound": {
@@ -9656,17 +9656,17 @@
    "overall": 0.6217,
    "sd_overall": 0.1457,
    "by_family_mean": {
+    "coronas": 0.5,
+    "props_mono_rail": 0.6901,
+    "building_residential": 0.6888,
+    "road_band": 0.6672,
+    "building_landmark_misc": 0.6904,
+    "flat": 0.5892,
+    "billboards": 0.7004,
+    "building_footprint": 0.6719,
     "props_rooftop": 0.5254,
     "props_street": 0.5329,
-    "flat": 0.5892,
-    "road_band": 0.6672,
-    "building_residential": 0.6888,
-    "coronas": 0.5,
-    "trees": 0.6529,
-    "building_landmark_misc": 0.6904,
-    "billboards": 0.7004,
-    "props_mono_rail": 0.6901,
-    "building_footprint": 0.6719
+    "trees": 0.6529
    }
   },
   "popA_v5bound": {

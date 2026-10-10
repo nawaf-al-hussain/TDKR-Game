@@ -9,6 +9,15 @@ texel-validity (+40 vs old vs shuffled), UV-footprint, (a,d) null test,
 quantify v15->v16, stratify coverage, w3 decode, vertex-colour check,
 before/after of a building block, deploy-process fixes.
 
+> **Round-5 status note (session 18):** the two distributional pillars of
+> this round were re-examined — the UV-footprint "~20x null" was RETRACTED
+> (estimator mismatch, see §2 tag) and the visited-luminance-structure
+> metric was shown to separate only DEGENERATE chains (permuted-parameter
+> null scores the same). The street flip's quantified case now rests on
+> the engine record (self-indexing bdae), the round-5 geometry-profile
+> test, and the round-5 enrichment metric; the LM chain rests on its
+> structural anchors (m90/m76). See RE_NOTES_session18.md.
+
 ## 1. Texel-validity test (`round4_street_evidence.py`, .json banked)
 
 Fraction of diffuse-texture samples landing on non-empty texels (alpha<64 OR
@@ -29,6 +38,11 @@ three bindings, by engine family (+40 material family):
 - popA (v5 bound, +40 diffuse available): +40 0.655 / v5 0.801 / null
   0.618±0.017; per-segment wins +40:191 v5:248 tie:154 — v5's UV-fit DID
   align content on its (wrong) pages: content-finding but page-wrong.
+  **[RESOLVED session 18: this popA ordering was the page-density confound
+  itself. Under the density-normalized ENRICHMENT metric the verdict
+  flips to +40 on both islands: enrichment +40 1.086/1.096 vs v5
+  1.009/1.012 vs shuffle null 0.982±0.019 / 0.974±0.016 (wins 479:97 and
+  333:35). Raw texel-validity stays retired as a popA arbiter.]**
 
 ## 2. UV-footprint (cell containment) — 20x over null
 
@@ -37,6 +51,16 @@ fraction >=0.95 for +40 = 0.263 (isl-1) / 0.161 (isl-2) vs null 0.013 /
 0.007; bbox-grid containment 0.238 / 0.140 vs 0.013 / 0.007.  Absolute
 rates are depressed by thin-stroke cells (samples on the cell's own black
 pad label as background) — the signal is the ~20x null separation.
+**[RETRACTED session 18 — ESTIMATOR MISMATCH: the null thresholded the
+MEAN of 24 permuted doms (a segment passes only if it lands in one cell
+on AVERAGE over all perms), while +40 got a single deterministic dom.
+The matched estimator (single-perm null, same segments, 24 perms) is
+0.301±0.009 / 0.208±0.012 — AT OR ABOVE +40's rates. Conditioning the
+null on atlas-like permuted pages still gives 0.174/0.105. The footprint
+metric does NOT discriminate +40 from shuffled labels; the "~20x" was an
+artifact. Banked in round5_footprint_recheck.json. The same re-examination
+showed the round-4 class-UV-rect-tightness metric is degenerate (1.0 for
++40, v5 AND shuffled classes — never evidence).]**
 
 ## 3. (a,d) null test — the reviewer predicted exactly this
 
@@ -62,6 +86,19 @@ The committed w3_coord1_test16.py with the REAL-scale slot 121 scores only
      distribution under the new chain; d) occupancy: 91/123 (isl-1) and
      55/81 (isl-2) LM materials visit compact (<=1.2-width) wrapped regions
      incl. m76 whose a=15.25 maps its narrow w3 onto a road-band strip.
+  **[DOWNGRADED session 18: evidence (b) and (c) separate the chain only
+  from DEGENERATE (constant-UV) chains. The round-5 alternatives table
+  (round5_t3_chain.json) shows permuted (121,145) parameters score
+  lum-std 0.111±0.004 vs shipped 0.128±0.051 — indistinguishable — and
+  the seam-continuity test (value-space AND pageUV-space, same-page
+  conditioned) gives authored ≈ permuted-null (0.156 vs 0.144 isl-1;
+  0.144 vs 0.103 isl-2 — authored NOT better). Per-tile area bakes do
+  not guarantee cross-material seam continuity, so these distributional
+  tests are INSENSITIVE here. The chain's support = its engine-proven
+  FORM (vCoord1=(Coord1·s+o)·LightMapAtlas+..., LightMapAtlas=(1,1,0,0)
+  for all 284/184 materials, session-18 shader extraction) + the m90
+  exact tile-rect anchor + m76 band strip + occupancy compactness.
+  Recorded as the best-supported mapping, not independently confirmed.]**
 - Tile-partition null: saturated (total visited area 14.7x page) — bake
   groups are AREA bakes (A0/B0/Roads0/Landmarks0), so different materials
   in one area legitimately share tile regions; non-overlap was the wrong
@@ -145,3 +182,20 @@ banked).
 - word 5 (stride-24) content unidentified ([u16][u8][u8=0]).
 - The texel-validity metric needs a cell-aware redesign for dark-pad
   pages before it can adjudicate props_street/trees/coronas families.
+
+## Round-5 status ledger (tagged session 18)
+
+Every claim in this file whose status changed in session 18:
+
+| Claim (session 17) | Status now |
+|---|---|
+| UV-footprint dom95 0.263/0.161 vs null 0.013/0.007 (~20x) | **RETRACTED s18** (estimator mismatch; matched single-perm null 0.301/0.208 >= +40) |
+| Class UV-rect tightness (+40 1.0 vs v5 vs null) | **DEGENERATE — never evidence** (1.0 for every labelling incl. shuffle) |
+| popA: v5 0.80 / +40 0.655 (raw validity) | **RESOLVED s18 for +40** under enrichment (1.086 vs 1.009, d≈5.5σ) |
+| Visited lum-std 0.129 vs 0.001 as chain evidence | **DOWNGRADED s18** (separates only degenerate chains; permuted null 0.111 ≈ shipped 0.128) |
+| Chain (scale@121, offset@145) wrapped | **STANDS as best-supported** (engine-proven FORM via LightMapDC-v.glsl + LightMapAtlas=(1,1,0,0) all materials; m90/m76 anchors; occupancy) — the new distributional tests are insensitive, recorded as an open risk |
+| Wrap sampling | **STRENGTHENED s18** (engine enum table has GL_REPEAT/CLAMP_TO_EDGE/MIRRORED; no per-material wrap flag in bdae sampler records; clamp variant scores lower structure) |
+| "slot 109/133 are ~1e-5 degenerate placeholder pair" | **REVISED s18: UNRESOLVED** — 9/227+5/141 LightMapDC records hold exactly 1/65535 (u16 dequant family); distribution broad (median 4.2x); as a uv0 transform it does NOT beat shipped /65535 (16 vs 13 wins, mean Δ −0.009); position-scale rejected (f32) |
+| x2 / Overbright assumption | **RESOLVED s18** — no Overbright uniform exists; x2 hardcoded in LightMapDC-f.glsl |
+| "street vertices carry NO vertex colour → no VC term" | **CONFIRMED s18** (vColor multiply author-removed in LightMapDC; VCBlendDC unused by street streams) |
+| Luminance/footprint gates | **HARDENED s18** (spatial checks: near-black fraction, per-quadrant floor, L/R asymmetry; negative controls banked in round5_pipeline.json) |

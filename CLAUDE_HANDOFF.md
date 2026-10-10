@@ -1,10 +1,10 @@
 # CLAUDE_HANDOFF.md — problem brief for an outside AI collaborator
 
-*Written 2026-10-09, updated after sessions 16-17. Everything below is
+*Written 2026-10-09, updated after sessions 16-18. Everything below is
 verifiable in this public repo: https://github.com/nawaf-al-hussain/TDKR-Game
 — live viewer: https://nawaf-al-hussain.github.io/TDKR-Game/*
 
-## 0. TL;DR — UPDATED AFTER SESSION 17 (round-4 review round)
+## 0. TL;DR — UPDATED AFTER SESSION 18 (round-5 review round)
 
 We are reverse-engineering Gameloft's delisted mobile game **The Dark Knight
 Rises (2012)** to rebuild its open-world Gotham City in a browser 3D viewer.
@@ -76,17 +76,26 @@ records.
 + batch_info semantics):**
 
 - **Descriptor +40 IS the per-segment material index into the zone's
-  compiled material array.** Round-4 added the prescribed quantified
-  evidence (`round4_street_evidence.py`): UV-footprint cell containment
-  0.263/0.161 vs shuffle-null 0.013/0.007 (~20x); texel-validity wins on
-  buildings/billboards/rooftop families (0.79-0.94 vs v5 0.08-0.26 vs null
-  0.63-0.70; props_street/coronas/trees are page-density-confounded for
-  every binding — dark-pad thin-stroke cells, reported as a metric limit);
-  v15->v16 changed the texture of 99.6% of segments (v15 was 39% bound and
-  the bound part was largely wrong — 89 v5-"road" segments are props_street
-  by +40, 135 v5-flat segments are trees).  The direct renders (lamp row,
-  monorail, railroad, trees, billboards) remain **visual, unquantified**
-  support — the quantified case now rests on the metrics above.
+  compiled material array.** The quantified case, as of round 5:
+  (1) the engine record itself (compiled bdae self-indexing 307/307,
+  196/196, order == library_materials); (2) the round-5 GEOMETRY-PROFILE
+  test (texture-independent): +40's family labels predict segment geometry
+  (up-normal fraction, planarity, size) at 2.5-2.6x the majority floor
+  while v5's labels score AT/BELOW the floor — eta² up to 0.64 vs ≤0.23
+  (`round5_t2_evidence.json`); (3) the round-5 ENRICHMENT metric
+  (density-normalized texel-validity): +40 1.086/1.096 vs v5 1.009/1.012
+  vs shuffle-null 0.982±0.019 on the disputed popA slice — the round-4
+  popA ordering (v5 ahead) was the page-density confound itself;
+  billboards d=7.2σ and props_mono_rail d=5.0σ for +40. **Retractions:
+  the round-4 UV-footprint "~20x null" was an ESTIMATOR MISMATCH** (the
+  null thresholded the mean of 24 permuted doms; the matched single-perm
+  null is 0.301/0.208 ≥ +40's 0.263/0.161 — retracted,
+  `round5_footprint_recheck.json`), **and the class-UV-rect-tightness
+  metric is degenerate (1.0 for every labelling)**. v15→v16 changed the
+  texture of 99.6% of segments (v15 was 39% bound and the bound part was
+  largely wrong — 89 v5-"road" segments are props_street by +40, 135
+  v5-flat segments are trees). The direct renders (lamp row, monorail,
+  railroad, trees, billboards) remain **visual, unquantified** support.
 - **The session-10/11 v5 exporter bindings were DISQUALIFIED by the
   prescribed agreement test**: exact agreement 1/593 and 4/374 (null-level)
   under library_materials order AND alphabetical order AND 200-shuffle null.
@@ -102,26 +111,48 @@ records.
   insensitive (`.TGA` truncated our first walk — beware). Runtime
   DiffuseMap vs source.dae agree 306/307 and 195/196.
   Table: `extraction/re/runtime_mats_{island}.json`.
-- **Street lightmap UV chain — CORRECTED IN SESSION 17.** The round-3 claim
-  "pageUV = w3·a(109) + d(145), 100.0000% in-page" was a DEGENERATE-ARTIFACT
-  (slot 109 scale is ~1e-5 → pageUV collapses to the constant d; ANY (a,d)
-  pair is then in-page — the round-4 prescribed null test showed exactly
-  that, 100% everywhere, 284/284 materials with d+a≤1). The real chain is
-  **pageUV = w3_uv × scale@121.xy + offset@145.xy with WRAP sampling**:
-  m90's tile rect matches exactly, visited-region luminance structure std
-  0.129 vs 0.001 flat for the old chain, the "near-black central park"
-  segments sample page-histogram-shaped content under the new chain (they
-  sampled a single black texel under the old one), 91/123 (isl-1) and
-  55/81 (isl-2) LM materials visit compact wrapped regions. w3 = two
-  unorm16 lanes (LE: lo=U, hi=V); NO w3==0 street segments; 97.6%/98.2%
-  of LM-bound stride-24 segments carry per-vertex varying w3. collada
-  sampler scaleoffsets are all (0,0,0,0) placeholders — the runtime fills
-  them from batch_info (CDoubleBufferedDynamicBatchMesh).
-- **Street vertices carry NO vertex colour** (checked both strides; the
-  unknown word 5 is not RGBA and not an octahedral normal) — the ×2 in
-  LightMapDC/LightmapVCBlendDC stays an assumption until Overbright is
-  decoded. Exporter v16.1 ships the corrected chain; deployed as **v17**
-  with the new deploy gate (URL crawl + incremental sync + luminance floor).
+- **Street lightmap UV chain — CORRECTED IN SESSION 17, FORM PROVEN IN 18.**
+  The round-3 claim "pageUV = w3·a(109) + d(145), 100.0000% in-page" was a
+  DEGENERATE-ARTIFACT (slot 109 scale is ~1e-5 → pageUV collapses to the
+  constant d; ANY (a,d) pair is then in-page — the round-4 prescribed null
+  test showed exactly that, 100% everywhere, 284/284 materials with d+a≤1).
+  The real chain is **pageUV = w3_uv × scale@121.xy + offset@145.xy with
+  WRAP sampling**, and session 18 extracted the actual shaders
+  (`effects.gla` in the APK): `LightMapDC-v.glsl` computes `vCoord1 =
+  (Coord1·s + o) · LightMapAtlas.xy + LightMapAtlas.zw` and the type-7
+  LightMapAtlas vec4 = (1,1,0,0) for ALL 284+184 LM materials → the
+  shipped expression is the exact engine formula (identity second stage).
+  Supporting anchors: m90's tile rect matches the banked Roads0 rect
+  EXACTLY, the "near-black central park" segments sample page-shaped
+  histograms under the new chain (flat single-texel under the old one),
+  91/123 (isl-1) and 55/81 (isl-2) LM materials visit compact wrapped
+  regions. **Honest caveat (round 5): the two distributional tests the
+  round-5 review prescribed — permuted-parameter null and seam continuity
+  — are INSENSITIVE here** (permuted (121,145) scores lum-std 0.111 vs
+  shipped 0.128; seam |Δ| authored ≈ permuted, both islands, even
+  same-page and in pageUV space — per-tile area bakes do not guarantee
+  cross-material seam continuity). The chain is the best-supported
+  mapping, not independently confirmed. w3 = two unorm16 lanes (LE:
+  lo=U, hi=V); NO w3==0 street segments; 97.6%/98.2% of LM-bound
+  stride-24 segments carry per-vertex varying w3; building-family
+  stride-20 segments (3 + 1) fall back to a flat tint. collada sampler
+  scaleoffsets are all (0,0,0,0) placeholders — the runtime fills them
+  from batch_info (CDoubleBufferedDynamicBatchMesh).
+- **Street vertices carry NO vertex colour — and the engine does not want
+  one.** Session 18 extracted the street technique's shader:
+  `LightMapDC-f.glsl` computes exactly `Color = DiffuseMap(uv0) ·
+  LightMap(vCoord1) * 2.0`, alpha forced to 1, then fog — the ×2 is a
+  HARDCODED literal (there is NO Overbright uniform in any shipped GLSL;
+  the session-16 "Overbright" hypothesis is resolved) and the vertex-
+  colour multiply is commented out by the authors ("ATICA - removed on
+  26.04 to save memory in batching"). The viewer's street material is
+  engine-EXACT as shipped. `LightmapVCBlendDC` (the only VC technique) is
+  4+4 park-ground materials with **zero** street-stream segments. WRAP
+  sampling is engine-supported (GL enum table at 0xb862f8 contains
+  REPEAT/CLAMP_TO_EDGE/MIRRORED; no per-material flag in the bdae
+  sampler records; the clamp variant scores lower structure).
+  Exporter v16.1 ships the corrected chain; deployed as **v17** with the
+  new deploy gate (URL crawl + incremental sync + luminance floor).
   Unbound segments: **5** (all m40=0, engine-unbound FlippedPlane), the
   "3 missing textures" were an uppercase-.TGA stem bug (fixed).
 - **+36 SOLVED**: Spearman(+36, dataOff stream order) = +0.998 / +0.988,
@@ -213,7 +244,7 @@ each with a real world TRS), 4 bake-group templates. Full walk outputs:
 
 ## 5. THE BLOCKERS (all knowns, all unknowns)
 
-### B. Street segment→material link + lightmap UVs — **SOLVED in session 16**
+### B. Street segment→material link + lightmap UVs — **SOLVED in session 16, hardened 17-18**
 
 **What we needed**: for each segment of the streamed street geometry, the
 material index into the zone material DB (307 island-1 / 196 island-2
@@ -226,31 +257,44 @@ proof chain. Summary:
   `extraction/re/runtime_mats_{island}.json`); descriptor **+36 = global
   stream index across all LOD levels** (Spearman +0.998 vs dataOff order).
 - **vertex word 3 (stride-24) = packed Coord1**; batch_info slots
-  **a @109 (scale) / d @145 (offset)** give `pageUV = w3·a.xy + d.xy`
-  (100.0000% in-page, both islands). The b/c slots are other techniques'
-  params; the earlier "b=(scaleU,scaleV)" reading was off by one slot.
+  **scale @121 / offset @145 (wrapped)** give `pageUV = w3·s + o`, now
+  proven IN FORM by the extracted LightMapDC-v.glsl (with the LightMapAtlas
+  second stage identity for every LM material). The b/c slots are other
+  techniques' params; the earlier "b=(scaleU,scaleV)" reading was off by
+  one slot; the round-5 review's "a@109 is the lightmap scale" reading is
+  ALSO wrong — the lightmap scale is @121 (226/227 LightMapDC records
+  carry real scales there), and @109's role is unresolved (see §5).
 - The v5 band-atlas structural binding is RETIRED — the agreement test
   (prescribed round 3) showed it agreed with the engine chain at null
   level; render probes show it was binding lamp rows to crossing pages;
-  round-4 quantified the flip (footprint ~20x null, texel-validity on
-  building/billboard families, 99.6% of textures changed).
+  rounds 4-5 quantified the flip (geometry-profile 2.5-2.6x floor vs v5
+  at/below floor; enrichment +40 1.09 vs v5 1.01 on popA; 99.6% of
+  textures changed). The round-4 footprint "20x" is RETRACTED (see §0).
 - batch_info.bin remains `u32(197) + M × 197-byte records`, record m
-  starts with byte m; the four vec3 f32 groups @109/121/133/145 are
-  per-technique/per-sampler UV parameter slots — for the street LM path
-  the pair is **scale @121 + offset @145 (wrapped)**; @109/@133 are a
-  ~1e-5 degenerate second-sampler pair on street materials;
-  rec 45–108 u16 array and stream_info X still open.
+  starts with byte m (island-1's records 256-306 break the byte-m rule —
+  a layout quirk worth a look); the four vec3 f32 groups @109/121/133/145
+  are per-technique/per-sampler UV parameter slots — for the street LM
+  path the pair is **scale @121 + offset @145 (wrapped)**; @109/@133 are
+  UNRESOLVED (see §5); rec 45–108 u16 array and stream_info X still open.
 
-**Remaining unknowns (updated in 17):**
+**Remaining unknowns (updated in 18):**
 
-- the **Overbright** term (`LightMapColor = LM*2 + vec4(Overbright)`) —
-  find the per-technique param default; NormalSpecOverbright materials
-  suggest it matters. Current render assumes 0. Street vertices carry NO
-  vertex colour (checked both strides), so there is no hidden VC term.
-- batch_info slot roles for the ~1/3 of LM materials whose visited
-  regions still sweep the page under the (121,145) chain (m73-class);
-  the u16 array (rec 45–108); stream_info X (234,466 / 303,832);
-  stride-24 word 5 content ([u16][u8][u8=0]).
+- **batch_info slot 109/133** — session 18 tested and REJECTED both easy
+  stories: not per-material placeholders (9/227 + 5/141 LightMapDC records
+  hold exactly 1/65535, the u16 dequant constant, but the population is
+  broad, median 4.2×) and not a working Coord0 (uv0) transform (applied
+  wrapped it does not beat the shipped /65535 — 16 vs 13 wins, mean Δ
+  −0.009); position-scale rejected (f32). Per-technique layouts may make
+  these offsets mean different things per technique. Open.
+- batch_info slot roles for the 28/21 non-compact LM materials (m97
+  Concrete a121=[-18.3,-3.2], m73 roads_details, footprint floors — large
+  horizontal surfaces with multi-wrap scales; full list in
+  `round5_t3_chain.json`); the u16 array (rec 45–108); stream_info X
+  (234,466 / 303,832); stride-24 word 5 content ([u16][u8][u8=0]).
+- **A discriminating test for the LM chain**: the round-5 distributional
+  tests (permuted params, seam continuity) are insensitive in the
+  area-bake regime; per-tile ground truth (e.g. an assembly bake-list
+  rect table) would settle it.
 
 **Also still open:**
 
@@ -308,25 +352,25 @@ python3 extraction/scripts/export_city.py --dry
 
 ## 8. Concrete asks (ranked)
 
-1. **Overbright** (`LightMapColor = LM*2 + vec4(Overbright)`): the street
-   tier now renders engine-exact with Overbright = 0 assumed. Where does
-   the engine take the Overbright uniform from (effect params? technique
-   `NormalSpecOverbright`?) and what is its shipped value for the zone
-   levels? The current city is plausible but possibly darker than the game.
-2. **batch_info leftover slots**: slot-121 semantics for the m73-class
-   materials (visited regions sweep the page), the u16 array (rec 45–108),
-   stream_info X (234,466 / 303,832), stride-24 word 5. Layout + the
-   LM-relevant slots are solved (§5B); these are refinements.
+1. **A discriminating test for the lightmap chain** — the round-5
+   distributional tests (permuted (121,145), seam continuity incl.
+   same-page/UV-space) are insensitive in the per-tile area-bake regime
+   (`round5_t3_chain.json`). If you can find a per-tile ground-truth table
+   (assembly bake-list rects per material?) the chain can be confirmed or
+   falsified outright.
+2. **batch_info slot 109/133**: exactly 1/65535 in a minority of
+   LightMapDC records, broad distribution otherwise; not a working uv0
+   transform. Where the engine really binds Coord0_scaleoffset from (and
+   what the non-dequant values mean) is open.
 3. **Generic object records** (CreateObject component loop): read order for
    the non-special typeIds so the hero units (bridges/monorail/railway)
    get their world TRSs.
-4. Sanity checks welcome on the round-4 evidence chain
-   (`round4_evidence.json`, `round4_lm_probe.json`,
-   `round4_populations.json`, `round4_delta16.json`, renders in
-   `round4_evidence_renders/`) and the v14 skyline placement
-   (`skyline_verify14.json`).
+4. Sanity checks welcome on the round-5 evidence chain
+   (`round5_t2_evidence.json`, `round5_footprint_recheck.json`,
+   `round5_t3_chain.json`, `round5_pipeline.json`) — especially the
+   geometry-profile classifier and the seam-test insensitivity argument.
 5. Anything that looks wrong in the deployed pipeline that we've gone blind
-   to after 17 sessions of fixes (fresh eyes welcome).
+   to after 18 sessions of fixes (fresh eyes welcome).
 
 ## 9. Do-not-re-suggest list (all fixed and verified)
 
@@ -368,13 +412,18 @@ python3 extraction/scripts/export_city.py --dry
 - **The v5 structural band-atlas binding as ground truth** — retired in
   session 16 (agreement test null-level; render probes show lamp rows
   bound to crossing pages). Street bindings come from descriptor +40;
-  session 17 quantified the flip (footprint ~20x null; 99.6% of textures
-  changed v15->v16).
+  rounds 4-5 quantified the flip (geometry-profile vs floor; enrichment
+  on popA; 99.6% of textures changed v15->v16).
 - **Raw texel-validity as a universal binding metric** — it is
   page-density biased: dark-pad thin-stroke cells (street props, coronas,
   tree trunks) score LOW for the CORRECT binding because most of a cell
   is black padding, while full-bleed road pages score high for ANY UVs.
-  Use footprint/occupancy/structure metrics for those families.
+  Use the round-5 ENRICHMENT metric (density-normalized) and the
+  geometry-profile test instead.
+- **UV-footprint dom95 with a mean-of-perms null** — the round-4 "~20x"
+  was an estimator mismatch (matched single-perm null ≥ +40's rate).
+  Any future footprint use must threshold per-perm outcomes, not the
+  mean, and should condition on atlas-like permuted pages.
 - **Tile-partition as an (a,d) null** — bake pages are AREA bakes:
   different materials in one area legitimately share tile regions, so
   non-overlap is the wrong hypothesis (the test saturates at 100% for

@@ -1,0 +1,20 @@
+{
+ "GothamCity": {
+  "n_atlas": 1048,
+  "plus40_dom95": 0.2634,
+  "null_single_perm": 0.3011,
+  "null_sd": 0.0094,
+  "null_atlaspages_only": 0.1738,
+  "null_mean_dom": 0.5915,
+  "round4_strict_estimator_null": 0.0134
+ },
+ "GothamCity_Island2": {
+  "n_atlas": 744,
+  "plus40_dom95": 0.1613,
+  "null_single_perm": 0.2083,
+  "null_sd": 0.0118,
+  "null_atlaspages_only": 0.1045,
+  "null_mean_dom": 0.5653,
+  "round4_strict_estimator_null": 0.0081
+ }
+}
