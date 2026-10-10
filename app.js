@@ -192,7 +192,7 @@ const MANIFEST_URL = 'models/manifest.json';
 // session 15 cache-busting: bump APP_CACHE_VERSION on every release so the
 // MANIFEST fetch itself cannot be served stale (the gh-pages v13 regression).
 // GLB / texture URLs get ?v=<manifest.version> from the manifest itself.
-const APP_CACHE_VERSION = 'v16';
+const APP_CACHE_VERSION = 'v17';
 const $ = (id) => document.getElementById(id);
 
 /* ---------------- renderer ---------------- */

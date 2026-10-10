@@ -2451,7 +2451,7 @@
   },
   {
    "file": "models/street_island1_02.glb",
-   "bytes": 4945172,
+   "bytes": 4945364,
    "verts": 109949,
    "tris": 133725,
    "tier": "street",
@@ -2481,7 +2481,7 @@
   },
   {
    "file": "models/street_island1_04.glb",
-   "bytes": 5863068,
+   "bytes": 5863260,
    "verts": 131983,
    "tris": 161104,
    "tier": "street",
@@ -2737,6 +2737,6 @@
  ],
  "total_verts": 1458279,
  "total_tris": 1602537,
- "version": 16,
+ "version": 17,
  "total_bytes": 53759408
 }
