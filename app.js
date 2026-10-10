@@ -192,7 +192,7 @@ const MANIFEST_URL = 'models/manifest.json';
 // session 15 cache-busting: bump APP_CACHE_VERSION on every release so the
 // MANIFEST fetch itself cannot be served stale (the gh-pages v13 regression).
 // GLB / texture URLs get ?v=<manifest.version> from the manifest itself.
-const APP_CACHE_VERSION = 'v15';
+const APP_CACHE_VERSION = 'v16';
 const $ = (id) => document.getElementById(id);
 
 /* ---------------- renderer ---------------- */
@@ -371,7 +371,8 @@ void main() {
 // v11: LightMapDC two-channel variant — TEXCOORD_0 feeds the DiffuseMap,
 // TEXCOORD_1 (game Coord1 * so1) feeds the shared island bake page.
 const cityVertLM = /* glsl */`
-attribute vec2 uv1;
+// v16: three r152+ auto-declares 'attribute vec2 uv1;' when the geometry
+// carries TEXCOORD_1 (USE_UV1) — a manual declaration redefines it.
 varying vec2 vUv;
 varying vec2 vUv1;
 varying float vDepth;
@@ -386,7 +387,11 @@ uniform float uFogDecay;
 uniform vec4  uFogMap;
 void main() {
   vUv = uv;
+#ifdef USE_UV1
   vUv1 = uv1;
+#else
+  vUv1 = vUv;   // geometry without TEXCOORD_1: reuse diffuse UV
+#endif
   vec4 wp = modelMatrix * vec4(position, 1.0);
   vWorld = wp.xyz;
   vec4 mv = modelViewMatrix * vec4(position, 1.0);
