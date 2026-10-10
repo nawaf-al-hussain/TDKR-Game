@@ -357,14 +357,29 @@ python3 extraction/scripts/export_city.py --dry
    same-page/UV-space) are insensitive in the per-tile area-bake regime
    (`round5_t3_chain.json`). If you can find a per-tile ground-truth table
    (assembly bake-list rects per material?) the chain can be confirmed or
-   falsified outright.
-2. **batch_info slot 109/133** — round-6 census: over LightMapDC both
-   slots are <=1e-4 in every component (no origins, no working scales —
-   C2/C3/C5 degenerate by construction). The exact-dequant occurrences
-   (9 tiles_* isl-1 + 5 Material__4986_* isl-2, all with s121=(0.5,0.5))
-   read as the Coord0-identity scaleoffset (1/65535, 0) written explicitly.
-   What the engine really binds for Coord0 on OTHER techniques (NSO etc.
-   carry real 109/133 values) is still open (`round6_slot_tiling.json`).
+   falsified outright.  Round-7 narrowed the problem: ALL 149 |s121|>1
+   LightMapDC materials sample BakeGroup_* area-bake pages, and the
+   shipped chain MULTI-WRAPS the bake on 16 of the 45 questioned
+   materials that have street segments (m97 18x, m73 5.5x/24 segs, m76
+   3.8x/62 segs, m178 2.5x/43 segs — `round7_lm_pages.json`); 16 are
+   single-ish, 11 sub-rect (chain plausible).  The s121-as-diffuse-tiling
+   alternative is MIXED (fixes the below-band densities of m73/m40/m180
+   but absurdly tiles item atlases).  OPEN: what the engine actually
+   binds for Coord1 on the multi-wrap materials — a disassembly pass on
+   the batch_info consumer would settle it.
+2. **batch_info slot 109/133** — round-7 byte-level reinterpretation
+   REFUTED the u16/u8/flags/counts hypothesis: mantissa bytes at full
+   entropy (210-218 distinct of 218), exponent bytes in the tiny-float
+   band 0x32-0x3A, repeat share 0.014 = chance, no correlation with
+   segment counts, no 109==133 pairing (`round7_slot_bytes.json`).
+   Sharper per-technique fact: (121,145) carries plausible scale/offset
+   in EVERY technique while (109,133) carries tiny floats (1e-6..1e-3)
+   in EVERY technique (NSO included) — so the engine's Coord0 transform
+   is not stored in batch_info for any technique.  14 of 368 LightMapDC
+   records are explained (explicit tool-written (1/65535, 0) identity
+   echoes); 354 records unexplained.  OPEN: disassemble the uniform
+   upload path for the LightMapDC technique to find where Coord0 really
+   comes from (hardcoded dequant is the leading candidate).
 3. **Generic object records** (CreateObject component loop): read order for
    the non-special typeIds so the hero units (bridges/monorail/railway)
    get their world TRSs.
@@ -378,6 +393,18 @@ python3 extraction/scripts/export_city.py --dry
    covers all 2537 segments decisively" wording is retired.
 5. Anything that looks wrong in the deployed pipeline that we've gone blind
    to after 18 sessions of fixes (fresh eyes welcome).
+6. **gh-pages stray cleanup** — the new staging-from-manifest gate
+   (`extraction/scripts/staging_manifest_gate.py`) FAILS on 3 unreferenced
+   v16-leftover textures (GC_Park_dirt.jpg, GothamCity_Road_Island_2.jpg,
+   GothamCity_sand_tile.jpg).  Remove them through a reviewed
+   deploy_site.py extension (texture strays are currently never deleted
+   by design); the gate stays red until then.
+7. Round-7 matched-granularity AMI is banked
+   (`round7_geom_ami.json`): +40 vs geometry clusters AMI 0.326/0.454
+   (z 147/139), shuffled at null, v5 partially circular (its binder's
+   flat/vertical split is itself geometry).  Live street-level evidence:
+   `extraction/previews/round7_street_block{0,1,2}.png` (visual,
+   unquantified); network-log gate PASS (`round7_netlog.json`).
 
 ## 9. Do-not-re-suggest list (all fixed and verified)
 

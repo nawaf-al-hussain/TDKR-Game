@@ -388,3 +388,155 @@ conclusion (shared tile regions, no exclusivity).
 Other techniques DO carry real 109/133 values (NSO s133: 61/74 "other"
 isl-1; StandardDiffuseDC s133 all real) — per-technique slot semantics
 confirmed; 109/133 are not global placeholders.
+
+## Round-7 addendum: LightMap-page x |s121| table, wraps test, 109/133
+## byte reinterpretation, matched-granularity AMI, live gates
+
+(`round7_lm_pages.py/json`, `round7_slot_bytes.py/json`,
+`round7_geom_ami.py/json`, `round7_street_shot.py` + previews
+`round7_street_block{0,1,2}.png`, `round7_netlog.json`,
+`../scripts/staging_manifest_gate.py`.)
+
+### R7-1. LightMap page identity x |s121| (the axis round-6 tabulated wrong)
+
+Every LightMapDC material of both islands, LightMap sampler page identity
+vs |s121| (max component), bins <=1 / 1-4 / >4 (materials/segments):
+
+| island | page class | <=1 | 1-4 | >4 |
+|---|---|---|---|---|
+| isl-1 (227) | BakeGroup_* | 133/692 | 60/188 | 29/147 |
+| isl-1 | named tiling | 5/14 | 0/0 | 0/0 |
+| isl-2 (141) | BakeGroup_* | 79/419 | 47/137 | 13/4 |
+| isl-2 | named tiling | 2/0 | 0/0 | 0/0 |
+
+**All 149 |s121|>1 materials (89+60) sample BakeGroup_* area-bake pages;
+zero named/tiling pages above |s|=1.** Extremes: m240 |s|=486.9 (0 segs),
+m234 30.0, m116 22.0 (14 segs), m97 (GC_T_Concrete_02, s121=(-18.255,
+-3.195)) -> BakeGroup_Island1_Landmarks0 (full_bleed), m76
+(GC_Footprint_VD_Items) 15.2 with 62 segs. An 18x (worse: 487x) multi-wrap
+on an area bake is not physical IF the chain applies per-segment full-span
+UVs — which is exactly what the wraps test measures.
+
+### R7-2. Periodicity test: content-blind by construction; WRAPS metric
+### replaces it
+
+The transect-ACF as specified cannot discriminate page content: under the
+shipped chain pageUV = frac(w*s121 + s145) re-visits the same texels
+|s|*span times, so the sampled luminance is EXACTLY periodic in the packed
+coordinate for ANY page content.  Empirically the world-transect ACF at
+the expected lag came out ~0 (m17: acf=-0.03, z=-0.6) because transect
+binning mixes the v-direction — neither outcome is evidence.  The honest
+replacement is deterministic arithmetic on measured spans:
+
+    wraps_axis = per-segment packed-UV span * |s121_axis|
+
+verdicts (median over segments, w4 = the shipped chain word), questioned
+materials with segments (isl-1, 45 of 89; 44 have no street segments):
+
+- **MULTI-WRAP (>=1.5): 16 materials** — m97 18.1x, m30 11.4x (6 segs),
+  m230 9.3x, m72 4.3x, m181 4.4x, m172 7.5x (10 segs), m60 5.4x, m73 5.5x
+  (24 segs), m76 3.8x (62 segs), m272 3.9x, m178 2.5x (43 segs), m49 2.8x,
+  m208 2.2x, m180 2.2x, m271 1.6x, m18 2.0x.  For these the shipped chain
+  tiles a BakeGroup area bake across single segments — unphysical.
+- single-ish (0.5-1.5): 16.  sub-rect (<0.5): 11 — incl. the 46-seg
+  billboard material m128 (median wraps 0.04): chain plausible there.
+- Controls (|s121|<=1, 15 materials): never multi-wrap (max median 0.88) —
+  by construction |s|*span<=1.
+
+Supporting structure: pooled chain-UV coverage shows multi-segment
+questioned materials smearing across the WHOLE bake page (m73 w4 0.996 of
+Roads0; m178 0.539 with centroid spread 1200u; m76 0.484, spread 743u) —
+under the chain every segment of a material samples the same pattern at
+different world positions; a per-slab bake gives each slab its own rect.
+This is the strongest available explanation of the dark/garbled buildings.
+
+**Diffuse-tiling alternative (reading B, s121 as diffuse scale): MIXED,
+not a resolution.**  Reference band (|s|<=1 materials, identity reading,
+flat >=8u segments, 1-D world-vs-uv fit): isl-1 median 190.9 texels/u
+(IQR 130-496, p10-p90 31-957).  readingB pulls below-band materials into
+the band (m73 18.8->106.4, m40 15.6->133.5, m180 19.3->173.3) but pushes
+atlas-textured materials far above p90 (m76 4216.7, m230 4136.6, m172
+2355.7, m30 1094.4 — tiling an items/footprint ATLAS 15x is nonsense).
+m97: identity 34.5 vs readingB 630.3 — both inside the wide band, i.e.
+the density test cannot discriminate for it.  No exporter/viewer change
+made this round: the implicated set is partial (16 of 89 questioned
+materials with segments) and reading B is not uniformly supported.
+
+### R7-3. Slot 109/133: u16/u8/flags/counts reinterpretation REFUTED;
+### 14 of 368 records explained
+
+Byte-level structure over the 218 unexplained LightMapDC records (isl-1;
+136 on isl-2):
+
+- mantissa bytes at FULL entropy (210-218 distinct values of 218
+  records); exponent bytes concentrated in 0x32-0x3A — the two bytes
+  behave exactly like genuine tiny floats, not reinterpreted integer
+  fields;
+- repeat share 0.014 (chance level for 32-bit values); top (u16lo,u16hi)
+  pair occurs twice; no u16 small-int concentration (frac<1024: 0.00-0.04);
+- no correlation with segment count (r = -0.04 / +0.008); no record with
+  u32@109 == u32@133; f16 views nothing special.
+
+Sharper per-technique fact (census table): **(121,145) carries plausible
+scale/offset in EVERY technique** (NSO s121 med 0.77 / s145 0.50;
+StandardDiffuseDC 0.31-0.81; LightMapDC 0.36-0.5 / 0.50) while **(109,133)
+carries tiny floats (1e-6..1e-3) in EVERY technique** (NSO s109 med
+2.7e-4, SDD 5.7e-6).  So the engine's Coord0 transform is simply not
+stored in batch_info for any technique — identity-by-dequant or sourced
+elsewhere — and the 14 records with explicit (1/65535, 0) are tool-written
+identity echoes.  Count bases, stated plainly: **14 of 368 LightMapDC
+records explained (9/227 isl-1 + 5/141 isl-2); 354 records unexplained**
+(218 isl-1 records = 436 of 454 isl-1 .xy components — the reviewer's
+"~440"; 136 isl-2 records = 272 of 282 components).  The contradiction
+stands as the reviewer framed it: if (109,133) were the diffuse
+scaleoffset, streets would collapse — they do not, so those slots are not
+the diffuse transform.  What the engine binds for Coord0 remains OPEN
+(candidate: hardcoded dequant like the x2 literal; disassembly follow-up).
+
+### R7-4. Matched-granularity AMI (standardised features confirmed)
+
+Features = round-6 bank (log1p on size axes, z-score on kept rows —
+explicitly confirmed), KMeans(k = #classes, n_init=10, seed 6018), AMI +
+K=200 label-permutation null:
+
+| island | label set | k | AMI | null | z |
+|---|---|---|---|---|---|
+| isl-1 | +40 | 12 | **0.326** | -0.000+-0.002 | 147 |
+| isl-1 | shuffled | 12 | -0.003 | -0.000+-0.002 | -1 |
+| isl-1 | v5 (own k) | 4 | 0.125 | 0.000+-0.004 | 35 |
+| isl-1 | v5@k40 | 12 | 0.172 | -0.000+-0.004 | 44 |
+| isl-2 | +40 | 11 | **0.454** | 0.000+-0.003 | 139 |
+| isl-2 | shuffled | 11 | -0.005 | 0.000+-0.003 | -2 |
+| isl-2 | v5 (own k) | 3 | 0.194 | -0.000+-0.003 | 56 |
+| isl-2 | v5@k40 | 11 | 0.238 | 0.000+-0.005 | 47 |
+
+Reading: +40 labels (from the texture table, geometry-independent) carry
+moderate real geometry association at matched granularity.  v5's positive
+AMI is PARTIALLY CIRCULAR — the v5 binder's flat/vertical split is itself
+a geometry test, so some association is built in.  As stated in round-6:
+geometry cannot check the index->texture-name mapping; that rests on the
+compiled self-indexing 307/307 (+196/196) and the renders.
+
+### R7-5. Live v17 evidence + gates
+
+- Street-level near-field screenshots from the LIVE site (playwright,
+  camera via window.__v; viewer is y-up: viewer=(x, z, -y) of world):
+  `previews/round7_street_block{0,1,2}.png` — **visual, unquantified**.
+  block0: street-level view where some facade walls carry correctly-bound
+  textures while footprint-tier slabs above render as garbled stretched
+  atlases and the street plane is black.  block2: a near-field building
+  wall rendering almost pure black — the dark-building pathology up close.
+- **Headless network-log gate: PASS** — 135 responses, 0 failed requests,
+  0 4xx/5xx (`round7_netlog.json`).
+- **Staging-from-manifest gate: FAIL (real drift found)** —
+  `../scripts/staging_manifest_gate.py` builds the expected tree from
+  models/manifest.json + texture names parsed out of every GLB's material
+  names (`<dif>|<lm>|<mode>` contract) + aux, then diffs against
+  origin/gh-pages: 0 missing, 0 glb size mismatches (manifest v17, 170
+  expected files), **3 stray v16-leftover textures** (GC_Park_dirt.jpg,
+  GothamCity_Road_Island_2.jpg, GothamCity_sand_tile.jpg — unreferenced by
+  all 41 GLBs and by app.js).  Cleanup must go through deploy_site.py in a
+  reviewed follow-up; gate stays red until then.
+
+No exporter/viewer/site changes this round (evidence partial; no version
+bump).

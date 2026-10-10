@@ -1,0 +1,186 @@
+
+########## GothamCity
+-- LightMap page identity x |s121| (LightMapDC materials):
+   page class                <=1              1-4               >4     (mats/segs)
+   BakeGroup_*     133/692           60/188           29/147      
+   named             5/14             0/0              0/0        
+   none              0/0              0/0              0/0        
+-- |s121|>1 materials: 89 (1-4: 60, >4: 29); BakeGroup_* pages: 89/89
+   m240 |s|=486.903 dif=GC_Residential_BD_03_wall_03.t lm=BakeGroup_Island1_Landmarks0         segs=0
+   m234 |s|= 30.025 dif=GC_Residential_BD_03_wall_04.t lm=BakeGroup_Island1_Landmarks0         segs=0
+   m116 |s|= 22.035 dif=GC_Residential_BD_03_roof_01.t lm=BakeGroup_Island1_A0                 segs=14
+   m 97 |s|= 18.255 dif=GC_T_Concrete_02.tga           lm=BakeGroup_Island1_Landmarks0         segs=1
+   m 76 |s|= 15.247 dif=GC_Footprint_VD_Items.tga      lm=BakeGroup_Island1_B0                 segs=62
+   m191 |s|= 12.851 dif=GC_Residential_BD_04_Windows_0 lm=BakeGroup_Island1_B0                 segs=0
+   m 75 |s|= 12.665 dif=GC_Diner_Floor.tga             lm=BakeGroup_Island1_A0                 segs=0
+   m 93 |s|= 11.835 dif=GC_Cath_of_learning_Wall.tga   lm=BakeGroup_Island1_Landmarks0         segs=1
+   m 30 |s|= 11.706 dif=GC_SXC_hedge.tga               lm=BakeGroup_Island1_Landmarks0         segs=6
+   m102 |s|= 10.483 dif=GC_VPOW_Tiles.tga              lm=BakeGroup_Island1_Landmarks0         segs=0
+   m230 |s|=  9.369 dif=GC_SXC_Atlas.tga               lm=BakeGroup_Island1_Landmarks0         segs=3
+   m 72 |s|=  9.053 dif=GC_Residential_BD_01_Roof_01.t lm=BakeGroup_Island1_B0                 segs=3
+   m180 |s|=  8.997 dif=GC_Residential_BD_04_Windows_0 lm=BakeGroup_Island1_A0                 segs=3
+   m 94 |s|=  8.841 dif=GC_SXC_Rooftop_ground.tga      lm=BakeGroup_Island1_Landmarks0         segs=0
+
+-- word3-vs-word4 (u-axis): corr median 0.000, mean|diff| median 0.336
+-- per-segment wraps (|s121|>1 materials with segments): median over segments of span*|s| per axis (w4 = shipped chain word)
+   m116 |s|=  22.04 n= 14 w4u=  0.68 w4v=  0.00 w3u=  1.01 w3v=  0.16 (max w4u   5.09)  w4:single-ish  w3:single-ish
+   m 97 |s|=  18.25 n=  1 w4u= 18.14 w4v=  3.15 w3u= 18.25 w3v=  3.19 (max w4u  18.14)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m 76 |s|=  15.25 n= 62 w4u=  3.77 w4v=  0.11 w3u=  0.36 w3v=  0.38 (max w4u  15.25)  w4:MULTI-WRAP  w3:sub-rect
+   m 93 |s|=  11.83 n=  1 w4u=  0.45 w4v=  0.97 w3u=  0.22 w3v=  0.01 (max w4u   0.45)  w4:sub-rect    w3:sub-rect
+   m 30 |s|=  11.71 n=  6 w4u= 11.41 w4v=  1.11 w3u= 11.57 w3v=  0.46 (max w4u  11.69)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m230 |s|=   9.37 n=  3 w4u=  9.29 w4v=  0.72 w3u=  0.28 w3v=  0.03 (max w4u   9.35)  w4:MULTI-WRAP  w3:sub-rect
+   m 72 |s|=   9.05 n=  3 w4u=  4.33 w4v=  0.10 w3u=  8.84 w3v=  0.22 (max w4u   4.49)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m180 |s|=   9.00 n=  3 w4u=  2.24 w4v=  0.18 w3u=  1.17 w3v=  0.37 (max w4u   2.25)  w4:MULTI-WRAP  w3:single-ish
+   m208 |s|=   8.74 n=  1 w4u=  2.21 w4v=  1.96 w3u=  8.74 w3v=  0.52 (max w4u   2.21)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m 40 |s|=   8.58 n=  7 w4u=  1.28 w4v=  0.04 w3u=  2.54 w3v=  0.15 (max w4u   2.74)  w4:single-ish  w3:MULTI-WRAP
+   m132 |s|=   8.33 n=  1 w4u=  1.12 w4v=  5.83 w3u=  3.39 w3v=  8.16 (max w4u   1.12)  w4:single-ish  w3:MULTI-WRAP
+   m272 |s|=   7.67 n=  1 w4u=  3.94 w4v=  0.00 w3u=  4.86 w3v=  0.01 (max w4u   3.94)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m172 |s|=   7.60 n= 10 w4u=  7.50 w4v=  4.76 w3u=  0.02 w3v=  0.03 (max w4u   7.60)  w4:MULTI-WRAP  w3:sub-rect
+   m 60 |s|=   7.48 n=  4 w4u=  5.38 w4v=  0.06 w3u=  4.50 w3v=  0.10 (max w4u   7.46)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m271 |s|=   6.67 n=  2 w4u=  1.56 w4v=  0.00 w3u=  4.39 w3v=  0.01 (max w4u   2.09)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m 73 |s|=   5.66 n= 24 w4u=  5.45 w4v=  1.48 w3u=  5.59 w3v=  0.50 (max w4u   5.66)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m181 |s|=   4.60 n=  1 w4u=  4.43 w4v=  0.22 w3u=  1.56 w3v=  0.09 (max w4u   4.43)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m142 |s|=   4.58 n=  3 w4u=  0.73 w4v=  0.01 w3u=  1.35 w3v=  0.11 (max w4u   1.21)  w4:single-ish  w3:single-ish
+   m105 |s|=   3.77 n= 10 w4u=  0.90 w4v=  1.23 w3u=  0.38 w3v=  0.13 (max w4u   0.91)  w4:single-ish  w3:sub-rect
+   m 51 |s|=   3.57 n=  5 w4u=  0.69 w4v=  0.41 w3u=  3.01 w3v=  0.72 (max w4u   1.42)  w4:single-ish  w3:MULTI-WRAP
+   m193 |s|=   2.95 n=  1 w4u=  0.86 w4v=  0.22 w3u=  0.91 w3v=  0.23 (max w4u   0.86)  w4:single-ish  w3:single-ish
+   m 49 |s|=   2.91 n=  1 w4u=  2.81 w4v=  1.88 w3u=  2.46 w3v=  2.11 (max w4u   2.81)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m178 |s|=   2.57 n= 43 w4u=  2.51 w4v=  0.48 w3u=  0.91 w3v=  0.07 (max w4u   2.57)  w4:MULTI-WRAP  w3:single-ish
+   m113 |s|=   2.57 n=  1 w4u=  0.12 w4v=  1.25 w3u=  0.25 w3v=  0.17 (max w4u   0.12)  w4:sub-rect    w3:sub-rect
+   m 39 |s|=   2.49 n=  1 w4u=  0.83 w4v=  1.90 w3u=  2.26 w3v=  2.13 (max w4u   0.83)  w4:single-ish  w3:MULTI-WRAP
+   m 19 |s|=   2.48 n=  2 w4u=  0.86 w4v=  2.27 w3u=  0.49 w3v=  0.77 (max w4u   0.90)  w4:single-ish  w3:sub-rect
+   m138 |s|=   2.45 n=  8 w4u=  0.52 w4v=  0.35 w3u=  2.24 w3v=  1.14 (max w4u   0.61)  w4:single-ish  w3:MULTI-WRAP
+   m 18 |s|=   2.04 n=  3 w4u=  1.97 w4v=  0.97 w3u=  0.66 w3v=  0.08 (max w4u   2.04)  w4:MULTI-WRAP  w3:single-ish
+   m 17 |s|=   2.03 n=  3 w4u=  0.33 w4v=  2.03 w3u=  0.28 w3v=  0.58 (max w4u   0.33)  w4:sub-rect    w3:sub-rect
+   m195 |s|=   2.00 n=  1 w4u=  0.43 w4v=  0.19 w3u=  0.09 w3v=  0.02 (max w4u   0.43)  w4:sub-rect    w3:sub-rect
+   m 16 |s|=   1.89 n=  5 w4u=  1.32 w4v=  0.36 w3u=  0.34 w3v=  0.21 (max w4u   1.89)  w4:single-ish  w3:sub-rect
+   m 36 |s|=   1.88 n=  4 w4u=  0.44 w4v=  0.09 w3u=  1.76 w3v=  0.48 (max w4u   0.78)  w4:sub-rect    w3:MULTI-WRAP
+   m 63 |s|=   1.87 n=  6 w4u=  0.61 w4v=  0.45 w3u=  0.19 w3v=  0.30 (max w4u   0.62)  w4:single-ish  w3:sub-rect
+   m237 |s|=   1.77 n=  2 w4u=  0.13 w4v=  0.25 w3u=  1.06 w3v=  0.01 (max w4u   0.26)  w4:sub-rect    w3:single-ish
+   m134 |s|=   1.73 n=  1 w4u=  0.01 w4v=  0.04 w3u=  1.02 w3v=  0.25 (max w4u   0.01)  w4:sub-rect    w3:single-ish
+   m141 |s|=   1.47 n=  4 w4u=  1.47 w4v=  0.30 w3u=  0.42 w3v=  0.61 (max w4u   1.47)  w4:single-ish  w3:sub-rect
+   m187 |s|=   1.46 n=  1 w4u=  0.54 w4v=  0.23 w3u=  0.43 w3v=  0.58 (max w4u   0.54)  w4:single-ish  w3:sub-rect
+   m 35 |s|=   1.39 n=  3 w4u=  0.01 w4v=  0.00 w3u=  0.07 w3v=  0.03 (max w4u   0.09)  w4:sub-rect    w3:sub-rect
+   m 44 |s|=   1.38 n=  3 w4u=  0.57 w4v=  0.01 w3u=  0.67 w3v=  0.01 (max w4u   1.38)  w4:single-ish  w3:single-ish
+   m 20 |s|=   1.36 n= 16 w4u=  0.02 w4v=  0.04 w3u=  0.38 w3v=  0.13 (max w4u   0.03)  w4:sub-rect    w3:sub-rect
+   m 62 |s|=   1.35 n= 10 w4u=  1.01 w4v=  0.23 w3u=  1.33 w3v=  0.18 (max w4u   1.35)  w4:single-ish  w3:single-ish
+   m128 |s|=   1.32 n= 46 w4u=  0.04 w4v=  0.01 w3u=  0.36 w3v=  0.50 (max w4u   0.04)  w4:sub-rect    w3:sub-rect
+   m239 |s|=   1.24 n=  2 w4u=  1.04 w4v=  0.04 w3u=  0.04 w3v=  0.00 (max w4u   1.24)  w4:single-ish  w3:sub-rect
+   m 26 |s|=   1.20 n=  1 w4u=  0.37 w4v=  0.11 w3u=  1.06 w3v=  0.00 (max w4u   0.37)  w4:sub-rect    w3:single-ish
+   m 38 |s|=   1.15 n=  4 w4u=  0.08 w4v=  0.22 w3u=  0.21 w3v=  0.56 (max w4u   0.12)  w4:sub-rect    w3:sub-rect
+   m171 |s|=   1.06 n=  1 w4u=  1.06 w4v=  0.01 w3u=  1.06 w3v=  0.00 (max w4u   1.06)  w4:single-ish  w3:single-ish
+-- per-segment wraps (|s121|<=1 controls): median over segments of span*|s| per axis (w4 = shipped chain word)
+   m196 |s|=   0.55 n= 10 w4u=  0.54 w4v=  0.34 w3u=  0.46 w3v=  0.46 (max w4u   0.55)  w4:single-ish  w3:sub-rect
+   m 66 |s|=   0.73 n=  3 w4u=  0.20 w4v=  0.04 w3u=  0.56 w3v=  0.23 (max w4u   0.24)  w4:sub-rect    w3:single-ish
+   m 83 |s|=   0.75 n=  1 w4u=  0.36 w4v=  0.21 w3u=  0.07 w3v=  0.13 (max w4u   0.36)  w4:sub-rect    w3:sub-rect
+   m 80 |s|=   0.50 n=  2 w4u=  0.50 w4v=  0.50 w3u=  0.49 w3v=  0.50 (max w4u   0.50)  w4:single-ish  w3:sub-rect
+   m 81 |s|=   0.75 n=  4 w4u=  0.34 w4v=  0.26 w3u=  0.71 w3v=  0.27 (max w4u   0.37)  w4:sub-rect    w3:single-ish
+   m209 |s|=   0.77 n=  1 w4u=  0.02 w4v=  0.00 w3u=  0.76 w3v=  0.04 (max w4u   0.02)  w4:sub-rect    w3:single-ish
+   m103 |s|=   0.56 n= 18 w4u=  0.01 w4v=  0.00 w3u=  0.09 w3v=  0.05 (max w4u   0.18)  w4:sub-rect    w3:sub-rect
+   m 77 |s|=   1.00 n=  2 w4u=  0.54 w4v=  0.03 w3u=  0.73 w3v=  0.11 (max w4u   0.68)  w4:single-ish  w3:single-ish
+   m126 |s|=   0.61 n=  2 w4u=  0.54 w4v=  0.59 w3u=  0.55 w3v=  0.61 (max w4u   0.54)  w4:single-ish  w3:single-ish
+   m 21 |s|=   0.51 n=  1 w4u=  0.14 w4v=  0.51 w3u=  0.50 w3v=  0.50 (max w4u   0.14)  w4:sub-rect    w3:single-ish
+   m 24 |s|=   0.48 n=  1 w4u=  0.47 w4v=  0.29 w3u=  0.14 w3v=  0.29 (max w4u   0.47)  w4:sub-rect    w3:sub-rect
+   m 86 |s|=   0.84 n= 11 w4u=  0.00 w4v=  0.00 w3u=  0.01 w3v=  0.24 (max w4u   0.00)  w4:sub-rect    w3:sub-rect
+   m 67 |s|=   0.62 n=  1 w4u=  0.31 w4v=  0.04 w3u=  0.52 w3v=  0.01 (max w4u   0.31)  w4:sub-rect    w3:single-ish
+   m 31 |s|=   0.70 n=  6 w4u=  0.70 w4v=  0.54 w3u=  0.69 w3v=  0.49 (max w4u   0.70)  w4:single-ish  w3:single-ish
+   m136 |s|=   0.88 n=  1 w4u=  0.88 w4v=  0.43 w3u=  0.57 w3v=  0.37 (max w4u   0.88)  w4:single-ish  w3:single-ish
+
+-- diffuse texel density reference (|s121|<=1, identity reading, 34 flat segs): median 190.9, IQR 130.4-496.2, p10-p90 31.3-957.2 texels/u
+   (density skips: {'no_usable_seg': 72, 'small_idx': 189, 'not_flat': 34, 'degenerate_fit': 6})
+-- questioned materials, identity vs readingB densities:
+   m 76 tiles_KjsfSXF4YP_X6hhgnz4M W=2048 |sx|= 15.25  identity   276.6  readingB(w4)  4216.7  readingB(w3)   383.8 texels/u
+   m 30 tiles_KjsfSXF4YP_6z3lSTpgT W= 512 |sx|= 11.71  identity    93.5  readingB(w4)  1094.4  readingB(w3)   221.4 texels/u
+   m230 Material__69_zHOTJcJwef_8b W=1024 |sx|=  9.37  identity   441.5  readingB(w4)  4136.6  readingB(w3)    None texels/u
+   m 72 tiles_KjsfSXF4YP_bSUz2k4Xd W= 512 |sx|=  9.05  identity    35.8  readingB(w4)   324.0  readingB(w3)   153.1 texels/u
+   m180 Material__69_zHOTJcJwef_Un W= 512 |sx|=  9.00  identity    19.3  readingB(w4)   173.3  readingB(w3)    31.2 texels/u
+   m 40 tiles_KjsfSXF4YP_BQjgnZSCe W= 512 |sx|=  8.58  identity    15.6  readingB(w4)   133.5  readingB(w3)    None texels/u
+   m172 Material__69_zHOTJcJwef_wg W=2048 |sx|=  7.60  identity   310.0  readingB(w4)  2355.7  readingB(w3)  1773.3 texels/u
+   m 60 tiles_KjsfSXF4YP_n3QLJwWy0 W= 512 |sx|=  7.48  identity    31.1  readingB(w4)   232.9  readingB(w3)    57.8 texels/u
+   m 73 tiles_KjsfSXF4YP_vgEsjieOp W= 512 |sx|=  5.66  identity    18.8  readingB(w4)   106.4  readingB(w3)   130.5 texels/u
+   m105 tiles_KjsfSXF4YP_KZABTNEQD W=2048 |sx|=  2.74  identity   178.1  readingB(w4)   488.0  readingB(w3)   553.8 texels/u
+   m 51 tiles_KjsfSXF4YP_NLYG35SqT W=1024 |sx|=  3.57  identity    42.9  readingB(w4)   153.2  readingB(w3)    11.5 texels/u
+   m178 Material__69_zHOTJcJwef_iM W=1024 |sx|=  2.57  identity   182.1  readingB(w4)   468.5  readingB(w3)    66.0 texels/u
+   m 16 tiles_KjsfSXF4YP_30KKziHtR W=1024 |sx|=  1.89  identity    43.8  readingB(w4)    83.0  readingB(w3)   139.4 texels/u
+   m 63 tiles_KjsfSXF4YP_7iE8TLmAZ W=2048 |sx|=  1.87  identity    99.4  readingB(w4)   186.2  readingB(w3)    38.9 texels/u
+   m141 tiles_KjsfSXF4YP_JjXwy5PcX W= 512 |sx|=  1.47  identity   740.7  readingB(w4)  1090.4  readingB(w3)   147.6 texels/u
+   m 62 tiles_KjsfSXF4YP_aErAnGePt W= 512 |sx|=  1.35  identity    85.8  readingB(w4)   116.1  readingB(w3)   121.8 texels/u
+   m239 Material__21_NGl6WXVW0i_PZ W=2048 |sx|=  1.24  identity   228.8  readingB(w4)   284.5  readingB(w3)     2.9 texels/u
+
+########## GothamCity_Island2
+-- LightMap page identity x |s121| (LightMapDC materials):
+   page class                <=1              1-4               >4     (mats/segs)
+   BakeGroup_*      79/419           47/137           13/4        
+   named             2/0              0/0              0/0        
+   none              0/0              0/0              0/0        
+-- |s121|>1 materials: 60 (1-4: 47, >4: 13); BakeGroup_* pages: 60/60
+   m116 |s|=353.142 dif=bridge_tile.tga                lm=BakeGroup_Island2_Roads0             segs=0
+   m 68 |s|= 11.575 dif=GC_SXC_hedge.tga               lm=BakeGroup_Island2_B0                 segs=0
+   m 54 |s|=  9.853 dif=GC_SXC_Brick_02.tga            lm=BakeGroup_Island2_B0                 segs=0
+   m174 |s|=  8.871 dif=GC_Residential_BD_01_Door_01.t lm=BakeGroup_Island2_A0                 segs=0
+   m185 |s|=  7.668 dif=GC_Footprint_STD_alpha_T.tga   lm=BakeGroup_Island2_Roads0             segs=2
+   m172 |s|=  7.252 dif=GC_Residential_BD_01_Windows_0 lm=BakeGroup_Island2_A0                 segs=0
+   m171 |s|=  7.023 dif=GC_Residential_BD_01_Windows_0 lm=BakeGroup_Island2_A0                 segs=0
+   m133 |s|=  6.722 dif=GC_DMUS_Atlas.tga              lm=BakeGroup_Island2_B0                 segs=0
+   m 99 |s|=  5.723 dif=GC_Residential_BD_01_Windows_0 lm=BakeGroup_Island2_A0                 segs=0
+   m 44 |s|=  5.414 dif=GC_Residential_BD_03_roof_01.t lm=BakeGroup_Island2_Landmarks0         segs=1
+   m176 |s|=  4.941 dif=GC_Footprint_VD_Buildings.tga  lm=BakeGroup_Island2_A0                 segs=0
+   m 86 |s|=  4.839 dif=GC_Residential_BD_01_Roof_01.t lm=BakeGroup_Island2_A0                 segs=0
+   m 49 |s|=  4.833 dif=GothamCity_asphalt_tile.tga    lm=BakeGroup_Island2_Roads0             segs=1
+   m100 |s|=  3.955 dif=GC_Footprint_VD_Floor_2.tga    lm=BakeGroup_Island2_Landmarks0         segs=0
+
+-- word3-vs-word4 (u-axis): corr median -0.010, mean|diff| median 0.370
+-- per-segment wraps (|s121|>1 materials with segments): median over segments of span*|s| per axis (w4 = shipped chain word)
+   m185 |s|=   7.67 n=  2 w4u=  2.29 w4v=  0.06 w3u=  4.86 w3v=  0.01 (max w4u   2.29)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m 44 |s|=   5.41 n=  1 w4u=  0.44 w4v=  0.29 w3u=  1.43 w3v=  0.17 (max w4u   0.44)  w4:sub-rect    w3:single-ish
+   m 49 |s|=   4.83 n=  1 w4u=  0.07 w4v=  0.04 w3u=  0.87 w3v=  1.28 (max w4u   0.07)  w4:sub-rect    w3:single-ish
+   m108 |s|=   3.84 n=  5 w4u=  2.16 w4v=  0.23 w3u=  0.87 w3v=  0.58 (max w4u   3.14)  w4:MULTI-WRAP  w3:single-ish
+   m 48 |s|=   3.54 n=  5 w4u=  0.44 w4v=  0.02 w3u=  0.73 w3v=  0.11 (max w4u   0.47)  w4:sub-rect    w3:single-ish
+   m 43 |s|=   2.76 n=  6 w4u=  0.44 w4v=  0.00 w3u=  0.09 w3v=  0.00 (max w4u   1.92)  w4:sub-rect    w3:sub-rect
+   m160 |s|=   2.74 n=  1 w4u=  2.74 w4v=  0.91 w3u=  0.44 w3v=  0.06 (max w4u   2.74)  w4:MULTI-WRAP  w3:sub-rect
+   m153 |s|=   2.55 n= 23 w4u=  2.53 w4v=  0.48 w3u=  2.35 w3v=  0.07 (max w4u   2.55)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m155 |s|=   2.52 n=  1 w4u=  2.49 w4v=  0.36 w3u=  2.43 w3v=  0.36 (max w4u   2.49)  w4:MULTI-WRAP  w3:MULTI-WRAP
+   m 77 |s|=   2.45 n=  6 w4u=  0.29 w4v=  0.02 w3u=  0.54 w3v=  0.13 (max w4u   0.81)  w4:sub-rect    w3:single-ish
+   m 66 |s|=   2.39 n=  1 w4u=  0.12 w4v=  0.15 w3u=  1.98 w3v=  0.31 (max w4u   0.12)  w4:sub-rect    w3:MULTI-WRAP
+   m 57 |s|=   2.25 n=  3 w4u=  1.73 w4v=  0.00 w3u=  0.94 w3v=  0.00 (max w4u   1.98)  w4:MULTI-WRAP  w3:single-ish
+   m 78 |s|=   1.94 n=  2 w4u=  1.30 w4v=  1.12 w3u=  0.84 w3v=  0.53 (max w4u   1.50)  w4:single-ish  w3:single-ish
+   m 93 |s|=   1.71 n=  2 w4u=  0.09 w4v=  0.23 w3u=  0.73 w3v=  0.33 (max w4u   0.10)  w4:sub-rect    w3:single-ish
+   m 89 |s|=   1.70 n=  4 w4u=  1.69 w4v=  0.14 w3u=  0.38 w3v=  0.12 (max w4u   1.70)  w4:MULTI-WRAP  w3:sub-rect
+   m 65 |s|=   1.58 n=  1 w4u=  0.50 w4v=  1.53 w3u=  0.50 w3v=  1.53 (max w4u   0.50)  w4:single-ish  w3:single-ish
+   m109 |s|=   1.57 n= 62 w4u=  0.08 w4v=  0.04 w3u=  0.50 w3v=  0.23 (max w4u   0.08)  w4:sub-rect    w3:single-ish
+   m106 |s|=   1.40 n=  1 w4u=  0.47 w4v=  1.39 w3u=  0.43 w3v=  0.43 (max w4u   0.47)  w4:sub-rect    w3:sub-rect
+   m143 |s|=   1.38 n=  1 w4u=  1.28 w4v=  0.20 w3u=  0.39 w3v=  0.55 (max w4u   1.28)  w4:single-ish  w3:sub-rect
+   m138 |s|=   1.31 n=  1 w4u=  0.59 w4v=  0.38 w3u=  0.08 w3v=  0.42 (max w4u   0.59)  w4:single-ish  w3:sub-rect
+   m 45 |s|=   1.30 n=  4 w4u=  1.29 w4v=  0.50 w3u=  0.56 w3v=  0.32 (max w4u   1.29)  w4:single-ish  w3:single-ish
+   m 72 |s|=   1.14 n=  3 w4u=  0.10 w4v=  0.24 w3u=  0.06 w3v=  0.23 (max w4u   0.45)  w4:sub-rect    w3:sub-rect
+   m 83 |s|=   1.11 n=  2 w4u=  0.28 w4v=  0.11 w3u=  0.67 w3v=  0.12 (max w4u   0.54)  w4:sub-rect    w3:single-ish
+   m104 |s|=   1.01 n=  3 w4u=  0.08 w4v=  0.96 w3u=  0.02 w3v=  0.02 (max w4u   0.08)  w4:sub-rect    w3:sub-rect
+-- per-segment wraps (|s121|<=1 controls): median over segments of span*|s| per axis (w4 = shipped chain word)
+   m 50 |s|=   0.50 n= 80 w4u=  0.03 w4v=  0.04 w3u=  0.13 w3v=  0.35 (max w4u   0.50)  w4:sub-rect    w3:sub-rect
+   m 63 |s|=   0.80 n=  2 w4u=  0.28 w4v=  0.78 w3u=  0.07 w3v=  0.53 (max w4u   0.28)  w4:sub-rect    w3:sub-rect
+   m 38 |s|=   0.82 n=  1 w4u=  0.43 w4v=  0.77 w3u=  0.40 w3v=  0.60 (max w4u   0.43)  w4:sub-rect    w3:sub-rect
+   m 42 |s|=   0.56 n= 14 w4u=  0.13 w4v=  0.18 w3u=  0.06 w3v=  0.49 (max w4u   0.22)  w4:sub-rect    w3:sub-rect
+   m135 |s|=   0.21 n=  2 w4u=  0.11 w4v=  0.16 w3u=  0.06 w3v=  0.13 (max w4u   0.11)  w4:sub-rect    w3:sub-rect
+   m184 |s|=   0.28 n=  2 w4u=  0.08 w4v=  0.05 w3u=  0.27 w3v=  0.09 (max w4u   0.09)  w4:sub-rect    w3:sub-rect
+   m117 |s|=   0.50 n=  3 w4u=  0.25 w4v=  0.48 w3u=  0.25 w3v=  0.50 (max w4u   0.50)  w4:sub-rect    w3:sub-rect
+   m145 |s|=   0.98 n=  3 w4u=  0.22 w4v=  0.17 w3u=  0.24 w3v=  0.02 (max w4u   0.24)  w4:sub-rect    w3:sub-rect
+   m 67 |s|=   0.61 n= 10 w4u=  0.61 w4v=  0.20 w3u=  0.59 w3v=  0.35 (max w4u   0.61)  w4:single-ish  w3:single-ish
+   m 58 |s|=   0.88 n=107 w4u=  0.21 w4v=  0.40 w3u=  0.42 w3v=  0.86 (max w4u   0.42)  w4:sub-rect    w3:sub-rect
+   m163 |s|=   0.50 n= 21 w4u=  0.07 w4v=  0.13 w3u=  0.19 w3v=  0.18 (max w4u   0.49)  w4:sub-rect    w3:sub-rect
+   m 82 |s|=   0.38 n= 97 w4u=  0.37 w4v=  0.25 w3u=  0.36 w3v=  0.24 (max w4u   0.38)  w4:sub-rect    w3:sub-rect
+   m 88 |s|=   0.98 n=  1 w4u=  0.49 w4v=  0.32 w3u=  0.84 w3v=  0.95 (max w4u   0.49)  w4:sub-rect    w3:single-ish
+   m 81 |s|=   0.50 n=  2 w4u=  0.06 w4v=  0.24 w3u=  0.30 w3v=  0.00 (max w4u   0.06)  w4:sub-rect    w3:sub-rect
+   m 59 |s|=   0.53 n=  3 w4u=  0.45 w4v=  0.52 w3u=  0.45 w3v=  0.52 (max w4u   0.45)  w4:sub-rect    w3:sub-rect
+
+-- diffuse texel density reference (|s121|<=1, identity reading, 22 flat segs): median 286.4, IQR 78.4-641.2, p10-p90 68.9-1039.2 texels/u
+   (density skips: {'no_usable_seg': 53, 'small_idx': 86, 'not_flat': 23, 'degenerate_fit': 8})
+-- questioned materials, identity vs readingB densities:
+   m 48 Material__4986_o9omhFFnpl_ W= 256 |sx|=  3.54  identity    15.2  readingB(w4)    53.7  readingB(w3)   591.7 texels/u
+   m 43 Material__4986_o9omhFFnpl_ W=2048 |sx|=  2.76  identity    35.7  readingB(w4)    98.6  readingB(w3)    17.5 texels/u
+   m153 Material__4217_Yr0f3PRAzF_ W=1024 |sx|=  2.55  identity   148.3  readingB(w4)   377.8  readingB(w3)    90.5 texels/u
+   m 66 Material__4986_o9omhFFnpl_ W= 512 |sx|=  1.99  identity    95.5  readingB(w4)   189.7  readingB(w3)    None texels/u
+   m 89 Material__4986_o9omhFFnpl_ W=2048 |sx|=  1.70  identity   133.6  readingB(w4)   227.0  readingB(w3)   103.5 texels/u
+   m143 Material__4217_Yr0f3PRAzF_ W=1024 |sx|=  1.38  identity    69.2  readingB(w4)    95.6  readingB(w3)    73.2 texels/u
+   m 45 Material__4986_o9omhFFnpl_ W=1024 |sx|=  1.30  identity   300.2  readingB(w4)   388.8  readingB(w3)    86.1 texels/u
+
+wrote /home/z/my-project/repo/extraction/re/round7_lm_pages.json

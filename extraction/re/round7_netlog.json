@@ -1,0 +1,549 @@
+{
+ "responses": [
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/app.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/ShaderPass.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/RenderPass.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/shaders/CopyShader.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/MaskPass.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/Pass.js",
+   "status": 200
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/LUT_000_default.png",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/LUT_023_lighting.png",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_VerticalFOG.png",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/skybox.jpg",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/manifest.json?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_00.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/bridge_tile.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_STD_alpha_T.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/BakeGroup_Island1_A0.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/bridge_1.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_01.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/HC_Prop_BillboardRoof_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/FX_Coronas.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_Dinner_objects.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Z1_Props_Street.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Z1_Props_Rooftop.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_SXC_Rooftop_ground.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_01_Door_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Walls.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_T_Concrete_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_01_Roof_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_Props_Monorail.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_Props_Railroad.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/BakeGroup_Island1_Roads0.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_02_Shop.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_VD_Items.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Z1_Props_Street_Alpha.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_CBCE_Atlas.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Z1_Shops_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_03_details_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Z1_Props_Rooftop_Alpha.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_01_Windows_04.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/gothamcity_roads_details.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_IC.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/LightMapSampler.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Z1_Shops_02.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/trunk.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_03_roof_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GothamCity_Road_Crossings_Island_1.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_02.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Park_atlas_tiles.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Cath_of_learning_Wall.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_DMUS_wall.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_GA_T_02.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_GA_TH.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Park_atlas_props.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/BakeGroup_Island1_Landmarks0.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_footprint_aa_concrete.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Truck_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_T_Concrete_02.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Cath_of_learning_Brick.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_footprint_AA_ground.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Truck_wheels_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Cath_of_learning_Windows_v.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_03_roof_02.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_04_Windows_05_v.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Park_statue.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_03_wall_04.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Glass_Building.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_03.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_04.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_SXC_hedge.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/BakeGroup_Island1_B0.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_04_Roof_02.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Cath_of_learning_Rooftop_ground.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_VD_Floor.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_LB_Cinema.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_04_Wall_02.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Statues_Atlas.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_05.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Cath_of_learning_Windows2_v.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_SXC_Atlas.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_AWT.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GothamCity_bridge2.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_footprint_awt_marble.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_SXC_Brick_02.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_SXC_Atlas2.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_CC_windows02.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_Props_Excavator.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_footprint_AB_atlas.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_06.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_07.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_VD_Floor_2.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_VD_Buildings_2.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island1_08.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_footprint_Vpow_furnal.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_IndustrialProps.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_VD_Buildings.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_00.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/BakeGroup_Island2_Roads0.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_01.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GothamCity_Road_Crossings_Island_2.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/BakeGroup_Island2_Landmarks0.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GothamCity_Road_v2_Island_1.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_VD_Buildings_3.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GothamCity_Road_v2_Island_2.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_GC_stuff_T.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_STD_stuff_TH.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_02.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_GC_floor_T.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_03.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_04.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_STD_Net_T.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_VRS_Reservoir.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_05.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GothamCity_asphalt_tile.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/BakeGroup_Island2_B0.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/HC_Prop_BillboardRoof_Industrial_01.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_06.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/BakeGroup_Island2_A0.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GothamCity_Road_v1_Island_1.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_07.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_VD_Fence.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_08.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_SXC_ground_tile.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_GB_Tex01_TH.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_09.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_10.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_LPOL_ConcreteTile.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Footprint_LPOL_PropsAtlas.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Park_grass.jpg?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/street_island2_11.glb?v=v17",
+   "status": 200
+  },
+  {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/models/tex/GC_Residential_BD_03_wall_06.jpg?v=v17",
+   "status": 200
+  }
+ ],
+ "failed": [],
+ "bad": [],
+ "n_responses": 135,
+ "page_errors": [],
+ "verdict": "PASS"
+}
