@@ -64,6 +64,12 @@ The runtime material table is the render-record array inside
 
 ## 3. DECISIVE: render probes (`render_probe16.py`, renders in work/probe16)
 
+**Round-4 tagging (session 17): these five probes are VISUAL,
+UNQUANTIFIED evidence — they motivated the tests below but do not replace
+them. The quantified case now rests on round4_street_evidence.py
+(texel-validity by family + UV-footprint vs shuffle null) and
+round4_delta16.py.**
+
 XY-projected, UV-sampled renders of individual segments textured by their
 +40 material's DiffuseMap vs the v5 exporter choice:
 
