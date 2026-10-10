@@ -1,0 +1,21 @@
+{
+ "box": [
+  -151.419921875,
+  -1083.2022705078125,
+  8.580078125,
+  -923.2022705078125
+ ],
+ "n_seg": 31,
+ "coverage": {
+  "v15": 0.18416772959183675,
+  "v16_flatlm": 0.18416772959183675,
+  "v16_1_realuv": 0.18416772959183675
+ },
+ "materials": {
+  "m76:GC_Footprint_VD_Items": 22,
+  "m138:GC_Footprint_VD_Floor": 5,
+  "m198:GC_Footprint_VD_Buildings_2": 2,
+  "m25:GC_DMUS_wall": 1,
+  "m272:GC_Footprint_STD_alpha_T": 1
+ }
+}

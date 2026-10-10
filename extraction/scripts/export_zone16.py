@@ -1,30 +1,34 @@
 #!/usr/bin/env python3
-"""Zone-tier exporter v16 — ENGINE-TRUE BINDINGS via descriptor +40.
+"""Zone-tier exporter v16.1 — ENGINE-TRUE BINDINGS via descriptor +40.
 
 Session 16 proved (runtime_mats16.py / agreement_test16.py / render probes):
   - descriptor +40 indexes the COMPILED material record array of
     <island>_materials.bdae (selfidx==position 307/307 and 196/196;
     order == source.dae library_materials).
   - the v5 structural band-atlas binding was self-fulfilling and WRONG
-    (smoking gun: a street-lamp row bound to a road-crossings page).
-  - street verts carry ONE UV; Coord1 is unbound -> GL default (0,0);
-    the runtime Coord1_scaleoffset comes from batch_info (collada value is
-    zeros), so pageUV = so.zw = d.xy (batch_info rec offset 145) — a
-    CONSTANT per material on the LightMap page (1/16-grid quantized,
-    3.7x over null; sampled texels plausible bake tints).
-    => Color = Diffuse(uv0) x LightMapPage(d.xy) x 2  (LightMapDC-f exact).
+    (agreement at null level; lamp rows bound to crossing pages).
+
+Round-4 review corrections (session 17):
+  - the round-3 '100.0000% in-page' LM chain was the DEGENERATE slot-109
+    mapping (scale ~1e-5 -> pageUV == d constant).  The real chain is
+    pageUV = w3_uv * scale@121.xy + offset@145.xy with WRAP sampling:
+    m90's tile rect matches exactly, visited regions are compact for
+    ~91/123 island-1 LM materials, and visited lum-structure std is 0.129
+    vs 0.001 flat for the old chain (round4_lm_probe.py).
+  - stem() now strips extensions case-insensitively (m180 ships
+    '....TGA' and previously fell through to 'missing texture').
 
 Binding rule (per segment):
   m = +40 -> row = runtime_mats[m]; tex/lm stems, technique.
   SimpleAdditive            -> '<tex>|add'
-  LightMap bound (any tech) -> '<tex>|<lm>|2x' + TEXCOORD_1 const (dx,1-dy)
-                               (viewer: makeCityMaterialLM = engine exact)
+  LightMap bound (any tech) -> '<tex>|<lm>|2x' + TEXCOORD_1 =
+                               (w3*scale.xy + offset.xy) mod 1 per-vertex
   LightmapVCBlend (no dif)  -> '|<lm>|2x'   (bake-alone viewer path)
   otherwise                 -> '<tex>|d'
   unbound diffuse+LM / unknown material -> __dark
 
 Writes street GLBs + used textures into SITE models/, replaces the street
-tier in manifest.json, bumps version to 16.
+tier in manifest.json, bumps version to 17.
 """
 import json
 import os
@@ -48,20 +52,29 @@ RE = "/home/z/my-project/repo/extraction/re"
 def stem(s):
     if not s or s == "UNBOUND":
         return None
-    return s.replace(".tga", "")
+    s = str(s)
+    low = s.lower()
+    for ext in (".tga", ".png", ".jpg"):
+        if low.endswith(ext):
+            return s[: -len(ext)]
+    return s
 
 
 def batch_groups(island):
-    """material m -> (a, d) vec3s from batch_info offsets 109 / 145.
-    Session 16: pageUV = w3_uv * a.xy + d.xy (100.00% inside on both
-    islands; slot a = Coord1 scale, d = Coord1 offset)."""
+    """material m -> (scale, offset) vec3s from batch_info offsets 121 / 145.
+
+    Round-4 correction: slot 109 is a ~1e-5 degenerate slot (the old chain
+    collapsed pageUV to the constant offset d).  The real Coord1 pair is
+    scale @121 + offset @145 (m90 exact tile-rect match; visited-structure
+    std 0.129 vs 0.001; occupancy compact for most LM materials), sampled
+    with WRAP (pageUV mod 1)."""
     d = open(f"{ZONE}/{island}/batch_info.bin", "rb").read()
     stride = struct.unpack_from("<I", d, 0)[0]
     M = (len(d) - 4) // stride
     out = []
     for m in range(M):
         rec = d[4 + stride * m: 4 + stride * (m + 1)]
-        a = struct.unpack_from("<3f", rec, 109)
+        a = struct.unpack_from("<3f", rec, 121)
         dd = struct.unpack_from("<3f", rec, 145)
         out.append((a, dd))
     return out
@@ -222,8 +235,9 @@ def bind16(m, rows, groups, w3):
         a, dd = groups[m] if m < len(groups) else ((0, 0, 0), (0, 0, 0))
         cu = (w3 & 0xFFFF).astype(np.float32) / 65535.0
         cv = (w3 >> 16).astype(np.float32) / 65535.0
-        pu = cu * a[0] + dd[0]
-        pv = cv * a[1] + dd[1]
+        # engine chain (round-4 corrected): scale @121, offset @145, WRAP
+        pu = np.mod(cu * a[0] + dd[0], 1.0).astype(np.float32)
+        pv = np.mod(cv * a[1] + dd[1], 1.0).astype(np.float32)
         uv1 = np.stack([pu, pv], 1)
         return (tex, lm, "2x", uv1)
     if lm:
@@ -316,12 +330,12 @@ def main():
     manifest["glbs"] = [g for g in manifest["glbs"]
                         if g.get("tier") != "street"] + st_glbs
     manifest["tiers"]["street"] = [g["file"] for g in st_glbs]
-    manifest["version"] = 16
+    manifest["version"] = 17
     manifest["total_verts"] = sum(g["verts"] for g in manifest["glbs"])
     manifest["total_tris"] = sum(g["tris"] for g in manifest["glbs"])
     with open(manifest_path, "w") as f:
         json.dump(manifest, f, indent=1)
-    print(f"manifest v16: {len(st_glbs)} street GLBs, "
+    print(f"manifest v17: {len(st_glbs)} street GLBs, "
           f"totals {manifest['total_verts']:,}v {manifest['total_tris']:,}t")
 
 

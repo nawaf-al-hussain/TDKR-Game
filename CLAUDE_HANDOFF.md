@@ -1,10 +1,10 @@
 # CLAUDE_HANDOFF.md — problem brief for an outside AI collaborator
 
-*Written 2026-10-09, updated after session 16. Everything below is verifiable
-in this public repo: https://github.com/nawaf-al-hussain/TDKR-Game — live
-viewer: https://nawaf-al-hussain.github.io/TDKR-Game/*
+*Written 2026-10-09, updated after sessions 16-17. Everything below is
+verifiable in this public repo: https://github.com/nawaf-al-hussain/TDKR-Game
+— live viewer: https://nawaf-al-hussain.github.io/TDKR-Game/*
 
-## 0. TL;DR — UPDATED AFTER SESSION 16 (same day)
+## 0. TL;DR — UPDATED AFTER SESSION 17 (round-4 review round)
 
 We are reverse-engineering Gameloft's delisted mobile game **The Dark Knight
 Rises (2012)** to rebuild its open-world Gotham City in a browser 3D viewer.
@@ -76,14 +76,17 @@ records.
 + batch_info semantics):**
 
 - **Descriptor +40 IS the per-segment material index into the zone's
-  compiled material array** — proven four ways: (1) the compiled
-  `little_endian_quantized.bdae` render-record array is **self-indexing**
-  (`selfidx == position`, 307/307 and 196/196); (2) class-purity 76% with
-  spatial autocorrelation excluded (group spreads 773–1334u); (3) huge
-  enrichment stats (+40=11 → exporter-"road" class 43% vs 8.3% base);
-  (4) **direct UV-sampled renders**: a lamp row, the monorail, a railroad
-  curve, trees, additive billboards all render coherent content under their
-  +40 textures.
+  compiled material array.** Round-4 added the prescribed quantified
+  evidence (`round4_street_evidence.py`): UV-footprint cell containment
+  0.263/0.161 vs shuffle-null 0.013/0.007 (~20x); texel-validity wins on
+  buildings/billboards/rooftop families (0.79-0.94 vs v5 0.08-0.26 vs null
+  0.63-0.70; props_street/coronas/trees are page-density-confounded for
+  every binding — dark-pad thin-stroke cells, reported as a metric limit);
+  v15->v16 changed the texture of 99.6% of segments (v15 was 39% bound and
+  the bound part was largely wrong — 89 v5-"road" segments are props_street
+  by +40, 135 v5-flat segments are trees).  The direct renders (lamp row,
+  monorail, railroad, trees, billboards) remain **visual, unquantified**
+  support — the quantified case now rests on the metrics above.
 - **The session-10/11 v5 exporter bindings were DISQUALIFIED by the
   prescribed agreement test**: exact agreement 1/593 and 4/374 (null-level)
   under library_materials order AND alphabetical order AND 200-shuffle null.
@@ -99,22 +102,38 @@ records.
   insensitive (`.TGA` truncated our first walk — beware). Runtime
   DiffuseMap vs source.dae agree 306/307 and 195/196.
   Table: `extraction/re/runtime_mats_{island}.json`.
-- **Street lightmap UV chain SOLVED**: stride-24 street verts carry packed
-  Coord1 in **vertex word 3**; batch_info record slots are per-technique,
-  and the LightMapDC slot pair is **a @109 (scale) + d @145 (offset)**:
-  `pageUV = w3_uv × a.xy + d.xy` — 100.0000% inside [0,1]² on both islands
-  (577,017 / 469,133 vertices, zero materials <95%), coherent per-material
-  bake-tile rects (some < 0.05 area). The reviewer-prescribed b+d-on-uv0
-  test FAILED (44.7%/71.9% vs null ~49%) and its failure is what exposed
-  w3. collada sampler scaleoffsets are all (0,0,0,0) placeholders — the
-  runtime fills them from batch_info (CDoubleBufferedDynamicBatchMesh).
+- **Street lightmap UV chain — CORRECTED IN SESSION 17.** The round-3 claim
+  "pageUV = w3·a(109) + d(145), 100.0000% in-page" was a DEGENERATE-ARTIFACT
+  (slot 109 scale is ~1e-5 → pageUV collapses to the constant d; ANY (a,d)
+  pair is then in-page — the round-4 prescribed null test showed exactly
+  that, 100% everywhere, 284/284 materials with d+a≤1). The real chain is
+  **pageUV = w3_uv × scale@121.xy + offset@145.xy with WRAP sampling**:
+  m90's tile rect matches exactly, visited-region luminance structure std
+  0.129 vs 0.001 flat for the old chain, the "near-black central park"
+  segments sample page-histogram-shaped content under the new chain (they
+  sampled a single black texel under the old one), 91/123 (isl-1) and
+  55/81 (isl-2) LM materials visit compact wrapped regions. w3 = two
+  unorm16 lanes (LE: lo=U, hi=V); NO w3==0 street segments; 97.6%/98.2%
+  of LM-bound stride-24 segments carry per-vertex varying w3. collada
+  sampler scaleoffsets are all (0,0,0,0) placeholders — the runtime fills
+  them from batch_info (CDoubleBufferedDynamicBatchMesh).
+- **Street vertices carry NO vertex colour** (checked both strides; the
+  unknown word 5 is not RGBA and not an octahedral normal) — the ×2 in
+  LightMapDC/LightmapVCBlendDC stays an assumption until Overbright is
+  decoded. Exporter v16.1 ships the corrected chain; deployed as **v17**
+  with the new deploy gate (URL crawl + incremental sync + luminance floor).
+  Unbound segments: **5** (all m40=0, engine-unbound FlippedPlane), the
+  "3 missing textures" were an uppercase-.TGA stem bug (fixed).
 - **+36 SOLVED**: Spearman(+36, dataOff stream order) = +0.998 / +0.988,
   ~0 vs bih grid order → **the segment's global stream index across all
   LOD levels** (ranges 0..3194 / 26..2191 exceed the visible-LOD counts).
-- **Exporter v16 shipped**: all street segments bound by +40 with real
-  per-vertex TEXCOORD_1 (99.5% / 100% engine-true; v15 was ~61% bound and
-  partly wrong). Viewer got a `USE_UV1` guard (three r152+ auto-declares
-  uv1). Deployed as **v16**; smoke-tested.
+- **Exporter v16.1 shipped (deployed as v17)**: all street segments bound
+  by +40 with real per-vertex TEXCOORD_1 through the corrected chain
+  (100%/99.5% bound; v15 was ~39% bound and partly wrong). Viewer got a
+  `USE_UV1` guard (three r152+ auto-declares uv1). Deploy = incremental
+  sync (no more `rm -rf`), pre-deploy URL gate, live crawl smoke check and
+  a headless luminance floor — the process that let v16 ship aux-texture
+  loss and a live batarang.glb 404 cannot repeat.
 
 ## 1. Project context
 
@@ -125,7 +144,7 @@ records.
   Thumb, committed at `extraction/lib_libKRHP.so`); Lua bootstrap embedded
   in the level config.
 - **Deliverable**: a GitHub Pages three.js viewer streaming the extracted
-  city as GLBs (v14: 40 GLBs, tiers street/skyline/hero/fp/low/district).
+  city as GLBs (v17: 40 GLBs, tiers street/skyline/hero/fp/low/district).
 - All RE artifacts (notes, decompilations, scripts, intermediate JSON) are
   committed under `extraction/` — this repo is the single source of truth.
 
@@ -140,7 +159,7 @@ ZIP_SPLIT rgb/alpha pairs) → `extraction/scripts/export_city.py` builds
 textured GLBs → `gh-pages/models/manifest.json` (tiers: street / skyline /
 hero / fp / district / low) → three.js viewer `gh-pages/app.js`.
 
-## 3. What the user sees TODAY (v16, deployed and smoke-tested)
+## 3. What the user sees TODAY (v17, deployed and gate-tested)
 
 - **Boots**: street tier (21 GLBs, world-placed, **engine-true +40 material
   bindings with per-vertex lightmap UVs** — the ~600 dark near-tier
@@ -153,8 +172,9 @@ hero / fp / district / low) → three.js viewer `gh-pages/app.js`.
 - Island-2 skyline units removed (no main-level record; they belonged to
   the separate island-2 level). The island-2 hero units (monorail/railway/
   small-bridge) remain OFF-by-default research toggles.
-- **Deploy = gh-pages branch @ v16, verified by
-  `extraction/scripts/site_smoke_test.py` + `site_release_check.py`**.
+- **Deploy = gh-pages branch @ v17, verified by
+  `extraction/scripts/site_smoke_test.py` (incl. the app.js/index.html URL
+  crawl), `site_release_check.py` and `viewer_luminance_gate.py`**.
 
 ## 4. The lvc DICT object stream — record-type dictionary (session 13, all from disasm)
 
@@ -211,23 +231,26 @@ proof chain. Summary:
   params; the earlier "b=(scaleU,scaleV)" reading was off by one slot.
 - The v5 band-atlas structural binding is RETIRED — the agreement test
   (prescribed round 3) showed it agreed with the engine chain at null
-  level; render probes show it was binding lamp rows to crossing pages.
+  level; render probes show it was binding lamp rows to crossing pages;
+  round-4 quantified the flip (footprint ~20x null, texel-validity on
+  building/billboard families, 99.6% of textures changed).
 - batch_info.bin remains `u32(197) + M × 197-byte records`, record m
   starts with byte m; the four vec3 f32 groups @109/121/133/145 are
-  per-technique UV parameter slots (a=Coord1 scale, d=Coord1 offset for
-  the LM path; b/c = Animated-scroll-class slots, still open);
+  per-technique/per-sampler UV parameter slots — for the street LM path
+  the pair is **scale @121 + offset @145 (wrapped)**; @109/@133 are a
+  ~1e-5 degenerate second-sampler pair on street materials;
   rec 45–108 u16 array and stream_info X still open.
 
-**Remaining unknowns (updated in 16):**
+**Remaining unknowns (updated in 17):**
 
 - the **Overbright** term (`LightMapColor = LM*2 + vec4(Overbright)`) —
   find the per-technique param default; NormalSpecOverbright materials
-  suggest it matters. Current render assumes 0.
-- batch_info slots b @121 / c @133 (per-technique params for Animated
-  scroll and friends) and the u16 array (rec 45–108); stream_info X
-  (234,466 / 303,832).
-- The exact runtime role of big_endian_quantized.bdae (we read the LE one;
-  ARM Android is LE, contents agree with source.dae at 99.7%).
+  suggest it matters. Current render assumes 0. Street vertices carry NO
+  vertex colour (checked both strides), so there is no hidden VC term.
+- batch_info slot roles for the ~1/3 of LM materials whose visited
+  regions still sweep the page under the (121,145) chain (m73-class);
+  the u16 array (rec 45–108); stream_info X (234,466 / 303,832);
+  stride-24 word 5 content ([u16][u8][u8=0]).
 
 **Also still open:**
 
@@ -290,18 +313,20 @@ python3 extraction/scripts/export_city.py --dry
    the engine take the Overbright uniform from (effect params? technique
    `NormalSpecOverbright`?) and what is its shipped value for the zone
    levels? The current city is plausible but possibly darker than the game.
-2. **batch_info leftover slots**: b @121 / c @133 (per-technique params —
-   Animated scroll?), the u16 array (rec 45–108), stream_info X
-   (234,466 / 303,832). Layout + the LM-relevant slots are solved (§5B);
-   these are refinements, nothing blocks the viewer.
+2. **batch_info leftover slots**: slot-121 semantics for the m73-class
+   materials (visited regions sweep the page), the u16 array (rec 45–108),
+   stream_info X (234,466 / 303,832), stride-24 word 5. Layout + the
+   LM-relevant slots are solved (§5B); these are refinements.
 3. **Generic object records** (CreateObject component loop): read order for
    the non-special typeIds so the hero units (bridges/monorail/railway)
    get their world TRSs.
-4. Sanity checks welcome on the v16 street bindings and the v14 skyline
-   placement (`extraction/re/agreement_test16.json`,
-   `runtime_mats_{island}.json`, `skyline_verify14.json`).
+4. Sanity checks welcome on the round-4 evidence chain
+   (`round4_evidence.json`, `round4_lm_probe.json`,
+   `round4_populations.json`, `round4_delta16.json`, renders in
+   `round4_evidence_renders/`) and the v14 skyline placement
+   (`skyline_verify14.json`).
 5. Anything that looks wrong in the deployed pipeline that we've gone blind
-   to after 16 sessions of fixes (fresh eyes welcome).
+   to after 17 sessions of fixes (fresh eyes welcome).
 
 ## 9. Do-not-re-suggest list (all fixed and verified)
 
@@ -330,16 +355,33 @@ python3 extraction/scripts/export_city.py --dry
   the layout is `u32(197) + M × 197 B`, one record per material, record m
   starting with byte m. Any interpretation must reproduce
   `body[197*m] == m` for all m.
-- **batch_info slot letters as fixed meanings** — the four vec3 groups
-  are PER-TECHNIQUE slots; for the street LM path the pair is
-  **a @109 (scale) + d @145 (offset)**, not "b = scale, d = offset".
+- **batch_info slot letters as fixed meanings / "a @109 = LM scale"** —
+  the four vec3 groups are PER-TECHNIQUE slots; for the street LM path
+  the pair is **scale @121 + offset @145 (wrapped)**. Slot 109 is a ~1e-5
+  degenerate slot: any "100% in-page" claim built on it is vacuous (the
+  round-4 null proved every (a,d) pair lands in-page when the scale is
+  ~0). The session-16 "100.0000% in-page" is retracted as evidence.
 - **batch_info b/d as a transform of uv0** — the reviewer-prescribed
   test failed (44.7%/71.9% vs null ~49%); the base is **vertex word 3**
   (packed Coord1), not the diffuse uv0. Identity-on-uv0 trivially lands
   in-page and proves nothing.
 - **The v5 structural band-atlas binding as ground truth** — retired in
   session 16 (agreement test null-level; render probes show lamp rows
-  bound to crossing pages). Street bindings come from descriptor +40.
+  bound to crossing pages). Street bindings come from descriptor +40;
+  session 17 quantified the flip (footprint ~20x null; 99.6% of textures
+  changed v15->v16).
+- **Raw texel-validity as a universal binding metric** — it is
+  page-density biased: dark-pad thin-stroke cells (street props, coronas,
+  tree trunks) score LOW for the CORRECT binding because most of a cell
+  is black padding, while full-bleed road pages score high for ANY UVs.
+  Use footprint/occupancy/structure metrics for those families.
+- **Tile-partition as an (a,d) null** — bake pages are AREA bakes:
+  different materials in one area legitimately share tile regions, so
+  non-overlap is the wrong hypothesis (the test saturates at 100% for
+  both authored and null).
+- **"Street vertices carry vertex colour"** — they do not (both strides
+  checked; word 5 is not RGBA/octahedral). Any LightmapVCBlend reading
+  must come from elsewhere.
 - **"74 = the Roads0 material" (session-15 wording)** — m74 = trunk.tga
   diffuse + Roads0 LightMap (street trees). Roads0 is its LIGHTMAP page.
 - **+36 as a building/batch id or bih-grid order** — it is the segment's

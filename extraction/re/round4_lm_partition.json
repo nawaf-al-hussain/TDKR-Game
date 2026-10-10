@@ -1,0 +1,992 @@
+{
+ "GothamCity": {
+  "w3_census": {
+   "n": 123,
+   "full": 45,
+   "narrow": 78
+  },
+  "partition": {
+   "s109": {
+    "n": 123,
+    "n_all": 123,
+    "total_visited_area": 0.0,
+    "authored": 0.0,
+    "null": 0.0,
+    "null_sd": 0.0
+   },
+   "s121": {
+    "n": 91,
+    "n_all": 123,
+    "total_visited_area": 14.718,
+    "authored": 1.0,
+    "null": 1.0,
+    "null_sd": 0.0
+   },
+   "s133": {
+    "n": 123,
+    "n_all": 123,
+    "total_visited_area": 0.0,
+    "authored": 0.0,
+    "null": 0.0,
+    "null_sd": 0.0
+   }
+  },
+  "top_visited_s121": {
+   "76": {
+    "n": 119974,
+    "a": [
+     15.2467,
+     0.3811,
+     0.0
+    ],
+    "d": [
+     0.4996,
+     0.4359,
+     0.0
+    ],
+    "uArc": [
+     0.602,
+     15.384
+    ],
+    "vArc": [
+     0.436,
+     0.817
+    ],
+    "dif": "GC_Footprint_VD_Items.tga",
+    "lm": "BakeGroup_Island1_B0.tga"
+   },
+   "90": {
+    "n": 51242,
+    "a": [
+     0.3757,
+     0.2524,
+     0.0
+    ],
+    "d": [
+     0.2493,
+     0.7468,
+     0.0
+    ],
+    "uArc": [
+     0.25,
+     0.625
+    ],
+    "vArc": [
+     0.751,
+     0.999
+    ],
+    "dif": "GC_Residential_Props_Railroad.tga",
+    "lm": "BakeGroup_Island1_Roads0.tga"
+   },
+   "23": {
+    "n": 38987,
+    "a": [
+     0.3752,
+     0.5,
+     0.0
+    ],
+    "d": [
+     0.511,
+     0.4831,
+     0.0
+    ],
+    "uArc": [
+     0.511,
+     0.885
+    ],
+    "vArc": [
+     0.483,
+     0.983
+    ],
+    "dif": "GC_Z1_Props_Rooftop.tga",
+    "lm": "BakeGroup_Island1_B0.tga"
+   },
+   "196": {
+    "n": 27492,
+    "a": [
+     0.5528,
+     0.4677,
+     0.0
+    ],
+    "d": [
+     0.3747,
+     0.8731,
+     0.0
+    ],
+    "uArc": [
+     0.376,
+     0.926
+    ],
+    "vArc": [
+     0.875,
+     1.34
+    ],
+    "dif": "GC_Footprint_LB_Cinema.tga",
+    "lm": "BakeGroup_Island1_B0.tga"
+   },
+   "74": {
+    "n": 22671,
+    "a": [
+     0.4983,
+     0.3785,
+     0.0
+    ],
+    "d": [
+     0.746,
+     0.6229,
+     0.0
+    ],
+    "uArc": [
+     0.747,
+     1.243
+    ],
+    "vArc": [
+     0.623,
+     1.0
+    ],
+    "dif": "trunk.tga",
+    "lm": "BakeGroup_Island1_Roads0.tga"
+   },
+   "46": {
+    "n": 16339,
+    "a": [
+     0.143,
+     0.306,
+     0.0
+    ],
+    "d": [
+     0.4994,
+     0.6245,
+     0.0
+    ],
+    "uArc": [
+     0.499,
+     0.642
+    ],
+    "vArc": [
+     0.625,
+     0.93
+    ],
+    "dif": "GC_Footprint_VD_Items.tga",
+    "lm": "BakeGroup_Island1_A0.tga"
+   },
+   "55": {
+    "n": 16222,
+    "a": [
+     0.2479,
+     0.3739,
+     0.0
+    ],
+    "d": [
+     0.6242,
+     0.7494,
+     0.0
+    ],
+    "uArc": [
+     0.624,
+     0.872
+    ],
+    "vArc": [
+     0.878,
+     1.082
+    ],
+    "dif": "GC_Footprint_GA_TH.tga",
+    "lm": "BakeGroup_Island1_A0.tga"
+   },
+   "178": {
+    "n": 15511,
+    "a": [
+     2.5726,
+     0.5007,
+     0.0
+    ],
+    "d": [
+     0.623,
+     0.622,
+     0.0
+    ],
+    "uArc": [
+     0.697,
+     3.1
+    ],
+    "vArc": [
+     0.627,
+     1.068
+    ],
+    "dif": "GC_Residential_Props_Monorail.tga",
+    "lm": "BakeGroup_Island1_Roads0.tga"
+   },
+   "131": {
+    "n": 14785,
+    "a": [
+     0.1251,
+     0.4326,
+     0.0
+    ],
+    "d": [
+     0.5,
+     0.4993,
+     0.0
+    ],
+    "uArc": [
+     0.5,
+     0.625
+    ],
+    "vArc": [
+     0.499,
+     0.932
+    ],
+    "dif": "GC_Z1_Props_Rooftop.tga",
+    "lm": "BakeGroup_Island1_A0.tga"
+   },
+   "28": {
+    "n": 14385,
+    "a": [
+     0.9691,
+     0.2615,
+     0.0
+    ],
+    "d": [
+     0.5,
+     0.437,
+     0.0
+    ],
+    "uArc": [
+     0.501,
+     1.469
+    ],
+    "vArc": [
+     0.45,
+     0.693
+    ],
+    "dif": "GC_Residential_BD_01_Door_01.tga",
+    "lm": "BakeGroup_Island1_A0.tga"
+   },
+   "70": {
+    "n": 14161,
+    "a": [
+     0.4981,
+     0.5,
+     0.0
+    ],
+    "d": [
+     0.5109,
+     0.4964,
+     0.0
+    ],
+    "uArc": [
+     0.512,
+     1.006
+    ],
+    "vArc": [
+     0.497,
+     0.996
+    ],
+    "dif": "GC_Z1_Props_Rooftop.tga",
+    "lm": "BakeGroup_Island1_Landmarks0.tga"
+   },
+   "173": {
+    "n": 12544,
+    "a": [
+     -0.2826,
+     0.7961,
+     0.0
+    ],
+    "d": [
+     0.8737,
+     0.7492,
+     0.0
+    ],
+    "uArc": [
+     0.725,
+     0.843
+    ],
+    "vArc": [
+     0.755,
+     1.541
+    ],
+    "dif": "GC_Footprint_IC.tga",
+    "lm": "BakeGroup_Island1_A0.tga"
+   },
+   "73": {
+    "n": 11951,
+    "a": [
+     -5.6584,
+     1.5223,
+     0.0
+    ],
+    "d": [
+     0.3112,
+     0.2476,
+     0.0
+    ],
+    "uArc": [
+     -5.347,
+     0.311
+    ],
+    "vArc": [
+     0.843,
+     1.644
+    ],
+    "dif": "gothamcity_roads_details.tga",
+    "lm": "BakeGroup_Island1_Roads0.tga"
+   },
+   "230": {
+    "n": 9828,
+    "a": [
+     9.3693,
+     -0.719,
+     0.0
+    ],
+    "d": [
+     0.7498,
+     0.2498,
+     0.0
+    ],
+    "uArc": [
+     5.942,
+     6.656
+    ],
+    "vArc": [
+     -0.109,
+     0.075
+    ],
+    "dif": "GC_SXC_Atlas.tga",
+    "lm": "BakeGroup_Island1_Landmarks0.tga"
+   },
+   "172": {
+    "n": 9416,
+    "a": [
+     -7.5985,
+     -4.913,
+     0.0
+    ],
+    "d": [
+     0.7495,
+     0.7494,
+     0.0
+    ],
+    "uArc": [
+     -3.214,
+     -0.331
+    ],
+    "vArc": [
+     -1.491,
+     0.208
+    ],
+    "dif": "GC_Footprint_AWT.tga",
+    "lm": "BakeGroup_Island1_Landmarks0.tga"
+   },
+   "229": {
+    "n": 8852,
+    "a": [
+     0.2453,
+     -0.0623,
+     0.0
+    ],
+    "d": [
+     0.375,
+     0.375,
+     0.0
+    ],
+    "uArc": [
+     0.375,
+     0.62
+    ],
+    "vArc": [
+     0.323,
+     0.373
+    ],
+    "dif": "GC_footprint_AB_atlas.tga",
+    "lm": "BakeGroup_Island1_B0.tga"
+   },
+   "45": {
+    "n": 8742,
+    "a": [
+     0.4971,
+     0.5176,
+     0.0
+    ],
+    "d": [
+     0.8723,
+     0.1247,
+     0.0
+    ],
+    "uArc": [
+     0.874,
+     1.369
+    ],
+    "vArc": [
+     0.125,
+     0.642
+    ],
+    "dif": "GC_Footprint_VD_Items.tga",
+    "lm": "BakeGroup_Island1_Roads0.tga"
+   },
+   "105": {
+    "n": 7213,
+    "a": [
+     2.7408,
+     -3.7713,
+     0.0
+    ],
+    "d": [
+     0.6868,
+     0.6868,
+     0.0
+    ],
+    "uArc": [
+     2.057,
+     2.555
+    ],
+    "vArc": [
+     -1.199,
+     -0.806
+    ],
+    "dif": "GC_Park_atlas_props.tga",
+    "lm": "BakeGroup_Island1_A0.tga"
+   },
+   "54": {
+    "n": 6190,
+    "a": [
+     0.0248,
+     -0.4359,
+     0.0
+    ],
+    "d": [
+     0.5932,
+     0.4214,
+     0.0
+    ],
+    "uArc": [
+     0.596,
+     0.605
+    ],
+    "vArc": [
+     0.273,
+     0.355
+    ],
+    "dif": "GC_Residential_Dinner_objects.tga",
+    "lm": "BakeGroup_Island1_A0.tga"
+   },
+   "81": {
+    "n": 6028,
+    "a": [
+     0.7501,
+     0.2729,
+     0.0
+    ],
+    "d": [
+     0.935,
+     0.7632,
+     0.0
+    ],
+    "uArc": [
+     0.942,
+     1.674
+    ],
+    "vArc": [
+     0.764,
+     1.036
+    ],
+    "dif": "GC_Residential_Dinner_objects.tga",
+    "lm": "BakeGroup_Island1_B0.tga"
+   }
+  }
+ },
+ "GothamCity_Island2": {
+  "w3_census": {
+   "n": 81,
+   "full": 27,
+   "narrow": 54
+  },
+  "partition": {
+   "s109": {
+    "n": 81,
+    "n_all": 81,
+    "total_visited_area": 0.0,
+    "authored": 0.0,
+    "null": 0.0,
+    "null_sd": 0.0
+   },
+   "s121": {
+    "n": 55,
+    "n_all": 81,
+    "total_visited_area": 10.038,
+    "authored": 1.0,
+    "null": 1.0,
+    "null_sd": 0.0
+   },
+   "s133": {
+    "n": 81,
+    "n_all": 81,
+    "total_visited_area": 0.0,
+    "authored": 0.0,
+    "null": 0.0,
+    "null_sd": 0.0
+   }
+  },
+  "top_visited_s121": {
+   "58": {
+    "n": 199193,
+    "a": [
+     0.4243,
+     0.8794,
+     0.0
+    ],
+    "d": [
+     0.4997,
+     0.4998,
+     0.0
+    ],
+    "uArc": [
+     0.5,
+     0.924
+    ],
+    "vArc": [
+     0.5,
+     1.379
+    ],
+    "dif": "GC_Footprint_VD_Items.tga",
+    "lm": "BakeGroup_Island2_A0.tga"
+   },
+   "75": {
+    "n": 46196,
+    "a": [
+     -0.5282,
+     0.5003,
+     0.0
+    ],
+    "d": [
+     0.5074,
+     0.4602,
+     0.0
+    ],
+    "uArc": [
+     0.357,
+     0.455
+    ],
+    "vArc": [
+     0.461,
+     0.959
+    ],
+    "dif": "GC_Footprint_VD_Items.tga",
+    "lm": "BakeGroup_Island2_Landmarks0.tga"
+   },
+   "82": {
+    "n": 41808,
+    "a": [
+     0.3757,
+     0.2512,
+     0.0
+    ],
+    "d": [
+     0.2493,
+     0.2494,
+     0.0
+    ],
+    "uArc": [
+     0.25,
+     0.625
+    ],
+    "vArc": [
+     0.257,
+     0.501
+    ],
+    "dif": "GC_Residential_Props_Railroad.tga",
+    "lm": "BakeGroup_Island2_Roads0.tga"
+   },
+   "59": {
+    "n": 17701,
+    "a": [
+     0.4522,
+     0.526,
+     0.0
+    ],
+    "d": [
+     0.3791,
+     0.3745,
+     0.0
+    ],
+    "uArc": [
+     0.379,
+     0.831
+    ],
+    "vArc": [
+     0.375,
+     0.898
+    ],
+    "dif": "GC_Footprint_VD_Items.tga",
+    "lm": "BakeGroup_Island2_A0.tga"
+   },
+   "153": {
+    "n": 17264,
+    "a": [
+     2.547,
+     0.5027,
+     0.0
+    ],
+    "d": [
+     0.125,
+     0.624,
+     0.0
+    ],
+    "uArc": [
+     0.125,
+     2.574
+    ],
+    "vArc": [
+     0.628,
+     1.071
+    ],
+    "dif": "GC_Residential_Props_Monorail.tga",
+    "lm": "BakeGroup_Island2_Roads0.tga"
+   },
+   "67": {
+    "n": 14361,
+    "a": [
+     0.6147,
+     0.4771,
+     0.0
+    ],
+    "d": [
+     0.6833,
+     0.4053,
+     0.0
+    ],
+    "uArc": [
+     0.686,
+     1.296
+    ],
+    "vArc": [
+     0.414,
+     0.882
+    ],
+    "dif": "GC_Footprint_VD_Items.tga",
+    "lm": "BakeGroup_Island2_B0.tga"
+   },
+   "50": {
+    "n": 11791,
+    "a": [
+     0.4983,
+     0.3785,
+     0.0
+    ],
+    "d": [
+     0.6178,
+     0.7479,
+     0.0
+    ],
+    "uArc": [
+     0.62,
+     1.052
+    ],
+    "vArc": [
+     0.748,
+     1.125
+    ],
+    "dif": "trunk.tga",
+    "lm": "BakeGroup_Island2_Roads0.tga"
+   },
+   "102": {
+    "n": 11596,
+    "a": [
+     -0.7241,
+     -0.9813,
+     0.0
+    ],
+    "d": [
+     0.2496,
+     0.749,
+     0.0
+    ],
+    "uArc": [
+     -0.125,
+     0.095
+    ],
+    "vArc": [
+     0.258,
+     0.509
+    ],
+    "dif": "bridge_1.tga",
+    "lm": "BakeGroup_Island2_Roads0.tga"
+   },
+   "42": {
+    "n": 11431,
+    "a": [
+     -0.2192,
+     0.5578,
+     0.0
+    ],
+    "d": [
+     0.7494,
+     0.3749,
+     0.0
+    ],
+    "uArc": [
+     0.531,
+     0.744
+    ],
+    "vArc": [
+     0.376,
+     0.932
+    ],
+    "dif": "GC_Footprint_VD_Buildings_2.tga",
+    "lm": "BakeGroup_Island2_Landmarks0.tga"
+   },
+   "109": {
+    "n": 8644,
+    "a": [
+     1.567,
+     0.5001,
+     0.0
+    ],
+    "d": [
+     0.6855,
+     0.8095,
+     0.0
+    ],
+    "uArc": [
+     0.686,
+     2.023
+    ],
+    "vArc": [
+     0.81,
+     1.31
+    ],
+    "dif": "HC_Prop_BillboardRoof_Industrial_01.tga",
+    "lm": "BakeGroup_Island2_Roads0.tga"
+   },
+   "89": {
+    "n": 7444,
+    "a": [
+     1.6995,
+     0.2112,
+     0.0
+    ],
+    "d": [
+     0.2442,
+     0.7156,
+     0.0
+    ],
+    "uArc": [
+     0.251,
+     1.943
+    ],
+    "vArc": [
+     0.716,
+     0.927
+    ],
+    "dif": "GC_VRS_Reservoir.tga",
+    "lm": "BakeGroup_Island2_Landmarks0.tga"
+   },
+   "45": {
+    "n": 7202,
+    "a": [
+     1.2951,
+     0.5,
+     0.0
+    ],
+    "d": [
+     0.2498,
+     0.2499,
+     0.0
+    ],
+    "uArc": [
+     0.897,
+     1.457
+    ],
+    "vArc": [
+     0.318,
+     0.746
+    ],
+    "dif": "GC_SXC_Atlas.tga",
+    "lm": "BakeGroup_Island2_B0.tga"
+   },
+   "104": {
+    "n": 6411,
+    "a": [
+     -0.0844,
+     1.0065,
+     0.0
+    ],
+    "d": [
+     0.749,
+     0.3748,
+     0.0
+    ],
+    "uArc": [
+     0.708,
+     0.729
+    ],
+    "vArc": [
+     1.11,
+     1.135
+    ],
+    "dif": "GC_Footprint_VD_Buildings_2.tga",
+    "lm": "BakeGroup_Island2_A0.tga"
+   },
+   "52": {
+    "n": 4623,
+    "a": [
+     0.2264,
+     0.4248,
+     0.0
+    ],
+    "d": [
+     0.25,
+     0.25,
+     0.0
+    ],
+    "uArc": [
+     0.25,
+     0.476
+    ],
+    "vArc": [
+     0.255,
+     0.623
+    ],
+    "dif": "GC_Footprint_STD_stuff_TH.tga",
+    "lm": "BakeGroup_Island2_Landmarks0.tga"
+   },
+   "37": {
+    "n": 4532,
+    "a": [
+     0.2751,
+     0.5009,
+     0.0
+    ],
+    "d": [
+     0.7494,
+     0.3741,
+     0.0
+    ],
+    "uArc": [
+     0.75,
+     1.023
+    ],
+    "vArc": [
+     0.461,
+     0.853
+    ],
+    "dif": "GC_Footprint_VD_Buildings_3.tga",
+    "lm": "BakeGroup_Island2_Landmarks0.tga"
+   },
+   "18": {
+    "n": 4082,
+    "a": [
+     -1.5007,
+     0.4976,
+     0.0
+    ],
+    "d": [
+     0.7483,
+     0.2486,
+     0.0
+    ],
+    "uArc": [
+     -0.752,
+     0.748
+    ],
+    "vArc": [
+     0.249,
+     0.745
+    ],
+    "dif": "GothamCity_Road_Crossings_Island_2.tga",
+    "lm": "BakeGroup_Island2_Roads0.tga"
+   },
+   "182": {
+    "n": 3680,
+    "a": [
+     0.4475,
+     0.5614,
+     0.0
+    ],
+    "d": [
+     0.3801,
+     0.7567,
+     0.0
+    ],
+    "uArc": [
+     0.407,
+     0.604
+    ],
+    "vArc": [
+     1.004,
+     1.172
+    ],
+    "dif": "GC_Z1_Props_Rooftop_Alpha.tga",
+    "lm": "BakeGroup_Island2_A0.tga"
+   },
+   "63": {
+    "n": 3152,
+    "a": [
+     -0.2826,
+     0.7961,
+     0.0
+    ],
+    "d": [
+     0.8737,
+     0.624,
+     0.0
+    ],
+    "uArc": [
+     0.725,
+     0.832
+    ],
+    "vArc": [
+     0.717,
+     1.382
+    ],
+    "dif": "GC_Footprint_IC.tga",
+    "lm": "BakeGroup_Island2_Landmarks0.tga"
+   },
+   "88": {
+    "n": 2682,
+    "a": [
+     0.985,
+     0.958,
+     0.0
+    ],
+    "d": [
+     0.7494,
+     0.3782,
+     0.0
+    ],
+    "uArc": [
+     0.874,
+     1.71
+    ],
+    "vArc": [
+     0.38,
+     1.331
+    ],
+    "dif": "GC_Footprint_VD_Buildings.tga",
+    "lm": "BakeGroup_Island2_Landmarks0.tga"
+   },
+   "163": {
+    "n": 2646,
+    "a": [
+     0.4975,
+     0.4092,
+     0.0
+    ],
+    "d": [
+     0.4018,
+     0.854,
+     0.0
+    ],
+    "uArc": [
+     0.407,
+     0.899
+    ],
+    "vArc": [
+     0.984,
+     1.164
+    ],
+    "dif": "HC_Prop_BillboardRoof_01.tga",
+    "lm": "BakeGroup_Island2_Roads0.tga"
+   }
+  }
+ }
+}

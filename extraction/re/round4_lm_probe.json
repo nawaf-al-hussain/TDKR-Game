@@ -1,0 +1,2668 @@
+{
+ "GothamCity": {
+  "partition": {
+   "s121": {
+    "n": 197,
+    "total_tile_area": 220.918,
+    "authored_coll": 1.0,
+    "null_coll": 1.0,
+    "null_sd": 0.0
+   },
+   "s109": {
+    "n": 276,
+    "total_tile_area": 0.0,
+    "authored_coll": 0.0156,
+    "null_coll": 0.0001,
+    "null_sd": 0.0005
+   },
+   "s133": {
+    "n": 280,
+    "total_tile_area": 0.627,
+    "authored_coll": 0.2245,
+    "null_coll": 0.4706,
+    "null_sd": 0.0584
+   },
+   "s121_realscale_w3": {
+    "n": 61,
+    "authored_coll": 1.0,
+    "null_coll": 1.0,
+    "null_sd": 0.0
+   }
+  },
+  "per_material_occupancy": {
+   "76": {
+    "n": 119974,
+    "a121": [
+     15.2467,
+     0.3811,
+     0.0
+    ],
+    "d145": [
+     0.4996,
+     0.4359,
+     0.0
+    ],
+    "occ_cells": 0.148,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Footprint_VD_Items"
+   },
+   "90": {
+    "n": 51242,
+    "a121": [
+     0.3757,
+     0.2524,
+     0.0
+    ],
+    "d145": [
+     0.2493,
+     0.7468,
+     0.0
+    ],
+    "occ_cells": 0.067,
+    "lm": "BakeGroup_Island1_Roads0",
+    "dif": "GC_Residential_Props_Railroad"
+   },
+   "23": {
+    "n": 38987,
+    "a121": [
+     0.3752,
+     0.5,
+     0.0
+    ],
+    "d145": [
+     0.511,
+     0.4831,
+     0.0
+    ],
+    "occ_cells": 0.147,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Z1_Props_Rooftop"
+   },
+   "196": {
+    "n": 27492,
+    "a121": [
+     0.5528,
+     0.4677,
+     0.0
+    ],
+    "d145": [
+     0.3747,
+     0.8731,
+     0.0
+    ],
+    "occ_cells": 0.104,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Footprint_LB_Cinema"
+   },
+   "74": {
+    "n": 22671,
+    "a121": [
+     0.4983,
+     0.3785,
+     0.0
+    ],
+    "d145": [
+     0.746,
+     0.6229,
+     0.0
+    ],
+    "occ_cells": 0.098,
+    "lm": "BakeGroup_Island1_Roads0",
+    "dif": "trunk"
+   },
+   "46": {
+    "n": 16339,
+    "a121": [
+     0.143,
+     0.306,
+     0.0
+    ],
+    "d145": [
+     0.4994,
+     0.6245,
+     0.0
+    ],
+    "occ_cells": 0.021,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Footprint_VD_Items"
+   },
+   "55": {
+    "n": 16222,
+    "a121": [
+     0.2479,
+     0.3739,
+     0.0
+    ],
+    "d145": [
+     0.6242,
+     0.7494,
+     0.0
+    ],
+    "occ_cells": 0.024,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Footprint_GA_TH"
+   },
+   "178": {
+    "n": 15511,
+    "a121": [
+     2.5726,
+     0.5007,
+     0.0
+    ],
+    "d145": [
+     0.623,
+     0.622,
+     0.0
+    ],
+    "occ_cells": 0.1,
+    "lm": "BakeGroup_Island1_Roads0",
+    "dif": "GC_Residential_Props_Monorail"
+   },
+   "131": {
+    "n": 14785,
+    "a121": [
+     0.1251,
+     0.4326,
+     0.0
+    ],
+    "d145": [
+     0.5,
+     0.4993,
+     0.0
+    ],
+    "occ_cells": 0.038,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Z1_Props_Rooftop"
+   },
+   "28": {
+    "n": 14385,
+    "a121": [
+     0.9691,
+     0.2615,
+     0.0
+    ],
+    "d145": [
+     0.5,
+     0.437,
+     0.0
+    ],
+    "occ_cells": 0.123,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Residential_BD_01_Door_01"
+   },
+   "70": {
+    "n": 14161,
+    "a121": [
+     0.4981,
+     0.5,
+     0.0
+    ],
+    "d145": [
+     0.5109,
+     0.4964,
+     0.0
+    ],
+    "occ_cells": 0.152,
+    "lm": "BakeGroup_Island1_Landmarks0",
+    "dif": "GC_Z1_Props_Rooftop"
+   },
+   "173": {
+    "n": 12544,
+    "a121": [
+     -0.2826,
+     0.7961,
+     0.0
+    ],
+    "d145": [
+     0.8737,
+     0.7492,
+     0.0
+    ],
+    "occ_cells": 0.065,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Footprint_IC"
+   },
+   "73": {
+    "n": 11951,
+    "a121": [
+     -5.6584,
+     1.5223,
+     0.0
+    ],
+    "d145": [
+     0.3112,
+     0.2476,
+     0.0
+    ],
+    "occ_cells": 0.465,
+    "lm": "BakeGroup_Island1_Roads0",
+    "dif": "gothamcity_roads_details"
+   },
+   "230": {
+    "n": 9828,
+    "a121": [
+     9.3693,
+     -0.719,
+     0.0
+    ],
+    "d145": [
+     0.7498,
+     0.2498,
+     0.0
+    ],
+    "occ_cells": 0.018,
+    "lm": "BakeGroup_Island1_Landmarks0",
+    "dif": "GC_SXC_Atlas"
+   },
+   "172": {
+    "n": 9416,
+    "a121": [
+     -7.5985,
+     -4.913,
+     0.0
+    ],
+    "d145": [
+     0.7495,
+     0.7494,
+     0.0
+    ],
+    "occ_cells": 0.057,
+    "lm": "BakeGroup_Island1_Landmarks0",
+    "dif": "GC_Footprint_AWT"
+   },
+   "229": {
+    "n": 8852,
+    "a121": [
+     0.2453,
+     -0.0623,
+     0.0
+    ],
+    "d145": [
+     0.375,
+     0.375,
+     0.0
+    ],
+    "occ_cells": 0.01,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_footprint_AB_atlas"
+   },
+   "45": {
+    "n": 8742,
+    "a121": [
+     0.4971,
+     0.5176,
+     0.0
+    ],
+    "d145": [
+     0.8723,
+     0.1247,
+     0.0
+    ],
+    "occ_cells": 0.17,
+    "lm": "BakeGroup_Island1_Roads0",
+    "dif": "GC_Footprint_VD_Items"
+   },
+   "105": {
+    "n": 7213,
+    "a121": [
+     2.7408,
+     -3.7713,
+     0.0
+    ],
+    "d145": [
+     0.6868,
+     0.6868,
+     0.0
+    ],
+    "occ_cells": 0.093,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Park_atlas_props"
+   },
+   "54": {
+    "n": 6190,
+    "a121": [
+     0.0248,
+     -0.4359,
+     0.0
+    ],
+    "d145": [
+     0.5932,
+     0.4214,
+     0.0
+    ],
+    "occ_cells": 0.004,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Residential_Dinner_objects"
+   },
+   "81": {
+    "n": 6028,
+    "a121": [
+     0.7501,
+     0.2729,
+     0.0
+    ],
+    "d145": [
+     0.935,
+     0.7632,
+     0.0
+    ],
+    "occ_cells": 0.124,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Residential_Dinner_objects"
+   },
+   "31": {
+    "n": 5916,
+    "a121": [
+     0.7028,
+     0.54,
+     0.0
+    ],
+    "d145": [
+     0.5615,
+     0.3124,
+     0.0
+    ],
+    "occ_cells": 0.147,
+    "lm": "BakeGroup_Island1_Roads0",
+    "dif": "GothamCity_bridge2"
+   },
+   "218": {
+    "n": 5040,
+    "a121": [
+     0.4975,
+     0.4092,
+     0.0
+    ],
+    "d145": [
+     0.8743,
+     0.9324,
+     0.0
+    ],
+    "occ_cells": 0.035,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "HC_Prop_BillboardRoof_01"
+   },
+   "62": {
+    "n": 4896,
+    "a121": [
+     1.3527,
+     0.2648,
+     0.0
+    ],
+    "d145": [
+     0.1244,
+     0.6245,
+     0.0
+    ],
+    "occ_cells": 0.077,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Residential_BD_01_Door_01"
+   },
+   "133": {
+    "n": 4858,
+    "a121": [
+     0.5006,
+     0.499,
+     0.0
+    ],
+    "d145": [
+     0.6194,
+     0.8658,
+     0.0
+    ],
+    "occ_cells": 0.146,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Park_atlas_props"
+   }
+  },
+  "page_stats": {
+   "BakeGroup_Island1_A0": {
+    "mean": 0.1881,
+    "std": 0.1548,
+    "edge": 0.09364,
+    "pcts": [
+     0.0,
+     0.09,
+     0.161,
+     0.239,
+     0.745
+    ]
+   },
+   "BakeGroup_Island1_B0": {
+    "mean": 0.1834,
+    "std": 0.1367,
+    "edge": 0.08686,
+    "pcts": [
+     0.0,
+     0.094,
+     0.161,
+     0.239,
+     0.682
+    ]
+   },
+   "BakeGroup_Island1_Landmarks0": {
+    "mean": 0.1712,
+    "std": 0.1378,
+    "edge": 0.0758,
+    "pcts": [
+     0.0,
+     0.078,
+     0.149,
+     0.224,
+     0.698
+    ]
+   },
+   "BakeGroup_Island1_Roads0": {
+    "mean": 0.1488,
+    "std": 0.0975,
+    "edge": 0.05751,
+    "pcts": [
+     0.0,
+     0.082,
+     0.149,
+     0.208,
+     0.455
+    ]
+   },
+   "LightMapSampler": {
+    "mean": 0.4706,
+    "std": 0.0,
+    "edge": 0.0,
+    "pcts": [
+     0.471,
+     0.471,
+     0.471,
+     0.471,
+     0.471
+    ]
+   }
+  },
+  "visited_structure_s109": {
+   "16": {
+    "nseg": 2351,
+    "lum_std": 0.0021,
+    "lum_mean": 0.0506,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "17": {
+    "nseg": 4775,
+    "lum_std": 0.0,
+    "lum_mean": 0.1843,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "18": {
+    "nseg": 1146,
+    "lum_std": 0.0,
+    "lum_mean": 0.0,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "19": {
+    "nseg": 174,
+    "lum_std": 0.0,
+    "lum_mean": 0.0,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "20": {
+    "nseg": 1728,
+    "lum_std": 0.0,
+    "lum_mean": 0.1647,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "21": {
+    "nseg": 384,
+    "lum_std": 0.0,
+    "lum_mean": 0.1529,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "22": {
+    "nseg": 826,
+    "lum_std": 0.0,
+    "lum_mean": 0.2353,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "23": {
+    "nseg": 38987,
+    "lum_std": 0.0,
+    "lum_mean": 0.0941,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "24": {
+    "nseg": 600,
+    "lum_std": 0.0,
+    "lum_mean": 0.2706,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "25": {
+    "nseg": 10,
+    "lum_std": 0.0,
+    "lum_mean": 0.3333,
+    "page_std": 0.0975,
+    "lm": "BakeGroup_Island1_Roads0"
+   },
+   "26": {
+    "nseg": 10,
+    "lum_std": 0.0038,
+    "lum_mean": 0.0659,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "27": {
+    "nseg": 48,
+    "lum_std": 0.0,
+    "lum_mean": 0.0941,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "28": {
+    "nseg": 14385,
+    "lum_std": 0.0,
+    "lum_mean": 0.1843,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "29": {
+    "nseg": 19,
+    "lum_std": 0.0,
+    "lum_mean": 0.3569,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "30": {
+    "nseg": 2408,
+    "lum_std": 0.0,
+    "lum_mean": 0.1137,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "31": {
+    "nseg": 5916,
+    "lum_std": 0.0,
+    "lum_mean": 0.1608,
+    "page_std": 0.0975,
+    "lm": "BakeGroup_Island1_Roads0"
+   },
+   "33": {
+    "nseg": 1950,
+    "lum_std": 0.0,
+    "lum_mean": 0.1412,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "35": {
+    "nseg": 18,
+    "lum_std": 0.0,
+    "lum_mean": 0.0745,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "36": {
+    "nseg": 191,
+    "lum_std": 0.0,
+    "lum_mean": 0.1451,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "37": {
+    "nseg": 379,
+    "lum_std": 0.0,
+    "lum_mean": 0.1216,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "38": {
+    "nseg": 605,
+    "lum_std": 0.0049,
+    "lum_mean": 0.1367,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "39": {
+    "nseg": 36,
+    "lum_std": 0.0147,
+    "lum_mean": 0.3569,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "40": {
+    "nseg": 1156,
+    "lum_std": 0.0,
+    "lum_mean": 0.0392,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "44": {
+    "nseg": 499,
+    "lum_std": 0.0,
+    "lum_mean": 0.3569,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "45": {
+    "nseg": 8742,
+    "lum_std": 0.0,
+    "lum_mean": 0.0,
+    "page_std": 0.0975,
+    "lm": "BakeGroup_Island1_Roads0"
+   },
+   "46": {
+    "nseg": 16339,
+    "lum_std": 0.0,
+    "lum_mean": 0.1882,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "49": {
+    "nseg": 275,
+    "lum_std": 0.0056,
+    "lum_mean": 0.0315,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "50": {
+    "nseg": 1257,
+    "lum_std": 0.0,
+    "lum_mean": 0.102,
+    "page_std": 0.0975,
+    "lm": "BakeGroup_Island1_Roads0"
+   },
+   "51": {
+    "nseg": 1886,
+    "lum_std": 0.0108,
+    "lum_mean": 0.0497,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "53": {
+    "nseg": 2281,
+    "lum_std": 0.0,
+    "lum_mean": 0.1255,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "54": {
+    "nseg": 6190,
+    "lum_std": 0.0,
+    "lum_mean": 0.0824,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "55": {
+    "nseg": 16222,
+    "lum_std": 0.0,
+    "lum_mean": 0.2353,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "58": {
+    "nseg": 1136,
+    "lum_std": 0.0,
+    "lum_mean": 0.2314,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "60": {
+    "nseg": 996,
+    "lum_std": 0.0,
+    "lum_mean": 0.0863,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "61": {
+    "nseg": 472,
+    "lum_std": 0.0,
+    "lum_mean": 0.3137,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "62": {
+    "nseg": 4896,
+    "lum_std": 0.0,
+    "lum_mean": 0.1843,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "63": {
+    "nseg": 3273,
+    "lum_std": 0.0,
+    "lum_mean": 0.2549,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "65": {
+    "nseg": 4462,
+    "lum_std": 0.0,
+    "lum_mean": 0.0235,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "66": {
+    "nseg": 128,
+    "lum_std": 0.0019,
+    "lum_mean": 0.2496,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "67": {
+    "nseg": 60,
+    "lum_std": 0.0,
+    "lum_mean": 0.1373,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   }
+  },
+  "visited_structure_s121": {
+   "16": {
+    "nseg": 2351,
+    "lum_std": 0.1821,
+    "lum_mean": 0.1739,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "17": {
+    "nseg": 4775,
+    "lum_std": 0.0871,
+    "lum_mean": 0.1286,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "18": {
+    "nseg": 1146,
+    "lum_std": 0.1634,
+    "lum_mean": 0.1953,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "19": {
+    "nseg": 174,
+    "lum_std": 0.1618,
+    "lum_mean": 0.2234,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "20": {
+    "nseg": 1728,
+    "lum_std": 0.1009,
+    "lum_mean": 0.1733,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "21": {
+    "nseg": 384,
+    "lum_std": 0.1244,
+    "lum_mean": 0.1508,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "22": {
+    "nseg": 826,
+    "lum_std": 0.1531,
+    "lum_mean": 0.212,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "23": {
+    "nseg": 38987,
+    "lum_std": 0.1027,
+    "lum_mean": 0.1531,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "24": {
+    "nseg": 600,
+    "lum_std": 0.0578,
+    "lum_mean": 0.0784,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "25": {
+    "nseg": 10,
+    "lum_std": 0.0961,
+    "lum_mean": 0.1576,
+    "page_std": 0.0975,
+    "lm": "BakeGroup_Island1_Roads0"
+   },
+   "26": {
+    "nseg": 10,
+    "lum_std": 0.0599,
+    "lum_mean": 0.1506,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "27": {
+    "nseg": 48,
+    "lum_std": 0.2305,
+    "lum_mean": 0.2574,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "28": {
+    "nseg": 14385,
+    "lum_std": 0.1656,
+    "lum_mean": 0.1834,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "29": {
+    "nseg": 19,
+    "lum_std": 0.1346,
+    "lum_mean": 0.2392,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "30": {
+    "nseg": 2408,
+    "lum_std": 0.1714,
+    "lum_mean": 0.2132,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "31": {
+    "nseg": 5916,
+    "lum_std": 0.0799,
+    "lum_mean": 0.1599,
+    "page_std": 0.0975,
+    "lm": "BakeGroup_Island1_Roads0"
+   },
+   "33": {
+    "nseg": 1950,
+    "lum_std": 0.1412,
+    "lum_mean": 0.1878,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "35": {
+    "nseg": 18,
+    "lum_std": 0.0552,
+    "lum_mean": 0.1046,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "36": {
+    "nseg": 191,
+    "lum_std": 0.1524,
+    "lum_mean": 0.2106,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "37": {
+    "nseg": 379,
+    "lum_std": 0.1664,
+    "lum_mean": 0.2344,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "38": {
+    "nseg": 605,
+    "lum_std": 0.0932,
+    "lum_mean": 0.1035,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "39": {
+    "nseg": 36,
+    "lum_std": 0.1787,
+    "lum_mean": 0.2062,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "40": {
+    "nseg": 1156,
+    "lum_std": 0.1794,
+    "lum_mean": 0.2003,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "44": {
+    "nseg": 499,
+    "lum_std": 0.1221,
+    "lum_mean": 0.1797,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "45": {
+    "nseg": 8742,
+    "lum_std": 0.0896,
+    "lum_mean": 0.1652,
+    "page_std": 0.0975,
+    "lm": "BakeGroup_Island1_Roads0"
+   },
+   "46": {
+    "nseg": 16339,
+    "lum_std": 0.1144,
+    "lum_mean": 0.1433,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "49": {
+    "nseg": 275,
+    "lum_std": 0.0918,
+    "lum_mean": 0.1535,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "50": {
+    "nseg": 1257,
+    "lum_std": 0.0948,
+    "lum_mean": 0.174,
+    "page_std": 0.0975,
+    "lm": "BakeGroup_Island1_Roads0"
+   },
+   "51": {
+    "nseg": 1886,
+    "lum_std": 0.1534,
+    "lum_mean": 0.1858,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "53": {
+    "nseg": 2281,
+    "lum_std": 0.1105,
+    "lum_mean": 0.1919,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "54": {
+    "nseg": 6190,
+    "lum_std": 0.0811,
+    "lum_mean": 0.1128,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "55": {
+    "nseg": 16222,
+    "lum_std": 0.1306,
+    "lum_mean": 0.1058,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "58": {
+    "nseg": 1136,
+    "lum_std": 0.2499,
+    "lum_mean": 0.3867,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "60": {
+    "nseg": 996,
+    "lum_std": 0.1555,
+    "lum_mean": 0.1984,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   },
+   "61": {
+    "nseg": 472,
+    "lum_std": 0.1841,
+    "lum_mean": 0.2551,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "62": {
+    "nseg": 4896,
+    "lum_std": 0.1301,
+    "lum_mean": 0.2177,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "63": {
+    "nseg": 3273,
+    "lum_std": 0.0991,
+    "lum_mean": 0.1601,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "65": {
+    "nseg": 4462,
+    "lum_std": 0.11,
+    "lum_mean": 0.1426,
+    "page_std": 0.1548,
+    "lm": "BakeGroup_Island1_A0"
+   },
+   "66": {
+    "nseg": 128,
+    "lum_std": 0.1429,
+    "lum_mean": 0.1897,
+    "page_std": 0.1367,
+    "lm": "BakeGroup_Island1_B0"
+   },
+   "67": {
+    "nseg": 60,
+    "lum_std": 0.0828,
+    "lum_mean": 0.1047,
+    "page_std": 0.1378,
+    "lm": "BakeGroup_Island1_Landmarks0"
+   }
+  },
+  "park_probe": {
+   "m16_s109": {
+    "n": 2351,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Park_atlas_tiles",
+    "a": [
+     8e-05,
+     1e-05,
+     0.0
+    ],
+    "d": [
+     0.5619,
+     0.8113,
+     0.0
+    ],
+    "sampled_mean": 0.0506,
+    "sampled_std": 0.0021,
+    "sampled_pcts": [
+     0.0392,
+     0.051,
+     0.051,
+     0.051,
+     0.051
+    ],
+    "page_mean": 0.1877,
+    "page_pcts": [
+     0.0,
+     0.0784,
+     0.1608,
+     0.2392,
+     0.7765
+    ]
+   },
+   "m16_s121": {
+    "n": 2351,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_Park_atlas_tiles",
+    "a": [
+     1.89337,
+     0.50865,
+     0.0
+    ],
+    "d": [
+     0.5619,
+     0.8113,
+     0.0
+    ],
+    "sampled_mean": 0.1739,
+    "sampled_std": 0.1821,
+    "sampled_pcts": [
+     0.0,
+     0.0,
+     0.1529,
+     0.2275,
+     0.8725
+    ],
+    "page_mean": 0.1877,
+    "page_pcts": [
+     0.0,
+     0.0784,
+     0.1608,
+     0.2392,
+     0.7765
+    ]
+   },
+   "m19_s109": {
+    "n": 174,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_SXC_Rooftop_ground",
+    "a": [
+     0.00042,
+     0.0003,
+     0.0
+    ],
+    "d": [
+     0.8803,
+     0.0961,
+     0.0
+    ],
+    "sampled_mean": 0.0,
+    "sampled_std": 0.0,
+    "sampled_pcts": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "page_mean": 0.1877,
+    "page_pcts": [
+     0.0,
+     0.0784,
+     0.1608,
+     0.2392,
+     0.7765
+    ]
+   },
+   "m19_s121": {
+    "n": 174,
+    "lm": "BakeGroup_Island1_A0",
+    "dif": "GC_SXC_Rooftop_ground",
+    "a": [
+     -0.9609,
+     2.48135,
+     0.0
+    ],
+    "d": [
+     0.8803,
+     0.0961,
+     0.0
+    ],
+    "sampled_mean": 0.2234,
+    "sampled_std": 0.1618,
+    "sampled_pcts": [
+     0.0,
+     0.1137,
+     0.1941,
+     0.302,
+     0.7529
+    ],
+    "page_mean": 0.1877,
+    "page_pcts": [
+     0.0,
+     0.0784,
+     0.1608,
+     0.2392,
+     0.7765
+    ]
+   },
+   "m21_s109": {
+    "n": 384,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Park_statue",
+    "a": [
+     1e-05,
+     1e-05,
+     0.0
+    ],
+    "d": [
+     0.585,
+     0.8435,
+     0.0
+    ],
+    "sampled_mean": 0.1529,
+    "sampled_std": 0.0,
+    "sampled_pcts": [
+     0.1529,
+     0.1529,
+     0.1529,
+     0.1529,
+     0.1529
+    ],
+    "page_mean": 0.183,
+    "page_pcts": [
+     0.0,
+     0.0863,
+     0.1608,
+     0.2392,
+     0.7255
+    ]
+   },
+   "m21_s121": {
+    "n": 384,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Park_statue",
+    "a": [
+     0.49913,
+     0.50654,
+     0.0
+    ],
+    "d": [
+     0.585,
+     0.8435,
+     0.0
+    ],
+    "sampled_mean": 0.1508,
+    "sampled_std": 0.1244,
+    "sampled_pcts": [
+     0.0,
+     0.0618,
+     0.1333,
+     0.2078,
+     0.5812
+    ],
+    "page_mean": 0.183,
+    "page_pcts": [
+     0.0,
+     0.0863,
+     0.1608,
+     0.2392,
+     0.7255
+    ]
+   },
+   "m30_s109": {
+    "n": 2408,
+    "lm": "BakeGroup_Island1_Landmarks0",
+    "dif": "GC_SXC_hedge",
+    "a": [
+     0.00058,
+     3e-05,
+     0.0
+    ],
+    "d": [
+     0.7489,
+     0.2504,
+     0.0
+    ],
+    "sampled_mean": 0.1137,
+    "sampled_std": 0.0,
+    "sampled_pcts": [
+     0.1137,
+     0.1137,
+     0.1137,
+     0.1137,
+     0.1137
+    ],
+    "page_mean": 0.1708,
+    "page_pcts": [
+     0.0,
+     0.0706,
+     0.149,
+     0.2275,
+     0.7333
+    ]
+   },
+   "m30_s121": {
+    "n": 2408,
+    "lm": "BakeGroup_Island1_Landmarks0",
+    "dif": "GC_SXC_hedge",
+    "a": [
+     11.70632,
+     1.1948,
+     0.0
+    ],
+    "d": [
+     0.7489,
+     0.2504,
+     0.0
+    ],
+    "sampled_mean": 0.2132,
+    "sampled_std": 0.1714,
+    "sampled_pcts": [
+     0.0,
+     0.1059,
+     0.1882,
+     0.251,
+     0.8039
+    ],
+    "page_mean": 0.1708,
+    "page_pcts": [
+     0.0,
+     0.0706,
+     0.149,
+     0.2275,
+     0.7333
+    ]
+   },
+   "m53_s109": {
+    "n": 2281,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Park_atlas_tiles",
+    "a": [
+     0.00018,
+     1e-05,
+     0.0
+    ],
+    "d": [
+     0.623,
+     0.9227,
+     0.0
+    ],
+    "sampled_mean": 0.1255,
+    "sampled_std": 0.0,
+    "sampled_pcts": [
+     0.1255,
+     0.1255,
+     0.1255,
+     0.1255,
+     0.1255
+    ],
+    "page_mean": 0.183,
+    "page_pcts": [
+     0.0,
+     0.0863,
+     0.1608,
+     0.2392,
+     0.7255
+    ]
+   },
+   "m53_s121": {
+    "n": 2281,
+    "lm": "BakeGroup_Island1_B0",
+    "dif": "GC_Park_atlas_tiles",
+    "a": [
+     -0.00998,
+     0.79691,
+     0.0
+    ],
+    "d": [
+     0.623,
+     0.9227,
+     0.0
+    ],
+    "sampled_mean": 0.1919,
+    "sampled_std": 0.1105,
+    "sampled_pcts": [
+     0.0039,
+     0.102,
+     0.2118,
+     0.2627,
+     0.5373
+    ],
+    "page_mean": 0.183,
+    "page_pcts": [
+     0.0,
+     0.0863,
+     0.1608,
+     0.2392,
+     0.7255
+    ]
+   }
+  }
+ },
+ "GothamCity_Island2": {
+  "partition": {
+   "s121": {
+    "n": 142,
+    "total_tile_area": 158.406,
+    "authored_coll": 1.0,
+    "null_coll": 1.0,
+    "null_sd": 0.0
+   },
+   "s109": {
+    "n": 178,
+    "total_tile_area": 0.0,
+    "authored_coll": 0.0056,
+    "null_coll": 0.0001,
+    "null_sd": 0.0007
+   },
+   "s133": {
+    "n": 182,
+    "total_tile_area": 1.478,
+    "authored_coll": 0.4996,
+    "null_coll": 0.8385,
+    "null_sd": 0.0766
+   },
+   "s121_realscale_w3": {
+    "n": 37,
+    "authored_coll": 1.0,
+    "null_coll": 1.0,
+    "null_sd": 0.0
+   }
+  },
+  "per_material_occupancy": {
+   "58": {
+    "n": 199193,
+    "a121": [
+     0.4243,
+     0.8794,
+     0.0
+    ],
+    "d145": [
+     0.4997,
+     0.4998,
+     0.0
+    ],
+    "occ_cells": 0.073,
+    "lm": "BakeGroup_Island2_A0",
+    "dif": "GC_Footprint_VD_Items"
+   },
+   "75": {
+    "n": 46196,
+    "a121": [
+     -0.5282,
+     0.5003,
+     0.0
+    ],
+    "d145": [
+     0.5074,
+     0.4602,
+     0.0
+    ],
+    "occ_cells": 0.056,
+    "lm": "BakeGroup_Island2_Landmarks0",
+    "dif": "GC_Footprint_VD_Items"
+   },
+   "82": {
+    "n": 41808,
+    "a121": [
+     0.3757,
+     0.2512,
+     0.0
+    ],
+    "d145": [
+     0.2493,
+     0.2494,
+     0.0
+    ],
+    "occ_cells": 0.057,
+    "lm": "BakeGroup_Island2_Roads0",
+    "dif": "GC_Residential_Props_Railroad"
+   },
+   "59": {
+    "n": 17701,
+    "a121": [
+     0.4522,
+     0.526,
+     0.0
+    ],
+    "d145": [
+     0.3791,
+     0.3745,
+     0.0
+    ],
+    "occ_cells": 0.167,
+    "lm": "BakeGroup_Island2_A0",
+    "dif": "GC_Footprint_VD_Items"
+   },
+   "153": {
+    "n": 17264,
+    "a121": [
+     2.547,
+     0.5027,
+     0.0
+    ],
+    "d145": [
+     0.125,
+     0.624,
+     0.0
+    ],
+    "occ_cells": 0.111,
+    "lm": "BakeGroup_Island2_Roads0",
+    "dif": "GC_Residential_Props_Monorail"
+   },
+   "67": {
+    "n": 14361,
+    "a121": [
+     0.6147,
+     0.4771,
+     0.0
+    ],
+    "d145": [
+     0.6833,
+     0.4053,
+     0.0
+    ],
+    "occ_cells": 0.124,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_Footprint_VD_Items"
+   },
+   "50": {
+    "n": 11791,
+    "a121": [
+     0.4983,
+     0.3785,
+     0.0
+    ],
+    "d145": [
+     0.6178,
+     0.7479,
+     0.0
+    ],
+    "occ_cells": 0.084,
+    "lm": "BakeGroup_Island2_Roads0",
+    "dif": "trunk"
+   },
+   "102": {
+    "n": 11596,
+    "a121": [
+     -0.7241,
+     -0.9813,
+     0.0
+    ],
+    "d145": [
+     0.2496,
+     0.749,
+     0.0
+    ],
+    "occ_cells": 0.04,
+    "lm": "BakeGroup_Island2_Roads0",
+    "dif": "bridge_1"
+   },
+   "42": {
+    "n": 11431,
+    "a121": [
+     -0.2192,
+     0.5578,
+     0.0
+    ],
+    "d145": [
+     0.7494,
+     0.3749,
+     0.0
+    ],
+    "occ_cells": 0.032,
+    "lm": "BakeGroup_Island2_Landmarks0",
+    "dif": "GC_Footprint_VD_Buildings_2"
+   },
+   "109": {
+    "n": 8644,
+    "a121": [
+     1.567,
+     0.5001,
+     0.0
+    ],
+    "d145": [
+     0.6855,
+     0.8095,
+     0.0
+    ],
+    "occ_cells": 0.067,
+    "lm": "BakeGroup_Island2_Roads0",
+    "dif": "HC_Prop_BillboardRoof_Industrial_01"
+   },
+   "89": {
+    "n": 7444,
+    "a121": [
+     1.6995,
+     0.2112,
+     0.0
+    ],
+    "d145": [
+     0.2442,
+     0.7156,
+     0.0
+    ],
+    "occ_cells": 0.07,
+    "lm": "BakeGroup_Island2_Landmarks0",
+    "dif": "GC_VRS_Reservoir"
+   },
+   "45": {
+    "n": 7202,
+    "a121": [
+     1.2951,
+     0.5,
+     0.0
+    ],
+    "d145": [
+     0.2498,
+     0.2499,
+     0.0
+    ],
+    "occ_cells": 0.027,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_SXC_Atlas"
+   },
+   "104": {
+    "n": 6411,
+    "a121": [
+     -0.0844,
+     1.0065,
+     0.0
+    ],
+    "d145": [
+     0.749,
+     0.3748,
+     0.0
+    ],
+    "occ_cells": 0.004,
+    "lm": "BakeGroup_Island2_A0",
+    "dif": "GC_Footprint_VD_Buildings_2"
+   },
+   "52": {
+    "n": 4623,
+    "a121": [
+     0.2264,
+     0.4248,
+     0.0
+    ],
+    "d145": [
+     0.25,
+     0.25,
+     0.0
+    ],
+    "occ_cells": 0.022,
+    "lm": "BakeGroup_Island2_Landmarks0",
+    "dif": "GC_Footprint_STD_stuff_TH"
+   },
+   "37": {
+    "n": 4532,
+    "a121": [
+     0.2751,
+     0.5009,
+     0.0
+    ],
+    "d145": [
+     0.7494,
+     0.3741,
+     0.0
+    ],
+    "occ_cells": 0.066,
+    "lm": "BakeGroup_Island2_Landmarks0",
+    "dif": "GC_Footprint_VD_Buildings_3"
+   },
+   "18": {
+    "n": 4082,
+    "a121": [
+     -1.5007,
+     0.4976,
+     0.0
+    ],
+    "d145": [
+     0.7483,
+     0.2486,
+     0.0
+    ],
+    "occ_cells": 0.079,
+    "lm": "BakeGroup_Island2_Roads0",
+    "dif": "GothamCity_Road_Crossings_Island_2"
+   },
+   "182": {
+    "n": 3680,
+    "a121": [
+     0.4475,
+     0.5614,
+     0.0
+    ],
+    "d145": [
+     0.3801,
+     0.7567,
+     0.0
+    ],
+    "occ_cells": 0.018,
+    "lm": "BakeGroup_Island2_A0",
+    "dif": "GC_Z1_Props_Rooftop_Alpha"
+   },
+   "63": {
+    "n": 3152,
+    "a121": [
+     -0.2826,
+     0.7961,
+     0.0
+    ],
+    "d145": [
+     0.8737,
+     0.624,
+     0.0
+    ],
+    "occ_cells": 0.021,
+    "lm": "BakeGroup_Island2_Landmarks0",
+    "dif": "GC_Footprint_IC"
+   },
+   "88": {
+    "n": 2682,
+    "a121": [
+     0.985,
+     0.958,
+     0.0
+    ],
+    "d145": [
+     0.7494,
+     0.3782,
+     0.0
+    ],
+    "occ_cells": 0.059,
+    "lm": "BakeGroup_Island2_Landmarks0",
+    "dif": "GC_Footprint_VD_Buildings"
+   },
+   "163": {
+    "n": 2646,
+    "a121": [
+     0.4975,
+     0.4092,
+     0.0
+    ],
+    "d145": [
+     0.4018,
+     0.854,
+     0.0
+    ],
+    "occ_cells": 0.023,
+    "lm": "BakeGroup_Island2_Roads0",
+    "dif": "HC_Prop_BillboardRoof_01"
+   },
+   "28": {
+    "n": 2596,
+    "a121": [
+     -0.1882,
+     0.4982,
+     0.0
+    ],
+    "d145": [
+     0.6753,
+     0.1342,
+     0.0
+    ],
+    "occ_cells": 0.037,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_Park_atlas_tiles"
+   },
+   "134": {
+    "n": 2536,
+    "a121": [
+     0.5146,
+     0.5735,
+     0.0
+    ],
+    "d145": [
+     0.8734,
+     0.8734,
+     0.0
+    ],
+    "occ_cells": 0.056,
+    "lm": "BakeGroup_Island2_A0",
+    "dif": "GC_CBCE_Atlas"
+   },
+   "62": {
+    "n": 2487,
+    "a121": [
+     0.5006,
+     0.4976,
+     0.0
+    ],
+    "d145": [
+     0.7933,
+     0.2588,
+     0.0
+    ],
+    "occ_cells": 0.106,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_Park_atlas_props"
+   },
+   "117": {
+    "n": 2395,
+    "a121": [
+     0.4998,
+     0.5,
+     0.0
+    ],
+    "d145": [
+     0.7526,
+     0.8745,
+     0.0
+    ],
+    "occ_cells": 0.091,
+    "lm": "BakeGroup_Island2_A0",
+    "dif": "GC_Z1_Shops_01"
+   }
+  },
+  "page_stats": {
+   "BakeGroup_Island2_A0": {
+    "mean": 0.1362,
+    "std": 0.1044,
+    "edge": 0.07519,
+    "pcts": [
+     0.0,
+     0.071,
+     0.118,
+     0.173,
+     0.518
+    ]
+   },
+   "BakeGroup_Island2_B0": {
+    "mean": 0.1261,
+    "std": 0.1055,
+    "edge": 0.05521,
+    "pcts": [
+     0.0,
+     0.051,
+     0.114,
+     0.169,
+     0.514
+    ]
+   },
+   "BakeGroup_Island2_Landmarks0": {
+    "mean": 0.1073,
+    "std": 0.0873,
+    "edge": 0.05113,
+    "pcts": [
+     0.0,
+     0.043,
+     0.102,
+     0.149,
+     0.408
+    ]
+   },
+   "BakeGroup_Island2_Roads0": {
+    "mean": 0.1162,
+    "std": 0.079,
+    "edge": 0.04162,
+    "pcts": [
+     0.0,
+     0.067,
+     0.114,
+     0.157,
+     0.412
+    ]
+   },
+   "LightMapSampler": {
+    "mean": 0.4706,
+    "std": 0.0,
+    "edge": 0.0,
+    "pcts": [
+     0.471,
+     0.471,
+     0.471,
+     0.471,
+     0.471
+    ]
+   }
+  },
+  "visited_structure_s109": {
+   "10": {
+    "nseg": 1644,
+    "lum_std": 0.0,
+    "lum_mean": 0.0,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "11": {
+    "nseg": 6,
+    "lum_std": 0.0,
+    "lum_mean": 0.051,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "12": {
+    "nseg": 75,
+    "lum_std": 0.0,
+    "lum_mean": 0.149,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "13": {
+    "nseg": 204,
+    "lum_std": 0.0,
+    "lum_mean": 0.1216,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "14": {
+    "nseg": 158,
+    "lum_std": 0.0,
+    "lum_mean": 0.1255,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "15": {
+    "nseg": 14,
+    "lum_std": 0.0018,
+    "lum_mean": 0.0992,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "16": {
+    "nseg": 114,
+    "lum_std": 0.0,
+    "lum_mean": 0.0392,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "18": {
+    "nseg": 4082,
+    "lum_std": 0.0,
+    "lum_mean": 0.1922,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "19": {
+    "nseg": 11,
+    "lum_std": 0.007,
+    "lum_mean": 0.1016,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "20": {
+    "nseg": 620,
+    "lum_std": 0.0019,
+    "lum_mean": 0.1908,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "21": {
+    "nseg": 98,
+    "lum_std": 0.0,
+    "lum_mean": 0.1647,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "22": {
+    "nseg": 99,
+    "lum_std": 0.0,
+    "lum_mean": 0.4196,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "23": {
+    "nseg": 32,
+    "lum_std": 0.0071,
+    "lum_mean": 0.0985,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "27": {
+    "nseg": 181,
+    "lum_std": 0.0,
+    "lum_mean": 0.1373,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "28": {
+    "nseg": 2596,
+    "lum_std": 0.0,
+    "lum_mean": 0.0706,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "29": {
+    "nseg": 13,
+    "lum_std": 0.0,
+    "lum_mean": 0.1294,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "31": {
+    "nseg": 18,
+    "lum_std": 0.0,
+    "lum_mean": 0.1765,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "32": {
+    "nseg": 30,
+    "lum_std": 0.0,
+    "lum_mean": 0.149,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "33": {
+    "nseg": 270,
+    "lum_std": 0.0,
+    "lum_mean": 0.1765,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "34": {
+    "nseg": 1955,
+    "lum_std": 0.0,
+    "lum_mean": 0.098,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "37": {
+    "nseg": 4532,
+    "lum_std": 0.0,
+    "lum_mean": 0.0275,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "38": {
+    "nseg": 480,
+    "lum_std": 0.0,
+    "lum_mean": 0.2235,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "39": {
+    "nseg": 1619,
+    "lum_std": 0.0,
+    "lum_mean": 0.1647,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "42": {
+    "nseg": 11431,
+    "lum_std": 0.0,
+    "lum_mean": 0.051,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "43": {
+    "nseg": 2024,
+    "lum_std": 0.0,
+    "lum_mean": 0.0431,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "44": {
+    "nseg": 13,
+    "lum_std": 0.0,
+    "lum_mean": 0.2118,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "45": {
+    "nseg": 7202,
+    "lum_std": 0.0,
+    "lum_mean": 0.1725,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "48": {
+    "nseg": 1774,
+    "lum_std": 0.0,
+    "lum_mean": 0.0,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "49": {
+    "nseg": 22,
+    "lum_std": 0.0,
+    "lum_mean": 0.0588,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "50": {
+    "nseg": 11791,
+    "lum_std": 0.0,
+    "lum_mean": 0.149,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "52": {
+    "nseg": 4623,
+    "lum_std": 0.0,
+    "lum_mean": 0.1569,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "53": {
+    "nseg": 307,
+    "lum_std": 0.0,
+    "lum_mean": 0.0588,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "57": {
+    "nseg": 44,
+    "lum_std": 0.0,
+    "lum_mean": 0.1529,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "58": {
+    "nseg": 199193,
+    "lum_std": 0.0,
+    "lum_mean": 0.102,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "59": {
+    "nseg": 17701,
+    "lum_std": 0.0,
+    "lum_mean": 0.1333,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "60": {
+    "nseg": 714,
+    "lum_std": 0.0,
+    "lum_mean": 0.1333,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "62": {
+    "nseg": 2487,
+    "lum_std": 0.0,
+    "lum_mean": 0.0667,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "63": {
+    "nseg": 3152,
+    "lum_std": 0.0,
+    "lum_mean": 0.0706,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "64": {
+    "nseg": 1110,
+    "lum_std": 0.0,
+    "lum_mean": 0.2039,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "65": {
+    "nseg": 17,
+    "lum_std": 0.0,
+    "lum_mean": 0.0863,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   }
+  },
+  "visited_structure_s121": {
+   "10": {
+    "nseg": 1644,
+    "lum_std": 0.119,
+    "lum_mean": 0.1531,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "11": {
+    "nseg": 6,
+    "lum_std": 0.0,
+    "lum_mean": 0.1333,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "12": {
+    "nseg": 75,
+    "lum_std": 0.0795,
+    "lum_mean": 0.1046,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "13": {
+    "nseg": 204,
+    "lum_std": 0.0785,
+    "lum_mean": 0.104,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "14": {
+    "nseg": 158,
+    "lum_std": 0.1083,
+    "lum_mean": 0.1496,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "15": {
+    "nseg": 14,
+    "lum_std": 0.1839,
+    "lum_mean": 0.2084,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "16": {
+    "nseg": 114,
+    "lum_std": 0.0492,
+    "lum_mean": 0.1285,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "18": {
+    "nseg": 4082,
+    "lum_std": 0.098,
+    "lum_mean": 0.0918,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "19": {
+    "nseg": 11,
+    "lum_std": 0.0954,
+    "lum_mean": 0.1098,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "20": {
+    "nseg": 620,
+    "lum_std": 0.0676,
+    "lum_mean": 0.1068,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "21": {
+    "nseg": 98,
+    "lum_std": 0.06,
+    "lum_mean": 0.0677,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "22": {
+    "nseg": 99,
+    "lum_std": 0.1194,
+    "lum_mean": 0.1409,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "23": {
+    "nseg": 32,
+    "lum_std": 0.0897,
+    "lum_mean": 0.0875,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "27": {
+    "nseg": 181,
+    "lum_std": 0.0816,
+    "lum_mean": 0.108,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "28": {
+    "nseg": 2596,
+    "lum_std": 0.1072,
+    "lum_mean": 0.0924,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "29": {
+    "nseg": 13,
+    "lum_std": 0.0753,
+    "lum_mean": 0.14,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "31": {
+    "nseg": 18,
+    "lum_std": 0.0368,
+    "lum_mean": 0.1205,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "32": {
+    "nseg": 30,
+    "lum_std": 0.0958,
+    "lum_mean": 0.1025,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "33": {
+    "nseg": 270,
+    "lum_std": 0.0894,
+    "lum_mean": 0.0945,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "34": {
+    "nseg": 1955,
+    "lum_std": 0.0654,
+    "lum_mean": 0.1129,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "37": {
+    "nseg": 4532,
+    "lum_std": 0.068,
+    "lum_mean": 0.1164,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "38": {
+    "nseg": 480,
+    "lum_std": 0.0909,
+    "lum_mean": 0.1373,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "39": {
+    "nseg": 1619,
+    "lum_std": 0.1116,
+    "lum_mean": 0.1077,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "42": {
+    "nseg": 11431,
+    "lum_std": 0.0755,
+    "lum_mean": 0.1461,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "43": {
+    "nseg": 2024,
+    "lum_std": 0.0782,
+    "lum_mean": 0.0727,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "44": {
+    "nseg": 13,
+    "lum_std": 0.0569,
+    "lum_mean": 0.1427,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "45": {
+    "nseg": 7202,
+    "lum_std": 0.0726,
+    "lum_mean": 0.0902,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "48": {
+    "nseg": 1774,
+    "lum_std": 0.1257,
+    "lum_mean": 0.1482,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "49": {
+    "nseg": 22,
+    "lum_std": 0.046,
+    "lum_mean": 0.0993,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "50": {
+    "nseg": 11791,
+    "lum_std": 0.0951,
+    "lum_mean": 0.1067,
+    "page_std": 0.079,
+    "lm": "BakeGroup_Island2_Roads0"
+   },
+   "52": {
+    "nseg": 4623,
+    "lum_std": 0.0787,
+    "lum_mean": 0.121,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "53": {
+    "nseg": 307,
+    "lum_std": 0.1481,
+    "lum_mean": 0.1449,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "57": {
+    "nseg": 44,
+    "lum_std": 0.0666,
+    "lum_mean": 0.0852,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "58": {
+    "nseg": 199193,
+    "lum_std": 0.0991,
+    "lum_mean": 0.1465,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "59": {
+    "nseg": 17701,
+    "lum_std": 0.0832,
+    "lum_mean": 0.1217,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "60": {
+    "nseg": 714,
+    "lum_std": 0.1114,
+    "lum_mean": 0.1284,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   },
+   "62": {
+    "nseg": 2487,
+    "lum_std": 0.1179,
+    "lum_mean": 0.1079,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "63": {
+    "nseg": 3152,
+    "lum_std": 0.0798,
+    "lum_mean": 0.103,
+    "page_std": 0.0873,
+    "lm": "BakeGroup_Island2_Landmarks0"
+   },
+   "64": {
+    "nseg": 1110,
+    "lum_std": 0.0802,
+    "lum_mean": 0.1489,
+    "page_std": 0.1055,
+    "lm": "BakeGroup_Island2_B0"
+   },
+   "65": {
+    "nseg": 17,
+    "lum_std": 0.0911,
+    "lum_mean": 0.1276,
+    "page_std": 0.1044,
+    "lm": "BakeGroup_Island2_A0"
+   }
+  },
+  "park_probe": {
+   "m10_s109": {
+    "n": 1644,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_SXC_Rooftop_ground",
+    "a": [
+     0.00035,
+     0.00024,
+     0.0
+    ],
+    "d": [
+     0.7452,
+     0.0769,
+     0.0
+    ],
+    "sampled_mean": 0.0,
+    "sampled_std": 0.0,
+    "sampled_pcts": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "page_mean": 0.1258,
+    "page_pcts": [
+     0.0,
+     0.0471,
+     0.1137,
+     0.1686,
+     0.5412
+    ]
+   },
+   "m10_s121": {
+    "n": 1644,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_SXC_Rooftop_ground",
+    "a": [
+     1.16455,
+     2.06132,
+     0.0
+    ],
+    "d": [
+     0.7452,
+     0.0769,
+     0.0
+    ],
+    "sampled_mean": 0.1531,
+    "sampled_std": 0.119,
+    "sampled_pcts": [
+     0.0,
+     0.0706,
+     0.1333,
+     0.2,
+     0.5506
+    ],
+    "page_mean": 0.1258,
+    "page_pcts": [
+     0.0,
+     0.0471,
+     0.1137,
+     0.1686,
+     0.5412
+    ]
+   },
+   "m15_s109": {
+    "n": 14,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_SXC_ground_tile",
+    "a": [
+     0.00034,
+     0.00024,
+     0.0
+    ],
+    "d": [
+     0.22,
+     0.2511,
+     0.0
+    ],
+    "sampled_mean": 0.0992,
+    "sampled_std": 0.0018,
+    "sampled_pcts": [
+     0.098,
+     0.098,
+     0.098,
+     0.101,
+     0.102
+    ],
+    "page_mean": 0.1258,
+    "page_pcts": [
+     0.0,
+     0.0471,
+     0.1137,
+     0.1686,
+     0.5412
+    ]
+   },
+   "m15_s121": {
+    "n": 14,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_SXC_ground_tile",
+    "a": [
+     11.1285,
+     -7.00669,
+     0.0
+    ],
+    "d": [
+     0.22,
+     0.2511,
+     0.0
+    ],
+    "sampled_mean": 0.2084,
+    "sampled_std": 0.1839,
+    "sampled_pcts": [
+     0.051,
+     0.0588,
+     0.1529,
+     0.3412,
+     0.5647
+    ],
+    "page_mean": 0.1258,
+    "page_pcts": [
+     0.0,
+     0.0471,
+     0.1137,
+     0.1686,
+     0.5412
+    ]
+   },
+   "m28_s109": {
+    "n": 2596,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_Park_atlas_tiles",
+    "a": [
+     0.00024,
+     2e-05,
+     0.0
+    ],
+    "d": [
+     0.6753,
+     0.1342,
+     0.0
+    ],
+    "sampled_mean": 0.0706,
+    "sampled_std": 0.0,
+    "sampled_pcts": [
+     0.0706,
+     0.0706,
+     0.0706,
+     0.0706,
+     0.0706
+    ],
+    "page_mean": 0.1258,
+    "page_pcts": [
+     0.0,
+     0.0471,
+     0.1137,
+     0.1686,
+     0.5412
+    ]
+   },
+   "m28_s121": {
+    "n": 2596,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_Park_atlas_tiles",
+    "a": [
+     -0.18824,
+     0.4982,
+     0.0
+    ],
+    "d": [
+     0.6753,
+     0.1342,
+     0.0
+    ],
+    "sampled_mean": 0.0924,
+    "sampled_std": 0.1072,
+    "sampled_pcts": [
+     0.0,
+     0.0157,
+     0.0549,
+     0.149,
+     0.4773
+    ],
+    "page_mean": 0.1258,
+    "page_pcts": [
+     0.0,
+     0.0471,
+     0.1137,
+     0.1686,
+     0.5412
+    ]
+   },
+   "m45_s109": {
+    "n": 7202,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_SXC_Atlas",
+    "a": [
+     7e-05,
+     2e-05,
+     0.0
+    ],
+    "d": [
+     0.2498,
+     0.2499,
+     0.0
+    ],
+    "sampled_mean": 0.1725,
+    "sampled_std": 0.0,
+    "sampled_pcts": [
+     0.1725,
+     0.1725,
+     0.1725,
+     0.1725,
+     0.1725
+    ],
+    "page_mean": 0.1258,
+    "page_pcts": [
+     0.0,
+     0.0471,
+     0.1137,
+     0.1686,
+     0.5412
+    ]
+   },
+   "m45_s121": {
+    "n": 7202,
+    "lm": "BakeGroup_Island2_B0",
+    "dif": "GC_SXC_Atlas",
+    "a": [
+     1.29506,
+     0.49999,
+     0.0
+    ],
+    "d": [
+     0.2498,
+     0.2499,
+     0.0
+    ],
+    "sampled_mean": 0.0904,
+    "sampled_std": 0.0729,
+    "sampled_pcts": [
+     0.0,
+     0.0196,
+     0.0824,
+     0.1451,
+     0.2667
+    ],
+    "page_mean": 0.1258,
+    "page_pcts": [
+     0.0,
+     0.0471,
+     0.1137,
+     0.1686,
+     0.5412
+    ]
+   }
+  }
+ }
+}

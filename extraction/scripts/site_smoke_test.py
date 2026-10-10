@@ -5,6 +5,11 @@ The site root has been wiped/lost twice and the gh-pages branch has gone
 stale relative to main (v13 served while main held v14).  This test makes
 silent regressions impossible: run it after EVERY deploy.
 
+Round-4 addition (process rule): the v16 deploy wiped LUT/fog/skybox aux
+textures while this test passed 57/57 — the old checks only covered GLBs +
+manifest textures.  The --crawl gate now extracts EVERY local asset URL
+referenced by app.js, index.html AND the manifest and fails on any 404.
+
 Checks:
   1. index.html, style.css, app.js, skybox.jpg, .nojekyll  -> HTTP 200
   2. index.html references app.js + style.css
@@ -13,6 +18,8 @@ Checks:
   5. every texture referenced by any manifest entry -> HTTP 200
      (models/tex/<stem>.jpg unless the entry says otherwise)
   6. no island-2 skyline GLBs in the manifest (single-level view contract)
+  7. --crawl: every local URL in app.js/index.html (LUTs, fog, skybox,
+     batarang.glb, ...) -> HTTP 200 (fails the deploy class v16 hit)
 
 Usage:
   python3 site_smoke_test.py                 # fast: infra + manifest + GLB HEADs
@@ -23,6 +30,7 @@ Exit code 0 = all good, 1 = failures (print them loudly).
 """
 import argparse
 import json
+import re
 import sys
 import urllib.request
 import urllib.error
@@ -153,6 +161,29 @@ def main():
         check(f"textures ({len(texs)} files)", not missing,
               f"missing: {', '.join(missing[:8])}"
               + (" ..." if len(missing) > 8 else ""))
+
+        # 7. round-4 crawl gate: EVERY local asset URL in app.js + index.html
+        #    (covers the LUT/fog/skybox aux textures the v16 deploy wiped)
+        crawl = set()
+        for m in re.finditer(r"['\"]([A-Za-z0-9_./-]+\.(?:jpg|png|json|glb))['\"]", js):
+            u = m.group(1)
+            if u.startswith(("http://", "https://")):
+                continue
+            crawl.add(u.lstrip("./"))
+        for m in re.finditer(r"['\"]\.?/?([A-Za-z0-9_./-]+\.(?:jpg|png|js|css))['\"]", html):
+            u = m.group(1).lstrip("./")
+            if u.startswith(("http://", "https://", "three/")):
+                continue
+            crawl.add(u)
+        crawl_miss = []
+        for u in sorted(crawl):
+            st, _, _ = fetch(base + u, "GET")
+            if st != 200:
+                crawl_miss.append(f"{u}({st})")
+        check(f"app.js/index.html asset crawl ({len(crawl)} urls)",
+              not crawl_miss,
+              f"missing: {', '.join(crawl_miss[:10])}"
+              + (" ..." if len(crawl_miss) > 10 else ""))
 
     print()
     if failures:

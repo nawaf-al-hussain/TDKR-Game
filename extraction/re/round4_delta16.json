@@ -1,0 +1,193 @@
+{
+ "GothamCity": {
+  "n": 1517,
+  "v15_bound": 594,
+  "v16_bound": 1512,
+  "changed": 1511,
+  "pct_changed": 99.6,
+  "kept_same": 1,
+  "dark_to_bound": 918,
+  "bound_to_dark": 1,
+  "crosstab": {
+   "dark->buildings": 299,
+   "dark->props_mono_rail": 155,
+   "dark->props_street": 142,
+   "flat->trees": 135,
+   "flat->props_rooftop": 117,
+   "road_band->props_street": 89,
+   "flat->billboards": 86,
+   "dark->billboards": 83,
+   "flat->buildings": 80,
+   "dark->trees": 67,
+   "dark->coronas": 62,
+   "dark->props_rooftop": 46,
+   "dark->road_band": 35,
+   "flat->props_street": 30,
+   "dark->sidewalk_flat": 17,
+   "dark->other": 12,
+   "road_band->buildings": 11,
+   "road_band->billboards": 7,
+   "props->billboards": 7,
+   "road_band->props_mono_rail": 7,
+   "dark->unbound_dark": 5,
+   "road_band->trees": 5,
+   "road_band->props_rooftop": 3,
+   "flat->road_band": 3,
+   "props->trees": 3,
+   "flat->sidewalk_flat": 2,
+   "flat->other": 2,
+   "road_band->road_band": 2,
+   "flat->props_mono_rail": 2,
+   "road_band->other": 1,
+   "road_band->unbound_dark": 1,
+   "props->buildings": 1
+  },
+  "coverage": {
+   "unbound_dark": {
+    "n": 5,
+    "bound": 0,
+    "missing": 0
+   },
+   "props": {
+    "n": 1046,
+    "bound": 1046,
+    "missing": 0
+   },
+   "buildings": {
+    "n": 391,
+    "bound": 391,
+    "missing": 0
+   },
+   "other": {
+    "n": 16,
+    "bound": 16,
+    "missing": 0
+   },
+   "sidewalk_flat": {
+    "n": 19,
+    "bound": 19,
+    "missing": 0
+   },
+   "road": {
+    "n": 40,
+    "bound": 40,
+    "missing": 0
+   }
+  },
+  "unbound": [
+   {
+    "seg": 0,
+    "m40": 0,
+    "name": "_1_-_Default_1xVPfvJcrg_rQF69AzBla",
+    "technique": "ProfileCOMMON__1_-_Default-fx1338029509_FlippedPlane_frAQBc8Wsa_RYwTiizs2t",
+    "dif": null,
+    "lm": null,
+    "reason": "unbound-both-samplers"
+   },
+   {
+    "seg": 1,
+    "m40": 0,
+    "name": "_1_-_Default_1xVPfvJcrg_rQF69AzBla",
+    "technique": "ProfileCOMMON__1_-_Default-fx1338029509_FlippedPlane_frAQBc8Wsa_RYwTiizs2t",
+    "dif": null,
+    "lm": null,
+    "reason": "unbound-both-samplers"
+   },
+   {
+    "seg": 2,
+    "m40": 0,
+    "name": "_1_-_Default_1xVPfvJcrg_rQF69AzBla",
+    "technique": "ProfileCOMMON__1_-_Default-fx1338029509_FlippedPlane_frAQBc8Wsa_RYwTiizs2t",
+    "dif": null,
+    "lm": null,
+    "reason": "unbound-both-samplers"
+   },
+   {
+    "seg": 3,
+    "m40": 0,
+    "name": "_1_-_Default_1xVPfvJcrg_rQF69AzBla",
+    "technique": "ProfileCOMMON__1_-_Default-fx1338029509_FlippedPlane_frAQBc8Wsa_RYwTiizs2t",
+    "dif": null,
+    "lm": null,
+    "reason": "unbound-both-samplers"
+   },
+   {
+    "seg": 4,
+    "m40": 0,
+    "name": "_1_-_Default_1xVPfvJcrg_rQF69AzBla",
+    "technique": "ProfileCOMMON__1_-_Default-fx1338029509_FlippedPlane_frAQBc8Wsa_RYwTiizs2t",
+    "dif": null,
+    "lm": null,
+    "reason": "unbound-both-samplers"
+   }
+  ],
+  "missing": []
+ },
+ "GothamCity_Island2": {
+  "n": 1020,
+  "v15_bound": 374,
+  "v16_bound": 1020,
+  "changed": 1016,
+  "pct_changed": 99.6,
+  "kept_same": 4,
+  "dark_to_bound": 646,
+  "bound_to_dark": 0,
+  "crosstab": {
+   "dark->buildings": 221,
+   "dark->props_street": 176,
+   "dark->props_mono_rail": 118,
+   "flat->props_rooftop": 88,
+   "road_band->props_street": 83,
+   "flat->buildings": 50,
+   "flat->trees": 49,
+   "dark->billboards": 46,
+   "flat->billboards": 41,
+   "dark->trees": 31,
+   "road_band->buildings": 30,
+   "dark->coronas": 21,
+   "dark->road_band": 14,
+   "dark->props_rooftop": 10,
+   "flat->road_band": 7,
+   "road_band->road_band": 6,
+   "dark->sidewalk_flat": 5,
+   "flat->props_street": 5,
+   "dark->other": 4,
+   "flat->other": 3,
+   "flat->sidewalk_flat": 3,
+   "road_band->billboards": 3,
+   "road_band->trees": 2,
+   "road_band->props_mono_rail": 2,
+   "props->props_rooftop": 1,
+   "road_band->props_rooftop": 1
+  },
+  "coverage": {
+   "props": {
+    "n": 677,
+    "bound": 677,
+    "missing": 0
+   },
+   "buildings": {
+    "n": 301,
+    "bound": 301,
+    "missing": 0
+   },
+   "other": {
+    "n": 7,
+    "bound": 7,
+    "missing": 0
+   },
+   "road": {
+    "n": 27,
+    "bound": 27,
+    "missing": 0
+   },
+   "sidewalk_flat": {
+    "n": 8,
+    "bound": 8,
+    "missing": 0
+   }
+  },
+  "unbound": [],
+  "missing": []
+ }
+}
