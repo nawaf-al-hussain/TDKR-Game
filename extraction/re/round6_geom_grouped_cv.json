@@ -1,0 +1,341 @@
+{
+ "GothamCity": {
+  "n_segments": 1517,
+  "dup_groups": 0,
+  "segs_in_dup_groups": 0,
+  "cv": {
+   "random5": {
+    "plus40": {
+     "n": 1511,
+     "n_classes": 12,
+     "floor": 0.173,
+     "acc": 0.457,
+     "acc_minus_floor": 0.285,
+     "null": 0.055,
+     "null_sd": 0.008,
+     "z_vs_null": 51.3,
+     "recalls": {
+      "billboards": 0.644,
+      "building_footprint": 0.393,
+      "building_landmark_misc": 0.187,
+      "building_residential": 0.093,
+      "coronas": 0.989,
+      "flat": 0.308,
+      "props_mono_rail": 0.152,
+      "props_rooftop": 0.4,
+      "props_street": 0.644,
+      "road_band": 0.56,
+      "trees": 0.579
+     }
+    },
+    "v5": {
+     "n": 592,
+     "n_classes": 4,
+     "floor": 0.772,
+     "acc": 0.679,
+     "acc_minus_floor": -0.092,
+     "null": 0.351,
+     "null_sd": 0.05,
+     "z_vs_null": 6.6,
+     "recalls": {
+      "flat": 0.619,
+      "road_band": 0.874
+     }
+    }
+   },
+   "by_material": {
+    "plus40": {
+     "n": 1511,
+     "n_classes": 12,
+     "floor": 0.173,
+     "acc": 0.139,
+     "acc_minus_floor": -0.033,
+     "null": 0.053,
+     "null_sd": 0.01,
+     "z_vs_null": 8.3,
+     "recalls": {
+      "billboards": 0.692,
+      "building_footprint": 0.172,
+      "building_landmark_misc": 0.294,
+      "building_residential": 0.068,
+      "flat": 0.3,
+      "props_street": 0.038,
+      "props_rooftop": 0.012
+     }
+    },
+    "v5": {
+     "n": 592,
+     "n_classes": 4,
+     "floor": 0.772,
+     "acc": 0.637,
+     "acc_minus_floor": -0.135,
+     "null": 0.338,
+     "null_sd": 0.086,
+     "z_vs_null": 3.5,
+     "recalls": {
+      "flat": 0.443,
+      "road_band": 0.696
+     }
+    }
+   },
+   "by_space": {
+    "plus40": {
+     "n": 1511,
+     "n_classes": 12,
+     "floor": 0.173,
+     "acc": 0.429,
+     "acc_minus_floor": 0.257,
+     "null": 0.053,
+     "null_sd": 0.007,
+     "z_vs_null": 51.7,
+     "recalls": {
+      "billboards": 0.533,
+      "building_footprint": 0.281,
+      "building_landmark_misc": 0.175,
+      "building_residential": 0.047,
+      "coronas": 0.994,
+      "flat": 0.407,
+      "props_mono_rail": 0.145,
+      "props_rooftop": 0.333,
+      "props_street": 0.67,
+      "trees": 0.538,
+      "road_band": 0.656
+     }
+    },
+    "v5": {
+     "n": 592,
+     "n_classes": 4,
+     "floor": 0.772,
+     "acc": 0.679,
+     "acc_minus_floor": -0.093,
+     "null": 0.347,
+     "null_sd": 0.064,
+     "z_vs_null": 5.2,
+     "recalls": {
+      "flat": 0.622,
+      "road_band": 0.884
+     }
+    }
+   },
+   "dedup_random5": {
+    "plus40": {
+     "n": 1511,
+     "n_classes": 12,
+     "floor": 0.173,
+     "acc": 0.445,
+     "acc_minus_floor": 0.273,
+     "null": 0.054,
+     "null_sd": 0.01,
+     "z_vs_null": 39.9,
+     "recalls": {
+      "billboards": 0.622,
+      "building_footprint": 0.362,
+      "building_landmark_misc": 0.184,
+      "building_residential": 0.07,
+      "coronas": 0.988,
+      "flat": 0.3,
+      "props_mono_rail": 0.118,
+      "props_rooftop": 0.357,
+      "props_street": 0.661,
+      "road_band": 0.521,
+      "trees": 0.574
+     }
+    },
+    "v5": {
+     "n": 592,
+     "n_classes": 4,
+     "floor": 0.772,
+     "acc": 0.684,
+     "acc_minus_floor": -0.088,
+     "null": 0.357,
+     "null_sd": 0.069,
+     "z_vs_null": 4.7,
+     "recalls": {
+      "flat": 0.624,
+      "road_band": 0.883
+     }
+    }
+   }
+  },
+  "class_support": {
+   "props_rooftop": 166,
+   "building_footprint": 174,
+   "billboards": 183,
+   "coronas": 62,
+   "other": 10,
+   "props_street": 261,
+   "building_landmark_misc": 107,
+   "flat": 21,
+   "building_residential": 113,
+   "road_band": 40,
+   "trees": 210,
+   "props_mono_rail": 164
+  }
+ },
+ "GothamCity_Island2": {
+  "n_segments": 1020,
+  "dup_groups": 0,
+  "segs_in_dup_groups": 0,
+  "cv": {
+   "random5": {
+    "plus40": {
+     "n": 1020,
+     "n_classes": 11,
+     "floor": 0.259,
+     "acc": 0.648,
+     "acc_minus_floor": 0.389,
+     "null": 0.066,
+     "null_sd": 0.011,
+     "z_vs_null": 51.2,
+     "recalls": {
+      "billboards": 0.704,
+      "building_footprint": 0.436,
+      "building_landmark_misc": 0.04,
+      "building_residential": 0.097,
+      "props_mono_rail": 0.476,
+      "props_rooftop": 0.834,
+      "props_street": 0.934,
+      "road_band": 0.612,
+      "trees": 0.701,
+      "coronas": 1.0
+     }
+    },
+    "v5": {
+     "n": 373,
+     "n_classes": 3,
+     "floor": 0.66,
+     "acc": 0.7,
+     "acc_minus_floor": 0.041,
+     "null": 0.512,
+     "null_sd": 0.055,
+     "z_vs_null": 3.4,
+     "recalls": {
+      "flat": 0.568,
+      "road_band": 0.962
+     }
+    }
+   },
+   "by_material": {
+    "plus40": {
+     "n": 1020,
+     "n_classes": 11,
+     "floor": 0.259,
+     "acc": 0.094,
+     "acc_minus_floor": -0.165,
+     "null": 0.059,
+     "null_sd": 0.011,
+     "z_vs_null": 3.2,
+     "recalls": {
+      "building_footprint": 0.166,
+      "building_landmark_misc": 0.036,
+      "building_residential": 0.0,
+      "props_rooftop": 0.056
+     }
+    },
+    "v5": {
+     "n": 373,
+     "n_classes": 3,
+     "floor": 0.66,
+     "acc": 0.602,
+     "acc_minus_floor": -0.057,
+     "null": 0.508,
+     "null_sd": 0.068,
+     "z_vs_null": 1.4,
+     "recalls": {
+      "road_band": 0.693,
+      "flat": 0.406
+     }
+    }
+   },
+   "by_space": {
+    "plus40": {
+     "n": 1020,
+     "n_classes": 11,
+     "floor": 0.259,
+     "acc": 0.644,
+     "acc_minus_floor": 0.385,
+     "null": 0.059,
+     "null_sd": 0.011,
+     "z_vs_null": 54.8,
+     "recalls": {
+      "billboards": 0.695,
+      "building_footprint": 0.432,
+      "coronas": 1.0,
+      "props_mono_rail": 0.489,
+      "props_rooftop": 0.857,
+      "props_street": 0.932,
+      "road_band": 0.614,
+      "trees": 0.666,
+      "building_landmark_misc": 0.086,
+      "building_residential": 0.137
+     }
+    },
+    "v5": {
+     "n": 373,
+     "n_classes": 3,
+     "floor": 0.66,
+     "acc": 0.688,
+     "acc_minus_floor": 0.029,
+     "null": 0.502,
+     "null_sd": 0.051,
+     "z_vs_null": 3.7,
+     "recalls": {
+      "flat": 0.549,
+      "road_band": 0.957
+     }
+    }
+   },
+   "dedup_random5": {
+    "plus40": {
+     "n": 1020,
+     "n_classes": 11,
+     "floor": 0.259,
+     "acc": 0.644,
+     "acc_minus_floor": 0.385,
+     "null": 0.065,
+     "null_sd": 0.014,
+     "z_vs_null": 42.4,
+     "recalls": {
+      "billboards": 0.691,
+      "building_footprint": 0.423,
+      "building_landmark_misc": 0.133,
+      "building_residential": 0.202,
+      "props_mono_rail": 0.451,
+      "props_rooftop": 0.844,
+      "props_street": 0.935,
+      "trees": 0.695,
+      "coronas": 1.0,
+      "road_band": 0.604
+     }
+    },
+    "v5": {
+     "n": 373,
+     "n_classes": 3,
+     "floor": 0.66,
+     "acc": 0.702,
+     "acc_minus_floor": 0.042,
+     "null": 0.508,
+     "null_sd": 0.049,
+     "z_vs_null": 4.0,
+     "recalls": {
+      "flat": 0.574,
+      "road_band": 0.959
+     }
+    }
+   }
+  },
+  "class_support": {
+   "coronas": 21,
+   "billboards": 90,
+   "building_footprint": 235,
+   "props_rooftop": 100,
+   "props_street": 264,
+   "building_landmark_misc": 48,
+   "road_band": 27,
+   "flat": 8,
+   "building_residential": 25,
+   "trees": 82,
+   "props_mono_rail": 120
+  }
+ }
+}

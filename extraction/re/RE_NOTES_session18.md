@@ -278,3 +278,113 @@ versions consistent), `site_smoke_test.py` 58/58 PASS.
   it can adjudicate dark-pad thin-stroke families — currently only
   geometry-profile + enrichment(where-defined) + engine record carry the
   binding case.
+
+## Round-6 addendum (same session): page-type table, grouped-CV geometry,
+## 109/133 tiling pattern
+
+(`round6_pagetypes.py/json`, `round6_geom_grouped_cv.py/json`,
+`round6_geom_features.json`, `round6_slot_tiling.py/json`.)
+
+### R6-1. Page-type table (the enrichment baselines, tabulated)
+
+146 unique diffuse pages referenced by either island's materials, 0 decode
+failures. Types by mask_A contentA (alpha<64 | near-black) + cell count:
+full_bleed cA>=0.85; atlas_dense cells>=2 & cA>=0.50; atlas_mid
+cells>=2 & 0.15<=cA<0.50; dark_pad cells>=2 & cA<0.15; sparse_blob
+cells<=1 & cA<0.85.
+
+| type | pages | contentA | street segs bound |
+|---|---|---|---|
+| full_bleed | 124 | 0.982 [0.86,1.00] | 1382 |
+| atlas_dense | 19 | 0.743 [0.51,0.85] | 1145 |
+| atlas_mid | 3 | 0.459 [0.44,0.49] | 4 |
+| dark_pad | **0** | - | 0 |
+| sparse_blob | **0** | - | 0 |
+
+Family x type (material-weighted): building_footprint 206/253 pages
+full-bleed; residential 173/198; landmark 181/231; flat 37/43;
+trees 3/3 (trunk cA=1.000 - the round-4 modal-colour mask, not the page,
+made trunks look "thin-stroke"); road_band 13 full-bleed + 11 atlas_dense;
+billboards 20/22 atlas_dense (enrichment home turf); props_street mixed
+(14 full-bleed incl. GC_Z1_Props_Street_Alpha cA=0.995, 5 atlas_dense);
+coronas 3 atlas_dense (additive caveat stands at cell level).
+
+**The round-4 "dark-pad page" category does not exist at page level** —
+the confound lived at CELL level inside atlas pages, and mask_A (round-5)
+already normalizes it. This is why enrichment's null is ~1 by
+construction on every page type.
+
+### R6-2. Geometry test re-scored with GROUPED CV — pillar DOWNGRADED
+
+Leakage concern: city batching re-instances the same template; random
+5-fold splits copies across folds. Control: exact-duplicate vertex buffers
+= **0 groups on both islands** (batching emits unique buffers), but
+97%/98% of segments sit on materials with >=2 segments (isl-1: 136
+materials / 1517 segs; biggest materials own hundreds), so random folds
+still leak template identity. Schemes: random5 (baseline) / **by_material**
+(whole materials held out; a test fold contains materials unseen in
+training) / by_space (256u grid cells) / dedup_random5 (exact-dups
+collapsed — no-op here). Nearest-centroid on the same 6 features,
+K=12 permuted-label nulls under the SAME folds.
+
+| island | scheme | +40 acc (floor) | +40 z vs null | v5 acc (floor) |
+|---|---|---|---|---|
+| isl-1 | random5 | 0.457 (0.173) | 51 | 0.679 (0.772) |
+| isl-1 | **by_material** | **0.139 (0.173)** | 8.3 | 0.637 (0.772) |
+| isl-1 | by_space | 0.429 (0.173) | 52 | 0.679 (0.772) |
+| isl-1 | dedup_random5 | 0.445 (0.173) | 40 | 0.684 (0.772) |
+| isl-2 | random5 | 0.648 (0.259) | 51 | 0.700 (0.660) |
+| isl-2 | **by_material** | **0.094 (0.259)** | 3.2 | 0.602 (0.660) |
+| isl-2 | by_space | 0.644 (0.259) | 55 | 0.688 (0.660) |
+| isl-2 | dedup_random5 | 0.644 (0.259) | 42 | 0.702 (0.660) |
+
+Per-class recall under by_material: only **billboards** generalize
+(0.69 isl-1); props_street 0.04, props_rooftop 0.01-0.06,
+residential 0.0-0.07, footprint 0.17, landmark 0.03-0.29.
+
+Reading: the session-18 geometry signal is **material-template
+consistency at segment level, NOT family-level shape laws** — a material's
+instances share geometry and family, so random CV "predicts" the family by
+identifying the material. With whole materials held out, accuracy falls to
+or below the majority floor (still 1.6-2.6x the matched chance null, so
+not literally empty, but far from the "decisive arbiter" wording).
+v5 stays at/below floor under EVERY scheme, and billboards — the strongest
+enrichment family — are the one family with true shape generalization.
+**The +40 flip's support is now: the engine record (compiled self-indexing,
+primary) + enrichment where defined + segment-level template consistency.**
+"covers all 2537 segments decisively" is RETIRED.
+
+### R6-3. The 109/133 tiling pattern — no street-family tiling; 14 records
+### carry an explicit Coord0-identity transform
+
+Per-technique census of the four vec3 slots (109/121/133/145), components
+over .xy, both islands. For LightMapDC: **slot 133 is <=1e-4 in ALL 454+282
+components** (dequant-ish or zero); slot 109 likewise <=1e-4 except ONE
+0.015 component per island. So no (109|133) value can serve as an origin
+(>=0.01 filter leaves n=0) or a working scale (C2/C3/C5 degenerate BY
+CONSTRUCTION at record level). The exact-dequant (1/65535 +-1%) occurrences
+concentrate 100% in one signature group:
+
+- isl-1: 9 records, all `tiles_KjsfSXF4YP_*`;
+- isl-2: 5 records, all `Material__4986_*`;
+- ALL 14 have **s121 = (0.5, 0.5)** (half-page LM rect) and a tile offset
+  at s145, with s109 = 1/65535 and s133 ~ 0..1.5e-5.
+
+Reading: the packed pair (109,133) is the OTHER stage's scaleoffset
+(Coord0): (1/65535, 0) = the identity on raw u16 uv0 — written explicitly
+only where the tool emitted it, ~zero elsewhere. This RETAINS session-18's
+conclusion (not a working diffuse transform; shipped /65535 identity is
+engine-equivalent where the pair is the identity) and now explains WHY the
+uv0 test tied: for the only records with a real value there, the value IS
+the identity.
+
+Page-level tiling lives in (121,145) and is loose, not a partition:
+origins 24-33% on a 1/8 grid (uniform ~2%); extents concentrated at 0.5/1
+(tiles family); rect overlap == permuted-origin null (z=-0.2/0.0,
+coverage 1.0); edge-adjacency saturates at the null rate (227 rects on one
+page -> some edge always matches). Consistent with round-5's area-bake
+conclusion (shared tile regions, no exclusivity).
+
+Other techniques DO carry real 109/133 values (NSO s133: 61/74 "other"
+isl-1; StandardDiffuseDC s133 all real) — per-technique slot semantics
+confirmed; 109/133 are not global placeholders.

@@ -358,17 +358,24 @@ python3 extraction/scripts/export_city.py --dry
    (`round5_t3_chain.json`). If you can find a per-tile ground-truth table
    (assembly bake-list rects per material?) the chain can be confirmed or
    falsified outright.
-2. **batch_info slot 109/133**: exactly 1/65535 in a minority of
-   LightMapDC records, broad distribution otherwise; not a working uv0
-   transform. Where the engine really binds Coord0_scaleoffset from (and
-   what the non-dequant values mean) is open.
+2. **batch_info slot 109/133** — round-6 census: over LightMapDC both
+   slots are <=1e-4 in every component (no origins, no working scales —
+   C2/C3/C5 degenerate by construction). The exact-dequant occurrences
+   (9 tiles_* isl-1 + 5 Material__4986_* isl-2, all with s121=(0.5,0.5))
+   read as the Coord0-identity scaleoffset (1/65535, 0) written explicitly.
+   What the engine really binds for Coord0 on OTHER techniques (NSO etc.
+   carry real 109/133 values) is still open (`round6_slot_tiling.json`).
 3. **Generic object records** (CreateObject component loop): read order for
    the non-special typeIds so the hero units (bridges/monorail/railway)
    get their world TRSs.
-4. Sanity checks welcome on the round-5 evidence chain
+4. Sanity checks welcome on the round-5/6 evidence chain
    (`round5_t2_evidence.json`, `round5_footprint_recheck.json`,
-   `round5_t3_chain.json`, `round5_pipeline.json`) — especially the
-   geometry-profile classifier and the seam-test insensitivity argument.
+   `round5_t3_chain.json`, `round5_pipeline.json`,
+   `round6_geom_grouped_cv.json`, `round6_pagetypes.json`,
+   `round6_slot_tiling.json`) — note the round-6 geometry DOWNGRADE:
+   grouped CV shows the segment-level signal is material-template
+   consistency (only billboards generalize at family level); the "+40
+   covers all 2537 segments decisively" wording is retired.
 5. Anything that looks wrong in the deployed pipeline that we've gone blind
    to after 18 sessions of fixes (fresh eyes welcome).
 

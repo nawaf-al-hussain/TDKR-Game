@@ -1,0 +1,2544 @@
+{
+ "rules": {
+  "full_bleed": "contentA>=0.85",
+  "atlas_dense": "n_cells>=2 & contentA>=0.50",
+  "atlas_mid": "n_cells>=2 & 0.15<=contentA<0.50",
+  "dark_pad": "n_cells>=2 & contentA<0.15",
+  "sparse_blob": "n_cells<=1 & contentA<0.85",
+  "mask_A": "alpha<64 | rgb.max<=10",
+  "note": "contentA IS the enrichment denominator (uniform-random non-empty rate); glow/corona pages are additive: mask_A overcounts content there (family column flags them)"
+ },
+ "summary": {
+  "atlas_dense": {
+   "n_pages": 19,
+   "contentA_mean": 0.743,
+   "contentA_min": 0.508,
+   "contentA_max": 0.85,
+   "street_segs_bound": 1145,
+   "top_families": [
+    "building_landmark_misc:50",
+    "building_footprint:48",
+    "props_rooftop:30",
+    "building_residential:25",
+    "billboards:21",
+    "road_band:11",
+    "flat:11",
+    "props_street:11"
+   ]
+  },
+  "atlas_mid": {
+   "n_pages": 3,
+   "contentA_mean": 0.459,
+   "contentA_min": 0.44,
+   "contentA_max": 0.492,
+   "street_segs_bound": 4,
+   "top_families": [
+    "other:3",
+    "props_mono_rail:1"
+   ]
+  },
+  "full_bleed": {
+   "n_pages": 124,
+   "contentA_mean": 0.982,
+   "contentA_min": 0.859,
+   "contentA_max": 1.0,
+   "street_segs_bound": 1382,
+   "top_families": [
+    "building_footprint:206",
+    "building_landmark_misc:181",
+    "building_residential:173",
+    "flat:41",
+    "props_rooftop:37",
+    "props_street:25",
+    "other:25",
+    "road_band:15"
+   ]
+  }
+ },
+ "pages": [
+  {
+   "stem": "BakeGroup_Island1_A0",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8588,
+   "n_cells": 22,
+   "big_cells": 1,
+   "coverage": 0.7998,
+   "type": "full_bleed",
+   "roles": [
+    "lightmap"
+   ],
+   "top_families": "building_landmark_misc:29, building_residential:29, building_footprint:18, flat:8",
+   "n_mats": 109,
+   "street_segs": 0
+  },
+  {
+   "stem": "BakeGroup_Island1_B0",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8851,
+   "n_cells": 671,
+   "big_cells": 4,
+   "coverage": 0.6527,
+   "type": "full_bleed",
+   "roles": [
+    "lightmap"
+   ],
+   "top_families": "building_footprint:25, building_residential:24, building_landmark_misc:20, props_rooftop:8",
+   "n_mats": 91,
+   "street_segs": 0
+  },
+  {
+   "stem": "BakeGroup_Island1_Landmarks0",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8661,
+   "n_cells": 49,
+   "big_cells": 2,
+   "coverage": 0.7779,
+   "type": "full_bleed",
+   "roles": [
+    "lightmap"
+   ],
+   "top_families": "building_landmark_misc:20, building_footprint:14, building_residential:7, flat:6",
+   "n_mats": 54,
+   "street_segs": 0
+  },
+  {
+   "stem": "BakeGroup_Island1_Roads0",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8495,
+   "n_cells": 58,
+   "big_cells": 1,
+   "coverage": 0.7765,
+   "type": "atlas_dense",
+   "roles": [
+    "lightmap"
+   ],
+   "top_families": "building_footprint:8, building_landmark_misc:5, road_band:4, props_mono_rail:2",
+   "n_mats": 25,
+   "street_segs": 0
+  },
+  {
+   "stem": "BakeGroup_Island2_A0",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8703,
+   "n_cells": 1552,
+   "big_cells": 8,
+   "coverage": 0.514,
+   "type": "full_bleed",
+   "roles": [
+    "lightmap"
+   ],
+   "top_families": "building_footprint:20, building_residential:14, building_landmark_misc:7, props_rooftop:5",
+   "n_mats": 48,
+   "street_segs": 0
+  },
+  {
+   "stem": "BakeGroup_Island2_B0",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.7918,
+   "n_cells": 194,
+   "big_cells": 31,
+   "coverage": 0.6843,
+   "type": "atlas_dense",
+   "roles": [
+    "lightmap"
+   ],
+   "top_families": "building_landmark_misc:18, building_residential:18, building_footprint:14, flat:3",
+   "n_mats": 61,
+   "street_segs": 0
+  },
+  {
+   "stem": "BakeGroup_Island2_Landmarks0",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.7539,
+   "n_cells": 114,
+   "big_cells": 7,
+   "coverage": 0.6454,
+   "type": "atlas_dense",
+   "roles": [
+    "lightmap"
+   ],
+   "top_families": "building_footprint:22, building_landmark_misc:10, building_residential:7, unbound:3",
+   "n_mats": 52,
+   "street_segs": 0
+  },
+  {
+   "stem": "BakeGroup_Island2_Roads0",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.839,
+   "n_cells": 1674,
+   "big_cells": 20,
+   "coverage": 0.5141,
+   "type": "atlas_dense",
+   "roles": [
+    "lightmap"
+   ],
+   "top_families": "road_band:7, building_landmark_misc:5, props_mono_rail:2, billboards:2",
+   "n_mats": 21,
+   "street_segs": 0
+  },
+  {
+   "stem": "City_BKG",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.7139,
+   "n_cells": 85,
+   "big_cells": 6,
+   "coverage": 0.6553,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "FX_Coronas",
+   "arch": "commons_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.6235,
+   "n_cells": 26,
+   "big_cells": 17,
+   "coverage": 0.1237,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "coronas:3",
+   "n_mats": 3,
+   "street_segs": 83
+  },
+  {
+   "stem": "GC_CBCE_Atlas",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9999,
+   "n_cells": 160,
+   "big_cells": 1,
+   "coverage": 0.9062,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:11",
+   "n_mats": 11,
+   "street_segs": 15
+  },
+  {
+   "stem": "GC_Cath_of_learning_Brick",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 760,
+   "big_cells": 1,
+   "coverage": 0.5898,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 4
+  },
+  {
+   "stem": "GC_Cath_of_learning_RandomObj",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9962,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.8216,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Cath_of_learning_Rooftop_ground",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.6404,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:8",
+   "n_mats": 8,
+   "street_segs": 9
+  },
+  {
+   "stem": "GC_Cath_of_learning_Wall",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 322,
+   "big_cells": 1,
+   "coverage": 0.651,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:4",
+   "n_mats": 4,
+   "street_segs": 5
+  },
+  {
+   "stem": "GC_Cath_of_learning_Windows2_v",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 54,
+   "big_cells": 1,
+   "coverage": 0.8401,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:4",
+   "n_mats": 4,
+   "street_segs": 4
+  },
+  {
+   "stem": "GC_Cath_of_learning_Windows3_v",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9984,
+   "n_cells": 65,
+   "big_cells": 1,
+   "coverage": 0.7816,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:3",
+   "n_mats": 3,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Cath_of_learning_Windows_v",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9999,
+   "n_cells": 16,
+   "big_cells": 1,
+   "coverage": 0.8203,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:6",
+   "n_mats": 6,
+   "street_segs": 3
+  },
+  {
+   "stem": "GC_DMUS_Atlas",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9817,
+   "n_cells": 85,
+   "big_cells": 1,
+   "coverage": 0.8087,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_DMUS_Atlas2",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8096,
+   "n_cells": 28,
+   "big_cells": 8,
+   "coverage": 0.7974,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_DMUS_fence",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9996,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.9931,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_DMUS_wall",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 2,
+   "big_cells": 1,
+   "coverage": 0.7561,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:5",
+   "n_mats": 5,
+   "street_segs": 5
+  },
+  {
+   "stem": "GC_Diner_Floor",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 0.9989,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.8779,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_AWT",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8959,
+   "n_cells": 20,
+   "big_cells": 3,
+   "coverage": 0.8849,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 11
+  },
+  {
+   "stem": "GC_Footprint_CC_windows02",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9907,
+   "n_cells": 41,
+   "big_cells": 1,
+   "coverage": 0.8663,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:4",
+   "n_mats": 4,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Footprint_GA_TH",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9129,
+   "n_cells": 2,
+   "big_cells": 2,
+   "coverage": 0.9123,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:4",
+   "n_mats": 4,
+   "street_segs": 8
+  },
+  {
+   "stem": "GC_Footprint_GA_T_00",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9994,
+   "n_cells": 4,
+   "big_cells": 1,
+   "coverage": 0.8042,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_GA_T_01",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9832,
+   "n_cells": 12,
+   "big_cells": 1,
+   "coverage": 0.8076,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_GA_T_02",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9999,
+   "n_cells": 4,
+   "big_cells": 1,
+   "coverage": 0.8141,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Footprint_GA_floor_T_00",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 18,
+   "big_cells": 1,
+   "coverage": 0.7467,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_GB_Bricks_01_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 133,
+   "big_cells": 3,
+   "coverage": 0.6817,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_GB_Bricks_02_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 161,
+   "big_cells": 1,
+   "coverage": 0.7201,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_GB_Tex01_TH",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9965,
+   "n_cells": 11,
+   "big_cells": 7,
+   "coverage": 0.8413,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Footprint_GB_windows_01_TH",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9945,
+   "n_cells": 242,
+   "big_cells": 1,
+   "coverage": 0.7184,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_GC_floor_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 15,
+   "big_cells": 1,
+   "coverage": 0.7346,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:4",
+   "n_mats": 4,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Footprint_GC_stuff_T",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9999,
+   "n_cells": 812,
+   "big_cells": 25,
+   "coverage": 0.7826,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 6
+  },
+  {
+   "stem": "GC_Footprint_GC_windows_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9599,
+   "n_cells": 64,
+   "big_cells": 11,
+   "coverage": 0.6145,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_IC",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9189,
+   "n_cells": 17,
+   "big_cells": 7,
+   "coverage": 0.9067,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:4",
+   "n_mats": 4,
+   "street_segs": 10
+  },
+  {
+   "stem": "GC_Footprint_LB_Cinema",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9776,
+   "n_cells": 115,
+   "big_cells": 1,
+   "coverage": 0.6891,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:5",
+   "n_mats": 5,
+   "street_segs": 13
+  },
+  {
+   "stem": "GC_Footprint_LPOL_ConcreteTile",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9977,
+   "n_cells": 211,
+   "big_cells": 1,
+   "coverage": 0.7038,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Footprint_LPOL_FenceTile",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 0.9998,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.9487,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_LPOL_GroundTile",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 1.0,
+   "n_cells": 125,
+   "big_cells": 1,
+   "coverage": 0.4212,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_LPOL_PropsAtlas",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9906,
+   "n_cells": 142,
+   "big_cells": 15,
+   "coverage": 0.8421,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Footprint_STD_Asphalt_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9998,
+   "n_cells": 1056,
+   "big_cells": 2,
+   "coverage": 0.2813,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_STD_Net_T",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 0.9998,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.9939,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Footprint_STD_WhiteAsphalt_T",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.654,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_STD_alpha_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.967,
+   "n_cells": 2,
+   "big_cells": 1,
+   "coverage": 0.954,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:4",
+   "n_mats": 4,
+   "street_segs": 5
+  },
+  {
+   "stem": "GC_Footprint_STD_chairs_00_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 17,
+   "big_cells": 1,
+   "coverage": 0.8589,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_STD_chairs_01_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 17,
+   "big_cells": 1,
+   "coverage": 0.8589,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Footprint_STD_stuff_TH",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9764,
+   "n_cells": 219,
+   "big_cells": 14,
+   "coverage": 0.8097,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:3",
+   "n_mats": 3,
+   "street_segs": 7
+  },
+  {
+   "stem": "GC_Footprint_VD_Buildings",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9978,
+   "n_cells": 441,
+   "big_cells": 2,
+   "coverage": 0.9153,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:10",
+   "n_mats": 10,
+   "street_segs": 6
+  },
+  {
+   "stem": "GC_Footprint_VD_Buildings_2",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.997,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.928,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:9",
+   "n_mats": 9,
+   "street_segs": 23
+  },
+  {
+   "stem": "GC_Footprint_VD_Buildings_3",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9943,
+   "n_cells": 37,
+   "big_cells": 1,
+   "coverage": 0.9419,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:7",
+   "n_mats": 7,
+   "street_segs": 15
+  },
+  {
+   "stem": "GC_Footprint_VD_Fence",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 0.5076,
+   "n_cells": 2,
+   "big_cells": 1,
+   "coverage": 0.5016,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:3",
+   "n_mats": 3,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Footprint_VD_Floor",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9893,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.7797,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:12",
+   "n_mats": 12,
+   "street_segs": 26
+  },
+  {
+   "stem": "GC_Footprint_VD_Floor_2",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.702,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:11",
+   "n_mats": 11,
+   "street_segs": 19
+  },
+  {
+   "stem": "GC_Footprint_VD_Items",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9513,
+   "n_cells": 19,
+   "big_cells": 1,
+   "coverage": 0.8358,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:9",
+   "n_mats": 9,
+   "street_segs": 229
+  },
+  {
+   "stem": "GC_Glass_Building",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.8914,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.8841,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:4",
+   "n_mats": 4,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_IndustrialProps",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9817,
+   "n_cells": 2,
+   "big_cells": 1,
+   "coverage": 0.8841,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:4",
+   "n_mats": 4,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Park_atlas_props",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9985,
+   "n_cells": 19,
+   "big_cells": 3,
+   "coverage": 0.8699,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:6",
+   "n_mats": 6,
+   "street_segs": 18
+  },
+  {
+   "stem": "GC_Park_atlas_tiles",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 1.0,
+   "n_cells": 3,
+   "big_cells": 1,
+   "coverage": 0.8121,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:8",
+   "n_mats": 8,
+   "street_segs": 14
+  },
+  {
+   "stem": "GC_Park_dirt",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.8692,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Park_grass",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9998,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.868,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:3",
+   "n_mats": 3,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Park_statue",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.7091,
+   "n_cells": 79,
+   "big_cells": 3,
+   "coverage": 0.6502,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:3",
+   "n_mats": 3,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Residential_BD_01_Door_01",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 6,
+   "big_cells": 1,
+   "coverage": 0.7946,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:7",
+   "n_mats": 7,
+   "street_segs": 45
+  },
+  {
+   "stem": "GC_Residential_BD_01_Roof_01",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.8423,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:4",
+   "n_mats": 4,
+   "street_segs": 10
+  },
+  {
+   "stem": "GC_Residential_BD_01_Windows_01",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9999,
+   "n_cells": 26,
+   "big_cells": 1,
+   "coverage": 0.8527,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:5",
+   "n_mats": 5,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_BD_01_Windows_02_v",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 4,
+   "big_cells": 1,
+   "coverage": 0.8725,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:4",
+   "n_mats": 4,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_BD_01_Windows_03",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9992,
+   "n_cells": 23,
+   "big_cells": 1,
+   "coverage": 0.8304,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:4",
+   "n_mats": 4,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_BD_01_Windows_04",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 1.0,
+   "n_cells": 28,
+   "big_cells": 1,
+   "coverage": 0.8358,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:5",
+   "n_mats": 5,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Residential_BD_02_Shop",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9992,
+   "n_cells": 95,
+   "big_cells": 1,
+   "coverage": 0.7979,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:1",
+   "n_mats": 1,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Residential_BD_03_details_01",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9471,
+   "n_cells": 4,
+   "big_cells": 2,
+   "coverage": 0.9402,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:8",
+   "n_mats": 8,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Residential_BD_03_roof_01",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9993,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.6631,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:8",
+   "n_mats": 8,
+   "street_segs": 27
+  },
+  {
+   "stem": "GC_Residential_BD_03_roof_02",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 451,
+   "big_cells": 1,
+   "coverage": 0.3305,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:2",
+   "n_mats": 2,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Residential_BD_03_wall_01",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9984,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.9193,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:3",
+   "n_mats": 3,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_BD_03_wall_03",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.942,
+   "n_cells": 44,
+   "big_cells": 4,
+   "coverage": 0.822,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:2",
+   "n_mats": 2,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_BD_03_wall_04",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9855,
+   "n_cells": 14,
+   "big_cells": 1,
+   "coverage": 0.8506,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:4",
+   "n_mats": 4,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Residential_BD_03_wall_05",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.964,
+   "n_cells": 140,
+   "big_cells": 1,
+   "coverage": 0.7069,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_BD_03_wall_06",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9884,
+   "n_cells": 3,
+   "big_cells": 1,
+   "coverage": 0.9394,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:5",
+   "n_mats": 5,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Residential_BD_03_wall_07",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9649,
+   "n_cells": 655,
+   "big_cells": 2,
+   "coverage": 0.5479,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_BD_04_Door_02",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9998,
+   "n_cells": 13,
+   "big_cells": 1,
+   "coverage": 0.881,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:3",
+   "n_mats": 3,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_BD_04_Roof_02",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 0.9999,
+   "n_cells": 18,
+   "big_cells": 1,
+   "coverage": 0.6548,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:4",
+   "n_mats": 4,
+   "street_segs": 8
+  },
+  {
+   "stem": "GC_Residential_BD_04_Wall_02",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 351,
+   "big_cells": 1,
+   "coverage": 0.6962,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:3",
+   "n_mats": 3,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_Residential_BD_04_Windows_05_v",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9999,
+   "n_cells": 6,
+   "big_cells": 1,
+   "coverage": 0.8905,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:4",
+   "n_mats": 4,
+   "street_segs": 3
+  },
+  {
+   "stem": "GC_Residential_BD_04_Windows_06",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9999,
+   "n_cells": 117,
+   "big_cells": 1,
+   "coverage": 0.8673,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Residential_Dinner_objects",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9448,
+   "n_cells": 19,
+   "big_cells": 10,
+   "coverage": 0.9349,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:6",
+   "n_mats": 6,
+   "street_segs": 10
+  },
+  {
+   "stem": "GC_Residential_Props_Excavator",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.4921,
+   "n_cells": 176,
+   "big_cells": 27,
+   "coverage": 0.4031,
+   "type": "atlas_mid",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "props_mono_rail:1",
+   "n_mats": 1,
+   "street_segs": 4
+  },
+  {
+   "stem": "GC_Residential_Props_Monorail",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.7283,
+   "n_cells": 6,
+   "big_cells": 4,
+   "coverage": 0.7011,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "props_mono_rail:2",
+   "n_mats": 2,
+   "street_segs": 66
+  },
+  {
+   "stem": "GC_Residential_Props_Railroad",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.536,
+   "n_cells": 50,
+   "big_cells": 1,
+   "coverage": 0.522,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "props_mono_rail:2",
+   "n_mats": 2,
+   "street_segs": 214
+  },
+  {
+   "stem": "GC_SXC_Atlas",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9991,
+   "n_cells": 313,
+   "big_cells": 1,
+   "coverage": 0.6597,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 7
+  },
+  {
+   "stem": "GC_SXC_Atlas2",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8301,
+   "n_cells": 203,
+   "big_cells": 8,
+   "coverage": 0.5088,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_SXC_Brick",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 8,
+   "big_cells": 1,
+   "coverage": 0.5936,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_SXC_Brick_02",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9997,
+   "n_cells": 309,
+   "big_cells": 1,
+   "coverage": 0.4476,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:3",
+   "n_mats": 3,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_SXC_Rooftop_ground",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.6475,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:9",
+   "n_mats": 9,
+   "street_segs": 9
+  },
+  {
+   "stem": "GC_SXC_grass",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9993,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.8012,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_SXC_ground_tile",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9994,
+   "n_cells": 11,
+   "big_cells": 1,
+   "coverage": 0.7855,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:2",
+   "n_mats": 2,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_SXC_hedge",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9685,
+   "n_cells": 15,
+   "big_cells": 2,
+   "coverage": 0.8618,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:2",
+   "n_mats": 2,
+   "street_segs": 6
+  },
+  {
+   "stem": "GC_Shop_Reflections",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.4399,
+   "n_cells": 190,
+   "big_cells": 27,
+   "coverage": 0.3425,
+   "type": "atlas_mid",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Statues_Atlas",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8419,
+   "n_cells": 31,
+   "big_cells": 12,
+   "coverage": 0.8224,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 3
+  },
+  {
+   "stem": "GC_Statues_Debris",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9993,
+   "n_cells": 9,
+   "big_cells": 6,
+   "coverage": 0.7518,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Statues_Lion",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.7226,
+   "n_cells": 52,
+   "big_cells": 6,
+   "coverage": 0.6779,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_T_Concrete_01",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9999,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.6862,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:3",
+   "n_mats": 3,
+   "street_segs": 6
+  },
+  {
+   "stem": "GC_T_Concrete_02",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.999,
+   "n_cells": 2,
+   "big_cells": 1,
+   "coverage": 0.6553,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:6",
+   "n_mats": 6,
+   "street_segs": 7
+  },
+  {
+   "stem": "GC_T_Windows_03",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9526,
+   "n_cells": 39,
+   "big_cells": 1,
+   "coverage": 0.8374,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:2",
+   "n_mats": 2,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_TallBuilding",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.999,
+   "n_cells": 7,
+   "big_cells": 1,
+   "coverage": 0.9133,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Truck_01",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9782,
+   "n_cells": 74,
+   "big_cells": 2,
+   "coverage": 0.8572,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 2
+  },
+  {
+   "stem": "GC_Truck_wheels_01",
+   "arch": "l_gothamcity_tex",
+   "w": 128,
+   "h": 128,
+   "contentA": 0.8858,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.6834,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_VPOW_Ground_Tile",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.8317,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_VPOW_Tiles",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9985,
+   "n_cells": 118,
+   "big_cells": 1,
+   "coverage": 0.8531,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:3",
+   "n_mats": 3,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_VPOW_Tiles2",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9945,
+   "n_cells": 3,
+   "big_cells": 1,
+   "coverage": 0.951,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_VRS_Reservoir",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9858,
+   "n_cells": 23,
+   "big_cells": 1,
+   "coverage": 0.8798,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 4
+  },
+  {
+   "stem": "GC_Walls",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.995,
+   "n_cells": 2,
+   "big_cells": 2,
+   "coverage": 0.9285,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:4",
+   "n_mats": 4,
+   "street_segs": 18
+  },
+  {
+   "stem": "GC_Z1_Monument_Heroes",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9983,
+   "n_cells": 97,
+   "big_cells": 1,
+   "coverage": 0.7727,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_Z1_Props_Rooftop",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8836,
+   "n_cells": 30,
+   "big_cells": 7,
+   "coverage": 0.8693,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "props_rooftop:12",
+   "n_mats": 12,
+   "street_segs": 248
+  },
+  {
+   "stem": "GC_Z1_Props_Rooftop_Alpha",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.7624,
+   "n_cells": 72,
+   "big_cells": 10,
+   "coverage": 0.743,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "props_rooftop:23",
+   "n_mats": 23,
+   "street_segs": 18
+  },
+  {
+   "stem": "GC_Z1_Props_Street",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8474,
+   "n_cells": 19,
+   "big_cells": 12,
+   "coverage": 0.6034,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "props_street:5",
+   "n_mats": 5,
+   "street_segs": 475
+  },
+  {
+   "stem": "GC_Z1_Props_Street_Alpha",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9946,
+   "n_cells": 34,
+   "big_cells": 5,
+   "coverage": 0.7401,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "props_street:14",
+   "n_mats": 14,
+   "street_segs": 50
+  },
+  {
+   "stem": "GC_Z1_Shops_01",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9414,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.9383,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:10",
+   "n_mats": 10,
+   "street_segs": 22
+  },
+  {
+   "stem": "GC_Z1_Shops_02",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9691,
+   "n_cells": 17,
+   "big_cells": 2,
+   "coverage": 0.9381,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_residential:10",
+   "n_mats": 10,
+   "street_segs": 13
+  },
+  {
+   "stem": "GC_footprint_AA_ground",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9991,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.7767,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 1
+  },
+  {
+   "stem": "GC_footprint_AA_ground_02",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 1701,
+   "big_cells": 7,
+   "coverage": 0.3496,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:3",
+   "n_mats": 3,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_footprint_AB_atlas",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9487,
+   "n_cells": 3,
+   "big_cells": 1,
+   "coverage": 0.934,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 9
+  },
+  {
+   "stem": "GC_footprint_GC_ceiling_T",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 1.0,
+   "n_cells": 68,
+   "big_cells": 1,
+   "coverage": 0.1064,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_footprint_GC_zebra_T",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9995,
+   "n_cells": 536,
+   "big_cells": 19,
+   "coverage": 0.4916,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_footprint_VA_BAR",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9685,
+   "n_cells": 2,
+   "big_cells": 2,
+   "coverage": 0.9093,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GC_footprint_Vpow_furnal",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 1.0,
+   "n_cells": 764,
+   "big_cells": 1,
+   "coverage": 0.7672,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 3
+  },
+  {
+   "stem": "GC_footprint_aa_concrete",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 34,
+   "big_cells": 1,
+   "coverage": 0.6854,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:1",
+   "n_mats": 1,
+   "street_segs": 4
+  },
+  {
+   "stem": "GC_footprint_awt_marble",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.6276,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_footprint:2",
+   "n_mats": 2,
+   "street_segs": 1
+  },
+  {
+   "stem": "GothamCity_Road_Crossings_Island_1",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9145,
+   "n_cells": 3484,
+   "big_cells": 22,
+   "coverage": 0.4862,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "road_band:2",
+   "n_mats": 2,
+   "street_segs": 17
+  },
+  {
+   "stem": "GothamCity_Road_Crossings_Island_2",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9145,
+   "n_cells": 3485,
+   "big_cells": 22,
+   "coverage": 0.4863,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "road_band:1",
+   "n_mats": 1,
+   "street_segs": 17
+  },
+  {
+   "stem": "GothamCity_Road_Island_2",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9999,
+   "n_cells": 390,
+   "big_cells": 5,
+   "coverage": 0.8047,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "road_band:1",
+   "n_mats": 1,
+   "street_segs": 0
+  },
+  {
+   "stem": "GothamCity_Road_v1_Island_1",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9999,
+   "n_cells": 2723,
+   "big_cells": 19,
+   "coverage": 0.6102,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "road_band:3",
+   "n_mats": 3,
+   "street_segs": 2
+  },
+  {
+   "stem": "GothamCity_Road_v2_Island_1",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9999,
+   "n_cells": 3236,
+   "big_cells": 27,
+   "coverage": 0.5712,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "road_band:3",
+   "n_mats": 3,
+   "street_segs": 2
+  },
+  {
+   "stem": "GothamCity_Road_v2_Island_2",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9999,
+   "n_cells": 2558,
+   "big_cells": 14,
+   "coverage": 0.6589,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "road_band:1",
+   "n_mats": 1,
+   "street_segs": 5
+  },
+  {
+   "stem": "GothamCity_asphalt_tile",
+   "arch": "l_gothamcity_tex",
+   "w": 256,
+   "h": 256,
+   "contentA": 1.0,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.534,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "flat:4",
+   "n_mats": 4,
+   "street_segs": 6
+  },
+  {
+   "stem": "GothamCity_bridge2",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.9463,
+   "n_cells": 1,
+   "big_cells": 1,
+   "coverage": 0.8312,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:2",
+   "n_mats": 2,
+   "street_segs": 6
+  },
+  {
+   "stem": "HC_Prop_BillboardRoof_01",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.7237,
+   "n_cells": 41,
+   "big_cells": 12,
+   "coverage": 0.7008,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "billboards:17",
+   "n_mats": 17,
+   "street_segs": 211
+  },
+  {
+   "stem": "HC_Prop_BillboardRoof_Industrial_01",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.7311,
+   "n_cells": 24,
+   "big_cells": 12,
+   "coverage": 0.7114,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "billboards:1",
+   "n_mats": 1,
+   "street_segs": 62
+  },
+  {
+   "stem": "LightMapSampler",
+   "arch": "commons_tex",
+   "w": 32,
+   "h": 32,
+   "contentA": 1.0,
+   "n_cells": 0,
+   "big_cells": 0,
+   "coverage": 0.0,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse",
+    "lightmap"
+   ],
+   "top_families": "building_footprint:3, billboards:2, props_rooftop:2, other:1",
+   "n_mats": 8,
+   "street_segs": 0
+  },
+  {
+   "stem": "StorageBox_D",
+   "arch": "commons_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.4448,
+   "n_cells": 44,
+   "big_cells": 16,
+   "coverage": 0.3992,
+   "type": "atlas_mid",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:2",
+   "n_mats": 2,
+   "street_segs": 0
+  },
+  {
+   "stem": "bridge_1",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9933,
+   "n_cells": 436,
+   "big_cells": 3,
+   "coverage": 0.7441,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:3",
+   "n_mats": 3,
+   "street_segs": 14
+  },
+  {
+   "stem": "bridge_tile",
+   "arch": "l_gothamcity_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.8,
+   "n_cells": 398,
+   "big_cells": 1,
+   "coverage": 0.612,
+   "type": "atlas_dense",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "building_landmark_misc:6",
+   "n_mats": 6,
+   "street_segs": 9
+  },
+  {
+   "stem": "gothamcity_roads_details",
+   "arch": "l_gothamcity_tex",
+   "w": 512,
+   "h": 512,
+   "contentA": 0.995,
+   "n_cells": 42,
+   "big_cells": 1,
+   "coverage": 0.9176,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "road_band:2",
+   "n_mats": 2,
+   "street_segs": 24
+  },
+  {
+   "stem": "trunk",
+   "arch": "commons_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9999,
+   "n_cells": 4,
+   "big_cells": 2,
+   "coverage": 0.4995,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "trees:3",
+   "n_mats": 3,
+   "street_segs": 292
+  },
+  {
+   "stem": "vegetation",
+   "arch": "commons_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 1.0,
+   "n_cells": 199,
+   "big_cells": 27,
+   "coverage": 0.6736,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:3",
+   "n_mats": 3,
+   "street_segs": 0
+  },
+  {
+   "stem": "vegetation_industrial",
+   "arch": "commons_tex",
+   "w": 1024,
+   "h": 1024,
+   "contentA": 0.9997,
+   "n_cells": 378,
+   "big_cells": 54,
+   "coverage": 0.5714,
+   "type": "full_bleed",
+   "roles": [
+    "diffuse"
+   ],
+   "top_families": "other:1",
+   "n_mats": 1,
+   "street_segs": 0
+  }
+ ],
+ "decode_failures": []
+}

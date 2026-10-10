@@ -1,0 +1,55 @@
+
+########## GothamCity
+segments=1517; exact-dup groups=0 covering 0 segments (0.0%); materials=136 (92 with >=2 segs, holding 1473 segs = 97%)
+
+-- scheme random5:
+   +40: acc 0.457 (floor 0.173, +0.285) null 0.055±0.008 z=51.3 [n=1511, 12 classes]
+   v5 : acc 0.679 (floor 0.772, -0.092) null 0.351±0.05 z=6.6 [n=592, 4 classes]
+
+-- scheme by_material:
+   +40: acc 0.139 (floor 0.173, +-0.033) null 0.053±0.01 z=8.3 [n=1511, 12 classes]
+   v5 : acc 0.637 (floor 0.772, -0.135) null 0.338±0.086 z=3.5 [n=592, 4 classes]
+
+-- scheme by_space:
+   +40: acc 0.429 (floor 0.173, +0.257) null 0.053±0.007 z=51.7 [n=1511, 12 classes]
+   v5 : acc 0.679 (floor 0.772, -0.093) null 0.347±0.064 z=5.2 [n=592, 4 classes]
+
+-- scheme dedup_random5 (one representative per exact-dup group; n=1517):
+   +40: acc 0.445 (floor 0.173, +0.273) null 0.054±0.01 z=39.9
+   v5 : acc 0.684 (floor 0.772, -0.088) null 0.357±0.069 z=4.7
+
+-- +40 per-class recall under by_material CV (n>=8 segments, recall reported if seen in >=3 folds):
+   props_street               n= 261 recall=0.038
+   billboards                 n= 183 recall=0.692
+   building_footprint         n= 174 recall=0.172
+   props_rooftop              n= 166 recall=0.012
+   building_residential       n= 113 recall=0.068
+   building_landmark_misc     n= 107 recall=0.294
+   flat                       n=  21 recall=0.3
+
+########## GothamCity_Island2
+segments=1020; exact-dup groups=0 covering 0 segments (0.0%); materials=88 (65 with >=2 segs, holding 997 segs = 98%)
+
+-- scheme random5:
+   +40: acc 0.648 (floor 0.259, +0.389) null 0.066±0.011 z=51.2 [n=1020, 11 classes]
+   v5 : acc 0.7 (floor 0.66, +0.041) null 0.512±0.055 z=3.4 [n=373, 3 classes]
+
+-- scheme by_material:
+   +40: acc 0.094 (floor 0.259, +-0.165) null 0.059±0.011 z=3.2 [n=1020, 11 classes]
+   v5 : acc 0.602 (floor 0.66, -0.057) null 0.508±0.068 z=1.4 [n=373, 3 classes]
+
+-- scheme by_space:
+   +40: acc 0.644 (floor 0.259, +0.385) null 0.059±0.011 z=54.8 [n=1020, 11 classes]
+   v5 : acc 0.688 (floor 0.66, +0.029) null 0.502±0.051 z=3.7 [n=373, 3 classes]
+
+-- scheme dedup_random5 (one representative per exact-dup group; n=1020):
+   +40: acc 0.644 (floor 0.259, +0.385) null 0.065±0.014 z=42.4
+   v5 : acc 0.702 (floor 0.66, +0.042) null 0.508±0.049 z=4.0
+
+-- +40 per-class recall under by_material CV (n>=8 segments, recall reported if seen in >=3 folds):
+   building_footprint         n= 235 recall=0.166
+   props_rooftop              n= 100 recall=0.056
+   building_landmark_misc     n=  48 recall=0.036
+   building_residential       n=  25 recall=0.0
+
+wrote /home/z/my-project/repo/extraction/re/round6_geom_grouped_cv.json + round6_geom_features.json

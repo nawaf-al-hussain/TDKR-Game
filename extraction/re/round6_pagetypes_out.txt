@@ -1,0 +1,38 @@
+unique referenced stems: 146
+
+== PAGE-TYPE SUMMARY (mask_A = alpha<64 | near-black) ==
+   type         pages          contentA   segs  top families
+   atlas_dense     19   0.743 [0.51,0.85]   1145  building_landmark_misc:50, building_footprint:48, props_rooftop:30, building_residential:25, billboards:21
+   atlas_mid        3   0.459 [0.44,0.49]      4  other:3, props_mono_rail:1
+   full_bleed     124   0.982 [0.86,1.00]   1382  building_footprint:206, building_landmark_misc:181, building_residential:173, flat:41, props_rooftop:37
+
+== FAMILY x PAGE-TYPE (diffuse pages, weighted by material count) ==
+   family                  segs  full_blee  atlas_den  atlas_mid   dark_pad  sparse_bl
+   props_street             525         14          5          0          0          0   (pages 19)
+   building_footprint       409        206         47          0          0          0   (pages 253)
+   trees                    292          3          0          0          0          0   (pages 3)
+   props_mono_rail          284          0          8          1          0          0   (pages 9)
+   billboards               273          2         20          0          0          0   (pages 22)
+   props_rooftop            266         27         23          0          0          0   (pages 50)
+   building_landmark_misc   155        181         50          0          0          0   (pages 231)
+   building_residential     138        173         25          0          0          0   (pages 198)
+   coronas                   83          0          3          0          0          0   (pages 3)
+   road_band                 67         13         11          0          0          0   (pages 24)
+   flat                      29         37          6          0          0          0   (pages 43)
+   other                     10         15          1          3          0          0   (pages 19)
+   unbound                    0          0          3          0          0          0   (pages 3)
+
+== dark_pad pages with most street segments bound ==
+== full_bleed pages with most street segments bound ==
+   trunk                                cA=1.000 segs=  292  trees:3
+   GC_Z1_Props_Rooftop                  cA=0.884 segs=  248  props_rooftop:12
+   GC_Footprint_VD_Items                cA=0.951 segs=  229  building_footprint:9
+   GC_Z1_Props_Street_Alpha             cA=0.995 segs=   50  props_street:14
+   GC_Residential_BD_01_Door_01         cA=1.000 segs=   45  building_residential:7
+   GC_Residential_BD_03_roof_01         cA=0.999 segs=   27  building_residential:8
+   GC_Footprint_VD_Floor                cA=0.989 segs=   26  building_footprint:12
+   gothamcity_roads_details             cA=0.995 segs=   24  road_band:2
+   GC_Footprint_VD_Buildings_2          cA=0.997 segs=   23  building_footprint:9
+   GC_Z1_Shops_01                       cA=0.941 segs=   22  building_residential:10
+
+wrote /home/z/my-project/repo/extraction/re/round6_pagetypes.json  (146 pages, 0 decode failures)
