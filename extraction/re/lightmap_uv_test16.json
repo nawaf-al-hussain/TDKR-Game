@@ -1,0 +1,452 @@
+{
+ "GothamCity": {
+  "population_segments": 1092,
+  "population_materials": 123,
+  "results": {
+   "identity": 1.0,
+   "b+d (121,145)": 0.44651024146602264,
+   "a+d (109,145)": 1.0,
+   "c+b (133,121)": 0.5326446187893944,
+   "a+b (109,121)": 0.5326446187893944,
+   "c+d (133,145)": 1.0,
+   "b only (121)": 0.449941682827369,
+   "null_shuffled_bd": {
+    "mean": 0.4943248879962923,
+    "sd": 0.047570304408290784,
+    "max": 0.6053967763530563,
+    "p99": 0.5912729800710644
+   }
+  },
+  "top_materials": [
+   {
+    "m": 74,
+    "n": 210,
+    "name": "tiles_KjsfSXF4YP_ythRDUSLUc",
+    "lm": "BakeGroup_Island1_Roads0.tga",
+    "b": [
+     0.4983,
+     0.3785,
+     0.0
+    ],
+    "d": [
+     0.746,
+     0.6229,
+     0.0
+    ],
+    "inside": 0.5369
+   },
+   {
+    "m": 90,
+    "n": 117,
+    "name": "tiles_KjsfSXF4YP_A0XTaehlb8",
+    "lm": "BakeGroup_Island1_Roads0.tga",
+    "b": [
+     0.3757,
+     0.2524,
+     0.0
+    ],
+    "d": [
+     0.2493,
+     0.7468,
+     0.0
+    ],
+    "inside": 1.0
+   },
+   {
+    "m": 76,
+    "n": 62,
+    "name": "tiles_KjsfSXF4YP_X6hhgnz4Mf",
+    "lm": "BakeGroup_Island1_B0.tga",
+    "b": [
+     15.2467,
+     0.3811,
+     0.0
+    ],
+    "d": [
+     0.4996,
+     0.4359,
+     0.0
+    ],
+    "inside": 0.0115
+   },
+   {
+    "m": 128,
+    "n": 46,
+    "name": "tiles_KjsfSXF4YP_R03U9ph3iH",
+    "lm": "BakeGroup_Island1_A0.tga",
+    "b": [
+     1.3164,
+     0.5317,
+     0.0
+    ],
+    "d": [
+     0.762,
+     0.5543,
+     0.0
+    ],
+    "inside": 0.0
+   },
+   {
+    "m": 178,
+    "n": 43,
+    "name": "Material__69_zHOTJcJwef_iMpIzXoasw",
+    "lm": "BakeGroup_Island1_Roads0.tga",
+    "b": [
+     2.5726,
+     0.5007,
+     0.0
+    ],
+    "d": [
+     0.623,
+     0.622,
+     0.0
+    ],
+    "inside": 0.1353
+   },
+   {
+    "m": 218,
+    "n": 40,
+    "name": "Material__69_zHOTJcJwef_Kos6Ydc0ah",
+    "lm": "BakeGroup_Island1_A0.tga",
+    "b": [
+     0.4975,
+     0.4092,
+     0.0
+    ],
+    "d": [
+     0.8743,
+     0.9324,
+     0.0
+    ],
+    "inside": 0.0
+   },
+   {
+    "m": 28,
+    "n": 34,
+    "name": "tiles_KjsfSXF4YP_FptEIP68v8",
+    "lm": "BakeGroup_Island1_A0.tga",
+    "b": [
+     0.9691,
+     0.2615,
+     0.0
+    ],
+    "d": [
+     0.5,
+     0.437,
+     0.0
+    ],
+    "inside": 0.5267
+   },
+   {
+    "m": 23,
+    "n": 28,
+    "name": "tiles_KjsfSXF4YP_FtysL1Q4GT",
+    "lm": "BakeGroup_Island1_B0.tga",
+    "b": [
+     0.3752,
+     0.5,
+     0.0
+    ],
+    "d": [
+     0.511,
+     0.4831,
+     0.0
+    ],
+    "inside": 1.0
+   },
+   {
+    "m": 46,
+    "n": 27,
+    "name": "tiles_KjsfSXF4YP_0ouihnKJGj",
+    "lm": "BakeGroup_Island1_A0.tga",
+    "b": [
+     0.143,
+     0.306,
+     0.0
+    ],
+    "d": [
+     0.4994,
+     0.6245,
+     0.0
+    ],
+    "inside": 1.0
+   },
+   {
+    "m": 73,
+    "n": 24,
+    "name": "tiles_KjsfSXF4YP_vgEsjieOpx",
+    "lm": "BakeGroup_Island1_Roads0.tga",
+    "b": [
+     -5.6584,
+     1.5223,
+     0.0
+    ],
+    "d": [
+     0.3112,
+     0.2476,
+     0.0
+    ],
+    "inside": 0.0383
+   },
+   {
+    "m": 145,
+    "n": 21,
+    "name": "buildings4_Gp1a83XIdD_EfxVJqn0Hi",
+    "lm": "BakeGroup_Island1_Roads0.tga",
+    "b": [
+     1.1653,
+     0.3998,
+     0.0
+    ],
+    "d": [
+     0.4233,
+     0.2646,
+     0.0
+    ],
+    "inside": 0.4302
+   },
+   {
+    "m": 131,
+    "n": 20,
+    "name": "tiles_KjsfSXF4YP_2JPwKFB81i",
+    "lm": "BakeGroup_Island1_A0.tga",
+    "b": [
+     0.1251,
+     0.4326,
+     0.0
+    ],
+    "d": [
+     0.5,
+     0.4993,
+     0.0
+    ],
+    "inside": 1.0
+   }
+  ]
+ },
+ "GothamCity_Island2": {
+  "population_segments": 658,
+  "population_materials": 81,
+  "results": {
+   "identity": 1.0,
+   "b+d (121,145)": 0.7192267438018642,
+   "a+d (109,145)": 1.0,
+   "c+b (133,121)": 0.6895656455631985,
+   "a+b (109,121)": 0.6895656455631985,
+   "c+d (133,145)": 1.0,
+   "b only (121)": 0.35607599550660474,
+   "null_shuffled_bd": {
+    "mean": 0.47336690247198154,
+    "sd": 0.06285402244109774,
+    "max": 0.6292743025196725,
+    "p99": 0.6085060805977267
+   }
+  },
+  "top_materials": [
+   {
+    "m": 58,
+    "n": 107,
+    "name": "Material__4986_o9omhFFnpl_pCoHnTwzMA",
+    "lm": "BakeGroup_Island2_A0.tga",
+    "b": [
+     0.4243,
+     0.8794,
+     0.0
+    ],
+    "d": [
+     0.4997,
+     0.4998,
+     0.0
+    ],
+    "inside": 0.7626
+   },
+   {
+    "m": 82,
+    "n": 97,
+    "name": "Material__4986_o9omhFFnpl_l0ZgsoPd0M",
+    "lm": "BakeGroup_Island2_Roads0.tga",
+    "b": [
+     0.3757,
+     0.2512,
+     0.0
+    ],
+    "d": [
+     0.2493,
+     0.2494,
+     0.0
+    ],
+    "inside": 1.0
+   },
+   {
+    "m": 50,
+    "n": 80,
+    "name": "Material__4986_o9omhFFnpl_Ku601Va9BB",
+    "lm": "BakeGroup_Island2_Roads0.tga",
+    "b": [
+     0.4983,
+     0.3785,
+     0.0
+    ],
+    "d": [
+     0.6178,
+     0.7479,
+     0.0
+    ],
+    "inside": 0.7665
+   },
+   {
+    "m": 109,
+    "n": 62,
+    "name": "Material__4986_o9omhFFnpl_SAv9mhXDR4",
+    "lm": "BakeGroup_Island2_Roads0.tga",
+    "b": [
+     1.567,
+     0.5001,
+     0.0
+    ],
+    "d": [
+     0.6855,
+     0.8095,
+     0.0
+    ],
+    "inside": 0.3019
+   },
+   {
+    "m": 153,
+    "n": 23,
+    "name": "Material__4217_Yr0f3PRAzF_RpG3MhovsH",
+    "lm": "BakeGroup_Island2_Roads0.tga",
+    "b": [
+     2.547,
+     0.5027,
+     0.0
+    ],
+    "d": [
+     0.125,
+     0.624,
+     0.0
+    ],
+    "inside": 0.1953
+   },
+   {
+    "m": 163,
+    "n": 21,
+    "name": "Material__4217_Yr0f3PRAzF_QuLYUNXTKv",
+    "lm": "BakeGroup_Island2_Roads0.tga",
+    "b": [
+     0.4975,
+     0.4092,
+     0.0
+    ],
+    "d": [
+     0.4018,
+     0.854,
+     0.0
+    ],
+    "inside": 0.4101
+   },
+   {
+    "m": 18,
+    "n": 17,
+    "name": "Material__4225_BktRrvxr08_rHd54Wg8NL",
+    "lm": "BakeGroup_Island2_Roads0.tga",
+    "b": [
+     -1.5007,
+     0.4976,
+     0.0
+    ],
+    "d": [
+     0.7483,
+     0.2486,
+     0.0
+    ],
+    "inside": 0.6053
+   },
+   {
+    "m": 126,
+    "n": 15,
+    "name": "_9_-_Default8_CNX05LBVtV_58OUejld62",
+    "lm": "BakeGroup_Island2_Roads0.tga",
+    "b": [
+     0.4837,
+     0.3761,
+     0.0
+    ],
+    "d": [
+     0.5403,
+     0.4725,
+     0.0
+    ],
+    "inside": 0.9891
+   },
+   {
+    "m": 42,
+    "n": 14,
+    "name": "Material__4986_o9omhFFnpl_bCT79XDtdR",
+    "lm": "BakeGroup_Island2_Landmarks0.tga",
+    "b": [
+     -0.2192,
+     0.5578,
+     0.0
+    ],
+    "d": [
+     0.7494,
+     0.3749,
+     0.0
+    ],
+    "inside": 1.0
+   },
+   {
+    "m": 75,
+    "n": 14,
+    "name": "Material__4986_o9omhFFnpl_vSx7pvtDam",
+    "lm": "BakeGroup_Island2_Landmarks0.tga",
+    "b": [
+     -0.5282,
+     0.5003,
+     0.0
+    ],
+    "d": [
+     0.5074,
+     0.4602,
+     0.0
+    ],
+    "inside": 0.9977
+   },
+   {
+    "m": 37,
+    "n": 12,
+    "name": "Material__4986_o9omhFFnpl_urTVeLZxQh",
+    "lm": "BakeGroup_Island2_Landmarks0.tga",
+    "b": [
+     0.2751,
+     0.5009,
+     0.0
+    ],
+    "d": [
+     0.7494,
+     0.3741,
+     0.0
+    ],
+    "inside": 0.9938
+   },
+   {
+    "m": 67,
+    "n": 10,
+    "name": "Material__4986_o9omhFFnpl_dk7N0SWxx1",
+    "lm": "BakeGroup_Island2_B0.tga",
+    "b": [
+     0.6147,
+     0.4771,
+     0.0
+    ],
+    "d": [
+     0.6833,
+     0.4053,
+     0.0
+    ],
+    "inside": 0.3328
+   }
+  ]
+ }
+}

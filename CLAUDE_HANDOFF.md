@@ -1,14 +1,14 @@
 # CLAUDE_HANDOFF.md — problem brief for an outside AI collaborator
 
-*Written 2026-10-09, updated after session 15. Everything below is verifiable
+*Written 2026-10-09, updated after session 16. Everything below is verifiable
 in this public repo: https://github.com/nawaf-al-hussain/TDKR-Game — live
 viewer: https://nawaf-al-hussain.github.io/TDKR-Game/*
 
-## 0. TL;DR — UPDATED AFTER SESSION 15 (same day)
+## 0. TL;DR — UPDATED AFTER SESSION 16 (same day)
 
 We are reverse-engineering Gameloft's delisted mobile game **The Dark Knight
 Rises (2012)** to rebuild its open-world Gotham City in a browser 3D viewer.
-Over 14 research sessions we cracked the container formats, geometry, texture
+Over 16 research sessions we cracked the container formats, geometry, texture
 decoding, material database, the bake/UV system, and the level placement
 records.
 
@@ -72,33 +72,49 @@ records.
     style.css (it is self-contained inline styles — style.css is a root
     sentinel), and manifest v14 carried stale per-GLB byte sizes.
 
-**Blocker B — batch_info.bin LAYOUT SOLVED this session (value semantics
-still open):**
+**Blocker B — SOLVED IN SESSION 16 (street segment→material + lightmap UVs
++ batch_info semantics):**
 
-- `batch_info.bin = u32(197) + M × 197-byte records`, **one record per
-  material**: M = 307 (island1) / 196 (island2) = the EXACT material counts
-  of the zones' materials bdae (`source.dae` library_materials).
-- Record m's **first byte = m** (material index; 307/307 and 196/196,
-  wrapping mod 256).
-- The leading u32 **197 = the record stride in bytes**, NOT a record count —
-  and the SAME 197 is the last u32 of `stream_info.bin` (which is
-  `[6 × f32 streaming bbox][u32 X][u32 197]`; X = 234,466 / 303,832 open).
-- Inside a record: 196 slots, 0xFF in 13.4% (both islands), 0x00 in 68%,
-  values 0..254 saturating; 12–13-long ff runs; small f32 groups
-  (UV-rect-like) at in-record offsets ~75–115.
-- Full evidence + hexdumps + material name order:
-  **`extraction/re/batch_info_evidence14.md`** (plus
-  `batch_info_material_names14.txt`). This is where we would most like
-  your help: pin the slot/value semantics.
-
-**Also still open:**
-
-1. **Hero-unit placements** (bridges/monorail/railway): names ARE plain
-   interned strings in the lvc; the main (non-reflection) units are placed
-   by the GENERIC object path (`CGameObjectManager::CreateObject @0x36774c`,
-   component factory loop) — read order still to decode.
-2. Secondary: ground-material split (roads/grass one planar unit) and
-   near-field geometry density.
+- **Descriptor +40 IS the per-segment material index into the zone's
+  compiled material array** — proven four ways: (1) the compiled
+  `little_endian_quantized.bdae` render-record array is **self-indexing**
+  (`selfidx == position`, 307/307 and 196/196); (2) class-purity 76% with
+  spatial autocorrelation excluded (group spreads 773–1334u); (3) huge
+  enrichment stats (+40=11 → exporter-"road" class 43% vs 8.3% base);
+  (4) **direct UV-sampled renders**: a lamp row, the monorail, a railroad
+  curve, trees, additive billboards all render coherent content under their
+  +40 textures.
+- **The session-10/11 v5 exporter bindings were DISQUALIFIED by the
+  prescribed agreement test**: exact agreement 1/593 and 4/374 (null-level)
+  under library_materials order AND alphabetical order AND 200-shuffle null.
+  The band-atlas "structural" binding was self-fulfilling (its smoking gun:
+  a street-lamp row bound to a road-crossings page). Wording correction to
+  session 15: +40=74 is NOT "the Roads0 material" — m74 = trunk.tga
+  DiffuseMap + BakeGroup_Island1_Roads0 LightMap = the street-tree material.
+- **Compiled bdae material record (36 B)**: `[name_ptr][name_ptr][0][
+  effect_ptr][N][sampler_list_ptr][selfidx][0xffffffff][0x80]`; sampler
+  list = N × 24 B `[name_ptr][pad][type][1][v2][v2+4]`; type-13 value block
+  `[1][so_ptr][255×4][texIdx]` (255 = UNBOUND); type-7 = LightMapAtlas vec4.
+  Image table = 12 B `[imageN_ptr ×2][file_ptr]`, extensions case-
+  insensitive (`.TGA` truncated our first walk — beware). Runtime
+  DiffuseMap vs source.dae agree 306/307 and 195/196.
+  Table: `extraction/re/runtime_mats_{island}.json`.
+- **Street lightmap UV chain SOLVED**: stride-24 street verts carry packed
+  Coord1 in **vertex word 3**; batch_info record slots are per-technique,
+  and the LightMapDC slot pair is **a @109 (scale) + d @145 (offset)**:
+  `pageUV = w3_uv × a.xy + d.xy` — 100.0000% inside [0,1]² on both islands
+  (577,017 / 469,133 vertices, zero materials <95%), coherent per-material
+  bake-tile rects (some < 0.05 area). The reviewer-prescribed b+d-on-uv0
+  test FAILED (44.7%/71.9% vs null ~49%) and its failure is what exposed
+  w3. collada sampler scaleoffsets are all (0,0,0,0) placeholders — the
+  runtime fills them from batch_info (CDoubleBufferedDynamicBatchMesh).
+- **+36 SOLVED**: Spearman(+36, dataOff stream order) = +0.998 / +0.988,
+  ~0 vs bih grid order → **the segment's global stream index across all
+  LOD levels** (ranges 0..3194 / 26..2191 exceed the visible-LOD counts).
+- **Exporter v16 shipped**: all street segments bound by +40 with real
+  per-vertex TEXCOORD_1 (99.5% / 100% engine-true; v15 was ~61% bound and
+  partly wrong). Viewer got a `USE_UV1` guard (three r152+ auto-declares
+  uv1). Deployed as **v16**; smoke-tested.
 
 ## 1. Project context
 
@@ -124,22 +140,21 @@ ZIP_SPLIT rgb/alpha pairs) → `extraction/scripts/export_city.py` builds
 textured GLBs → `gh-pages/models/manifest.json` (tiers: street / skyline /
 hero / fp / district / low) → three.js viewer `gh-pages/app.js`.
 
-## 3. What the user sees TODAY (v14, deployed and smoke-tested)
+## 3. What the user sees TODAY (v16, deployed and smoke-tested)
 
-- **Boots**: street tier (21 GLBs, world-placed, engine-correct road/grass/
-  prop materials — ~600 near-tier building segments still dark, blocker B)
-  **+ skyline tier (5 island-1 LongDist GLBs at the engine's own
-  TRS (-730,-1250,0))**.
-- Island-2 skyline units removed (no main-level record; they belonged to the
-  separate island-2 level and were floating in the wrong place). The
-  island-2 hero units (monorail/railway/small-bridge) remain as OFF-by-default
-  research toggles (local frames, generic-object records not yet decoded).
-- **Deploy = gh-pages branch @ v14, verified by
-  `extraction/scripts/site_smoke_test.py` (53/53 PASS)**. The gh-pages
-  branch had gone stale (v13 served while main held v14) — the smoke test
-  now guards every deploy. Hero-tier `GC_Railway_Island2_LongDist` overlaps
-  the island-1 area by 21k u² at local coords; it stays hidden by default
-  until its placement record is decoded.
+- **Boots**: street tier (21 GLBs, world-placed, **engine-true +40 material
+  bindings with per-vertex lightmap UVs** — the ~600 dark near-tier
+  buildings are GONE: buildings now bind their footprint/shops/walls
+  diffuse atlases × their per-material bake tiles; only 8/2,537 segments
+  remain unbound) **+ skyline tier (5 island-1 LongDist GLBs at the
+  engine's own TRS (-730,-1250,0))**.
+- The street tier now renders the engine's LightMapDC formula exactly:
+  `Diffuse(uv0) × LightMap(pageUV=w3·a+d) × 2` per material.
+- Island-2 skyline units removed (no main-level record; they belonged to
+  the separate island-2 level). The island-2 hero units (monorail/railway/
+  small-bridge) remain OFF-by-default research toggles.
+- **Deploy = gh-pages branch @ v16, verified by
+  `extraction/scripts/site_smoke_test.py` + `site_release_check.py`**.
 
 ## 4. The lvc DICT object stream — record-type dictionary (session 13, all from disasm)
 
@@ -178,57 +193,52 @@ each with a real world TRS), 4 bake-group templates. Full walk outputs:
 
 ## 5. THE BLOCKERS (all knowns, all unknowns)
 
-### B. Street segment→material link — **SOLVED in session 15** (lod descriptor +40); batch_info = per-material parameter block
+### B. Street segment→material link + lightmap UVs — **SOLVED in session 16**
 
-**What we need**: for each segment of the streamed street geometry, the
-material index into the zone material DB (cracked in session 10 — now
-counted exactly: **307 island-1 / 196 island-2 materials**, from
-`source.dae` in each `<island>_materials.bdae`).
+**What we needed**: for each segment of the streamed street geometry, the
+material index into the zone material DB (307 island-1 / 196 island-2
+materials), plus the lightmap UV convention. **Both are now solved at the
+data level and shipped in exporter v16** — see §0 Blocker B for the full
+proof chain. Summary:
 
-**SOLVED (session 15): the segment descriptor's u32 at +40 IS the material
-index.** All 1,526 island-1 segments: 139 distinct values, range 0..305 <
-307; all 1,020 island-2 segments: 88 distinct, 4..194 < 196.
-Cross-validation: the top value (74, 210 segments) resolves to a material
-whose LightMap is `BakeGroup_Island1_Roads0.tga`; next values resolve to
-Street/Railroad props — height-bucketed distributions are semantically
-correct. Script: `extraction/re/lod_segfield15.py`; per-material
-DiffuseMap/LightMap table: `extraction/re/mat_tex_{island}.json`
-(from `source.dae` setparam→surface→image chains).
+- descriptor **+40 = material index** into the compiled bdae render-record
+  array (self-indexing, order == library_materials; runtime tables:
+  `extraction/re/runtime_mats_{island}.json`); descriptor **+36 = global
+  stream index across all LOD levels** (Spearman +0.998 vs dataOff order).
+- **vertex word 3 (stride-24) = packed Coord1**; batch_info slots
+  **a @109 (scale) / d @145 (offset)** give `pageUV = w3·a.xy + d.xy`
+  (100.0000% in-page, both islands). The b/c slots are other techniques'
+  params; the earlier "b=(scaleU,scaleV)" reading was off by one slot.
+- The v5 band-atlas structural binding is RETIRED — the agreement test
+  (prescribed round 3) showed it agreed with the engine chain at null
+  level; render probes show it was binding lamp rows to crossing pages.
+- batch_info.bin remains `u32(197) + M × 197-byte records`, record m
+  starts with byte m; the four vec3 f32 groups @109/121/133/145 are
+  per-technique UV parameter slots (a=Coord1 scale, d=Coord1 offset for
+  the LM path; b/c = Animated-scroll-class slots, still open);
+  rec 45–108 u16 array and stream_info X still open.
 
-**batch_info.bin (layout from session 14, semantics narrowed in 15) =**
-`u32(197) + M × 197-byte records`, **one record per material — a fixed
-template parameter block, NOT the segment→material map** (that lives in
-the descriptor +40):
+**Remaining unknowns (updated in 16):**
 
-- bytes 0–1: material index (u16 LE); rec 3/4: {1,255}/{2,255};
-- two 0xff sentinel regions (rec 5–16 and rec 20/21–31/32 — the "three
-  aligned -1 words" ×2);
-- rec 45–108: small-value u16-ish array (≤28; declaration-like, open);
-- **rec 109–156: four 12-byte vec3 f32 groups** (LE): per-technique UV
-  scale/offset-like params (Animated: ~1e-5 scroll pairs;
-  2Sided/Default/Reflection: (scaleU,scaleV) e.g. (42.2,0.25),
-  (-2.03,-1.04) + (offsetU,offsetV) ∈ [0,1]; ~unique per material);
-  BE decode rejected; f16 rejected.
-- Engine chain (symtab-true): CLevelStreaming_DB::Load @0x3f6dfc maps
-  zip members → this+{0xf0 stream_info, 0xf4 bih_data, 0xf8 bih_struct,
-  0xfc batch_info, 0x100 materials.bdae, 0x104 lod_table, 0x108 lod_data,
-  0x10c lod_selector}; **CDoubleBufferedDynamicBatchMesh ctor @0x45c750
-  consumes (stream_info, batch_info, materials)**; getBatchMaterial's
-  uint arg is UNUSED — SBatch+0x8 already holds the CMaterial.
-  Session-14's "helpers" 0x3dac58/0x42e2bc/0x455e2c were
-  misattributed (Application::GetInstance / CHUDDisplay::HideHint /
-  TrackingManager::AddEvent) — corrected.
-- Side result: **bih_struct = 100×100×1 regular grid**: [aabbox3d][100]
-  [100][1][10001×u32 LE offsets → BIH payload] (CRegularGridStreaming
-  ctor @0x45db7c).
+- the **Overbright** term (`LightMapColor = LM*2 + vec4(Overbright)`) —
+  find the per-technique param default; NormalSpecOverbright materials
+  suggest it matters. Current render assumes 0.
+- batch_info slots b @121 / c @133 (per-technique params for Animated
+  scroll and friends) and the u16 array (rec 45–108); stream_info X
+  (234,466 / 303,832).
+- The exact runtime role of big_endian_quantized.bdae (we read the LE one;
+  ARM Android is LE, contents agree with source.dae at 99.7%).
 
-**Remaining unknowns:** the exact meaning of each vec3 group per
-technique, the u16 array, stream_info X (234,466/303,832), descriptor
-+36 (0..3772, near-unique per segment). The stream-name table @0xb40704
-has NO absolute pointers in the whole image (literal scan, movw/movt scan,
-reloc scan all empty) — it is reached via a GOT-relative thunk with a
-`rsb r1, r1, #0xB4` backwards index, so string-xref hunting is a dead
-end; the enum-index code path in Load is the way in (done, §above).
+**Also still open:**
+
+1. **Hero-unit placements** (bridges/monorail/railway): names ARE plain
+   interned strings in the lvc; the main (non-reflection) units are placed
+   by the GENERIC object path (`CGameObjectManager::CreateObject @0x36774c`,
+   component factory loop) — read order still to decode.
+2. Secondary: ground-material split — the streamed tier has no park-floor
+   ground beyond what +40 binds; the big ground planes may be the separate
+   GC_City_Plane unit (the v15 band-atlas look may have been papering over
+   this).
 
 ### Hero units (secondary)
 
@@ -275,20 +285,23 @@ python3 extraction/scripts/export_city.py --dry
 
 ## 8. Concrete asks (ranked)
 
-1. **batch_info.bin value semantics** (§5B): the layout is solved
-   (`u32 197 + M × 197-byte records`, record m starts with byte m; M =
-   material count). What are the 196 slots (fixed engine batch/LOD pool?),
-   and what does a slot byte mean (0x00 68%, 0xFF 13.4% in 12–13 runs,
-   values saturating at 254, f32 groups at offsets 75–115)? Evidence pack:
-   `extraction/re/batch_info_evidence14.md`.
-2. **Generic object records** (CreateObject component loop): read order for
+1. **Overbright** (`LightMapColor = LM*2 + vec4(Overbright)`): the street
+   tier now renders engine-exact with Overbright = 0 assumed. Where does
+   the engine take the Overbright uniform from (effect params? technique
+   `NormalSpecOverbright`?) and what is its shipped value for the zone
+   levels? The current city is plausible but possibly darker than the game.
+2. **batch_info leftover slots**: b @121 / c @133 (per-technique params —
+   Animated scroll?), the u16 array (rec 45–108), stream_info X
+   (234,466 / 303,832). Layout + the LM-relevant slots are solved (§5B);
+   these are refinements, nothing blocks the viewer.
+3. **Generic object records** (CreateObject component loop): read order for
    the non-special typeIds so the hero units (bridges/monorail/railway)
    get their world TRSs.
-3. Sanity checks welcome on the v14 skyline placement — with the ZNCC
-   retraction in mind, the load-bearing evidence is the engine record +
-   the per-prim centroid correspondence (`extraction/re/skyline_verify14.json`).
-4. Anything that looks wrong in the deployed pipeline that we've gone blind
-   to after 14 sessions of fixes (fresh eyes welcome).
+4. Sanity checks welcome on the v16 street bindings and the v14 skyline
+   placement (`extraction/re/agreement_test16.json`,
+   `runtime_mats_{island}.json`, `skyline_verify14.json`).
+5. Anything that looks wrong in the deployed pipeline that we've gone blind
+   to after 16 sessions of fixes (fresh eyes welcome).
 
 ## 9. Do-not-re-suggest list (all fixed and verified)
 
@@ -317,3 +330,21 @@ python3 extraction/scripts/export_city.py --dry
   the layout is `u32(197) + M × 197 B`, one record per material, record m
   starting with byte m. Any interpretation must reproduce
   `body[197*m] == m` for all m.
+- **batch_info slot letters as fixed meanings** — the four vec3 groups
+  are PER-TECHNIQUE slots; for the street LM path the pair is
+  **a @109 (scale) + d @145 (offset)**, not "b = scale, d = offset".
+- **batch_info b/d as a transform of uv0** — the reviewer-prescribed
+  test failed (44.7%/71.9% vs null ~49%); the base is **vertex word 3**
+  (packed Coord1), not the diffuse uv0. Identity-on-uv0 trivially lands
+  in-page and proves nothing.
+- **The v5 structural band-atlas binding as ground truth** — retired in
+  session 16 (agreement test null-level; render probes show lamp rows
+  bound to crossing pages). Street bindings come from descriptor +40.
+- **"74 = the Roads0 material" (session-15 wording)** — m74 = trunk.tga
+  diffuse + Roads0 LightMap (street trees). Roads0 is its LIGHTMAP page.
+- **+36 as a building/batch id or bih-grid order** — it is the segment's
+  global stream index (Spearman +0.998 vs dataOff order; 0 correlation
+  with grid order).
+- **Reading the compiled bdae image table case-sensitively** — some image
+  files end `.TGA`; a case-sensitive walk silently truncates the table
+  (cost us tex255 ghosts until fixed).
