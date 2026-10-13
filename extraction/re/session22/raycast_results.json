@@ -1,0 +1,12 @@
+{
+ "camA": {
+  "hit": 0.1458,
+  "ground_hits": 0.1844,
+  "ground_void": 0.8156
+ },
+ "camB": {
+  "hit": 0.0444,
+  "same_material": 0.0
+ },
+ "note": "cameras reconstructed; same-camera identity with session-21 unprovable"
+}

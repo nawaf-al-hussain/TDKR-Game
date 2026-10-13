@@ -1,0 +1,20 @@
+{
+ "root": "staged_fixed",
+ "verdict": "PASS",
+ "stream_complete": "26/26",
+ "stream_total_all": "26/40",
+ "fingerprint": 0.994,
+ "spatial": {
+  "mean": 16.03209114074707,
+  "near_black": 0.8116525607638889,
+  "quads": {
+   "TL": 9.722807884216309,
+   "TR": 8.960173606872559,
+   "BL": 29.00458335876465,
+   "BR": 16.440797805786133
+  },
+  "lr_asymmetry": 0.416
+ },
+ "reasons": [],
+ "page_errors": []
+}

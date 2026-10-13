@@ -1,0 +1,20 @@
+{
+ "root": "staged_live",
+ "verdict": "FAIL",
+ "stream_complete": "21/26",
+ "stream_total_all": "21/40",
+ "fingerprint": null,
+ "spatial": {
+  "mean": 12.78309440612793,
+  "near_black": 0.8465006510416667,
+  "quads": {
+   "TL": 9.212634086608887,
+   "TR": 8.960108757019043,
+   "BL": 16.64815902709961,
+   "BR": 16.31147575378418
+  },
+  "lr_asymmetry": 0.023
+ },
+ "reasons": [],
+ "page_errors": []
+}

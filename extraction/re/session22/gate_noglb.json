@@ -1,0 +1,22 @@
+{
+ "root": "/home/z/my-project/work/staging/staged_noglb",
+ "verdict": "FAIL",
+ "stream_complete": "25/26",
+ "stream_total_all": "25/40",
+ "fingerprint": null,
+ "spatial": {
+  "mean": 16.751113891601562,
+  "near_black": 0.8006184895833334,
+  "quads": {
+   "TL": 11.392812728881836,
+   "TR": 9.831319808959961,
+   "BL": 32.995296478271484,
+   "BR": 12.785025596618652
+  },
+  "lr_asymmetry": 0.65
+ },
+ "reasons": [
+  "left/right asymmetry 0.65 > 0.6"
+ ],
+ "page_errors": []
+}

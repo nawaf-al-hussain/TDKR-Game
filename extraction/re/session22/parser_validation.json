@@ -1,0 +1,14 @@
+{
+ "GothamCity": {
+  "records": 307,
+  "pair_mismatches": 0,
+  "K_slot_mismatch_records": [],
+  "tail_overflow": []
+ },
+ "GothamCity_Island2": {
+  "records": 196,
+  "pair_mismatches": 0,
+  "K_slot_mismatch_records": [],
+  "tail_overflow": []
+ }
+}

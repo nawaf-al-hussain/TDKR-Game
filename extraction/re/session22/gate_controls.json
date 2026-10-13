@@ -1,0 +1,46 @@
+{
+ "black": {
+  "ok": false,
+  "mean": 0.0,
+  "asym": 0.0,
+  "reasons": [
+   "mean luminance 0.00 < 8.0",
+   "near-black fraction 1.000 > 0.97"
+  ]
+ },
+ "half-black (top)": {
+  "ok": false,
+  "mean": 0.25,
+  "asym": 0.0,
+  "reasons": [
+   "mean luminance 0.25 < 8.0",
+   "near-black fraction 1.000 > 0.97"
+  ]
+ },
+ "right-half-dim @ mean 10": {
+  "ok": false,
+  "mean": 10.0,
+  "asym": 1.9,
+  "reasons": [
+   "quadrant TR mean 0.50 < 4.0",
+   "quadrant BR mean 0.50 < 4.0"
+  ]
+ },
+ "right-half-dim @ mean 3": {
+  "ok": false,
+  "mean": 3.0,
+  "asym": 1.667,
+  "reasons": [
+   "mean luminance 3.00 < 8.0",
+   "near-black fraction 1.000 > 0.97"
+  ]
+ },
+ "mid-load uniform (mean 12.8)": {
+  "ok": false,
+  "mean": 12.8,
+  "asym": 0.0,
+  "reasons": [
+   "near-black fraction 0.000 < 0.5 (no night-sky structure \u2014 uniform/mid-load frame)"
+  ]
+ }
+}
