@@ -1,0 +1,20 @@
+{
+ "root": "/home/z/my-project/work/ctrl_nosky",
+ "verdict": "FAIL",
+ "stream_complete": "21/26",
+ "stream_total_all": "21/40",
+ "fingerprint": -0.044,
+ "spatial": {
+  "mean": 12.737141609191895,
+  "near_black": 0.8464984809027778,
+  "quads": {
+   "TL": 9.212087631225586,
+   "TR": 8.950629234313965,
+   "BL": 16.531185150146484,
+   "BR": 16.25466537475586
+  },
+  "lr_asymmetry": 0.021
+ },
+ "reasons": [],
+ "page_errors": []
+}

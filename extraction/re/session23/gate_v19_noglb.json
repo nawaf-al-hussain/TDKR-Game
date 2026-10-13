@@ -1,0 +1,22 @@
+{
+ "root": "/home/z/my-project/work/ctrl_noglb",
+ "verdict": "FAIL",
+ "stream_complete": "5/26",
+ "stream_total_all": "5/40",
+ "fingerprint": -0.071,
+ "spatial": {
+  "mean": 10.226249694824219,
+  "near_black": 0.8941569010416667,
+  "quads": {
+   "TL": 8.896206855773926,
+   "TR": 6.744600772857666,
+   "BL": 18.921878814697266,
+   "BR": 6.342313289642334
+  },
+  "lr_asymmetry": 0.72
+ },
+ "reasons": [
+  "left/right asymmetry 0.72 > 0.6"
+ ],
+ "page_errors": []
+}

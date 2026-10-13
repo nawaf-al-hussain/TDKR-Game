@@ -1,0 +1,19 @@
+{
+ "a_selfreturn": "0/100",
+ "b_selfreturn": "0/100",
+ "c_frac": 0.0,
+ "c1_analytic": "278/278",
+ "c2_synthetic": {
+  "nearest": true,
+  "far_only": true,
+  "double_sided": true
+ },
+ "c3_blocker_taxonomy": {
+  "coplanar_neighbor": 71,
+  "giant_tri": 378,
+  "other": 107
+ },
+ "certified": true,
+ "n_tris": 785053,
+ "n_verts": 651431
+}

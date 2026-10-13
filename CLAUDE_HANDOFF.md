@@ -476,7 +476,7 @@ python3 extraction/scripts/export_city.py --dry
 
 ---
 
-## SESSION 22 (round 12) — 2026-10-13 — **PUSH PENDING: everything below is LOCAL ONLY**
+## SESSION 22 (round 12) — 2026-10-13 — **PUSHED 2026-10-13 (session 23): main @ 7e96326 and gh-pages-staged @ c7f73c9 are on the remote; LIVE gh-pages REMAINS v17 @ f22b098 until the user merges gh-pages-staged. Gate results in this section: v18-staged PASS 26/26 vs v17-live FAIL 21/26.**
 
 **State**: sandbox was reset AGAIN (sixth round running); nothing since v17
 has reached the remote. Remote heads: main @ `3ae66a2`, gh-pages @ `f22b098`
@@ -595,3 +595,79 @@ near-black/void remains OPEN; "road-family triangles exist and are
 intersected" stands (m76/Roads0 42% of ground hits).
 
 **Claim status changes (rounds 7-11)**: see RE_NOTES_session22.md §7.
+
+---
+
+## SESSION 23 (round 13) — 2026-10-13 — **main @ <see commit> pushed; gh-pages-staged advanced with v19 (engine-chain A/B, default pixels unchanged); LIVE gh-pages REMAINS v17 @ f22b098 — v19 is staged, not live**
+
+**State recovery**: sandbox was NOT reset this round (previous disk still
+materializing at start). Session-22 bundles verified and fetched:
+main_s22_inc.bundle -> 7e96326 ✓, ghpages_staged_s22.bundle -> c7f73c9 ✓.
+**First successful push in 7 rounds** (user supplied a PAT): main 3ae66a2 ->
+7e96326 and gh-pages-staged -> new remote branch @ c7f73c9. Live gh-pages
+NOT touched (ground rule 7: live is v17 until the user decides).
+
+**T1 diffuse-channel test of the engine chain** (scripts/t1_diffuse.py,
+t1_class42.py): v17's uv0 is words[:,4] — for (4,1)/(3,1) records that is
+Normal/Color0, i.e. STRUCTURALLY INVALID as a diffuse uv; the engine chain
+(w3_raw*s109+s121) is valid for all classes. Enrichment (permuted-param
+null K=100) is weakly powered (most city diffuse textures are near-fully
+content -> insensitive); strongest pro-engine signal: 8/10 BillboardRoof_01
+(4,2) materials at enrichment 1.36-1.46 on BOTH islands (null 0.99+/-0.19);
+4 dark-cell anomalies (m86/m128 isl1, m13/m5 (4,1) tint constants)
+UNEXPLAINED. Atlas-cell containment: engine at permuted-null (z -0.32 /
++0.22) — INSENSITIVE; v17's higher rate is a footprint-size artifact.
+Texel density (the decisive test): engine roads 85-96 texel-u/m, m97/
+Concrete_02 512px worked example = 52 repeats / 136.7m = 195.8 texel-u/m
+(~5mm/texel); v17 = 3.7 texel-u/m (~27cm/texel, 10x too coarse; degenerate
+0.0 on (4,1) roofs; 251 on props). Counts: isl1 125/134 materials scale!=1,
+1484 segments; isl2 83/88, 984.
+
+**T2 staged A/B (?chain=engine)**: export_zone19.py adds TEXCOORD_2/3
+(engine Coord0/Coord1, per-descriptor field selection; (0,0) when no
+Coord1 stream) with v17-parity default uv0/uv1; app.js swaps uv<-uv2,
+uv1<-uv3 + RepeatWrapping under ?chain=engine (three r160 maps them
+natively). Manifest v19, 21 street GLBs 52.6->72.3MB. Default render
+pixel-identical (gate fingerprint 0.994 vs v18 ref). A/B renders (block0,
+plaza; visual, unquantified): v17's flat cyan wash replaced by coherent
+bake structure under the engine chain — engine looks BETTER. Numeric
+lightmap stats comparable (isl1 mean 44.3 vs 44.1). RECOMMENDATION: make
+the engine chain the default after user review; NOT done (per instruction).
+Stride-28 ((5,2)) segments remain unshipped in v17 AND v19 (~60 segments;
+documented gap).
+
+**T3 raycaster rebuilt + certified** (raycast_t3_v2.py): double-sided MT,
+grid+DDA, giant-tri global list, exact z-window culling; 640x360 full-frame
+(half pitch; giant-tri pollution), ground-third 76,800 rays/camera.
+CERTIFIED at algorithm level: (c1) analytic 278/278 exact t=5;
+(c2) synthetic nearest/far-only/double-sided PASS. The SPECIFIED in-archive
+controls are UNSATISFIABLE on this archive: (a)/(b) self-return at +40u
+0/100 — the archive contains 5,108 giant overhanging wall tris (m40=11,
+extents to 600u) caging the city (worked example in results JSON);
+(c) two-sided centroid rays 0/278 same-triangle (taxonomy: 71 coplanar
+strip neighbors + 377 giant tris + 107 other geometry).
+Per-camera first-hits (caveat: first-hit = depth-buffer view):
+block0 hit 1.000 void 0.000 (m11 88.1%, m74 10.9%; heights 12.4/83.1);
+plaza hit 1.000 void 0.000 (m11 57.4%, m76 13.7%, m73 12.1%, m14 11.3%);
+roadtop nadir hit 1.000 (m76 63.2% at v0-height ~83u = an ELEVATED deck;
+m11 36.8%).
+**RETRACTED (round-11/12): "street floor renders near-black / void ~80%"**
+— method artifact of the failed-control raycaster. Round-12 "archive floor
+is sparse" DOWNGRADED to unestablished. Slab coverage (+40 value 34/35,
+GothamCity_low): vacuous at these cameras (empty miss set); low-archive
+stride misparse still OPEN. Viewer LOD swap: low tier is manual; engine
+swap distance not RE'd — OPEN.
+
+**T4 skyline/v19 gates**: gate v2 on v19-staged PASS 26/26 fp 0.994;
+controls all FAIL correctly (black, half-black, right-dim@10, right-dim@3,
+mid-load uniform, street-GLB removal 5/26 fp -0.071, NEW skyline-GLB
+removal 21/26 — reproduces the live-v17 signature; fingerprint is
+basis-dependent: -0.044 vs stored ref here, 0.816 screenshot-vs-screenshot
+in session 22 — stream-complete is the deterministic detector). Boot GLB
+list = exactly 21 street + 5 island-1 LongDist skyline; NO island-2
+LongDist at boot. Skyline placement still rests solely on 0x14051.
+
+**Session-22 file corruption note**: extraction/re/session22/batch_parser.py
+(main()) and raycast_t3.py were committed with mangled syntax; their RESULT
+JSONs are intact and were re-validated this session (parser 503/503 vs
+harness). Use extraction/re/session23/ scripts instead.

@@ -1,0 +1,20 @@
+{
+ "root": "/home/z/my-project/work/staged_wt",
+ "verdict": "PASS",
+ "stream_complete": "26/26",
+ "stream_total_all": "26/40",
+ "fingerprint": 0.994,
+ "spatial": {
+  "mean": 15.979361534118652,
+  "near_black": 0.8117664930555556,
+  "quads": {
+   "TL": 9.724149703979492,
+   "TR": 8.942522048950195,
+   "BL": 28.876453399658203,
+   "BR": 16.37432289123535
+  },
+  "lr_asymmetry": 0.416
+ },
+ "reasons": [],
+ "page_errors": []
+}
