@@ -473,3 +473,125 @@ python3 extraction/scripts/export_city.py --dry
 - **Reading the compiled bdae image table case-sensitively** — some image
   files end `.TGA`; a case-sensitive walk silently truncates the table
   (cost us tex255 ghosts until fixed).
+
+---
+
+## SESSION 22 (round 12) — 2026-10-13 — **PUSH PENDING: everything below is LOCAL ONLY**
+
+**State**: sandbox was reset AGAIN (sixth round running); nothing since v17
+has reached the remote. Remote heads: main @ `3ae66a2`, gh-pages @ `f22b098`
+(v17 live). This session was rebuilt from the round-12 briefing + the
+session-18 repo state; sessions 19-21 artifacts were re-derived.
+
+**DEPLOYED THIS SESSION (v18, via deploy_site.py, dry-run first)**:
+- **Skyline boot fix re-applied** (12-line app.js change, lost in the
+  session-20 reset): the skyline tier was `enabled` at boot (v14 policy)
+  but the boot loader only streamed the street tier — the 5 island-1
+  LongDist GLBs never loaded (v14-v17). Fix streams skyline right after
+  street. Manifest v18, cache-bust v18. **NOT PUSHED** — gh-pages-staged
+  @ c7f73c9 local; the user must push.
+- **Gate v2** (`extraction/scripts/gate_v2.py` — NEW; replaces
+  viewer_luminance_gate.py as the pre-deploy gate): stream-complete from
+  real network responses (boot-enabled = street+skyline = 26 GLBs) +
+  fingerprint (128x72 luminance r vs stored reference) + spatial checks
+  (mean>=8, near-black in [0.5, 0.97] — the LOWER bound is new: catches
+  uniform mid-load frames — quadrant floor 4, ratio 12, L/R asym <= 0.6).
+  Results (labelled by version): **v18 staged/deployed tree: PASS,
+  stream 26/26, fp 0.994, asym 0.373-0.416. v17 live copy: FAIL,
+  stream 21/26** (mean luminance 12.78 = the calibrated v17 default view).
+  Synthetic controls (all FAIL correctly): black, half-black,
+  right-half-dim @ mean 10, right-half-dim @ mean 3, mid-load uniform
+  (caught by the new night-floor check), street-GLB removal (25/26).
+  **The fingerprint alone would NOT have caught the missing skyline**
+  (r(staged, live) = 0.816 >= 0.5) — it detects drift, not correctness;
+  skyline placement still rests solely on engine record 0x14051.
+
+**batch_info.bin layout — NOW ENGINE-PROVEN end-to-end** (Unicorn emulation
+of loadHeadersAndSkipData @0x8e1d34 [symtab-true; ghidra table's 0x8f1d34
+is a shifted export] over all 503 records, 0 errors; pure-Python parser
+cross-validated byte-exact):
+`[u16 self][30 attr bytes = attrId->pairbuf-slot map, 0xff=absent][u8]
+[u32le N][N x 12B desc {u32 byteOff; u16 attrId; u16 f2(type); u16 f3;
+u16 stride}][(K+1) x 24B pair (vec3f scale, vec3f offset) — SCALE FIRST]
+[u32 X][seek X*desc0.stride][24B tail {t0, kind=1, count, ...}]`.
+K = popcount(mask & 0xFFFE) (attrs 1..15 only; Normal=16/Color0=17 get no
+pair) — K comes from `CVertexStreams::allocate` -> ctor stores it at +0xc:
+**engine-derived, not harness-provided** (the T3 circularity worry is
+closed). Pair slot j <-> descriptor j (slot0 = position = zeros). Attr
+registry (string table @0xb87518): id0=Position, **id1=TexCoord0 (word3,
+byteOff 12), id2=TexCoord1 (word4, byteOff 16)**, id16=Normal, id17=Color0.
+The uniform-commit path (commitCurrentMaterialAutomaticParameters
+@0x7e3290, dispatcher types 0x37/0x38/0x39/0x85-0x8a) builds
+`CoordX_scaleoffset = vec4(pair[slot(attr)].scale.xy, pair[slot(attr)].offset.xy)`
+via the 30-byte map — **so the engine chain is**
+`vCoord0 = w3_raw * s109.xy + s121.xy`, `vCoord1 = w4_raw * s133.xy + s145.xy`
+(GL_REPEAT; scales are sized for RAW u16: diffuse scales x65535 = 1..52
+tiling, lightmap scales x65535 <= 1.0). **The shipped v17/v18 chain
+`frac(w3_deq * s121 + s145)` contradicts the consumer on both channels**
+(s121 is Coord0's OFFSET used as Coord1's SCALE; source word w3 is
+TexCoord0, not TexCoord1). This upgrades session-21's "contradicts the
+consumer" claim to PROVEN at the uniform-commit level.
+
+**T1 falsifiable tests of EF2raw (`t1_tests.py`) — VERDICT: KEEP v17.**
+- Containment (raw, unwrapped): EF2raw 0.341/0.259 vs permuted-pair null
+  0.317+/-0.016 / 0.274+/-0.021 (z=+1.51/-0.71 — **at null**). The engine
+  relies on GL_REPEAT; offsets are negative (>1) for some materials
+  (e.g. -18.25 m97-isl1, 3.33 m76-isl2), so raw containment was never a
+  design goal. Shipped chain: 0/123 inside (unwrapped), multi-wrap 122/123.
+  Identity (w4 dequant): trivially 1.0 by construction — vacuous, not
+  evidence.
+- Partition: EF2raw total-area 4.60x (isl1) / 2.78x (isl2) of page area,
+  pairwise overlap 0.653/0.687 vs permuted-origins null 0.560+/-0.039
+  (z=+2.38) / 0.549+/-0.026 (z=+5.27) — **overlaps MORE than random
+  origin placement**; shipped/identity 11.8-16.2x. The briefing's hope
+  ("total area near 1.0x, low overlap") is FALSIFIED for the engine chain
+  too: bake pages are REPEATED/tiled per city area under the engine chain
+  (~2.8-4.6x oversubscription), consistent with round-6's "area bakes
+  with legitimately overlapping tiles" surviving in modified form.
+- Per-segment spread (pairs >= 200u): EF2raw non-overlapping footprints
+  0.711 (isl1) / 0.605 (isl2) vs shipped 0.002 / 0.001 — shipped collapses
+  far-apart segments to identical patterns; EF2raw vs its own null:
+  0.786+/-0.004 (z=-18.3) / 0.472+/-0.008 (z=+16.2) — **islands disagree**;
+  reported as-is. Decision rule (containment AND partition must beat
+  nulls) -> **EF2raw not shipped; v17 chain retained; no claim that the
+  shipped chain is engine-true** (it is proven NOT engine-true; its
+  render-superiority is also unproven — next session: staged EF2raw build
+  + visual before/after review).
+- m128/m141 "compact rects under EF2raw": stays a **plausibility
+  argument, unproven** (T1 did not support the partition model).
+
+**T2 classes**: records (N,K) isl1: (4,2) 276, (4,1) 9, (5,2) 9, (3,1) 11,
+(3,0) 1, (1,0) 1; isl2: (4,2) 178, (4,1) 7, (5,2) 6, (3,1) 4, (1,0) 1.
+Segments: isl1 (4,2) 1092, (4,1) 325, (3,1) 95, (3,0) 5 of 1517; isl2
+(4,2) 658, (4,1) 337, (3,1) 25 of 1020. **All lm-bound street segments are
+(4,2)** — the exporter's fixed bytes 109/121/133/145 land on the right
+BYTES for every shipped uv1, but with the wrong semantics (above); the
+briefing's "K<2 materials 23 and 12" was wrong — m23-isl1 is (4,2);
+m12-isl1 is (4,1) (K=1, no TexCoord1, and not lm-bound). TexCoord1's pair
+offset is 133/145 ONLY in the (4,2) class; N=3 shifts -12, N=5 +12 ✓
+(session-21 shift rule confirmed); the pair index is TexCoord1's
+DESCRIPTOR INDEX, not a constant.
+
+**T3 raycast (rebuilt double-sided raycaster, grid-pruned)**: cameras are
+RECONSTRUCTED (session-21's were lost) — same-camera identity is NOT
+provable; the 19.9% coincidence is noted, not claimed. camA (default-view
+proxy, fitCamera geometry, fov 55): ground-third hits 0.184 / void 0.816;
+hits by +40: m76 42.4%, m6 11.9%, m23 10.2%... (labels NOT carrying the
+claim — index-level report); hit heights median 7.2u (street level).
+Positive controls FAILED informatively: camB above a Roads0-bound segment
+(+40=25) returns 4.4% hits, 0/71 same-material (hits are m17/m229/m172);
+camC plaza 2.9%, 0 same-material. Interpretation: the street archive's own
+floor is SPARSE — most downward rays find nothing, and the triangles under
+a road segment's centroid belong to OTHER materials — the void is largely
+REAL in the street archive, not (only) a raycaster artifact; but per
+ground rule 8 the raycaster is NOT certified for per-material attribution
+(positive control failed). Far-LOD slabs (+40 value 34/35 in
+GothamCity_low): 5/6 parsed extents are garbage (low-archive stride
+misparse — vertex format differs); ONE sane slab x[-710,0] y[0,2]
+z[0,779] suggests real ground slabs exist; **slab-vs-miss coverage NOT
+established** (method could not see reliably; needs the low-archive
+vertex-format pass). Verdict unchanged in substance: street floor
+near-black/void remains OPEN; "road-family triangles exist and are
+intersected" stands (m76/Roads0 42% of ground hits).
+
+**Claim status changes (rounds 7-11)**: see RE_NOTES_session22.md §7.
