@@ -192,7 +192,7 @@ const MANIFEST_URL = 'models/manifest.json';
 // session 15 cache-busting: bump APP_CACHE_VERSION on every release so the
 // MANIFEST fetch itself cannot be served stale (the gh-pages v13 regression).
 // GLB / texture URLs get ?v=<manifest.version> from the manifest itself.
-const APP_CACHE_VERSION = 'v18';
+const APP_CACHE_VERSION = 'v19';
 const $ = (id) => document.getElementById(id);
 
 /* ---------------- renderer ---------------- */
@@ -556,12 +556,30 @@ function getTex(name) {
           // 2012 GLES2: no sRGB decode — sample raw, shade in gamma space.
           t.colorSpace = THREE.NoColorSpace;
           t.anisotropy = 8;
+          // v19 staged A/B: the engine chain (GL_REPEAT) needs repeat wrapping;
+          // default v17 keeps ClampToEdge (unchanged pixels).
+          if (ENGINE_CHAIN) { t.wrapS = THREE.RepeatWrapping; t.wrapT = THREE.RepeatWrapping; }
           res(t);
         },
         undefined, () => res(null));
     }));
   }
   return texCache.get(name);
+}
+
+// v19 staged A/B (?chain=engine): swap in the ENGINE-chain UVs exported as
+// TEXCOORD_2 (diffuse Coord0 = w3*s109+s121) and TEXCOORD_3 (lightmap Coord1
+// = w4*s133+s145; (0,0) where the record has no Coord1 stream). Default
+// (?chain unset) keeps the v17 UVs — pixels identical to v18-staged.
+const ENGINE_CHAIN = new URLSearchParams(location.search).get('chain') === 'engine';
+function applyEngineChain(root) {
+  if (!ENGINE_CHAIN) return;
+  root.traverse((o) => {
+    if (!o.isMesh || !o.geometry) return;
+    const g = o.geometry;
+    if (g.attributes.uv2) g.attributes.uv = g.attributes.uv2;
+    if (g.attributes.uv3) g.attributes.uv1 = g.attributes.uv3;
+  });
 }
 
 /* ---------------- GLB loading ---------------- */
@@ -571,6 +589,7 @@ async function loadGLB(entry, tierName) {
   const gltf = await new Promise((res, rej) => gltfLoader.load(
     `${entry.file}?v=${state.manifestVersion || APP_CACHE_VERSION}`, res, undefined, rej));
   const root = gltf.scene;
+  applyEngineChain(root);
   const group = new THREE.Group();
   group.name = entry.file;
   group.visible = state.tiers[tierName].enabled;
