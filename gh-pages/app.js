@@ -192,7 +192,7 @@ const MANIFEST_URL = 'models/manifest.json';
 // session 15 cache-busting: bump APP_CACHE_VERSION on every release so the
 // MANIFEST fetch itself cannot be served stale (the gh-pages v13 regression).
 // GLB / texture URLs get ?v=<manifest.version> from the manifest itself.
-const APP_CACHE_VERSION = 'v17';
+const APP_CACHE_VERSION = 'v18';
 const $ = (id) => document.getElementById(id);
 
 /* ---------------- renderer ---------------- */
@@ -832,6 +832,22 @@ function clearStatus() { $('load-status').textContent = ''; }
     setStatus(`streaming city · ${done}/${streetGlbs.length}`);
   }
   if (state.tiers.street) state.tiers.street.loaded = true;
+  // skyline: enabled at boot (v14 policy: STREET + SKYLINE boot together)
+  // but never streamed — the boot loop only loads the street tier, so the
+  // 5 island-1 LongDist GLBs sat "enabled, loaded:false" forever (v14-v17).
+  // Re-applied session-20 fix (lost in a sandbox reset): stream the skyline
+  // tier in the background right after the street tier.
+  if (state.tiers.skyline && state.tiers.skyline.enabled && !state.tiers.skyline.loaded) {
+    state.tiers.skyline.loaded = true;
+    (async () => {
+      for (const entry of state.tiers.skyline.glbs) {
+        if (!entry.loaded) {
+          try { await loadGLB(entry, 'skyline'); } catch (e) { console.warn('skyline glb failed', entry.file, e); }
+        }
+      }
+      updateHUDTotals();
+    })();
+  }
   // district props (world-authored landmarks) in the background
   if (state.tiers.district && state.tiers.district.enabled && !state.tiers.district.loaded) {
     state.tiers.district.loaded = true;
