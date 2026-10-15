@@ -1,0 +1,2113 @@
+{
+ "GothamCity": {
+  "records": 14313,
+  "header_count": 14917,
+  "table_off": 6207499,
+  "nstr": 1617,
+  "distinct_typeids": 391,
+  "unknown_tid_records": 733,
+  "unknown_tid_distinct": 198,
+  "str_reads": 16731,
+  "str_index_violations": 0,
+  "per_typeid": {
+   "0x4741": [
+    4369,
+    "waypoint"
+   ],
+   "0x2666": [
+    3859,
+    "waypoint"
+   ],
+   "0x2648": [
+    949,
+    "GroupObjects"
+   ],
+   "0x264b": [
+    380,
+    "BoxTrigger"
+   ],
+   "0x18731": [
+    266,
+    "GC_Res_Prop_Streetlight_Corona_v2"
+   ],
+   "0xc351": [
+    255,
+    "TrafficRoad"
+   ],
+   "0x4744": [
+    248,
+    "SituationSpawnpoint"
+   ],
+   "0x2662": [
+    225,
+    "player spawn (batman.bdae)"
+   ],
+   "0x798f": [
+    200,
+    "waypoint+collider chain"
+   ],
+   "0x18776": [
+    166,
+    "GC_FX_Corona_v03"
+   ],
+   "0x2663": [
+    143,
+    "StaticObject"
+   ],
+   "0x18774": [
+    135,
+    "GC_FX_Corona_v01"
+   ],
+   "0x18778": [
+    117,
+    "GC_FX_Corona_v05"
+   ],
+   "0x1011": [
+    96,
+    "zone?"
+   ],
+   "0x16f35": [
+    95,
+    "FakeSoundEmitter"
+   ],
+   "0x4663": [
+    88,
+    "GC_Residential_Props_Light_Pillar"
+   ],
+   "0x2653": [
+    71,
+    "level properties"
+   ],
+   "0xc353": [
+    71,
+    "TrafficCrossroad"
+   ],
+   "0x18786": [
+    68,
+    "GC_Residential_Props_Light_Pillar3"
+   ],
+   "0x18775": [
+    66,
+    "GC_FX_Corona_v02"
+   ],
+   "0x2652": [
+    65,
+    "Effect"
+   ],
+   "0xffffffff": [
+    65,
+    null
+   ],
+   "0x26f5": [
+    65,
+    "Ranged_Enemy_Test"
+   ],
+   "0x0": [
+    59,
+    null
+   ],
+   "0x900c1": [
+    56,
+    "GC_Prop_Plant_03"
+   ],
+   "0x264a": [
+    55,
+    "AnimatedObject"
+   ],
+   "0x18785": [
+    53,
+    "StaticObjectWithCollision_BEAST"
+   ],
+   "0x2651": [
+    51,
+    "CylinderTrigger"
+   ],
+   "0x4c71a": [
+    47,
+    "Melee_Enemy_Test"
+   ],
+   "0x80000000": [
+    44,
+    null
+   ],
+   "0xc352": [
+    43,
+    "TrafficSemaphore"
+   ],
+   "0x2ee3": [
+    43,
+    "Quest"
+   ],
+   "0x14050": [
+    42,
+    "mesh longdist"
+   ],
+   "0x187e5": [
+    38,
+    "Steam"
+   ],
+   "0xc350f": [
+    37,
+    "TrafficSemaphoreBody"
+   ],
+   "0x61a81": [
+    37,
+    "Checkpoint_Red"
+   ],
+   "0x187d3": [
+    36,
+    "BigFire_Smart"
+   ],
+   "0x4c745": [
+    33,
+    "Sniper"
+   ],
+   "0x2b": [
+    32,
+    "CinematicObject"
+   ],
+   "0x3": [
+    32,
+    null
+   ],
+   "0x28ffffff": [
+    32,
+    null
+   ],
+   "0x8000": [
+    32,
+    null
+   ],
+   "0xff0000c3": [
+    31,
+    null
+   ],
+   "0x790016e3": [
+    31,
+    null
+   ],
+   "0x328ff": [
+    31,
+    null
+   ],
+   "0xffffff00": [
+    31,
+    null
+   ],
+   "0xc37900": [
+    31,
+    null
+   ],
+   "0xbe6147ae": [
+    31,
+    null
+   ],
+   "0x187a1": [
+    28,
+    "GC_Prop_Tree_04_L"
+   ],
+   "0x14ff3": [
+    28,
+    "Hotspot"
+   ],
+   "0x187e6": [
+    27,
+    "Steam_Ground"
+   ],
+   "0x187e7": [
+    27,
+    "Steam_JustGround"
+   ],
+   "0x187cd": [
+    25,
+    "ExhaustFan_BEAST"
+   ],
+   "0x187cf": [
+    25,
+    "GC_FX_GreenLight_Animated"
+   ],
+   "0x2658": [
+    25,
+    "NPC"
+   ],
+   "0x2667": [
+    23,
+    "zone-load"
+   ],
+   "0x4c72e": [
+    23,
+    "Police_Car"
+   ],
+   "0x4c725": [
+    22,
+    "Police_Officer"
+   ],
+   "0x187c0": [
+    21,
+    "GC_Prop_ParkLightpole"
+   ],
+   "0x47ae0000": [
+    21,
+    null
+   ],
+   "0x266e": [
+    20,
+    "StaticObjectWithCollision"
+   ],
+   "0x61a83": [
+    20,
+    "Collectibles_Graffiti"
+   ],
+   "0x61a85": [
+    20,
+    "Collectibles_PoliceFile"
+   ],
+   "0x268a": [
+    20,
+    "Collectibles_Blueprints"
+   ],
+   "0x4c731": [
+    19,
+    "Bane_SUV"
+   ],
+   "0x4c72a": [
+    19,
+    "Bomb_Barrels"
+   ],
+   "0x900c8": [
+    18,
+    "GC_Prop_Tree_02_L"
+   ],
+   "0x4c729": [
+    17,
+    "Interactive_Object"
+   ],
+   "0x18777": [
+    16,
+    "GC_FX_Corona_v04"
+   ],
+   "0x264e": [
+    14,
+    "CollisionMesh"
+   ],
+   "0x4666": [
+    13,
+    "GC_Residential_Props_NewsPaperBox"
+   ],
+   "0x18784": [
+    13,
+    "StaticObject_BEAST"
+   ],
+   "0x900c5": [
+    13,
+    "GC_Prop_Tree_01_L"
+   ],
+   "0x4387": [
+    13,
+    null
+   ],
+   "0x42b40000": [
+    13,
+    null
+   ],
+   "0x4c726": [
+    13,
+    "Generic_Car"
+   ],
+   "0x18722": [
+    12,
+    "HC_Prop_Busstop_Ad_04"
+   ],
+   "0x900c6": [
+    12,
+    "GC_Prop_Tree_01_M"
+   ],
+   "0x187a2": [
+    12,
+    "GC_Prop_Tree_04_M"
+   ],
+   "0xc355": [
+    12,
+    "TrafficSetting"
+   ],
+   "0x4c75d": [
+    12,
+    "NPC_Female"
+   ],
+   "0x18723": [
+    11,
+    "HC_Prop_Busstop_Ad_05"
+   ],
+   "0x47ae8000": [
+    11,
+    null
+   ],
+   "0x42b4": [
+    11,
+    null
+   ],
+   "0x900c9": [
+    10,
+    "GC_Prop_Tree_02_M"
+   ],
+   "0x43870000": [
+    10,
+    null
+   ],
+   "0x4c752": [
+    10,
+    "ElectricTurret"
+   ],
+   "0xc3515": [
+    10,
+    "SwatVan"
+   ],
+   "0x187e3": [
+    9,
+    "GC_Prop_VNeonSign_12_Animated"
+   ],
+   "0x4668": [
+    9,
+    "GC_Residential_Props_NewsPaperBox2"
+   ],
+   "0x187a5": [
+    9,
+    "GC_Prop_Tree_05_M"
+   ],
+   "0x474a": [
+    9,
+    "DistrictZone"
+   ],
+   "0x4c749": [
+    9,
+    "Crowbar_Enemy"
+   ],
+   "0x900c0": [
+    8,
+    "GC_Prop_Plant_02"
+   ],
+   "0x187a6": [
+    8,
+    "GC_Prop_Tree_05_S"
+   ],
+   "0x4c724": [
+    8,
+    "Helicopter"
+   ],
+   "0x187da": [
+    7,
+    "GC_Prop_VNeonSign_09_Animated"
+   ],
+   "0x18726": [
+    7,
+    "HC_Prop_Busstop_Ad"
+   ],
+   "0x1871b": [
+    7,
+    "GC_Residential_Props_Gotham_Beam"
+   ],
+   "0x1871a": [
+    7,
+    "GC_Residential_Props_Gotham_Spotlight"
+   ],
+   "0xc36f": [
+    7,
+    "VehiclePolice"
+   ],
+   "0x4c765": [
+    7,
+    "PickUp_EMP_Batarang"
+   ],
+   "0xc351d": [
+    7,
+    "Melee_Enemy_Merc"
+   ],
+   "0xc3511": [
+    7,
+    "Bazooka_Enemy"
+   ],
+   "0x18769": [
+    6,
+    "GC_FX_RedLight_Small"
+   ],
+   "0x187df": [
+    6,
+    "GC_Prop_VNeonSign_11_Animated"
+   ],
+   "0x900cf": [
+    6,
+    "Interactive_Animated_Object"
+   ],
+   "0x4c73a": [
+    6,
+    "Bane"
+   ],
+   "0x187dc": [
+    5,
+    "GC_Prop_VNeonSign_10"
+   ],
+   "0x18720": [
+    5,
+    "HC_Prop_Busstop_Ad_02"
+   ],
+   "0x18721": [
+    5,
+    "HC_Prop_Busstop_Ad_03"
+   ],
+   "0x18724": [
+    5,
+    "HC_Prop_Busstop_Ad_06"
+   ],
+   "0x187a7": [
+    5,
+    "GC_Prop_Tree_05_XL"
+   ],
+   "0x13881": [
+    5,
+    "Checkpoint_Map"
+   ],
+   "0x18799": [
+    5,
+    "AnimatedObjectWithCollision_BEAST"
+   ],
+   "0xc351e": [
+    5,
+    "Helicopter_Bane"
+   ],
+   "0xc370": [
+    5,
+    "VehicleSWAT"
+   ],
+   "0x1877d": [
+    4,
+    "GC_Res_Prop_Streetlight_Corona_v2_Animated"
+   ],
+   "0x187d7": [
+    4,
+    "GC_Prop_VNeonSign_02_blue_Animated"
+   ],
+   "0x1869f": [
+    4,
+    "bakegroup"
+   ],
+   "0x900bf": [
+    4,
+    "GC_Prop_Plant_01"
+   ],
+   "0x900cb": [
+    4,
+    "GC_Prop_Tree_03_L"
+   ],
+   "0x187ab": [
+    4,
+    "GC_Prop_Tree_07_L"
+   ],
+   "0x187a3": [
+    4,
+    "GC_Prop_Tree_04_S"
+   ],
+   "0x4c761": [
+    4,
+    "Barricade"
+   ],
+   "0x4db2be61": [
+    4,
+    null
+   ],
+   "0xc478ab64": [
+    4,
+    null
+   ],
+   "0xab64be61": [
+    4,
+    null
+   ],
+   "0x4334": [
+    4,
+    null
+   ],
+   "0x2c": [
+    4,
+    "SurveillanceCamera"
+   ],
+   "0xc3512": [
+    4,
+    "Knife_Enemy"
+   ],
+   "0x4c72f": [
+    4,
+    "Subway_Car"
+   ],
+   "0xdbbba": [
+    4,
+    "Military_Laser"
+   ],
+   "0x1872b": [
+    3,
+    "GC_Prop_VNeonSign_03"
+   ],
+   "0x187b5": [
+    3,
+    "GC_Prop_VNeonSign_08"
+   ],
+   "0x1872a": [
+    3,
+    "GC_Prop_VNeonSign_02"
+   ],
+   "0x187c7": [
+    3,
+    "GC_Props_UnderConstructionArea"
+   ],
+   "0x1871e": [
+    3,
+    "HC_Prop_Busstop_Ad_01"
+   ],
+   "0x7a12b": [
+    3,
+    "HC_Prop_BillboardWall_01"
+   ],
+   "0x187ac": [
+    3,
+    "GC_Prop_Tree_07_M"
+   ],
+   "0xc38e": [
+    3,
+    "BatPod"
+   ],
+   "0x4c762": [
+    3,
+    "Barricade_Collision_Start"
+   ],
+   "0xc4534db2": [
+    3,
+    null
+   ],
+   "0xc476528f": [
+    3,
+    null
+   ],
+   "0x43340000": [
+    3,
+    null
+   ],
+   "0x3f80": [
+    3,
+    null
+   ],
+   "0x4749": [
+    3,
+    "District"
+   ],
+   "0x4c764": [
+    3,
+    "PickUp_Batarang"
+   ],
+   "0xc351c": [
+    3,
+    "Limousine"
+   ],
+   "0x4c758": [
+    3,
+    "Police_Officer_Melee"
+   ],
+   "0x16379": [
+    2,
+    "SmartLight"
+   ],
+   "0x1872d": [
+    2,
+    "GC_Prop_VNeonSign_05"
+   ],
+   "0x2669": [
+    2,
+    "weather"
+   ],
+   "0x18725": [
+    2,
+    "HC_Prop_Busstop_Ad_07"
+   ],
+   "0x187c3": [
+    2,
+    "GC_Prop_Logo_BuildingLogoText_01"
+   ],
+   "0x18714": [
+    2,
+    "HC_Prop_BillboardWallTall_05"
+   ],
+   "0x7a12e": [
+    2,
+    "HC_Prop_BillboardWall_04"
+   ],
+   "0x18712": [
+    2,
+    "HC_Prop_BillboardWallTall_03"
+   ],
+   "0x186fe": [
+    2,
+    "HC_Prop_BillboardRoof_04"
+   ],
+   "0x18713": [
+    2,
+    "HC_Prop_BillboardWallTall_04"
+   ],
+   "0x18708": [
+    2,
+    "HC_Prop_BillboardWall_07"
+   ],
+   "0x4660": [
+    2,
+    "GC_Residential_Props_Excavator"
+   ],
+   "0x900cd": [
+    2,
+    "GC_Prop_Tree_03_S"
+   ],
+   "0x900c3": [
+    2,
+    "GC_Prop_Plant_05"
+   ],
+   "0x187a4": [
+    2,
+    "GC_Prop_Tree_05_L"
+   ],
+   "0x187ad": [
+    2,
+    "GC_Prop_Tree_07_S"
+   ],
+   "0x4c73e": [
+    2,
+    "Checkpoint_Vigilante"
+   ],
+   "0xee46be61": [
+    2,
+    null
+   ],
+   "0xc4558f7d": [
+    2,
+    null
+   ],
+   "0x8f7dbe61": [
+    2,
+    null
+   ],
+   "0x528fbe61": [
+    2,
+    null
+   ],
+   "0xc35c": [
+    2,
+    "VehicleTruck"
+   ],
+   "0x4c75f": [
+    2,
+    "Military_Jeep"
+   ],
+   "0x4c740": [
+    2,
+    "Tumbler"
+   ],
+   "0x2657": [
+    1,
+    "level init"
+   ],
+   "0x1871c": [
+    1,
+    "GC_Residential_Shop_Drugs_NeonSign"
+   ],
+   "0x187b0": [
+    1,
+    "GC_Prop_VNeonSign_02_Animated"
+   ],
+   "0x18729": [
+    1,
+    "GC_Prop_VNeonSign_01"
+   ],
+   "0x187ca": [
+    1,
+    "GC_Footprint_AWT_Balcony"
+   ],
+   "0x14051": [
+    1,
+    "mesh longdist"
+   ],
+   "0x1879c": [
+    1,
+    "Construction_Truck"
+   ],
+   "0x18700": [
+    1,
+    "HC_Prop_BillboardRoof_08"
+   ],
+   "0x18705": [
+    1,
+    "HC_Prop_BillboardRoof_09"
+   ],
+   "0x18707": [
+    1,
+    "HC_Prop_BillboardRoof_13"
+   ],
+   "0x1870f": [
+    1,
+    "HC_Prop_BillboardWallSmall_05"
+   ],
+   "0x18715": [
+    1,
+    "HC_Prop_BillboardWallTall_06"
+   ],
+   "0x18710": [
+    1,
+    "HC_Prop_BillboardWallTall_01"
+   ],
+   "0x186f8": [
+    1,
+    "HC_Prop_BillboardRoof_02"
+   ],
+   "0x1870c": [
+    1,
+    "HC_Prop_BillboardWallSmall_02"
+   ],
+   "0x18706": [
+    1,
+    "HC_Prop_BillboardRoof_11"
+   ],
+   "0x1870b": [
+    1,
+    "HC_Prop_BillboardWallSmall_01"
+   ],
+   "0x18711": [
+    1,
+    "HC_Prop_BillboardWallTall_02"
+   ],
+   "0x18702": [
+    1,
+    "HC_Prop_BillboardRoof_03"
+   ],
+   "0x186ff": [
+    1,
+    "HC_Prop_BillboardRoof_06"
+   ],
+   "0x7a12d": [
+    1,
+    "HC_Prop_BillboardWall_03"
+   ],
+   "0x1870a": [
+    1,
+    "HC_Prop_BillboardWall_05"
+   ],
+   "0x900ca": [
+    1,
+    "GC_Prop_Tree_02_S"
+   ],
+   "0x187a8": [
+    1,
+    "GC_Prop_Tree_06_L"
+   ],
+   "0x187aa": [
+    1,
+    "GC_Prop_Tree_06_S"
+   ],
+   "0x187a9": [
+    1,
+    "GC_Prop_Tree_06_M"
+   ],
+   "0x187af": [
+    1,
+    "HC_Prop_Busstop_01"
+   ],
+   "0xc0e4e": [
+    1,
+    "GC_Decor_Props_Garbagecan_Round_Onfire"
+   ],
+   "0xc365": [
+    1,
+    "VehicleCarSUV"
+   ],
+   "0xc3509": [
+    1,
+    "VehicleSedan"
+   ],
+   "0x9c44": [
+    1,
+    "TheBatDrive"
+   ],
+   "0x4c73d": [
+    1,
+    "Destroyable_SUV"
+   ],
+   "0x4e24": [
+    1,
+    "Car_Sedan_Minigame"
+   ],
+   "0x267d": [
+    1,
+    "navmesh"
+   ],
+   "0xc379": [
+    1,
+    "ParkingVehicle"
+   ],
+   "0x6401c438": [
+    1,
+    null
+   ],
+   "0x6698c468": [
+    1,
+    null
+   ],
+   "0xf45abe61": [
+    1,
+    null
+   ],
+   "0x16e36501": [
+    1,
+    null
+   ],
+   "0xc43c3f8d": [
+    1,
+    null
+   ],
+   "0xc46310d5": [
+    1,
+    null
+   ],
+   "0x6601c40a": [
+    1,
+    null
+   ],
+   "0xb0b4c468": [
+    1,
+    null
+   ],
+   "0xdb54be61": [
+    1,
+    null
+   ],
+   "0x16e36701": [
+    1,
+    null
+   ],
+   "0xc40c27ae": [
+    1,
+    null
+   ],
+   "0xc468e8a4": [
+    1,
+    null
+   ],
+   "0x6801c3fb": [
+    1,
+    null
+   ],
+   "0x6a1dc468": [
+    1,
+    null
+   ],
+   "0xe72bbe61": [
+    1,
+    null
+   ],
+   "0x16e36901": [
+    1,
+    null
+   ],
+   "0xc422678d": [
+    1,
+    null
+   ],
+   "0xc4630f3b": [
+    1,
+    null
+   ],
+   "0x6a01c423": [
+    1,
+    null
+   ],
+   "0xee25c463": [
+    1,
+    null
+   ],
+   "0xe46be61": [
+    1,
+    null
+   ],
+   "0x16e36b01": [
+    1,
+    null
+   ],
+   "0xc4119de3": [
+    1,
+    null
+   ],
+   "0xc4632148": [
+    1,
+    null
+   ],
+   "0x6c01c402": [
+    1,
+    null
+   ],
+   "0xbed9c463": [
+    1,
+    null
+   ],
+   "0x299abe61": [
+    1,
+    null
+   ],
+   "0x16e36d01": [
+    1,
+    null
+   ],
+   "0xc3eb29fc": [
+    1,
+    null
+   ],
+   "0xc4632581": [
+    1,
+    null
+   ],
+   "0x6e01c3ef": [
+    1,
+    null
+   ],
+   "0xd000c463": [
+    1,
+    null
+   ],
+   "0xff0be61": [
+    1,
+    null
+   ],
+   "0x16e36f01": [
+    1,
+    null
+   ],
+   "0xc4130e98": [
+    1,
+    null
+   ],
+   "0xc4632b96": [
+    1,
+    null
+   ],
+   "0x7001c420": [
+    1,
+    null
+   ],
+   "0xe1bac463": [
+    1,
+    null
+   ],
+   "0xe98be61": [
+    1,
+    null
+   ],
+   "0x16e37201": [
+    1,
+    null
+   ],
+   "0xc43d88d5": [
+    1,
+    null
+   ],
+   "0xc4631635": [
+    1,
+    null
+   ],
+   "0x8501c415": [
+    1,
+    null
+   ],
+   "0x93c468": [
+    1,
+    null
+   ],
+   "0x16e38601": [
+    1,
+    null
+   ],
+   "0xc421c439": [
+    1,
+    null
+   ],
+   "0xc468ee46": [
+    1,
+    null
+   ],
+   "0x8701c423": [
+    1,
+    null
+   ],
+   "0xf873c468": [
+    1,
+    null
+   ],
+   "0x16e38801": [
+    1,
+    null
+   ],
+   "0xc43d525e": [
+    1,
+    null
+   ],
+   "0xc468e646": [
+    1,
+    null
+   ],
+   "0x8901c433": [
+    1,
+    null
+   ],
+   "0x6989c453": [
+    1,
+    null
+   ],
+   "0x16e38a01": [
+    1,
+    null
+   ],
+   "0xc4321917": [
+    1,
+    null
+   ],
+   "0x8b01c430": [
+    1,
+    null
+   ],
+   "0xa7cfc453": [
+    1,
+    null
+   ],
+   "0x16e38c01": [
+    1,
+    null
+   ],
+   "0xc421c429": [
+    1,
+    null
+   ],
+   "0x8d01c41f": [
+    1,
+    null
+   ],
+   "0x5e04c453": [
+    1,
+    null
+   ],
+   "0x16e38e01": [
+    1,
+    null
+   ],
+   "0xc4155842": [
+    1,
+    null
+   ],
+   "0x8f01c413": [
+    1,
+    null
+   ],
+   "0xf26fc453": [
+    1,
+    null
+   ],
+   "0x16e39001": [
+    1,
+    null
+   ],
+   "0xc432bccd": [
+    1,
+    null
+   ],
+   "0x9101c423": [
+    1,
+    null
+   ],
+   "0xf6e9c455": [
+    1,
+    null
+   ],
+   "0x16e39201": [
+    1,
+    null
+   ],
+   "0xc411ba7f": [
+    1,
+    null
+   ],
+   "0x9301c413": [
+    1,
+    null
+   ],
+   "0x278dc455": [
+    1,
+    null
+   ],
+   "0x16e39401": [
+    1,
+    null
+   ],
+   "0xc43d3021": [
+    1,
+    null
+   ],
+   "0x9501c43b": [
+    1,
+    null
+   ],
+   "0xba4ec478": [
+    1,
+    null
+   ],
+   "0x16e39601": [
+    1,
+    null
+   ],
+   "0xc4330439": [
+    1,
+    null
+   ],
+   "0x9701c423": [
+    1,
+    null
+   ],
+   "0xa99ac478": [
+    1,
+    null
+   ],
+   "0x16e39801": [
+    1,
+    null
+   ],
+   "0xc4222b54": [
+    1,
+    null
+   ],
+   "0x9901c422": [
+    1,
+    null
+   ],
+   "0x2b54c478": [
+    1,
+    null
+   ],
+   "0x16e39a01": [
+    1,
+    null
+   ],
+   "0xc40ac3f8": [
+    1,
+    null
+   ],
+   "0x9b01c409": [
+    1,
+    null
+   ],
+   "0x5ee9c478": [
+    1,
+    null
+   ],
+   "0x16e39c01": [
+    1,
+    null
+   ],
+   "0xc408e2c1": [
+    1,
+    null
+   ],
+   "0x9d01c421": [
+    1,
+    null
+   ],
+   "0x4396c476": [
+    1,
+    null
+   ],
+   "0x16e39e01": [
+    1,
+    null
+   ],
+   "0xc437a7f0": [
+    1,
+    null
+   ],
+   "0x9f01c436": [
+    1,
+    null
+   ],
+   "0x5da2c476": [
+    1,
+    null
+   ],
+   "0x16e3a001": [
+    1,
+    null
+   ],
+   "0xc4350c5a": [
+    1,
+    null
+   ],
+   "0xa101c40d": [
+    1,
+    null
+   ],
+   "0x2917c45b": [
+    1,
+    null
+   ],
+   "0x1af2be61": [
+    1,
+    null
+   ],
+   "0x16e3a201": [
+    1,
+    null
+   ],
+   "0xc40d2917": [
+    1,
+    null
+   ],
+   "0xc45ddd60": [
+    1,
+    null
+   ],
+   "0xa301c41c": [
+    1,
+    null
+   ],
+   "0x27bec46f": [
+    1,
+    null
+   ],
+   "0xf3a6be61": [
+    1,
+    null
+   ],
+   "0x16e3a401": [
+    1,
+    null
+   ],
+   "0xc42b1f3b": [
+    1,
+    null
+   ],
+   "0xc4724354": [
+    1,
+    null
+   ],
+   "0xa501c444": [
+    1,
+    null
+   ],
+   "0x2968c46d": [
+    1,
+    null
+   ],
+   "0x845abe61": [
+    1,
+    null
+   ],
+   "0x16e3a601": [
+    1,
+    null
+   ],
+   "0xc4442968": [
+    1,
+    null
+   ],
+   "0xc4707677": [
+    1,
+    null
+   ],
+   "0xa701c441": [
+    1,
+    null
+   ],
+   "0xbd1fc471": [
+    1,
+    null
+   ],
+   "0xc6e9be61": [
+    1,
+    null
+   ],
+   "0x16e3a801": [
+    1,
+    null
+   ],
+   "0xc428c6b8": [
+    1,
+    null
+   ],
+   "0xc46e9083": [
+    1,
+    null
+   ],
+   "0xa901c419": [
+    1,
+    null
+   ],
+   "0xb927c46e": [
+    1,
+    null
+   ],
+   "0x9083be61": [
+    1,
+    null
+   ],
+   "0x16e3aa01": [
+    1,
+    null
+   ],
+   "0xc419b927": [
+    1,
+    null
+   ],
+   "0xc4713d3f": [
+    1,
+    null
+   ],
+   "0xab01c400": [
+    1,
+    null
+   ],
+   "0xbee9c471": [
+    1,
+    null
+   ],
+   "0x3d3fbe61": [
+    1,
+    null
+   ],
+   "0x16e3ac01": [
+    1,
+    null
+   ],
+   "0xc400bee9": [
+    1,
+    null
+   ],
+   "0xc46fcfcf": [
+    1,
+    null
+   ],
+   "0xb501c3f0": [
+    1,
+    null
+   ],
+   "0xf0e5c468": [
+    1,
+    null
+   ],
+   "0xe6fabe61": [
+    1,
+    null
+   ],
+   "0x16e3b601": [
+    1,
+    null
+   ],
+   "0xc3d97d71": [
+    1,
+    null
+   ],
+   "0xc475a25e": [
+    1,
+    null
+   ],
+   "0xb701c3d9": [
+    1,
+    null
+   ],
+   "0x7d71c470": [
+    1,
+    null
+   ],
+   "0x7831be61": [
+    1,
+    null
+   ],
+   "0x16e3b901": [
+    1,
+    null
+   ],
+   "0xc428c323": [
+    1,
+    null
+   ],
+   "0xc44d40e5": [
+    1,
+    null
+   ],
+   "0xba01c43a": [
+    1,
+    null
+   ],
+   "0x26e9c44d": [
+    1,
+    null
+   ],
+   "0x49cbe61": [
+    1,
+    null
+   ],
+   "0x16e3c501": [
+    1,
+    null
+   ],
+   "0xc4405b64": [
+    1,
+    null
+   ],
+   "0xc4445b96": [
+    1,
+    null
+   ],
+   "0xc601c442": [
+    1,
+    null
+   ],
+   "0xce87c444": [
+    1,
+    null
+   ],
+   "0x5b96be61": [
+    1,
+    null
+   ],
+   "0x16e3c701": [
+    1,
+    null
+   ],
+   "0xc43fa810": [
+    1,
+    null
+   ],
+   "0xc446bc08": [
+    1,
+    null
+   ],
+   "0xff000026": [
+    1,
+    null
+   ],
+   "0x62010016": [
+    1,
+    null
+   ],
+   "0xe371c43b": [
+    1,
+    null
+   ],
+   "0xae46c466": [
+    1,
+    null
+   ],
+   "0x4b96be61": [
+    1,
+    null
+   ],
+   "0x100": [
+    1,
+    null
+   ],
+   "0x6ffffff": [
+    1,
+    null
+   ],
+   "0xff000001": [
+    1,
+    null
+   ],
+   "0x2661": [
+    1,
+    "light"
+   ],
+   "0xc356": [
+    1,
+    "TrafficSpawner"
+   ],
+   "0x30db0": [
+    1,
+    "GC_SE_PoliceSiren"
+   ],
+   "0x30db1": [
+    1,
+    "GC_SE_FireLight"
+   ],
+   "0x927c6": [
+    1,
+    "Blake"
+   ],
+   "0xc35b": [
+    1,
+    "VehicleVan"
+   ],
+   "0x4e28": [
+    1,
+    "DestroyableObject"
+   ],
+   "0x927c5": [
+    1,
+    "Miranda"
+   ],
+   "0x4c727": [
+    1,
+    "AlarmPost"
+   ],
+   "0x14ff2": [
+    1,
+    "MiniGameAnimatedObject"
+   ],
+   "0x4c760": [
+    1,
+    "PickUpTruck"
+   ],
+   "0x7992": [
+    1,
+    "Military_Truck"
+   ],
+   "0x4c76a": [
+    1,
+    "StashedReleased"
+   ],
+   "0xc0e54": [
+    1,
+    "Bane_Suv_No_Doors"
+   ]
+  },
+  "benign_fault_records": 0,
+  "benign_fault_bytes": 0
+ },
+ "GothamCity_Island2": {
+  "records": 7474,
+  "header_count": 8214,
+  "table_off": 5534337,
+  "nstr": 611,
+  "distinct_typeids": 129,
+  "unknown_tid_records": 1,
+  "unknown_tid_distinct": 1,
+  "str_reads": 7848,
+  "str_index_violations": 0,
+  "per_typeid": {
+   "0x2666": [
+    2241,
+    "waypoint"
+   ],
+   "0x4741": [
+    1475,
+    "waypoint"
+   ],
+   "0x2648": [
+    554,
+    "GroupObjects"
+   ],
+   "0x798f": [
+    332,
+    "waypoint+collider chain"
+   ],
+   "0x18731": [
+    288,
+    "GC_Res_Prop_Streetlight_Corona_v2"
+   ],
+   "0xc351": [
+    256,
+    "TrafficRoad"
+   ],
+   "0x18776": [
+    210,
+    "GC_FX_Corona_v03"
+   ],
+   "0x264b": [
+    167,
+    "BoxTrigger"
+   ],
+   "0x1011": [
+    163,
+    "zone?"
+   ],
+   "0x2653": [
+    159,
+    "level properties"
+   ],
+   "0x4663": [
+    155,
+    "GC_Residential_Props_Light_Pillar"
+   ],
+   "0x187d3": [
+    121,
+    "BigFire_Smart"
+   ],
+   "0x18774": [
+    110,
+    "GC_FX_Corona_v01"
+   ],
+   "0x4744": [
+    97,
+    "SituationSpawnpoint"
+   ],
+   "0x18778": [
+    96,
+    "GC_FX_Corona_v05"
+   ],
+   "0x2663": [
+    93,
+    "StaticObject"
+   ],
+   "0x2662": [
+    92,
+    "player spawn (batman.bdae)"
+   ],
+   "0x2651": [
+    82,
+    "CylinderTrigger"
+   ],
+   "0xc353": [
+    58,
+    "TrafficCrossroad"
+   ],
+   "0x18786": [
+    52,
+    "GC_Residential_Props_Light_Pillar3"
+   ],
+   "0x187e6": [
+    42,
+    "Steam_Ground"
+   ],
+   "0xc352": [
+    40,
+    "TrafficSemaphore"
+   ],
+   "0xc350f": [
+    40,
+    "TrafficSemaphoreBody"
+   ],
+   "0x2652": [
+    32,
+    "Effect"
+   ],
+   "0x187c0": [
+    26,
+    "GC_Prop_ParkLightpole"
+   ],
+   "0x18785": [
+    23,
+    "StaticObjectWithCollision_BEAST"
+   ],
+   "0xc3511": [
+    22,
+    "Bazooka_Enemy"
+   ],
+   "0x2ee3": [
+    21,
+    "Quest"
+   ],
+   "0x14ff3": [
+    21,
+    "Hotspot"
+   ],
+   "0x18822": [
+    19,
+    "GC_Prop_Tree_Industrial_07_L_Industrial"
+   ],
+   "0x18777": [
+    18,
+    "GC_FX_Corona_v04"
+   ],
+   "0x14050": [
+    18,
+    "mesh longdist"
+   ],
+   "0x18775": [
+    17,
+    "GC_FX_Corona_v02"
+   ],
+   "0x4c745": [
+    16,
+    "Sniper"
+   ],
+   "0x2658": [
+    13,
+    "NPC"
+   ],
+   "0x4c71a": [
+    11,
+    "Melee_Enemy_Test"
+   ],
+   "0x61a85": [
+    10,
+    "Collectibles_PoliceFile"
+   ],
+   "0x268a": [
+    10,
+    "Collectibles_Blueprints"
+   ],
+   "0x61a83": [
+    10,
+    "Collectibles_Graffiti"
+   ],
+   "0x26f5": [
+    10,
+    "Ranged_Enemy_Test"
+   ],
+   "0x18819": [
+    9,
+    "GC_Prop_Tree_Industrial_04_M_Industrial"
+   ],
+   "0x61a81": [
+    9,
+    "Checkpoint_Red"
+   ],
+   "0x2667": [
+    8,
+    "zone-load"
+   ],
+   "0x1877d": [
+    7,
+    "GC_Res_Prop_Streetlight_Corona_v2_Animated"
+   ],
+   "0x187df": [
+    7,
+    "GC_Prop_VNeonSign_11_Animated"
+   ],
+   "0x18818": [
+    7,
+    "GC_Prop_Tree_Industrial_04_L_Industrial"
+   ],
+   "0x1871a": [
+    7,
+    "GC_Residential_Props_Gotham_Spotlight"
+   ],
+   "0x1871b": [
+    7,
+    "GC_Residential_Props_Gotham_Beam"
+   ],
+   "0x4c72a": [
+    7,
+    "Bomb_Barrels"
+   ],
+   "0x264a": [
+    7,
+    "AnimatedObject"
+   ],
+   "0x266e": [
+    6,
+    "StaticObjectWithCollision"
+   ],
+   "0x1881b": [
+    6,
+    "GC_Prop_Tree_Industrial_05_L_Industrial"
+   ],
+   "0x18812": [
+    6,
+    "GC_Prop_Tree_Industrial_02_L_Industrial"
+   ],
+   "0x18813": [
+    6,
+    "GC_Prop_Tree_Industrial_02_M_Industrial"
+   ],
+   "0x18823": [
+    5,
+    "GC_Prop_Tree_Industrial_07_M_Industrial"
+   ],
+   "0x1881f": [
+    5,
+    "GC_Prop_Tree_Industrial_06_L_Industrial"
+   ],
+   "0x1882a": [
+    5,
+    "HC_Prop_Busstop_Ad_02_Industrial"
+   ],
+   "0x474a": [
+    5,
+    "DistrictZone"
+   ],
+   "0x1869f": [
+    4,
+    "bakegroup"
+   ],
+   "0x1881c": [
+    4,
+    "GC_Prop_Tree_Industrial_05_M_Industrial"
+   ],
+   "0x18820": [
+    4,
+    "GC_Prop_Tree_Industrial_06_M_Industrial"
+   ],
+   "0x18821": [
+    4,
+    "GC_Prop_Tree_Industrial_06_S_Industrial"
+   ],
+   "0x187dd": [
+    3,
+    "GC_Prop_VNeonSign_10_Animated"
+   ],
+   "0x18800": [
+    3,
+    "HC_Prop_BillboardWallTall_Industrial_06_Industrial"
+   ],
+   "0x1882e": [
+    3,
+    "HC_Prop_Busstop_Ad_06_Industrial"
+   ],
+   "0x1882d": [
+    3,
+    "HC_Prop_Busstop_Ad_05_Industrial"
+   ],
+   "0x1882c": [
+    3,
+    "HC_Prop_Busstop_Ad_04_Industrial"
+   ],
+   "0x9c44": [
+    3,
+    "TheBatDrive"
+   ],
+   "0x4c72e": [
+    3,
+    "Police_Car"
+   ],
+   "0x4c761": [
+    3,
+    "Barricade"
+   ],
+   "0x4c762": [
+    3,
+    "Barricade_Collision_Start"
+   ],
+   "0xc355": [
+    3,
+    "TrafficSetting"
+   ],
+   "0x4749": [
+    3,
+    "District"
+   ],
+   "0x4c75d": [
+    3,
+    "NPC_Female"
+   ],
+   "0x2669": [
+    2,
+    "weather"
+   ],
+   "0x1879e": [
+    2,
+    "GC_Prop_VNeonSign_03_Animated"
+   ],
+   "0x187b2": [
+    2,
+    "GC_Prop_VNeonSign_05_Animated"
+   ],
+   "0x187b4": [
+    2,
+    "GC_Prop_VNeonSign_07_Animated"
+   ],
+   "0x187b6": [
+    2,
+    "GC_Prop_VNeonSign_08_Animated"
+   ],
+   "0x187f3": [
+    2,
+    "HC_Prop_BillboardRoof_Industrial_10_Industrial"
+   ],
+   "0x187ed": [
+    2,
+    "HC_Prop_BillboardRoof_Industrial_04_Industrial"
+   ],
+   "0x18808": [
+    2,
+    "HC_Prop_BillboardWall_Industrial_07_Industrial"
+   ],
+   "0x187f8": [
+    2,
+    "HC_Prop_BillboardWallSmall_Industrial_03_Industrial"
+   ],
+   "0x187fd": [
+    2,
+    "HC_Prop_BillboardWallTall_Industrial_03_Industrial"
+   ],
+   "0x187f2": [
+    2,
+    "HC_Prop_BillboardRoof_Industrial_09_Industrial"
+   ],
+   "0x187f1": [
+    2,
+    "HC_Prop_BillboardRoof_Industrial_08_Industrial"
+   ],
+   "0x187f5": [
+    2,
+    "HC_Prop_BillboardRoof_Industrial_13_Industrial"
+   ],
+   "0x18824": [
+    2,
+    "GC_Prop_Tree_Industrial_07_S_Industrial"
+   ],
+   "0x1881e": [
+    2,
+    "GC_Prop_Tree_Industrial_05_XL_Industrial"
+   ],
+   "0x1882f": [
+    2,
+    "HC_Prop_Busstop_Ad_07_Industrial"
+   ],
+   "0x1882b": [
+    2,
+    "HC_Prop_Busstop_Ad_03_Industrial"
+   ],
+   "0x18829": [
+    2,
+    "HC_Prop_Busstop_Ad_01_Industrial"
+   ],
+   "0x2b0d": [
+    2,
+    "Checkpoint_Blank"
+   ],
+   "0x4c729": [
+    2,
+    "Interactive_Object"
+   ],
+   "0x16f35": [
+    2,
+    "FakeSoundEmitter"
+   ],
+   "0x4c731": [
+    2,
+    "Bane_SUV"
+   ],
+   "0x2b": [
+    2,
+    "CinematicObject"
+   ],
+   "0xc3512": [
+    2,
+    "Knife_Enemy"
+   ],
+   "0x4c758": [
+    2,
+    "Police_Officer_Melee"
+   ],
+   "0x4c749": [
+    2,
+    "Crowbar_Enemy"
+   ],
+   "0x4e28": [
+    2,
+    "DestroyableObject"
+   ],
+   "0x4c724": [
+    2,
+    "Helicopter"
+   ],
+   "0x2657": [
+    1,
+    "level init"
+   ],
+   "0x187d5": [
+    1,
+    "GC_Prop_VNeonSign_02_blue"
+   ],
+   "0x187d7": [
+    1,
+    "GC_Prop_VNeonSign_02_blue_Animated"
+   ],
+   "0x187e3": [
+    1,
+    "GC_Prop_VNeonSign_12_Animated"
+   ],
+   "0x14051": [
+    1,
+    "mesh longdist"
+   ],
+   "0x187eb": [
+    1,
+    "HC_Prop_BillboardRoof_Industrial_02_Industrial"
+   ],
+   "0x187fc": [
+    1,
+    "HC_Prop_BillboardWallTall_Industrial_02_Industrial"
+   ],
+   "0x18803": [
+    1,
+    "HC_Prop_BillboardWall_Industrial_02_Industrial"
+   ],
+   "0x18801": [
+    1,
+    "HC_Prop_BillboardWallTall_Industrial_07_Industrial"
+   ],
+   "0x18805": [
+    1,
+    "HC_Prop_BillboardWall_Industrial_04_Industrial"
+   ],
+   "0x187ef": [
+    1,
+    "HC_Prop_BillboardRoof_Industrial_06_Industrial"
+   ],
+   "0x187ec": [
+    1,
+    "HC_Prop_BillboardRoof_Industrial_03_Industrial"
+   ],
+   "0x187fb": [
+    1,
+    "HC_Prop_BillboardWallTall_Industrial_01_Industrial"
+   ],
+   "0x187ee": [
+    1,
+    "HC_Prop_BillboardRoof_Industrial_05_Industrial"
+   ],
+   "0x18804": [
+    1,
+    "HC_Prop_BillboardWall_Industrial_03_Industrial"
+   ],
+   "0x18802": [
+    1,
+    "HC_Prop_BillboardWall_Industrial_01_Industrial"
+   ],
+   "0x187f0": [
+    1,
+    "HC_Prop_BillboardRoof_Industrial_07_Industrial"
+   ],
+   "0x1881d": [
+    1,
+    "GC_Prop_Tree_Industrial_05_S_Industrial"
+   ],
+   "0x18828": [
+    1,
+    "HC_Prop_Busstop_Ad_Industrial"
+   ],
+   "0x2661": [
+    1,
+    "light"
+   ],
+   "0xc38e": [
+    1,
+    "BatPod"
+   ],
+   "0xc356": [
+    1,
+    "TrafficSpawner"
+   ],
+   "0x267d": [
+    1,
+    "navmesh"
+   ],
+   "0x927c3": [
+    1,
+    "Crane"
+   ],
+   "0x14ff2": [
+    1,
+    "MiniGameAnimatedObject"
+   ],
+   "0x4c725": [
+    1,
+    "Police_Officer"
+   ],
+   "0xffffffff": [
+    1,
+    null
+   ]
+  },
+  "benign_fault_records": 0,
+  "benign_fault_bytes": 0
+ },
+ "banked_bounds": "871/873 reproduced by the pure parser"
+}

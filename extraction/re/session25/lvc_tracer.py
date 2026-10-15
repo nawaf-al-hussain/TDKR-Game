@@ -382,7 +382,11 @@ class Tracer:
         self.str_violation = None
         self._in_str = False
         self.str_area = self.str_area_base
-        self.heap_ptr = HEAP
+        # session 26: keep_heap survives allocations across runs (native
+        # GOM map populate); heap_floor is the reset target (so data
+        # allocated before the walk — e.g. the GOM rb-tree — stays intact).
+        if not getattr(self, 'keep_heap', False):
+            self.heap_ptr = getattr(self, 'heap_floor', HEAP)
         self._restore_magic()
         regs = (UC_ARM_REG_R0, UC_ARM_REG_R1, UC_ARM_REG_R2, UC_ARM_REG_R3)
         for r in regs:

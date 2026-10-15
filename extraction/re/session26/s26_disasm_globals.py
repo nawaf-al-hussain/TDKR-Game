@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+"""Disassemble CLevel::LoadGlobalObjects + LoadGlobalData (section loops?)."""
+import struct, bisect, json
+
+SO = '/home/z/my-project/work/TDKR-Game/extraction/lib_libKRHP.so'
+SYMS = '/home/z/my-project/work/so_syms.json'
+
+d = open(SO, 'rb').read()
+e_phoff = struct.unpack_from('<I', d, 0x1c)[0]
+e_phentsize = struct.unpack_from('<H', d, 0x2a)[0]
+e_phnum = struct.unpack_from('<H', d, 0x2c)[0]
+segs = []
+for i in range(e_phnum):
+    h = d[e_phoff + i * e_phentsize: e_phoff + (i + 1) * e_phentsize]
+    p_type, p_offset, p_vaddr, _, p_filesz = struct.unpack_from('<IIIII', h, 0)
+    if p_type == 1:
+        segs.append((p_vaddr, p_filesz, p_offset))
+
+def v2f(va):
+    for a, s, o in segs:
+        if a <= va < a + s:
+            return o + (va - a)
+    return None
+
+syms = json.load(open(SYMS))['by_name']
+items = sorted((int(v, 16), k) for k, v in syms.items())
+addrs = [a for a, _ in items]
+names = {a: k for a, k in items}
+
+def dis(start, title):
+    i0 = bisect.bisect_right(addrs, start) - 1
+    end = addrs[i0 + 1]
+    print(f'\n; ==== {title}: {start:#x} .. {end:#x} ({end-start} B) next={names.get(end)}')
+    from capstone import Cs, CS_ARCH_ARM, CS_MODE_ARM
+    md = Cs(CS_ARCH_ARM, CS_MODE_ARM)
+    code = d[v2f(start): v2f(end)]
+    for ins in md.disasm(code, start):
+        ann = ''
+        if ins.mnemonic in ('bl', 'blx') or ins.mnemonic.startswith('b'):
+            try:
+                t = int(ins.op_str.lstrip('#'), 0)
+                if t in names:
+                    ann = f'   ; {names[t]}'
+            except ValueError:
+                pass
+        print(f'{ins.address:08x}  {ins.mnemonic:<8} {ins.op_str}{ann}')
+
+dis(0x3f4114, 'CLevel::LoadGlobalObjects')
+dis(0x3f3a94, 'CLevel::LoadGlobalData')

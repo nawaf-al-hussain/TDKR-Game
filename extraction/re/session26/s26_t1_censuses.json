@@ -1,0 +1,151 @@
+{
+ "GothamCity": {
+  "triangles": 137893,
+  "collision_comps": 794
+ },
+ "GothamCity_Island2": {
+  "triangles": 133696,
+  "collision_comps": 444
+ },
+ "collision_total": {
+  "components": 1238,
+  "triangles": 271589
+ },
+ "triggers": 694,
+ "trigger_lua": {
+  "scripts": 475,
+  "bytes": 560803
+ },
+ "spawns": 317,
+ "mesh_records": 62,
+ "lua_pool": {
+  "strings": 1252,
+  "bytes": 1639112
+ },
+ "lua_trigger_bytes": {
+  "sum_bytes": 1634243
+ },
+ "lua_api_top30": [
+  [
+   "Wait",
+   1195
+  ],
+  [
+   "Enable",
+   462
+  ],
+  [
+   "ShowMessage",
+   439
+  ],
+  [
+   "ActorSetState",
+   422
+  ],
+  [
+   "Disable",
+   405
+  ],
+  [
+   "ShowObject",
+   284
+  ],
+  [
+   "HideObject",
+   243
+  ],
+  [
+   "ActorLookTo",
+   170
+  ],
+  [
+   "StartFadeOut",
+   169
+  ],
+  [
+   "CameraFollowObject",
+   146
+  ],
+  [
+   "StartFadeIn",
+   143
+  ],
+  [
+   "SpawnObject",
+   138
+  ],
+  [
+   "KillActor",
+   126
+  ],
+  [
+   "ObjectiveRemove",
+   125
+  ],
+  [
+   "ObjectiveAdd",
+   109
+  ],
+  [
+   "ShowObjectiveMessage",
+   106
+  ],
+  [
+   "GiveDamage",
+   96
+  ],
+  [
+   "NPCGoToPath",
+   90
+  ],
+  [
+   "SetActorSpeedWalk",
+   86
+  ],
+  [
+   "TeleportPlayerToZone",
+   84
+  ],
+  [
+   "GetDistFromMC",
+   83
+  ],
+  [
+   "NPCSetStance",
+   80
+  ],
+  [
+   "Random",
+   74
+  ],
+  [
+   "EnableShowObject",
+   73
+  ],
+  [
+   "IsDead",
+   69
+  ],
+  [
+   "DisableInteractionForObject",
+   68
+  ],
+  [
+   "ClearObjectiveMessage",
+   66
+  ],
+  [
+   "StartPipeGame",
+   64
+  ],
+  [
+   "PlayAnimation",
+   62
+  ],
+  [
+   "NPCGoToWaypoint",
+   58
+  ]
+ ],
+ "lua_api_distinct": 249
+}
