@@ -12,6 +12,7 @@ import sys
 
 sys.path.insert(0, '/home/z/my-project/scripts')
 from lvc_tracer import Tracer, MAGIC
+import struct as _st
 from unicorn import UC_HOOK_CODE
 from unicorn.arm_const import (
     UC_ARM_REG_R0, UC_ARM_REG_R1, UC_ARM_REG_R2, UC_ARM_REG_R3,
@@ -44,6 +45,7 @@ HOOKS = {
 class BdaeHarness:
     def __init__(self, verbose=False):
         self.tr = Tracer(verbose=verbose)
+        self.tr.str_area_base = self.tr.str_area   # no lvc dict needed
         self.mu = self.tr.mu
         self.verbose = verbose
         self.file_pos = 0
