@@ -1,0 +1,814 @@
+{
+ "0xbc23d70a": {
+  "vtable_file": "0x1e7a4c",
+  "vslots": 16,
+  "load": "0x94ecdc",
+  "load_sym": "?",
+  "clsid_fn": "0x94ed58"
+ },
+ "0x202": {
+  "vtable_file": "0x224f6c",
+  "vslots": 29,
+  "load": "0x913220",
+  "load_sym": "?",
+  "clsid_fn": "0x9acfcc"
+ },
+ "0xffff": {
+  "vtable_file": "0x326888",
+  "vslots": 11,
+  "load": "0x8176b4",
+  "load_sym": "?",
+  "clsid_fn": "0x8173c4"
+ },
+ "0x8010": {
+  "vtable_file": "0x4078e8",
+  "vslots": 19,
+  "load": "0x81131c",
+  "load_sym": "?",
+  "clsid_fn": "0x810fec"
+ },
+ "0x1908": {
+  "vtable_file": "0x409424",
+  "vslots": 42,
+  "load": "0x738e54",
+  "load_sym": "?",
+  "clsid_fn": "0x80ffdc"
+ },
+ "0xa2e8ba3": {
+  "vtable_file": "0x40af7c",
+  "vslots": 17,
+  "load": "0x736ff0",
+  "load_sym": "?",
+  "clsid_fn": "0x736ac8"
+ },
+ "0x559e38": {
+  "vtable_file": "0x442638",
+  "vslots": 10,
+  "load": "0x799d58",
+  "load_sym": "?",
+  "clsid_fn": "0x6fdf90"
+ },
+ "0xbc8f": {
+  "vtable_file": "0x4d6ef4",
+  "vslots": 12,
+  "load": "0x670ea8",
+  "load_sym": "?",
+  "clsid_fn": "0x73467c"
+ },
+ "0x107": {
+  "vtable_file": "0x52b90c",
+  "vslots": 10,
+  "load": "0x622de8",
+  "load_sym": "?",
+  "clsid_fn": "0x622c2c"
+ },
+ "0x352": {
+  "vtable_file": "0x52dc78",
+  "vslots": 15,
+  "load": "0x621428",
+  "load_sym": "?",
+  "clsid_fn": "0x621160"
+ },
+ "0x1001": {
+  "vtable_file": "0x54f2e4",
+  "vslots": 53,
+  "load": "0x604a04",
+  "load_sym": "?",
+  "clsid_fn": "0x604968"
+ },
+ "0x7f7fffff": {
+  "vtable_file": "0x894664",
+  "vslots": 15,
+  "load": "0x2fe910",
+  "load_sym": "?",
+  "clsid_fn": "0x2fd7d8"
+ },
+ "0x6ed9eba1": {
+  "vtable_file": "0x5c5698",
+  "vslots": 24,
+  "load": "0x5a548c",
+  "load_sym": "?",
+  "clsid_fn": "0x5a53f4"
+ },
+ "0x1002": {
+  "vtable_file": "0x65f128",
+  "vslots": 18,
+  "load": "0x52253c",
+  "load_sym": "?",
+  "clsid_fn": "0x522344"
+ },
+ "0x2767": {
+  "vtable_file": "0x682ab8",
+  "vslots": 27,
+  "load": "0x4fecb4",
+  "load_sym": "?",
+  "clsid_fn": "0x4fe2a4"
+ },
+ "0x211": {
+  "vtable_file": "0x6d6748",
+  "vslots": 15,
+  "load": "0x50e754",
+  "load_sym": "?",
+  "clsid_fn": "0x581640"
+ },
+ "0x11fa4": {
+  "vtable_file": "0x7abb54",
+  "vslots": 72,
+  "load": "0x3db9b8",
+  "load_sym": "?",
+  "clsid_fn": "0x3db900"
+ },
+ "0x11f04": {
+  "vtable_file": "0x7ac66c",
+  "vslots": 21,
+  "load": "0x3da93c",
+  "load_sym": "?",
+  "clsid_fn": "0x3da820"
+ },
+ "0xaaaaaab": {
+  "vtable_file": "0x7dc9e4",
+  "vslots": 18,
+  "load": "0x3aafc4",
+  "load_sym": "?",
+  "clsid_fn": "0x3aaf40"
+ },
+ "0x365cfd67": {
+  "vtable_file": "0xbd0af8",
+  "vslots": 13,
+  "load": "0x2a1ea4",
+  "load_sym": "_ZN21CBeastObjectComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1f14"
+ },
+ "0xff1a": {
+  "vtable_file": "0x87292c",
+  "vslots": 15,
+  "load": "0x32014c",
+  "load_sym": "?",
+  "clsid_fn": "0x31fffc"
+ },
+ "0x15555555": {
+  "vtable_file": "0x983300",
+  "vslots": 20,
+  "load": "0x213970",
+  "load_sym": "?",
+  "clsid_fn": "0x21369c"
+ },
+ "0x2804": {
+  "vtable_file": "0x9b4c7c",
+  "vslots": 11,
+  "load": "0x1e4e74",
+  "load_sym": "?",
+  "clsid_fn": "0x1e4c18"
+ },
+ "0x34747ebe": {
+  "vtable_file": "0xbd1790",
+  "vslots": 14,
+  "load": "0x236228",
+  "load_sym": "_ZN21CInteractionComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d8874"
+ },
+ "0x800b": {
+  "vtable_file": "0xa709a8",
+  "vslots": 17,
+  "load": "0x1eabd4",
+  "load_sym": "?",
+  "clsid_fn": "0x1ea60c"
+ },
+ "0x378ded9b": {
+  "vtable_file": "0xbce938",
+  "vslots": 13,
+  "load": "0x1cc094",
+  "load_sym": "_ZN13CVehicleState4LoadEP13CMemoryStream",
+  "clsid_fn": "0x205678"
+ },
+ "0x4de3f7c4": {
+  "vtable_file": "0xbce978",
+  "vslots": 13,
+  "load": "0x1caa1c",
+  "load_sym": "_ZN14CVehicleSounds4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2054ec"
+ },
+ "0x1791e34f": {
+  "vtable_file": "0xbce9b8",
+  "vslots": 13,
+  "load": "0x1c31b0",
+  "load_sym": "_ZN25CVehicleGraphicsComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2052ac"
+ },
+ "0x216bb1eb": {
+  "vtable_file": "0xbce9f8",
+  "vslots": 13,
+  "load": "0x1c2ee4",
+  "load_sym": "_ZN17CVehicleAwareness4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2050b4"
+ },
+ "0x650bb301": {
+  "vtable_file": "0xbcec50",
+  "vslots": 14,
+  "load": "0x1fdb00",
+  "load_sym": "_ZN10IComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x20456c"
+ },
+ "0x5863bd59": {
+  "vtable_file": "0xbcf2a0",
+  "vslots": 15,
+  "load": "0x17f228",
+  "load_sym": "_ZN25CMainStoryQuestsComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x203eb0"
+ },
+ "0x406510ec": {
+  "vtable_file": "0xbcf2f8",
+  "vslots": 13,
+  "load": "0x1cfd10",
+  "load_sym": "_ZN9CNpcSound4LoadEP13CMemoryStream",
+  "clsid_fn": "0x20285c"
+ },
+ "0x2b9b5fed": {
+  "vtable_file": "0xbcf338",
+  "vslots": 13,
+  "load": "0x1c8944",
+  "load_sym": "_ZN15CVehiclePhysics4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2026e4"
+ },
+ "0x378ab920": {
+  "vtable_file": "0xbcf3d8",
+  "vslots": 14,
+  "load": "0x1c4270",
+  "load_sym": "_ZN13CVehicleLogic4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2010c0"
+ },
+ "0x55a6393b": {
+  "vtable_file": "0xbcf470",
+  "vslots": 13,
+  "load": "0x180b64",
+  "load_sym": "_ZN15CQuestComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x200f78"
+ },
+ "0x3189e053": {
+  "vtable_file": "0xbcf4b0",
+  "vslots": 13,
+  "load": "0x1bbf70",
+  "load_sym": "_ZN15CTrafficSetting4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2002f0"
+ },
+ "0x3198c7c5": {
+  "vtable_file": "0xbcf4f0",
+  "vslots": 13,
+  "load": "0x1bbbc0",
+  "load_sym": "_ZN17CTrafficSemaphore4LoadEP13CMemoryStream",
+  "clsid_fn": "0x1ff6b4"
+ },
+ "0x30951655": {
+  "vtable_file": "0xbcf570",
+  "vslots": 13,
+  "load": "0x1ba66c",
+  "load_sym": "_ZN14CTrafficMagnet4LoadEP13CMemoryStream",
+  "clsid_fn": "0x1ff474"
+ },
+ "0xc7d8baf": {
+  "vtable_file": "0xbcf5b0",
+  "vslots": 13,
+  "load": "0x1bae0c",
+  "load_sym": "_ZN12CTrafficRoad4LoadEP13CMemoryStream",
+  "clsid_fn": "0x1ff33c"
+ },
+ "0x5941c179": {
+  "vtable_file": "0xbcf5f0",
+  "vslots": 13,
+  "load": "0x1b852c",
+  "load_sym": "_ZN17CTrafficCrossroad4LoadEP13CMemoryStream",
+  "clsid_fn": "0x1ff330"
+ },
+ "0x35c5e0a0": {
+  "vtable_file": "0xbcf660",
+  "vslots": 13,
+  "load": "0x186874",
+  "load_sym": "_ZN17CMissileComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x1fef24"
+ },
+ "0x2ef26c52": {
+  "vtable_file": "0xbcf760",
+  "vslots": 13,
+  "load": "0x1d0668",
+  "load_sym": "_ZN14CSoundAndLight4LoadEP13CMemoryStream",
+  "clsid_fn": "0x1fecbc"
+ },
+ "0x30e3ad7c": {
+  "vtable_file": "0xbd0838",
+  "vslots": 13,
+  "load": "0x22fb70",
+  "load_sym": "_ZN22CEngineSoundsComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e3408"
+ },
+ "0x1963f0c0": {
+  "vtable_file": "0xbd0878",
+  "vslots": 13,
+  "load": "0x2279ec",
+  "load_sym": "_ZN18CDistrictComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e3304"
+ },
+ "0x4ab8a7cd": {
+  "vtable_file": "0xbd08b8",
+  "vslots": 13,
+  "load": "0x2a0c7c",
+  "load_sym": "_ZN20CSmartLightComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e324c"
+ },
+ "0x3ef5108d": {
+  "vtable_file": "0xbd08f8",
+  "vslots": 13,
+  "load": "0x229e44",
+  "load_sym": "_ZN25CDropCollectibleComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e298c"
+ },
+ "0x675d6313": {
+  "vtable_file": "0xbd0938",
+  "vslots": 13,
+  "load": "0x228a74",
+  "load_sym": "_ZN20CDropActorsComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x228a68"
+ },
+ "0x2b1efd04": {
+  "vtable_file": "0xbd0978",
+  "vslots": 13,
+  "load": "0x2a3688",
+  "load_sym": "_ZN21CBeastWindowComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e26bc"
+ },
+ "0x4cc07242": {
+  "vtable_file": "0xbd09b8",
+  "vslots": 13,
+  "load": "0x2a314c",
+  "load_sym": "_ZN19CBeastSpotComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e2590"
+ },
+ "0x4cc04ddb": {
+  "vtable_file": "0xbd09f8",
+  "vslots": 13,
+  "load": "0x2a2c18",
+  "load_sym": "_ZN19CBeastOmniComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e23b4"
+ },
+ "0x1721f5ba": {
+  "vtable_file": "0xbd0a38",
+  "vslots": 13,
+  "load": "0x2a17e0",
+  "load_sym": "_ZN26CBeastDirectionalComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e2220"
+ },
+ "0x4cbfd885": {
+  "vtable_file": "0xbd0a78",
+  "vslots": 13,
+  "load": "0x2a164c",
+  "load_sym": "_ZN19CBeastAreaComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e20f4"
+ },
+ "0x59a8390c": {
+  "vtable_file": "0xbd0ab8",
+  "vslots": 13,
+  "load": "0x2a2a80",
+  "load_sym": "_ZN27CBeastObjectGlobalComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1fe4"
+ },
+ "0x749126c3": {
+  "vtable_file": "0xbd0b38",
+  "vslots": 13,
+  "load": "0x29fedc",
+  "load_sym": "_ZN22CCylinderNodeComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1dbc"
+ },
+ "0x2ad64f3d": {
+  "vtable_file": "0xbd0b78",
+  "vslots": 13,
+  "load": "0x2a0728",
+  "load_sym": "_ZN19CPlaneNodeComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1db0"
+ },
+ "0x729ec572": {
+  "vtable_file": "0xbd0bf8",
+  "vslots": 13,
+  "load": "0x29f4f0",
+  "load_sym": "_ZN17CBoxNodeComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1b80"
+ },
+ "0x3e8cdd06": {
+  "vtable_file": "0xbd0c38",
+  "vslots": 13,
+  "load": "0x23755c",
+  "load_sym": "_ZN19CLensFlareComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1b74"
+ },
+ "0x3638f4e3": {
+  "vtable_file": "0xbd0c78",
+  "vslots": 13,
+  "load": "0x2a0188",
+  "load_sym": "_ZN19CDebugDrawComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1aec"
+ },
+ "0x3438ab08": {
+  "vtable_file": "0xbd0cb8",
+  "vslots": 14,
+  "load": "0x231ebc",
+  "load_sym": "_ZN17CGrenadeComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x231bf0"
+ },
+ "0xd1839c4": {
+  "vtable_file": "0xbd0dd0",
+  "vslots": 25,
+  "load": "0x253408",
+  "load_sym": "_ZN22CBatpodHandleComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1480"
+ },
+ "0x67c82e62": {
+  "vtable_file": "0xbd0fe0",
+  "vslots": 14,
+  "load": "0x24b038",
+  "load_sym": "_ZN26CVehicleCollisionComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e1470"
+ },
+ "0x37f7a8ae": {
+  "vtable_file": "0xbd1058",
+  "vslots": 13,
+  "load": "0x24947c",
+  "load_sym": "_ZN17CTriggerComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x249470"
+ },
+ "0x113317a": {
+  "vtable_file": "0xbd1098",
+  "vslots": 15,
+  "load": "0x238034",
+  "load_sym": "_ZN15CMeleeComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e0ac8"
+ },
+ "0xe1f5b6f": {
+  "vtable_file": "0xbd10f8",
+  "vslots": 14,
+  "load": "0x24097c",
+  "load_sym": "_ZN16CSniperComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e0abc"
+ },
+ "0x4c752": {
+  "vtable_file": "0xbd1150",
+  "vslots": 13,
+  "load": "0x22c2d0",
+  "load_sym": "_ZN24CElectricTurretComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e0ab0"
+ },
+ "0x75a9de0e": {
+  "vtable_file": "0xbd1190",
+  "vslots": 13,
+  "load": "0x2319d8",
+  "load_sym": "_ZN29CGrapplingHookTargetComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e08f4"
+ },
+ "0x4846ed83": {
+  "vtable_file": "0xbd11d0",
+  "vslots": 13,
+  "load": "0x2318dc",
+  "load_sym": "_ZN23CGrapplingHookComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e08e8"
+ },
+ "0x65da04ed": {
+  "vtable_file": "0xbd1210",
+  "vslots": 13,
+  "load": "0x230790",
+  "load_sym": "_ZN20CExhaustFanComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e08dc"
+ },
+ "0x62353c58": {
+  "vtable_file": "0xbd1250",
+  "vslots": 13,
+  "load": "0x245500",
+  "load_sym": "_ZN28CSurveillanceCameraComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e08d0"
+ },
+ "0x4891830c": {
+  "vtable_file": "0xbd1290",
+  "vslots": 13,
+  "load": "0x23ee84",
+  "load_sym": "_ZN23PullableObjectComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e08c4"
+ },
+ "0x3b912a30": {
+  "vtable_file": "0xbd12d0",
+  "vslots": 13,
+  "load": "0x24b7cc",
+  "load_sym": "_ZN23CWantedManagerComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e06d8"
+ },
+ "0x3e2bb040": {
+  "vtable_file": "0xbd1310",
+  "vslots": 13,
+  "load": "0x24b23c",
+  "load_sym": "_ZN25CWantedGeneratorComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e02d0"
+ },
+ "0x54505898": {
+  "vtable_file": "0xbd1350",
+  "vslots": 13,
+  "load": "0x244744",
+  "load_sym": "_ZN18CSteammerComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e0208"
+ },
+ "0x68d1134": {
+  "vtable_file": "0xbd1390",
+  "vslots": 13,
+  "load": "0x226548",
+  "load_sym": "_ZN21CDestroyableComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e01fc"
+ },
+ "0x116a6fa": {
+  "vtable_file": "0xbd13d0",
+  "vslots": 13,
+  "load": "0x248c64",
+  "load_sym": "_ZN15CTrailComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e01f0"
+ },
+ "0xe31d4a0": {
+  "vtable_file": "0xbd1410",
+  "vslots": 13,
+  "load": "0x24dd14",
+  "load_sym": "_ZN16CWeaponComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2e01e4"
+ },
+ "0x10fcfd6": {
+  "vtable_file": "0xbd1450",
+  "vslots": 13,
+  "load": "0x22a368",
+  "load_sym": "_ZN15CDummyComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2dffac"
+ },
+ "0x33702f4a": {
+  "vtable_file": "0xbd1490",
+  "vslots": 13,
+  "load": "0x22a1c4",
+  "load_sym": "_ZN17CDummiesComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2dffa0"
+ },
+ "0x17ac851f": {
+  "vtable_file": "0xbd14d0",
+  "vslots": 13,
+  "load": "0x292b4c",
+  "load_sym": "_ZN19CCinematicComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2dff94"
+ },
+ "0x1d7644a4": {
+  "vtable_file": "0xbd1510",
+  "vslots": 13,
+  "load": "0x23f42c",
+  "load_sym": "_ZN19CRunScriptComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d910c"
+ },
+ "0x25fadb96": {
+  "vtable_file": "0xbd1550",
+  "vslots": 14,
+  "load": "0x2337e0",
+  "load_sym": "_ZN18CHasLightComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d9084"
+ },
+ "0x25fe2587": {
+  "vtable_file": "0xbd15a8",
+  "vslots": 14,
+  "load": "0x233d20",
+  "load_sym": "_ZN18CHasSoundComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d8f64"
+ },
+ "0x5a77332f": {
+  "vtable_file": "0xbd1600",
+  "vslots": 14,
+  "load": "0x24d27c",
+  "load_sym": "_ZN20CWpMovementComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d8e80"
+ },
+ "0x377ea715": {
+  "vtable_file": "0xbd16d0",
+  "vslots": 13,
+  "load": "0x247f98",
+  "load_sym": "_ZN20CTargetableComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d8b10"
+ },
+ "0x5e35be99": {
+  "vtable_file": "0xbd1710",
+  "vslots": 13,
+  "load": "0x1fdb00",
+  "load_sym": "_ZN10IComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d8b04"
+ },
+ "0x82ea1c6": {
+  "vtable_file": "0xbd1750",
+  "vslots": 13,
+  "load": "0x221f78",
+  "load_sym": "_ZN28CCollectibleGeneralComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d89ec"
+ },
+ "0x7538c652": {
+  "vtable_file": "0xbd17e8",
+  "vslots": 21,
+  "load": "0x257434",
+  "load_sym": "_ZN15PlayerComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d8458"
+ },
+ "0x154bb0": {
+  "vtable_file": "0xbd19a0",
+  "vslots": 13,
+  "load": "0x23ecac",
+  "load_sym": "_ZN14CPoolComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d8024"
+ },
+ "0x28091330": {
+  "vtable_file": "0xbd19e0",
+  "vslots": 13,
+  "load": "0x220dfc",
+  "load_sym": "_ZN21CCollectibleComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d7fcc"
+ },
+ "0x238767e3": {
+  "vtable_file": "0xbd1a88",
+  "vslots": 13,
+  "load": "0x2203ac",
+  "load_sym": "_ZN12CHoverToPath4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d7d2c"
+ },
+ "0xddcd6c4": {
+  "vtable_file": "0xbd1ac8",
+  "vslots": 14,
+  "load": "0x23425c",
+  "load_sym": "_ZN16CHealthComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d7c38"
+ },
+ "0x2ca13c06": {
+  "vtable_file": "0xbd1b20",
+  "vslots": 13,
+  "load": "0x22a694",
+  "load_sym": "_ZN16CEffectComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d7b60"
+ },
+ "0xdfe2718": {
+  "vtable_file": "0xbd1c68",
+  "vslots": 13,
+  "load": "0x2395ac",
+  "load_sym": "_ZN16CMotionComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d79fc"
+ },
+ "0x2db081e2": {
+  "vtable_file": "0xbd1ca8",
+  "vslots": 13,
+  "load": "0x2230a8",
+  "load_sym": "_ZN19CCollisionComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d7340"
+ },
+ "0x786f6ecb": {
+  "vtable_file": "0xbd1d18",
+  "vslots": 13,
+  "load": "0x21cb30",
+  "load_sym": "_ZN16CHelicopterLogic4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d71f0"
+ },
+ "0x113f791": {
+  "vtable_file": "0xbd1db8",
+  "vslots": 14,
+  "load": "0x279e88",
+  "load_sym": "_ZN15CNpcAIComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d71dc"
+ },
+ "0x5441a117": {
+  "vtable_file": "0xbd1e10",
+  "vslots": 13,
+  "load": "0x298f38",
+  "load_sym": "_ZN18CStateSetComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x2d6f80"
+ },
+ "0x1402fd4b": {
+  "vtable_file": "0xbd2e50",
+  "vslots": 13,
+  "load": "0x396988",
+  "load_sym": "_ZN22CCrimeHotSpotComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3c4a50"
+ },
+ "0x7d561d33": {
+  "vtable_file": "0xbd2e90",
+  "vslots": 13,
+  "load": "0x396878",
+  "load_sym": "_ZN22CCameraParamsComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3c4a44"
+ },
+ "0x69540db7": {
+  "vtable_file": "0xbd2ed0",
+  "vslots": 13,
+  "load": "0x39677c",
+  "load_sym": "_ZN23CBeastSkylightComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3c49f8"
+ },
+ "0x557a594a": {
+  "vtable_file": "0xbd2f10",
+  "vslots": 13,
+  "load": "0x394918",
+  "load_sym": "_ZN20CAreaDamageComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3c4968"
+ },
+ "0x40c6b80a": {
+  "vtable_file": "0xbd2f50",
+  "vslots": 13,
+  "load": "0x396db4",
+  "load_sym": "_ZN24CCustomizeActorComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3c4290"
+ },
+ "0x68a62e65": {
+  "vtable_file": "0xbd2f90",
+  "vslots": 13,
+  "load": "0x38d828",
+  "load_sym": "_ZN21CActorShadowComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3bcae8"
+ },
+ "0x592ce07c": {
+  "vtable_file": "0xbd2fd0",
+  "vslots": 13,
+  "load": "0x38e53c",
+  "load_sym": "_ZN20CActorSpecialEffects4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3bc94c"
+ },
+ "0x6754056b": {
+  "vtable_file": "0xbd3010",
+  "vslots": 13,
+  "load": "0x394ec8",
+  "load_sym": "_ZN19CAwarenessComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3bbc38"
+ },
+ "0x651bdaa": {
+  "vtable_file": "0xbd3050",
+  "vslots": 14,
+  "load": "0x38cf90",
+  "load_sym": "_ZN25CActorsCollisionComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3bba7c"
+ },
+ "0x54989cb1": {
+  "vtable_file": "0xbd3bb0",
+  "vslots": 15,
+  "load": "0x36cbb0",
+  "load_sym": "_ZN19CActorBaseComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3bb2d8"
+ },
+ "0xf5f8cfd": {
+  "vtable_file": "0xbd4f58",
+  "vslots": 13,
+  "load": "0x390750",
+  "load_sym": "_ZN19CAnimationComponent4LoadEP13CMemoryStream",
+  "clsid_fn": "0x3ba150"
+ },
+ "0x11ef4": {
+  "vtable_file": "0xbdb908",
+  "vslots": 15,
+  "load": "0x45a520",
+  "load_sym": "_ZN18CPostProcessEffectD0Ev",
+  "clsid_fn": "0x445388"
+ },
+ "0x12026": {
+  "vtable_file": "0xbdb8a8",
+  "vslots": 16,
+  "load": "0x3e5024",
+  "load_sym": "_ZN11Application7OnEventERKN3glf9CoreEventE",
+  "clsid_fn": "0x3e6244"
+ },
+ "0x4c7814": {
+  "vtable_file": "0xbe58b8",
+  "vslots": 12,
+  "load": "0x1fd76c",
+  "load_sym": "_ZN6glitch17IReferenceCounted8onDeleteEv",
+  "clsid_fn": "0x74aae8"
+ },
+ "0x1fff": {
+  "vtable_file": "0xbf4f38",
+  "vslots": 29,
+  "load": "0x1fd76c",
+  "load_sym": "_ZN6glitch17IReferenceCounted8onDeleteEv",
+  "clsid_fn": "0x867df8"
+ },
+ "0x74786574": {
+  "vtable_file": "0xbfde10",
+  "vslots": 11,
+  "load": "0x9628d0",
+  "load_sym": "_ZN6glitch5scene14CTextSceneNode7setTextEPKw",
+  "clsid_fn": "0x962bcc"
+ },
+ "0x629820": {
+  "vtable_file": "0xc07300",
+  "vslots": 35,
+  "load": "0x5da9a4",
+  "load_sym": "i2d_X509_REQ",
+  "clsid_fn": "0x59dcd4"
+ },
+ "0x605fa8": {
+  "vtable_file": "0xc07404",
+  "vslots": 30,
+  "load": "0x5da9f8",
+  "load_sym": "i2d_X509_SIG",
+  "clsid_fn": "0x5c16e0"
+ },
+ "0xb63d04": {
+  "vtable_file": "0xc07abc",
+  "vslots": 337,
+  "load": "0xa4d9c",
+  "load_sym": "?",
+  "clsid_fn": "0xa4d9c"
+ }
+}
