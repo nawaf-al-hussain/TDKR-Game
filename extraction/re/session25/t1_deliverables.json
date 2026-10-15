@@ -1,0 +1,4780 @@
+{
+ "GothamCity": {
+  "records": 20767,
+  "complete": true,
+  "end": "0x5eb80b",
+  "table_off": "0x5eb80b",
+  "classes": {
+   "<absent>": {
+    "n": 7397,
+    "total": 0,
+    "min": 0,
+    "max": 0
+   },
+   "0x14ca79": {
+    "n": 3900,
+    "total": 171600,
+    "min": 44,
+    "max": 44
+   },
+   "0x152b87": {
+    "n": 1112,
+    "total": 8896,
+    "min": 8,
+    "max": 8
+   },
+   "0x2ad2a046": {
+    "n": 949,
+    "total": 32470,
+    "min": 6,
+    "max": 146
+   },
+   "0x2db081e2": {
+    "n": 794,
+    "total": 5125067,
+    "min": 177,
+    "max": 481436
+   },
+   "0x729ec572": {
+    "n": 482,
+    "total": 28920,
+    "min": 60,
+    "max": 60
+   },
+   "0x37f7a8ae": {
+    "n": 437,
+    "total": 23598,
+    "min": 54,
+    "max": 54
+   },
+   "0x365cfd67": {
+    "n": 423,
+    "total": 16920,
+    "min": 40,
+    "max": 40
+   },
+   "0x749126c3": {
+    "n": 404,
+    "total": 18180,
+    "min": 45,
+    "max": 45
+   },
+   "0x34747ebe": {
+    "n": 369,
+    "total": 5904,
+    "min": 16,
+    "max": 16
+   },
+   "0xdfe2718": {
+    "n": 335,
+    "total": 1340,
+    "min": 4,
+    "max": 4
+   },
+   "0x54989cb1": {
+    "n": 323,
+    "total": 28221,
+    "min": 82,
+    "max": 92
+   },
+   "0x154bb0": {
+    "n": 307,
+    "total": 0,
+    "min": 0,
+    "max": 0
+   },
+   "0x113f791": {
+    "n": 273,
+    "total": 10374,
+    "min": 38,
+    "max": 38
+   },
+   "0xc7d8baf": {
+    "n": 255,
+    "total": 12750,
+    "min": 50,
+    "max": 50
+   },
+   "0x592ce07c": {
+    "n": 210,
+    "total": 3780,
+    "min": 18,
+    "max": 18
+   },
+   "0xf5f8cfd": {
+    "n": 202,
+    "total": 5050,
+    "min": 25,
+    "max": 25
+   },
+   "0x2ef26c52": {
+    "n": 176,
+    "total": 3520,
+    "min": 20,
+    "max": 20
+   },
+   "0xddcd6c4": {
+    "n": 169,
+    "total": 2197,
+    "min": 13,
+    "max": 13
+   },
+   "0x6754056b": {
+    "n": 163,
+    "total": 10432,
+    "min": 64,
+    "max": 64
+   },
+   "0x406510ec": {
+    "n": 122,
+    "total": 3660,
+    "min": 30,
+    "max": 30
+   },
+   "0x651bdaa": {
+    "n": 93,
+    "total": 1116,
+    "min": 12,
+    "max": 12
+   },
+   "0x59a8390c": {
+    "n": 75,
+    "total": 900,
+    "min": 12,
+    "max": 12
+   },
+   "0x5941c179": {
+    "n": 71,
+    "total": 3763,
+    "min": 53,
+    "max": 53
+   },
+   "0x2ca13c06": {
+    "n": 65,
+    "total": 1495,
+    "min": 23,
+    "max": 23
+   },
+   "0x113317a": {
+    "n": 54,
+    "total": 864,
+    "min": 16,
+    "max": 16
+   },
+   "0x68a62e65": {
+    "n": 49,
+    "total": 245,
+    "min": 5,
+    "max": 5
+   },
+   "0x3198c7c5": {
+    "n": 43,
+    "total": 172,
+    "min": 4,
+    "max": 4
+   },
+   "0x55a6393b": {
+    "n": 41,
+    "total": 1435,
+    "min": 35,
+    "max": 35
+   },
+   "0x4ab8a7cd": {
+    "n": 38,
+    "total": 2414,
+    "min": 43,
+    "max": 103
+   },
+   "0x2b9b5fed": {
+    "n": 38,
+    "total": 760,
+    "min": 20,
+    "max": 20
+   },
+   "0x378ab920": {
+    "n": 38,
+    "total": 1368,
+    "min": 36,
+    "max": 36
+   },
+   "0x4de3f7c4": {
+    "n": 38,
+    "total": 1672,
+    "min": 44,
+    "max": 44
+   },
+   "0x650bb301": {
+    "n": 36,
+    "total": 0,
+    "min": 0,
+    "max": 0
+   },
+   "0x17ac851f": {
+    "n": 32,
+    "total": 7020,
+    "min": 110,
+    "max": 550
+   },
+   "0x1402fd4b": {
+    "n": 28,
+    "total": 448,
+    "min": 16,
+    "max": 16
+   },
+   "0x65da04ed": {
+    "n": 25,
+    "total": 725,
+    "min": 29,
+    "max": 29
+   },
+   "0x1791e34f": {
+    "n": 21,
+    "total": 168,
+    "min": 8,
+    "max": 8
+   },
+   "0x675d6313": {
+    "n": 20,
+    "total": 464,
+    "min": 4,
+    "max": 36
+   },
+   "0x37883208": {
+    "n": 17,
+    "total": 984,
+    "min": 48,
+    "max": 72
+   },
+   "0x378ded9b": {
+    "n": 17,
+    "total": 952,
+    "min": 56,
+    "max": 56
+   },
+   "0x216bb1eb": {
+    "n": 17,
+    "total": 136,
+    "min": 8,
+    "max": 8
+   },
+   "0x68d1134": {
+    "n": 15,
+    "total": 450,
+    "min": 30,
+    "max": 30
+   },
+   "0x377ea715": {
+    "n": 15,
+    "total": 390,
+    "min": 26,
+    "max": 26
+   },
+   "0x786f6ecb": {
+    "n": 13,
+    "total": 572,
+    "min": 44,
+    "max": 44
+   },
+   "0x3189e053": {
+    "n": 12,
+    "total": 1164,
+    "min": 77,
+    "max": 117
+   },
+   "0xe31d4a0": {
+    "n": 10,
+    "total": 770,
+    "min": 77,
+    "max": 77
+   },
+   "0xe286154": {
+    "n": 10,
+    "total": 560,
+    "min": 56,
+    "max": 56
+   },
+   "0x62353c58": {
+    "n": 4,
+    "total": 240,
+    "min": 60,
+    "max": 60
+   },
+   "0x1963f0c0": {
+    "n": 3,
+    "total": 24,
+    "min": 8,
+    "max": 8
+   },
+   "0x238767e3": {
+    "n": 2,
+    "total": 24,
+    "min": 12,
+    "max": 12
+   },
+   "0x30951655": {
+    "n": 1,
+    "total": 29,
+    "min": 29,
+    "max": 29
+   },
+   "0x31c00731": {
+    "n": 1,
+    "total": 37,
+    "min": 37,
+    "max": 37
+   },
+   "0x4891830c": {
+    "n": 1,
+    "total": 56,
+    "min": 56,
+    "max": 56
+   }
+  },
+  "collision": {
+   "components": 794,
+   "prims": 794,
+   "triangles": 137893,
+   "max_prims_tris": 13011
+  },
+  "triggers": {
+   "components": 437,
+   "with_script": 437,
+   "total_script_bytes": 413096
+  },
+  "spawns": 222,
+  "batman_spawns": [
+   {
+    "objId": 2000108,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -140.69200134277344,
+     -681.1890258789062,
+     0.11400000005960464
+    ],
+    "off": "0x5557d"
+   },
+   {
+    "objId": 703260,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -551.1190185546875,
+     -792.1820068359375,
+     -0.2199999988079071
+    ],
+    "off": "0x4e03b6"
+   },
+   {
+    "objId": 703331,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -493.4289855957031,
+     -953.5289916992188,
+     36.698001861572266
+    ],
+    "off": "0x4e20bd"
+   },
+   {
+    "objId": 800008,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -703.68798828125,
+     -920.4530029296875,
+     -0.2199999988079071
+    ],
+    "off": "0x4e2d55"
+   },
+   {
+    "objId": 400053,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -860.75,
+     -698.4089965820312,
+     -0.2199999988079071
+    ],
+    "off": "0x4e478e"
+   },
+   {
+    "objId": 401897,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -668.8699951171875,
+     -975.3109741210938,
+     64.74600219726562
+    ],
+    "off": "0x4e492f"
+   },
+   {
+    "objId": 315231,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -618.2579956054688,
+     -804.7849731445312,
+     68.12799835205078
+    ],
+    "off": "0x4e496e"
+   },
+   {
+    "objId": 401933,
+    "name": "batman.bdae",
+    "lua": "function Obj401933_OnSpawn(...)\n\nWait(100)\nfz_sandbox_enable_all_first_island()\nStartMainStoryFromQuestId(950)\nend\n",
+    "pos": [
+     -596.7570190429688,
+     -965.0339965820312,
+     52.7869987487793
+    ],
+    "off": "0x4e4a23"
+   },
+   {
+    "objId": 413924,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -705.3909912109375,
+     -955.3109741210938,
+     11.968999862670898
+    ],
+    "off": "0x4e4bb4"
+   },
+   {
+    "objId": 401031,
+    "name": "batman.bdae",
+    "lua": "function Obj401031_OnSpawn(...)\nWait(100)\n\n\nStartMainStoryFromQuestId(960)\nend\n",
+    "pos": [
+     -597.8319702148438,
+     -883.6060180664062,
+     99.9280014038086
+    ],
+    "off": "0x4e4c69"
+   },
+   {
+    "objId": 402218,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -453.72198486328125,
+     -843.822998046875,
+     72.3479995727539
+    ],
+    "off": "0x4e4ca8"
+   },
+   {
+    "objId": 413925,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -370.885986328125,
+     -920.2329711914062,
+     99.68499755859375
+    ],
+    "off": "0x4e4d7a"
+   },
+   {
+    "objId": 400531,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -668.5999755859375,
+     -893.52197265625,
+     62.62200164794922
+    ],
+    "off": "0x4e4e2f"
+   },
+   {
+    "objId": 800014,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -666.8809814453125,
+     -893.1129760742188,
+     62.551998138427734
+    ],
+    "off": "0x4e4f5a"
+   },
+   {
+    "objId": 401073,
+    "name": "batman.bdae",
+    "lua": "function Obj401073_OnSpawn(...)\nStartFadeOut(0)\nend\n",
+    "pos": [
+     -667.0850219726562,
+     -889.4979858398438,
+     62.551998138427734
+    ],
+    "off": "0x4e5635"
+   },
+   {
+    "objId": 400461,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -632.1589965820312,
+     -867.5759887695312,
+     62.5
+    ],
+    "off": "0x4e602c"
+   },
+   {
+    "objId": 502634,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     50.02399826049805,
+     -815.7429809570312,
+     93.75
+    ],
+    "off": "0x4ec9fc"
+   },
+   {
+    "objId": 413933,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -596.9290161132812,
+     -963.5339965820312,
+     52.7869987487793
+    ],
+    "off": "0x4ed31a"
+   },
+   {
+    "objId": 315250,
+    "name": "batman.bdae",
+    "lua": "function Obj315250_OnSpawn(...)\n\nWait(500)\nfz_sandbox_enable_after_pit ()\n\nprint(GetCurrentMainStoryQuestId())\n\n--------------start tutorial ---\n--StartMainStoryFromQuestId(222)\n------------------------------------\n\n----------------start saving lucius---\n--StartMainStoryFromQuestId(25)\n--------------------------------------\n\n------------start bar ------------\n--StartMainStoryFromQuestId(834)\n----------------------------------\n\n--------start hot pursuit------\n--StartMainStoryFromQuestId(1000)\n-------------------------------\n\n----------start under pressure----\n--m_can_start_story_mission = 1\n--StartMainStoryFromQuestId(301)\n----------------------------------\n\n----------start miranda ----------\n--StartMainStoryFromQuestId(305)\n----------------------------------\n\n\n--------start power plant-------\n--StartMainStoryFromQuestId(601)\n--------------------------------\n\n----------start military ---------\n--StartMainStoryFromQuestId(816)\n----------------------------------\n\n-------------start batcave -----\n--StartMainStoryFromQuestId(817)\n--------------------------------\n\n----------start Decryption 1 -----\n--StartMainStoryFromQuestId(950)\n----------------------------------\n--------start Bat Pod ----------\n--StartMainStoryFromQuestId(814)\n--------------------------------\n----\n------------start Decryption 3 -----\nStartMainStoryFromQuestId(960)\n------------------------------------\n\n--------start decription 4 ----------\n--StartMainStoryFromQuestId(818)\n-----------------------------------\n\n---------------start decription 5 -----\n--StartMainStoryFromQuestId(215) --- fix this asap ---\n----------------------------------\n\n----------------start cleaning house (4.1)----\n--StartMainStoryFromQuestId(1101)\n----------------------------------------------\n\n--------start storm 2 ----------\n--StartMainStoryFromQuestId(825)\n-------------------------------------\n\n--------start storm 4-------\n--StartMainStoryFromQuestId(602)\n--------------------------------\nend\n",
+    "pos": [
+     -992.7239990234375,
+     -924.0449829101562,
+     -0.23100000619888306
+    ],
+    "off": "0x4ed4bb"
+   },
+   {
+    "objId": 315256,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -704.93798828125,
+     -1065.5059814453125,
+     -0.2199999988079071
+    ],
+    "off": "0x4ed4fa"
+   },
+   {
+    "objId": 315269,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -575.3690185546875,
+     -868.531005859375,
+     100.0719985961914
+    ],
+    "off": "0x4ed539"
+   },
+   {
+    "objId": 316205,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -894.5330200195312,
+     -672.4210205078125,
+     36.90700149536133
+    ],
+    "off": "0x4fc74a"
+   },
+   {
+    "objId": 316367,
+    "name": "batman.bdae",
+    "lua": "function Obj316367_OnSpawn(...)\nEnable(316366)\nend\n",
+    "pos": [
+     -116.08499908447266,
+     -680.9509887695312,
+     0.335999995470047
+    ],
+    "off": "0x4fc8ad"
+   },
+   {
+    "objId": 316757,
+    "name": "batman.bdae",
+    "lua": "function Obj316757_OnSpawn(...)\n    fz_sandbox_disable_all()\n    Wait(1000)\n    fz_sandbox_enable_before_pit()\n    Wait(1)\n    NextMission(702823)\n    Wait(1)\n    SetQuestEnabled(836)\nend\n",
+    "pos": [
+     -512.6489868164062,
+     -819.39501953125,
+     71.95700073242188
+    ],
+    "off": "0x4fcb2c"
+   },
+   {
+    "objId": 316422,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -786.302978515625,
+     -1152.0040283203125,
+     -0.2280000001192093
+    ],
+    "off": "0x4fcc3c"
+   },
+   {
+    "objId": 315391,
+    "name": "batman.bdae",
+    "lua": "function Obj315391_OnSpawn(...)\n------start Bat Pod ----------\nStartMainStoryFromQuestId(814)\n------------------------------\nend\n",
+    "pos": [
+     -694.0,
+     -783.5130004882812,
+     44.14699935913086
+    ],
+    "off": "0x4fce85"
+   },
+   {
+    "objId": 316679,
+    "name": "batman.bdae",
+    "lua": "function Obj316679_OnSpawn(...)\n--StartMainStoryFromQuestId(817)\n--Wait(100)\n--StartFadeIn(500)\nStartFadeIn(1500)\nfz_sandbox_enable_all_first_island()\nend\n",
+    "pos": [
+     -992.0380249023438,
+     -914.135009765625,
+     -0.24300000071525574
+    ],
+    "off": "0x4fd759"
+   },
+   {
+    "objId": 316756,
+    "name": "batman.bdae",
+    "lua": "function Obj316756_OnSpawn(...)\n--print(\"@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@ teleported\")\n--if GetCurrentMainStoryQuestId() ~= 817 then\n    StartMainStoryFromQuestId(817)\n    StartFadeIn(1500)\n    fz_sandbox_enable_all_first_island()\n--end\n\n--Wait(100)\n--StartFadeIn(500)\nend\n",
+    "pos": [
+     -992.0380249023438,
+     -913.1099853515625,
+     -0.24300000071525574
+    ],
+    "off": "0x4fd7f3"
+   },
+   {
+    "objId": 316684,
+    "name": "batman.bdae",
+    "lua": "function Obj316684_OnSpawn(...)\nStartMainStoryFromQuestId(818)\n--316684\nend\n",
+    "pos": [
+     -956.5780029296875,
+     -916.2979736328125,
+     27.090999603271484
+    ],
+    "off": "0x4fd832"
+   },
+   {
+    "objId": 316726,
+    "name": "batman.bdae",
+    "lua": "function Obj316726_OnSpawn(...)\nif not IsEnabled(600022) then\n    Enable(600022)\nend\n\nend\n",
+    "pos": [
+     -495.15899658203125,
+     -886.9539794921875,
+     48.52799987792969
+    ],
+    "off": "0x4fda9a"
+   },
+   {
+    "objId": 316733,
+    "name": "batman.bdae",
+    "lua": "function Obj316733_OnSpawn(...)\nStartMainStoryFromQuestId(825)\nend\n",
+    "pos": [
+     -979.6510009765625,
+     -892.1409912109375,
+     -0.23199999332427979
+    ],
+    "off": "0x4fdb8f"
+   },
+   {
+    "objId": 316734,
+    "name": "batman.bdae",
+    "lua": "function Obj316734_OnSpawn(...)\nStartMainStoryFromQuestId(826)\nend\n",
+    "pos": [
+     -147.9459991455078,
+     -662.8040161132812,
+     80.24800109863281
+    ],
+    "off": "0x4fdbce"
+   },
+   {
+    "objId": 316735,
+    "name": "batman.bdae",
+    "lua": "function Obj316735_OnSpawn(...)\nStartMainStoryFromQuestId(1000)\nend\n",
+    "pos": [
+     -408.8389892578125,
+     -934.5800170898438,
+     30.04199981689453
+    ],
+    "off": "0x4fdc0d"
+   },
+   {
+    "objId": 316736,
+    "name": "batman.bdae",
+    "lua": "function Obj316736_OnSpawn(...)\nNextMission(1900020)\nWait(1)\nEnable(1900274)\nWait(1000)\nTeleportPlayerToZone(316736)\nend\n",
+    "pos": [
+     -551.698974609375,
+     -1073.1949462890625,
+     0.0
+    ],
+    "off": "0x4fdc4c"
+   },
+   {
+    "objId": 316742,
+    "name": "batman.bdae",
+    "lua": "function Obj316742_OnSpawn(...)\nStartFadeIn(1500)\nend\n",
+    "pos": [
+     -850.0180053710938,
+     -517.968994140625,
+     32.79199981689453
+    ],
+    "off": "0x4fdd01"
+   },
+   {
+    "objId": 316689,
+    "name": "batman.bdae",
+    "lua": "function Obj316689_OnSpawn(...)\nStartFadeIn(1500)\nend\n",
+    "pos": [
+     -173.0679931640625,
+     -765.6270141601562,
+     32.983001708984375
+    ],
+    "off": "0x4fddee"
+   },
+   {
+    "objId": 316759,
+    "name": "batman.bdae",
+    "lua": "function Obj316759_OnSpawn(...)\nWait(100)\nfz_sandbox_enable_all_first_island ()\nm_sandbox_remove_briefing = 1\nm_can_reach_bridge = 1\nm_Sandbox_play_mission_started = 1\nStartMainStoryFromQuestId(602)\n\n\nend\n",
+    "pos": [
+     -629.6400146484375,
+     -792.8880004882812,
+     161.87399291992188
+    ],
+    "off": "0x4feb5d"
+   },
+   {
+    "objId": 316765,
+    "name": "batman.bdae",
+    "lua": "function Obj316765_OnSpawn(...)\n--StartMainStoryFromQuestId(305)\nNextMission(600388)\nWait(100)\nEnable(600503)\nWait(100)\nr_miranda_current_state = \"save\"\nend\n",
+    "pos": [
+     -602.947021484375,
+     -668.0399780273438,
+     54.50899887084961
+    ],
+    "off": "0x4feb9c"
+   },
+   {
+    "objId": 402409,
+    "name": "batman.bdae",
+    "lua": "function Obj402409_OnSpawn(...)\n\n--NextMission(402406)\n--Wait(2000)\n--\nWait(100)\nfz_sandbox_enable_ALL()\n----Enable(401943)\n----\n----\n   -----Civilian under attack\n    --SideMissionManagerQuestAdd(904)\n\n    -----Police under attack\n    --SideMissionManagerQuestAdd(906)\n    \n    ----- police vs bane\n    --SideMissionManagerQuestAdd(112)\n    \n    --- Barricade rooftop\n    --SideMissionManagerQuestAdd(907)\n    \n    --- ammo rooftop\n    --SideMissionManagerQuestAdd(909)\n    \n    --- heli rooftop\n    --SideMissionManagerQuestAdd(113)\n    \n    ---------mini missions that will NOT appear\n    \n    -----Car Thief\n    --SideMissionManagerQuestAdd(905)\n\n--StartSideMissionManager()\n--\n----\n----\n--StartMainStoryFromQuestId(834)\n\n--Wait(3000)\n\n\n--StartSound(\"env_car_door_open\", false, 200)\n\n--StartEventAtObjectNode(\"env_car_door_open\", CurrentActor, MC_MAX_DISTANCE*20 );\n--\n\n\n\n--CameraFollowObject(2400098, \"\", 0, 0, -1.6, true, 2400099, \"\", 0, 0, 0, true,2500)\n--NPCGoToWaypoint(413934, -1, 413935)\nend\n",
+    "pos": [
+     -251.96800231933594,
+     -1133.7879638671875,
+     25.38800048828125
+    ],
+    "off": "0x4fec51"
+   },
+   {
+    "objId": 412161,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -846.7780151367188,
+     -897.8989868164062,
+     0.0
+    ],
+    "off": "0x5304a0"
+   },
+   {
+    "objId": 412448,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -670.0170288085938,
+     -801.5800170898438,
+     0.0
+    ],
+    "off": "0x534ce7"
+   },
+   {
+    "objId": 412828,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -517.322998046875,
+     -900.3989868164062,
+     0.0
+    ],
+    "off": "0x539867"
+   },
+   {
+    "objId": 401051,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -578.9959716796875,
+     -937.8150024414062,
+     0.0
+    ],
+    "off": "0x564d19"
+   },
+   {
+    "objId": 401052,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -552.1729736328125,
+     -935.4619750976562,
+     0.0
+    ],
+    "off": "0x564d58"
+   },
+   {
+    "objId": 410815,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -890.489013671875,
+     -731.114990234375,
+     18.368000030517578
+    ],
+    "off": "0x575e73"
+   },
+   {
+    "objId": 410816,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -851.708984375,
+     -1090.887939453125,
+     15.461000442504883
+    ],
+    "off": "0x575eb2"
+   },
+   {
+    "objId": 410817,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -845.7570190429688,
+     -1007.6699829101562,
+     34.24399948120117
+    ],
+    "off": "0x575ef1"
+   },
+   {
+    "objId": 410818,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -615.302978515625,
+     -1098.376953125,
+     44.402000427246094
+    ],
+    "off": "0x575f30"
+   },
+   {
+    "objId": 410819,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -507.3330078125,
+     -1039.051025390625,
+     16.349000930786133
+    ],
+    "off": "0x575f6f"
+   },
+   {
+    "objId": 410820,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -722.552001953125,
+     -1008.2960205078125,
+     46.60100173950195
+    ],
+    "off": "0x575fae"
+   },
+   {
+    "objId": 410821,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -707.4749755859375,
+     -869.0499877929688,
+     128.8939971923828
+    ],
+    "off": "0x575fed"
+   },
+   {
+    "objId": 410822,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -726.8489990234375,
+     -824.5880126953125,
+     65.0
+    ],
+    "off": "0x57602c"
+   },
+   {
+    "objId": 410823,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -758.7009887695312,
+     -569.7410278320312,
+     15.461000442504883
+    ],
+    "off": "0x57606b"
+   },
+   {
+    "objId": 410824,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -608.4869995117188,
+     -679.8380126953125,
+     138.08399963378906
+    ],
+    "off": "0x5760aa"
+   },
+   {
+    "objId": 410825,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -495.0950012207031,
+     -836.3419799804688,
+     113.53099822998047
+    ],
+    "off": "0x5760e9"
+   },
+   {
+    "objId": 410826,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -352.572998046875,
+     -749.3209838867188,
+     30.264999389648438
+    ],
+    "off": "0x576128"
+   },
+   {
+    "objId": 410827,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -371.09698486328125,
+     -922.4539794921875,
+     99.60700225830078
+    ],
+    "off": "0x576167"
+   },
+   {
+    "objId": 410828,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -392.10101318359375,
+     -1128.052978515625,
+     43.492000579833984
+    ],
+    "off": "0x5761a6"
+   },
+   {
+    "objId": 410829,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -236.84800720214844,
+     -1010.0239868164062,
+     20.341999053955078
+    ],
+    "off": "0x5761e5"
+   },
+   {
+    "objId": 410830,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -213.4459991455078,
+     -866.948974609375,
+     31.347999572753906
+    ],
+    "off": "0x576224"
+   },
+   {
+    "objId": 410831,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -235.9759979248047,
+     -768.2420043945312,
+     20.639999389648438
+    ],
+    "off": "0x576263"
+   },
+   {
+    "objId": 410832,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -3.2990000247955322,
+     -1026.843994140625,
+     31.374000549316406
+    ],
+    "off": "0x5762a2"
+   },
+   {
+    "objId": 410833,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -171.44200134277344,
+     -1124.9169921875,
+     30.937000274658203
+    ],
+    "off": "0x5762e1"
+   },
+   {
+    "objId": 410834,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -54.566001892089844,
+     -850.5280151367188,
+     15.762999534606934
+    ],
+    "off": "0x576320"
+   },
+   {
+    "objId": 413806,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -480.7090148925781,
+     -1224.760986328125,
+     -0.5189999938011169
+    ],
+    "off": "0x576bab"
+   },
+   {
+    "objId": 413811,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -336.625,
+     -1203.885986328125,
+     -0.23100000619888306
+    ],
+    "off": "0x576bea"
+   },
+   {
+    "objId": 413812,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -163.2530059814453,
+     -1178.31298828125,
+     -0.23100000619888306
+    ],
+    "off": "0x576c29"
+   },
+   {
+    "objId": 413813,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -45.9109992980957,
+     -1125.375,
+     -0.23100000619888306
+    ],
+    "off": "0x576c68"
+   },
+   {
+    "objId": 413814,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     60.5369987487793,
+     -1053.0009765625,
+     -0.23100000619888306
+    ],
+    "off": "0x576ca7"
+   },
+   {
+    "objId": 413815,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     123.34700012207031,
+     -951.7869873046875,
+     -0.23100000619888306
+    ],
+    "off": "0x576ce6"
+   },
+   {
+    "objId": 413816,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     144.572998046875,
+     -857.7760009765625,
+     -0.23100000619888306
+    ],
+    "off": "0x576d25"
+   },
+   {
+    "objId": 413817,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     125.26100158691406,
+     -760.8049926757812,
+     -0.23000000417232513
+    ],
+    "off": "0x576d64"
+   },
+   {
+    "objId": 413818,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     94.0790023803711,
+     -703.4569702148438,
+     -0.21299999952316284
+    ],
+    "off": "0x576da3"
+   },
+   {
+    "objId": 413819,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     16.09000015258789,
+     -680.447021484375,
+     -0.2280000001192093
+    ],
+    "off": "0x576de2"
+   },
+   {
+    "objId": 413820,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -58.196998596191406,
+     -680.0079956054688,
+     -0.3100000023841858
+    ],
+    "off": "0x576e21"
+   },
+   {
+    "objId": 413821,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -198.0279998779297,
+     -688.3499755859375,
+     -0.36500000953674316
+    ],
+    "off": "0x576e60"
+   },
+   {
+    "objId": 413822,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -259.1109924316406,
+     -695.5830078125,
+     -0.1940000057220459
+    ],
+    "off": "0x576e9f"
+   },
+   {
+    "objId": 413823,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -292.927001953125,
+     -693.7990112304688,
+     -0.23399999737739563
+    ],
+    "off": "0x576ede"
+   },
+   {
+    "objId": 413824,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -400.37799072265625,
+     -676.6090087890625,
+     -0.23100000619888306
+    ],
+    "off": "0x576f1d"
+   },
+   {
+    "objId": 413825,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -465.43499755859375,
+     -652.781005859375,
+     -0.23100000619888306
+    ],
+    "off": "0x576f5c"
+   },
+   {
+    "objId": 413826,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -519.0659790039062,
+     -608.9910278320312,
+     -0.23100000619888306
+    ],
+    "off": "0x576f9b"
+   },
+   {
+    "objId": 413827,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -597.260009765625,
+     -528.7410278320312,
+     -0.23100000619888306
+    ],
+    "off": "0x576fda"
+   },
+   {
+    "objId": 413828,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -704.5560302734375,
+     -469.427001953125,
+     -0.23100000619888306
+    ],
+    "off": "0x577019"
+   },
+   {
+    "objId": 413829,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -770.1129760742188,
+     -466.0690002441406,
+     -0.23100000619888306
+    ],
+    "off": "0x577058"
+   },
+   {
+    "objId": 413830,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -864.9030151367188,
+     -460.8280029296875,
+     -0.23100000619888306
+    ],
+    "off": "0x577097"
+   },
+   {
+    "objId": 413831,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -954.4910278320312,
+     -528.2680053710938,
+     -0.17599999904632568
+    ],
+    "off": "0x5770d6"
+   },
+   {
+    "objId": 413832,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -963.4990234375,
+     -597.6519775390625,
+     -0.17599999904632568
+    ],
+    "off": "0x577115"
+   },
+   {
+    "objId": 413833,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -975.614013671875,
+     -690.426025390625,
+     -0.17599999904632568
+    ],
+    "off": "0x577154"
+   },
+   {
+    "objId": 413834,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -980.4920043945312,
+     -778.4810180664062,
+     -0.17599999904632568
+    ],
+    "off": "0x577193"
+   },
+   {
+    "objId": 413835,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -980.2540283203125,
+     -860.4500122070312,
+     -0.17599999904632568
+    ],
+    "off": "0x5771d2"
+   },
+   {
+    "objId": 413836,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -979.7319946289062,
+     -986.655029296875,
+     -0.2919999957084656
+    ],
+    "off": "0x577211"
+   },
+   {
+    "objId": 413837,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -979.6019897460938,
+     -1067.1240234375,
+     -0.2919999957084656
+    ],
+    "off": "0x577250"
+   },
+   {
+    "objId": 413838,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -920.6480102539062,
+     -1156.3050537109375,
+     -0.23100000619888306
+    ],
+    "off": "0x57728f"
+   },
+   {
+    "objId": 413839,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -849.4600219726562,
+     -1169.39501953125,
+     -0.23100000619888306
+    ],
+    "off": "0x5772ce"
+   },
+   {
+    "objId": 413840,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -728.7210083007812,
+     -1180.029052734375,
+     -0.23100000619888306
+    ],
+    "off": "0x57730d"
+   },
+   {
+    "objId": 413842,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -620.8909912109375,
+     -1188.7320556640625,
+     -0.23100000619888306
+    ],
+    "off": "0x57734c"
+   },
+   {
+    "objId": 1500108,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -498.65899658203125,
+     -848.6630249023438,
+     -0.2199999988079071
+    ],
+    "off": "0x578750"
+   },
+   {
+    "objId": 1500122,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -299.7349853515625,
+     -978.0040283203125,
+     -0.0010000000474974513
+    ],
+    "off": "0x5788ab"
+   },
+   {
+    "objId": 103773,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -560.4550170898438,
+     -926.9219970703125,
+     -0.2199999988079071
+    ],
+    "off": "0x578a84"
+   },
+   {
+    "objId": 315163,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -139.3679962158203,
+     -791.3359985351562,
+     -0.2199999988079071
+    ],
+    "off": "0x578ad4"
+   },
+   {
+    "objId": 315166,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -675.5609741210938,
+     -849.1890258789062,
+     0.0
+    ],
+    "off": "0x578b8d"
+   },
+   {
+    "objId": 800006,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -523.3099975585938,
+     -730.0280151367188,
+     -0.2199999988079071
+    ],
+    "off": "0x578d85"
+   },
+   {
+    "objId": 600012,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -390.48699951171875,
+     -957.6209716796875,
+     46.132999420166016
+    ],
+    "off": "0x578dc4"
+   },
+   {
+    "objId": 600378,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -370.9939880371094,
+     -920.343994140625,
+     99.5790023803711
+    ],
+    "off": "0x578e79"
+   },
+   {
+    "objId": 600380,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -370.9939880371094,
+     -915.6589965820312,
+     99.5790023803711
+    ],
+    "off": "0x578eb8"
+   },
+   {
+    "objId": 900049,
+    "name": "batman.bdae",
+    "lua": "function Obj900049_OnSpawn(...)\nWait(250)\nif not IsEnabled(900008) then\n    Enable(900008)\nend\n\n--StartMainStoryFromQuestId(25) --**********************************\nend\n",
+    "pos": [
+     -596.89501953125,
+     -965.1519775390625,
+     52.7869987487793
+    ],
+    "off": "0x579091"
+   },
+   {
+    "objId": 900364,
+    "name": "batman.bdae",
+    "lua": "function Obj900364_OnSpawn(...)\n--Enable(316728)\nStartMainStoryFromQuestId(215)\nend\n",
+    "pos": [
+     -703.7420043945312,
+     -878.3590087890625,
+     128.8939971923828
+    ],
+    "off": "0x579146"
+   },
+   {
+    "objId": 900163,
+    "name": "batman.bdae",
+    "lua": "function Obj900163_OnSpawn(...)\nEnableMainStory()\n\n\nend\n",
+    "pos": [
+     -461.7919921875,
+     -978.1110229492188,
+     26.690000534057617
+    ],
+    "off": "0x5791fb"
+   },
+   {
+    "objId": 316747,
+    "name": "batman.bdae",
+    "lua": "function Obj316747_OnSpawn(...)\nStartMainStoryFromQuestId(215)\nend\n",
+    "pos": [
+     -864.7479858398438,
+     -882.1129760742188,
+     68.2229995727539
+    ],
+    "off": "0x57942f"
+   },
+   {
+    "objId": 900797,
+    "name": "batman.bdae",
+    "lua": "function Obj900797_OnSpawn(...)\nStartMainStoryFromQuestId(834)\n\nend\n",
+    "pos": [
+     -725.1599731445312,
+     -930.6530151367188,
+     -0.2199999988079071
+    ],
+    "off": "0x579577"
+   },
+   {
+    "objId": 900798,
+    "name": "batman.bdae",
+    "lua": "function Obj900798_OnSpawn(...)\nEnable(900161)\nEnableMainStory()\n\n\nend\n",
+    "pos": [
+     -461.7919921875,
+     -978.1110229492188,
+     26.690000534057617
+    ],
+    "off": "0x5795b6"
+   },
+   {
+    "objId": 401071,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -651.1090087890625,
+     -940.5150146484375,
+     76.34500122070312
+    ],
+    "off": "0x57966b"
+   },
+   {
+    "objId": 407651,
+    "name": "batman.bdae",
+    "lua": "function Obj407651_OnSpawn(...)\nWait(100)\nfz_sandbox_enable_all_first_island ()\nend\n",
+    "pos": [
+     -598.2680053710938,
+     -897.81298828125,
+     99.9280014038086
+    ],
+    "off": "0x579796"
+   },
+   {
+    "objId": 800527,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -690.60400390625,
+     -925.9390258789062,
+     0.0
+    ],
+    "off": "0x5798f1"
+   },
+   {
+    "objId": 1900032,
+    "name": "batman.bdae",
+    "lua": "function Obj1900032_OnSpawn(...)\nEnable(1900033)\nStartFadeOut(0)\nEnableControls(false)\n--StartMainStoryFromQuestId(1000)\nend\n",
+    "pos": [
+     -410.6579895019531,
+     -935.9609985351562,
+     30.04199981689453
+    ],
+    "off": "0x57aa31"
+   },
+   {
+    "objId": 1900039,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -698.5009765625,
+     -1127.0770263671875,
+     27.933000564575195
+    ],
+    "off": "0x57aae6"
+   },
+   {
+    "objId": 1900069,
+    "name": "batman.bdae",
+    "lua": "function Obj1900069_OnSpawn(...)\nEnable(1900070)\nend\n",
+    "pos": [
+     -928.5640258789062,
+     -660.781005859375,
+     -0.22300000488758087
+    ],
+    "off": "0x57ab9b"
+   },
+   {
+    "objId": 1900204,
+    "name": "batman.bdae",
+    "lua": "function Obj1900204_OnSpawn(...)\nEnable(1900205)\nend\n",
+    "pos": [
+     -919.0989990234375,
+     -899.0590209960938,
+     63.34299850463867
+    ],
+    "off": "0x57ac50"
+   },
+   {
+    "objId": 1900277,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -892.406982421875,
+     -841.2349853515625,
+     0.0
+    ],
+    "off": "0x57b644"
+   },
+   {
+    "objId": 1900279,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -911.7550048828125,
+     -945.47802734375,
+     26.68600082397461
+    ],
+    "off": "0x57b683"
+   },
+   {
+    "objId": 1900242,
+    "name": "batman.bdae",
+    "lua": "function Obj1900242_OnSpawn(...)\nEnable(1900243)\nend\n",
+    "pos": [
+     -145.21400451660156,
+     -661.0700073242188,
+     80.24800109863281
+    ],
+    "off": "0x57b6c2"
+   },
+   {
+    "objId": 1900278,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     29.878000259399414,
+     -890.0159912109375,
+     0.0
+    ],
+    "off": "0x57c1e1"
+   },
+   {
+    "objId": 1900280,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -57.861000061035156,
+     -950.2080078125,
+     27.256999969482422
+    ],
+    "off": "0x57c220"
+   },
+   {
+    "objId": 2000002,
+    "name": "batman.bdae",
+    "lua": "function Obj2000002_OnSpawn(...)\n-- Constantin Ciprian Bacioiu has added init's here for Lottery!\n    -- We use this to get the sum of an array of numbers! Use sumt(t) for this! \n\n    function sumf(a, ...) return a and a + sumf(...) or 0 end\n    function sumt(t) return sumf(unpack(t)) end\n\n\n\n    -- Phase 1: Retrieve all the waypoints from the groups and spawn the objects\n    -- Phase 2: Check for interaction between Batman and lottery boxes\n    -- Phase 3: Remove lottery boxes and switch to 1.\n    -- Also, LUA, Y U NO HAZ SWITCH CASE LIKE C/C++?? HA?? HA???\n    w_LotteryPhase = 1;\n    w_LotterySpawn = true;\n    w_LotteryGroupOrder = 1;\n\n\n\n    --w_Group1SpawnPoints = {GetWaypointsInGroup(2000008)};\n    w_LotteryStatus = { };\n    w_LotteryObjectsID = { };\n    \n    DisableAndQuit = false;\n  \n    function w_EnableLotteryBoxGeneration( )\n        w_LotteryPhase = 1;\n        w_LotterySpawn = true;\n        w_LotteryGroupOrder = 1;\n\n\n\n        --w_Group1SpawnPoints = {GetWaypointsInGroup(2000008)};\n        w_LotteryStatus = { };\n        w_LotteryObjectsID = { };\n        \n        DisableAndQuit = false; \n        \n        \n        Enable(2000033);\n    end;\n\n\n    function w_DisableLotteryBoxGeneration( )\n\n        for w_i4 = 1, table.getn(w_LotteryObjectsID) do\n            HideObject(w_LotteryObjectsID[w_i4]);\n            Disable(w_LotteryObjectsID[w_i4]);\n        end;\n        \n        Wait(200);\n        Disable(2000033);\n            \n\n\n    end;\n\nw_EnableLotteryBoxGeneration( );\n\n\n--Wait(4000);\n--w_DisableLotteryBoxGeneration( );\nend\n",
+    "pos": [
+     -631.9190063476562,
+     -776.9149780273438,
+     170.9239959716797
+    ],
+    "off": "0x57c70a"
+   },
+   {
+    "objId": 702825,
+    "name": "batman.bdae",
+    "lua": "function Obj702825_OnSpawn(...)\nEnable(702826)\nNextMission(1900020)\nend\n",
+    "pos": [
+     -418.92401123046875,
+     -941.2979736328125,
+     29.57200050354004
+    ],
+    "off": "0x57f483"
+   },
+   {
+    "objId": 600391,
+    "name": "batman.bdae",
+    "lua": "function Obj600391_OnSpawn(...)\nif not IsEnabled(600390) then\n    Enable(600390)\nend\nend\n",
+    "pos": [
+     -670.260986328125,
+     -959.3070068359375,
+     76.34500122070312
+    ],
+    "off": "0x57f538"
+   },
+   {
+    "objId": 600101,
+    "name": "batman.bdae",
+    "lua": "function Obj600101_OnSpawn(...)\nif m_can_start_story_mission ~= 1 then\n    SetQuestCompleted(838)\nend\nif not IsEnabled(600022) then\n    Enable(600022)\nend\n\n\nend\n",
+    "pos": [
+     -495.3080139160156,
+     -888.7420043945312,
+     48.52799987792969
+    ],
+    "off": "0x57f663"
+   },
+   {
+    "objId": 600547,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -619.375,
+     -780.156982421875,
+     107.99600219726562
+    ],
+    "off": "0x57f750"
+   },
+   {
+    "objId": 600237,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -885.1749877929688,
+     -861.6510009765625,
+     98.48100280761719
+    ],
+    "off": "0x57f78f"
+   },
+   {
+    "objId": 2100002,
+    "name": "batman.bdae",
+    "lua": "function Obj2100002_OnSpawn(...)\nprint (\"start spawn\")\n\nEnable (2100003)\n\n\nend\n",
+    "pos": [
+     -529.4959716796875,
+     -953.9650268554688,
+     0.0
+    ],
+    "off": "0x57f844"
+   },
+   {
+    "objId": 600006,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -998.9929809570312,
+     -912.9860229492188,
+     -0.20100000500679016
+    ],
+    "off": "0x57fa64"
+   },
+   {
+    "objId": 2400056,
+    "name": "batman.bdae",
+    "lua": "function Obj2400056_OnSpawn(...)\nNextMission(2400046)\nWait(1)\nTeleportPlayerToZone(2400047)\nend\n",
+    "pos": [
+     -993.9639892578125,
+     -923.9190063476562,
+     -0.23100000619888306
+    ],
+    "off": "0x57fbac"
+   },
+   {
+    "objId": 701918,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -521.364990234375,
+     -1012.875,
+     -0.2199999988079071
+    ],
+    "off": "0x587070"
+   },
+   {
+    "objId": 702208,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -410.9840087890625,
+     -940.0499877929688,
+     30.04199981689453
+    ],
+    "off": "0x587676"
+   },
+   {
+    "objId": 702820,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -414.3009948730469,
+     -920.0830078125,
+     6.01200008392334
+    ],
+    "off": "0x587b86"
+   },
+   {
+    "objId": 316714,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -497.92999267578125,
+     -943.468994140625,
+     36.270999908447266
+    ],
+    "off": "0x587e75"
+   },
+   {
+    "objId": 401885,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -669.6320190429688,
+     -968.969970703125,
+     64.74600219726562
+    ],
+    "off": "0x58b6fb"
+   },
+   {
+    "objId": 600241,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -512.3259887695312,
+     -1009.8280029296875,
+     0.0
+    ],
+    "off": "0x58c818"
+   },
+   {
+    "objId": 600023,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -522.8790283203125,
+     -1114.529052734375,
+     26.288999557495117
+    ],
+    "off": "0x58ca77"
+   },
+   {
+    "objId": 600157,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -570.4710083007812,
+     -896.6400146484375,
+     1.9129999876022339
+    ],
+    "off": "0x58d4b0"
+   },
+   {
+    "objId": 600160,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -555.5789794921875,
+     -976.7230224609375,
+     39.4379997253418
+    ],
+    "off": "0x58d565"
+   },
+   {
+    "objId": 413926,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -569.3759765625,
+     -904.0059814453125,
+     0.0
+    ],
+    "off": "0x58d96e"
+   },
+   {
+    "objId": 600834,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -507.4949951171875,
+     -1037.9720458984375,
+     1.9609999656677246
+    ],
+    "off": "0x58dd8e"
+   },
+   {
+    "objId": 600840,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -504.64300537109375,
+     -1023.1859741210938,
+     0.4819999933242798
+    ],
+    "off": "0x58edc7"
+   },
+   {
+    "objId": 402703,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -297.4750061035156,
+     -902.2449951171875,
+     0.02500000037252903
+    ],
+    "off": "0x597721"
+   },
+   {
+    "objId": 600431,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -695.4829711914062,
+     -623.3579711914062,
+     62.67900085449219
+    ],
+    "off": "0x598e1e"
+   },
+   {
+    "objId": 600510,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -608.6530151367188,
+     -665.3270263671875,
+     50.0359992980957
+    ],
+    "off": "0x599675"
+   },
+   {
+    "objId": 900015,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -734.9769897460938,
+     -959.9509887695312,
+     15.758999824523926
+    ],
+    "off": "0x599d60"
+   },
+   {
+    "objId": 900743,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -709.551025390625,
+     -1032.8199462890625,
+     74.21299743652344
+    ],
+    "off": "0x59a555"
+   },
+   {
+    "objId": 900023,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -547.8519897460938,
+     -961.64501953125,
+     39.4379997253418
+    ],
+    "off": "0x59a6f7"
+   },
+   {
+    "objId": 900317,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -546.8079833984375,
+     -958.9119873046875,
+     39.4379997253418
+    ],
+    "off": "0x59aed9"
+   },
+   {
+    "objId": 413936,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -547.7579956054688,
+     -959.0770263671875,
+     39.4379997253418
+    ],
+    "off": "0x59b01c"
+   },
+   {
+    "objId": 900027,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -602.2349853515625,
+     -882.041015625,
+     99.9280014038086
+    ],
+    "off": "0x59b3ee"
+   },
+   {
+    "objId": 900104,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -606.6480102539062,
+     -869.5260009765625,
+     101.32499694824219
+    ],
+    "off": "0x59b83d"
+   },
+   {
+    "objId": 900107,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -629.6300048828125,
+     -792.198974609375,
+     161.88600158691406
+    ],
+    "off": "0x59bf8b"
+   },
+   {
+    "objId": 900155,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -629.697998046875,
+     -802.43798828125,
+     170.94000244140625
+    ],
+    "off": "0x59c15c"
+   },
+   {
+    "objId": 502451,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -75.75599670410156,
+     -900.583984375,
+     -0.03200000151991844
+    ],
+    "off": "0x59f206"
+   },
+   {
+    "objId": 502452,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     3.2809998989105225,
+     -890.5689697265625,
+     0.0
+    ],
+    "off": "0x5a0767"
+   },
+   {
+    "objId": 502395,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -108.23100280761719,
+     -997.4860229492188,
+     29.951000213623047
+    ],
+    "off": "0x5a0919"
+   },
+   {
+    "objId": 502400,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -47.779998779296875,
+     -909.0800170898438,
+     48.45100021362305
+    ],
+    "off": "0x5a0958"
+   },
+   {
+    "objId": 502453,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -65.82499694824219,
+     -839.60400390625,
+     0.0
+    ],
+    "off": "0x5a1a2c"
+   },
+   {
+    "objId": 502450,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -28.344999313354492,
+     -856.2880249023438,
+     -0.09600000083446503
+    ],
+    "off": "0x5a4ba5"
+   },
+   {
+    "objId": 502596,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -62.2130012512207,
+     -863.0759887695312,
+     0.0
+    ],
+    "off": "0x5a537b"
+   },
+   {
+    "objId": 502489,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -21.452999114990234,
+     -853.4760131835938,
+     -0.0
+    ],
+    "off": "0x5a566e"
+   },
+   {
+    "objId": 502499,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -39.861000061035156,
+     -860.4940185546875,
+     0.0
+    ],
+    "off": "0x5a5db2"
+   },
+   {
+    "objId": 502500,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     44.58300018310547,
+     -800.8920288085938,
+     42.18199920654297
+    ],
+    "off": "0x5a5df1"
+   },
+   {
+    "objId": 502502,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -203.72000122070312,
+     -828.8939819335938,
+     24.770000457763672
+    ],
+    "off": "0x5a5ea6"
+   },
+   {
+    "objId": 400562,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -672.5560302734375,
+     -939.1320190429688,
+     -0.2199999988079071
+    ],
+    "off": "0x5aab91"
+   },
+   {
+    "objId": 400786,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -666.1329956054688,
+     -893.3679809570312,
+     62.54899978637695
+    ],
+    "off": "0x5ad2e3"
+   },
+   {
+    "objId": 400936,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -695.2890014648438,
+     -939.166015625,
+     0.0
+    ],
+    "off": "0x5ad6b1"
+   },
+   {
+    "objId": 900758,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -699.7059936523438,
+     -937.1890258789062,
+     0.0
+    ],
+    "off": "0x5ada93"
+   },
+   {
+    "objId": 316408,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -729.3930053710938,
+     -945.7639770507812,
+     0.0
+    ],
+    "off": "0x5b0796"
+   },
+   {
+    "objId": 316417,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -754.301025390625,
+     -903.551025390625,
+     19.434999465942383
+    ],
+    "off": "0x5b0a64"
+   },
+   {
+    "objId": 316431,
+    "name": "batman.bdae",
+    "lua": "function Obj316431_OnSpawn(...)\nStartMainStoryFromQuestId(834)\nend\n",
+    "pos": [
+     -725.2849731445312,
+     -940.9110107421875,
+     0.08100000023841858
+    ],
+    "off": "0x5b0aa3"
+   },
+   {
+    "objId": 502032,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -690.60400390625,
+     -925.9390258789062,
+     0.0
+    ],
+    "off": "0x5b131f"
+   },
+   {
+    "objId": 502130,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -782.1320190429688,
+     -930.0380249023438,
+     8.104999542236328
+    ],
+    "off": "0x5b7842"
+   },
+   {
+    "objId": 500598,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -691.5650024414062,
+     -863.3170166015625,
+     14.777999877929688
+    ],
+    "off": "0x5b9ab1"
+   },
+   {
+    "objId": 502225,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -684.43798828125,
+     -852.4210205078125,
+     -0.2199999988079071
+    ],
+    "off": "0x5ba766"
+   },
+   {
+    "objId": 502201,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -696.1849975585938,
+     -850.0189819335938,
+     -0.03500000014901161
+    ],
+    "off": "0x5bc7a3"
+   },
+   {
+    "objId": 315171,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -684.2169799804688,
+     -848.8079833984375,
+     -0.2199999988079071
+    ],
+    "off": "0x5bc7e2"
+   },
+   {
+    "objId": 2400047,
+    "name": "batman.bdae",
+    "lua": "function Obj2400047_OnSpawn(...)\n--Enable(1900199)\n\n\n\n\n\n\n\n\n\n\n\n   -- \n   -- local batman = 0\n   -- local selina = 2400049\n   -- local cop = 2400082\n   -- \n   -- TeleportPlayerToZone(2400047)\n   -- StartFadeOut(250)\n   -- Wait(250)\n   -- Traffic_SpawnerDisable(0,2)\n   -- StartCinematic()\n   -- \n   -- ActorLookTo(batman, selina, 10)\n   -- ActorLookTo(selina, batman, 10)\n   -- \n   -- NPCGoToWaypoint(selina, 2400060, 2400061, false)\n   -- --NPCGoToWaypoint(900323, -1, 900329) --sniper patrol\n   -- \n   -- \n   -- CameraFollowObject(2400057, \"\", 0, 0, -1.6, true, 2400059, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- CameraFollowObject(2400058, \"\", 0, 0, -1.6, true, 2400059, \"\", 0, 0, 0, true,5000)\n   -- \n   -- Wait(2000)\n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_1\", FACE_SELINA, 5000)\n   -- \n   -- Wait(2100)\n   -- ActorLookTo(batman, selina, 500)\n   -- ActorLookTo(selina, batman, 500)\n   -- \n   -- Wait(10)\n   -- ActorSetState(selina, \"Talk_02\", 0, 0, 300)\n   -- Wait(1500)\n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400052, \"\", 0, 0, -1.6, true, 2400054, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- CameraFollowObject(2400053, \"\", 0, 0, -1.6, true, 2400055, \"\", 0, 0, 0, true,12000)\n   -- \n   -- Wait(1000)\n   -- \n   -- ActorSetState(selina, \"Idle\", 0, 0, 300)\n   -- Wait(200)\n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_2\", FACE_BATMAN, 9000)\n   -- Wait(5000)\n   -- \n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400062, \"\", 0, 0, -1.6, true, 2400064, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- CameraFollowObject(2400063, \"\", 0, 0, -1.6, true, 2400065, \"\", 0, 0, 0, true,12000)\n   -- \n   -- Wait(3000)\n   -- \n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_3\", FACE_SELINA, 5000)\n   -- ActorSetState(selina, \"Talk_04\", 0, 0, 300)\n   -- Wait(3800)\n   -- \n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_4\", FACE_BATMAN, 9000)\n   -- ActorSetState(selina, \"Idle\", 0, 0, 300)\n   -- Wait(2500)\n   -- \n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400066, \"\", 0, 0, -1.6, true, 2400068, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- CameraFollowObject(2400067, \"\", 0, 0, -1.6, true, 2400068, \"\", 0, 0, 0, true,6500)\n   -- \n   -- Wait(5000)\n   -- \n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400069, \"\", 0, 0, -1.6, true, 2400071, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- \n   -- \n   -- CameraFollowObject(2400070, \"\", 0, 0, -1.6, true, 2400071, \"\", 0, 0, 0, true,6500)\n   -- \n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_5\", FACE_SELINA, 10000)\n   -- ActorSetState(selina, \"Talk_08\", 0, 0, 300)\n   -- Wait(10000)\n   -- \n   -- \n   -- \n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400072, \"\", 0, 0, -1.6, true, 2400074, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_6\", FACE_BATMAN, 4000)\n   -- CameraFollowObject(2400073, \"\", 0, 0, -1.6, true, 2400074, \"\", 0, 0, 0, true,4000)\n   -- ActorSetState(selina, \"Idle\", 0, 0, 300)\n   -- \n   -- Wait(4000)\n   -- \n   -- \n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400070, \"\", 0, 0, -1.6, true, 2400071, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_7\", FACE_SELINA, 2000)\n   -- ActorSetState(selina, \"Talk_03\", 0, 0, 300)\n   -- Wait(2000)\n   -- \n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_8\", FACE_BATMAN, 5000)\n   -- ActorSetState(selina, \"Idle\", 0, 0, 300)\n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400075, \"\", 0, 0, -1.6, true, 2400077, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- CameraFollowObject(2400076, \"\", 0, 0, -1.6, true, 2400077, \"\", 0, 0, 0, true,5000)\n   -- \n   -- Wait(5000)\n   -- \n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400078, \"\", 0, 0, -1.6, true, 2400080, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_9\", FACE_SELINA, 5000)\n   -- ActorSetState(selina, \"Talk_04\", 0, 0, 300)\n   -- CameraFollowObject(2400079, \"\", 0, 0, -1.6, true, 2400081, \"\", 0, 0, 0, true,5000)\n   -- \n   -- Wait(5000)\n   -- \n   -- \n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400097, \"\", 0, 0, -1.6, true, 2400099, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- ShowMessage(\"STR_BATMAN_SELINA_BAR_10\", FACE_BATMAN, 2500)\n   -- ActorSetState(selina, \"Idle\", 0, 0, 300)\n   -- CameraFollowObject(2400098, \"\", 0, 0, -1.6, true, 2400099, \"\", 0, 0, 0, true,2500)\n   -- \n   -- Wait(2000)\n   -- Enable(cop)\n   -- ShowObject(cop)\n   -- NPCGoToPath(cop, -1, 2400086)\n   -- ActorSetState(cop, \"Ranged_Run\")\n   -- ShowMessage(\"STR_JOES_BAR_COP_01\", FACE_POLICE_OFFICER, 2500)\n   -- \n   --\n   -- Wait(500)\n   -- \n   -- \n   --\n   -- StartFadeOut(250)\n   -- CameraFollowObject(2400088, \"\", 0, 0, -1.6, true, 2400089, \"\", 0, 0, 0, true,0)\n   -- StartFadeIn(250)\n   -- \n   -- CameraFollowObject(2400096, \"\", 0, 0, -1.6, true, 2400089, \"\", 0, 0, 0, true,6500)\n   -- \n   -- Wait(800)\n   -- \n   -- NPCGoToPath(selina, -1, 2400084)\n   -- ActorSetState(selina, \"Run\")\n   -- Wait(1200)\n   -- ActorSetState(0, \"Cutscene_turn_back\")\n   -- Wait(600)\n   -- ShowMessage(\"STR_JOES_BAR_COP_02\", FACE_POLICE_OFFICER, 4000)\n   -- ActorSetState(cop, \"Idle\", 0, 0, 300)\n   --\n   -- Wait(1000)\n   -- TeleportPlayerToZone(2400047)\n   -- ActorLookTo(cop, 0, 500)\n   -- Wait(3000)\n   --\n   -- CameraFollowObject(2400093, \"\", 0, 0, -1.6, true, 2400094, \"\", 0, 0, 0, true,6500)\n   --\n   -- ShowMessage(\"STR_JOES_BAR_COP_03\", FACE_BATMAN, 5000)\n   -- Wait(1000)\n   -- \n   --\n   -- Enable(2400095)\n   -- ShowObject(2400095)\n   -- StartEffect(2400095)\n   -- Wait(200)\n   -- ActorLookTo(0, cop, 200)\n   -- ActorSetState(0, \"Throw_Pellet\", 1, -1, 300)\n   --\n   -- Wait(200)\n   -- ActorSetState(cop, \"Enemy_Blind_Idle_1\", 0, 1, 200)\n   --\n   -- StartFadeOut(1000)\n   -- Wait(1000)\n   -- EndCinematic()\n   -- StartFadeIn(500)\n   -- CameraSwitchToPlayer(1000)\n   --\n   --\n   --\n   --\n   --\n   --\n   ----\n   ---- CameraFollowObject(2300005, \"\", 0, 0, -1.6, true, 2300008, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ----\n   ---- CameraFollowObject(2300009, \"\", 0, 0, -1.6, true, 2300008, \"\", 0, 0, 0, true,4000)\n   ---- --ActorSetState(otherGuy, \"Talk_03\", 1, 0, 200)\n   ---- Wait(4000)\n   ----\n   ---- CameraFollowObject(2300011, \"\", 0, 0, -1.6, true, 2300012, \"\", 0, 0, 0, true,3000)\n   ----\n   ----\n   ---- --ActorSetState(girl, \"Talk_03\", 1, 0, 200)\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300013, \"\", 0, 0, -1.6, true, 2300014, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- Wait(1500)\n   ---- ActorLookTo(girl, 2300013,1500)\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_06\", FACE_MIRANDATATE, 2000)\n   ---- ActorSetState(girl, \"Talk_02\", 1000, 0, 200)\n   ----\n   ---- TeleportPlayerToZone(2300015)\n   ----\n   ----\n   ----\n   ---- Wait(2000)\n   ---- StartFadeOut(250)\n   ---- ActorLookTo(batman, girl, 300)\n   ---- ActorLookTo(girl, batman, 300)\n   ---- ActorLookTo(boy, batman, 300)\n   ----\n   ---- CameraFollowObject(2300016, \"\", 0, 0, -1.6, true, 2300017, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_07\", FACE_BATMAN, 2000)\n   ---- Wait(2500)\n   ---- --ActorSetState(girl, \"Talk_02\", 1, 0, 200)\n   ---- StartFadeOut(250)\n   ----\n   ---- CameraFollowObject(2300018, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300019, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,10000)\n   ----\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_08\", FACE_MERCENARY, 10000)\n   ---- ActorSetState(boy, \"Talk_02\", 10000, 1, 200)\n   ---- Wait(10000)\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_09\", FACE_MERCENARY, 7500)\n   ---- ActorSetState(boy, \"Talk_01\", 7500, 1, 200)\n   ---- StartFadeOut(250)\n   ----\n   ---- CameraFollowObject(2300021, \"\", 0, 0, -1.6, true, 2300022, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300023, \"\", 0, 0, -1.6, true, 2300022, \"\", 0, 0, 0, true,7500)\n   ----\n   ----\n   ---- Wait(7500)\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_10\", FACE_MERCENARY, 7500)\n   ---- ActorSetState(boy, \"Talk_03\", 7500, 1, 200)\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300025, \"\", 0, 0, -1.6, true, 2300030, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300026, \"\", 0, 0, -1.6, true, 2300030, \"\", 0, 0, 0, true,7500)\n   ---- Wait(5500)\n   ----\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300027, \"\", 0, 0, -1.6, true, 2300029, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300028, \"\", 0, 0, -1.6, true, 2300029, \"\", 0, 0, 0, true,2000)\n   ---- Wait(2000)\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300031, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- Wait(3000)\n   ----\n   ----\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_11\", FACE_MERCENARY, 7500)\n   ---- ActorSetState(boy, \"Talk_01\", 5000, 1, 200)\n   ----\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300034, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ----\n   ---- Wait(5000)\n   ----\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300019, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300018, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,5000)\n   ---- Wait(2500)\n   ----\n   ---- ActorSetState(boy, \"Idle\", 5000, 1, 200)\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_12\", FACE_BATMAN, 5000)\n   ---- ActorSetState(batman, \"Idle_stand_talk\", 1, 0, 500)\n   ----\n   ----\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300031, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300035, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,2000)\n   ----\n   ---- --Wait(2000)\n   ----\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_13\", FACE_MIRANDATATE, 7500)\n   ---- ActorSetState(girl, \"Talk_08\", 7500, 1, 500)\n   ---- ActorSetState(batman, \"Idle\", 1, 0, 500)\n   ----\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300037, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300036, \"\", 0, 0, -1.6, true, 2300037, \"\", 0, 0, 0, true,4000)\n   ---- Wait(4000)\n   ----\n   ---- ShowMessage(\"STR_CLEANING_HOUSE_14\", FACE_MIRANDATATE, 9000)\n   ---- ActorSetState(girl, \"Talk_08\", 7500, 1, 500)\n   ----\n   ----\n   ---- StartFadeOut(250)\n   ----CameraFollowObject(2300038, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300038, \"\", 0, 0, -1.6, true, 2300040, \"\", 0, 0, 0, true,6500)\n   ---- Wait(4000)\n   ----\n   ----\n   ----\n   ----\n   ----\n   ----\n   ---- StartFadeOut(250)\n   ---- CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300045, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(250)\n   ---- CameraFollowObject(2300041, \"\", 0, 0, -1.6, true, 2300045, \"\", 0, 0, 0, true,4000)\n   ---- Wait(3500)\n   ----\n   ---- ActorSetState(girl, \"Idle\", 7500, 1, 500)\n   ---- Wait(1500)\n   ---- StartFadeOut(500)\n   ---- CameraFollowObject(2300042, \"\", 0, 0, -1.6, true, 2300046, \"\", 0, 0, 0, true,0)\n   ---- StartFadeIn(500)\n   ---- CameraFollowObject(2300043, \"\", 0, 0, -1.6, true, 2300044, \"\", 0, 0, 0, true,6000)\n   ---- Wait(6000)\n   ---- StartFadeOut(100)\n   ---- Wait(1000)\n   ---- CameraSwitchToPlayer(1000)\nend\n",
+    "pos": [
+     -730.958984375,
+     -942.4600219726562,
+     0.0
+    ],
+    "off": "0x5bd976"
+   },
+   {
+    "objId": 1500126,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -301.08099365234375,
+     -974.0640258789062,
+     -0.0010000000474974513
+    ],
+    "off": "0x5bf464"
+   },
+   {
+    "objId": 316671,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -426.614990234375,
+     -944.447998046875,
+     0.020999999716877937
+    ],
+    "off": "0x5c5e2c"
+   },
+   {
+    "objId": 316670,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -481.2250061035156,
+     -1154.0460205078125,
+     -0.0
+    ],
+    "off": "0x5c694c"
+   },
+   {
+    "objId": 316381,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -690.1669921875,
+     -1000.4190063476562,
+     0.0
+    ],
+    "off": "0x5cafa3"
+   },
+   {
+    "objId": 316505,
+    "name": "batman.bdae",
+    "lua": "function Obj316505_OnSpawn(...)\nSetQuestDisabled(810)\nSetQuestDisabled(811)\nSetQuestEnabled(812)\nEnable(316507)\nShowObject(316507)\nend\n",
+    "pos": [
+     -714.8989868164062,
+     -1062.1429443359375,
+     0.0
+    ],
+    "off": "0x5cbc3e"
+   },
+   {
+    "objId": 316672,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -570.302978515625,
+     -789.7830200195312,
+     0.0
+    ],
+    "off": "0x5cc9f7"
+   },
+   {
+    "objId": 316550,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -552.9249877929688,
+     -784.4660034179688,
+     -0.2199999988079071
+    ],
+    "off": "0x5cca36"
+   },
+   {
+    "objId": 316639,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -755.2369995117188,
+     -673.9000244140625,
+     0.0
+    ],
+    "off": "0x5ce36c"
+   },
+   {
+    "objId": 316641,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -15.326000213623047,
+     -888.2150268554688,
+     -0.07199999690055847
+    ],
+    "off": "0x5ce3ab"
+   },
+   {
+    "objId": 900417,
+    "name": "batman.bdae",
+    "lua": "function Obj900417_OnSpawn(...)\nb_inZONE = true\n\nend\n",
+    "pos": [
+     -659.6740112304688,
+     -949.6199951171875,
+     76.34500122070312
+    ],
+    "off": "0x5d23d2"
+   },
+   {
+    "objId": 900408,
+    "name": "batman.bdae",
+    "lua": "function Obj900408_OnSpawn(...)\nb_inZONE = true\nClearObjectiveMessage(b_lastOBJ)\nShowObjectiveMessage(b_lastOBJ, -1, -1, \"\",true,true)\nend\n",
+    "pos": [
+     -480.6700134277344,
+     -969.8040161132812,
+     29.382999420166016
+    ],
+    "off": "0x5d2411"
+   },
+   {
+    "objId": 900409,
+    "name": "batman.bdae",
+    "lua": "function Obj900409_OnSpawn(...)\nb_inZONE = true\nClearObjectiveMessage(b_lastOBJ)\nShowObjectiveMessage(b_lastOBJ, -1, -1, \"\",true,true)\nend\n",
+    "pos": [
+     -483.9840087890625,
+     -966.0360107421875,
+     29.382999420166016
+    ],
+    "off": "0x5d2450"
+   },
+   {
+    "objId": 900410,
+    "name": "batman.bdae",
+    "lua": "function Obj900410_OnSpawn(...)\nb_inZONE = true\nClearObjectiveMessage(b_lastOBJ)\nShowObjectiveMessage(b_lastOBJ, -1, -1, \"\",true,true)\nend\n",
+    "pos": [
+     -586.7379760742188,
+     -968.926025390625,
+     52.52399826049805
+    ],
+    "off": "0x5d248f"
+   },
+   {
+    "objId": 900405,
+    "name": "batman.bdae",
+    "lua": "function Obj900405_OnSpawn(...)\nb_inZONE = true\nClearObjectiveMessage(b_lastOBJ)\nShowObjectiveMessage(b_lastOBJ, -1, -1, \"\",true,true)\nend\n",
+    "pos": [
+     -533.7050170898438,
+     -961.0910034179688,
+     39.4379997253418
+    ],
+    "off": "0x5d24ce"
+   },
+   {
+    "objId": 900406,
+    "name": "batman.bdae",
+    "lua": "function Obj900406_OnSpawn(...)\nb_inZONE = true\nClearObjectiveMessage(b_lastOBJ)\nShowObjectiveMessage(b_lastOBJ, -1, -1, \"\",true,true)\nend\n",
+    "pos": [
+     -548.7680053710938,
+     -968.3519897460938,
+     39.4379997253418
+    ],
+    "off": "0x5d250d"
+   },
+   {
+    "objId": 900418,
+    "name": "batman.bdae",
+    "lua": "function Obj900418_OnSpawn(...)\nb_inZONE = true\nend\n",
+    "pos": [
+     -463.5830078125,
+     -973.7139892578125,
+     26.68600082397461
+    ],
+    "off": "0x5d254c"
+   },
+   {
+    "objId": 900748,
+    "name": "batman.bdae",
+    "lua": "function Obj900748_OnSpawn(...)\nb_inZONE = true\nClearObjectiveMessage(b_lastOBJ)\nShowObjectiveMessage(b_lastOBJ, -1, -1, \"\",true,true)\nend\n",
+    "pos": [
+     -654.156982421875,
+     -947.7039794921875,
+     76.34500122070312
+    ],
+    "off": "0x5d2601"
+   },
+   {
+    "objId": 900596,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -497.82501220703125,
+     -966.7999877929688,
+     19.413999557495117
+    ],
+    "off": "0x5d408d"
+   },
+   {
+    "objId": 900584,
+    "name": "batman.bdae",
+    "lua": "function Obj900584_OnSpawn(...)\nEnable(900583)\nb_lastspawn = 900584\nend\n",
+    "pos": [
+     -606.5650024414062,
+     -896.5390014648438,
+     100.0719985961914
+    ],
+    "off": "0x5d4fe6"
+   },
+   {
+    "objId": 900731,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -664.8699951171875,
+     -953.2930297851562,
+     76.34500122070312
+    ],
+    "off": "0x5d5bac"
+   },
+   {
+    "objId": 900732,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -611.9349975585938,
+     -689.2689819335938,
+     138.08399963378906
+    ],
+    "off": "0x5d61fe"
+   },
+   {
+    "objId": 900733,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -701.5750122070312,
+     -790.0700073242188,
+     44.14699935913086
+    ],
+    "off": "0x5d67d3"
+   },
+   {
+    "objId": 900734,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -508.24798583984375,
+     -857.948974609375,
+     113.53099822998047
+    ],
+    "off": "0x5d6cb3"
+   },
+   {
+    "objId": 900655,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -631.5460205078125,
+     -791.281982421875,
+     161.88600158691406
+    ],
+    "off": "0x5d7a31"
+   },
+   {
+    "objId": 1900272,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -580.5260009765625,
+     -1116.449951171875,
+     -0.2199999988079071
+    ],
+    "off": "0x5d907c"
+   },
+   {
+    "objId": 1900036,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -716.8610229492188,
+     -1126.136962890625,
+     23.187999725341797
+    ],
+    "off": "0x5ddad5"
+   },
+   {
+    "objId": 1900047,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -701.43701171875,
+     -1108.416015625,
+     27.933000564575195
+    ],
+    "off": "0x5dde90"
+   },
+   {
+    "objId": 703417,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -1245.2779541015625,
+     -893.094970703125,
+     32.50299835205078
+    ],
+    "off": "0x5e1082"
+   },
+   {
+    "objId": 502517,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -1017.9000244140625,
+     -915.7550048828125,
+     0.3479999899864197
+    ],
+    "off": "0x5e12ba"
+   },
+   {
+    "objId": 502527,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -1018.0349731445312,
+     -925.0280151367188,
+     0.35499998927116394
+    ],
+    "off": "0x5e30d4"
+   },
+   {
+    "objId": 502528,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -1019.2919921875,
+     -921.9609985351562,
+     0.41600000858306885
+    ],
+    "off": "0x5e3113"
+   },
+   {
+    "objId": 502529,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -1018.0130004882812,
+     -912.0469970703125,
+     0.2630000114440918
+    ],
+    "off": "0x5e3152"
+   },
+   {
+    "objId": 502540,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -598.6790161132812,
+     -826.0430297851562,
+     36.6510009765625
+    ],
+    "off": "0x5e34b9"
+   },
+   {
+    "objId": 502602,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -577.2630004882812,
+     -792.0659790039062,
+     0.6039999723434448
+    ],
+    "off": "0x5e3661"
+   },
+   {
+    "objId": 502604,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -574.1599731445312,
+     -792.3560180664062,
+     0.6039999723434448
+    ],
+    "off": "0x5e377b"
+   },
+   {
+    "objId": 502655,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -628.9769897460938,
+     -779.7269897460938,
+     170.9239959716797
+    ],
+    "off": "0x5e492f"
+   },
+   {
+    "objId": 502635,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -629.2069702148438,
+     -789.2150268554688,
+     161.88600158691406
+    ],
+    "off": "0x5e4bcf"
+   },
+   {
+    "objId": 2400002,
+    "name": "batman.bdae",
+    "lua": "function Obj2400002_OnSpawn(...)\n    --\n    --StartFadeOut(500)\n    --Wait(500)\n    --StartCinematic()\n    --StartFadeIn(500)\n    --\n    --CameraFollowObject(2400006, \"\", 0, 0, -1.6, true, 2400007, \"\", 0, 0, 0, true,0)\n    --\n    --\n    --CameraFollowObject(2400008, \"\", 0, 0, -1.6, true, 2400007, \"\", 0, 0, 0, true,8000)\n    --\n    ----ActorLookTo(0, 2400007,1500)\n    --ShowMessage(\"STR_STORM_PT4_01\", FACE_BATMAN, 2800)\n    --ActorSetState(0, \"Headset_Idle_To_Talk\", 0, 0)\n    --\n    --Wait(3000)\n    --\n    --ShowMessage(\"STR_STORM_PT4_02\", FACE_BLAKE, 2000)\n    --\n    --\n    --Wait(3000)\n    --ActorSetState(0, \"Headset_Talk_To_Idle\", 0, 0)\n    --Wait(1000)\n    --\n    --StartFadeOut(500)\n    --\n    --Wait(2000)\n    --ActorLookTo(0, 2400010,1500)\n    ------ REMOVES ACTORS + VEHICLES ------\n    --KillActor(502523, -1, true)\n    --KillActor(502524, -1, true)\n    --KillActor(502525, -1, true)\n    --KillActor(502526, -1, true)\n    --\n    --KillActor(502518, -1, true)\n    --KillActor(502519, -1, true)\n    --KillActor(502520, -1, true)\n    --KillActor(502521, -1, true)\n    --KillActor(502522, -1, true)\n    --\n    ----- EVACUATE ---\n    --Enable(502532)\n    --ShowObject(502532)\n    --Enable(502533)\n    --ShowObject(502533)\n    --Enable(502534)\n    --ShowObject(502534)\n    --\n    --NPCGoToPath(502532, -1, 502535)\n    --NPCGoToPath(502533, -1, 502536)\n    --NPCGoToPath(502534, -1, 502537)\n    --\n    --\n    --StartFadeOut(500)\n    --CameraFollowObject(2400010, \"\", 0, 0, -1.6, true, 2400009, \"\", 0, 0, 0, true,0)\n    --PostProcessingEffectAdd(\"DepthOfField\", 0, \"\", -1, 0.2, 10)\n    --StartFadeIn(250)\n    --\n    --CameraFollowObject(2400011, \"\", 0, 0, -1.6, true, 2400009, \"\", 0, 0, 0, true,8000)\n    --ActorSetState(0, \"Headset_Idle_To_Talk\", 1, 0)\n    --ShowMessage(\"STR_STORM_PT4_03\", FACE_BATMAN, 11000)\n    --\n    --\n    --Wait(11500)\n    --\n    --\n    --StartFadeOut(500)\n    --Wait(100)\n    --HideObject(0)\n    --Disable(0)\n    --Enable(502531)\n    --ShowObject(502531) \n    --PostProcessingEffectRemove(\"DepthOfField\")\n    --\n    ----CameraFollowObject(2400012, \"\", 0, 0, -1.6, true, 2400014, \"\", 0, 0, 0, true,0)\n    ----StartFadeIn(250)\n    ----\n    ----\n    ----CameraFollowObject(2400013, \"\", 0, 0, -1.6, true, 2400014, \"\", 0, 0, 0, true,4000)\n    ----\n    ----Wait(1000)\n    ----ActorSetState(502531, \"Walk\", 0,0, 100)\n    ----NPCGoToPath(502531, -1, 502530)\n    ----Wait(3000)\n    ----CameraFollowObject(2400013, \"\", 0, 0, -1.6, true, 2400016, \"\", 0, 0, 0, true,5000)\n    ----\n    ----Wait(3000)\n    ----StartFadeOut(500)\n    ----Wait(1200)\n    --CameraSwitchToPlayer(1000)\n    --\n    --EndCinematic()\n    --\n    --\n    --ShowObject(0)\n    --Enable(0)\n    --KillActor(502531, -1, true)\n    --ActorSetState(0, \"Idle\")\n    --\n    --KillActor(502532, -1, true)\n    --KillActor(502533, -1, true)\n    --KillActor(502534, -1, true)\n    --\n    --StartFadeIn(500)\n    --\n\n    --TeleportPlayerToZone(2300002)\n   \n   \n   \nend\n",
+    "pos": [
+     -1010.2459716796875,
+     -914.3510131835938,
+     -0.23100000619888306
+    ],
+    "off": "0x5e4c9c"
+   },
+   {
+    "objId": 2400026,
+    "name": "batman.bdae",
+    "lua": "function Obj2400026_OnSpawn(...)\n--local batmam = 2400002\nStartCinematic()\n\n\n\n    StartFadeOut(250)\n    Wait(250)\n    StartCinematic()\n    StartFadeIn(250)\n   \n    CameraFollowObject(2400022, \"\", 0, 0, -1.6, true, 2400025, \"\", 0, 0, 0, true,0)\n    \n  \n    CameraFollowObject(2400023, \"\", 0, 0, -1.6, true, 2400029, \"\", 0, 0, 0, true,8000)\n  \n    \n    Wait(8000)\n    \n    \n    \n    StartFadeOut(250)\n    Wait(250)\n    \n   \n    CameraFollowObject(2400031, \"\", 0, 0, -1.6, true, 2400033, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n  \n    CameraFollowObject(2400032, \"\", 0, 0, -1.6, true, 2400034, \"\", 0, 0, 0, true,4000)\n    \n    Wait(4000)\n  \n    StartFadeOut(250)\n    Wait(250)\n    \n    \n    CameraFollowObject(2400035, \"\", 0, 0, -1.6, true, 2400037, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n  \n    CameraFollowObject(2400036, \"\", 0, 0, -1.6, true, 2400037, \"\", 0, 0, 0, true,4000)\n    \n    Wait(4000)\n  \n    StartFadeOut(250)\n    Wait(250)\n    \n    \n    CameraFollowObject(2400039, \"\", 0, 0, -1.6, true, 2400041, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n  \n    CameraFollowObject(2400040, \"\", 0, 0, -1.6, true, 2400041, \"\", 0, 0, 0, true,4000)\n    \n    Wait(4000)\n    \n    StartFadeOut(250)\n    Wait(250)\n    \n    \n    CameraFollowObject(2400042, \"\", 0, 0, -1.6, true, 2400043, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n  \n    CameraFollowObject(2400045, \"\", 0, 0, -1.6, true, 2400044, \"\", 0, 0, 0, true,4000)\n    \n    Wait(4000)\n  \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    ActorLookTo(batman, 2400007,1500)\n    ShowMessage(\"STR_STORM_PT4_01\", FACE_BATMAN, 2800)\n    ActorSetState(batman, \"Talk_02\", 1000, 0, 200)\n  \n    Wait(3000)\n  \n    ShowMessage(\"STR_STORM_PT4_02\", FACE_BLAKE, 2000)\n  \n  \n    Wait(4000)\n    \n    \n    StartFadeOut(250)\n  \n  \n    ActorLookTo(batman, 2400007,1500)\n  \n  \n    StartFadeOut(250)\n    CameraFollowObject(2400010, \"\", 0, 0, -1.6, true, 2400009, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n  \n    CameraFollowObject(2400011, \"\", 0, 0, -1.6, true, 2400009, \"\", 0, 0, 0, true,8000)\n   \n    ShowMessage(\"STR_STORM_PT4_03\", FACE_BATMAN, 11000)\n   \n   \n    Wait(8500)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2400012, \"\", 0, 0, -1.6, true, 2400014, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n  \n    CameraFollowObject(2400013, \"\", 0, 0, -1.6, true, 2400014, \"\", 0, 0, 0, true,4000)\n    \n    Wait(4000)\n    CameraFollowObject(2400013, \"\", 0, 0, -1.6, true, 2400016, \"\", 0, 0, 0, true,5000)\n\n    Wait(3000)\n    StartFadeOut(1000)\n    Wait(1200)\n    CameraSwitchToPlayer(1000)\n    \n    EndCinematic()\n    StartFadeIn(250)\n   \n\n    --TeleportPlayerToZone(2300002)\n   \n   \n   \nend\n",
+    "pos": [
+     -417.30999755859375,
+     -902.7650146484375,
+     6.01200008392334
+    ],
+    "off": "0x5e6b61"
+   },
+   {
+    "objId": 502587,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -551.1389770507812,
+     -798.0040283203125,
+     -0.2199999988079071
+    ],
+    "off": "0x5eb2e1"
+   },
+   {
+    "objId": 502593,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -551.2529907226562,
+     -792.6339721679688,
+     -0.2199999988079071
+    ],
+    "off": "0x5eb580"
+   }
+  ],
+  "mesh_records": [
+   {
+    "tid": "0x14051",
+    "mesh": "gc_island1_longdist.bdae",
+    "flags": "",
+    "pos": [
+     -730.0,
+     -1250.0,
+     0.0
+    ],
+    "off": "0x55545"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_vb_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -850.0,
+     -980.0,
+     -0.1469999998807907
+    ],
+    "off": "0x4d4255"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_vc_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -630.0,
+     -940.0,
+     -0.2199999988079071
+    ],
+    "off": "0x4d428d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_gd_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -530.0,
+     -980.0,
+     0.0
+    ],
+    "off": "0x4d42c5"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ca_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -569.7520141601562,
+     -1090.0,
+     -0.0
+    ],
+    "off": "0x4d42fd"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_cd_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -670.0,
+     -1060.0,
+     0.0
+    ],
+    "off": "0x4d4335"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_lb_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -510.0,
+     -980.0,
+     0.0
+    ],
+    "off": "0x4d436d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_lc_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -570.0,
+     -1110.0,
+     0.0
+    ],
+    "off": "0x4d43a5"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_zd_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -670.0,
+     -1080.0,
+     0.0
+    ],
+    "off": "0x4d43dd"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_aa_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -690.0,
+     -900.0,
+     0.0
+    ],
+    "off": "0x4d4415"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ce_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -930.489990234375,
+     -899.5850219726562,
+     0.0
+    ],
+    "off": "0x4d444d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_la_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -750.0,
+     -840.0,
+     0.0
+    ],
+    "off": "0x4d4485"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ch_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -730.0,
+     -840.0,
+     0.0
+    ],
+    "off": "0x4d44bd"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ga_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -670.0,
+     -900.0,
+     0.0
+    ],
+    "off": "0x4d44f5"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_da_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -770.0,
+     -1000.0,
+     0.0
+    ],
+    "off": "0x4d452d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_va_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -690.0,
+     -940.0,
+     0.0
+    ],
+    "off": "0x4d4565"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_za_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -272.1659851074219,
+     -1109.8580322265625,
+     0.0
+    ],
+    "off": "0x4d459d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_db_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -363.6440124511719,
+     -1110.0,
+     0.0
+    ],
+    "off": "0x4d45d5"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_cf_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -272.1669921875,
+     -1090.06005859375,
+     0.0
+    ],
+    "off": "0x4d460d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_zc_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -272.0,
+     -780.1110229492188,
+     0.05700000002980232
+    ],
+    "off": "0x4d4645"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_dc_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -272.0,
+     -800.0,
+     0.05700000002980232
+    ],
+    "off": "0x4d467d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_vd_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -62.60300064086914,
+     -983.4240112304688,
+     0.05700000002980232
+    ],
+    "off": "0x4d46b5"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_dd_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -430.0,
+     -770.0,
+     0.0
+    ],
+    "off": "0x4d46ed"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_gc_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -610.0,
+     -900.0,
+     0.0
+    ],
+    "off": "0x4d4725"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_cc_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -570.0,
+     -720.0,
+     0.0
+    ],
+    "off": "0x4d475d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_zb_reflection.bdae",
+    "flags": "",
+    "pos": [
+     31.92799949645996,
+     -950.6119995117188,
+     0.05700000002980232
+    ],
+    "off": "0x4d4795"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_dse_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -430.0,
+     -1030.0,
+     0.0
+    ],
+    "off": "0x4d4805"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ia_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -909.302978515625,
+     -574.7000122070312,
+     0.0
+    ],
+    "off": "0x4d483d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_cn_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -870.0,
+     -1000.0,
+     -0.1469999998807907
+    ],
+    "off": "0x4d4875"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_lf_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -770.0,
+     -1080.0,
+     0.0
+    ],
+    "off": "0x4d48ad"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_cb_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -790.0,
+     -1000.0,
+     0.0
+    ],
+    "off": "0x4d48e5"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ic_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -730.0,
+     -1250.0,
+     0.0
+    ],
+    "off": "0x4d491d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ib_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -813.1669921875,
+     -780.3699951171875,
+     0.0
+    ],
+    "off": "0x4d4955"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ah_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -810.0,
+     -780.4400024414062,
+     0.0
+    ],
+    "off": "0x4d498d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_le_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -730.0,
+     -720.0,
+     -0.0
+    ],
+    "off": "0x4d49c5"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_gf_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -730.0,
+     -652.4000244140625,
+     0.0
+    ],
+    "off": "0x4d49fd"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ag_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -480.0,
+     -1110.0,
+     0.0
+    ],
+    "off": "0x4d4a35"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_af_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -430.0,
+     -1090.0,
+     0.0
+    ],
+    "off": "0x4d4a6d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ab_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -450.0,
+     -810.0,
+     0.0
+    ],
+    "off": "0x4d4aa5"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ac_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -535.447021484375,
+     -770.0,
+     0.0
+    ],
+    "off": "0x4d4add"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_awt_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -570.0,
+     -840.0,
+     0.0
+    ],
+    "off": "0x4d4b15"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_vpow_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -69.26200103759766,
+     -964.5650024414062,
+     0.0
+    ],
+    "off": "0x4d4b4d"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_railway_island1_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -730.0,
+     -1250.0,
+     0.0
+    ],
+    "off": "0x4d4b85"
+   }
+  ]
+ },
+ "GothamCity_Island2": {
+  "records": 18705,
+  "complete": true,
+  "end": "0x547281",
+  "table_off": "0x547281",
+  "classes": {
+   "<absent>": {
+    "n": 11602,
+    "total": 0,
+    "min": 0,
+    "max": 0
+   },
+   "0x14ca79": {
+    "n": 2403,
+    "total": 105732,
+    "min": 44,
+    "max": 44
+   },
+   "0x152b87": {
+    "n": 566,
+    "total": 4528,
+    "min": 8,
+    "max": 8
+   },
+   "0x2ad2a046": {
+    "n": 554,
+    "total": 19148,
+    "min": 6,
+    "max": 114
+   },
+   "0x2db081e2": {
+    "n": 444,
+    "total": 4959628,
+    "min": 177,
+    "max": 568127
+   },
+   "0x749126c3": {
+    "n": 378,
+    "total": 17010,
+    "min": 45,
+    "max": 45
+   },
+   "0xc7d8baf": {
+    "n": 255,
+    "total": 12750,
+    "min": 50,
+    "max": 50
+   },
+   "0x37f7a8ae": {
+    "n": 254,
+    "total": 13716,
+    "min": 54,
+    "max": 54
+   },
+   "0x154bb0": {
+    "n": 234,
+    "total": 0,
+    "min": 0,
+    "max": 0
+   },
+   "0x729ec572": {
+    "n": 174,
+    "total": 10440,
+    "min": 60,
+    "max": 60
+   },
+   "0x365cfd67": {
+    "n": 162,
+    "total": 6480,
+    "min": 40,
+    "max": 40
+   },
+   "0x4ab8a7cd": {
+    "n": 121,
+    "total": 7623,
+    "min": 63,
+    "max": 63
+   },
+   "0x34747ebe": {
+    "n": 101,
+    "total": 1616,
+    "min": 16,
+    "max": 16
+   },
+   "0x54989cb1": {
+    "n": 91,
+    "total": 8132,
+    "min": 82,
+    "max": 92
+   },
+   "0xdfe2718": {
+    "n": 90,
+    "total": 360,
+    "min": 4,
+    "max": 4
+   },
+   "0x113f791": {
+    "n": 87,
+    "total": 3306,
+    "min": 38,
+    "max": 38
+   },
+   "0x592ce07c": {
+    "n": 75,
+    "total": 1350,
+    "min": 18,
+    "max": 18
+   },
+   "0xf5f8cfd": {
+    "n": 58,
+    "total": 1450,
+    "min": 25,
+    "max": 25
+   },
+   "0x3198c7c5": {
+    "n": 40,
+    "total": 160,
+    "min": 4,
+    "max": 4
+   },
+   "0x6754056b": {
+    "n": 39,
+    "total": 2496,
+    "min": 64,
+    "max": 64
+   },
+   "0x2ca13c06": {
+    "n": 32,
+    "total": 736,
+    "min": 23,
+    "max": 23
+   },
+   "0x651bdaa": {
+    "n": 32,
+    "total": 384,
+    "min": 12,
+    "max": 12
+   },
+   "0x2ef26c52": {
+    "n": 30,
+    "total": 600,
+    "min": 20,
+    "max": 20
+   },
+   "0xddcd6c4": {
+    "n": 29,
+    "total": 377,
+    "min": 13,
+    "max": 13
+   },
+   "0x59a8390c": {
+    "n": 23,
+    "total": 276,
+    "min": 12,
+    "max": 12
+   },
+   "0x406510ec": {
+    "n": 23,
+    "total": 690,
+    "min": 30,
+    "max": 30
+   },
+   "0x55a6393b": {
+    "n": 21,
+    "total": 735,
+    "min": 35,
+    "max": 35
+   },
+   "0x1402fd4b": {
+    "n": 21,
+    "total": 336,
+    "min": 16,
+    "max": 16
+   },
+   "0x5941c179": {
+    "n": 20,
+    "total": 1060,
+    "min": 53,
+    "max": 53
+   },
+   "0x68a62e65": {
+    "n": 18,
+    "total": 90,
+    "min": 5,
+    "max": 5
+   },
+   "0x650bb301": {
+    "n": 16,
+    "total": 0,
+    "min": 0,
+    "max": 0
+   },
+   "0x113317a": {
+    "n": 11,
+    "total": 176,
+    "min": 16,
+    "max": 16
+   },
+   "0x3189e053": {
+    "n": 3,
+    "total": 271,
+    "min": 77,
+    "max": 117
+   },
+   "0x1963f0c0": {
+    "n": 3,
+    "total": 24,
+    "min": 8,
+    "max": 8
+   },
+   "0x2b9b5fed": {
+    "n": 2,
+    "total": 40,
+    "min": 20,
+    "max": 20
+   },
+   "0x378ab920": {
+    "n": 2,
+    "total": 72,
+    "min": 36,
+    "max": 36
+   },
+   "0x1791e34f": {
+    "n": 2,
+    "total": 16,
+    "min": 8,
+    "max": 8
+   },
+   "0x4de3f7c4": {
+    "n": 2,
+    "total": 88,
+    "min": 44,
+    "max": 44
+   },
+   "0x675d6313": {
+    "n": 2,
+    "total": 72,
+    "min": 36,
+    "max": 36
+   },
+   "0x17ac851f": {
+    "n": 2,
+    "total": 388,
+    "min": 182,
+    "max": 206
+   },
+   "0x68d1134": {
+    "n": 2,
+    "total": 60,
+    "min": 30,
+    "max": 30
+   },
+   "0x377ea715": {
+    "n": 2,
+    "total": 52,
+    "min": 26,
+    "max": 26
+   },
+   "0x786f6ecb": {
+    "n": 2,
+    "total": 88,
+    "min": 44,
+    "max": 44
+   },
+   "0x31c00731": {
+    "n": 1,
+    "total": 37,
+    "min": 37,
+    "max": 37
+   },
+   "0x4891830c": {
+    "n": 1,
+    "total": 56,
+    "min": 56,
+    "max": 56
+   }
+  },
+  "collision": {
+   "components": 444,
+   "prims": 444,
+   "triangles": 133696,
+   "max_prims_tris": 15354
+  },
+  "triggers": {
+   "components": 254,
+   "with_script": 254,
+   "total_script_bytes": 147308
+  },
+  "spawns": 92,
+  "batman_spawns": [
+   {
+    "objId": 31002,
+    "name": "batman.bdae",
+    "lua": "function Obj31002_OnSpawn(...)\nTraffic_SpawnerEnable(2,0);\nTraffic_SpawnerSetSetting(2000104,2);\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\nprint(\"WORKS\");\n\nend\n",
+    "pos": [
+     -285.0,
+     264.36700439453125,
+     0.0
+    ],
+    "off": "0x36d"
+   },
+   {
+    "objId": 300007,
+    "name": "batman.bdae",
+    "lua": "function Obj300007_OnSpawn(...)\n--------- start goose chase -----------\n--StartMainStoryFromQuestId(1101)\n--------------------------------------- \n\n--------- start Vet Center -------\n--StartMainStoryFromQuestId(115)\n----------------------------------\n\n--------- start Stadium ---------------\n--StartMainStoryFromQuestId(309)\n---------------------------------------\n\n--------- start batcave gas ---------------\nStartMainStoryFromQuestId(819)\n-------------------------------------------\n\n--------- start flyer ---------------\n--StartMainStoryFromQuestId(820)\n---------------------------------------\n\n--------- start goose chase ---------------\n--StartMainStoryFromQuestId(822)\n---------------------------------------\n\n--------- start storm 1 ---------------\n--StartMainStoryFromQuestId(823)\n---------------------------------------\n\nend\n",
+    "pos": [
+     -293.3710021972656,
+     207.7469940185547,
+     35.28799819946289
+    ],
+    "off": "0x4ce0f2"
+   },
+   {
+    "objId": 300012,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -270.3489990234375,
+     511.1659851074219,
+     -0.2199999988079071
+    ],
+    "off": "0x4ce131"
+   },
+   {
+    "objId": 300031,
+    "name": "batman.bdae",
+    "lua": "function Obj300031_OnSpawn(...)\nStartMainStoryFromQuestId(820)\nend\n",
+    "pos": [
+     -249.3699951171875,
+     418.3599853515625,
+     42.93299865722656
+    ],
+    "off": "0x4ce170"
+   },
+   {
+    "objId": 300002,
+    "name": "batman.bdae",
+    "lua": "function Obj300002_OnSpawn(...)\nStartFadeIn(1500)\n\n------------------------------------------\nTraffic_CrowdSetBehavior(2)\nTraffic_StreetPatrolSet(1, 2, 3)\nTraffic_JeepPatrolSet(1, 2, 3)\nTraffic_SpawnerSetSetting(TRAFFIC_SETTING_VEHICLE_MOVING, 405645)\nTraffic_SpawnerSetSetting(TRAFFIC_SETTING_HUMAN_MOVING, 405804)\nTraffic_SpawnerEnable(2, 2)\n------------------------------------------\nend\n",
+    "pos": [
+     -172.2469940185547,
+     -268.5409851074219,
+     32.983001708984375
+    ],
+    "off": "0x4ce25d"
+   },
+   {
+    "objId": 300042,
+    "name": "batman.bdae",
+    "lua": "function Obj300042_OnSpawn(...)\nStartFadeIn(1500)\n\nend\n",
+    "pos": [
+     -830.9320068359375,
+     -158.29100036621094,
+     41.604000091552734
+    ],
+    "off": "0x4ce34a"
+   },
+   {
+    "objId": 400005,
+    "name": "batman.bdae",
+    "lua": "function Obj400005_OnSpawn(...)\nWait(1000)\n\n\nfz_sandbox_enable_all_second_island()\n--fz_sandbox_enable_island2_first_time()\n\n\n\n\n--fz_sandbox_disable_all ()\n\n\n\n    -----------Police under attack\n    --SideMissionManagerQuestAdd(906)\n    ----------- police vs bane\n    ----SideMissionManagerQuestAdd(112)\n    --------- Barricade rooftop\n    ----SideMissionManagerQuestAdd(907)\n    --------- ammo rooftop\n    ----SideMissionManagerQuestAdd(909)\n    --------- heli rooftop Catalin\n    ----SideMissionManagerQuestAdd(130)\n    --------- police under attack Vans Catalin\n    ----SideMissionManagerQuestAdd(131)\n    ---------------mini missions that will NOT appear\n    -----------Car Thief\n    ------SideMissionManagerQuestAdd(905)\n    -----------Civilian under attack\n    ----SideMissionManagerQuestAdd(904)\n    --\n    --StartSideMissionManager()\n    --\n    --\n\n\n\n\nend\n",
+    "pos": [
+     -272.1449890136719,
+     32.32899856567383,
+     19.424999237060547
+    ],
+    "off": "0x4cf081"
+   },
+   {
+    "objId": 400875,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     109.45800018310547,
+     189.75599670410156,
+     0.05000000074505806
+    ],
+    "off": "0x4f3e22"
+   },
+   {
+    "objId": 403426,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -280.3940124511719,
+     349.760009765625,
+     0.0
+    ],
+    "off": "0x4f7745"
+   },
+   {
+    "objId": 403699,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -406.11199951171875,
+     226.4759979248047,
+     0.0
+    ],
+    "off": "0x4faf3c"
+   },
+   {
+    "objId": 403976,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -769.5960083007812,
+     -57.400001525878906,
+     0.0
+    ],
+    "off": "0x4fe814"
+   },
+   {
+    "objId": 405517,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -481.6340026855469,
+     -271.8340148925781,
+     -0.2199999988079071
+    ],
+    "off": "0x51a534"
+   },
+   {
+    "objId": 405518,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -314.4289855957031,
+     -335.9729919433594,
+     -0.2199999988079071
+    ],
+    "off": "0x51a573"
+   },
+   {
+    "objId": 405519,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -205.98500061035156,
+     -327.64300537109375,
+     -0.2199999988079071
+    ],
+    "off": "0x51a5b2"
+   },
+   {
+    "objId": 405520,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -66.71199798583984,
+     -309.68701171875,
+     -0.2199999988079071
+    ],
+    "off": "0x51a5f1"
+   },
+   {
+    "objId": 405521,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     30.30500030517578,
+     -260.5409851074219,
+     -0.2199999988079071
+    ],
+    "off": "0x51a630"
+   },
+   {
+    "objId": 405522,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     129.51199340820312,
+     -164.6510009765625,
+     -0.2199999988079071
+    ],
+    "off": "0x51a66f"
+   },
+   {
+    "objId": 405523,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     225.75900268554688,
+     -36.645999908447266,
+     -0.2199999988079071
+    ],
+    "off": "0x51a6ae"
+   },
+   {
+    "objId": 405524,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     255.44000244140625,
+     81.3270034790039,
+     -0.2199999988079071
+    ],
+    "off": "0x51a6ed"
+   },
+   {
+    "objId": 405525,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     186.19000244140625,
+     181.3509979248047,
+     -0.2199999988079071
+    ],
+    "off": "0x51a72c"
+   },
+   {
+    "objId": 405526,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     77.61799621582031,
+     233.33700561523438,
+     -0.2199999988079071
+    ],
+    "off": "0x51a76b"
+   },
+   {
+    "objId": 405527,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     26.663999557495117,
+     370.5299987792969,
+     -0.2199999988079071
+    ],
+    "off": "0x51a7aa"
+   },
+   {
+    "objId": 405528,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -49.125999450683594,
+     451.4630126953125,
+     -0.2199999988079071
+    ],
+    "off": "0x51a7e9"
+   },
+   {
+    "objId": 405529,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -178.41200256347656,
+     482.8699951171875,
+     -0.2199999988079071
+    ],
+    "off": "0x51a828"
+   },
+   {
+    "objId": 405530,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -278.95599365234375,
+     509.5509948730469,
+     -0.2199999988079071
+    ],
+    "off": "0x51a867"
+   },
+   {
+    "objId": 405531,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -412.0469970703125,
+     499.97900390625,
+     -0.2199999988079071
+    ],
+    "off": "0x51a8a6"
+   },
+   {
+    "objId": 405532,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -565.3330078125,
+     510.3840026855469,
+     -0.2199999988079071
+    ],
+    "off": "0x51a8e5"
+   },
+   {
+    "objId": 405533,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -682.4630126953125,
+     510.57501220703125,
+     -0.2199999988079071
+    ],
+    "off": "0x51a924"
+   },
+   {
+    "objId": 405534,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -756.7650146484375,
+     396.2309875488281,
+     -0.2199999988079071
+    ],
+    "off": "0x51a963"
+   },
+   {
+    "objId": 405535,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -888.791015625,
+     280.7049865722656,
+     -0.2199999988079071
+    ],
+    "off": "0x51a9a2"
+   },
+   {
+    "objId": 405536,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -1043.6820068359375,
+     128.19200134277344,
+     -0.2199999988079071
+    ],
+    "off": "0x51a9e1"
+   },
+   {
+    "objId": 405537,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -1061.7259521484375,
+     1.25600004196167,
+     -0.2199999988079071
+    ],
+    "off": "0x51aa20"
+   },
+   {
+    "objId": 405538,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -996.4959716796875,
+     -69.47200012207031,
+     -0.2199999988079071
+    ],
+    "off": "0x51aa5f"
+   },
+   {
+    "objId": 405539,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -856.375,
+     -120.17500305175781,
+     -0.2199999988079071
+    ],
+    "off": "0x51aa9e"
+   },
+   {
+    "objId": 405540,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -718.1530151367188,
+     -161.4739990234375,
+     -0.2199999988079071
+    ],
+    "off": "0x51aadd"
+   },
+   {
+    "objId": 405541,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -570.47802734375,
+     -228.322998046875,
+     -0.2199999988079071
+    ],
+    "off": "0x51ab1c"
+   },
+   {
+    "objId": 405548,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -307.8609924316406,
+     279.9460144042969,
+     15.0
+    ],
+    "off": "0x51ab5b"
+   },
+   {
+    "objId": 405549,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -23.77899932861328,
+     355.9259948730469,
+     25.0
+    ],
+    "off": "0x51ab9a"
+   },
+   {
+    "objId": 405550,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     56.547000885009766,
+     -157.74899291992188,
+     13.784000396728516
+    ],
+    "off": "0x51abd9"
+   },
+   {
+    "objId": 405551,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -115.36599731445312,
+     157.0760040283203,
+     12.70300006866455
+    ],
+    "off": "0x51ac18"
+   },
+   {
+    "objId": 405552,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -165.03500366210938,
+     204.3489990234375,
+     15.567999839782715
+    ],
+    "off": "0x51ac57"
+   },
+   {
+    "objId": 405553,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -172.88600158691406,
+     147.8780059814453,
+     18.77199935913086
+    ],
+    "off": "0x51ac96"
+   },
+   {
+    "objId": 405554,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -184.08200073242188,
+     15.734000205993652,
+     10.786999702453613
+    ],
+    "off": "0x51acd5"
+   },
+   {
+    "objId": 405555,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -324.7149963378906,
+     -188.4499969482422,
+     31.361000061035156
+    ],
+    "off": "0x51ad14"
+   },
+   {
+    "objId": 405556,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -517.7260131835938,
+     -131.36399841308594,
+     31.361000061035156
+    ],
+    "off": "0x51ad53"
+   },
+   {
+    "objId": 405557,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -797.0609741210938,
+     36.79199981689453,
+     13.694000244140625
+    ],
+    "off": "0x51ad92"
+   },
+   {
+    "objId": 405558,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -933.4099731445312,
+     97.70899963378906,
+     15.043000221252441
+    ],
+    "off": "0x51add1"
+   },
+   {
+    "objId": 405559,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -876.031982421875,
+     199.55999755859375,
+     31.06800079345703
+    ],
+    "off": "0x51ae10"
+   },
+   {
+    "objId": 405560,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -596.3909912109375,
+     322.9110107421875,
+     38.209999084472656
+    ],
+    "off": "0x51ae4f"
+   },
+   {
+    "objId": 405561,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -405.1449890136719,
+     375.27301025390625,
+     43.31399917602539
+    ],
+    "off": "0x51ae8e"
+   },
+   {
+    "objId": 405562,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -309.5570068359375,
+     325.6889953613281,
+     47.659000396728516
+    ],
+    "off": "0x51aecd"
+   },
+   {
+    "objId": 405563,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -157.71099853515625,
+     -17.871000289916992,
+     11.048999786376953
+    ],
+    "off": "0x51af0c"
+   },
+   {
+    "objId": 404996,
+    "name": "batman.bdae",
+    "lua": "function Obj404996_OnSpawn(...)\nWait(1000)\n\n--GenerateDistrict(400006, 10)\nfz_sandbox_enable_all_second_island ()\nend\n",
+    "pos": [
+     72.36699676513672,
+     -114.0979995727539,
+     19.023000717163086
+    ],
+    "off": "0x51e47b"
+   },
+   {
+    "objId": 600832,
+    "name": "batman.bdae",
+    "lua": "function Obj600832_OnSpawn(...)\n--StartMainStoryFromQuestId(819)\nStartFadeIn(1500)\nend\n",
+    "pos": [
+     -704.8410034179688,
+     237.72300720214844,
+     -0.5040000081062317
+    ],
+    "off": "0x51e5c3"
+   },
+   {
+    "objId": 300045,
+    "name": "batman.bdae",
+    "lua": "function Obj300045_OnSpawn(...)\nStartMainStoryFromQuestId(309)\nend\n",
+    "pos": [
+     -704.7349853515625,
+     241.51699829101562,
+     -0.5289999842643738
+    ],
+    "off": "0x51e602"
+   },
+   {
+    "objId": 300053,
+    "name": "batman.bdae",
+    "lua": "function Obj300053_OnSpawn(...)\n--StartMainStoryFromQuestId(819)\nStartFadeIn(1500)\nfz_sandbox_enable_all_second_island()\nWait(100)\nif not IsQuestEnabled(819) then\n    SetQuestEnabled(819)\nend\nend\n",
+    "pos": [
+     -703.9110107421875,
+     237.72300720214844,
+     -0.5040000081062317
+    ],
+    "off": "0x51e641"
+   },
+   {
+    "objId": 2100002,
+    "name": "batman.bdae",
+    "lua": "function Obj2100002_OnSpawn(...)\nDisableCopAI()\nStartFadeIn(1500)\nWait(100)\nShowObjectiveMessage (\"STR_CLEANING_HOUSE_OBJECTIVE_1\", -1, 4000,-1, true, true)\nprint(\"@@@@@@@@@@@@@@@@@@@@@@@@teleported to island 2@@@@@@@@@@@@@@@@@@@@@@@@\")\n--StartMainStoryFromQuestId(1101)\nSetQuestEnabled (1101)\nTraffic_CrowdSetBehavior(2)\nTraffic_StreetPatrolSet(1, 2, 3)\nTraffic_JeepPatrolSet(1, 2, 3)\nTraffic_SpawnerSetSetting(TRAFFIC_SETTING_VEHICLE_MOVING, 405645)\n--Traffic_SpawnerSetSetting(TRAFFIC_SETTING_VEHICLE_PARKING, 405646) \nTraffic_SpawnerSetSetting(TRAFFIC_SETTING_HUMAN_MOVING, 405804)\nTraffic_SpawnerEnable(2, 2)\nWait(2000)\nGiveAchievement(\"AV_AV_New_Land_lvl_1\")\n\n\n\n\n\n\n\n\n\n\nend\n",
+    "pos": [
+     -125.02300262451172,
+     -267.1659851074219,
+     32.983001708984375
+    ],
+    "off": "0x51e680"
+   },
+   {
+    "objId": 2100009,
+    "name": "batman.bdae",
+    "lua": "function Obj2100009_OnSpawn(...)\n--Wait (1000)\n--SetQuestAccepted (1101)\nend\n",
+    "pos": [
+     -551.7470092773438,
+     197.27099609375,
+     0.08100000023841858
+    ],
+    "off": "0x51ea22"
+   },
+   {
+    "objId": 2100072,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -551.7769775390625,
+     197.25900268554688,
+     0.08100000023841858
+    ],
+    "off": "0x51ea61"
+   },
+   {
+    "objId": 300054,
+    "name": "batman.bdae",
+    "lua": "function Obj300054_OnSpawn(...)\nDisableCopAI()\nStartFadeIn(1500)\nStartMainStoryFromQuestId(1101)\nShowObjectiveMessage (\"STR_CLEANING_HOUSE_OBJECTIVE_1\", -1, 4000,-1, true, true)\n------------------------------------------\nTraffic_CrowdSetBehavior(2)\nTraffic_StreetPatrolSet(1, 2, 3)\nTraffic_JeepPatrolSet(1, 2, 3)\nTraffic_SpawnerSetSetting(TRAFFIC_SETTING_VEHICLE_MOVING, 405645)\n--Traffic_SpawnerSetSetting(TRAFFIC_SETTING_VEHICLE_PARKING, 405646) \nTraffic_SpawnerSetSetting(TRAFFIC_SETTING_HUMAN_MOVING, 405804)\nTraffic_SpawnerEnable(2, 2)\n------------------------------------------\nend\n",
+    "pos": [
+     -125.23999786376953,
+     -268.4219970703125,
+     32.79199981689453
+    ],
+    "off": "0x51eaa0"
+   },
+   {
+    "objId": 2100076,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -515.343994140625,
+     231.6510009765625,
+     -0.0
+    ],
+    "off": "0x51eadf"
+   },
+   {
+    "objId": 300044,
+    "name": "batman.bdae",
+    "lua": "function Obj300044_OnSpawn(...)\nStartMainStoryFromQuestId(115)\nend\n",
+    "pos": [
+     -286.36700439453125,
+     146.02499389648438,
+     47.39799880981445
+    ],
+    "off": "0x51ec27"
+   },
+   {
+    "objId": 2100043,
+    "name": "batman.bdae",
+    "lua": "function Obj2100043_OnSpawn(...)\n\nend\n",
+    "pos": [
+     -945.9569702148438,
+     85.41899871826172,
+     0.0
+    ],
+    "off": "0x51f34d"
+   },
+   {
+    "objId": 2100105,
+    "name": "batman.bdae",
+    "lua": "function Obj2100105_OnSpawn(...)\nEnable (300016)\nSetQuestEnabled(820)\nend\n",
+    "pos": [
+     -948.60498046875,
+     85.18199920654297,
+     0.0
+    ],
+    "off": "0x51f402"
+   },
+   {
+    "objId": 300046,
+    "name": "batman.bdae",
+    "lua": "function Obj300046_OnSpawn(...)\nStartMainStoryFromQuestId(821)\nend\n",
+    "pos": [
+     -280.89898681640625,
+     -325.8399963378906,
+     -0.2280000001192093
+    ],
+    "off": "0x51f54a"
+   },
+   {
+    "objId": 300033,
+    "name": "batman.bdae",
+    "lua": "function Obj300033_OnSpawn(...)\nStartMainStoryFromQuestId(822)\nend\n",
+    "pos": [
+     -201.78799438476562,
+     156.62399291992188,
+     35.32500076293945
+    ],
+    "off": "0x51f692"
+   },
+   {
+    "objId": 300032,
+    "name": "batman.bdae",
+    "lua": "function Obj300032_OnSpawn(...)\nWait (100)\nStartMainStoryFromQuestId(823)\n\nend\n",
+    "pos": [
+     -161.08700561523438,
+     200.2689971923828,
+     17.027000427246094
+    ],
+    "off": "0x51f7da"
+   },
+   {
+    "objId": 2100071,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -84.10099792480469,
+     168.83700561523438,
+     0.0
+    ],
+    "off": "0x51f874"
+   },
+   {
+    "objId": 2100073,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     3.509999990463257,
+     -162.42300415039062,
+     24.757999420166016
+    ],
+    "off": "0x51f8b3"
+   },
+   {
+    "objId": 2100074,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     51.64899826049805,
+     132.18299865722656,
+     -0.0010000000474974513
+    ],
+    "off": "0x51f8f2"
+   },
+   {
+    "objId": 2100079,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -39.12900161743164,
+     167.20799255371094,
+     29.761999130249023
+    ],
+    "off": "0x51f9a7"
+   },
+   {
+    "objId": 600576,
+    "name": "batman.bdae",
+    "lua": "function Obj600576_OnSpawn(...)\n--if not IsEnabled(600577) then\n    Enable(600577)\n    Enable (600551)\n    ShowObject (600551)\n--end\nend\n",
+    "pos": [
+     -959.8569946289062,
+     -9.854999542236328,
+     22.033000946044922
+    ],
+    "off": "0x51f9e6"
+   },
+   {
+    "objId": 600580,
+    "name": "batman.bdae",
+    "lua": "function Obj600580_OnSpawn(...)\nr_yourhead_missionselect = 'part2'\n\nNextMission(600833)\nend\n",
+    "pos": [
+     -350.4549865722656,
+     161.11099243164062,
+     103.5009994506836
+    ],
+    "off": "0x51fa9b"
+   },
+   {
+    "objId": 300021,
+    "name": "batman.bdae",
+    "lua": "function Obj300021_OnSpawn(...)\n--StartMainStoryFromQuestId(822)\nStartFadeIn(1500)\nif not IsQuestEnabled(822) then\n    SetQuestEnabled(822)\n    fz_sandbox_enable_all_second_island()\nend\nend\n",
+    "pos": [
+     -284.4809875488281,
+     509.2640075683594,
+     -0.2199999988079071
+    ],
+    "off": "0x51fc60"
+   },
+   {
+    "objId": 2100041,
+    "name": "batman.bdae",
+    "lua": "function Obj2100041_OnSpawn(...)\n\nend\n",
+    "pos": [
+     -355.8689880371094,
+     295.9649963378906,
+     -0.2199999988079071
+    ],
+    "off": "0x520174"
+   },
+   {
+    "objId": 703260,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -444.04400634765625,
+     -260.6050109863281,
+     -0.2199999988079071
+    ],
+    "off": "0x52026f"
+   },
+   {
+    "objId": 703331,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -587.7990112304688,
+     316.67498779296875,
+     38.209999084472656
+    ],
+    "off": "0x521d6a"
+   },
+   {
+    "objId": 2300003,
+    "name": "batman.bdae",
+    "lua": "function Obj2300003_OnSpawn(...)\n--TeleportPlayerToZone(2300003)\n--Wait (700)\n\n\n--NextMission(2300000)\n--Wait(1000)\n\n--StartMainStoryFromQuestId (\n--- states can be found inside \"Decor_Social\" stateset --\n-- SotC_020_GothamCity.ods --\nmd_kill_enemies = {GetEnemiesInRange(0, 50)}\nmd_no_slam_enemies= table.getn(md_kill_enemies)\nprint (\"Entered Trigger\", unpack(md_kill_enemies))\nfor m_i =1, md_no_slam_enemies do\nprint (md_kill_enemies[m_i])\n    KillActor(md_kill_enemies[m_i], '', true)\nend\nStartCinematic()\nTeleportPlayerToZone(2300015)\n\nlocal batman = 0\nlocal girl = 2300004\nlocal boy = 2300024\n\nfunction cameraPreset01 (batman, otherGuy)\nCameraFollowObject(2300004, \"\", 0, 0, 0, true, 2300002, \"\", 0, 0, 0, true,0)\nCameraFollowObject(2300005, \"\", 0, 0, 0, true, 2300002, \"\", 0, 0, 0, true,2000)\n\nend\n\n--if GetDistBetweenObjects(batman, otherGuy) <= 3 then\n   -- Disable()\n\n   \n   \n   \n   \n    Wait(250)\n    \n    StartSound (\"c_4_1_1_conversation\", true, 3000)\n    StartFadeIn (1000)\n    ActorLookTo(girl, 2300010, 300)\n    ActorLookTo(boy, 2300010, 300)\n    CameraFollowObject(2300005, \"\", 0, 0, -1.6, true, 2300008, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n   \n    CameraFollowObject(2300009, \"\", 0, 0, -1.6, true, 2300008, \"\", 0, 0, 0, true,4000)\n    --ActorSetState(otherGuy, \"Talk_03\", 1, 0, 200)\n    Wait(3000)\n   \n    CameraFollowObject(2300011, \"\", 0, 0, -1.6, true, 2300012, \"\", 0, 0, 0, true,3000)\n   \n   \n    --ActorSetState(girl, \"Talk_03\", 1, 0, 200)\n    StartFadeOut(250)\n    CameraFollowObject(2300126, \"\", 0, 0, -1.6, true, 2300014, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300013, \"\", 0, 0, -1.6, true, 2300014, \"\", 0, 0, 0, true,2500)\n    Wait(2000)\n    ActorLookTo(girl, 2300013,1000)\n    ShowMessage(\"STR_CLEANING_HOUSE_06\", FACE_MIRANDATATE, 3300)\n    ActorSetState(girl, \"Talk_02\", 1000, 0, 200)\n    \n    TeleportPlayerToZone(2300015)\n    \n    \n    \n    Wait(3300)\n    StartFadeOut(250)\n    ActorLookTo(batman, girl, 10)\n    ActorLookTo(girl, batman, 100)\n    ActorLookTo(boy, batman, 100)\n\n    CameraFollowObject(2300016, \"\", 0, 0, -1.6, true, 2300017, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    ShowMessage(\"STR_CLEANING_HOUSE_07\", FACE_BATMAN, 2000)\n    Wait(2500)\n    --ActorSetState(girl, \"Talk_02\", 1, 0, 200)\n    StartFadeOut(250)\n    \n    CameraFollowObject(2300018, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300019, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,10000)\n    \n    ShowMessage(\"STR_CLEANING_HOUSE_08\", FACE_MERCENARY, 9100)\n    ActorSetState(boy, \"Talk_02\", 10000, 1, 200)\n    Wait(9100)\n    ShowMessage(\"STR_CLEANING_HOUSE_09\", FACE_MERCENARY, 6300)\n    ActorSetState(boy, \"Talk_01\", 7500, 1, 200)\n    StartFadeOut(250)\n    \n    CameraFollowObject(2300021, \"\", 0, 0, -1.6, true, 2300022, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300023, \"\", 0, 0, -1.6, true, 2300022, \"\", 0, 0, 0, true,7500)\n    \n    \n    Wait(6300)\n    ShowMessage(\"STR_CLEANING_HOUSE_10\", FACE_MERCENARY, 7500)\n    ActorSetState(boy, \"Talk_03\", 7500, 1, 200)\n    StartFadeOut(250)\n    CameraFollowObject(2300025, \"\", 0, 0, -1.6, true, 2300030, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300026, \"\", 0, 0, -1.6, true, 2300030, \"\", 0, 0, 0, true,7500)\n    Wait(5500)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300027, \"\", 0, 0, -1.6, true, 2300029, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300028, \"\", 0, 0, -1.6, true, 2300029, \"\", 0, 0, 0, true,2000)\n    Wait(3000)\n    StartFadeOut(250)\n    CameraFollowObject(2300031, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    Wait(2000)\n    \n    \n    ShowMessage(\"STR_CLEANING_HOUSE_11\", FACE_MERCENARY, 9000)\n    ActorSetState(boy, \"Talk_01\", 5000, 1, 200)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300034, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    \n    Wait(5000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300019, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300018, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,5000)\n    Wait(3500)\n    \n    ActorSetState(boy, \"Idle\", 5000, 1, 200)\n    ShowMessage(\"STR_CLEANING_HOUSE_12\", FACE_BATMAN, 6500)\n    --ActorSetState(batman, \"Idle_stand_talk\", 1, 0, 500)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300031, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300035, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,2000)\n    \n    Wait(6500)\n    \n    ShowMessage(\"STR_CLEANING_HOUSE_13\", FACE_MIRANDATATE, 9000)\n    ActorSetState(girl, \"Talk_08\", 7500, 1, 500)\n    --ActorSetState(batman, \"Idle\", 1, 0, 500)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300037, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300036, \"\", 0, 0, -1.6, true, 2300037, \"\", 0, 0, 0, true,4000)\n    Wait(9000)\n    \n    ShowMessage(\"STR_CLEANING_HOUSE_14\", FACE_MIRANDATATE, 12000)\n    ActorSetState(girl, \"Talk_08\", 7500, 1, 500)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300038, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300038, \"\", 0, 0, -1.6, true, 2300040, \"\", 0, 0, 0, true,6500)\n    Wait(5000)\n\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300045, \"\", 0, 0, 0, true,0)\n    StartFadeIn(250)\n    CameraFollowObject(2300041, \"\", 0, 0, -1.6, true, 2300045, \"\", 0, 0, 0, true,4000)\n    Wait(3500)\n    \n    ActorSetState(girl, \"Idle\", 7500, 1, 500)\n    Wait(1500)\n    StartFadeOut(500)\n    CameraFollowObject(2300042, \"\", 0, 0, -1.6, true, 2300046, \"\", 0, 0, 0, true,0)\n    StartFadeIn(500)\n    CameraFollowObject(2300043, \"\", 0, 0, -1.6, true, 2300044, \"\", 0, 0, 0, true,6000)\n    Wait(4000)\n    StartFadeOut(1000)\n    Wait(1000)\n    SetQuestAccepted(1101)\n    Wait(500)\n    CameraSwitchToPlayer(1000)\n    CameraSwitchToPlayerResetOrientation(1000)\n    StartFadeIn(250)\n    EndCinematic()\n    KillMusic(3000) \n\n    --SetQuestAccepted(1101)\n   --cameraPreset01(batman, otherGuy)\n  \n--  end\n\n\n\n\n\n--    ShowMessage(\"STR_CLEANING_HOUSE_06, 5000)\n--    ActorSetState(otherGuy, \"Talk_03\", 1, 0, 200)\n--   \n--    Wait(2000)sd\n--    StartFadeOut(250)\n--    --CameraFollowObject(batman, \"\", 4, -1, 2, true, otherGuy, \"\", 0, 0, 1, true, 2000)\n--   CameraFollowObject(2300000, \"\", 1, -1, 1, true, otherGuy, \"\", 0, 0, 1, true, 0)\n--    StartFadeIn(250)\n--   \n--    StartFadeOut(250)\n--    CameraFollowObject(2300001, \"\", 0, 0, 0, true, 2300002, \"\", 0, 0, 0, true, 0)\n--    StartFadeIn(250)\n--    Wait(5000)\n--    StartFadeOut(250)\n--\n--    CameraFollowObject(batman, \"\", 0.35, -1.4, 0.9, true, otherguy, \"\", 1, -1, 1.6, true, 0)\n--    StartFadeIn(250)\n--\n--    Wait(5000)\n--    EndCinematic()\n--    CameraSwitchToPlayer(1000)\n--    CameraSwitchToPlayerResetOrientation(1000)\n--   \n--end --\nend\n",
+    "pos": [
+     -528.375,
+     187.052001953125,
+     -0.06300000101327896
+    ],
+    "off": "0x5340f8"
+   },
+   {
+    "objId": 2000705,
+    "name": "batman.bdae",
+    "lua": "function Obj2000705_OnSpawn(...)\n    Wait(1000);\n    \n    Traffic_CrowdSetBehavior(2)\n    Traffic_StreetPatrolSet(1, 2, 3)\n    Traffic_JeepPatrolSet(1, 2, 3)\n    \n    Wait(1000);\n    \n    print(\"LOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOL\");\n    \n    Traffic_SpawnerSetSetting(TRAFFIC_SETTING_VEHICLE_MOVING, 405645)\n    --Traffic_SpawnerSetSetting(TRAFFIC_SETTING_VEHICLE_PARKING, 405646)\n    Traffic_SpawnerSetSetting(TRAFFIC_SETTING_HUMAN_MOVING, 405804)\n    Traffic_SpawnerEnable(2, 2)\nend\n",
+    "pos": [
+     -300.5140075683594,
+     241.87100219726562,
+     -0.2199999988079071
+    ],
+    "off": "0x534137"
+   },
+   {
+    "objId": 2300015,
+    "name": "batman.bdae",
+    "lua": "function Obj2300015_OnSpawn(...)\n\n\nend\n",
+    "pos": [
+     -523.6740112304688,
+     187.302001953125,
+     0.18299999833106995
+    ],
+    "off": "0x5379d8"
+   },
+   {
+    "objId": 700026,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -286.3890075683594,
+     144.427001953125,
+     47.39799880981445
+    ],
+    "off": "0x538b75"
+   },
+   {
+    "objId": 700067,
+    "name": "batman.bdae",
+    "lua": "function Obj700067_OnSpawn(...)\nlocal waypointPos = {ObjectGetPosition(700049)}\n        CameraLookAt(waypointPos[1],waypointPos[2],waypointPos[3], 500)\n        ActorLookTo(0, 700058)       \n        Wait(500)       \n        ShowObjectiveMessage(\"STR_GOOSE_CHASE_OBJECTIVE_02\", -1, -1, \"\", true, true)\n        EnableMiniGameObject(700049, true)\n        QTE_EnableControl(700049, 2000, \"gc_minigameWin\", \"gc_minigameLose\")\nend\n",
+    "pos": [
+     -312.31201171875,
+     131.82899475097656,
+     16.788000106811523
+    ],
+    "off": "0x53b2bf"
+   },
+   {
+    "objId": 2300107,
+    "name": "batman.bdae",
+    "lua": "function Obj2300107_OnSpawn(...)\nlocal batman = 0\nlocal selina = 2300108\nClearObjectiveMessage(\"STR_GOOSE_CHASE_OBJECTIVE_01\")\nEnable(selina)\nShowObject(selina)\n\n\n   --TeleportPlayerToZone(2300107)\n   ActorLookTo(batman, selina, 300)\n   ActorLookTo(selina, batman, 300)\n   \n   \n   \n    --StartFadeOut(250)\n    --Wait(250)\n    \n    StartCinematic()\n    local heli = SpawnObject(\"Helicopter\",703473)\n    StartFadeIn(250)\n    CameraFollowObject(2300111, \"\", 0, 0, -1.6, true, 2300114, \"\", 0, 0, 0, true,0)\n   \n    CameraFollowObject(2300113, \"\", 0, 0, -1.6, true, 2300115, \"\", 0, 0, 0, true,8000)\n    \n    Wait(4000)\n    ShowMessage(\"STR_GOOSE_CHASE_10\", FACE_SELINA, 2500)\n    ActorSetState(selina, \"Talk_09\", 0, 1, 400)\n    \n    Wait(2600)\n    ActorSetState(selina, \"Talk_09\", 0, 1, 400)\n\nStartFadeOut(250)\n    CameraFollowObject(2300116, \"\", 0, 0, -1.6, true, 2300118, \"\", 0, 0, 0, true,0)\n   \n  StartFadeIn(250)\n    CameraFollowObject(2300117, \"\", 0, 0, -1.6, true, 2300118, \"\", 0, 0, 0, true,4000)\n\n\n    ShowMessage(\"STR_GOOSE_CHASE_11\", FACE_BATMAN, 2500)\n    ActorSetState(selina, \"Idle\", 0, 1, 400)\n    \n    Wait(2600)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300119, \"\", 0, 0, -1.6, true, 2300121, \"\", 0, 0, 0, true,0)\n   \n  StartFadeIn(250)\n    CameraFollowObject(2300120, \"\", 0, 0, -1.6, true, 2300121, \"\", 0, 0, 0, true,4000)\n    ShowMessage(\"STR_GOOSE_CHASE_12\", FACE_SELINA, 2500)\n    ActorSetState(selina, \"Talk_05\", 0, 1, 400)\n    Wait(2600)\n    \n    \n    ShowMessage(\"STR_GOOSE_CHASE_13\", FACE_SELINA, 5600)\n    ActorSetState(selina, \"Talk_06\", 0, 1, 400)\n    Wait(2500)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300123, \"\", 0, 0, -1.6, true, 2300125, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300122, \"\", 0, 0, -1.6, true, 2300125, \"\", 0, 0, 0, true,4000)\n    \n    Wait(3200)\n    StartFadeOut(1000)\n    Wait(1000)\n    CameraSwitchToPlayer(1000)\n    CameraSwitchToPlayerResetOrientation(1000)\n    StartFadeIn(250)\n    EndCinematic()\n    --SaveGame(700067)\n    Disable(selina)\n    HideObject(selina)\n    Disable(heli)\n    HideObject(heli)\n\n        --local waypointPos = {ObjectGetPosition(700049)}\n        --CameraLookAt(waypointPos[1],waypointPos[2],waypointPos[3], 500)\n        --ActorLookTo(0, 700058)\n        --\n        --Wait(500)\n        --\n        --ShowObjectiveMessage(\"STR_GOOSE_CHASE_OBJECTIVE_02\", -1, -1)\n        --EnableMiniGameObject(700049, true)\n        --QTE_EnableControl(700049, 2000, \"gc_minigameWin\", \"gc_minigameLose\")\n        \n    TeleportPlayerToZone(700067)\n    SaveGame(700067)\n        --\nend\n",
+    "pos": [
+     -307.7829895019531,
+     129.7050018310547,
+     24.42799949645996
+    ],
+    "off": "0x53b2fe"
+   },
+   {
+    "objId": 703470,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -295.0150146484375,
+     120.49400329589844,
+     44.14699935913086
+    ],
+    "off": "0x53bbcb"
+   },
+   {
+    "objId": 700080,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -212.88099670410156,
+     18.832000732421875,
+     16.822999954223633
+    ],
+    "off": "0x53c455"
+   },
+   {
+    "objId": 700089,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -207.74000549316406,
+     162.50799560546875,
+     35.32500076293945
+    ],
+    "off": "0x53c494"
+   },
+   {
+    "objId": 700197,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -170.3489990234375,
+     239.86099243164062,
+     0.03700000047683716
+    ],
+    "off": "0x53fba1"
+   },
+   {
+    "objId": 703481,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -241.6909942626953,
+     165.78700256347656,
+     35.31100082397461
+    ],
+    "off": "0x53fd5d"
+   },
+   {
+    "objId": 1900002,
+    "name": "batman.bdae",
+    "lua": "",
+    "pos": [
+     -142.32000732421875,
+     -243.34800720214844,
+     15.491000175476074
+    ],
+    "off": "0x53fe20"
+   },
+   {
+    "objId": 2100014,
+    "name": "batman.bdae",
+    "lua": "function Obj2100014_OnSpawn(...)\nWait (500)\nEnable (300028) -- trigger ahead\nend\n",
+    "pos": [
+     -85.41400146484375,
+     171.81100463867188,
+     0.0
+    ],
+    "off": "0x540016"
+   },
+   {
+    "objId": 2300060,
+    "name": "batman.bdae",
+    "lua": "function Obj2300060_OnSpawn(...)\n\nend\n",
+    "pos": [
+     -82.95099639892578,
+     153.00999450683594,
+     0.0
+    ],
+    "off": "0x540f28"
+   },
+   {
+    "objId": 2300067,
+    "name": "batman.bdae",
+    "lua": "function Obj2300067_OnSpawn(...)\nlocal batman = 0\nlocal gordon = 2300051\nlocal blake = 2300052\nlocal cop1 = 2300049\nlocal cop2 = 2300047\nlocal cop3 = 2300048\nlocal cop4 = 2300057\nlocal cop5 = 2300058\nlocal cop6 = 2300059\nlocal cop7 = 2300056\nlocal cop8 = 2300055\n\nfunction cameraPreset01 (batman, otherGuy)\nCameraFollowObject(2300004, \"\", 0, 0, 0, true, 2300002, \"\", 0, 0, 0, true,0)\nCameraFollowObject(2300005, \"\", 0, 0, 0, true, 2300002, \"\", 0, 0, 0, true,2500)\n\nend\n\n--if GetDistBetweenObjects(batman, otherGuy) <= 3 then\n   -- Disable()\n\n   \n   TeleportPlayerToZone(2300060)\n   ActorLookTo(batman, cop1, 300)\n   ActorLookTo(gordon, cop3, 300)\n   ActorLookTo(blake, cop3, 300)\n   ActorLookTo(cop1, gordon, 300)\n   ActorLookTo(cop2, 2300060, 300)\n   ActorLookTo(cop3, blake, 300)\n   ActorLookTo(cop4, gordon, 300)\n    ActorLookTo(cop6, gordon, 300)   \n    ActorLookTo(cop7, gordon, 300)\n    ActorLookTo(cop5, gordon, 300)\n    ActorLookTo(cop8, gordon, 300)\n   \n   \n    StartFadeOut(250)\n    Wait(250)\n    \n    StartCinematic()\n    StartFadeIn(250)\n    CameraFollowObject(2300063, \"\", 0, 0, -1.6, true, 2300065, \"\", 0, 0, 0, true,0)\n   \n    CameraFollowObject(2300064, \"\", 0, 0, -1.6, true, 2300066, \"\", 0, 0, 0, true,10000)\n    \n    Wait(2000)\n    ShowMessage(\"STR_STORM_PT1_01\", FACE_GORDON, 6000)\n    ActorSetState(gordon, \"Talk_03\", 0, 1, 400)\n    \n    Wait(7000)\n    \n    ShowMessage(\"STR_STORM_PT1_02\", FACE_BLAKE, 12000)\n    ActorSetState(gordon, \"Idle\", 0, 1, 400)\n    ActorSetState(blake, \"Talk_05\", 0, 1, 400)\n    Wait(1000)\n    ActorSetState(blake, \"Talk_01\", 0, 1, 400)\n\n    StartFadeOut(250)\n    CameraFollowObject(2300069, \"\", 0, 0, -1.6, true, 2300071, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300070, \"\", 0, 0, -1.6, true, 2300072, \"\", 0, 0, 0, true,9000)\n    \n    \n    Wait(8000)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300073, \"\", 0, 0, -1.6, true, 2300075, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300074, \"\", 0, 0, -1.6, true, 2300075, \"\", 0, 0, 0, true,6000)\n    \n    Wait(3000)\n    ShowMessage(\"STR_STORM_PT1_03\", FACE_GORDON, 12000)\n    ActorSetState(blake, \"Idle\", 0, 1, 400)\n    ActorSetState(gordon, \"Talk_08\", 0, 1, 400)\n    Wait(3000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300076, \"\", 0, 0, -1.6, true, 2300078, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300077, \"\", 0, 0, -1.6, true, 2300079, \"\", 0, 0, 0, true,4000)\n    \n    Wait(4000)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300080, \"\", 0, 0, -1.6, true, 2300082, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300081, \"\", 0, 0, -1.6, true, 2300082, \"\", 0, 0, 0, true,5000)\n    \n    Wait(5000)\n    ShowMessage(\"STR_STORM_PT1_04\", FACE_BLAKE, 16000)\n    ActorSetState(gordon, \"Idle\", 0, 1, 600)\n    ActorSetState(blake, \"Talk_07\", 0, 1, 400)\n    Wait(1000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300073, \"\", 0, 0, -1.6, true, 2300083, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300074, \"\", 0, 0, -1.6, true, 2300084, \"\", 0, 0, 0, true,5000)\n    \n    Wait(5000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300085, \"\", 0, 0, -1.6, true, 2300083, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300086, \"\", 0, 0, -1.6, true, 2300083, \"\", 0, 0, 0, true,5000)\n    \n    Wait(5000)\n    ActorSetState(blake, \"Talk_03\", 0, 1, 400)\n    StartFadeOut(250)\n    CameraFollowObject(2300087, \"\", 0, 0, -1.6, true, 2300089, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300088, \"\", 0, 0, -1.6, true, 2300089, \"\", 0, 0, 0, true,4000)\n    \n    Wait(4000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300085, \"\", 0, 0, -1.6, true, 2300083, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300086, \"\", 0, 0, -1.6, true, 2300083, \"\", 0, 0, 0, true,5000)\n    \n    Wait(2300)\n    \n    ShowMessage(\"STR_STORM_PT1_05\", FACE_MERCENARY, 7000)\n    ActorSetState(blake, \"Idle\", 0, 1, 600)\n    ActorSetState(cop1, \"Talk_07\", 0, 1, 600)\n    Wait(2700)\n\n\n    StartFadeOut(250)\n    CameraFollowObject(2300096, \"\", 0, 0, -1.6, true, 2300092, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    --CameraFollowObject(2300096, \"\", 0, 0, -1.6, true, 2300092, \"\", 0, 0, 0, true,4300)\n    \n    \n    Wait(4300)\n    \n    ShowMessage(\"STR_STORM_PT1_06\", FACE_MERCENARY2, 7000)\n    ActorSetState(cop1, \"Idle\", 0, 1, 600)\n    ActorSetState(cop3, \"Talk_06\", 0, 1, 600)\n    Wait(2000)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300093, \"\", 0, 0, -1.6, true, 2300094, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300095, \"\", 0, 0, -1.6, true, 2300094, \"\", 0, 0, 0, true,5000)\n    \n    Wait(5000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300097, \"\", 0, 0, -1.6, true, 2300098, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    \n    ShowMessage(\"STR_STORM_PT1_07\", FACE_MERCENARY, 4500)\n    ActorSetState(cop3, \"Idle\", 0, 1, 1000)\n    ActorSetState(cop1, \"Talk_03\", 0, 1, 1000)\n    Wait(3000)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300099, \"\", 0, 0, -1.6, true, 2300101, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300100, \"\", 0, 0, -1.6, true, 2300101, \"\", 0, 0, 0, true, 8000)\n    \n    Wait (1800)\n    \n    ShowMessage(\"STR_STORM_PT1_08\", FACE_MERCENARY, 3000)\n    ActorSetState(cop1, \"Point_Right\", 0, 0, 1000)\n    Wait(3200)\n    \n    ShowMessage(\"STR_STORM_PT1_09\", FACE_GORDON, 2000)\n    ActorSetState(cop1, \"Idle\", 0, 1, 1000)\n    ActorSetState(gordon, \"Talk_02\", 0, 1, 1000)\n    Wait(2000)\n    \n    ShowMessage(\"STR_STORM_PT1_10\", FACE_MERCENARY, 2500)\n     ActorSetState(gordon, \"Idle\", 0, 1, 1000)\n    ActorSetState(cop1, \"Talk_07\", 0, 1, 1000)\n    Wait(2500)\n    \n    ShowMessage(\"STR_STORM_PT1_11\", FACE_GORDON, 10000)\n    ActorSetState(cop1, \"Idle\", 0, 1, 1000)\n    ActorSetState(gordon, \"Talk_03\", 0, 1, 1000)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300073, \"\", 0, 0, -1.6, true, 2300083, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300074, \"\", 0, 0, -1.6, true, 2300084, \"\", 0, 0, 0, true,7000)\n    \n    Wait(7000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300076, \"\", 0, 0, -1.6, true, 2300078, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300077, \"\", 0, 0, -1.6, true, 2300079, \"\", 0, 0, 0, true,6000)\n    \n    Wait(3000)\n    \n    ShowMessage(\"STR_STORM_PT1_12\", FACE_GORDON, 5000)\n    ActorSetState(gordon, \"Talk_04\", 0, 1, 1000)\n    Wait(3000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300080, \"\", 0, 0, -1.6, true, 2300082, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300081, \"\", 0, 0, -1.6, true, 2300082, \"\", 0, 0, 0, true,10000)\n    \n    Wait(2000)\n    \n    ShowMessage(\"STR_STORM_PT1_13\", FACE_GORDON, 13000)\n    ActorSetState(gordon, \"Talk_06\", 0, 1, 1000)\n    Wait(8000)\n    \n    StartFadeOut(250)\n    CameraFollowObject(2300099, \"\", 0, 0, -1.6, true, 2300101, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300100, \"\", 0, 0, -1.6, true, 2300101, \"\", 0, 0, 0, true, 10000)\n    \n    Wait(5000)\n    \n    ShowMessage(\"STR_STORM_PT1_14\", FACE_GORDON, 8000)\n    ActorSetState(gordon, \"Talk_07\", 0, 1, 1000)\n    Wait(5000)\n    \n    \n    StartFadeOut(250)\n    CameraFollowObject(2300102, \"\", 0, 0, -1.6, true, 2300104, \"\", 0, 0, 0, true,0)\n   \n    StartFadeIn(250)\n    CameraFollowObject(2300103, \"\", 0, 0, -1.6, true, 2300105, \"\", 0, 0, 0, true, 7000)\n    \n    \n    Wait(4000)\n    \n    ShowMessage(\"STR_STORM_PT1_15\", FACE_GORDON, 3000)\n    ActorSetState(gordon, \"Talk_03\", 0, 1, 1000)\n    \n    Wait(3000)\n    \n    ShowMessage(\"STR_STORM_PT1_17\", FACE_BATMAN, 3000)\n    \n    Wait(3000)\n    StartFadeOut(1000)\n    CameraSwitchToPlayer(1000)\n    CameraSwitchToPlayerResetOrientation(1000)\n    StartFadeIn(250)\n    EndCinematic()\n    Wait (1000)\n    SetQuestEnabled(1102)\n    \n    \n    \n    \n    --StartFadeOut(250)\n    \n--    ActorLookTo(girl, 2300010, 300)\n--    ActorLookTo(boy, 2300010, 300)\n--    CameraFollowObject(2300005, \"\", 0, 0, -1.6, true, 2300008, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--   \n--    CameraFollowObject(2300009, \"\", 0, 0, -1.6, true, 2300008, \"\", 0, 0, 0, true,4000)\n--    --ActorSetState(otherGuy, \"Talk_03\", 1, 0, 200)\n--    Wait(4000)\n--   \n--    CameraFollowObject(2300011, \"\", 0, 0, -1.6, true, 2300012, \"\", 0, 0, 0, true,3000)\n--   \n--   \n--    --ActorSetState(girl, \"Talk_03\", 1, 0, 200)\n--    StartFadeOut(250)\n--    CameraFollowObject(2300013, \"\", 0, 0, -1.6, true, 2300014, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    Wait(1500)\n--    ActorLookTo(girl, 2300013,1500)\n--    ShowMessage(\"STR_CLEANING_HOUSE_06\", FACE_MIRANDATATE, 2000)\n--    ActorSetState(girl, \"Talk_02\", 1000, 0, 200)\n--    \n--    TeleportPlayerToZone(2300015)\n--    \n--    \n--    \n--    Wait(2000)\n--    StartFadeOut(250)\n--    ActorLookTo(batman, girl, 300)\n--    ActorLookTo(girl, batman, 300)\n--    ActorLookTo(boy, batman, 300)\n--\n--    CameraFollowObject(2300016, \"\", 0, 0, -1.6, true, 2300017, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    ShowMessage(\"STR_CLEANING_HOUSE_07\", FACE_BATMAN, 2000)\n--    Wait(2500)\n--    --ActorSetState(girl, \"Talk_02\", 1, 0, 200)\n--    StartFadeOut(250)\n--    \n--    CameraFollowObject(2300018, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300019, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,10000)\n--    \n--    ShowMessage(\"STR_CLEANING_HOUSE_08\", FACE_MERCENARY, 10000)\n--    ActorSetState(boy, \"Talk_02\", 10000, 1, 200)\n--    Wait(10000)\n--    ShowMessage(\"STR_CLEANING_HOUSE_09\", FACE_MERCENARY, 7500)\n--    ActorSetState(boy, \"Talk_01\", 7500, 1, 200)\n--    StartFadeOut(250)\n--    \n--    CameraFollowObject(2300021, \"\", 0, 0, -1.6, true, 2300022, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300023, \"\", 0, 0, -1.6, true, 2300022, \"\", 0, 0, 0, true,7500)\n--    \n--    \n--    Wait(7500)\n--    ShowMessage(\"STR_CLEANING_HOUSE_10\", FACE_MERCENARY, 7500)\n--    ActorSetState(boy, \"Talk_03\", 7500, 1, 200)\n--    StartFadeOut(250)\n--    CameraFollowObject(2300025, \"\", 0, 0, -1.6, true, 2300030, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300026, \"\", 0, 0, -1.6, true, 2300030, \"\", 0, 0, 0, true,7500)\n--    Wait(5500)\n--    \n--    StartFadeOut(250)\n--    CameraFollowObject(2300027, \"\", 0, 0, -1.6, true, 2300029, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300028, \"\", 0, 0, -1.6, true, 2300029, \"\", 0, 0, 0, true,2000)\n--    Wait(2000)\n--    StartFadeOut(250)\n--    CameraFollowObject(2300031, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    Wait(3000)\n--    \n--    \n--    ShowMessage(\"STR_CLEANING_HOUSE_11\", FACE_MERCENARY, 7500)\n--    ActorSetState(boy, \"Talk_01\", 5000, 1, 200)\n--    \n--    StartFadeOut(250)\n--    CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300034, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    \n--    Wait(5000)\n--    \n--    StartFadeOut(250)\n--    CameraFollowObject(2300019, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300018, \"\", 0, 0, -1.6, true, 2300020, \"\", 0, 0, 0, true,5000)\n--    Wait(2500)\n--    \n--    ActorSetState(boy, \"Idle\", 5000, 1, 200)\n--    ShowMessage(\"STR_CLEANING_HOUSE_12\", FACE_BATMAN, 5000)\n--    ActorSetState(batman, \"Idle_stand_talk\", 1, 0, 500)\n--    \n--    \n--    StartFadeOut(250)\n--    CameraFollowObject(2300031, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300035, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,2000)\n--    \n--    --Wait(2000)\n--    \n--    ShowMessage(\"STR_CLEANING_HOUSE_13\", FACE_MIRANDATATE, 7500)\n--    ActorSetState(girl, \"Talk_08\", 7500, 1, 500)\n--    ActorSetState(batman, \"Idle\", 1, 0, 500)\n--    \n--    StartFadeOut(250)\n--    CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300037, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300036, \"\", 0, 0, -1.6, true, 2300037, \"\", 0, 0, 0, true,4000)\n--    Wait(4000)\n--    \n--    ShowMessage(\"STR_CLEANING_HOUSE_14\", FACE_MIRANDATATE, 9000)\n--    ActorSetState(girl, \"Talk_08\", 7500, 1, 500)\n--    \n--    \n--    StartFadeOut(250)\n--   CameraFollowObject(2300038, \"\", 0, 0, -1.6, true, 2300032, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300038, \"\", 0, 0, -1.6, true, 2300040, \"\", 0, 0, 0, true,6500)\n--    Wait(4000)\n--\n--    \n--    \n--    \n--    \n--    \n--    StartFadeOut(250)\n--    CameraFollowObject(2300033, \"\", 0, 0, -1.6, true, 2300045, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(250)\n--    CameraFollowObject(2300041, \"\", 0, 0, -1.6, true, 2300045, \"\", 0, 0, 0, true,4000)\n--    Wait(3500)\n--    \n--    ActorSetState(girl, \"Idle\", 7500, 1, 500)\n--    Wait(1500)\n--    StartFadeOut(500)\n--    CameraFollowObject(2300042, \"\", 0, 0, -1.6, true, 2300046, \"\", 0, 0, 0, true,0)\n--    StartFadeIn(500)\n--    CameraFollowObject(2300043, \"\", 0, 0, -1.6, true, 2300044, \"\", 0, 0, 0, true,6000)\n--    Wait(6000)\n--    StartFadeOut(100)\n--    Wait(1000)\n--    CameraSwitchToPlayer(1000)\n--    --CameraSwitchToPlayerResetOrientation(1000)\n--    --StartFadeIn(250)\n--   --cameraPreset01(batman, otherGuy)\n--  \n----  end\n--\n--\n--\nend\n",
+    "pos": [
+     -174.58900451660156,
+     130.06700134277344,
+     0.0
+    ],
+    "off": "0x5421d7"
+   }
+  ],
+  "mesh_records": [
+   {
+    "tid": "0x14051",
+    "mesh": "gc_island2_longdist.bdae",
+    "flags": "",
+    "pos": [
+     -730.0,
+     -1250.0,
+     0.0
+    ],
+    "off": "0x58a0a"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ze_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -902.073974609375,
+     28.215999603271484,
+     0.0
+    ],
+    "off": "0x4cb05f"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_df_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -128.56199645996094,
+     -10.0,
+     0.0
+    ],
+    "off": "0x4cb097"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_lg_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -500.0,
+     350.0,
+     0.0
+    ],
+    "off": "0x4cb0cf"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_lpol_reflections.bdae",
+    "flags": "",
+    "pos": [
+     10.151000022888184,
+     70.1240005493164,
+     0.0
+    ],
+    "off": "0x4cb107"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_dmus_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -120.00800323486328,
+     290.0050048828125,
+     0.0
+    ],
+    "off": "0x4cb13f"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_zf_reflection.bdae",
+    "flags": "",
+    "pos": [
+     0.0,
+     -10.0,
+     0.0
+    ],
+    "off": "0x4cb177"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_dg_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -128.5590057373047,
+     10.0,
+     0.0
+    ],
+    "off": "0x4cb1af"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_gb_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -420.0,
+     270.0,
+     0.0
+    ],
+    "off": "0x4cb1e7"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_std_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -654.677978515625,
+     389.9960021972656,
+     0.0
+    ],
+    "off": "0x4cb21f"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_railway_island2_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -730.0,
+     -1250.0,
+     0.0
+    ],
+    "off": "0x4cb257"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_cj_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -259.9909973144531,
+     109.99700164794922,
+     0.0
+    ],
+    "off": "0x4cb28f"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_cm_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -349.9389953613281,
+     269.9989929199219,
+     0.0
+    ],
+    "off": "0x4cb2c7"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_id_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -440.0,
+     410.0,
+     0.0
+    ],
+    "off": "0x4cb2ff"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_ie_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -280.0,
+     350.0,
+     0.0
+    ],
+    "off": "0x4cb337"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_cl_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -100.0,
+     290.0,
+     0.0
+    ],
+    "off": "0x4cb36f"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_vrs_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -562.635009765625,
+     -189.4499969482422,
+     0.0
+    ],
+    "off": "0x4cb3a7"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_dh_reflection.bdae",
+    "flags": "",
+    "pos": [
+     -576.0380249023438,
+     -39.3380012512207,
+     0.0
+    ],
+    "off": "0x4cb3df"
+   },
+   {
+    "tid": "0x14050",
+    "mesh": "gc_footprint_aj_reflections.bdae",
+    "flags": "",
+    "pos": [
+     -260.0,
+     310.0,
+     0.0
+    ],
+    "off": "0x4cb417"
+   }
+  ]
+ }
+}

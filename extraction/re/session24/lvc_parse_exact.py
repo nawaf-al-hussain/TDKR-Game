@@ -10,8 +10,8 @@ Framing sources (disasm-verified):
 """
 import struct, json, sys, collections
 
-GOL = '/home/z/work/tdkr/gol_templates.json'
-LOADS = '/home/z/work/tdkr/component_loads.json'
+GOL = '/home/z/my-project/work/TDKR-Game/extraction/re/session24/gol_templates.json'
+LOADS = '/home/z/my-project/work/TDKR-Game/extraction/re/session24/component_loads.json'
 gol = json.load(open(GOL))
 loads = json.load(open(LOADS))
 templates = {int(k, 16): [(f, t) for f, t in v] for k, v in gol['templates'].items()}
