@@ -340,6 +340,12 @@ def main():
                         stats[f'ctid-skip {ctid:#x}'] += 1
                         continue
                     err = tr.run(la, [tr.new_component(), STREAM])
+                    if err or tr.benign_fault:
+                        import os as _os
+                        with open('/tmp/my-project/work/s26_faults.txt',
+                                  'a') as _f:
+                            _f.write(f'{tid:#x} {ctid:#x} {p:#x} '
+                                     f'{err} {tr.benign_fault}\n')
                     p = tr.get_cursor()
                     pre = len(toks)
                     toks += fold(tr.trace.events, p, d, strings)

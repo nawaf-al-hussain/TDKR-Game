@@ -71,3 +71,12 @@
   present, 41 GLBs on disk, 17 skyline/longdist manifest entries);
   the round-13 gate PASS 26/26 stands (gate_v19_staged.json).
 - Skyline placement still rests solely on engine record 0x14051.
+
+## 5. Whitelist-off run (T1 validation d)
+- GothamCity: 1,474 component runs faulted under the emulator, all in
+  post-Load bookkeeping (CBeastObjectComponent x423, CTriggerComponent x269
+  [Lua registration: luaS_newlstr/LoadFromBuffer], 0xc7d8baf x255,
+  0x592ce07c x211, CSoundAndLight x176, ...), touching 1,442 records
+  (4,889,564 record bytes). With the whitelist off these would report
+  failures; the stream reads were already complete -- proven by the pure
+  parser (no emulation, no faults) reproducing every boundary and value.
