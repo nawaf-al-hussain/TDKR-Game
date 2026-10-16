@@ -70,6 +70,10 @@ function replay(spec, r, out) {
       r.raw(tok[1], out);
     } else if (k === 'fat') {
       r.tok(tok[1], tok[2], out);
+    } else if (k === 'i_nz') {
+      // round 19: LevelInit trailing word read only when nonzero
+      var dv2 = new DataView(r.d.buffer, r.d.byteOffset + r.p, 4);
+      if (dv2.getInt32(0) !== 0) r.tok('i', undefined, out);
     } else {
       r.tok(k, tok.length > 1 ? tok[1] : undefined, out);
     }

@@ -263,6 +263,11 @@ def walk(path, name, tr, templates, load_addrs, fac, gct,
                                         f'Load {ctid:#x} @0x{la:x}: {err}')
                             else:
                                 err = tr.run(0x368AC0, [tid, STREAM])
+                                if err and 'pc=0x368c00' in str(err):
+                                    # GCT default = null-Load crash; CreateObject
+                                    # null-checks (0x367fe4) and SKIPS -> 0 reads
+                                    tr.set_cursor(c0)
+                                    err = None
                                 if err:
                                     raise RuntimeError(
                                         f'GCT {ctid:#x}: {err}')

@@ -1,0 +1,200 @@
+{
+ "0xc69a6a7": {
+  "tag": "ZonesLink?",
+  "sites": [
+   [
+    "0x369d58",
+    "0x369d5c"
+   ]
+  ],
+  "nsites": 1,
+  "loads": [
+   [
+    "0xbd0e30",
+    "0x10",
+    "0x2e7430",
+    "_ZN19CComponentZonesLink4LoadEP13CMemoryStream"
+   ],
+   [
+    "0xbd0e30",
+    "0x8",
+    "0x2e73cc",
+    "_ZNK19CComponentZonesLink3NewEv"
+   ],
+   [
+    "0xbd0e30",
+    "0xc",
+    "0x2e73fc",
+    "_ZNK19CComponentZonesLink5CloneEv"
+   ]
+  ]
+ },
+ "0x2ad64f3d": {
+  "tag": "PlaneNode?",
+  "sites": [
+   [
+    "0x22453c",
+    "0x224540"
+   ],
+   [
+    "0x2e1db0",
+    "0x2e1db4"
+   ],
+   [
+    "0x36acd0",
+    "0x36acd4"
+   ]
+  ],
+  "nsites": 3,
+  "loads": [
+   [
+    "0xbd0e10",
+    "0x10",
+    "0x2e74e0",
+    "_ZN22CComponentBuiltinPlane4LoadEP13CMemoryStream"
+   ],
+   [
+    "0xbd0e10",
+    "0x8",
+    "0x2e7458",
+    "_ZNK22CComponentBuiltinPlane3NewEv"
+   ],
+   [
+    "0xbd0e10",
+    "0xc",
+    "0x2e7498",
+    "_ZNK22CComponentBuiltinPlane5CloneEv"
+   ]
+  ]
+ },
+ "0x3377f0e": {
+  "tag": "Military?",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x295": {
+  "tag": "l_menu",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x433": {
+  "tag": "shop",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x2056": {
+  "tag": "Stadion",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x4e52b": {
+  "tag": "Police_Station",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x4a2b": {
+  "tag": "StockExchange",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x2a953": {
+  "tag": "Underground",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0xbc0": {
+  "tag": "Military2",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x7f88e44e": {
+  "tag": "Military_gctfault",
+  "sites": [
+   [
+    "0x225c98",
+    "0x225c9c"
+   ],
+   [
+    "0x36b4f8",
+    "0x36b4fc"
+   ]
+  ],
+  "nsites": 2,
+  "loads": [
+   [
+    "0xbd3180",
+    "0x10",
+    "0x2e1c58",
+    "_ZN29CComponentBuiltinCollisionBox4LoadEP13CMemoryStream"
+   ],
+   [
+    "0xbd3180",
+    "0x8",
+    "0x2e1b8c",
+    "_ZNK29CComponentBuiltinCollisionBox3NewEv"
+   ],
+   [
+    "0xbd3180",
+    "0xc",
+    "0x2e1be0",
+    "_ZNK29CComponentBuiltinCollisionBox5CloneEv"
+   ]
+  ]
+ },
+ "0x10ff796": {
+  "tag": "Dummy",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x7f8ed4e": {
+  "tag": "autofit40B",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x288ae7da": {
+  "tag": "WorldBox6",
+  "sites": [],
+  "nsites": 0,
+  "loads": []
+ },
+ "0x16f31": {
+  "tag": "head14body15",
+  "sites": [
+   [
+    "0x1dc3c8",
+    "0x1dc3cc"
+   ]
+  ],
+  "nsites": 1,
+  "loads": [
+   [
+    "0xbd0a30",
+    "0x10",
+    "0x202ae4",
+    "_ZN29CComponentNewShopItemProperty4LoadEP13CMemoryStream"
+   ],
+   [
+    "0xbd0a30",
+    "0x8",
+    "0x202868",
+    "_ZNK29CComponentNewShopItemProperty3NewEv"
+   ],
+   [
+    "0xbd0a30",
+    "0xc",
+    "0x202ac0",
+    "_ZNK29CComponentNewShopItemProperty5CloneEv"
+   ]
+  ]
+ }
+}

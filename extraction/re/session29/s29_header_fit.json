@@ -1,0 +1,82 @@
+[
+ {
+  "level": "GothamCity",
+  "hdr": 14917,
+  "nrec": 14313,
+  "ncomp": 12375,
+  "rec_minus_hdr": -604,
+  "comp_div": 1.205
+ },
+ {
+  "level": "GothamCity_Island2",
+  "hdr": 8214,
+  "nrec": 7474,
+  "ncomp": 6506,
+  "rec_minus_hdr": -740,
+  "comp_div": 1.263
+ },
+ {
+  "level": "BatCave",
+  "hdr": 88,
+  "nrec": 92,
+  "ncomp": 152,
+  "rec_minus_hdr": 4,
+  "comp_div": 0.579
+ },
+ {
+  "level": "l_menu",
+  "hdr": 30,
+  "nrec": 31,
+  "ncomp": 71,
+  "rec_minus_hdr": 1,
+  "comp_div": 0.423
+ },
+ {
+  "level": "Stadion",
+  "hdr": 272,
+  "nrec": 274,
+  "ncomp": 761,
+  "rec_minus_hdr": 2,
+  "comp_div": 0.357
+ },
+ {
+  "level": "Police_Station",
+  "hdr": 538,
+  "nrec": 653,
+  "ncomp": 723,
+  "rec_minus_hdr": 115,
+  "comp_div": 0.744
+ },
+ {
+  "level": "StockExchange",
+  "hdr": 415,
+  "nrec": 2023,
+  "ncomp": 665,
+  "rec_minus_hdr": 1608,
+  "comp_div": 0.624
+ },
+ {
+  "level": "Underground",
+  "hdr": 687,
+  "nrec": 2653,
+  "ncomp": 1487,
+  "rec_minus_hdr": 1966,
+  "comp_div": 0.462
+ },
+ {
+  "level": "Military",
+  "hdr": 702,
+  "nrec": 773,
+  "ncomp": 1457,
+  "rec_minus_hdr": 71,
+  "comp_div": 0.482
+ },
+ {
+  "level": "ThePit",
+  "hdr": 598,
+  "nrec": 700,
+  "ncomp": 1309,
+  "rec_minus_hdr": 102,
+  "comp_div": 0.457
+ }
+]

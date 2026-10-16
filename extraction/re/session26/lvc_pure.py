@@ -120,6 +120,13 @@ def replay(spec, r, out):
         elif k == 'fat':
             r.tok(tok[1], tok[2], out)
             i += 1
+        elif k == 'i_nz':
+            # round 19: LevelInit case's trailing word is read only when nonzero
+            # (GC/I2: 31004 read; shop: 0 left as a separate tid-0 skip record)
+            import struct as _s
+            if _s.unpack_from('>i', r.d, r.p)[0] != 0:
+                r.tok('i', None, out)
+            i += 1
         else:
             r.tok(k, tok[1] if len(tok) > 1 else None, out)
             i += 1

@@ -1,0 +1,60 @@
+{
+ "GothamCity": {
+  "ok": true,
+  "n": 14313,
+  "toff": "0x5eb80b"
+ },
+ "GothamCity_Island2": {
+  "ok": true,
+  "n": 7474,
+  "toff": "0x547281"
+ },
+ "BatCave": {
+  "ok": true,
+  "n": 92,
+  "toff": "0x7d6b5"
+ },
+ "l_menu": {
+  "ok": true,
+  "n": 31,
+  "toff": "0xb37"
+ },
+ "shop": {
+  "ok": false,
+  "err": "AssertionError: framing error: cursor 0x40ee != table 0x40ec"
+ },
+ "Stadion": {
+  "ok": true,
+  "n": 274,
+  "toff": "0x37e12"
+ },
+ "Police_Station": {
+  "ok": true,
+  "n": 653,
+  "toff": "0x57a8a"
+ },
+ "StockExchange": {
+  "ok": true,
+  "n": 2023,
+  "toff": "0x57102"
+ },
+ "Underground": {
+  "ok": true,
+  "n": 2653,
+  "toff": "0x13cee2"
+ },
+ "Military": {
+  "ok": true,
+  "n": 773,
+  "toff": "0x75b2f"
+ },
+ "ThePit": {
+  "ok": true,
+  "n": 700,
+  "toff": "0x21956f"
+ },
+ "Test": {
+  "ok": false,
+  "err": "error: unpack_from requires a buffer of at least 4 bytes for unpacking 4 bytes at offset 0 (actual buffer size is 1)"
+ }
+}

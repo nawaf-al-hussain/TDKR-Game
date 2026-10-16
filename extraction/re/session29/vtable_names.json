@@ -1,0 +1,930 @@
+{
+ "0xbc23d70a": {
+  "name": null,
+  "ti": "0xe12fff1e",
+  "vaddr": "0x1e7a4c",
+  "clsid_fn": "0x94ed58",
+  "load": "0x94ecdc",
+  "vslots": 16
+ },
+ "0x202": {
+  "name": null,
+  "ti": "0xfffff20c",
+  "vaddr": "0x224f6c",
+  "clsid_fn": "0x9acfcc",
+  "load": "0x913220",
+  "vslots": 29
+ },
+ "0xffff": {
+  "name": null,
+  "ti": "0xe8bd8070",
+  "vaddr": "0x326888",
+  "clsid_fn": "0x8173c4",
+  "load": "0x8176b4",
+  "vslots": 11
+ },
+ "0x8010": {
+  "name": null,
+  "ti": "0xfffff678",
+  "vaddr": "0x4078e8",
+  "clsid_fn": "0x810fec",
+  "load": "0x81131c",
+  "vslots": 19
+ },
+ "0x1908": {
+  "name": null,
+  "ti": "0xfffff0a8",
+  "vaddr": "0x409424",
+  "clsid_fn": "0x80ffdc",
+  "load": "0x738e54",
+  "vslots": 42
+ },
+ "0xa2e8ba3": {
+  "name": null,
+  "ti": "0xfffff528",
+  "vaddr": "0x40af7c",
+  "clsid_fn": "0x736ac8",
+  "load": "0x736ff0",
+  "vslots": 17
+ },
+ "0x559e38": {
+  "name": null,
+  "ti": "0xeaffffa9",
+  "vaddr": "0x442638",
+  "clsid_fn": "0x6fdf90",
+  "load": "0x799d58",
+  "vslots": 10
+ },
+ "0xbc8f": {
+  "name": null,
+  "ti": "0xebef37bd",
+  "vaddr": "0x4d6ef4",
+  "clsid_fn": "0x73467c",
+  "load": "0x670ea8",
+  "vslots": 12
+ },
+ "0x107": {
+  "name": null,
+  "ti": "0xebede537",
+  "vaddr": "0x52b90c",
+  "clsid_fn": "0x622c2c",
+  "load": "0x622de8",
+  "vslots": 10
+ },
+ "0x352": {
+  "name": null,
+  "ti": "0xeafffedd",
+  "vaddr": "0x52dc78",
+  "clsid_fn": "0x621160",
+  "load": "0x621428",
+  "vslots": 15
+ },
+ "0x1001": {
+  "name": null,
+  "ti": "0xeaffff7e",
+  "vaddr": "0x54f2e4",
+  "clsid_fn": "0x604968",
+  "load": "0x604a04",
+  "vslots": 53
+ },
+ "0x7f7fffff": {
+  "name": null,
+  "ti": "0xeafffe4d",
+  "vaddr": "0x894664",
+  "clsid_fn": "0x2fd7d8",
+  "load": "0x2fe910",
+  "vslots": 15
+ },
+ "0x6ed9eba1": {
+  "name": null,
+  "ti": "0xeaffff36",
+  "vaddr": "0x5c5698",
+  "clsid_fn": "0x5a53f4",
+  "load": "0x5a548c",
+  "vslots": 24
+ },
+ "0x1002": {
+  "name": null,
+  "ti": "0xebe91730",
+  "vaddr": "0x65f128",
+  "clsid_fn": "0x522344",
+  "load": "0x52253c",
+  "vslots": 18
+ },
+ "0x2767": {
+  "name": null,
+  "ti": "0xfffff0a8",
+  "vaddr": "0x682ab8",
+  "clsid_fn": "0x4fe2a4",
+  "load": "0x4fecb4",
+  "vslots": 27
+ },
+ "0x211": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0x6d6748",
+  "clsid_fn": "0x581640",
+  "load": "0x50e754",
+  "vslots": 15
+ },
+ "0x11fa4": {
+  "name": null,
+  "ti": "0xe8bd8ff0",
+  "vaddr": "0x7abb54",
+  "clsid_fn": "0x3db900",
+  "load": "0x3db9b8",
+  "vslots": 72
+ },
+ "0x11f04": {
+  "name": null,
+  "ti": "0xea0624d7",
+  "vaddr": "0x7ac66c",
+  "clsid_fn": "0x3da820",
+  "load": "0x3da93c",
+  "vslots": 21
+ },
+ "0xaaaaaab": {
+  "name": null,
+  "ti": "0xeaffff93",
+  "vaddr": "0x7dc9e4",
+  "clsid_fn": "0x3aaf40",
+  "load": "0x3aafc4",
+  "vslots": 18
+ },
+ "0x365cfd67": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1af8",
+  "clsid_fn": "0x2e1f14",
+  "load": "0x2a1ea4",
+  "vslots": 13
+ },
+ "0xff1a": {
+  "name": null,
+  "ti": "0xebe0c92f",
+  "vaddr": "0x87292c",
+  "clsid_fn": "0x31fffc",
+  "load": "0x32014c",
+  "vslots": 15
+ },
+ "0x15555555": {
+  "name": null,
+  "ti": "0xfffff148",
+  "vaddr": "0x983300",
+  "clsid_fn": "0x21369c",
+  "load": "0x213970",
+  "vslots": 20
+ },
+ "0x2804": {
+  "name": null,
+  "ti": "0xebffc6dd",
+  "vaddr": "0x9b4c7c",
+  "clsid_fn": "0x1e4c18",
+  "load": "0x1e4e74",
+  "vslots": 11
+ },
+ "0x34747ebe": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2790",
+  "clsid_fn": "0x2d8874",
+  "load": "0x236228",
+  "vslots": 14
+ },
+ "0x800b": {
+  "name": null,
+  "ti": "0xffffff4c",
+  "vaddr": "0xa709a8",
+  "clsid_fn": "0x1ea60c",
+  "load": "0x1eabd4",
+  "vslots": 17
+ },
+ "0x378ded9b": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbcf938",
+  "clsid_fn": "0x205678",
+  "load": "0x1cc094",
+  "vslots": 13
+ },
+ "0x4de3f7c4": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbcf978",
+  "clsid_fn": "0x2054ec",
+  "load": "0x1caa1c",
+  "vslots": 13
+ },
+ "0x1791e34f": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbcf9b8",
+  "clsid_fn": "0x2052ac",
+  "load": "0x1c31b0",
+  "vslots": 13
+ },
+ "0x216bb1eb": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbcf9f8",
+  "clsid_fn": "0x2050b4",
+  "load": "0x1c2ee4",
+  "vslots": 13
+ },
+ "0x650bb301": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbcfc50",
+  "clsid_fn": "0x20456c",
+  "load": "0x1fdb00",
+  "vslots": 14
+ },
+ "0x5863bd59": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd02a0",
+  "clsid_fn": "0x203eb0",
+  "load": "0x17f228",
+  "vslots": 15
+ },
+ "0x406510ec": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd02f8",
+  "clsid_fn": "0x20285c",
+  "load": "0x1cfd10",
+  "vslots": 13
+ },
+ "0x2b9b5fed": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd0338",
+  "clsid_fn": "0x2026e4",
+  "load": "0x1c8944",
+  "vslots": 13
+ },
+ "0x378ab920": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd03d8",
+  "clsid_fn": "0x2010c0",
+  "load": "0x1c4270",
+  "vslots": 14
+ },
+ "0x55a6393b": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd0470",
+  "clsid_fn": "0x200f78",
+  "load": "0x180b64",
+  "vslots": 13
+ },
+ "0x3189e053": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd04b0",
+  "clsid_fn": "0x2002f0",
+  "load": "0x1bbf70",
+  "vslots": 13
+ },
+ "0x3198c7c5": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd04f0",
+  "clsid_fn": "0x1ff6b4",
+  "load": "0x1bbbc0",
+  "vslots": 13
+ },
+ "0x30951655": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd0570",
+  "clsid_fn": "0x1ff474",
+  "load": "0x1ba66c",
+  "vslots": 13
+ },
+ "0xc7d8baf": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd05b0",
+  "clsid_fn": "0x1ff33c",
+  "load": "0x1bae0c",
+  "vslots": 13
+ },
+ "0x5941c179": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd05f0",
+  "clsid_fn": "0x1ff330",
+  "load": "0x1b852c",
+  "vslots": 13
+ },
+ "0x35c5e0a0": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd0660",
+  "clsid_fn": "0x1fef24",
+  "load": "0x186874",
+  "vslots": 13
+ },
+ "0x2ef26c52": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd0760",
+  "clsid_fn": "0x1fecbc",
+  "load": "0x1d0668",
+  "vslots": 13
+ },
+ "0x30e3ad7c": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1838",
+  "clsid_fn": "0x2e3408",
+  "load": "0x22fb70",
+  "vslots": 13
+ },
+ "0x1963f0c0": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1878",
+  "clsid_fn": "0x2e3304",
+  "load": "0x2279ec",
+  "vslots": 13
+ },
+ "0x4ab8a7cd": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd18b8",
+  "clsid_fn": "0x2e324c",
+  "load": "0x2a0c7c",
+  "vslots": 13
+ },
+ "0x3ef5108d": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd18f8",
+  "clsid_fn": "0x2e298c",
+  "load": "0x229e44",
+  "vslots": 13
+ },
+ "0x675d6313": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1938",
+  "clsid_fn": "0x228a68",
+  "load": "0x228a74",
+  "vslots": 13
+ },
+ "0x2b1efd04": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1978",
+  "clsid_fn": "0x2e26bc",
+  "load": "0x2a3688",
+  "vslots": 13
+ },
+ "0x4cc07242": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd19b8",
+  "clsid_fn": "0x2e2590",
+  "load": "0x2a314c",
+  "vslots": 13
+ },
+ "0x4cc04ddb": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd19f8",
+  "clsid_fn": "0x2e23b4",
+  "load": "0x2a2c18",
+  "vslots": 13
+ },
+ "0x1721f5ba": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1a38",
+  "clsid_fn": "0x2e2220",
+  "load": "0x2a17e0",
+  "vslots": 13
+ },
+ "0x4cbfd885": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1a78",
+  "clsid_fn": "0x2e20f4",
+  "load": "0x2a164c",
+  "vslots": 13
+ },
+ "0x59a8390c": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1ab8",
+  "clsid_fn": "0x2e1fe4",
+  "load": "0x2a2a80",
+  "vslots": 13
+ },
+ "0x749126c3": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1b38",
+  "clsid_fn": "0x2e1dbc",
+  "load": "0x29fedc",
+  "vslots": 13
+ },
+ "0x2ad64f3d": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1b78",
+  "clsid_fn": "0x2e1db0",
+  "load": "0x2a0728",
+  "vslots": 13
+ },
+ "0x729ec572": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1bf8",
+  "clsid_fn": "0x2e1b80",
+  "load": "0x29f4f0",
+  "vslots": 13
+ },
+ "0x3e8cdd06": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1c38",
+  "clsid_fn": "0x2e1b74",
+  "load": "0x23755c",
+  "vslots": 13
+ },
+ "0x3638f4e3": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1c78",
+  "clsid_fn": "0x2e1aec",
+  "load": "0x2a0188",
+  "vslots": 13
+ },
+ "0x3438ab08": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1cb8",
+  "clsid_fn": "0x231bf0",
+  "load": "0x231ebc",
+  "vslots": 14
+ },
+ "0xd1839c4": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1dd0",
+  "clsid_fn": "0x2e1480",
+  "load": "0x253408",
+  "vslots": 25
+ },
+ "0x67c82e62": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd1fe0",
+  "clsid_fn": "0x2e1470",
+  "load": "0x24b038",
+  "vslots": 14
+ },
+ "0x37f7a8ae": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2058",
+  "clsid_fn": "0x249470",
+  "load": "0x24947c",
+  "vslots": 13
+ },
+ "0x113317a": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2098",
+  "clsid_fn": "0x2e0ac8",
+  "load": "0x238034",
+  "vslots": 15
+ },
+ "0xe1f5b6f": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd20f8",
+  "clsid_fn": "0x2e0abc",
+  "load": "0x24097c",
+  "vslots": 14
+ },
+ "0x4c752": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2150",
+  "clsid_fn": "0x2e0ab0",
+  "load": "0x22c2d0",
+  "vslots": 13
+ },
+ "0x75a9de0e": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2190",
+  "clsid_fn": "0x2e08f4",
+  "load": "0x2319d8",
+  "vslots": 13
+ },
+ "0x4846ed83": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd21d0",
+  "clsid_fn": "0x2e08e8",
+  "load": "0x2318dc",
+  "vslots": 13
+ },
+ "0x65da04ed": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2210",
+  "clsid_fn": "0x2e08dc",
+  "load": "0x230790",
+  "vslots": 13
+ },
+ "0x62353c58": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2250",
+  "clsid_fn": "0x2e08d0",
+  "load": "0x245500",
+  "vslots": 13
+ },
+ "0x4891830c": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2290",
+  "clsid_fn": "0x2e08c4",
+  "load": "0x23ee84",
+  "vslots": 13
+ },
+ "0x3b912a30": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd22d0",
+  "clsid_fn": "0x2e06d8",
+  "load": "0x24b7cc",
+  "vslots": 13
+ },
+ "0x3e2bb040": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2310",
+  "clsid_fn": "0x2e02d0",
+  "load": "0x24b23c",
+  "vslots": 13
+ },
+ "0x54505898": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2350",
+  "clsid_fn": "0x2e0208",
+  "load": "0x244744",
+  "vslots": 13
+ },
+ "0x68d1134": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2390",
+  "clsid_fn": "0x2e01fc",
+  "load": "0x226548",
+  "vslots": 13
+ },
+ "0x116a6fa": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd23d0",
+  "clsid_fn": "0x2e01f0",
+  "load": "0x248c64",
+  "vslots": 13
+ },
+ "0xe31d4a0": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2410",
+  "clsid_fn": "0x2e01e4",
+  "load": "0x24dd14",
+  "vslots": 13
+ },
+ "0x10fcfd6": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2450",
+  "clsid_fn": "0x2dffac",
+  "load": "0x22a368",
+  "vslots": 13
+ },
+ "0x33702f4a": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2490",
+  "clsid_fn": "0x2dffa0",
+  "load": "0x22a1c4",
+  "vslots": 13
+ },
+ "0x17ac851f": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd24d0",
+  "clsid_fn": "0x2dff94",
+  "load": "0x292b4c",
+  "vslots": 13
+ },
+ "0x1d7644a4": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2510",
+  "clsid_fn": "0x2d910c",
+  "load": "0x23f42c",
+  "vslots": 13
+ },
+ "0x25fadb96": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2550",
+  "clsid_fn": "0x2d9084",
+  "load": "0x2337e0",
+  "vslots": 14
+ },
+ "0x25fe2587": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd25a8",
+  "clsid_fn": "0x2d8f64",
+  "load": "0x233d20",
+  "vslots": 14
+ },
+ "0x5a77332f": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2600",
+  "clsid_fn": "0x2d8e80",
+  "load": "0x24d27c",
+  "vslots": 14
+ },
+ "0x377ea715": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd26d0",
+  "clsid_fn": "0x2d8b10",
+  "load": "0x247f98",
+  "vslots": 13
+ },
+ "0x5e35be99": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2710",
+  "clsid_fn": "0x2d8b04",
+  "load": "0x1fdb00",
+  "vslots": 13
+ },
+ "0x82ea1c6": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2750",
+  "clsid_fn": "0x2d89ec",
+  "load": "0x221f78",
+  "vslots": 13
+ },
+ "0x7538c652": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd27e8",
+  "clsid_fn": "0x2d8458",
+  "load": "0x257434",
+  "vslots": 21
+ },
+ "0x154bb0": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd29a0",
+  "clsid_fn": "0x2d8024",
+  "load": "0x23ecac",
+  "vslots": 13
+ },
+ "0x28091330": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd29e0",
+  "clsid_fn": "0x2d7fcc",
+  "load": "0x220dfc",
+  "vslots": 13
+ },
+ "0x238767e3": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2a88",
+  "clsid_fn": "0x2d7d2c",
+  "load": "0x2203ac",
+  "vslots": 13
+ },
+ "0xddcd6c4": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2ac8",
+  "clsid_fn": "0x2d7c38",
+  "load": "0x23425c",
+  "vslots": 14
+ },
+ "0x2ca13c06": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2b20",
+  "clsid_fn": "0x2d7b60",
+  "load": "0x22a694",
+  "vslots": 13
+ },
+ "0xdfe2718": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2c68",
+  "clsid_fn": "0x2d79fc",
+  "load": "0x2395ac",
+  "vslots": 13
+ },
+ "0x2db081e2": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2ca8",
+  "clsid_fn": "0x2d7340",
+  "load": "0x2230a8",
+  "vslots": 13
+ },
+ "0x786f6ecb": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2d18",
+  "clsid_fn": "0x2d71f0",
+  "load": "0x21cb30",
+  "vslots": 13
+ },
+ "0x113f791": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2db8",
+  "clsid_fn": "0x2d71dc",
+  "load": "0x279e88",
+  "vslots": 14
+ },
+ "0x5441a117": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd2e10",
+  "clsid_fn": "0x2d6f80",
+  "load": "0x298f38",
+  "vslots": 13
+ },
+ "0x1402fd4b": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd3e50",
+  "clsid_fn": "0x3c4a50",
+  "load": "0x396988",
+  "vslots": 13
+ },
+ "0x7d561d33": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd3e90",
+  "clsid_fn": "0x3c4a44",
+  "load": "0x396878",
+  "vslots": 13
+ },
+ "0x69540db7": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd3ed0",
+  "clsid_fn": "0x3c49f8",
+  "load": "0x39677c",
+  "vslots": 13
+ },
+ "0x557a594a": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd3f10",
+  "clsid_fn": "0x3c4968",
+  "load": "0x394918",
+  "vslots": 13
+ },
+ "0x40c6b80a": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd3f50",
+  "clsid_fn": "0x3c4290",
+  "load": "0x396db4",
+  "vslots": 13
+ },
+ "0x68a62e65": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd3f90",
+  "clsid_fn": "0x3bcae8",
+  "load": "0x38d828",
+  "vslots": 13
+ },
+ "0x592ce07c": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd3fd0",
+  "clsid_fn": "0x3bc94c",
+  "load": "0x38e53c",
+  "vslots": 13
+ },
+ "0x6754056b": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd4010",
+  "clsid_fn": "0x3bbc38",
+  "load": "0x394ec8",
+  "vslots": 13
+ },
+ "0x651bdaa": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd4050",
+  "clsid_fn": "0x3bba7c",
+  "load": "0x38cf90",
+  "vslots": 14
+ },
+ "0x54989cb1": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd4bb0",
+  "clsid_fn": "0x3bb2d8",
+  "load": "0x36cbb0",
+  "vslots": 15
+ },
+ "0xf5f8cfd": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbd5f58",
+  "clsid_fn": "0x3ba150",
+  "load": "0x390750",
+  "vslots": 13
+ },
+ "0x11ef4": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbdc908",
+  "clsid_fn": "0x445388",
+  "load": "0x45a520",
+  "vslots": 15
+ },
+ "0x12026": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbdc8a8",
+  "clsid_fn": "0x3e6244",
+  "load": "0x3e5024",
+  "vslots": 16
+ },
+ "0x4c7814": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbe68b8",
+  "clsid_fn": "0x74aae8",
+  "load": "0x1fd76c",
+  "vslots": 12
+ },
+ "0x1fff": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbf5f38",
+  "clsid_fn": "0x867df8",
+  "load": "0x1fd76c",
+  "vslots": 29
+ },
+ "0x74786574": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xbfee10",
+  "clsid_fn": "0x962bcc",
+  "load": "0x9628d0",
+  "vslots": 11
+ },
+ "0x629820": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xc08300",
+  "clsid_fn": "0x59dcd4",
+  "load": "0x5da9a4",
+  "vslots": 35
+ },
+ "0x605fa8": {
+  "name": null,
+  "ti": "0xbc7234",
+  "vaddr": "0xc08404",
+  "clsid_fn": "0x5c16e0",
+  "load": "0x5da9f8",
+  "vslots": 30
+ },
+ "0xb63d04": {
+  "name": null,
+  "ti": null,
+  "vaddr": "0xc08abc",
+  "clsid_fn": "0xa4d9c",
+  "load": "0xa4d9c",
+  "vslots": 337
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "l_menu": {
+  "ok": true,
+  "nrec": 31,
+  "attempts": 2
+ },
+ "shop": {
+  "ok": false,
+  "err": "AssertionError: framing error: cursor 0x40ee != table 0x40ec"
+ },
+ "Stadion": {
+  "ok": true,
+  "nrec": 274,
+  "attempts": 5
+ },
+ "Police_Station": {
+  "ok": true,
+  "nrec": 653,
+  "attempts": 7
+ },
+ "StockExchange": {
+  "ok": true,
+  "nrec": 2023,
+  "attempts": 7
+ },
+ "Underground": {
+  "ok": true,
+  "nrec": 2653,
+  "attempts": 14
+ },
+ "Military": {
+  "ok": true,
+  "nrec": 773,
+  "attempts": 19
+ },
+ "ThePit": {
+  "ok": true,
+  "nrec": 700,
+  "attempts": 14
+ },
+ "Test": {
+  "ok": false,
+  "err": "error: unpack_from requires a buffer of at least 4 bytes for unpacking 4 bytes at offset 0 (actual buffer size is 1)"
+ },
+ "BatCave": {
+  "ok": true,
+  "nrec": 92,
+  "attempts": 1
+ },
+ "GothamCity": {
+  "ok": true,
+  "nrec": 14313,
+  "attempts": 1
+ },
+ "GothamCity_Island2": {
+  "ok": true,
+  "nrec": 7474,
+  "attempts": 1
+ }
+}

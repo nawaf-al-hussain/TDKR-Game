@@ -1,0 +1,540 @@
+0x2d9118: push    {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+0x2d911c: mov     r7, r0
+0x2d9120: mov     r4, r1
+0x2d9124: mov     r0, r1
+0x2d9128: ldr     r1, [pc, #0x858]   ; pool[0x2d9988]=0x92eb64
+0x2d912c: sub     sp, sp, #0x16c
+0x2d9130: str     r1, [sp, #0x20]
+0x2d9134: bl      #0x339914   ; <<READER i>>
+0x2d9138: str     r0, [r7]
+0x2d913c: mov     r0, r4
+0x2d9140: bl      #0x339914   ; <<READER i>>
+0x2d9144: ldr     r2, [sp, #0x20]
+0x2d9148: ldr     r8, [r7, #8]
+0x2d914c: mov     ip, #0
+0x2d9150: ldr     r2, [pc, r2]
+0x2d9154: str     r2, [sp, #0x20]
+0x2d9158: ldr     r3, [sp, #0x20]
+0x2d915c: mov     r2, #0
+0x2d9160: ldr     r1, [r7, #4]
+0x2d9164: str     r2, [sp, #0xd4]
+0x2d9168: str     r2, [sp, #0xdc]
+0x2d916c: str     r2, [sp, #0xe0]
+0x2d9170: str     ip, [sp, #0xd8]
+0x2d9174: mov     r5, r0
+0x2d9178: add     r0, r3, #0xc
+0x2d917c: rsb     r3, r1, r8
+0x2d9180: str     r0, [sp, #0xd0]
+0x2d9184: asr     r3, r3, #2
+0x2d9188: add     r2, r3, r3, lsl #1
+0x2d918c: add     r2, r2, r2, lsl #4
+0x2d9190: add     r2, r2, r2, lsl #8
+0x2d9194: add     r2, r2, r2, lsl #16
+0x2d9198: add     r2, r3, r2, lsl #2
+0x2d919c: cmp     r5, r2
+0x2d91a0: bls     #0x2dad80
+0x2d91a4: add     r6, sp, #0xd0
+0x2d91a8: add     r0, r7, #4
+0x2d91ac: mov     r1, r8
+0x2d91b0: rsb     r2, r2, r5
+0x2d91b4: mov     r3, r6
+0x2d91b8: bl      #0x2d48c8
+0x2d91bc: mov     r0, r6
+0x2d91c0: bl      #0x2069fc   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d91c4: cmp     r5, #0
+0x2d91c8: ble     #0x2d9228
+0x2d91cc: mov     r8, #0
+0x2d91d0: mov     sl, r8
+0x2d91d4: ldr     r6, [r7, #4]
+0x2d91d8: mov     r0, r4
+0x2d91dc: add     sl, sl, #1
+0x2d91e0: add     r6, r6, r8
+0x2d91e4: add     r8, r8, #0x14
+0x2d91e8: mov     r1, r6
+0x2d91ec: bl      #0x33a0d4   ; <<READER STR>>
+0x2d91f0: mov     r0, r4
+0x2d91f4: bl      #0x339914   ; <<READER i>>
+0x2d91f8: str     r0, [r6, #4]
+0x2d91fc: mov     r0, r4
+0x2d9200: bl      #0x339b94   ; <<READER f>>
+0x2d9204: str     r0, [r6, #8]
+0x2d9208: mov     r0, r4
+0x2d920c: bl      #0x339914   ; <<READER i>>
+0x2d9210: str     r0, [r6, #0xc]
+0x2d9214: mov     r0, r4
+0x2d9218: bl      #0x339914   ; <<READER i>>
+0x2d921c: cmp     sl, r5
+0x2d9220: str     r0, [r6, #0x10]
+0x2d9224: bne     #0x2d91d4
+0x2d9228: mov     r0, r4
+0x2d922c: bl      #0x339914   ; <<READER i>>
+0x2d9230: ldr     r6, [r7, #0x14]
+0x2d9234: ldr     r8, [r7, #0x10]
+0x2d9238: mov     r3, #0
+0x2d923c: str     r3, [sp, #0x94]
+0x2d9240: rsb     r2, r8, r6
+0x2d9244: str     r3, [sp, #0x98]
+0x2d9248: str     r3, [sp, #0x9c]
+0x2d924c: asr     r2, r2, #4
+0x2d9250: str     r0, [sp, #8]
+0x2d9254: ldr     r0, [sp, #0x20]
+0x2d9258: add     r1, r0, #0xc
+0x2d925c: str     r1, [sp, #0x90]
+0x2d9260: ldr     r1, [sp, #8]
+0x2d9264: cmp     r1, r2
+0x2d9268: bls     #0x2dad24
+0x2d926c: add     r5, sp, #0x90
+0x2d9270: mov     r3, r1
+0x2d9274: add     r0, r7, #0x10
+0x2d9278: rsb     r2, r2, r3
+0x2d927c: mov     r1, r6
+0x2d9280: mov     r3, r5
+0x2d9284: bl      #0x2d1a2c
+0x2d9288: ldr     r0, [sp, #0x94]
+0x2d928c: cmp     r0, #0
+0x2d9290: beq     #0x2d9298
+0x2d9294: bl      #0x3e9260
+0x2d9298: mov     r0, r5
+0x2d929c: bl      #0x2069fc   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d92a0: ldr     r1, [sp, #8]
+0x2d92a4: cmp     r1, #0
+0x2d92a8: ble     #0x2d93b0
+0x2d92ac: mov     r8, #0
+0x2d92b0: mov     sl, #0
+0x2d92b4: mov     sb, r8
+0x2d92b8: ldr     r5, [r7, #0x10]
+0x2d92bc: mov     r0, r4
+0x2d92c0: add     r5, r5, r8, lsl #4
+0x2d92c4: mov     r1, r5
+0x2d92c8: bl      #0x33a0d4   ; <<READER STR>>
+0x2d92cc: mov     r0, r4
+0x2d92d0: bl      #0x339914   ; <<READER i>>
+0x2d92d4: mov     r6, r0
+0x2d92d8: ldmib   r5, {r0, r1}
+0x2d92dc: str     sl, [sp, #0xe4]
+0x2d92e0: rsb     r3, r0, r1
+0x2d92e4: str     sl, [sp, #0xe8]
+0x2d92e8: str     sl, [sp, #0xec]
+0x2d92ec: asr     r3, r3, #2
+0x2d92f0: str     sb, [sp, #0xf0]
+0x2d92f4: str     sb, [sp, #0xf4]
+0x2d92f8: add     r2, r3, r3, lsl #1
+0x2d92fc: add     r2, r2, r2, lsl #4
+0x2d9300: add     r2, r2, r2, lsl #8
+0x2d9304: add     r2, r2, r2, lsl #16
+0x2d9308: add     r2, r3, r2, lsl #2
+0x2d930c: cmp     r6, r2
+0x2d9310: bls     #0x2d9978
+0x2d9314: add     r0, r5, #4
+0x2d9318: rsb     r2, r2, r6
+0x2d931c: add     r3, sp, #0xe4
+0x2d9320: bl      #0x2ed8ac   ; <<_ZNSt6vectorI23CContainerTrackPosEventSaIS0_EE14_M_fill_insertEN9__gnu>>
+0x2d9324: cmp     r6, #0
+0x2d9328: movgt   r2, #0
+0x2d932c: strgt   r2, [sp, #4]
+0x2d9330: movgt   r3, r2
+0x2d9334: ble     #0x2d93a0
+0x2d9338: ldr     r1, [sp, #4]
+0x2d933c: mov     r0, r4
+0x2d9340: ldr     fp, [r5, #4]
+0x2d9344: add     r3, r3, #1
+0x2d9348: str     r3, [sp]
+0x2d934c: add     fp, fp, r1
+0x2d9350: bl      #0x339b94   ; <<READER f>>
+0x2d9354: ldr     r2, [sp, #4]
+0x2d9358: add     r2, r2, #0x14
+0x2d935c: str     r2, [sp, #4]
+0x2d9360: str     r0, [fp]
+0x2d9364: mov     r0, r4
+0x2d9368: bl      #0x339b94   ; <<READER f>>
+0x2d936c: str     r0, [fp, #4]
+0x2d9370: mov     r0, r4
+0x2d9374: bl      #0x339b94   ; <<READER f>>
+0x2d9378: str     r0, [fp, #8]
+0x2d937c: mov     r0, r4
+0x2d9380: bl      #0x339914   ; <<READER i>>
+0x2d9384: str     r0, [fp, #0xc]
+0x2d9388: mov     r0, r4
+0x2d938c: bl      #0x339914   ; <<READER i>>
+0x2d9390: ldr     r3, [sp]
+0x2d9394: cmp     r3, r6
+0x2d9398: str     r0, [fp, #0x10]
+0x2d939c: bne     #0x2d9338
+0x2d93a0: ldr     r3, [sp, #8]
+0x2d93a4: add     r8, r8, #1
+0x2d93a8: cmp     r8, r3
+0x2d93ac: bne     #0x2d92b8
+0x2d93b0: mov     r0, r4
+0x2d93b4: mov     r5, #0
+0x2d93b8: bl      #0x339914   ; <<READER i>>
+0x2d93bc: ldr     r3, [r7, #0x20]
+0x2d93c0: ldr     sl, [r7, #0x1c]
+0x2d93c4: str     r5, [sp, #0xa4]
+0x2d93c8: str     r3, [sp, #0x10]
+0x2d93cc: ldr     r1, [sp, #0x10]
+0x2d93d0: str     r5, [sp, #0xa8]
+0x2d93d4: rsb     r6, sl, r1
+0x2d93d8: str     r5, [sp, #0xac]
+0x2d93dc: asr     r6, r6, #4
+0x2d93e0: str     r0, [sp, #4]
+0x2d93e4: ldr     r2, [sp, #4]
+0x2d93e8: ldr     r0, [sp, #0x20]
+0x2d93ec: cmp     r2, r6
+0x2d93f0: add     r3, r0, #0xc
+0x2d93f4: str     r3, [sp, #0xa0]
+0x2d93f8: bls     #0x2d998c
+0x2d93fc: subs    r3, r2, r6
+0x2d9400: str     r3, [sp, #0x28]
+0x2d9404: beq     #0x2d9990
+0x2d9408: mov     r2, r3
+0x2d940c: ldr     r3, [r7, #0x24]
+0x2d9410: rsb     r3, r1, r3
+0x2d9414: cmp     r2, r3, asr #4
+0x2d9418: bls     #0x2db9f4
+0x2d941c: movw    r3, #0xffff
+0x2d9420: movt    r3, #0xfff
+0x2d9424: rsb     r3, r6, r3
+0x2d9428: mov     r0, r2
+0x2d942c: cmp     r0, r3
+0x2d9430: mvn     r2, #0xf0000000
+0x2d9434: bhi     #0x2dc03c
+0x2d9438: cmp     r0, r6
+0x2d943c: addhs   r3, r6, r0
+0x2d9440: addlo   r3, r6, r6
+0x2d9444: cmp     r6, r3
+0x2d9448: strhi   r2, [sp, #0x2c]
+0x2d944c: bls     #0x2db80c
+0x2d9450: ldr     r2, [sp, #0x2c]
+0x2d9454: lsl     r0, r2, #4
+0x2d9458: bl      #0x3e91f8
+0x2d945c: mov     r2, r0
+0x2d9460: str     r0, [sp, #0x1c]
+0x2d9464: add     r6, r2, r6, lsl #4
+0x2d9468: ldr     sb, [sp, #0x28]
+0x2d946c: add     fp, r6, #4
+0x2d9470: add     r6, r6, #0xc
+0x2d9474: movw    r3, #0xaaaa
+0x2d9478: str     r7, [sp, #0xc]
+0x2d947c: mov     sl, r6
+0x2d9480: movt    r3, #0xaaa
+0x2d9484: str     r4, [sp, #0x14]
+0x2d9488: str     r3, [sp, #8]
+0x2d948c: subs    r0, fp, #4
+0x2d9490: beq     #0x2d9570
+0x2d9494: add     r1, sp, #0xa0
+0x2d9498: bl      #0x206a60   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d949c: ldr     r2, [sp, #0xa8]
+0x2d94a0: ldr     r3, [sp, #0xa4]
+0x2d94a4: mov     r0, #0
+0x2d94a8: str     r0, [fp]
+0x2d94ac: rsb     r3, r3, r2
+0x2d94b0: str     r0, [fp, #4]
+0x2d94b4: str     r0, [fp, #8]
+0x2d94b8: asr     r3, r3, #3
+0x2d94bc: add     r5, r3, r3, lsl #2
+0x2d94c0: add     r5, r5, r5, lsl #4
+0x2d94c4: add     r5, r5, r5, lsl #8
+0x2d94c8: add     r5, r5, r5, lsl #16
+0x2d94cc: adds    r3, r3, r5, lsl #1
+0x2d94d0: beq     #0x2db76c
+0x2d94d4: ldr     r2, [sp, #8]
+0x2d94d8: cmp     r3, r2
+0x2d94dc: bhi     #0x2dc008
+0x2d94e0: add     r3, r3, r3, lsl #1
+0x2d94e4: lsl     r5, r3, #3
+0x2d94e8: mov     r0, r5
+0x2d94ec: bl      #0x3e91f8
+0x2d94f0: mov     r4, r0
+0x2d94f4: str     r4, [sl, #-8]
+0x2d94f8: add     r5, r4, r5
+0x2d94fc: stmda   sl, {r4, r5}
+0x2d9500: ldr     r5, [sp, #0xa4]
+0x2d9504: ldr     r8, [sp, #0xa8]
+0x2d9508: cmp     r5, r8
+0x2d950c: beq     #0x2d956c
+0x2d9510: add     r7, r5, #0xc
+0x2d9514: add     r6, r4, #0xc
+0x2d9518: cmp     r4, #0
+0x2d951c: beq     #0x2d9554
+0x2d9520: mov     r0, r4
+0x2d9524: mov     r1, r5
+0x2d9528: bl      #0x206a60   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d952c: ldr     r3, [r7, #-8]
+0x2d9530: str     r3, [r6, #-8]
+0x2d9534: ldr     r3, [r7, #-4]
+0x2d9538: str     r3, [r6, #-4]
+0x2d953c: ldr     r3, [r7]
+0x2d9540: str     r3, [r6]
+0x2d9544: ldr     r3, [r5, #0x10]
+0x2d9548: str     r3, [r4, #0x10]
+0x2d954c: ldr     r3, [r5, #0x14]
+0x2d9550: str     r3, [r4, #0x14]
+0x2d9554: add     r5, r5, #0x18
+0x2d9558: add     r4, r4, #0x18
+0x2d955c: cmp     r8, r5
+0x2d9560: add     r7, r7, #0x18
+0x2d9564: add     r6, r6, #0x18
+0x2d9568: bne     #0x2d9518
+0x2d956c: str     r4, [fp, #4]
+0x2d9570: subs    sb, sb, #1
+0x2d9574: add     sl, sl, #0x10
+0x2d9578: add     fp, fp, #0x10
+0x2d957c: bne     #0x2d948c
+0x2d9580: ldr     r7, [sp, #0xc]
+0x2d9584: ldr     r0, [sp, #0x10]
+0x2d9588: ldr     r4, [sp, #0x14]
+0x2d958c: ldr     r3, [r7, #0x1c]
+0x2d9590: cmp     r0, r3
+0x2d9594: str     r3, [sp, #0x18]
+0x2d9598: beq     #0x2dbe3c
+0x2d959c: ldr     r2, [sp, #0x18]
+0x2d95a0: ldr     sl, [sp, #0x1c]
+0x2d95a4: add     r2, r2, #4
+0x2d95a8: str     r2, [sp, #0xc]
+0x2d95ac: ldr     r2, [sp, #0x18]
+0x2d95b0: ldr     r3, [sp, #0x1c]
+0x2d95b4: str     r7, [sp, #0x30]
+0x2d95b8: add     fp, r3, #0xc
+0x2d95bc: add     sb, r3, #4
+0x2d95c0: str     r2, [sp, #8]
+0x2d95c4: movw    r3, #0xaaaa
+0x2d95c8: str     r4, [sp, #0x34]
+0x2d95cc: movt    r3, #0xaaa
+0x2d95d0: str     r3, [sp, #0x24]
+0x2d95d4: cmp     sl, #0
+0x2d95d8: beq     #0x2d96f4
+0x2d95dc: ldr     r3, [sp, #8]
+0x2d95e0: mov     r0, sl
+0x2d95e4: ldr     r2, [sp, #0x18]
+0x2d95e8: ldr     r1, [sp, #8]
+0x2d95ec: rsb     r5, r2, r3
+0x2d95f0: ldr     r3, [sp, #0xc]
+0x2d95f4: add     r6, r5, r3
+0x2d95f8: bl      #0x206a60   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d95fc: ldr     r2, [sp, #0xc]
+0x2d9600: rsb     r0, sb, fp
+0x2d9604: ldr     r1, [r6, #4]
+0x2d9608: ldr     r3, [r5, r2]
+0x2d960c: ldr     r2, [sp, #0x1c]
+0x2d9610: rsb     r3, r3, r1
+0x2d9614: rsb     r2, r2, sl
+0x2d9618: str     r2, [sp, #0x14]
+0x2d961c: asr     r3, r3, #3
+0x2d9620: ldr     r1, [sp, #0x14]
+0x2d9624: mov     r2, #0
+0x2d9628: add     r7, r3, r3, lsl #2
+0x2d962c: str     r2, [r1, sb]!
+0x2d9630: add     r7, r7, r7, lsl #4
+0x2d9634: str     r2, [r1, #4]
+0x2d9638: str     r2, [sb, r0]
+0x2d963c: add     r7, r7, r7, lsl #8
+0x2d9640: add     r7, r7, r7, lsl #16
+0x2d9644: adds    r7, r3, r7, lsl #1
+0x2d9648: beq     #0x2db764
+0x2d964c: ldr     r3, [sp, #0x24]
+0x2d9650: cmp     r7, r3
+0x2d9654: bhi     #0x2dc008
+0x2d9658: add     r7, r7, r7, lsl #1
+0x2d965c: lsl     r7, r7, #3
+0x2d9660: mov     r0, r7
+0x2d9664: bl      #0x3e91f8
+0x2d9668: mov     r4, r0
+0x2d966c: ldr     r2, [sp, #0xc]
+0x2d9670: add     r7, r4, r7
+0x2d9674: str     r4, [fp, #-8]
+0x2d9678: stmda   fp, {r4, r7}
+0x2d967c: ldr     r5, [r5, r2]
+0x2d9680: ldr     r8, [r6, #4]
+0x2d9684: cmp     r5, r8
+0x2d9688: beq     #0x2d96e8
+0x2d968c: add     r7, r5, #0xc
+0x2d9690: add     r6, r4, #0xc
+0x2d9694: cmp     r4, #0
+0x2d9698: beq     #0x2d96d0
+0x2d969c: mov     r0, r4
+0x2d96a0: mov     r1, r5
+0x2d96a4: bl      #0x206a60   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d96a8: ldr     r3, [r7, #-8]
+0x2d96ac: str     r3, [r6, #-8]
+0x2d96b0: ldr     r3, [r7, #-4]
+0x2d96b4: str     r3, [r6, #-4]
+0x2d96b8: ldr     r3, [r7]
+0x2d96bc: str     r3, [r6]
+0x2d96c0: ldr     r3, [r5, #0x10]
+0x2d96c4: str     r3, [r4, #0x10]
+0x2d96c8: ldr     r3, [r5, #0x14]
+0x2d96cc: str     r3, [r4, #0x14]
+0x2d96d0: add     r5, r5, #0x18
+0x2d96d4: add     r4, r4, #0x18
+0x2d96d8: cmp     r8, r5
+0x2d96dc: add     r7, r7, #0x18
+0x2d96e0: add     r6, r6, #0x18
+0x2d96e4: bne     #0x2d9694
+0x2d96e8: ldr     r2, [sp, #0x14]
+0x2d96ec: add     r3, r2, sb
+0x2d96f0: str     r4, [r3, #4]
+0x2d96f4: ldr     r3, [sp, #8]
+0x2d96f8: add     sl, sl, #0x10
+0x2d96fc: ldr     r0, [sp, #0x10]
+0x2d9700: add     fp, fp, #0x10
+0x2d9704: add     r3, r3, #0x10
+0x2d9708: str     r3, [sp, #8]
+0x2d970c: cmp     r0, r3
+0x2d9710: bne     #0x2d95d4
+0x2d9714: ldr     r7, [sp, #0x30]
+0x2d9718: ldr     r4, [sp, #0x34]
+0x2d971c: ldr     r3, [sp, #0x28]
+0x2d9720: ldr     r2, [r7, #0x20]
+0x2d9724: add     sl, sl, r3, lsl #4
+0x2d9728: ldr     r3, [sp, #0x10]
+0x2d972c: str     r2, [sp, #0x18]
+0x2d9730: cmp     r3, r2
+0x2d9734: str     sl, [sp, #0x24]
+0x2d9738: beq     #0x2dbe28
+0x2d973c: add     r3, r3, #4
+0x2d9740: str     r3, [sp, #0xc]
+0x2d9744: ldr     r3, [sp, #0x10]
+0x2d9748: add     fp, sl, #0xc
+0x2d974c: add     sb, sl, #4
+0x2d9750: movw    r2, #0xaaaa
+0x2d9754: str     sl, [sp, #0x14]
+0x2d9758: movt    r2, #0xaaa
+0x2d975c: str     r3, [sp, #8]
+0x2d9760: str     r2, [sp, #0x28]
+0x2d9764: str     r7, [sp, #0x30]
+0x2d9768: str     r4, [sp, #0x34]
+0x2d976c: cmp     sl, #0
+0x2d9770: beq     #0x2d988c
+0x2d9774: ldr     r2, [sp, #8]
+0x2d9778: mov     r0, sl
+0x2d977c: ldr     r3, [sp, #0x10]
+0x2d9780: ldr     r1, [sp, #8]
+0x2d9784: rsb     r5, r3, r2
+0x2d9788: ldr     r2, [sp, #0xc]
+0x2d978c: add     r6, r5, r2
+0x2d9790: bl      #0x206a60   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d9794: ldr     r2, [sp, #0xc]
+0x2d9798: rsb     r0, sb, fp
+0x2d979c: ldr     r1, [r6, #4]
+0x2d97a0: ldr     r3, [r5, r2]
+0x2d97a4: ldr     r2, [sp, #0x24]
+0x2d97a8: rsb     r3, r3, r1
+0x2d97ac: rsb     r2, r2, sl
+0x2d97b0: str     r2, [sp, #0x14]
+0x2d97b4: asr     r3, r3, #3
+0x2d97b8: ldr     r1, [sp, #0x14]
+0x2d97bc: mov     r2, #0
+0x2d97c0: add     r7, r3, r3, lsl #2
+0x2d97c4: str     r2, [r1, sb]!
+0x2d97c8: add     r7, r7, r7, lsl #4
+0x2d97cc: str     r2, [r1, #4]
+0x2d97d0: str     r2, [sb, r0]
+0x2d97d4: add     r7, r7, r7, lsl #8
+0x2d97d8: add     r7, r7, r7, lsl #16
+0x2d97dc: adds    r7, r3, r7, lsl #1
+0x2d97e0: beq     #0x2db7a4
+0x2d97e4: ldr     r3, [sp, #0x28]
+0x2d97e8: cmp     r7, r3
+0x2d97ec: bhi     #0x2dc008
+0x2d97f0: add     r7, r7, r7, lsl #1
+0x2d97f4: lsl     r7, r7, #3
+0x2d97f8: mov     r0, r7
+0x2d97fc: bl      #0x3e91f8
+0x2d9800: mov     r4, r0
+0x2d9804: ldr     r2, [sp, #0xc]
+0x2d9808: add     r7, r4, r7
+0x2d980c: str     r4, [fp, #-8]
+0x2d9810: stmda   fp, {r4, r7}
+0x2d9814: ldr     r5, [r5, r2]
+0x2d9818: ldr     r8, [r6, #4]
+0x2d981c: cmp     r5, r8
+0x2d9820: beq     #0x2d9880
+0x2d9824: add     r7, r5, #0xc
+0x2d9828: add     r6, r4, #0xc
+0x2d982c: cmp     r4, #0
+0x2d9830: beq     #0x2d9868
+0x2d9834: mov     r0, r4
+0x2d9838: mov     r1, r5
+0x2d983c: bl      #0x206a60   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d9840: ldr     r3, [r7, #-8]
+0x2d9844: str     r3, [r6, #-8]
+0x2d9848: ldr     r3, [r7, #-4]
+0x2d984c: str     r3, [r6, #-4]
+0x2d9850: ldr     r3, [r7]
+0x2d9854: str     r3, [r6]
+0x2d9858: ldr     r3, [r5, #0x10]
+0x2d985c: str     r3, [r4, #0x10]
+0x2d9860: ldr     r3, [r5, #0x14]
+0x2d9864: str     r3, [r4, #0x14]
+0x2d9868: add     r5, r5, #0x18
+0x2d986c: add     r4, r4, #0x18
+0x2d9870: cmp     r8, r5
+0x2d9874: add     r7, r7, #0x18
+0x2d9878: add     r6, r6, #0x18
+0x2d987c: bne     #0x2d982c
+0x2d9880: ldr     r2, [sp, #0x14]
+0x2d9884: add     r3, r2, sb
+0x2d9888: str     r4, [r3, #4]
+0x2d988c: ldr     r3, [sp, #8]
+0x2d9890: add     sl, sl, #0x10
+0x2d9894: ldr     r2, [sp, #0x18]
+0x2d9898: add     fp, fp, #0x10
+0x2d989c: add     r3, r3, #0x10
+0x2d98a0: str     r3, [sp, #8]
+0x2d98a4: cmp     r2, r3
+0x2d98a8: bne     #0x2d976c
+0x2d98ac: ldr     r7, [sp, #0x30]
+0x2d98b0: ldr     r4, [sp, #0x34]
+0x2d98b4: str     sl, [sp, #0x14]
+0x2d98b8: ldr     r3, [r7, #0x20]
+0x2d98bc: str     r3, [sp, #0x18]
+0x2d98c0: ldr     sb, [r7, #0x1c]
+0x2d98c4: cmp     r3, sb
+0x2d98c8: beq     #0x2d9938
+0x2d98cc: add     fp, sb, #4
+0x2d98d0: str     r4, [sp, #8]
+0x2d98d4: mov     r8, sb
+0x2d98d8: mov     r4, r3
+0x2d98dc: rsb     sl, sb, r8
+0x2d98e0: mov     r3, sl
+0x2d98e4: ldr     r5, [r3, fp]!
+0x2d98e8: ldr     r6, [r3, #4]
+0x2d98ec: cmp     r5, r6
+0x2d98f0: beq     #0x2d990c
+0x2d98f4: mov     r0, r5
+0x2d98f8: add     r5, r5, #0x18
+0x2d98fc: bl      #0x2069fc   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d9900: cmp     r6, r5
+0x2d9904: bne     #0x2d98f4
+0x2d9908: ldr     r5, [sl, fp]
+0x2d990c: cmp     r5, #0
+0x2d9910: beq     #0x2d991c
+0x2d9914: mov     r0, r5
+0x2d9918: bl      #0x3e9260
+0x2d991c: mov     r0, r8
+0x2d9920: add     r8, r8, #0x10
+0x2d9924: bl      #0x2069fc   ; <<_ZNSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS1_6memory13E_ME>>
+0x2d9928: cmp     r4, r8
+0x2d992c: bne     #0x2d98dc
+0x2d9930: ldr     r4, [sp, #8]
+0x2d9934: ldr     sb, [r7, #0x1c]
+0x2d9938: cmp     sb, #0
+0x2d993c: beq     #0x2d9948
+0x2d9940: mov     r0, sb
+0x2d9944: bl      #0x3e9260
+0x2d9948: ldr     r2, [sp, #0x1c]
+0x2d994c: ldr     r0, [sp, #0x2c]
+0x2d9950: ldr     r1, [sp, #0x14]
+0x2d9954: str     r2, [r7, #0x1c]
+0x2d9958: add     r3, r2, r0, lsl #4
+0x2d995c: ldr     r6, [sp, #0xa4]
+0x2d9960: add     r2, sp, #0xa0
+0x2d9964: str     r1, [r7, #0x20]
+0x2d9968: str     r2, [sp, #8]
+0x2d996c: str     r3, [r7, #0x24]
+0x2d9970: ldr     r5, [sp, #0xa8]
+0x2d9974: b       #0x2dae54
+0x2d9978: addlo   r3, r6, r6, lsl #2
+0x2d997c: addlo   r0, r0, r3, lsl #2
+0x2d9980: strlo   r0, [r5, #8]
+0x2d9984: b       #0x2d9324
