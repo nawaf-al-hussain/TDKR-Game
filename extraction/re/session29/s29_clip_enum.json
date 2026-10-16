@@ -1,0 +1,11 @@
+{
+ "total_groups": 78,
+ "runs": 1,
+ "size_dist": {
+  "78": 1
+ },
+ "track_types": {
+  "translation": 6,
+  "rotation": 72
+ }
+}

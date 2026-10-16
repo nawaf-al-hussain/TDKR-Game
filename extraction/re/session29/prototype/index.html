@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- TDKR prototype: independent playable page (does NOT touch the shipped viewer).
+     Loads the user's own converted GLB (default: the repo's city_low.glb),
+     walks a capsule on it via three-mesh-bvh, logs trigger entry with the Lua
+     function name from GothamCity.lvc (pure-parser extraction).
+     Usage: python3 -m http.server 8080  (repo root) then open
+     /extraction/prototype/index.html?model=/gh-pages/models/city_low.glb -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR walkable prototype (collision-soup capsule)</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#000;font:12px monospace}
+  #hud{position:fixed;top:8px;left:8px;color:#0f0;background:rgba(0,0,0,.6);padding:6px 8px;white-space:pre;z-index:9}
+  #log{position:fixed;bottom:8px;left:8px;color:#ff0;background:rgba(0,0,0,.6);padding:6px 8px;max-height:40%;overflow:auto;z-index:9;white-space:pre}
+  #stats{position:fixed;top:8px;right:8px;color:#8ff;background:rgba(0,0,0,.6);padding:6px 8px;white-space:pre;z-index:9}
+</style>
+</head>
+<body>
+<div id="hud">loading…</div>
+<div id="stats"></div>
+<div id="log"></div>
+<script src="gc_data.js"></script>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+"three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/",
+"three-mesh-bvh":"https://unpkg.com/three-mesh-bvh@0.7.4/build/index.module.js"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { computeBoundsTree, disposeBoundsTree, acceleratedRaycast } from 'three-mesh-bvh';
+THREE.Mesh.prototype.raycast = acceleratedRaycast;
+THREE.BufferGeometry.prototype.computeBoundsTree = computeBoundsTree;
+THREE.BufferGeometry.prototype.disposeBoundsTree = disposeBoundsTree;
+
+const params = new URLSearchParams(location.search);
+const MODEL = params.get('model') || '/gh-pages/models/city_low.glb';
+const SPAWN_IDX = parseInt(params.get('spawn') || '0', 10);
+
+const hud = document.getElementById('hud'), logEl = document.getElementById('log'),
+      statsEl = document.getElementById('stats');
+function log(s){ const d=document.createElement('div'); d.textContent=s; logEl.appendChild(d);
+  while(logEl.children.length>12) logEl.removeChild(logEl.firstChild); }
+
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0a0d14);
+scene.fog = new THREE.Fog(0x0a0d14, 300, 1200);
+const camera = new THREE.PerspectiveCamera(70, innerWidth/innerHeight, 0.1, 4000);
+const sun = new THREE.DirectionalLight(0xffffff, 2.2); sun.position.set(200,400,100);
+scene.add(sun, new THREE.AmbientLight(0x8899bb, 1.1));
+
+// ---- capsule controller
+const R = 0.45, H = 1.85;
+const player = { pos: new THREE.Vector3(), vel: new THREE.Vector3(), onGround:false };
+const capsuleGeo = new THREE.CapsuleGeometry(R, H - 2*R, 6, 12);
+const capsule = new THREE.Mesh(capsuleGeo, new THREE.MeshBasicMaterial({color:0x00ff88, wireframe:true}));
+scene.add(capsule);
+const keys = {};
+addEventListener('keydown', e=>{ keys[e.code]=true; });
+addEventListener('keyup', e=>{ keys[e.code]=false; });
+let yaw = 0;
+addEventListener('mousemove', e=>{ if(document.pointerLockElement) yaw -= e.movementX*0.0022; });
+addEventListener('click', ()=> renderer.domElement.requestPointerLock());
+
+let collider, bvh;
+const ray = new THREE.Ray(); const rayHit = new THREE.Vector3();
+function groundAt(x, z, fromY){
+  ray.origin.set(x, fromY, z); ray.direction.set(0,-1,0);
+  const hit = bvh.rayIntersect(ray.origin, ray.direction); // local = world (no transform)
+  if (hit && (fromY - hit.distance) > fromY - 2.0 + 1000) return null;
+  return hit; // {point, distance} in world (mesh at identity)
+}
+// simplified: use THREE.Raycaster against the BVH-accelerated mesh
+const raycaster = new THREE.Raycaster();
+raycaster.firstHitOnly = true;
+
+function spawnPlayer(){
+  const sp = (window.TDKR_DATA && TDKR_DATA.spawns[SPAWN_IDX]) || null;
+  if (sp) player.pos.set(sp.pos[0], sp.pos[2] + 3, -sp.pos[1]); // lvc (x,y,z-motoran?) -> three (x, z-up?, y)
+  else player.pos.set(0, 5, 0);
+  // ground snap
+  const g = probeGround(player.pos);
+  if (g !== null) player.pos.y = g + H/2 + 0.05;
+  log(`spawn: ${sp ? `#${sp.id} ${sp.name} @(${sp.pos.join(',')})` : 'default'}`);
+}
+let worldRoot = null;
+function probeGround(p){
+  raycaster.set(new THREE.Vector3(p.x, p.y + 60, p.z), new THREE.Vector3(0,-1,0));
+  raycaster.far = 400;
+  const hits = raycaster.intersectObject(worldRoot || collider, true);
+  return hits.length ? hits[0].point.y : null;
+}
+
+new GLTFLoader().load(MODEL, (gltf) => {
+  let mesh = null;
+  gltf.scene.traverse(o => { if (o.isMesh && !mesh) mesh = o; });
+  if (!mesh) { hud.textContent = 'no mesh in model'; return; }
+  collider = mesh;
+  // bake world transforms
+  collider.updateMatrixWorld(true);
+  collider.geometry.computeBoundsTree();
+  bvh = collider.geometry.boundsTree;
+  scene.add(gltf.scene);
+  worldRoot = gltf.scene;
+  hud.textContent = 'model loaded — click to lock pointer, WASD move, Space jump';
+  window.CITY_BBOX = new THREE.Box3().setFromObject(gltf.scene);
+  log(`bbox: ${JSON.stringify(window.CITY_BBOX.min)} .. ${JSON.stringify(window.CITY_BBOX.max)}`);
+  // spawn at bbox center, on top of the highest ground below
+  const bb = window.CITY_BBOX;
+  player.pos.set((bb.min.x+bb.max.x)/2, bb.max.y - 2, (bb.min.z+bb.max.z)/2);
+  const g = probeGround(player.pos);
+  if (g !== null) player.pos.y = g + H/2 + 0.05;
+  log(`spawn (glb space): (${player.pos.x.toFixed(1)}, ${player.pos.y.toFixed(1)}, ${player.pos.z.toFixed(1)}) ground=${g===null?'null':g.toFixed(2)}`);
+  runProbeBenchmark();
+}, undefined, (e)=>{ hud.textContent = 'GLB load error: ' + e; });
+
+// trigger state
+const TRIG_R = 10; // approximate activation radius (volume decode pending)
+const nearTriggers = new Set();
+function checkTriggers(){
+  for (const t of TDKR_DATA.triggers){
+    const dx = player.pos.x - t.pos[0], dz = player.pos.z - (-t.pos[1]);
+    const inside = dx*dx + dz*dz < TRIG_R*TRIG_R;
+    if (inside && !nearTriggers.has(t.id) && t.fn) log(`TRIGGER ${t.id} -> ${t.fn}()`);
+    if (inside) nearTriggers.add(t.id); else nearTriggers.delete(t.id);
+  }
+}
+
+// probe benchmark: 100 m grid around spawn, ground within 2 m
+function runProbeBenchmark(){
+  const bb = window.CITY_BBOX;
+  const cx = (bb.min.x+bb.max.x)/2, cz = (bb.min.z+bb.max.z)/2, topY = bb.max.y - 2;
+  let hit = 0, tot = 0, floorY = null;
+  const t0 = performance.now();
+  for (let dx = -50; dx <= 50; dx += 5)
+    for (let dz = -50; dz <= 50; dz += 5){
+      tot++;
+      const g = probeGround(new THREE.Vector3(cx + dx, topY, cz + dz));
+      if (g !== null){
+        if (floorY === null || g > floorY) floorY = g;
+        hit++;
+      }
+    }
+  const ms = performance.now() - t0;
+  const msg = `probe: ${hit}/${tot} rays hit geometry on a 100 m grid centered at glb-bbox center (ground ${floorY===null?'null':floorY.toFixed(2)}, ${ms.toFixed(0)} ms, ${(100*hit/tot).toFixed(1)}%)`;
+  statsEl.textContent = msg; console.log('PROBE ' + msg);
+}
+
+let last = performance.now(), frames = 0, fpsT = 0, fps = 0;
+function tick(){
+  requestAnimationFrame(tick);
+  const now = performance.now(), dt = Math.min((now - last)/1000, 0.05); last = now;
+  frames++; fpsT += dt; if (fpsT > 0.5){ fps = Math.round(frames/fpsT); frames = 0; fpsT = 0; }
+  if (collider && player.pos.lengthSq() > 0){
+    const speed = 6;
+    const f = new THREE.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
+    const r = new THREE.Vector3(-f.z, 0, f.x);
+    const mv = new THREE.Vector3();
+    if (keys.KeyW) mv.add(f); if (keys.KeyS) mv.sub(f);
+    if (keys.KeyD) mv.add(r); if (keys.KeyA) mv.sub(r);
+    if (mv.lengthSq()) mv.normalize().multiplyScalar(speed);
+    player.vel.x = mv.x; player.vel.z = mv.z;
+    player.vel.y -= 18 * dt;
+    if (keys.Space && player.onGround){ player.vel.y = 7; player.onGround = false; }
+    // integrate + capsule push-out via short downward ground clamp (minimal controller)
+    player.pos.addScaledVector(player.vel, dt);
+    const g = probeGround(player.pos);
+    const feet = player.pos.y - H/2;
+    if (g !== null && feet <= g + 0.05 && player.vel.y <= 0){
+      player.pos.y = g + H/2 + 0.001; player.vel.y = 0; player.onGround = true;
+    } else player.onGround = false;
+    capsule.position.copy(player.pos);
+    camera.position.set(player.pos.x, player.pos.y + 0.6, player.pos.z);
+    camera.lookAt(player.pos.x - Math.sin(yaw)*10, player.pos.y + 0.2, player.pos.z - Math.cos(yaw)*10);
+    checkTriggers();
+    hud.textContent = `pos (${player.pos.x.toFixed(1)}, ${player.pos.y.toFixed(1)}, ${player.pos.z.toFixed(1)}) fps ${fps} ${player.onGround?'ground':'air'}`;
+  }
+  renderer.render(scene, camera);
+}
+tick();
+</script>
+</body>
+</html>

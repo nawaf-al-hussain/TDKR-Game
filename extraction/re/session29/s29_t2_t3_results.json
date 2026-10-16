@@ -1,0 +1,26 @@
+{
+ "T2_skin": {
+  "vertex": {"base": "0x4b5c", "stride": 80, "count": 1449, "layout_confirmed": "[pos 12][N 12][T 12][B 12][T2 12][B2 12][tail 8]"},
+  "hypotheses": [
+   {"name": "H1 +48..+64 = 4xf32 weights", "result": "REFUTED", "numbers": "sum med 0.1421 (want 1.0), 2651/5796 negative comps", "null": "shuffled sum med nan"},
+   {"name": "H2 +64..+72 = 4xu16 indices < 67 bones", "result": "REFUTED", "numbers": "max 65507, frac<67 = 0.0007"},
+   {"name": "H3 +64..+68 = 4xu8 indices", "result": "REFUTED", "numbers": "frac<67 = 0.3772, max 255"},
+   {"name": "H4 +48..+72 second (T,B) == first", "result": "CONFIRMED-NOT", "numbers": "equal on 544/1449 (round-17: 542)"},
+   {"name": "H7 +48..+72 = second tangent frame T2xB2==N", "result": "PASS", "numbers": "786/1449 orthonormal within 1e-4 (frame real, not skin)"},
+   {"name": "H5 tail 8 B as UV (u16/f16/f32)", "result": "REFUTED", "numbers": "f16 range [-64416,64768]; f32 garbage; u16 trivial-no-signal"},
+   {"name": "H9 tail = 4xu8 weights + 4xu8 indices", "result": "REFUTED", "numbers": "weight sums med 510 (want 255), indices max 255 full-range"}
+  ],
+  "conclusion": "No skin bytes in the 80-B interleaved vertex. The 24 B = a SECOND tangent frame (lightmap/UV2 frame). Engine design: SKINWEIGHTS(27)/SKININDICES(28) are SEPARATE attribute streams; the mesh block's data length is EXACTLY 1449x80+236 so the skin buffers live in the -mesh-skin sections / other stream descriptors (not located this session).",
+  "three_mesh_blocks": [{"stride_const_site": "0x4adc", "dlen": "0x1c5bc = 1449x80+236 (BATMAN-mesh bind)"}, {"0x23bac", "0x7c0c = 394x80+236"}, {"0x2c808", "0x3d8c = 194x80+236"}],
+  "verdict": "PARTIAL — resisting block: the -mesh-skin section data layout (SSkinBuffer path); bind pose NOT reproduced (weights/indices not located); bind-pose positions = model space (round-17) reconfirmed by bbox"
+ },
+ "T3_anims": {
+  "file": "batman_anims.bdae 43,683,488 B",
+  "clip1": {"groups": 78, "shape": "[1,0,nameOff,1,tOff,1,vOff,0] 32 B each @0xb53c", "types": "72 rotation + 6 translation", "names": "<bone>-node-<track> strings in cluster 0x1e84.."},
+  "channel_name_strings": "exactly 78 in the whole file (-node-rotation x72, -node-translation x6) — other clips do not repeat names",
+  "wide_group_scan": "8-word named groups: only clip1's 78; 40-B [1,0,t,1,v1,1,v2,0,0,0] scan: 78 singletons (false positives)",
+  "key_layout": "[f32 value][u32 tick] 8 B CONFIRMED in (off,cnt)-table regions: e.g. @0x3c370 = (0.5,0x2a7),(1.0,0x2a8),(0.5,0x2a9) — tick step 1, pulse curve",
+  "table_0x3c24c": "(off,cnt) pairs; first entries (0x3c258,0x27),(0x3c350,0x2f),(0x3c488,0x7e) — regions overlap -> per-channel records, full decode pending",
+  "verdict": "PARTIAL — 1,375 count unresolved this session (round-16 number stands); _001_idle_stand/_008_run key streams located but not decoded; pose test not run (needs T2 skeleton binds = HARD dependency)"
+ }
+}
