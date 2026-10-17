@@ -105,3 +105,64 @@ table data.
 Unchanged from r19: no fit across the 10 parsed levels; engine discards the
 field (LoadRawLvl @0x4891f8 reads r6, never used). Still unexplained,
 exporter-side bookkeeping.
+
+## T2: Batman skin — descriptors decoded, skin records found (verdict PARTIAL, major upgrade)
+
+### Per-mesh attribute descriptors (engine-verified)
+- ENGINE side (new code @0x7ad8b0, loop @0x7ad92c): walks **12-B descriptors**
+  with the **attribute id byte at +4**; a 30-entry jump switch maps attr id to
+  a configureStream(this, slot, type, fmt, comps):
+  - attr 0 Position, 16 Normal, 19-26 Tangent0-3/Binormal0-3 -> fmt 6, 3 comps = **f32x3 (12 B)**
+  - attr 1-14 TexCoord0-13 -> fmt 6, 2 comps = **f32x2 (8 B)**
+  - attr 17/18 Color0/1 -> fmt 1, 4 comps = **u8x4 (4 B)**
+  - attr 29 InstanceId -> u8 (1 B)
+  - **attr 27 SkinWeights / 28 SkinIndices -> SKIP: no vertex stream is
+    created** — the engine's own case code re-confirms r19: skin data is NOT
+    in the vertex.
+- FILE side (batman.bdae mesh block): the pre-vertex head @0x4afc..0x4b5c =
+  8 x (u32 offset, u32 fmt, u32 comps) as THREE ARRAYS (SoA):
+  offsets {0,12,24,36,48,60,72,76}; (fmt,comps) = (6,3)x6, (2,2)x2;
+  6x12 + 2x4 = **80 B stride** exactly. fmt 6 = f32, fmt 2 = 2-B fixed point.
+  Vertex layout: Pos@0, Normal@12 (|N|=1), Tan0@24, Bin0@36, Tan1@48, Bin1@60,
+  two 4-B streams @72/@76.
+
+### The 786/1449 anomaly explained
+Pair@24/36 x-product = **-N for 2028, +N for 801, other 67** (left-handed
+main frame). Pair@48/60 = **+N 819 / -N 593 / other 37** — the second frame's
+handedness FLIPS across the mesh: it is a second UV-set tangent frame whose
+sign mirrors with the UV mapping. r19's "786 pass / 663 fail" = the +N
+subset under a strict equality test. Both |T| and |B| are unit (median 1.000).
+
+### UVs located and verified (with nulls)
+The two 4-B streams = **two UV sets in 4.12 fixed point (u16/4096)**:
+- value range [0.000, 15.999] — exactly [0,16) = a 4x4 tile atlas space;
+- 15/16 atlas tiles occupied by the mesh;
+- adjacent-vertex same-tile fraction **49.6% vs shuffled null 7.0%** (7x).
+- REFUTED with numbers: f16 decode (6.3% of values in [0,1] vs shuffled null
+  28.3%); plain u16/65535 UV (adjacent-coherence ratio only 0.39-0.51).
+
+### Skin data found: per-vertex records @0x31774
+**1449 x 20 B = [u8 bone x4][f32 weight x4]**:
+- weight sums == 1.0 for **1449/1449** vertices;
+- 30 distinct bone ids (1..30, max 30);
+- vertex 0: bones (21, 5, 22, 0), weights (0.846, 0.08, 0.074, 0.0).
+
+### Inverse bind matrices found @0x5a210
+**38 x 64 B, row-major affine with w-column [0,0,0,1]** (row-vector
+convention), orthonormal rotation rows (norms 1.000/1.000, dot 0.000),
+translations e.g. M0 t=(0.3524,-1.1860,-1.0011). A second copy of the same
+transforms exists as (quat, translation) pairs right after (0x5a710.., z
+sign-flipped: rec t=(1.264,-0.649,+0.622) == mat7 t=(1.264,-0.649,-0.622)).
+
+### Resisting block (named, with evidence)
+Bind-pose reproduction (v' = sum_k w_k B_k A_k v == v) is NOT yet achieved:
+the 38-matrix array's axis convention and order do not directly match the
+1449-vertex mesh's 30-bone palette (translations z ~ -1.0..-1.2 vs vertex z
+0..1.87; best axis-map search (x,-y,-z) still gives median local distance
+1.37 vs random-bone null 1.55 — no discrimination). The skin record array
+(30 bones) and the bind matrix array (38 bones) belong to association steps
+that resist: the -mesh-skin section's bone-order table (the ~841-entry u16
+list @0x30614, values < 200) is the likely bridge but is undecoded.
+Everything else (descriptors, frames, UVs, weights, indices, matrices) is
+located and verified — verdict **PARTIAL** (weights/indices located,
+bind pose not yet reproduced).
