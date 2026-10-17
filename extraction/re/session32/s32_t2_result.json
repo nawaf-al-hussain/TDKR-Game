@@ -1,0 +1,158 @@
+{
+ "n_clips": 921,
+ "clip0": "_001_idle_stand",
+ "clip0_duration_ms": 5000,
+ "run_duration_ms": {
+  "walk": 1066,
+  "run": 666
+ },
+ "named_groups": 78,
+ "stride_consistency": "78/78",
+ "comps_track_consistency": "78/78",
+ "record_layout": "[u32 1][u32 4][u32 1][u32 timeIdx=2k][u32 6][u32 comps 3|4][u32 valIdx=2k+1][u32 strideB<<16][u32 nodeNamePtr][u32 X 1|5][u32 0x14FFFF]",
+ "key_layout": "value stream (f32 x comps per key) then shared u32 ms tick stream; tick deltas ~30 fps (16/33/50 ms)",
+ "quat_norm_median": 0.9999965726193014,
+ "tick_cadence": {
+  "n": 40,
+  "first_ms": 3650,
+  "last_ms": 4633,
+  "delta_hist": {
+   "16": 10,
+   "34": 10,
+   "33": 10,
+   "17": 9
+  }
+ },
+ "channel_targets": {
+  "n_bones": 73,
+  "bones": [
+   "Bip01",
+   "Bip01_CBone00",
+   "Bip01_CBone01",
+   "Bip01_CBone02",
+   "Bip01_CBone03",
+   "Bip01_CBone04",
+   "Bip01_CBone05",
+   "Bip01_CBone06",
+   "Bip01_CBone10",
+   "Bip01_CBone11",
+   "Bip01_CBone12",
+   "Bip01_CBone13",
+   "Bip01_CBone14",
+   "Bip01_CBone15",
+   "Bip01_CBone16",
+   "Bip01_CBone20",
+   "Bip01_CBone21",
+   "Bip01_CBone22",
+   "Bip01_CBone23",
+   "Bip01_CBone24",
+   "Bip01_CBone25",
+   "Bip01_CBone26",
+   "Bip01_CBone30",
+   "Bip01_CBone31",
+   "Bip01_CBone32",
+   "Bip01_CBone33",
+   "Bip01_CBone34",
+   "Bip01_CBone35",
+   "Bip01_CBone36",
+   "Bip01_CBone40",
+   "Bip01_CBone41",
+   "Bip01_CBone42",
+   "Bip01_CBone43",
+   "Bip01_CBone44",
+   "Bip01_CBone45",
+   "Bip01_CBone46",
+   "Bip01_Head",
+   "Bip01_L_Calf",
+   "Bip01_L_Clavicle",
+   "Bip01_L_Finger0",
+   "Bip01_L_Finger01",
+   "Bip01_L_Finger1",
+   "Bip01_L_Finger11",
+   "Bip01_L_Finger2",
+   "Bip01_L_Finger21",
+   "Bip01_L_Foot",
+   "Bip01_L_Forearm",
+   "Bip01_L_Hand",
+   "Bip01_L_Thigh",
+   "Bip01_L_UpperArm",
+   "Bip01_Neck",
+   "Bip01_Pelvis",
+   "Bip01_R_Calf",
+   "Bip01_R_Clavicle",
+   "Bip01_R_Finger0",
+   "Bip01_R_Finger01",
+   "Bip01_R_Finger1",
+   "Bip01_R_Finger11",
+   "Bip01_R_Finger2",
+   "Bip01_R_Finger21",
+   "Bip01_R_Foot",
+   "Bip01_R_Forearm",
+   "Bip01_R_Hand",
+   "Bip01_R_Thigh",
+   "Bip01_R_UpperArm",
+   "Bip01_Spine",
+   "Bip01_Spine1",
+   "DUMMY_CAMERA",
+   "DUMMY_mov",
+   "DummyFinalPos",
+   "DummyPos",
+   "Dummy_GUN_Lhand",
+   "Dummy_HK"
+  ],
+  "tracks": [
+   "rotation",
+   "translation"
+  ]
+ },
+ "per_clip_blocks": 733,
+ "page_table_0x18c14": [
+  [
+   144904,
+   101444
+  ],
+  [
+   20468,
+   246348
+  ],
+  [
+   39404,
+   266816
+  ],
+  [
+   10508,
+   306220
+  ],
+  [
+   19404,
+   316728
+  ],
+  [
+   4348,
+   336132
+  ]
+ ],
+ "run_sites": [
+  [
+   8602440,
+   128
+  ],
+  [
+   12318524,
+   368
+  ],
+  [
+   25997348,
+   32
+  ],
+  [
+   36466024,
+   356
+  ],
+  [
+   37377412,
+   560
+  ]
+ ],
+ "resisting_block": "per-clip stream-table resolution: mapping channel k -> (tickRange, valueRange) for both dialects (named-group records use paired indices 2k/2k+1 into an unresolved stream table; 184+ blocks have concatenated multi-channel value streams whose per-channel segmentation is unresolved)"
+}
