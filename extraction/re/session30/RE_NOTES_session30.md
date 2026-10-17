@@ -166,3 +166,71 @@ list @0x30614, values < 200) is the likely bridge but is undecoded.
 Everything else (descriptors, frames, UVs, weights, indices, matrices) is
 located and verified — verdict **PARTIAL** (weights/indices located,
 bind pose not yet reproduced).
+
+## T3: animation clips — clip list enumerated, dialect split identified (verdict PARTIAL)
+
+- **The clip list @0x11580 = 12-B records (u32 nameOff, u32 dataStart, u32
+  dataEnd)** with NUL-terminated names — **93 clips** (_001_idle_stand,
+  _002_idle_stand_breath, _004.. through _090_grapnel_fix). The r16 "503-clip
+  count" is superseded: it counted key-run blocks, not clips.
+- The 32-B records @0xb53c (78 of them) = **clip 1's channel table** (the
+  "named" dialect: [flag, 0, nameOff, 1, timeOff, 1, valOff, 0], 78 channels
+  named '<Bip01_...>-node-<track>').
+- The other clips use a **pointer-array dialect**: e.g. _002's region
+  [0x1770,0x1df2) = 31 time-stream pointers (+8-stride key tables) followed
+  by ~384 per-component value-stream pointers — time streams are SHARED
+  across bones, value streams are per-component curves.
+- 1,375 (r16) = the descriptor-zone group count (named-group entries summed
+  over clips); with 93 clips and clip1 alone carrying 78, the named dialect
+  covers only the first clips — the rest use pointer arrays, so 1375 is a
+  zone census, not a channel total.
+- Key layout [f32 value][u32 tick] (r19-confirmed, tick step 1) stands; the
+  per-curve pointer chasing + engine sampler tick-rate derivation and the
+  two-time pose test REMAIN OPEN (blocked anyway on T2's skeleton
+  association). Verdict: **PARTIAL**.
+
+## T4: walkable prototype on the REAL collision data (verdict DONE for the export+numbers)
+
+- Exported GothamCity's collision soup in world space via the pure parser
+  (component spans from lvc_pure census): **794 CCollisionComponent objects,
+  137,853 triangles** (GC half of the 271,589 both-island census), each tri =
+  9xf32 + u8 material flag, owner CComponentBase TRS applied (Euler XYZ,
+  scale-rotate-translate). Format 'TCS1' (5.4 MB) in extraction/prototype/.
+- Prototype page updated (shipped viewer untouched): ?soup=1 (or no ?model=)
+  loads gc_collision.bin, builds the BVH from the REAL collision geometry,
+  capsule controller + trigger Lua-name logging in the same lvc space
+  (axis map lvc(x,y,z) -> three(x,z,-y), det=+1, same as the r19 spawns).
+- **Axis convention verified numerically** (grid-bucketed Moller-Trumbore,
+  s30_t4_numbers.py):
+  - 21x21 probe rays over a 100 m street grid at the spawn centroid:
+    **417/441 = 94.6% ground found** (r19 visual-GLB baseline: 42.9%);
+    ground z median 0.00 (the street plane), range [-0.22, 19.39];
+  - spawn ground check: **186/225 = 82.7%** of spawns have ground within 3 m
+    (the rest = interior/rooftop spawns and the y=-952.8 road-gap row);
+  - 24 probe failures all on one grid row (y=-952.8: a road gap / unbuilt
+    block), listed in the script output.
+- Material-flag histogram (full soup): 6: 84,251 (61.1%), 1: 24,377 (17.7%),
+  7: 15,098, 2: 6,489, 4: 2,721, 8: 2,075, 3: 599, 9: 524, 0: 1,109,
+  12: 300, 11: 214, 255: 96. Under the probe grid: 1: 322 (73%), 6: 85,
+  2: 8, 0: 2.
+- Gap list (prototype vs the game): trigger VOLUMES still approximated by a
+  10 m radius (the CTrigger volume decode is pending); no gravity surfaces
+  beyond the collision soup (no dynamic props); material flags decoded as
+  histogram only (surface-type semantics unknown); interiors not walkable
+  (collision exists but doors/flow are Lua-driven); FPS on the BVH soup not
+  measured headless (no browser in this sandbox) — the r19 GLB run measured
+  20-60 fps and the soup triangle count is ~4x smaller than the visual GLB.
+
+## T5: delivery
+
+- Bundle: download/bundles_s30/main_s30_inc.bundle (8842b35..c822fe5+),
+  verified, SHA256 below. User commands:
+    git fetch ../main_s30_inc.bundle main:from-s30   (or clone + fetch)
+    git checkout from-s30
+- Estimate update: walkable world IN (94.6% ground over the real collision
+  soup, triggers with Lua names, spawns); character renderer + animation:
+  skeleton/skin data located (T2), clips enumerated (T3) but pose pipeline
+  still open; Lua shim: from the 747-function registry the prototype can
+  already implement the Wait/Enable/Disable/ShowMessage/ShowObject/HideObject
+  family plus ActorSetState stubs (the r16 top-8 ranking) behind the trigger
+  entry points; glide/grapple/combat/AI/mission flow/audio/UI still OUT.
