@@ -150,7 +150,9 @@ function spawns0(){
   const sp = (window.TDKR_DATA && TDKR_DATA.spawns[SPAWN_IDX]);
   return sp ? {x: sp.pos[0], y: sp.pos[2]+3, z: -sp.pos[1]} : {x:0, y:5, z:0};
 }
-if (!MODEL || location.search.indexOf('soup=1') >= 0) loadSoup('gc_collision.bin');
+const SOUP = (location.search.match(/soup=([a-z0-9]+)/i) || [])[1];
+if (!MODEL || location.search.indexOf('soup=') >= 0)
+  loadSoup(SOUP === 'i2' || SOUP === 'island2' ? 'i2_collision.bin' : 'gc_collision.bin');
 else new GLTFLoader().load(MODEL, (gltf) => {
   let mesh = null;
   gltf.scene.traverse(o => { if (o.isMesh && !mesh) mesh = o; });
