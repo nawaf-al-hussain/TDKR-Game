@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Build the read-sequence TABLE for the pure lvc parser from the v2 walk.
+"""Build the read-sequence TABLE for the pure lvc parser from the v2 walk
+(distilled: s26_v2_walk_patterns.json, produced by the session-26 native
+walk harness from GothamCity+Island2; regenerate it with the raw walk
+files if available - see scripts/s31_t1_distill2.py for the distiller).
 
 DSL (JSON):
   token := [kind]                      kind in i,f,c,B,s,STR (natural size)
@@ -24,7 +27,9 @@ Output: extraction/re/session26/lvc_readseq.json
 import json, collections
 
 ISLANDS = ['GothamCity', 'GothamCity_Island2']
-OUT = '/home/z/my-project/work/TDKR-Game/extraction/re/session26/lvc_readseq.json'
+OUT = '/tmp/my-project/work/TDKR-Game/extraction/re/session26/lvc_readseq.json'
+DISTILLED = ('/tmp/my-project/work/TDKR-Game/extraction/re/session26/'
+             's26_v2_walk_patterns.json')
 
 # ---- hand-reviewed loop specs (byte sizes verified on every record) --------
 COLLISION = [
@@ -77,32 +82,23 @@ SPAN_ENGINE = {9815}                        # 0x2657 LevelInit (1 per island,
 
 
 def main():
+    dist = json.load(open(DISTILLED))
+    # rebuild the pooled pattern map: kj -> pattern tuple -> [(isl, rid)]
     pats = collections.defaultdict(lambda: collections.defaultdict(list))
-    spans = collections.defaultdict(list)
-    span_toks = {}
     comps_seen = collections.Counter()
-    for isl in ISLANDS:
-        slices = json.load(open(
-            f'/tmp/my-project/work/s26_v2_{isl}_comps.json'))
-        recs = json.load(open(
-            f'/tmp/my-project/work/s26_v2_{isl}_records.json'))
-        rec_by_id = {r[0]: r for r in recs}
-        for rid, cs in slices:
-            base_off = rec_by_id[rid][1]
-            for key, tk in cs:
-                kj = json.dumps(key)
-                pats[kj][tuple((t[0], t[2]) for t in tk)].append((isl, rid))
-                comps_seen[kj] += 1
-                if isinstance(key, (list, tuple)):  # ('E', tid)/('D', tid)
-                    continue
-                if key in (397182239, 831119443):
-                    # component start offset = first token offset
-                    spans[str(key)].append(
-                        [tk[0][1], tk[-1][1] + tk[-1][2] - tk[0][1]])
-                    span_toks.setdefault(str(key), {})[tk[0][1]] = tk
-                if key in (766542306, 1253615565, 931672584, 1734173459,
-                           1419287729):
-                    pass
+    rid_seq = collections.Counter()
+    for kj, entry in dist['patterns'].items():
+        if 'pattern' in entry:
+            pat = tuple((t[0], t[1]) for t in entry['pattern'])
+            pats[kj][pat].extend([None] * entry['count'])
+        else:
+            # multi-pattern class: shapes hashed (content unused by builder)
+            pat = ('SHA1S', tuple(sorted(entry.get('sha1', {}).items())))
+            pats[kj][pat].extend([None] * entry['count'])
+        comps_seen[kj] += entry['count']
+    spans = {k: [list(x) for x in v] for k, v in dist['spans'].items()}
+    span_toks = {k: {int(o): tk for o, tk in v.items()}
+                 for k, v in dist['span_toks'].items()}
     table = {'components': {}, 'dedicated': {}, 'engine_cases': {},
              'spans': {k: v for k, v in spans.items()},
              'span_toks': span_toks,
@@ -118,31 +114,18 @@ def main():
             if key[0] == 'E':
                 tid = key[1]
                 if tid in SPAN_ENGINE or len(ps) != 1:
-                    # measured-span fallback (record order = file order per
-                    # island; lengths identical across islands verified below)
+                    # measured-span fallback (per-instance data distilled)
                     table['engine_cases'][str(tid)] = [['span']]
-                    lens = []
-                    for isl in ISLANDS:
-                        sl2 = json.load(open(
-                            f'/tmp/my-project/work/s26_v2_{isl}_comps.json'))
-                        rr = json.load(open(
-                            f'/tmp/my-project/work/s26_v2_{isl}_records.json'))
-                        rb = {r[0]: r for r in rr}
-                        import struct as _st
-                        _d = open(f'/home/z/my-project/work/data/{isl}.lvc',
-                                  'rb').read(8)
-                        table_off2 = _st.unpack_from('>I', _d, 4)[0]
-                        for rid2, cs2 in sl2:
-                            for k2, tk2 in cs2:
-                                if isinstance(k2, list) and k2[0] == "E" and k2[1] == tid:
-                                    lens.append([table_off2,
-                                                 rb[rid2][3] - tk2[0][1]])
-                                    table.setdefault(
-                                        'span_toks_e', {}).setdefault(
-                                        str(tid), {})[table_off2] = tk2
+                    lens = [[toff, sz] for toff, (sz, _s) in
+                            ((int(o), (v[1], v[0])) for o, v in
+                             dist['spans_e'].get(str(tid), {}).items())]
+                    lens = [[int(o), v[1]] for o, v in
+                            dist['spans_e'].get(str(tid), {}).items()]
                     table.setdefault('spans_e', {})[str(tid)] = lens
                     table.setdefault('span_toks_e', {}).setdefault(
-                        str(tid), {})
+                        str(tid), {}
+                    ).update({int(o): tk for o, tk in
+                              dist['span_toks_e'].get(str(tid), {}).items()})
                 else:
                     spec = [list(p) for p in next(iter(ps))]
                     table['engine_cases'][str(tid)] = spec

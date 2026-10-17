@@ -244,10 +244,10 @@ def parse(path, table, templates, tokens_out=None, stats=None):
         if stats is not None:
             stats[kind] += 1
         cur = end
-    assert cur == table_off, \
-        f'framing error: cursor {cur:#x} != table {table_off:#x}'
+    complete = (cur == table_off)   # framing check returned, not asserted
     return dict(records=records, strings=strings, data=d,
-                table_off=table_off, nrec_hdr=nrec_hdr, census=census)
+                table_off=table_off, nrec_hdr=nrec_hdr, census=census,
+                complete=complete, final_cursor=cur)
 
 
 def main():

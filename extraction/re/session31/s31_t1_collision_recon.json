@@ -1,0 +1,94 @@
+{
+ "correct_total": 137893,
+ "bin_total": 137853,
+ "flag_correct": {
+  "6": 84299,
+  "0": 1109,
+  "7": 15098,
+  "1": 24369,
+  "2": 6489,
+  "4": 2721,
+  "11": 214,
+  "9": 524,
+  "3": 599,
+  "255": 96,
+  "12": 300,
+  "8": 2075
+ },
+ "flag_bin": {
+  "6": 84251,
+  "0": 1109,
+  "7": 15098,
+  "1": 24377,
+  "2": 6489,
+  "4": 2721,
+  "11": 214,
+  "9": 524,
+  "3": 599,
+  "255": 96,
+  "12": 300,
+  "8": 2075
+ },
+ "diffs": [
+  {
+   "idx": 770,
+   "rid": 13757,
+   "off": "0x5d5c3c",
+   "prefix_i": [
+    "i",
+    6118466,
+    4,
+    2
+   ],
+   "n_outer": 1,
+   "correct_ntri": 12,
+   "bin_ntri": 2,
+   "name": "militarylaser_collision.bdae"
+  },
+  {
+   "idx": 771,
+   "rid": 13768,
+   "off": "0x5d628e",
+   "prefix_i": [
+    "i",
+    6120084,
+    4,
+    2
+   ],
+   "n_outer": 1,
+   "correct_ntri": 12,
+   "bin_ntri": 2,
+   "name": "militarylaser_collision.bdae"
+  },
+  {
+   "idx": 772,
+   "rid": 13781,
+   "off": "0x5d6863",
+   "prefix_i": [
+    "i",
+    6121577,
+    4,
+    2
+   ],
+   "n_outer": 1,
+   "correct_ntri": 12,
+   "bin_ntri": 2,
+   "name": "militarylaser_collision.bdae"
+  },
+  {
+   "idx": 773,
+   "rid": 13792,
+   "off": "0x5d6fd3",
+   "prefix_i": [
+    "i",
+    6123481,
+    4,
+    2
+   ],
+   "n_outer": 1,
+   "correct_ntri": 12,
+   "bin_ntri": 2,
+   "name": "militarylaser_collision.bdae"
+  }
+ ]
+}

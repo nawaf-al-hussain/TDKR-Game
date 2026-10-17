@@ -11,9 +11,12 @@ import json, struct, sys, collections
 sys.path.insert(0, '/tmp/my-project/work/TDKR-Game/extraction/re/session26')
 import lvc_pure
 
-TAB26 = '/tmp/my-project/work/TDKR-Game/extraction/re/session26/lvc_readseq.json'
-S29 = '/tmp/my-project/work/re29/lvc_readseq_s29.json'
-OUT = '/tmp/my-project/work/re29/lvc_readseq_s30.json'
+TAB26 = ('/tmp/my-project/work/TDKR-Game/extraction/re/session26/'
+         'lvc_readseq.json')          # living s26+s27+s29-era table (in-repo)
+GOL = ('/tmp/my-project/work/TDKR-Game/extraction/re/session26/'
+       'lvc_gol_templates.json')
+OUT = ('/tmp/my-project/work/TDKR-Game/extraction/re/session30/'
+       'lvc_readseq_s30.json')
 
 CINE = '397182239'
 

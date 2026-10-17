@@ -1,0 +1,1141 @@
+{
+ "provenance": [
+  {
+   "key": "661",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "1075",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "3008",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "8278",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "18987",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "174419",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "320811",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "1362553",
+   "prov": "STATIC_DISASM",
+   "evidence": "CComponentBase::Load @0x14ca79: [c][i]+9f+[c][c][c]",
+   "ntok": 14
+  },
+  {
+   "key": "1387399",
+   "prov": "STATIC_DISASM",
+   "evidence": "name comp @0x152b87: [STR][raw4]",
+   "ntok": 2
+  },
+  {
+   "key": "1395632",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "17813462",
+   "prov": "STATIC_DISASM",
+   "evidence": "CDummyComponent::Load @0x22a368: 0 reads (r19; s28 hex typo corrected)",
+   "ntok": 0
+  },
+  {
+   "key": "18035066",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 4
+  },
+  {
+   "key": "18085777",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 14
+  },
+  {
+   "key": "106020266",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 3
+  },
+  {
+   "key": "109908276",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 9
+  },
+  {
+   "key": "208250535",
+   "prov": "STATIC_DISASM",
+   "evidence": "CComponentZonesLink::Load @0x2e7430: [i][i] (factory case @0x369d58 + symbol)",
+   "ntok": 2
+  },
+  {
+   "key": "209554351",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 14
+  },
+  {
+   "key": "232576708",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 4
+  },
+  {
+   "key": "234759960",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 1
+  },
+  {
+   "key": "237527380",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 14
+  },
+  {
+   "key": "238146720",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 20
+  },
+  {
+   "key": "257920253",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 5
+  },
+  {
+   "key": "335740235",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 4
+  },
+  {
+   "key": "395436879",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 5
+  },
+  {
+   "key": "397182239",
+   "prov": "STATIC_DISASM",
+   "evidence": "CCinematicComponent::Load @0x2dce20 + CContainerTracksAnimatedObject::Load @0x2d9118 (8 sections)",
+   "ntok": 14
+  },
+  {
+   "key": "425980096",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 2
+  },
+  {
+   "key": "491825779",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "560706027",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 2
+  },
+  {
+   "key": "596076515",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 3
+  },
+  {
+   "key": "680001946",
+   "prov": "STATIC_DISASM",
+   "evidence": "WorldBox: [i][f x6][i] (factory/disasm, r19)",
+   "ntok": 8
+  },
+  {
+   "key": "690565296",
+   "prov": "STATIC_DISASM",
+   "evidence": "shop class Load @0x203858: [i,STR,i]",
+   "ntok": 3
+  },
+  {
+   "key": "718446662",
+   "prov": "STATIC_DISASM",
+   "evidence": "CGroupObject::ReadBuiltinData (0x2ad2a046): [c][c][i]+i-list",
+   "ntok": 4
+  },
+  {
+   "key": "718688061",
+   "prov": "STATIC_DISASM",
+   "evidence": "CPlaneNodeComponent::Load @0x2a0728: [f][f][i][i] (factory @0x22453c, GetType @0x2e1db0)",
+   "ntok": 4
+  },
+  {
+   "key": "731602925",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 5
+  },
+  {
+   "key": "748764166",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 8
+  },
+  {
+   "key": "766542306",
+   "prov": "LOOP_VERIFIED",
+   "evidence": "CCollisionComponent - hand-derived, byte-verified on every island record",
+   "ntok": 10
+  },
+  {
+   "key": "787639378",
+   "prov": "STATIC_DISASM",
+   "evidence": "CSoundAndLight loop from Load @0x1feb64 (islands always n=0)",
+   "ntok": 6
+  },
+  {
+   "key": "815076949",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 8
+  },
+  {
+   "key": "831119443",
+   "prov": "STATIC_DISASM",
+   "evidence": "CTrafficSetting::Load @0x1ffa1c (ret 0x1ffeb4)",
+   "ntok": 16
+  },
+  {
+   "key": "832096197",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 1
+  },
+  {
+   "key": "834668337",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 10
+  },
+  {
+   "key": "880049854",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 4
+  },
+  {
+   "key": "912063847",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 10
+  },
+  {
+   "key": "931047189",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 8
+  },
+  {
+   "key": "931672584",
+   "prov": "LOOP_VERIFIED",
+   "evidence": "CSoundAndLight - hand-derived, byte-verified on every island record",
+   "ntok": 4
+  },
+  {
+   "key": "931838240",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 9
+  },
+  {
+   "key": "932048283",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 14
+  },
+  {
+   "key": "938977454",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 15
+  },
+  {
+   "key": "971186561",
+   "prov": "STATIC_DISASM",
+   "evidence": "MetaZone: [i n]+n x [i] (disasm, r19)",
+   "ntok": 2
+  },
+  {
+   "key": "1080365292",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 9
+  },
+  {
+   "key": "1153971665",
+   "prov": "STATIC_DISASM",
+   "evidence": "shop class Load @0x203764: [i,STR,STR,i,STR,STR,STR]",
+   "ntok": 7
+  },
+  {
+   "key": "1217495820",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 14
+  },
+  {
+   "key": "1253615565",
+   "prov": "LOOP_VERIFIED",
+   "evidence": "CSmartLightComponent - hand-derived, byte-verified on every island record",
+   "ntok": 9
+  },
+  {
+   "key": "1285943310",
+   "prov": "STATIC_DISASM",
+   "evidence": "CComponentNewShopItemProperty::Load @0x202ae4 (ret 0x203128), generic-switch case @0x36958c vt 0xbd0a30 slot+0x10",
+   "ntok": 14
+  },
+  {
+   "key": "1306785732",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 11
+  },
+  {
+   "key": "1419287729",
+   "prov": "LOOP_VERIFIED",
+   "evidence": "CActorBaseComponent (raw7 head = inlined sibling reads) - hand-derived, byte-verified on every island record",
+   "ntok": 20
+  },
+  {
+   "key": "1436956987",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 11
+  },
+  {
+   "key": "1496113276",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 5
+  },
+  {
+   "key": "1497481593",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 14
+  },
+  {
+   "key": "1504196876",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 3
+  },
+  {
+   "key": "1647656024",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 15
+  },
+  {
+   "key": "1695265537",
+   "prov": "ZERO_READ",
+   "evidence": "unregistered in .so -> CreateObject default-insert, 0 component reads (positive-controlled)",
+   "ntok": 0
+  },
+  {
+   "key": "1708786925",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 8
+  },
+  {
+   "key": "1733559659",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 16
+  },
+  {
+   "key": "1734173459",
+   "prov": "LOOP_VERIFIED",
+   "evidence": "NPC-pos-list - hand-derived, byte-verified on every island record",
+   "ntok": 2
+  },
+  {
+   "key": "1755721317",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 1
+  },
+  {
+   "key": "1923007858",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 33
+  },
+  {
+   "key": "1955669699",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 24
+  },
+  {
+   "key": "2020568779",
+   "prov": "FITTED_ISLAND",
+   "evidence": "token pattern harvested from GothamCity+Island2 native walks (single pattern per class)",
+   "ntok": 11
+  },
+  {
+   "key": "2139677774",
+   "prov": "STATIC_DISASM",
+   "evidence": "GCT null-default path: 0 bytes in practice (r19)",
+   "ntok": 0
+  },
+  {
+   "key": "REC",
+   "prov": "DEAD_PSEUDO",
+   "evidence": "record-framing pseudo-entry (decimal-keyed parser never looks it up)",
+   "ntok": 1
+  },
+  {
+   "key": "651bdaa",
+   "prov": "FITTED_TEST",
+   "evidence": "Test.lvc raw-N span, engine-tracer measured (r17); hex-format key - dead for decimal lookup",
+   "ntok": 1
+  },
+  {
+   "key": "154bb0",
+   "prov": "FITTED_TEST",
+   "evidence": "Test.lvc raw-N span, engine-tracer measured (r17); hex-format key - dead for decimal lookup",
+   "ntok": 1
+  },
+  {
+   "key": "34747ebe",
+   "prov": "FITTED_TEST",
+   "evidence": "Test.lvc raw-N span, engine-tracer measured (r17); hex-format key - dead for decimal lookup",
+   "ntok": 1
+  },
+  {
+   "key": "592ce07c",
+   "prov": "FITTED_TEST",
+   "evidence": "Test.lvc raw-N span, engine-tracer measured (r17); hex-format key - dead for decimal lookup",
+   "ntok": 1
+  },
+  {
+   "key": "f5f8cfd",
+   "prov": "FITTED_TEST",
+   "evidence": "Test.lvc raw-N span, engine-tracer measured (r17); hex-format key - dead for decimal lookup",
+   "ntok": 1
+  },
+  {
+   "key": "37f7a8ae",
+   "prov": "FITTED_TEST",
+   "evidence": "Test.lvc raw-N span, engine-tracer measured (r17); hex-format key - dead for decimal lookup",
+   "ntok": 1
+  },
+  {
+   "key": "729ec572",
+   "prov": "FITTED_TEST",
+   "evidence": "Test.lvc raw-N span, engine-tracer measured (r17); hex-format key - dead for decimal lookup",
+   "ntok": 1
+  },
+  {
+   "key": "4113",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 19
+  },
+  {
+   "key": "9811",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 16
+  },
+  {
+   "key": "9825",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 5
+  },
+  {
+   "key": "9826",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 17
+  },
+  {
+   "key": "9830",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 20
+  },
+  {
+   "key": "9831",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 17
+  },
+  {
+   "key": "9833",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 39
+  },
+  {
+   "key": "9853",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 15
+  },
+  {
+   "key": "18241",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 20
+  },
+  {
+   "key": "82000",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 15
+  },
+  {
+   "key": "82001",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 15
+  },
+  {
+   "key": "99999",
+   "prov": "FITTED_ISLAND",
+   "evidence": "dedicated-record pattern from GothamCity+Island2 walks (single pattern per tid)",
+   "ntok": 17
+  },
+  {
+   "key": "9815",
+   "prov": "ENGINE_CASE",
+   "evidence": "CComponentLevelInit::Load @0x2018f0 + CTemplateLevelProperties::Load @0x2023bc (unconditional ReadInt @0x20240c)",
+   "ntok": 83
+  },
+  {
+   "key": "31119",
+   "prov": "ENGINE_CASE",
+   "evidence": "waypoint engine case 0x798f (67 B + 3f + builtin cylinder 45 B)",
+   "ntok": 47
+  }
+ ],
+ "usage": {
+  "GothamCity": [
+   "106020266",
+   "1080365292",
+   "109908276",
+   "1217495820",
+   "1253615565",
+   "1306785732",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1419287729",
+   "1436956987",
+   "1496113276",
+   "1497481593",
+   "1504196876",
+   "1647656024",
+   "1695265537",
+   "1708786925",
+   "1733559659",
+   "1734173459",
+   "1755721317",
+   "18035066",
+   "18085777",
+   "1923007858",
+   "1955669699",
+   "2020568779",
+   "209554351",
+   "232576708",
+   "234759960",
+   "237527380",
+   "238146720",
+   "257920253",
+   "335740235",
+   "395436879",
+   "397182239",
+   "425980096",
+   "560706027",
+   "596076515",
+   "718446662",
+   "731602925",
+   "748764166",
+   "766542306",
+   "787639378",
+   "815076949",
+   "831119443",
+   "832096197",
+   "834668337",
+   "880049854",
+   "912063847",
+   "931047189",
+   "931672584",
+   "931838240",
+   "932048283",
+   "938977454",
+   "mesh",
+   "spawn"
+  ],
+  "GothamCity_Island2": [
+   "106020266",
+   "1080365292",
+   "109908276",
+   "1217495820",
+   "1253615565",
+   "1306785732",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1419287729",
+   "1436956987",
+   "1496113276",
+   "1497481593",
+   "1504196876",
+   "1695265537",
+   "1733559659",
+   "1734173459",
+   "1755721317",
+   "18035066",
+   "18085777",
+   "1923007858",
+   "1955669699",
+   "2020568779",
+   "209554351",
+   "232576708",
+   "234759960",
+   "257920253",
+   "335740235",
+   "395436879",
+   "397182239",
+   "425980096",
+   "718446662",
+   "731602925",
+   "748764166",
+   "766542306",
+   "787639378",
+   "831119443",
+   "832096197",
+   "834668337",
+   "880049854",
+   "912063847",
+   "931047189",
+   "931838240",
+   "938977454",
+   "mesh",
+   "spawn"
+  ],
+  "BatCave": [
+   "106020266",
+   "1253615565",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1436956987",
+   "1496113276",
+   "1923007858",
+   "718446662",
+   "748764166",
+   "766542306",
+   "787639378",
+   "880049854",
+   "938977454",
+   "mesh",
+   "spawn"
+  ],
+  "l_menu": [
+   "1362553",
+   "1387399",
+   "1395632",
+   "1504196876",
+   "1923007858",
+   "257920253",
+   "397182239",
+   "748764166",
+   "912063847",
+   "938977454",
+   "spawn"
+  ],
+  "shop": [
+   "106020266",
+   "1153971665",
+   "1285943310",
+   "1362553",
+   "1387399",
+   "1395632",
+   "257920253",
+   "491825779",
+   "690565296"
+  ],
+  "Stadion": [
+   "106020266",
+   "1080365292",
+   "109908276",
+   "1253615565",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1419287729",
+   "1436956987",
+   "1496113276",
+   "1695265537",
+   "1733559659",
+   "1755721317",
+   "18035066",
+   "18085777",
+   "1923007858",
+   "232576708",
+   "234759960",
+   "237527380",
+   "238146720",
+   "257920253",
+   "397182239",
+   "748764166",
+   "766542306",
+   "787639378",
+   "880049854",
+   "931047189",
+   "938977454",
+   "mesh",
+   "spawn"
+  ],
+  "Police_Station": [
+   "106020266",
+   "1080365292",
+   "109908276",
+   "1253615565",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1419287729",
+   "1436956987",
+   "1496113276",
+   "1647656024",
+   "1695265537",
+   "1733559659",
+   "1755721317",
+   "17813462",
+   "18035066",
+   "18085777",
+   "1923007858",
+   "2020568779",
+   "232576708",
+   "234759960",
+   "257920253",
+   "397182239",
+   "748764166",
+   "766542306",
+   "787639378",
+   "880049854",
+   "912063847",
+   "931047189",
+   "938977454",
+   "mesh",
+   "spawn"
+  ],
+  "StockExchange": [
+   "106020266",
+   "1080365292",
+   "1217495820",
+   "1253615565",
+   "1306785732",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1419287729",
+   "1436956987",
+   "1496113276",
+   "1695265537",
+   "1733559659",
+   "1734173459",
+   "1755721317",
+   "17813462",
+   "18035066",
+   "18085777",
+   "1923007858",
+   "1955669699",
+   "2139677774",
+   "232576708",
+   "234759960",
+   "257920253",
+   "395436879",
+   "397182239",
+   "560706027",
+   "731602925",
+   "748764166",
+   "766542306",
+   "787639378",
+   "880049854",
+   "912063847",
+   "931672584",
+   "931838240",
+   "932048283",
+   "938977454",
+   "spawn"
+  ],
+  "Underground": [
+   "106020266",
+   "1080365292",
+   "109908276",
+   "1217495820",
+   "1253615565",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1419287729",
+   "1436956987",
+   "1496113276",
+   "1695265537",
+   "1733559659",
+   "1755721317",
+   "17813462",
+   "18035066",
+   "18085777",
+   "1923007858",
+   "208250535",
+   "2139677774",
+   "232576708",
+   "234759960",
+   "237527380",
+   "238146720",
+   "257920253",
+   "397182239",
+   "680001946",
+   "718688061",
+   "748764166",
+   "766542306",
+   "787639378",
+   "880049854",
+   "912063847",
+   "931047189",
+   "938977454",
+   "971186561",
+   "mesh",
+   "spawn"
+  ],
+  "Military": [
+   "106020266",
+   "1080365292",
+   "109908276",
+   "1253615565",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1419287729",
+   "1436956987",
+   "1496113276",
+   "1647656024",
+   "1695265537",
+   "1733559659",
+   "1755721317",
+   "18035066",
+   "18085777",
+   "1923007858",
+   "1955669699",
+   "2020568779",
+   "208250535",
+   "2139677774",
+   "232576708",
+   "234759960",
+   "237527380",
+   "238146720",
+   "257920253",
+   "397182239",
+   "680001946",
+   "718688061",
+   "748764166",
+   "766542306",
+   "787639378",
+   "880049854",
+   "912063847",
+   "931047189",
+   "938977454",
+   "971186561",
+   "mesh",
+   "spawn"
+  ],
+  "ThePit": [
+   "106020266",
+   "1080365292",
+   "109908276",
+   "1217495820",
+   "1362553",
+   "1387399",
+   "1395632",
+   "1419287729",
+   "1436956987",
+   "1496113276",
+   "1695265537",
+   "1733559659",
+   "1755721317",
+   "18035066",
+   "18085777",
+   "1923007858",
+   "1955669699",
+   "208250535",
+   "2139677774",
+   "232576708",
+   "234759960",
+   "257920253",
+   "397182239",
+   "680001946",
+   "718688061",
+   "748764166",
+   "766542306",
+   "787639378",
+   "880049854",
+   "931047189",
+   "938977454",
+   "mesh",
+   "spawn"
+  ],
+  "Test": []
+ },
+ "run": {
+  "GothamCity": {
+   "ok": true,
+   "nrec": 14313,
+   "err": null
+  },
+  "GothamCity_Island2": {
+   "ok": true,
+   "nrec": 7474,
+   "err": null
+  },
+  "BatCave": {
+   "ok": true,
+   "nrec": 92,
+   "err": null
+  },
+  "l_menu": {
+   "ok": true,
+   "nrec": 31,
+   "err": null
+  },
+  "shop": {
+   "ok": false,
+   "nrec": 354,
+   "err": "cursor 0x40ed != table 0x40ec"
+  },
+  "Stadion": {
+   "ok": true,
+   "nrec": 274,
+   "err": null
+  },
+  "Police_Station": {
+   "ok": true,
+   "nrec": 653,
+   "err": null
+  },
+  "StockExchange": {
+   "ok": true,
+   "nrec": 2023,
+   "err": null
+  },
+  "Underground": {
+   "ok": true,
+   "nrec": 2653,
+   "err": null
+  },
+  "Military": {
+   "ok": true,
+   "nrec": 773,
+   "err": null
+  },
+  "ThePit": {
+   "ok": true,
+   "nrec": 700,
+   "err": null
+  },
+  "Test": {
+   "ok": false,
+   "nrec": null,
+   "err": "error: unpack_from requires a buffer of at least 4 bytes for unpacking 4 bytes at offset 0 (actua"
+  }
+ },
+ "removal": {
+  "GothamCity": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 938977454 in record 73 @0x15f1"
+  },
+  "GothamCity_Island2": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 748764166 in record 4 @0x3ac"
+  },
+  "BatCave": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 1923007858 in record 8 @0x7b373"
+  },
+  "l_menu": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 257920253 in record 6 @0x244"
+  },
+  "shop": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 257920253 in record 122 @0x3cf0"
+  },
+  "Stadion": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 234759960 in record 15 @0x4e8"
+  },
+  "Police_Station": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 748764166 in record 7 @0x49650"
+  },
+  "StockExchange": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 938977454 in record 3 @0x151"
+  },
+  "Underground": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 938977454 in record 23 @0x293f8"
+  },
+  "Military": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 232576708 in record 5 @0x25f"
+  },
+  "ThePit": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 938977454 in record 34 @0x8538a"
+  },
+  "Test": {
+   "ok": false,
+   "nrec": null,
+   "err": "no spec for component 106020266 in record 3 @0x187"
+  }
+ },
+ "removed_keys": [
+  "938977454",
+  "1923007858",
+  "748764166",
+  "257920253",
+  "912063847",
+  "1504196876",
+  "1708786925",
+  "209554351",
+  "1955669699",
+  "1497481593",
+  "832096197",
+  "1436956987",
+  "232576708",
+  "234759960",
+  "1733559659",
+  "880049854",
+  "106020266",
+  "1496113276",
+  "731602925",
+  "931838240",
+  "932048283",
+  "560706027",
+  "1306785732",
+  "18085777",
+  "1755721317",
+  "395436879",
+  "815076949",
+  "834668337",
+  "425980096",
+  "335740235",
+  "18035066",
+  "1080365292",
+  "2020568779",
+  "109908276",
+  "931047189",
+  "238146720",
+  "237527380",
+  "1647656024",
+  "1217495820",
+  "596076515"
+ ],
+ "removed_ded": [
+  "9831",
+  "9811",
+  "9833",
+  "82001",
+  "9826",
+  "99999",
+  "82000",
+  "18241",
+  "9830",
+  "4113",
+  "9853",
+  "9825"
+ ],
+ "non_island_fitted_union": [
+  "106020266",
+  "1080365292",
+  "109908276",
+  "1217495820",
+  "1306785732",
+  "1436956987",
+  "1496113276",
+  "1504196876",
+  "1647656024",
+  "1733559659",
+  "1755721317",
+  "18035066",
+  "18085777",
+  "1923007858",
+  "1955669699",
+  "2020568779",
+  "232576708",
+  "234759960",
+  "237527380",
+  "238146720",
+  "257920253",
+  "395436879",
+  "560706027",
+  "731602925",
+  "748764166",
+  "880049854",
+  "912063847",
+  "931047189",
+  "931838240",
+  "932048283",
+  "938977454"
+ ]
+}
