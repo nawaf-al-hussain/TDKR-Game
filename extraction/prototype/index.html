@@ -95,7 +95,63 @@ function probeGround(p){
   return hits.length ? hits[0].point.y : null;
 }
 
-new GLTFLoader().load(MODEL, (gltf) => {
+// ---- S30: real collision-soup mode (?soup=1 or no ?model=) ----
+function loadSoup(url){
+  fetch(url).then(r=>r.arrayBuffer()).then(buf=>{
+    const dv = new DataView(buf);
+    if (dv.getUint8(0)!==0x54) throw new Error('bad soup magic');
+    const nTri = dv.getUint32(4, true), nObj = dv.getUint32(8, true);
+    let p = 12;
+    const nameLen = dv.getUint32(p, true); p += 4 + nameLen;
+    const objNames = [];
+    for (let i=0;i<nObj;i++){ const noff=dv.getUint32(p,true), nlen=dv.getUint16(p+4,true); p+=12+36; objNames.push(new TextDecoder().decode(buf.slice(p-36+36-0, p)) && new TextDecoder().decode(buf.slice(p-36+36, p)).slice(0,0) || ''); p += nlen; }
+    // simpler: recompute name offsets
+    p = 12; p += 4 + nameLen;
+    const names = [];
+    for (let i=0;i<nObj;i++){ const noff=dv.getUint32(p,true), nlen=dv.getUint16(p+4,true); p+=8; const oid=dv.getUint16(p,true); p+=2+4+36; p+=0; }
+    p = 12; const nlen2 = dv.getUint32(p, true); p += 4 + nlen2;
+    const nrecs = [];
+    for (let i=0;i<nObj;i++){ const noff=dv.getUint32(p,true), nlen=dv.getUint16(p+4,true), oid=dv.getUint16(p+6,true), ntri=dv.getUint32(p+8,true); nrecs.push([oid,ntri]); p += 12+36; }
+    const pos = new Float32Array(nTri*9);
+    const flags = new Uint8Array(nTri);
+    const T = buf.slice(p, p + nTri*(2+36+1));
+    const tdv = new DataView(T);
+    let w = 0;
+    for (let i=0;i<nTri;i++){
+      const q = i*(2+36+1);
+      for (let k=0;k<9;k++) pos[w++] = tdv.getFloat32(q+2+k*4, true);
+      flags[i] = tdv.getUint8(q+38);
+    }
+    // lvc (x,y,z) -> three (x, z, -y)
+    for (let i=0;i<nTri*3;i++){
+      const x = pos[i*3], y = pos[i*3+1], z = pos[i*3+2];
+      pos[i*3] = x; pos[i*3+1] = z; pos[i*3+2] = -y;
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const mat = new THREE.MeshLambertMaterial({color:0x8a97a8, side:THREE.DoubleSide});
+    const mesh = new THREE.Mesh(geo, mat);
+    geo.computeBoundsTree();
+    collider = mesh; bvh = geo.boundsTree;
+    scene.add(mesh); worldRoot = mesh;
+    mesh.userData.flags = flags;
+    hud.textContent = `collision soup: ${nTri} tris / ${nObj} objects — WASD move, Space jump`;
+    log(`soup bbox: x[${dv && 0}]`); log(`soup loaded: ${nTri} triangles, ${nObj} objects, ${objNames.length} names`);
+    const bb = new THREE.Box3().setFromObject(mesh);
+    player.pos.set(spawns0().x, bb.max.y - 2, spawns0().z);
+    const g = probeGround(player.pos);
+    if (g !== null) player.pos.y = g + H/2 + 0.05;
+    runProbeBenchmark();
+    window.SOUP_FLAGS = flags;
+    window.SOUP_NAMES = nrecs;
+  }).catch(e=>{ hud.textContent = 'soup load error: ' + e; });
+}
+function spawns0(){
+  const sp = (window.TDKR_DATA && TDKR_DATA.spawns[SPAWN_IDX]);
+  return sp ? {x: sp.pos[0], y: sp.pos[2]+3, z: -sp.pos[1]} : {x:0, y:5, z:0};
+}
+if (!MODEL || location.search.indexOf('soup=1') >= 0) loadSoup('gc_collision.bin');
+else new GLTFLoader().load(MODEL, (gltf) => {
   let mesh = null;
   gltf.scene.traverse(o => { if (o.isMesh && !mesh) mesh = o; });
   if (!mesh) { hud.textContent = 'no mesh in model'; return; }
