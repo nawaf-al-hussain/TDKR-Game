@@ -266,7 +266,8 @@ function readBdae(u8) {
   const pal = [];
   for (let o = SKIN_OFFS.PALETTE; o < SKIN_OFFS.PALETTE_END; o += 8) {
     const a = String.fromCharCode(u8[o], u8[o + 1]), b = String.fromCharCode(u8[o + 4], u8[o + 5]);
-    const tag = u8[o + 4] === 0x42 && u8[o + 5] === 0x6f ? b : a; // 'Bo'
+    // python: tag = blk[0:2] if blk[4:8]=='Bone' else blk[4:6]  (r37 fix: was inverted)
+    const tag = u8[o + 4] === 0x42 && u8[o + 5] === 0x6f ? a : b; // 'Bo'
     pal.push('Bone' + tag.replace(/[^0-9]/g, ''));
   }
   const byAlias = {};

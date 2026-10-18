@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR playable — pipeline slice (user files only)</title>
+<style>
+  html,body{margin:0;height:100%;background:#101014;color:#cfd3dc;font:13px/1.4 system-ui}
+  #ui{position:fixed;top:8px;left:8px;z-index:9;background:#0008;padding:8px 10px;border-radius:8px;max-width:420px}
+  #bar{width:100%;height:6px;background:#222;border-radius:3px;margin:6px 0}
+  #barfill{height:6px;width:0;background:#5af;border-radius:3px}
+  #err{color:#f87}
+  #log{white-space:pre-wrap}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}
+</script>
+</head>
+<body>
+<div id="ui">
+  <b>TDKR pipeline slice</b> — all data decoded at runtime from YOUR file.<br>
+  Pick the release zip (TDKR_v1.1.6b_APK_OBB.zip).<br>
+  <input type="file" id="f">
+  <div id="bar"><div id="barfill"></div></div>
+  <div id="log">waiting for file…</div><div id="err"></div>
+</div>
+<script src="./tdkr_pipeline.js"></script>
+<script type="module">
+import * as THREE from 'three';
+const $ = s => document.querySelector(s);
+function log(m){ $('#log').textContent += m + '\n'; }
+function setbar(p){ $('#barfill').style.width = (p*100).toFixed(0)+'%'; }
+function fail(m){ $('#err').textContent = 'ERROR: ' + m; }
+
+$('#f').addEventListener('change', async ev => {
+  try {
+    const file = ev.target.files[0];
+    const t0 = performance.now();
+    log(`reading ${file.name} (${(file.size/1e6).toFixed(0)} MB)…`);
+    const u8 = new Uint8Array(await file.arrayBuffer()); setbar(0.1);
+    const ents = TDKR.zipEntries(u8);
+    const names = [...ents.keys()];
+    const find = re => names.find(n => re.test(n));
+    log(`zip OK: ${ents.size} entries in ${(performance.now()-t0).toFixed(0)} ms`);
+
+    // containers
+    const commons = await TDKR.zipRead(u8, find(/data\/commons\.gla$/)); setbar(0.25);
+    const actors = await TDKR.zipRead(u8, find(/data\/actors\.gla$/)); setbar(0.45);
+    const actorsTex = await TDKR.zipRead(u8, find(/textures\/actors_tex\.gla$/)); setbar(0.55);
+    const gc = TDKR.parseGla(commons), ga = TDKR.parseGla(actors), gt = TDKR.parseGla(actorsTex);
+    log(`commons.gla: ${gc.n}; actors.gla: ${ga.n}; actors_tex.gla: ${gt.n} chunks`);
+
+    const sub = (g, u, nm) => { const e = g.ents[nm]; return u.subarray(e.off, e.off + e.size); };
+    const bd = sub(ga, actors, 'batman.bdae');
+    const ad = sub(ga, actors, 'batman_anims.bdae');
+    const skin = TDKR.readBdae(bd);
+    log(`batman.bdae: ${skin.verts.length/3} verts, ${skin.idx.length} idx, ${skin.nodes.length} nodes`);
+    const A = TDKR.decodeAnims(ad);
+    log(`batman_anims.bdae: ${A.segs.length} segs, ${A.clips.length} clips`);
+
+    // Batman diffuse texture (RGB888, engine header 52 B) — decoded here too
+    const texE = gt.ents['chara_Batman_DIFFUSE.tga'];
+    let texture = null;
+    if (texE) {
+      const td = actorsTex.subarray(texE.off, texE.off + texE.size);
+      const tw = td[4] | (td[5] << 8) | (td[6] << 16) | (td[7] << 24);
+      const th = td[8] | (td[9] << 8) | (td[10] << 16) | (td[11] << 24);
+      const px = td.subarray(52, 52 + tw * th * 3);
+      const rgba = new Uint8Array(tw * th * 4);
+      for (let i = 0; i < tw * th; i++) {
+        rgba[i*4] = px[i*3]; rgba[i*4+1] = px[i*3+1]; rgba[i*4+2] = px[i*3+2]; rgba[i*4+3] = 255;
+      }
+      const tex = new THREE.DataTexture(rgba, tw, th, THREE.RGBAFormat);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.needsUpdate = true; tex.flipY = false;
+      texture = tex;
+      log(`chara_Batman_DIFFUSE: ${tw}x${th} RGB888 decoded`);
+    }
+
+    // ---- build the GLB in-memory from pipeline output; load via GLTFLoader
+    // (this is the engine-verified r36 path: fresh-state three.js vs numpy
+    // FK = 0.0000 cm), avoiding hand-rolled bind conventions entirely.
+    const byNameC = Object.fromEntries(A.clips.map(c => [c.name, c]));
+    function buildGLB() {
+      const f32 = a => new Float32Array(a);
+      const BIPED = {
+        'Bip01_Pelvis':'Bip01','Bip01_Spine':'Bip01_Pelvis','Bip01_Spine1':'Bip01_Spine',
+        'Bip01_Neck':'Bip01_Spine1','Bip01_Head':'Bip01_Neck',
+        'Bip01_L_Thigh':'Bip01_Pelvis','Bip01_L_Calf':'Bip01_L_Thigh','Bip01_L_Foot':'Bip01_L_Calf',
+        'Bip01_R_Thigh':'Bip01_Pelvis','Bip01_R_Calf':'Bip01_R_Thigh','Bip01_R_Foot':'Bip01_R_Calf',
+        'Bip01_L_Clavicle':'Bip01_Neck','Bip01_L_UpperArm':'Bip01_L_Clavicle',
+        'Bip01_L_Forearm':'Bip01_L_UpperArm','Bip01_L_Hand':'Bip01_L_Forearm',
+        'Bip01_R_Clavicle':'Bip01_Neck','Bip01_R_UpperArm':'Bip01_R_Clavicle',
+        'Bip01_R_Forearm':'Bip01_R_UpperArm','Bip01_R_Hand':'Bip01_R_Forearm',
+        'Bip01_L_Finger0':'Bip01_L_Hand','Bip01_L_Finger01':'Bip01_L_Finger0',
+        'Bip01_L_Finger1':'Bip01_L_Hand','Bip01_L_Finger11':'Bip01_L_Finger1',
+        'Bip01_L_Finger2':'Bip01_L_Hand','Bip01_L_Finger21':'Bip01_L_Finger2',
+        'Bip01_R_Finger0':'Bip01_R_Hand','Bip01_R_Finger01':'Bip01_R_Finger0',
+        'Bip01_R_Finger1':'Bip01_R_Hand','Bip01_R_Finger11':'Bip01_R_Finger1',
+        'Bip01_R_Finger2':'Bip01_R_Hand','Bip01_R_Finger21':'Bip01_R_Finger2'
+      };
+      const parentOf = nm => skin.pnameOf[nm] || BIPED[nm] || null;
+      const need = []; const inNeed = new Set();
+      for (const jn of skin.jointNodes) {
+        let nm = jn;
+        while (nm && !inNeed.has(nm)) { need.push(nm); inNeed.add(nm); nm = parentOf(nm); }
+      }
+      const nodeOf = {}; const gnodes = [];
+      for (const nm of need) { nodeOf[nm] = gnodes.length; gnodes.push({ name: nm, children: [] }); }
+      for (const nm of need) {
+        const pr = parentOf(nm);
+        if (pr && nodeOf[pr] !== undefined) gnodes[nodeOf[pr]].children.push(nodeOf[nm]);
+      }
+      for (const nm of need) {
+        const nd = skin.nodes.find(x => x.name === nm);
+        const n = gnodes[nodeOf[nm]];
+        n.translation = nd.t; n.rotation = nd.q; n.scale = nd.s;
+      }
+      const NVV = skin.verts.length / 3;
+      gnodes.push({ name: 'BATMAN_mesh', mesh: 0, skin: 0 });
+      const posB = f32(skin.verts), uvB = f32(skin.uvs), wtB = f32(skin.skinW);
+      const jnB = u16a(skin.skinJ), idxB = u16a(skin.idx);
+      const ibmB = new Float32Array(31 * 16);
+      skin.invB.forEach((m, i) => ibmB.set(m, i * 16));
+      const order6 = [['pos', posB], ['uv', uvB], ['wt', wtB], ['jn', jnB], ['idx', idxB], ['ibm', ibmB]];
+      const offs = {}; let base = 0;
+      for (const [k, c] of order6) { while (base % 4) base++; offs[k] = base; base += c.byteLength; }
+      const gltf = {
+        asset: { version: '2.0', generator: 'tdkr-s37-browser' },
+        scene: 0, scenes: [{ nodes: null }],   // roots filled below (r36: rig root + mesh)
+        nodes: gnodes,
+        skins: [{ inverseBindMatrices: null, joints: skin.jointNodes.map(nm => nodeOf[nm]) }],
+        meshes: [{ primitives: [{ attributes: { POSITION: 0, TEXCOORD_0: 1, WEIGHTS_0: 2, JOINTS_0: 3 }, indices: 4, material: 0 }] }],
+        materials: [{ pbrMetallicRoughness: { baseColorFactor: [0.8, 0.8, 0.85, 1] } }],
+        animations: [], accessors: [], bufferViews: [], buffers: [{ byteLength: 0 }]
+      };
+      function addAcc(off, ln, count, ctype, typ) {
+        gltf.bufferViews.push({ buffer: 0, byteOffset: off, byteLength: ln });
+        gltf.accessors.push({ bufferView: gltf.bufferViews.length - 1, componentType: ctype, count, type: typ });
+        return gltf.accessors.length - 1;
+      }
+      addAcc(offs.pos, posB.byteLength, NVV, 5126, 'VEC3');
+      addAcc(offs.uv, uvB.byteLength, NVV, 5126, 'VEC2');
+      addAcc(offs.wt, wtB.byteLength, NVV, 5126, 'VEC4');
+      addAcc(offs.jn, jnB.byteLength, NVV, 5123, 'VEC4');
+      addAcc(offs.idx, idxB.byteLength, idxB.length, 5123, 'SCALAR');
+      gltf.skins[0].inverseBindMatrices = addAcc(offs.ibm, ibmB.byteLength, 31, 5126, 'MAT4');
+      const animBins = []; let ab = 0;
+      for (const nm of ['_001_idle_stand', '_007_walk', '_008_run']) {
+        const clip = byNameC[nm]; if (!clip) continue;
+        const { chans } = TDKR.assembleClip(A, clip);
+        const samplers = []; const chansG = [];
+        for (let c = 0; c < 78; c++) {
+          const ch = chans[c]; if (!ch) continue;
+          const meta = A.CH[c];
+          let nmb = meta.name || '';
+          nmb = nmb.endsWith('-node') ? nmb.slice(0, -5) : nmb;
+          if (nodeOf[nmb] === undefined) continue;
+          const ncomp = meta.ty === 1 ? 3 : 4;
+          // dedupe by tick (keep first) — r26 documented the duplicated keys at
+          // chunk boundaries (overlap [30000,31950]); zero-width interpolation
+          // intervals produce NaN in three.js Interpolant.
+          const seen = new Set();
+          const tks = [], vks = [];
+          for (let i = 0; i < ch.t.length; i++) {
+            const t = ch.t[i];
+            if (seen.has(t)) continue;
+            seen.add(t); tks.push(t); vks.push(ch.v[i]);
+          }
+          const tb = new Float32Array(tks.length);
+          const tb0 = tks[0];
+          for (let i = 0; i < tks.length; i++) tb[i] = (tks[i] - tb0) / 1000;
+          const ob = new Float32Array(tks.length * ncomp);
+          vks.forEach((row, i) => { for (let d = 0; d < ncomp; d++) ob[i * ncomp + d] = row[d]; });
+          while (ab % 4) { animBins.push(new Uint8Array(1)); ab++; }
+          const tOff = ab; animBins.push(tb); ab += tb.byteLength;
+          while (ab % 4) { animBins.push(new Uint8Array(1)); ab++; }
+          const oOff = ab; animBins.push(ob); ab += ob.byteLength;
+          while (ab % 4) { animBins.push(new Uint8Array(1)); ab++; }
+          gltf.bufferViews.push({ buffer: 0, byteOffset: base + tOff, byteLength: tb.byteLength });
+          gltf.accessors.push({ bufferView: gltf.bufferViews.length - 1, componentType: 5126, count: tks.length, type: 'SCALAR' });
+          const ti = gltf.accessors.length - 1;
+          gltf.bufferViews.push({ buffer: 0, byteOffset: base + oOff, byteLength: ob.byteLength });
+          gltf.accessors.push({ bufferView: gltf.bufferViews.length - 1, componentType: 5126, count: tks.length, type: ncomp === 4 ? 'VEC4' : 'VEC3' });
+          const oi = gltf.accessors.length - 1;
+          samplers.push({ input: ti, output: oi, interpolation: 'LINEAR' });
+          chansG.push({ sampler: samplers.length - 1, target: { node: nodeOf[nmb], path: meta.ty === 1 ? 'translation' : 'rotation' } });
+        }
+        gltf.animations.push({ name: nm, samplers, channels: chansG });
+      }
+      // scene roots: every node whose parent is outside the rig set, + the mesh node
+      const roots = [];
+      for (let i = 0; i < gnodes.length - 1; i++) {
+        const pr = parentOf(gnodes[i].name);
+        if (!pr || nodeOf[pr] === undefined || nodeOf[pr] === i) roots.push(i);
+      }
+      roots.push(gnodes.length - 1);
+      gltf.scenes[0].nodes = roots;
+      gltf.buffers[0].byteLength = base + ab;
+      const bin = new Uint8Array(base + ab);
+      for (const [k, c] of order6) bin.set(new Uint8Array(c.buffer, c.byteOffset, c.byteLength), offs[k]);
+      let o4 = base;
+      for (const blk of animBins) {
+        if (blk instanceof Float32Array) { while (o4 % 4) o4++; }
+        bin.set(new Uint8Array(blk.buffer, blk.byteOffset, blk.byteLength), o4);
+        o4 += blk.byteLength;
+      }
+      let js = new TextEncoder().encode(JSON.stringify(gltf));
+      while (js.length % 4) js = new Uint8Array([...js, 32]);
+      const total = 12 + 8 + js.length + 8 + bin.length;
+      const out = new Uint8Array(total); const dv = new DataView(out.buffer);
+      dv.setUint32(0, 0x46546C67, true); dv.setUint32(4, 2, true); dv.setUint32(8, total, true);
+      dv.setUint32(12, js.length, true); dv.setUint32(16, 0x4E4F534A, true); out.set(js, 20);
+      dv.setUint32(20 + js.length, bin.length, true); dv.setUint32(24 + js.length, 0x004E4942, true);
+      out.set(bin, 28 + js.length);
+      return out;
+    }
+    function u16a(arr) { const o = new Uint16Array(arr.length); o.set(arr); return o; }
+    const glbBytes = buildGLB();
+    window.__glb = glbBytes;
+    log('GLB assembled in-memory: ' + (glbBytes.length / 1024).toFixed(0) + ' KB');
+    const { GLTFLoader } = await import('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js');
+    const gltf = await new Promise((res, rej) => new GLTFLoader().parse(glbBytes.buffer, '', res, rej));
+    let sm = null; gltf.scene.traverse(o => { if (o.isSkinnedMesh) sm = o; });
+    sm.frustumCulled = false;
+    sm.material.side = THREE.DoubleSide;
+    // texture deferred (UV orientation + colorspace still under test this slice)
+    if (texture) { sm.material.map = texture; sm.material.color.set(0xffffff); sm.material.needsUpdate = true; }
+    scene.add(gltf.scene);
+    const gltfScene = gltf.scene;
+    gltfScene.rotation.x = -Math.PI / 2;   // raw rig is z-up (r24/r37) -> y-up
+    window.__mesh = sm; window.__THREE = THREE;
+    log('skinned mesh loaded via GLTFLoader (engine-verified path)');
+    // animations come from the in-memory GLB (engine-verified assembly)
+    const mixer = new THREE.AnimationMixer(sm);
+    window.__mixer = mixer;
+    const acts = {};
+    for (const clip of gltf.animations) {
+      acts[clip.name] = mixer.clipAction(clip);
+      log(`clip ${clip.name}: ${clip.tracks.length} tracks, ${clip.duration.toFixed(2)}s`);
+    }
+    acts['_001_idle_stand'].play();
+    setbar(1);
+    log(`READY in ${(performance.now()-t0).toFixed(0)} ms — WASD move, Shift run`);
+
+    // controls: capsule walk on flat ground
+    const keys = {};
+    addEventListener('keydown', e => keys[e.code] = true);
+    addEventListener('keyup', e => keys[e.code] = false);
+    let pos = new THREE.Vector3(0, 0, 0), yaw = 0, cur = '_001_idle_stand';
+    const clock = new THREE.Clock();
+    function frame() {
+      try { return frameInner(); }
+      catch (e) { fail(String(e && e.stack || e).slice(0, 600)); throw e; }
+    }
+    function frameInner() {
+      const dt = Math.min(clock.getDelta(), 0.05);
+      let fwd = (keys.KeyW ? 1 : 0) - (keys.KeyS ? 1 : 0);
+      let turn = (keys.KeyA ? 1 : 0) - (keys.KeyD ? 1 : 0);
+      const run = keys.ShiftLeft || keys.ShiftRight;
+      const speed = run ? 5.2 : 1.6;
+      if (fwd || turn) yaw += turn * 2.2 * dt;
+      const moving = fwd > 0;
+      const want = moving ? (run ? '_008_run' : '_007_walk') : '_001_idle_stand';
+      if (want !== cur && acts[want]) {
+        const from = acts[cur], to = acts[want];
+        to.reset().play(); to.crossFadeFrom(from, 0.25, true);
+        cur = want;
+      }
+      if (moving) {
+        pos.x += Math.sin(yaw) * speed * dt;
+        pos.z += Math.cos(yaw) * speed * dt;
+      }
+      gltfScene.position.set(pos.x, 0, pos.z);
+    // NOTE: raw rig z-up rotated by the armature; model forward = raw +y -> world -z
+      gltfScene.rotation.y = yaw;
+      mixer.update(dt);
+      camera.position.set(pos.x - Math.sin(yaw) * 3.4, 1.9, pos.z - Math.cos(yaw) * 3.4);
+      camera.lookAt(pos.x, 1.0, pos.z);
+      renderer.render(scene, camera);
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  } catch (e) {
+    fail(String(e && e.stack || e).slice(0, 500));
+    console.error(e);
+  }
+});
+
+// three scaffolding
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x20242c);
+const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 500);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+window.__renderer = renderer;
+scene.add(new THREE.AmbientLight(0xffffff, 2.2));
+const dl = new THREE.DirectionalLight(0xffffff, 2.5); dl.position.set(3, 6, 4); scene.add(dl);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshStandardMaterial({ color: 0x2e3440 }));
+ground.rotation.x = -Math.PI / 2; scene.add(ground);
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+</script>
+</body></html>

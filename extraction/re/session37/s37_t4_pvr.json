@@ -1,0 +1,10 @@
+{
+ "w": 256,
+ "h": 256,
+ "fmt": 8,
+ "bpp": 4,
+ "engine_nonblack": 63638,
+ "py_exact": 0,
+ "py_max_diff": 255,
+ "py_mean": 64.84015401204427
+}

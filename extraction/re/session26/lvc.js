@@ -173,8 +173,19 @@ function parseLvc(data, table, gol) {
     records.push({ rid: rid, start: recStart, tid: tid, end: r.p, kind: kind });
     cur = r.p;
   }
-  if (cur !== tableOff)
-    throw new Error('framing error: cursor ' + cur + ' != table ' + tableOff);
+  if (cur !== tableOff) {
+    // s37 T4: shop.lvc end-of-data table-sentinel record (0xFFFFFF00) puts the
+    // cursor 1 past the table end (python's sequential reader tolerates this;
+    // byte-explained in r25). Accept ONLY that documented case.
+    var lastRec = records[records.length - 1];
+    if (typeof process !== 'undefined' && process.env.LVC_DEBUG)
+      console.error('LVC framing debug: cur=' + cur + ' table=' + tableOff +
+        ' last=' + JSON.stringify(lastRec));
+    var sentinelOK = cur === tableOff + 1 && lastRec &&
+      ((lastRec.tid >>> 0) === 0xFFFFFF00 || (lastRec.rid >>> 0) === 0xFFFFFF00);
+    if (!sentinelOK)
+      throw new Error('framing error: cursor ' + cur + ' != table ' + tableOff);
+  }
   return { records: records, tokens: tokens, tableOff: tableOff,
            nrecHdr: nrecHdr, strings: strings };
 }

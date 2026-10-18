@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>TDKR pipeline browser test</title></head>
+<body>
+<input type="file" id="f">
+<script src="../../session36/s36_t5_pipeline.js"></script>
+<script>
+window.REPORT = { stages: [], errors: [], done: false };
+function heap() { return performance.memory ? performance.memory.usedJSHeapSize : -1; }
+document.getElementById('f').addEventListener('change', async (ev) => {
+  const R = window.REPORT;
+  try {
+    const file = ev.target.files[0];
+    R.file = { name: file.name, size: file.size };
+    const t0 = performance.now();
+    const ab = await file.arrayBuffer();
+    const u8 = new Uint8Array(ab);
+    R.stages.push(['arrayBuffer_ms', +(performance.now() - t0).toFixed(0), heap()]);
+
+    const ents = TDKR.zipEntries(u8);
+    R.n_entries = ents.size;
+    R.glaNames = [...ents.keys()].filter(n => /\.gla$/i.test(n));
+    R.stages.push(['zipEntries_ms', +(performance.now() - t0).toFixed(0), heap()]);
+
+    async function glaRead(re) {
+      for (const n of R.glaNames) if (re.test(n)) return await TDKR.zipRead(u8, n);
+      return null;
+    }
+    const commons = await glaRead(/commons\.gla$/i);
+    const actors = await glaRead(/actors\.gla$/i);
+    R.glaSizes = { commons: commons && commons.length, actors: actors && actors.length };
+    const gc = TDKR.parseGla(commons);
+    const ga = TDKR.parseGla(actors);
+    R.commonsChunks = gc.n; R.actorsChunks = ga.n;
+    R.stages.push(['glaParse_ms', +(performance.now() - t0).toFixed(0), heap()]);
+
+    function chunkOf(g, u8g, name) {
+      const e = g.ents[name];
+      return e ? u8g.subarray(e.off, e.off + e.size) : null;
+    }
+    let bd = chunkOf(ga, actors, 'batman.bdae') || chunkOf(gc, commons, 'batman.bdae');
+    let ad = chunkOf(ga, actors, 'batman_anims.bdae') || chunkOf(gc, commons, 'batman_anims.bdae');
+    R.found = { batmanBdae: !!bd, batmanAnimsBdae: !!ad, batSize: bd && bd.length, animsSize: ad && ad.length };
+    const skin = TDKR.readBdae(bd);
+    R.skinVerts = skin.verts.length / 3;
+    R.stages.push(['skinDecode_ms', +(performance.now() - t0).toFixed(0), heap()]);
+
+    const A = TDKR.decodeAnims(ad);
+    R.nseg = A.segs.length; R.nclips = A.clips.length;
+    R.stages.push(['animsDecode_ms', +(performance.now() - t0).toFixed(0), heap()]);
+
+    // per-clip parity vs node reference (nch exact; valsum rel tol)
+    const ref = await (await fetch('../../session36/session36_t5_ref.json')).json();
+    const refClips = ref.anims.clips;
+    let nchBad = 0, worstRel = 0, worstI = -1, checked = 0;
+    const CH = A.CH;
+    for (let i = 0; i < A.clips.length; i++) {
+      const cl = A.clips[i];
+      const cov = A.segs.filter(s => s.start < cl.te && s.end > cl.ts);
+      let nch = 0, valsum = 0;
+      for (const s of cov) {
+        const st = A.segStreams[s.k];
+        if (!st) continue;
+        for (let c = 0; c < 78; c++) {
+          const tw = st[2 * c], vw = st[2 * c + 1];
+          const nt = tw.length >> 2;
+          if (!nt) continue;
+          const vdim = CH[c].ty === 1 ? 3 : 4;
+          const nv = (vw.length / (vdim * 4)) | 0;
+          const n = Math.min(nt, nv);
+          const dvT = new DataView(tw.buffer, tw.byteOffset, nt * 4);
+          const dvV = new DataView(vw.buffer, vw.byteOffset, vw.byteLength);
+          let any = false;
+          for (let k = 0; k < n; k++) {
+            const t = dvT.getUint32(k * 4, true);
+            if (t < cl.ts - 120 || t > cl.te + 120) continue;
+            any = true;
+            for (let d = 0; d < vdim; d++) valsum += dvV.getFloat32(k * vdim * 4 + d * 4, true);
+          }
+          if (any) nch++;
+        }
+      }
+      const rc = refClips[i];
+      if (!rc) continue;
+      checked++;
+      if (rc[0] !== nch) { nchBad++; continue; }
+      const rel = Math.abs(valsum - rc[1]) / Math.max(Math.abs(rc[1]), 1e-9);
+      if (rel > worstRel) { worstRel = rel; worstI = i; }
+    }
+    R.parity = { checked, nchBad, worstRel: worstRel.toExponential(3), worstI };
+    R.total_ms = +(performance.now() - t0).toFixed(0);
+    R.heap_end = heap();
+    R.done = true;
+  } catch (e) {
+    R.errors.push(String(e && e.stack || e).slice(0, 400));
+    R.done = true;
+  }
+});
+</script></body></html>

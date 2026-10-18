@@ -7,7 +7,7 @@ const crypto = require('crypto');
 const P = require('/home/z/my-project/scripts/s36_t5_pipeline.js');
 const { parseLvc } = require('/tmp/my-project/work/TDKR-Game/extraction/re/session26/lvc.js');
 
-const ref = JSON.parse(fs.readFileSync('/tmp/my-project/work/TDKR-Game/extraction/re/session36_t5_ref.json', 'utf8'));
+const ref = JSON.parse(fs.readFileSync('/tmp/my-project/work/TDKR-Game/extraction/re/session36/session36_t5_ref.json', 'utf8'));
 const table = JSON.parse(fs.readFileSync('/tmp/my-project/work/re29/lvc_readseq_s30.json', 'utf8'));
 const golJ = JSON.parse(fs.readFileSync('/tmp/my-project/work/TDKR-Game/extraction/re/session26/lvc_gol_templates.json', 'utf8'));
 const gol = golJ;  // parseLvc expects the raw {templates: {...}} shape
@@ -15,7 +15,7 @@ const gol = golJ;  // parseLvc expects the raw {templates: {...}} shape
 let pass = 0, fail = 0, skipped = 0;
 const mismatches = [];
 let pyCache = {};
-try { pyCache = JSON.parse(fs.readFileSync('/tmp/my-project/work/TDKR-Game/extraction/re/session36_t5_pycounts.json', 'utf8')); }
+try { pyCache = JSON.parse(fs.readFileSync('/tmp/my-project/work/TDKR-Game/extraction/re/session36/session36_t5_pycounts.json', 'utf8')); }
 catch (e) { console.log('python counts missing - run s36_t5_pycounts.py first'); }
 
 // ---- lvc ----

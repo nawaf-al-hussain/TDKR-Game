@@ -1,0 +1,104 @@
+{
+ "stages": [
+  [
+   "arrayBuffer_ms",
+   764,
+   949000000
+  ],
+  [
+   "zipEntries_ms",
+   766,
+   949000000
+  ],
+  [
+   "glaParse_ms",
+   1291,
+   949000000
+  ],
+  [
+   "skinDecode_ms",
+   1295,
+   949000000
+  ],
+  [
+   "animsDecode_ms",
+   1330,
+   949000000
+  ]
+ ],
+ "errors": [],
+ "done": true,
+ "file": {
+  "name": "TDKR_v1.1.6b_APK_OBB.zip",
+  "size": 895253801
+ },
+ "n_entries": 164,
+ "glaNames": [
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/effects.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_hires.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9000.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9100.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9220.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9250.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9300.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_lowres.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_normalres.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/intro.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_#blank.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_batcave.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_menu.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_military.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stadion.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/particlesystems.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/sounds.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/strings.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/actors_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/cinematics_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/commons_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_#blank_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_batcave_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_menu_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_military_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_policestation_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_stadion_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_stockexchange_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_thepit_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_underground_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/particlesystems_tex.gla",
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/vehicles_tex.gla"
+ ],
+ "glaSizes": {
+  "commons": 4247154,
+  "actors": 103191472
+ },
+ "commonsChunks": 114,
+ "actorsChunks": 113,
+ "found": {
+  "batmanBdae": true,
+  "batmanAnimsBdae": true,
+  "batSize": 450892,
+  "animsSize": 43683488
+ },
+ "skinVerts": 1449,
+ "nseg": 663,
+ "nclips": 921,
+ "parity": {
+  "checked": 921,
+  "nchBad": 0,
+  "worstRel": "1.782e-15",
+  "worstI": 604
+ },
+ "total_ms": 1419,
+ "heap_end": 949000000
+}
