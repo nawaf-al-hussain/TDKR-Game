@@ -1,0 +1,18 @@
+{
+ "vcount": 30824,
+ "regionCount_hdr": 1021,
+ "ccount": 31647,
+ "distinct_ids": 1021,
+ "over_ids": {},
+ "singles": 7,
+ "links": 64204,
+ "cross_region_links": 0,
+ "cross_pairs_sample": [],
+ "grid_nodes": 18846,
+ "grid_distinct": 1021,
+ "grid_only": [],
+ "cell_only": [],
+ "union": 1021,
+ "null_shuffled_cross": 51166,
+ "null_expected": 51198.93919318607
+}
