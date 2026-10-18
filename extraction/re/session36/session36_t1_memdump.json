@@ -1,0 +1,27 @@
+{
+ "status": "OK",
+ "fields": {
+  "f00_size": 1757696962,
+  "f04": 0,
+  "f08_vcount": 30824,
+  "f0c_ccount": 31647,
+  "f10_X": 1021,
+  "f14_soup": 806520112,
+  "f18_cells": 806890016,
+  "f1c_Y": 0,
+  "f20": 0,
+  "f24": 0,
+  "f28": 0,
+  "f2c": 0,
+  "f64_grid": 807396384
+ },
+ "soup_identical": false,
+ "cells_bad": 31647,
+ "regions": 1021,
+ "links": 64204,
+ "sym": 64204,
+ "grid_nx": 222,
+ "grid_ny": 122,
+ "grid_empty": 15565,
+ "grid_nodes": 18846
+}

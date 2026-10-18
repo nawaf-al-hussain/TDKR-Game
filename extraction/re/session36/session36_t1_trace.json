@@ -1,0 +1,30 @@
+{
+ "status": "OK",
+ "fields": {
+  "f00_size": 1757696962,
+  "f04": 0,
+  "f08_vcount": 30824,
+  "f0c_ccount": 31647,
+  "f10_X": 1021,
+  "f14_soup": 806520112,
+  "f18_cells": 806890016,
+  "f1c_Y": 0,
+  "f20": 0,
+  "f24": 0,
+  "f28": 0,
+  "f2c": 0,
+  "f64_grid": 807396384
+ },
+ "census": {
+  "ReadChar": 31651,
+  "ReadInt": 1,
+  "ReadFloat": 92485,
+  "ReadShort": 221532,
+  "Read_vector3d": 30824,
+  "Read_ushortref": 130907,
+  "Read_ucharref": 27085,
+  "Read_vector2d": 2,
+  "Read_floatref": 18846
+ },
+ "n_events": 553333
+}

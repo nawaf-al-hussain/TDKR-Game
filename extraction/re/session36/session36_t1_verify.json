@@ -1,0 +1,12 @@
+{
+ "gotham": {
+  "vcount": 30824,
+  "ccount": 31647,
+  "regions": 1021,
+  "links": 64204,
+  "cells_bad": 0,
+  "soup_mism": 0,
+  "nova_5c": "0x0",
+  "nova_60": 0
+ }
+}
