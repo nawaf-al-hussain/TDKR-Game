@@ -1,9 +1,13 @@
 # Session 36 (round 26) notes
 
 ## State
-- Remote unchanged (push still pending): main 8842b35, gh-pages f22b098
-  (v17 live), gh-pages-staged 9a9fb3b. TEN rounds (17-26) now exist only in
-  sandbox bundles.
+- **PUSHED 2026-10-19 (session-36 continuation, user PAT)**: main
+  8842b35 -> 83ca5ee (fast-forward, 37 commits = rounds 17-26, TEN rounds);
+  gh-pages-staged 9a9fb3b -> 0222f6b (v20 = main:gh-pages tree via
+  commit-tree, parent 9a9fb3b; adds playable/, carries rounds 14-16 viewer
+  updates previously main-only). LIVE gh-pages REMAINS v17 @ f22b098 until
+  the user merges. Bundles bundles_s36 verified pre-push (main_s36_inc
+  requires 8842b35, contains 83ca5ee; essentials complete-history 7c8defc).
 - Local main after this session: 8b0cfbb (924c4af T1, c0eac46 T2, b435d1c T3,
   7de39d6 T4, 704bc27 T5, 8b0cfbb T6 on top of b143711).
 - Bundles: download/bundles_s36/main_s36_inc.bundle (incremental, requires
