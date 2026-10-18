@@ -1,0 +1,32 @@
+{
+ "_001_idle_stand": {
+  "dur_ms": 5000,
+  "slerp_vs_nlerp_max_cm": 0.0,
+  "slerp_vs_nlerp_mean_cm": 0.0,
+  "steepest_omega_deg_s": 107.5
+ },
+ "_007_walk": {
+  "dur_ms": 1066,
+  "slerp_vs_nlerp_max_cm": 0.0005,
+  "slerp_vs_nlerp_mean_cm": 0.0,
+  "steepest_omega_deg_s": 527.4
+ },
+ "_008_run": {
+  "dur_ms": 666,
+  "slerp_vs_nlerp_max_cm": 0.0027,
+  "slerp_vs_nlerp_mean_cm": 0.0001,
+  "steepest_omega_deg_s": 1039.5
+ },
+ "_010_run_jump_start": {
+  "dur_ms": 900,
+  "slerp_vs_nlerp_max_cm": 0.0319,
+  "slerp_vs_nlerp_mean_cm": 0.0019,
+  "steepest_omega_deg_s": 1394.7
+ },
+ "_461_batman_jab_countre_front_attack": {
+  "dur_ms": 1500,
+  "slerp_vs_nlerp_max_cm": 0.0001,
+  "slerp_vs_nlerp_mean_cm": 0.0,
+  "steepest_omega_deg_s": 2433.8
+ }
+}

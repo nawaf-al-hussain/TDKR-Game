@@ -1,0 +1,34 @@
+{
+ "state_string_hits": 0,
+ "n_windows": 865542,
+ "real_rate": 0.03962793759024018,
+ "null_rate": 0.039925,
+ "targets": {
+  "0": "_001_idle_stand",
+  "5": "_007_walk",
+  "6": "_008_run",
+  "20": "_022_sprint",
+  "13": "_015_sneak_walk_front",
+  "14": "_016_sneak_walk_l",
+  "15": "_017_sneak_walk_r",
+  "16": "_018_sneak_walk_back",
+  "8": "_010_run_jump_start",
+  "9": "_011_run_jump_loop",
+  "11": "_013_run_jump_land",
+  "899": "_900_idle_stand_turnl_90",
+  "901": "_902_idle_stand_turnr_90"
+ },
+ "engine_symbols": [
+  "anim_pack::SAnimationGraph",
+  "SAnimationGraphNode",
+  "SAnimationDictionary",
+  "SAnimationInputHeader",
+  "SBarycentricGrid2D",
+  "SAnimationSurface",
+  "CAnimationGraph::createNodes @0x760304",
+  "connectNodes @0x760d30",
+  "getGraphNodeId @0x75fe00",
+  "CAnimationPackage ctor @0x75d9c0",
+  "CColladaFactory::createAnimationPackage @0x77863c"
+ ]
+}

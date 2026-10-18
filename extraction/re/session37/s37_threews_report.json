@@ -1,0 +1,32 @@
+{
+ "_001_idle_stand": {
+  "worst_cm": 0,
+  "worst_t_s": 0,
+  "mean_cm": 0,
+  "n_times": 214
+ },
+ "_007_walk": {
+  "worst_cm": 0,
+  "worst_t_s": 0,
+  "mean_cm": 0,
+  "n_times": 56
+ },
+ "_008_run": {
+  "worst_cm": 0,
+  "worst_t_s": 0,
+  "mean_cm": 0,
+  "n_times": 40
+ },
+ "_010_run_jump_start": {
+  "worst_cm": 0,
+  "worst_t_s": 0,
+  "mean_cm": 0,
+  "n_times": 50
+ },
+ "_461_batman_jab_countre_front_attack": {
+  "worst_cm": 0,
+  "worst_t_s": 0,
+  "mean_cm": 0,
+  "n_times": 74
+ }
+}

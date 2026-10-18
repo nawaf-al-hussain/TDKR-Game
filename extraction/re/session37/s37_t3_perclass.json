@@ -1,0 +1,446 @@
+{
+ "signature_per_class": {
+  "idle": {
+   "tested": 120,
+   "passed": 92,
+   "fails": [
+    "_052_glide_parachute_wall_contact_idle",
+    "_324_grapnel_hang_idle",
+    "_358_npc_waiting_bus_idle",
+    "_385_mc_combat_idle_attack",
+    "_405_wave2_idle",
+    "_418_npc_idle",
+    "_611_tied_hb_chair_idle3",
+    "_613_idle_tied_face_down_02",
+    "_775_idle_start_run_left",
+    "_776_idle_start_run_right",
+    "_777_idle_start_run_back",
+    "_778_idle_start_walk_left",
+    "_779_idle_start_walk_right",
+    "_780_idle_start_walk_back",
+    "_781_enemy_knife_idle1",
+    "_782_enemy_knife_idle2",
+    "_900_idle_stand_turnl_90",
+    "_901_idle_stand_turnl_180",
+    "_902_idle_stand_turnr_90",
+    "_903_idle_stand_turnr_180",
+    "_904_idle_combat_turnl_90",
+    "_905_idle_combat_turnl_180",
+    "_906_idle_combat_turnr_90",
+    "_907_idle_combat_turnr_180",
+    "_908_idle_hip_turnl_90",
+    "_909_idle_hip_turnl_180",
+    "_910_idle_hip_turnr_90",
+    "_911_idle_hip_turnr_180"
+   ],
+   "causes": {
+    "overlay/anchored pose (root animated by code)": 2,
+    "code-driven/prop root motion": 3,
+    "combat overlay": 5,
+    "UNEXPLAINED": 1,
+    "NPC/enemy variant (different rig scale/gait)": 3,
+    "locomotion start transition": 6,
+    "turn-in-idle compound": 8
+   }
+  },
+  "walk": {
+   "tested": 46,
+   "passed": 38,
+   "fails": [
+    "_007_walk",
+    "_030_hang_edge_from_walk",
+    "_199_enemy_walk_aim_shoot",
+    "_200_enemy_walk_hip_shoot",
+    "_769_walk_talk",
+    "_885_bane_sneak_walk_front",
+    "_887_bane_sneak_walk_r",
+    "_913_sneak_walk_front_desf"
+   ],
+   "causes": {
+    "UNEXPLAINED": 3,
+    "overlay/anchored pose (root animated by code)": 1,
+    "NPC/enemy variant (different rig scale/gait)": 4
+   }
+  },
+  "run": {
+   "tested": 35,
+   "passed": 11,
+   "fails": [
+    "_009_run_jump_rollf",
+    "_011_run_jump_loop",
+    "_013_run_jump_land",
+    "_171_enemy_run",
+    "_172_enemy_run_aim",
+    "_173_enemy_run_hip",
+    "_197_enemy_run_aim_shoot",
+    "_198_enemy_run_hip_shoot",
+    "_262_mercenarie_run1",
+    "_264_mercenarie_run3",
+    "_265_mercenarie_run4",
+    "_272_mercenarie_run1_jump_obstacle",
+    "_273_mercenarie_run3_jump_obstacle",
+    "_274_mercenarie_run4_fall_get_up",
+    "_312_high_cover_exit_run_left",
+    "_506_run_enemy1",
+    "_507_run_enemy2",
+    "_509_run_enemy_hk1",
+    "_510_run_enemy_hk2",
+    "_543_enemy_run",
+    "_544_npc_run",
+    "_545_npc_run2",
+    "_697_npc_terrified_run",
+    "_721_batman_combat_sprint"
+   ],
+   "causes": {
+    "UNEXPLAINED": 6,
+    "NPC/enemy variant (different rig scale/gait)": 17,
+    "combat overlay": 1
+   }
+  },
+  "jump": {
+   "tested": 24,
+   "passed": 21,
+   "fails": [
+    "_034_jump_up_loop",
+    "_218_enemy_sel_jumped_hurt",
+    "_707_enemy_jumped_over"
+   ],
+   "causes": {
+    "loop clip: net-z ~0 by design": 1,
+    "NPC/enemy variant (different rig scale/gait)": 2
+   }
+  },
+  "fall": {
+   "tested": 15,
+   "passed": 7,
+   "fails": [
+    "_044_fall_loop",
+    "_566_fall",
+    "_615_bat_fall_loop",
+    "_618_gargoyle_takedown_fall",
+    "_654_enemy_pulled_normal_fall_loop",
+    "_664_enemy_pulled_up_fall_loop",
+    "_674_enemy_pulled_down_fall_loop",
+    "_733_enemy_fall_loop"
+   ],
+   "causes": {
+    "loop clip: net-z ~0 by design": 6,
+    "UNEXPLAINED": 2
+   }
+  },
+  "turn": {
+   "tested": 6,
+   "passed": 5,
+   "fails": [
+    "_332_car_smash_windshield_return"
+   ],
+   "causes": {
+    "code-driven/prop root motion": 1
+   }
+  }
+ },
+ "sig_total": [
+  246,
+  174
+ ],
+ "decode_untestable": 25,
+ "unexplained_sig": [
+  [
+   "_566_fall",
+   "fall"
+  ],
+  [
+   "_618_gargoyle_takedown_fall",
+   "fall"
+  ],
+  [
+   "_405_wave2_idle",
+   "idle"
+  ],
+  [
+   "_009_run_jump_rollf",
+   "run"
+  ],
+  [
+   "_011_run_jump_loop",
+   "run"
+  ],
+  [
+   "_013_run_jump_land",
+   "run"
+  ],
+  [
+   "_312_high_cover_exit_run_left",
+   "run"
+  ],
+  [
+   "_506_run_enemy1",
+   "run"
+  ],
+  [
+   "_507_run_enemy2",
+   "run"
+  ],
+  [
+   "_007_walk",
+   "walk"
+  ],
+  [
+   "_769_walk_talk",
+   "walk"
+  ],
+  [
+   "_913_sneak_walk_front_desf",
+   "walk"
+  ]
+ ],
+ "gait_per_class": {
+  "walk": {
+   "tested": 79,
+   "passed": 19,
+   "fails": [
+    "_030_hang_edge_from_walk",
+    "_147_walk_to_grapnel",
+    "_148_walk_to_grapnel_up",
+    "_149_walk_to_grapnel_down",
+    "_166_enemy_walk",
+    "_167_enemy_walk_aim",
+    "_168_enemy_walk_hip",
+    "_169_enemy_idle_stand_to_walk",
+    "_170_enemy_walk_to_idle_stand",
+    "_188_enemy_idle_aim_to_walk_aim",
+    "_191_enemy_idle_hip_to_walk_hip",
+    "_200_enemy_walk_hip_shoot",
+    "_201_enemy_walk_hip_to_idle_hip",
+    "_290_npc_female_umbrella_open_walk",
+    "_291_npc_female_umbrella_up_walk",
+    "_297_npc_umbrella_open_walk",
+    "_299_npc_umbrella_up_walk",
+    "_300_npc_umbrella_walk",
+    "_314_run_to_backwards_walk",
+    "_315_backwards_walk_shoot",
+    "_316_backwards_walk_shoot_to_run",
+    "_322_npc_rain_walk",
+    "_367_couple_walking_male",
+    "_368_couple_walking_female",
+    "_369_couple_walking_hug_male",
+    "_370_couple_walking_hug_female",
+    "_416_npc_walk_circle",
+    "_417_npc_walk_to_idle",
+    "_495_walk_to_look",
+    "_497_look_to_walk",
+    "_530_gordon_walking_speech",
+    "_540_beg_to_begwalk",
+    "_541_begwalk",
+    "_559_bat_idle_to_walk",
+    "_563_bat_run_to_walk",
+    "_564_bat_walk_to_run",
+    "_568_npc_walk",
+    "_571_npc_idle_to_walk",
+    "_572_npc_walk_to_idle",
+    "_573_npc_run_to_walk",
+    "_574_npc_walk_to_run",
+    "_768_talk_idle_to_walk_talk",
+    "_769_walk_talk",
+    "_770_walk_talk_to_talk_idle",
+    "_771_walk_talk_to_walk",
+    "_772_walk_talk_to_run",
+    "_773_run_to_walk_talk",
+    "_774_walk_to_walk_talk",
+    "_778_idle_start_walk_left",
+    "_779_idle_start_walk_right",
+    "_780_idle_start_walk_back",
+    "_811_soldier1_walk_talk_with_arm",
+    "_812_soldier2_walk_talk",
+    "_813_soldier2_walk_talk_with_arm",
+    "_859_walk_stealth",
+    "_885_bane_sneak_walk_front",
+    "_887_bane_sneak_walk_r",
+    "_913_sneak_walk_front_desf",
+    "_915_sneak_walk_r_desf",
+    "_916_sneak_walk_back_desf"
+   ],
+   "causes": {
+    "crit:acL+anti": 10,
+    "overlay/anchored pose (root animated by code)": 1,
+    "crit:anti": 38,
+    "transition clip (blend, no fixed signature)": 27,
+    "crit:acL+footz_L+anti": 1,
+    "NPC/enemy variant (different rig scale/gait)": 14,
+    "crit:acL": 10,
+    "UNEXPLAINED": 15,
+    "locomotion start transition": 3,
+    "crit:footz_L": 1
+   }
+  },
+  "run": {
+   "tested": 75,
+   "passed": 24,
+   "fails": [
+    "_008_run",
+    "_009_run_jump_rollf",
+    "_010_run_jump_start",
+    "_011_run_jump_loop",
+    "_012_run_jump_to_hang",
+    "_022_sprint",
+    "_048_run_to_wall_contact",
+    "_063_run_to_glide_parachute",
+    "_133_run_jump_to_glide_parachute",
+    "_150_run_to_grapnel",
+    "_151_run_to_grapnel_up",
+    "_152_run_to_grapnel_down",
+    "_171_enemy_run",
+    "_172_enemy_run_aim",
+    "_173_enemy_run_hip",
+    "_174_enemy_idle_stand_to_run",
+    "_175_enemy_run_to_idle_stand",
+    "_187_enemy_idle_aim_to_run_aim",
+    "_190_enemy_idle_hip_to_run_hip",
+    "_262_mercenarie_run1",
+    "_263_mercenarie_run2",
+    "_264_mercenarie_run3",
+    "_265_mercenarie_run4",
+    "_272_mercenarie_run1_jump_obstacle",
+    "_273_mercenarie_run3_jump_obstacle",
+    "_274_mercenarie_run4_fall_get_up",
+    "_288_npc_female_newspaper_rain_run",
+    "_289_npc_female_rain_run",
+    "_302_low_cover_idle_to_run_right",
+    "_312_high_cover_exit_run_left",
+    "_313_high_cover_exit_run_right",
+    "_363_run_to_stop",
+    "_364_idle_to_run_left",
+    "_365_idle_to_run_right",
+    "_366_idle_to_run_back",
+    "_506_run_enemy1",
+    "_507_run_enemy2",
+    "_509_run_enemy_hk1",
+    "_543_enemy_run",
+    "_544_npc_run",
+    "_545_npc_run2",
+    "_561_bat_idle_to_run",
+    "_562_bat_run_to_idle",
+    "_569_npc_idle_to_run",
+    "_570_npc_run_to_idle",
+    "_589_enemy_run_slow_combat",
+    "_696_npc_scared_to_run_02",
+    "_716_bat_idle_to_run_speed_min",
+    "_760_run_jump_to_glide_parachute",
+    "_776_idle_start_run_right",
+    "_777_idle_start_run_back"
+   ],
+   "causes": {
+    "crit:anti": 28,
+    "UNEXPLAINED": 9,
+    "crit:acL+anti": 10,
+    "crit:acL": 13,
+    "transition clip (blend, no fixed signature)": 23,
+    "NPC/enemy variant (different rig scale/gait)": 16,
+    "code-driven/prop root motion": 1,
+    "locomotion start transition": 2
+   }
+  }
+ },
+ "gait_total": [
+  154,
+  43
+ ],
+ "unexplained_gait": [
+  [
+   "_008_run",
+   "run"
+  ],
+  [
+   "_009_run_jump_rollf",
+   "run"
+  ],
+  [
+   "_010_run_jump_start",
+   "run"
+  ],
+  [
+   "_011_run_jump_loop",
+   "run"
+  ],
+  [
+   "_022_sprint",
+   "run"
+  ],
+  [
+   "_312_high_cover_exit_run_left",
+   "run"
+  ],
+  [
+   "_313_high_cover_exit_run_right",
+   "run"
+  ],
+  [
+   "_506_run_enemy1",
+   "run"
+  ],
+  [
+   "_507_run_enemy2",
+   "run"
+  ],
+  [
+   "_315_backwards_walk_shoot",
+   "walk"
+  ],
+  [
+   "_367_couple_walking_male",
+   "walk"
+  ],
+  [
+   "_368_couple_walking_female",
+   "walk"
+  ],
+  [
+   "_369_couple_walking_hug_male",
+   "walk"
+  ],
+  [
+   "_370_couple_walking_hug_female",
+   "walk"
+  ],
+  [
+   "_530_gordon_walking_speech",
+   "walk"
+  ],
+  [
+   "_541_begwalk",
+   "walk"
+  ],
+  [
+   "_769_walk_talk",
+   "walk"
+  ],
+  [
+   "_811_soldier1_walk_talk_with_arm",
+   "walk"
+  ],
+  [
+   "_812_soldier2_walk_talk",
+   "walk"
+  ],
+  [
+   "_813_soldier2_walk_talk_with_arm",
+   "walk"
+  ],
+  [
+   "_859_walk_stealth",
+   "walk"
+  ],
+  [
+   "_913_sneak_walk_front_desf",
+   "walk"
+  ],
+  [
+   "_915_sneak_walk_r_desf",
+   "walk"
+  ],
+  [
+   "_916_sneak_walk_back_desf",
+   "walk"
+  ]
+ ]
+}
