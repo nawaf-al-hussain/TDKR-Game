@@ -1,0 +1,102 @@
+{
+ "mechanism": "Lua ActorSetState(state) -> engine character controller -> glitch::collada CAnimationGraph (built from batman_anims.bdae anim_pack SAnimationGraph; getGraphNodeId(name) resolves state names; animator nodes bind the 921-clip animation dictionary). Per-node clip bindings live in the bdae anim_pack (format undecoded this round - declared gap). Table below = state -> clip(s) by name correspondence + usage counts.",
+ "core": [
+  {
+   "state": "Idle",
+   "lua_uses": 13,
+   "clips": [
+    "_001_idle_stand",
+    "_002.._006 idle family (220 idle-named clips)"
+   ]
+  },
+  {
+   "state": "Run",
+   "lua_uses": 11,
+   "clips": [
+    "_008_run",
+    "_022_sprint"
+   ]
+  },
+  {
+   "state": "Walk",
+   "lua_uses": 0,
+   "clips": [
+    "_007_walk (engine locomotion blend, not Lua-driven)"
+   ]
+  },
+  {
+   "state": "Ranged_Run",
+   "lua_uses": 6,
+   "clips": [
+    "_171_enemy_run_aim / _172_enemy_run_aim family (aim-overlay runs)"
+   ]
+  },
+  {
+   "state": "Glide_Idle",
+   "lua_uses": 3,
+   "clips": [
+    "_057_glide_idle",
+    "_059_glide_parachute_idle"
+   ]
+  },
+  {
+   "state": "Grapnel_Horizontal_To_Glide_Idle",
+   "lua_uses": 6,
+   "clips": [
+    "_062_wall_contact_idle_to_glide family / _065_glide_idle_to_run"
+   ]
+  },
+  {
+   "state": "Fall_Start",
+   "lua_uses": 1,
+   "clips": [
+    "_566_fall"
+   ]
+  },
+  {
+   "state": "Fall_Loop",
+   "lua_uses": 1,
+   "clips": [
+    "_044_fall_loop",
+    "_615_bat_fall_loop"
+   ]
+  },
+  {
+   "state": "Land",
+   "lua_uses": 1,
+   "clips": [
+    "_013_run_jump_land / land family"
+   ]
+  },
+  {
+   "state": "Takeoff",
+   "lua_uses": 1,
+   "clips": [
+    "_010_run_jump_start"
+   ]
+  },
+  {
+   "state": "Enemy_Combat_Idle / Knife_Combat_Idle / Enemy_Idle_Aim",
+   "lua_uses": 4,
+   "clips": [
+    "_385_mc_combat_idle_attack family",
+    "enemy idle family"
+   ]
+  },
+  {
+   "state": "Low_Cover_Enter/Idle/Shoot",
+   "lua_uses": 7,
+   "clips": [
+    "cover family (crouch/cover clips)"
+   ]
+  },
+  {
+   "state": "Ranged_Roll / Explode_Move / Wave_Idle / Idle_To_Wave / Gargoyle_Idle / Crowbar_Taunt_2",
+   "lua_uses": 11,
+   "clips": [
+    "one-to-one by name (e.g. _820_cutscene_turn_arround, _900_idle_stand_turnl_90/180 for turns)"
+   ]
+  }
+ ],
+ "speed_walk": "SetActorSpeedWalk values seen in Lua: 3..14 (median ~8) -> engine blends walk/run/sprint (_007_walk 1.6 m/s, _008_run 5.2 m/s measured r25) by speed"
+}
