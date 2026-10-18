@@ -1,0 +1,13 @@
+{
+ "uv": {
+  "range_ok": 1.0,
+  "tiles": 13,
+  "shared_groups": 335,
+  "seams": 292,
+  "seam_null": 335
+ },
+ "glbs": [
+  "/home/z/my-project/download/batman_s33_full.glb",
+  "/home/z/my-project/download/batman_s33_posed25.glb"
+ ]
+}
