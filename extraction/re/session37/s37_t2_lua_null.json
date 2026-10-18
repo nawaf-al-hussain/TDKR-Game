@@ -1,0 +1,15 @@
+{
+ "n_indep": 40,
+ "indep_rate": 0.75,
+ "street_rate": 0.0015,
+ "shuffled_rate": 0.875,
+ "spawn_rate": 0.07692307692307693,
+ "n_street": 2000,
+ "n_spawns": 13,
+ "call_pairs": 76,
+ "known_pairs": 46,
+ "fn_count": {
+  "Disable": 6,
+  "Enable": 40
+ }
+}
