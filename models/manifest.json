@@ -2421,7 +2421,7 @@
   },
   {
    "file": "models/street_island1_00.glb",
-   "bytes": 210384,
+   "bytes": 153284,
    "verts": 3473,
    "tris": 4235,
    "tier": "street",
@@ -2436,7 +2436,7 @@
   },
   {
    "file": "models/street_island1_01.glb",
-   "bytes": 4960044,
+   "bytes": 3616032,
    "verts": 79084,
    "tris": 97706,
    "tier": "street",
@@ -2451,7 +2451,7 @@
   },
   {
    "file": "models/street_island1_02.glb",
-   "bytes": 6793848,
+   "bytes": 4945364,
    "verts": 109949,
    "tris": 133725,
    "tier": "street",
@@ -2466,7 +2466,7 @@
   },
   {
    "file": "models/street_island1_03.glb",
-   "bytes": 1346636,
+   "bytes": 981972,
    "verts": 21878,
    "tris": 26988,
    "tier": "street",
@@ -2481,7 +2481,7 @@
   },
   {
    "file": "models/street_island1_04.glb",
-   "bytes": 8054836,
+   "bytes": 5863260,
    "verts": 131983,
    "tris": 161104,
    "tier": "street",
@@ -2496,7 +2496,7 @@
   },
   {
    "file": "models/street_island1_05.glb",
-   "bytes": 7988808,
+   "bytes": 5812476,
    "verts": 131229,
    "tris": 159405,
    "tier": "street",
@@ -2511,7 +2511,7 @@
   },
   {
    "file": "models/street_island1_06.glb",
-   "bytes": 648608,
+   "bytes": 470700,
    "verts": 10705,
    "tris": 12552,
    "tier": "street",
@@ -2526,7 +2526,7 @@
   },
   {
    "file": "models/street_island1_07.glb",
-   "bytes": 6076600,
+   "bytes": 4392572,
    "verts": 102990,
    "tris": 116875,
    "tier": "street",
@@ -2541,7 +2541,7 @@
   },
   {
    "file": "models/street_island1_08.glb",
-   "bytes": 3615976,
+   "bytes": 2628948,
    "verts": 60140,
    "tris": 72463,
    "tier": "street",
@@ -2556,7 +2556,7 @@
   },
   {
    "file": "models/street_island2_00.glb",
-   "bytes": 147808,
+   "bytes": 106032,
    "verts": 2578,
    "tris": 2648,
    "tier": "street",
@@ -2571,7 +2571,7 @@
   },
   {
    "file": "models/street_island2_01.glb",
-   "bytes": 2569516,
+   "bytes": 1866692,
    "verts": 42653,
    "tris": 50838,
    "tier": "street",
@@ -2586,7 +2586,7 @@
   },
   {
    "file": "models/street_island2_02.glb",
-   "bytes": 395496,
+   "bytes": 289748,
    "verts": 6280,
    "tris": 8087,
    "tier": "street",
@@ -2601,7 +2601,7 @@
   },
   {
    "file": "models/street_island2_03.glb",
-   "bytes": 678820,
+   "bytes": 495700,
    "verts": 11064,
    "tris": 13939,
    "tier": "street",
@@ -2616,7 +2616,7 @@
   },
   {
    "file": "models/street_island2_04.glb",
-   "bytes": 3654352,
+   "bytes": 2657048,
    "verts": 60927,
    "tris": 73653,
    "tier": "street",
@@ -2631,7 +2631,7 @@
   },
   {
    "file": "models/street_island2_05.glb",
-   "bytes": 3064072,
+   "bytes": 2253476,
    "verts": 48266,
    "tris": 65543,
    "tier": "street",
@@ -2646,7 +2646,7 @@
   },
   {
    "file": "models/street_island2_06.glb",
-   "bytes": 2023768,
+   "bytes": 1475224,
    "verts": 33324,
    "tris": 41243,
    "tier": "street",
@@ -2661,7 +2661,7 @@
   },
   {
    "file": "models/street_island2_07.glb",
-   "bytes": 6051264,
+   "bytes": 4396948,
    "verts": 100915,
    "tris": 121256,
    "tier": "street",
@@ -2676,7 +2676,7 @@
   },
   {
    "file": "models/street_island2_08.glb",
-   "bytes": 4150396,
+   "bytes": 3025280,
    "verts": 66791,
    "tris": 82258,
    "tier": "street",
@@ -2691,7 +2691,7 @@
   },
   {
    "file": "models/street_island2_09.glb",
-   "bytes": 996236,
+   "bytes": 725716,
    "verts": 16525,
    "tris": 20373,
    "tier": "street",
@@ -2706,7 +2706,7 @@
   },
   {
    "file": "models/street_island2_10.glb",
-   "bytes": 7628088,
+   "bytes": 5553496,
    "verts": 126874,
    "tris": 155870,
    "tier": "street",
@@ -2721,7 +2721,7 @@
   },
   {
    "file": "models/street_island2_11.glb",
-   "bytes": 1268160,
+   "bytes": 924228,
    "verts": 20471,
    "tris": 24960,
    "tier": "street",
@@ -2737,6 +2737,6 @@
  ],
  "total_verts": 1458279,
  "total_tris": 1602537,
- "version": 19,
+ "version": 18,
  "total_bytes": 53759408
 }
