@@ -30,6 +30,7 @@ Exit code 0 = all good, 1 = failures (print them loudly).
 """
 import argparse
 import json
+import os
 import re
 import sys
 import urllib.request
@@ -103,15 +104,27 @@ def main():
               and len(man["glbs"]) > 0, f"{len(man.get('glbs', []))} glbs")
         check("manifest has tiers", isinstance(man.get("tiers"), dict),
               ",".join(f"{k}:{len(v)}" for k, v in man.get("tiers", {}).items()))
-        # session 15: live version must match main's working-tree manifest
-        try:
-            local = json.load(open("/home/z/my-project/work/TDKR-Game"
-                                   "/gh-pages/models/manifest.json"))
+        # session 15: live version must match main's working-tree manifest.
+        # v20-release fix: resolve the repo root relative to THIS script (the
+        # canonical checkout moved to /tmp/my-project/work/TDKR-Game); the
+        # hard-coded legacy /home/z path hit a STALE copy (manifest v18) and
+        # falsely failed the drift check. Legacy path kept as fallback.
+        repo_root = os.path.abspath(os.path.join(
+            os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir))
+        local = None
+        for cand in (os.path.join(repo_root, "gh-pages", "models",
+                                  "manifest.json"),
+                     "/home/z/my-project/work/TDKR-Game/gh-pages/models"
+                     "/manifest.json"):
+            try:
+                local = json.load(open(cand))
+                break
+            except OSError:
+                continue
+        if local is not None:
             check("live manifest version == main",
                   local.get("version") == man.get("version"),
                   f"live={man.get('version')} main={local.get('version')}")
-        except OSError:
-            pass
     else:
         check("manifest.json fetch", st == 200, f"status {st}")
 

@@ -87,3 +87,30 @@
   collision ground with idle/walk/run blending, REAL data-determined Lua
   trigger volumes firing mission scripts, and the same asset path running
   in-browser from the user's own OBB (pipeline slice verified).
+
+
+## Release v20 LIVE (2026-10-19, user-approved merge)
+- gh-pages f22b098 (v17) -> df7b0f7 = release commit on the staged lineage
+  (0222f6b + manifest version 18->20 + APP_CACHE_VERSION v18->v20);
+  gh-pages-staged advanced to the same df7b0f7 (staged == live until the
+  next staging round); main mirror commit c02d08f carries the same two-file
+  bump so the branch-drift gate stays green: site_release_check PASS
+  (manifest v20 == origin/gh-pages, cache versions consistent, index.html
+  present on both refs, GLB inventories equal).
+- Pre-deploy: local smoke (localhost server over the release worktree)
+  58/59 — only the main-drift meta-check pending the main-side mirror;
+  40/40 GLBs byte-match manifest, 51 textures, crawl OK. Staging gate
+  known-red reconfirmed (3 documented stray textures + intentional
+  playable/ not manifest-referenced + worktree .git; no new strays).
+- Post-deploy: GitHub Pages served v20 within ~20 s; LIVE SMOKE 59/59 at
+  https://nawaf-al-hussain.github.io/TDKR-Game/ — after fixing a
+  session-15-era bug: site_smoke_test.py hard-coded the LEGACY repo path
+  (/home/z/my-project/work/TDKR-Game, now a stale copy with manifest v18)
+  for the live-vs-main drift check; patched to resolve the repo root
+  relative to the script (legacy path kept as fallback).
+- playable/ LIVE byte-exact (HTTP 200): index.html 10,857 B, batman.glb
+  176,924 B, fengari-web.js 219,632 B, patch.json 1,057,419 B (13 triggers,
+  data-determined volumes). Playable URL:
+  https://nawaf-al-hussain.github.io/TDKR-Game/playable/
+- Heads after release: main = smoke-path-fix commit (see git log),
+  gh-pages df7b0f7 (v20 LIVE), gh-pages-staged df7b0f7 (== live).
