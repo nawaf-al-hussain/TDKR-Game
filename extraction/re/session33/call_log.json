@@ -1,0 +1,21 @@
+{
+ "objId": 1900053,
+ "entry": "OnEnter",
+ "loaded": true,
+ "ok": true,
+ "schedulerTicks": 1,
+ "waits": 1,
+ "apiCalls": [
+  "MISSING:StartFadeOut(2000)",
+  "Wait(2000)",
+  "Disable(1900053)",
+  "Enable(316364)",
+  "MISSING:RequireLoadLevel(\"STR_FPS_LEVEL_BATCAVE\")",
+  "Disable()"
+ ],
+ "missing": [
+  "StartCinematicObject",
+  "StartFadeOut",
+  "RequireLoadLevel"
+ ]
+}

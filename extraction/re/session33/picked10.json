@@ -1,0 +1,42 @@
+[
+ {
+  "objId": 1900053,
+  "script": "function Obj1900053_OnEnter(...)\nprint(\"tu di batcheiv\")\n\n    --Enable(316368)\n    --ShowObject(316368)\n    --StartCinematicObject(316368)\n    --Wait(5000)\n\n    StartFadeOut(2000)\n    Wait(2000)\n    \n    Disable(1900053)\n    Enable(316364)\n    \n    RequireLoadLevel('STR_FPS_LEVEL_BATCAVE')\n    Disable()\nend\n"
+ },
+ {
+  "objId": 315278,
+  "script": "function Obj315278_OnEnter(...)\nm_challenge_started = 0\nm_challenge_ended = 1\n\nDisableHideObject(315279)\n\nObjectiveAdd(315270, \"sideObjective\")\n\nObjectiveRemove(315278)\nEnable(900051)\n\nEnable(315281)\n--ShowObjectiveMessage(\"STR_MISSION_NAVIGATION_OBJECTIVE\", -1, 5000)\nWait(5000)\n\nShowMessage(\"STR_SAVE_LUCIUS_21\", FACE_BATMAN, 6000)\n\nend\n"
+ },
+ {
+  "objId": 900607,
+  "script": "function Obj900607_OnEnter(...)\nObjectiveRemove(900605)\nHideObject(900605)\n\n--ObjectiveAdd(900746, \"objective\")\n--Enable(900606)\n--ShowObject(900606)\n\nStartSound(\"sfx_fly_tutorial_ring\", false, 200)\n\n--SetRotateControlEnable(false)\n\n--b_pos = {ObjectGetPosition(900606)}\n--CameraLookAt(b_pos[1], b_pos[2], b_pos[3], 1000)\n--ActorLookTo(0, 900606, 1000)\nWait(1000)\n\n--SetRotateControlEnable(true)\n\nEnable(900608) --NEXT TRIGGER\nend\n"
+ },
+ {
+  "objId": 900747,
+  "script": "function Obj900747_OnEnter(...)\nObjectiveRemove(900746)\nHideObject(900746)\n\n--ObjectiveAdd(900606, \"objective\")\nEnable(900744)\n\n--ShowObject(900744)\n\nStartSound(\"sfx_fly_tutorial_ring\", false, 200)\n\n--SetRotateControlEnable(false)\n\n--b_pos = {ObjectGetPosition(900606)}\n--CameraLookAt(b_pos[1], b_pos[2], b_pos[3], 1000)\n--ActorLookTo(0, 900606, 1000)\n--Wait(1000)\n\n--SetRotateControlEnable(true)\n\nEnable(900608) --NEXT TRIGGER\nend\n"
+ },
+ {
+  "objId": 900069,
+  "script": "function Obj900069_OnEnter(...)\nframes_past = 0\nend\nfunction Obj900069_WhileIn(...)\nif frames_past == 20 then\n    ShowMessage('STR_SAVE_LUCIUS_SPOTTED_1', FACE_BATMAN, 3000)\nelseif frames_past == 160 then\n    --ShowMessage('STR_SAVE_LUCIUS_SPOTTED_2', FACE_BATMAN, 3000)\n        --elseif frames_past == 260 then\n        --    Disable()\n            SetQuestFailed(25)\nend\nframes_past = frames_past + 1\n\n\nend\nfunction Obj900069_OnExit(...)\nEnable(900069)\nWait(1000)\n--ShowMessage('STR_SAVE_LUCIUS_SPOTTED_3', FACE_BATMAN, 3000)\n\nend\n"
+ },
+ {
+  "objId": 900795,
+  "script": "function Obj900795_OnEnter(...)\nif not ActorIsInStateType(0, STATE_TYPE_SPECIAL) then\n\n    print'********************************************************BATMAN SPOTTED RELOAD PHASE'\n    Disable(900615)\n    SetMoveControlEnable(false)\n    ActorLookTo(b_enemy1, 0, 500)\n    ShowMessage(\"STR_TUTORIAL_LORE_13\", FACE_MERCENARY2, 3500)\n    Wait(1500)\n    --StartFadeOut(2000)\n    Wait(2000)\n    MissionFailedAutoReload()\n    SetMoveControlEnable(true)\n    --StartFadeIn(1000)\n\nelse\n    print'BATMAN HAS TAKEN THE SNIPER OUT***********    **************    *************   ******'\nend\nend\n"
+ },
+ {
+  "objId": 900063,
+  "script": "function Obj900063_OnEnter(...)\n--Enable(900028)\n\n--Enable(315278) -- MIHAI, Flying\n--ObjectiveAdd(315278, \"follow\")\n--ShowMessage(\"STR_SAVE_LUCIUS_19\", FACE_BATMAN, 3500)\n--Wait(3500)\nend\n"
+ },
+ {
+  "objId": 316728,
+  "script": "function Obj316728_OnEnter(...)\nDisable(316729)\nHideObject(316729)\nRemoveGenericObjectFromMap(316729)\nStartSound(\"sfx_fly_tutorial_ring\", false, 0)\n\nb_tables_objective_placed = true\nb_missionstart = true\n\n\nWait(1)\nm_can_init_decryption_part_five = 1\nend\n"
+ },
+ {
+  "objId": 900103,
+  "script": "function Obj900103_OnEnter(...)\n--StartPipeGame(\"win\",\"lose\",\"0122111020220000\",4,1000,2000,1,2)\n\n--Enable(900028)\n\n--Enable(900051)\n\n--Enable(315278) -- MIHAI, Flying\n--ObjectiveAdd(315278, \"follow\")\n--ShowMessage(\"STR_SAVE_LUCIUS_19\", FACE_BATMAN, 3500)\n--Wait(3500)\nend\n"
+ },
+ {
+  "objId": 316685,
+  "script": "function Obj316685_OnEnter(...)\n--fz_sandbox_disable_all()\nStopSideMissionManager()\nEnableHotSpotManager(false)\n\nNextMission(412954)\nWait(2000)\n--SetQuestEnabled(818)\n\nDisable(316686)\nHideObject(316686)\n\n\n\nRemoveGenericObjectFromMap(316686)\nStartSound(\"sfx_fly_tutorial_ring\", false, 0)\n\nWait(1)\nm_can_spawn_bombs_bridge = 1\n\n\nend\n"
+ }
+]
