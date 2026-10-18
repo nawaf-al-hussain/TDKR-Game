@@ -1,0 +1,49 @@
+{
+ "BatCave.lvc": {
+  "nrec": 92,
+  "nstrings": 60
+ },
+ "GothamCity.lvc": {
+  "nrec": 14313,
+  "nstrings": 1617
+ },
+ "GothamCity_Island2.lvc": {
+  "nrec": 7474,
+  "nstrings": 611
+ },
+ "Military.lvc": {
+  "nrec": 773,
+  "nstrings": 245
+ },
+ "Police_Station.lvc": {
+  "nrec": 653,
+  "nstrings": 287
+ },
+ "Stadion.lvc": {
+  "nrec": 274,
+  "nstrings": 142
+ },
+ "StockExchange.lvc": {
+  "nrec": 2023,
+  "nstrings": 248
+ },
+ "Test.lvc": {
+  "error": "unpack_from requires a buffer of at least 4 bytes for unpacking 4 bytes at offset 0 (actual buffer s"
+ },
+ "ThePit.lvc": {
+  "nrec": 700,
+  "nstrings": 291
+ },
+ "Underground.lvc": {
+  "nrec": 2653,
+  "nstrings": 327
+ },
+ "l_menu.lvc": {
+  "nrec": 31,
+  "nstrings": 31
+ },
+ "shop.lvc": {
+  "nrec": 354,
+  "nstrings": 484
+ }
+}
