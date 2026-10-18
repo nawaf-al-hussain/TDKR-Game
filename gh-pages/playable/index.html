@@ -149,16 +149,18 @@ const keys = {};
 addEventListener('keydown', e => keys[e.key.toLowerCase()] = true);
 addEventListener('keyup', e => keys[e.key.toLowerCase()] = false);
 
-// triggers — T4 model: volume = B * scale, B = 1.5 m (ASSUMED template base)
-const B = 1.5;
+// triggers — r26 T2: DATA-DETERMINED volumes from the engine (CTriggerShapeAABB):
+// half-extents = 0.5 * BuiltinBox.size * ownerScale (BuiltinBox::Load = 3 f32
+// sizes in the level data; 64-B OBB template = identity 4x4 from init@0x74eb30).
+// patch.json triggers carry t.half = [hx, hy, hz] (0.5*scale; size p50 = 1 m).
 const fired = new Set(); let hitCount = 0;
 function checkTriggers() {
   for (const t of patch.triggers) {
     if (!t.has_script || fired.has(t.id)) continue;
-    const s = Math.max(t.scale[0], 0.2), sz = Math.max(t.scale[2], 0.2);
+    const h = t.half || [0.75, 0.75, 0.75];   // fallback = r25 assumed B=1.5
     const dh = Math.hypot(P.x - t.pos[0], P.y - t.pos[1]);
     const dz = Math.abs(P.z - 0.9 - t.pos[2]);
-    if (dh < B * s && dz < B * sz) {
+    if (dh < Math.hypot(h[0], h[1]) * 0.85 && dz < h[2] + 1.0) {
       fired.add(t.id); hitCount++;
       document.getElementById('hits').textContent = hitCount;
       log('ENTER trigger ' + t.id + ' (' + t.fn + ') dist ' + dh.toFixed(2) + ' m');
