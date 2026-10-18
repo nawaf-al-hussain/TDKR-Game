@@ -1,0 +1,191 @@
+[
+ {
+  "fn": "Obj800644_OnEnter",
+  "obj": 800644,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "HideOccluder",
+    800407
+   ],
+   [
+    "HideOccluder",
+    500593
+   ]
+  ],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj800645_OnEnter",
+  "obj": 800645,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "HideOccluder",
+    800531
+   ],
+   [
+    "HideOccluder",
+    800198
+   ]
+  ],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj703332_OnEnter",
+  "obj": 703332,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "SetQuestEnabled",
+    113
+   ]
+  ],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj401879_OnEnter",
+  "obj": 401879,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "RemoveGenericObjectFromMap",
+    402172
+   ],
+   [
+    "StartSound",
+    "sfx_fly_tutorial_ring",
+    false,
+    0
+   ],
+   [
+    "ObjectiveRemove",
+    401878
+   ],
+   [
+    "HideObject",
+    401878
+   ],
+   [
+    "Disable"
+   ]
+  ],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj401410_OnEnter",
+  "obj": 401410,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "Enable",
+    401108
+   ],
+   [
+    "SetQuestEnabled",
+    904
+   ],
+   [
+    "Disable"
+   ]
+  ],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj502631_OnEnter",
+  "obj": 502631,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "StartFadeOut",
+    500
+   ],
+   [
+    "Wait",
+    750
+   ],
+   [
+    "TeleportPlayerToZone",
+    502632
+   ],
+   [
+    "StartFadeIn",
+    500
+   ]
+  ],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj502633_OnEnter",
+  "obj": 502633,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "StartFadeOut",
+    500
+   ],
+   [
+    "Wait",
+    750
+   ],
+   [
+    "TeleportPlayerToZone",
+    502634
+   ],
+   [
+    "StartFadeIn",
+    500
+   ]
+  ],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj502505_OnEnter",
+  "obj": 502505,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "Disable",
+    800532
+   ],
+   [
+    "EnableRain",
+    false
+   ]
+  ],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj80001_OnEnter",
+  "obj": 80001,
+  "outcome": "completes",
+  "err": null,
+  "calls": [],
+  "resumes": 0
+ },
+ {
+  "fn": "Obj316204_OnEnter",
+  "obj": 316204,
+  "outcome": "completes",
+  "err": null,
+  "calls": [
+   [
+    "Enable",
+    316197
+   ],
+   [
+    "Enable",
+    316202
+   ]
+  ],
+  "resumes": 0
+ }
+]
