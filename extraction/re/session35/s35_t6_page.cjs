@@ -1,0 +1,246 @@
+// S35 T6: first playable page generator (clean).
+'use strict';
+const fs = require('fs');
+const path = require('path');
+const OUT = '/tmp/my-project/work/TDKR-Game/gh-pages/playable';
+fs.mkdirSync(OUT, { recursive: true });
+fs.copyFileSync('/home/z/my-project/download/batman_s35_anims.glb', path.join(OUT, 'batman.glb'));
+fs.copyFileSync('/home/z/my-project/scripts/jsverify/node_modules/fengari-web/dist/fengari-web.js',
+  path.join(OUT, 'fengari-web.js'));
+const patch = JSON.parse(fs.readFileSync('/home/z/my-project/scripts/s35_t6_patch.json', 'utf8'));
+fs.writeFileSync(path.join(OUT, 'patch.json'), JSON.stringify(patch));
+
+const PAGE = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TDKR first playable — walk as Batman (r25 T6)</title>
+<style>
+ html,body{margin:0;height:100%;background:#0a0d12;color:#cfd6e0;font:12px/1.4 monospace;overflow:hidden}
+ #log{position:fixed;left:10px;top:10px;width:430px;max-height:72vh;overflow:auto;background:#11151ccc;
+      border:1px solid #232a35;padding:8px;border-radius:6px;white-space:pre-wrap;z-index:5}
+ #hud{position:fixed;right:10px;top:10px;text-align:right;z-index:5;color:#7d8794}
+</style></head><body>
+<div id="log">T6 first playable — WASD/arrows to walk, Shift = run.<br>Triggers fire Lua via fengari.</div>
+<div id="hud">FPS: <span id="fps">-</span><br>pos <span id="pos">-</span><br>
+speed <span id="spd">0</span> m/s<br>triggers hit <span id="hits">0</span></div>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+"three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</` + `script>
+<script src="./fengari-web.js"></` + `script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const LOG = document.getElementById('log');
+function log(s){ const d=document.createElement('div'); d.textContent=s; LOG.appendChild(d); LOG.scrollTop=LOG.scrollHeight; }
+
+const patch = await (await fetch('./patch.json')).json();
+log('collision patch: ' + patch.tris.n + ' tris; triggers: ' + patch.triggers.length +
+    ' (' + patch.triggers.filter(t=>t.has_script).length + ' with scripts)');
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0a0d12);
+scene.fog = new THREE.Fog(0x0a0d12, 60, 220);
+const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 800);
+scene.add(new THREE.HemisphereLight(0x8899bb, 0x223322, 1.1));
+const sun = new THREE.DirectionalLight(0xffeecc, 1.2); sun.position.set(60, 120, 40); scene.add(sun);
+
+// collision patch
+{
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(patch.tris.flat, 3));
+  g.computeVertexNormals();
+  scene.add(new THREE.Mesh(g, new THREE.MeshLambertMaterial({ color: 0x35404d, side: THREE.DoubleSide })));
+}
+// trigger markers
+for (const t of patch.triggers) {
+  const ring = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 0.05, 16),
+    new THREE.MeshBasicMaterial({ color: t.has_script ? 0xe8b34b : 0x445566, transparent: true, opacity: 0.6 }));
+  ring.position.set(t.pos[0], t.pos[2] + 0.03, -t.pos[1]);
+  scene.add(ring);
+}
+
+// collision lookup (game coords x east / y north / z up)
+const G = 8.0, flat = patch.tris.flat, NT = patch.tris.n;
+const grid = new Map();
+for (let i = 0; i < NT; i++) {
+  const ax=flat[i*9], ay=flat[i*9+1], bx=flat[i*9+3], by=flat[i*9+4], cx=flat[i*9+6], cy=flat[i*9+7];
+  const area2 = (bx-ax)*(cy-ay)-(by-ay)*(cx-ax);
+  if (Math.abs(area2) < 1e-6) continue;
+  for (let gx=Math.floor(Math.min(ax,bx,cx)/G); gx<=Math.floor(Math.max(ax,bx,cx)/G); gx++)
+    for (let gy=Math.floor(Math.min(ay,by,cy)/G); gy<=Math.floor(Math.max(ay,by,cy)/G); gy++) {
+      const k = gx+':'+gy;
+      if (!grid.has(k)) grid.set(k, []);
+      grid.get(k).push(i);
+    }
+}
+function groundAt(x, y, zref, up=1.2) {
+  const gx=Math.floor(x/G), gy=Math.floor(y/G);
+  let best=-1e9;
+  for (let dx=-1;dx<=1;dx++) for (let dy=-1;dy<=1;dy++) {
+    const cell=grid.get((gx+dx)+':'+(gy+dy)); if(!cell) continue;
+    for (const i of cell) {
+      const ax=flat[i*9],ay=flat[i*9+1],az=flat[i*9+2];
+      const bx=flat[i*9+3],by=flat[i*9+4],bz=flat[i*9+5];
+      const cx=flat[i*9+6],cy=flat[i*9+7],cz=flat[i*9+8];
+      const det=(by-cy)*(ax-cx)+(cx-bx)*(ay-cy);
+      if(Math.abs(det)<1e-9) continue;
+      const l1=((by-cy)*(x-cx)+(cx-bx)*(y-cy))/det;
+      const l2=((cy-ay)*(x-cx)+(ax-cx)*(y-cy))/det;
+      const l3=1-l1-l2;
+      if(l1>=-0.02&&l2>=-0.02&&l3>=-0.02){
+        const z=l1*az+l2*bz+l3*cz;
+        if(z<=zref+up&&z>best)best=z;
+      }
+    }
+  }
+  return best;
+}
+
+// fengari Lua with logging stubs (stubs push on Ls — r25 T5 fix)
+const lua = fengari.lua, lauxlib = fengari.lauxlib, lualib = fengari.lualib;
+const to_luastring = fengari.to_luastring, to_jsstring = fengari.to_jsstring;
+function mkLua(luaLog) {
+  const L = lauxlib.luaL_newstate();
+  lualib.luaL_openlibs(L);
+  const stub = (name, fn) => {
+    lua.lua_pushcfunction(L, function(Ls) {
+      const n = lua.lua_gettop(Ls); const args = [];
+      for (let i = 1; i <= n; i++) {
+        const t = lua.lua_type(Ls, i);
+        if (t === lua.LUA_TNUMBER) args.push(+lua.lua_tonumber(Ls, i).toFixed(2));
+        else if (t === lua.LUA_TSTRING) args.push(to_jsstring(lua.lua_tolstring(Ls, i)));
+        else if (t === lua.LUA_TBOOLEAN) args.push(!!lua.lua_toboolean(Ls, i));
+      }
+      luaLog.push(name + '(' + args.join(', ') + ')');
+      if (fn) return fn(Ls, args);
+      return 0;
+    });
+    lua.lua_setglobal(L, to_luastring(name));
+  };
+  stub('Wait', (Ls) => lua.lua_yield(Ls, 0));
+  for (const nm of ['StartFadeOut','StartFadeIn','RequireLoadLevel','Enable','Disable',
+    'ShowObject','HideObject','ShowMessage','ObjectiveAdd','ObjectiveRemove',
+    'ShowObjectiveMessage','ClearObjectiveMessage','StartSound','ActorSetState',
+    'ActorLookTo','SetActorSpeedWalk','KillActor','GiveDamage','StartMainStoryFromQuestId',
+    'NextMission','SetQuestEnabled','SaveGame','MissionFailed']) stub(nm);
+  stub('GetTime', (Ls) => { lua.lua_pushnumber(Ls, performance.now()); return 1; });
+  stub('ActorIsInStateType', (Ls) => { lua.lua_pushboolean(Ls, true); return 1; });
+  stub('IsDead', (Ls) => { lua.lua_pushboolean(Ls, false); return 1; });
+  stub('GetDistFromMC', (Ls) => { lua.lua_pushnumber(Ls, 12.5); return 1; });
+  stub('Random', (Ls) => { lua.lua_pushnumber(Ls, 1); return 1; });
+  stub('IsEnabled', (Ls) => { lua.lua_pushboolean(Ls, true); return 1; });
+  stub('IsCopAIEnabled', (Ls) => { lua.lua_pushboolean(Ls, false); return 1; });
+  stub('IsLowEndDevice', (Ls) => { lua.lua_pushboolean(Ls, false); return 1; });
+  stub('GetGlobalVar', (Ls) => { lua.lua_pushnumber(Ls, 0); return 1; });
+  stub('print', (Ls, n) => 0);
+  return L;
+}
+
+// batman
+let mixer = null; const actions = {}; let batman = null;
+new GLTFLoader().load('./batman.glb', (g) => {
+  batman = g.scene; scene.add(batman);
+  mixer = new THREE.AnimationMixer(batman);
+  for (const c of g.animations) actions[c.name] = mixer.clipAction(c);
+  const idle = actions['_001_idle_stand'], run = actions['_008_run'];
+  if (idle) { idle.play(); }
+  if (run) { run.play(); }
+  if (idle && run) { idle.setEffectiveWeight(1); run.setEffectiveWeight(0); }
+  log('batman.glb: ' + g.animations.map(a => a.name + ' ' + a.duration.toFixed(2) + 's').join(', '));
+}, undefined, (e) => log('GLB ERROR: ' + e));
+
+// player (game coords)
+const spawn = patch.spawns[0] ? patch.spawns[0].pos : [-140.7, -681.2, 0.1];
+const P = { x: spawn[0], y: spawn[1], z: spawn[2] + 0.9, speed: 0 };
+const keys = {};
+addEventListener('keydown', e => keys[e.key.toLowerCase()] = true);
+addEventListener('keyup', e => keys[e.key.toLowerCase()] = false);
+
+// triggers — T4 model: volume = B * scale, B = 1.5 m (ASSUMED template base)
+const B = 1.5;
+const fired = new Set(); let hitCount = 0;
+function checkTriggers() {
+  for (const t of patch.triggers) {
+    if (!t.has_script || fired.has(t.id)) continue;
+    const s = Math.max(t.scale[0], 0.2), sz = Math.max(t.scale[2], 0.2);
+    const dh = Math.hypot(P.x - t.pos[0], P.y - t.pos[1]);
+    const dz = Math.abs(P.z - 0.9 - t.pos[2]);
+    if (dh < B * s && dz < B * sz) {
+      fired.add(t.id); hitCount++;
+      document.getElementById('hits').textContent = hitCount;
+      log('ENTER trigger ' + t.id + ' (' + t.fn + ') dist ' + dh.toFixed(2) + ' m');
+      const luaLog = [];
+      const L = mkLua(luaLog);
+      const co = lua.lua_newthread(L);
+      if (lauxlib.luaL_dostring(co, to_luastring(t.script)) === lua.LUA_OK) {
+        lua.lua_getglobal(co, to_luastring(t.fn));
+        if (lua.lua_isfunction(co, -1)) {
+          lua.lua_pushlightuserdata(co, null);
+          let res = lua.lua_resume(co, L, 1), n = 0;
+          while (res === lua.LUA_YIELD && n < 32) { n++; res = lua.lua_resume(co, L, 0); }
+        } else log('  (handler not found: ' + t.fn + ')');
+        for (const line of luaLog) log('  lua: ' + line);
+      } else {
+        const e = lua.lua_tostring(co, -1);
+        log('  lua load error: ' + (e ? to_jsstring(e) : '?'));
+      }
+    }
+  }
+}
+
+let last = performance.now(), fpsAcc = 0, fpsN = 0;
+function tick(now) {
+  requestAnimationFrame(tick);
+  const dt = Math.min(0.05, (now - last) / 1000); last = now;
+  fpsAcc += 1/dt; fpsN++;
+  if (fpsN >= 30) { document.getElementById('fps').textContent = (fpsAcc/fpsN).toFixed(0); fpsAcc=0; fpsN=0; }
+
+  let vx = 0, vy = 0;
+  if (keys['w'] || keys['arrowup']) vy += 1;
+  if (keys['s'] || keys['arrowdown']) vy -= 1;
+  if (keys['a'] || keys['arrowleft']) vx -= 1;
+  if (keys['d'] || keys['arrowright']) vx += 1;
+  const running = !!(keys['shift']);
+  const target = (vx || vy) ? (running ? 5.2 : 1.6) : 0;
+  P.speed += (target - P.speed) * Math.min(1, dt * 8);
+
+  if (vx || vy) {
+    const L2 = Math.hypot(vx, vy); vx /= L2; vy /= L2;
+    const sp = P.speed * dt;
+    const nx = P.x + vx * sp, ny = P.y + vy * sp;
+    const gz = groundAt(nx, ny, P.z, 0.85);
+    if (gz > -1e8 && gz - (P.z - 0.9) < 0.85) { P.x = nx; P.y = ny; P.z = gz + 0.9; }
+  }
+  checkTriggers();
+
+  if (batman) {
+    batman.position.set(P.x, P.z - 0.9, -P.y);
+    if (vx || vy) batman.rotation.y = Math.atan2(-vx, -vy) + Math.PI;
+    if (mixer) {
+      const idle = actions['_001_idle_stand'], run = actions['_008_run'];
+      if (idle && run) {
+        const w = Math.min(1, Math.max(0, (P.speed - 0.2) / 2.0));
+        idle.setEffectiveWeight(1 - w); run.setEffectiveWeight(w);
+      }
+      mixer.update(dt);
+    }
+  }
+  camera.position.set(P.x, P.z + 3.2, -P.y + 6.5);
+  camera.lookAt(P.x, P.z - 0.4, -P.y);
+  document.getElementById('pos').textContent = P.x.toFixed(1) + ', ' + P.y.toFixed(1) + ', ' + P.z.toFixed(1);
+  document.getElementById('spd').textContent = P.speed.toFixed(1);
+  renderer.render(scene, camera);
+}
+requestAnimationFrame(tick);
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+</` + `script></body></html>`;
+fs.writeFileSync(path.join(OUT, 'index.html'), PAGE);
+console.log('wrote', OUT, fs.readdirSync(OUT).map(f => f + ':' + fs.statSync(path.join(OUT, f)).size).join(' '));
