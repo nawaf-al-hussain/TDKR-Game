@@ -1,0 +1,122 @@
+{
+ "sites_with_threshold": 230,
+ "threshold_pcts": [
+  5.0,
+  7.0,
+  20.0,
+  50.0,
+  400.0
+ ],
+ "unique_thresholds": [
+  2.0,
+  3.0,
+  4.0,
+  5.0,
+  6.0,
+  7.0,
+  10.0,
+  12.0,
+  13.0,
+  15.0,
+  20.0,
+  25.0,
+  30.0,
+  35.0,
+  40.0,
+  50.0,
+  60.0,
+  70.0,
+  80.0,
+  82.0,
+  85.0,
+  100.0,
+  150.0,
+  160.0,
+  225.0,
+  400.0,
+  500.0,
+  700.0
+ ],
+ "trig_rxy_p50": 0.71,
+ "trig_rxy_p90": 42.28,
+ "trig_hz_p50": 0.5,
+ "samples": [
+  {
+   "rel": "<",
+   "thr": 30.0,
+   "ctx": "    if ActorIsAttacked(0) and GetDistFromMC(CurrentActor) < 30 then\n    "
+  },
+  {
+   "rel": ">",
+   "thr": 400.0,
+   "ctx": ".2, 150, 500, 150)\n    elseif GetDistFromMC(EnemyID) > 400 then \n   "
+  },
+  {
+   "rel": ">",
+   "thr": 400.0,
+   "ctx": ".2, 150, 500, 150)\n    elseif GetDistFromMC(EnemyID) > 400 then \n   "
+  },
+  {
+   "rel": ">",
+   "thr": 400.0,
+   "ctx": ".2, 150, 500, 150)\n    elseif GetDistFromMC(EnemyID) > 400 then \n   "
+  },
+  {
+   "rel": ">",
+   "thr": 400.0,
+   "ctx": ".2, 150, 500, 150)\n    elseif GetDistFromMC(EnemyID) > 400 then \n   "
+  },
+  {
+   "rel": ">",
+   "thr": 400.0,
+   "ctx": ".2, 150, 500, 150)\n    elseif GetDistFromMC(EnemyID) > 400 then \n   "
+  },
+  {
+   "rel": ">",
+   "thr": 400.0,
+   "ctx": ".2, 150, 500, 150)\n    elseif GetDistFromMC(EnemyID) > 400 then \n   "
+  },
+  {
+   "rel": ">",
+   "thr": 400.0,
+   "ctx": ".2, 150, 500, 150)\n    elseif GetDistFromMC(EnemyID) > 400 then \n   "
+  },
+  {
+   "rel": "<=",
+   "thr": 225.0,
+   "ctx": "e == 1 then \n    --        if GetDistFromMC(CurrentActor) <= 225 and Rnd <"
+  },
+  {
+   "rel": "<=",
+   "thr": 225.0,
+   "ctx": "00, 150)\n    --        elseif GetDistFromMC(CurrentActor) <= 225 and Rnd >"
+  },
+  {
+   "rel": "<=",
+   "thr": 225.0,
+   "ctx": " >= 1 then\n    --    --    if GetDistFromMC(CurrentActor) <= 225 and Rnd <"
+  },
+  {
+   "rel": "<=",
+   "thr": 225.0,
+   "ctx": ", 150)\n    --    --    elseif GetDistFromMC(CurrentActor) <= 225 and Rnd >"
+  }
+ ],
+ "s38_rerun_verbatim": {
+  "n_real_pairs": 19,
+  "real_inside_rate": 0.2857142857142857,
+  "null_inside_rate": 0.0,
+  "real_dn_median": 6.603999999999928,
+  "null_dn_median": 372.30873809523814,
+  "rank_median": 0.024390243902439025,
+  "n_pairs_S": 13,
+  "n_pairs_L": 1
+ },
+ "enum_status": {
+  "walk_dump": "truncated s26_eng dump repaired: 14,000 records GothamCity (of ~14,917)",
+  "id_space_mismatch": "walk ids = load-order 1..14000; script callee ids = game object ids; overlap 0",
+  "positions": "not captured by the s26 walk summary; rerun with TObjectData TRS capture required",
+  "verdict": "LNObject enumeration NOT achieved this session; per-object test stays n=14-19",
+  "volume_model": "unvalidated, engine-derived only (per-object link still open)"
+ }
+}
