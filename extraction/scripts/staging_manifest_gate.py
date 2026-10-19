@@ -20,7 +20,9 @@ Exit 0 = PASS, 1 = FAIL (differences printed).
 """
 import argparse
 import json
+import os
 import subprocess
+REPO_ROOT = subprocess.run(['git', '-C', os.path.dirname(os.path.abspath(__file__)), 'rev-parse', '--show-toplevel'], capture_output=True, text=True)
 import sys
 
 AUX = {
@@ -38,7 +40,7 @@ def is_aux(path):
     return path in AUX or any(p in path for p in AUX_PATTERNS)
 
 
-REPO = "/home/z/my-project/repo"
+REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir))
 
 
 def gh_tree(remote):
