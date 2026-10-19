@@ -1,0 +1,1415 @@
+{
+ "gh_pages": [
+  {
+   "path": ".nojekyll",
+   "bytes": 0
+  },
+  {
+   "path": "app.js",
+   "bytes": 36642
+  },
+  {
+   "path": "index.html",
+   "bytes": 4491
+  },
+  {
+   "path": "models/GC_Bigbridge.glb",
+   "bytes": 41728
+  },
+  {
+   "path": "models/GC_Bigbridge_1_islands_LongDist.glb",
+   "bytes": 99896
+  },
+  {
+   "path": "models/GC_Bigbridge_2_islands_LongDist.glb",
+   "bytes": 83068
+  },
+  {
+   "path": "models/GC_Bigbridge_3_LongDist.glb",
+   "bytes": 97780
+  },
+  {
+   "path": "models/GC_Bigbridge_LongDist.glb",
+   "bytes": 202772
+  },
+  {
+   "path": "models/GC_Broken_BigBridge.glb",
+   "bytes": 23428
+  },
+  {
+   "path": "models/GC_Broken_BigBridge_LongDist.glb",
+   "bytes": 192112
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP1.glb",
+   "bytes": 580592
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP2.glb",
+   "bytes": 411112
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP3.glb",
+   "bytes": 573696
+  },
+  {
+   "path": "models/GC_LongDist_Island1_Roads.glb",
+   "bytes": 654040
+  },
+  {
+   "path": "models/GC_Monorail_Island1_LongDist.glb",
+   "bytes": 127340
+  },
+  {
+   "path": "models/GC_Monorail_Island2_LongDist.glb",
+   "bytes": 218672
+  },
+  {
+   "path": "models/GC_Railway_Island2_LongDist.glb",
+   "bytes": 42800
+  },
+  {
+   "path": "models/GC_Small_Bridge_Island2_LongDist.glb",
+   "bytes": 18540
+  },
+  {
+   "path": "models/GC_island1_LongDist.glb",
+   "bytes": 1744440
+  },
+  {
+   "path": "models/batarang.glb",
+   "bytes": 56744
+  },
+  {
+   "path": "models/city_low.glb",
+   "bytes": 1172664
+  },
+  {
+   "path": "models/district_00.glb",
+   "bytes": 985064
+  },
+  {
+   "path": "models/fp_island2.glb",
+   "bytes": 3761992
+  },
+  {
+   "path": "models/manifest.json",
+   "bytes": 62718
+  },
+  {
+   "path": "models/street_island1_00.glb",
+   "bytes": 153284
+  },
+  {
+   "path": "models/street_island1_01.glb",
+   "bytes": 3616032
+  },
+  {
+   "path": "models/street_island1_02.glb",
+   "bytes": 4945364
+  },
+  {
+   "path": "models/street_island1_03.glb",
+   "bytes": 981972
+  },
+  {
+   "path": "models/street_island1_04.glb",
+   "bytes": 5863260
+  },
+  {
+   "path": "models/street_island1_05.glb",
+   "bytes": 5812476
+  },
+  {
+   "path": "models/street_island1_06.glb",
+   "bytes": 470700
+  },
+  {
+   "path": "models/street_island1_07.glb",
+   "bytes": 4392572
+  },
+  {
+   "path": "models/street_island1_08.glb",
+   "bytes": 2628948
+  },
+  {
+   "path": "models/street_island2_00.glb",
+   "bytes": 106032
+  },
+  {
+   "path": "models/street_island2_01.glb",
+   "bytes": 1866692
+  },
+  {
+   "path": "models/street_island2_02.glb",
+   "bytes": 289748
+  },
+  {
+   "path": "models/street_island2_03.glb",
+   "bytes": 495700
+  },
+  {
+   "path": "models/street_island2_04.glb",
+   "bytes": 2657048
+  },
+  {
+   "path": "models/street_island2_05.glb",
+   "bytes": 2253476
+  },
+  {
+   "path": "models/street_island2_06.glb",
+   "bytes": 1475224
+  },
+  {
+   "path": "models/street_island2_07.glb",
+   "bytes": 4396948
+  },
+  {
+   "path": "models/street_island2_08.glb",
+   "bytes": 3025280
+  },
+  {
+   "path": "models/street_island2_09.glb",
+   "bytes": 725716
+  },
+  {
+   "path": "models/street_island2_10.glb",
+   "bytes": 5553496
+  },
+  {
+   "path": "models/street_island2_11.glb",
+   "bytes": 924228
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_A0.jpg",
+   "bytes": 1114011
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_B0.jpg",
+   "bytes": 1097796
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_Landmarks0.jpg",
+   "bytes": 935132
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_Roads0.jpg",
+   "bytes": 894504
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_A0.jpg",
+   "bytes": 1102176
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_B0.jpg",
+   "bytes": 816267
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_Landmarks0.jpg",
+   "bytes": 833197
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_Roads0.jpg",
+   "bytes": 735143
+  },
+  {
+   "path": "models/tex/City_BKG.jpg",
+   "bytes": 148273
+  },
+  {
+   "path": "models/tex/FX_Coronas.jpg",
+   "bytes": 113769
+  },
+  {
+   "path": "models/tex/GC_CBCE_Atlas.jpg",
+   "bytes": 1194374
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Brick.jpg",
+   "bytes": 65048
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Rooftop_ground.jpg",
+   "bytes": 90464
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Wall.jpg",
+   "bytes": 63078
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Windows2_v.jpg",
+   "bytes": 72722
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Windows_v.jpg",
+   "bytes": 71864
+  },
+  {
+   "path": "models/tex/GC_DMUS_table.jpg",
+   "bytes": 32188
+  },
+  {
+   "path": "models/tex/GC_DMUS_wall.jpg",
+   "bytes": 75158
+  },
+  {
+   "path": "models/tex/GC_Diner_Floor.jpg",
+   "bytes": 28796
+  },
+  {
+   "path": "models/tex/GC_Footprint_AWT.jpg",
+   "bytes": 833036
+  },
+  {
+   "path": "models/tex/GC_Footprint_AWT_rfl.jpg",
+   "bytes": 16606
+  },
+  {
+   "path": "models/tex/GC_Footprint_CC_windows02.jpg",
+   "bytes": 71513
+  },
+  {
+   "path": "models/tex/GC_Footprint_GA_TH.jpg",
+   "bytes": 943514
+  },
+  {
+   "path": "models/tex/GC_Footprint_GA_T_02.jpg",
+   "bytes": 81728
+  },
+  {
+   "path": "models/tex/GC_Footprint_GB_Tex01_TH.jpg",
+   "bytes": 227726
+  },
+  {
+   "path": "models/tex/GC_Footprint_GC_floor_T.jpg",
+   "bytes": 88189
+  },
+  {
+   "path": "models/tex/GC_Footprint_GC_stuff_T.jpg",
+   "bytes": 242555
+  },
+  {
+   "path": "models/tex/GC_Footprint_IC.jpg",
+   "bytes": 295944
+  },
+  {
+   "path": "models/tex/GC_Footprint_LB_Cinema.jpg",
+   "bytes": 230833
+  },
+  {
+   "path": "models/tex/GC_Footprint_LPOL_ConcreteTile.jpg",
+   "bytes": 95947
+  },
+  {
+   "path": "models/tex/GC_Footprint_LPOL_PropsAtlas.jpg",
+   "bytes": 218562
+  },
+  {
+   "path": "models/tex/GC_Footprint_STD_Net_T.jpg",
+   "bytes": 43150
+  },
+  {
+   "path": "models/tex/GC_Footprint_STD_alpha_T.jpg",
+   "bytes": 161982
+  },
+  {
+   "path": "models/tex/GC_Footprint_STD_stuff_TH.jpg",
+   "bytes": 777449
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings.jpg",
+   "bytes": 427260
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings_2.jpg",
+   "bytes": 443043
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings_3.jpg",
+   "bytes": 382901
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Fence.jpg",
+   "bytes": 25340
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Floor.jpg",
+   "bytes": 128843
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Floor_2.jpg",
+   "bytes": 97287
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Items.jpg",
+   "bytes": 1157101
+  },
+  {
+   "path": "models/tex/GC_Glass_Building.jpg",
+   "bytes": 75828
+  },
+  {
+   "path": "models/tex/GC_IndustrialProps.jpg",
+   "bytes": 104200
+  },
+  {
+   "path": "models/tex/GC_Island1_LongDist_Low.jpg",
+   "bytes": 816840
+  },
+  {
+   "path": "models/tex/GC_Island2_LongDist_low.jpg",
+   "bytes": 844468
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP1.jpg",
+   "bytes": 1057356
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP2.jpg",
+   "bytes": 905597
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP3.jpg",
+   "bytes": 805639
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_Roads.jpg",
+   "bytes": 780804
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP1.jpg",
+   "bytes": 805446
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP2.jpg",
+   "bytes": 704091
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP3.jpg",
+   "bytes": 815787
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_Roads.jpg",
+   "bytes": 665364
+  },
+  {
+   "path": "models/tex/GC_Park_atlas_props.jpg",
+   "bytes": 1049234
+  },
+  {
+   "path": "models/tex/GC_Park_atlas_tiles.jpg",
+   "bytes": 409442
+  },
+  {
+   "path": "models/tex/GC_Park_dirt.jpg",
+   "bytes": 107747
+  },
+  {
+   "path": "models/tex/GC_Park_grass.jpg",
+   "bytes": 126158
+  },
+  {
+   "path": "models/tex/GC_Park_statue.jpg",
+   "bytes": 57778
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_01_Door_01.jpg",
+   "bytes": 72358
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_01_Roof_01.jpg",
+   "bytes": 120561
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_01_Windows_04.jpg",
+   "bytes": 19418
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_02_Shop.jpg",
+   "bytes": 73519
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_details_01.jpg",
+   "bytes": 1124859
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_roof_01.jpg",
+   "bytes": 94069
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_roof_02.jpg",
+   "bytes": 44114
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_wall_04.jpg",
+   "bytes": 65940
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_wall_06.jpg",
+   "bytes": 99590
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_04_Roof_02.jpg",
+   "bytes": 18855
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_04_Wall_02.jpg",
+   "bytes": 62178
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_04_Windows_05_v.jpg",
+   "bytes": 91357
+  },
+  {
+   "path": "models/tex/GC_Residential_Dinner_objects.jpg",
+   "bytes": 1250232
+  },
+  {
+   "path": "models/tex/GC_Residential_Props_Excavator.jpg",
+   "bytes": 47728
+  },
+  {
+   "path": "models/tex/GC_Residential_Props_Locomotive.jpg",
+   "bytes": 30348
+  },
+  {
+   "path": "models/tex/GC_Residential_Props_Monorail.jpg",
+   "bytes": 183196
+  },
+  {
+   "path": "models/tex/GC_Residential_Props_Railroad.jpg",
+   "bytes": 171394
+  },
+  {
+   "path": "models/tex/GC_SXC_Atlas.jpg",
+   "bytes": 309530
+  },
+  {
+   "path": "models/tex/GC_SXC_Atlas2.jpg",
+   "bytes": 213021
+  },
+  {
+   "path": "models/tex/GC_SXC_Brick_02.jpg",
+   "bytes": 68229
+  },
+  {
+   "path": "models/tex/GC_SXC_Rooftop_ground.jpg",
+   "bytes": 99855
+  },
+  {
+   "path": "models/tex/GC_SXC_ground_tile.jpg",
+   "bytes": 101465
+  },
+  {
+   "path": "models/tex/GC_SXC_hedge.jpg",
+   "bytes": 94934
+  },
+  {
+   "path": "models/tex/GC_Shop_Reflections.jpg",
+   "bytes": 35284
+  },
+  {
+   "path": "models/tex/GC_Statues_Atlas.jpg",
+   "bytes": 193649
+  },
+  {
+   "path": "models/tex/GC_T_Concrete_01.jpg",
+   "bytes": 105439
+  },
+  {
+   "path": "models/tex/GC_T_Concrete_02.jpg",
+   "bytes": 118507
+  },
+  {
+   "path": "models/tex/GC_T_Windows_03.jpg",
+   "bytes": 59038
+  },
+  {
+   "path": "models/tex/GC_T_Windows_03_Refl.jpg",
+   "bytes": 16265
+  },
+  {
+   "path": "models/tex/GC_Truck_01.jpg",
+   "bytes": 104528
+  },
+  {
+   "path": "models/tex/GC_Truck_wheels_01.jpg",
+   "bytes": 5605
+  },
+  {
+   "path": "models/tex/GC_VRS_Reservoir.jpg",
+   "bytes": 1376437
+  },
+  {
+   "path": "models/tex/GC_VerticalFOG.png",
+   "bytes": 232230
+  },
+  {
+   "path": "models/tex/GC_Walls.jpg",
+   "bytes": 1255255
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Rooftop.jpg",
+   "bytes": 995575
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Rooftop_Alpha.jpg",
+   "bytes": 2175214
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Street.jpg",
+   "bytes": 646230
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Street_Alpha.jpg",
+   "bytes": 2124787
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_01.jpg",
+   "bytes": 973603
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_01_Refl.jpg",
+   "bytes": 17570
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_02.jpg",
+   "bytes": 900240
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_02_Refl.jpg",
+   "bytes": 23463
+  },
+  {
+   "path": "models/tex/GC_footprint_AA_ground.jpg",
+   "bytes": 107072
+  },
+  {
+   "path": "models/tex/GC_footprint_AB_atlas.jpg",
+   "bytes": 1075212
+  },
+  {
+   "path": "models/tex/GC_footprint_GC_ceiling_T.jpg",
+   "bytes": 9586
+  },
+  {
+   "path": "models/tex/GC_footprint_Vpow_furnal.jpg",
+   "bytes": 311218
+  },
+  {
+   "path": "models/tex/GC_footprint_aa_concrete.jpg",
+   "bytes": 73983
+  },
+  {
+   "path": "models/tex/GC_footprint_awt_marble.jpg",
+   "bytes": 108025
+  },
+  {
+   "path": "models/tex/GC_refl_exterior.jpg",
+   "bytes": 38454
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Crossings_Island_1.jpg",
+   "bytes": 1044727
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Crossings_Island_2.jpg",
+   "bytes": 1044827
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Island_2.jpg",
+   "bytes": 1343138
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v1_Island_1.jpg",
+   "bytes": 1046286
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v2_Island_1.jpg",
+   "bytes": 1041461
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v2_Island_2.jpg",
+   "bytes": 1153942
+  },
+  {
+   "path": "models/tex/GothamCity_asphalt_tile.jpg",
+   "bytes": 26888
+  },
+  {
+   "path": "models/tex/GothamCity_bridge2.jpg",
+   "bytes": 97813
+  },
+  {
+   "path": "models/tex/GothamCity_sand_tile.jpg",
+   "bytes": 11771
+  },
+  {
+   "path": "models/tex/HC_Prop_BillboardRoof_01.jpg",
+   "bytes": 833889
+  },
+  {
+   "path": "models/tex/HC_Prop_BillboardRoof_Industrial_01.jpg",
+   "bytes": 856492
+  },
+  {
+   "path": "models/tex/LUT_000_default.png",
+   "bytes": 227
+  },
+  {
+   "path": "models/tex/LUT_023_lighting.png",
+   "bytes": 209
+  },
+  {
+   "path": "models/tex/LightMapSampler.jpg",
+   "bytes": 289
+  },
+  {
+   "path": "models/tex/bridge_1.jpg",
+   "bytes": 282568
+  },
+  {
+   "path": "models/tex/bridge_tile.jpg",
+   "bytes": 221431
+  },
+  {
+   "path": "models/tex/gothamcity_roads_details.jpg",
+   "bytes": 86962
+  },
+  {
+   "path": "models/tex/trunk.jpg",
+   "bytes": 217568
+  },
+  {
+   "path": "models/tex/water.jpg",
+   "bytes": 74298
+  },
+  {
+   "path": "playable/batman.glb",
+   "bytes": 1348036
+  },
+  {
+   "path": "playable/fengari-web.js",
+   "bytes": 219632
+  },
+  {
+   "path": "playable/index.html",
+   "bytes": 12185
+  },
+  {
+   "path": "playable/patch.json",
+   "bytes": 1057419
+  },
+  {
+   "path": "skybox.jpg",
+   "bytes": 34039
+  },
+  {
+   "path": "style.css",
+   "bytes": 5865
+  },
+  {
+   "path": "worklog_session10.md",
+   "bytes": 2351
+  },
+  {
+   "path": "worklog_session6.md",
+   "bytes": 3540
+  },
+  {
+   "path": "worklog_session7.md",
+   "bytes": 2405
+  },
+  {
+   "path": "worklog_session8.md",
+   "bytes": 3875
+  },
+  {
+   "path": "worklog_session9.md",
+   "bytes": 2785
+  }
+ ],
+ "main_repo": [
+  {
+   "path": "extraction/previews/meshes/island1_textured.png",
+   "bytes": 264886
+  },
+  {
+   "path": "extraction/prototype/gc_collision.bin",
+   "bytes": 5418337
+  },
+  {
+   "path": "extraction/prototype/i2_collision.bin",
+   "bytes": 5236804
+  },
+  {
+   "path": "gh-pages/models/GC_Bigbridge.glb",
+   "bytes": 41728
+  },
+  {
+   "path": "gh-pages/models/GC_Bigbridge_1_islands_LongDist.glb",
+   "bytes": 99896
+  },
+  {
+   "path": "gh-pages/models/GC_Bigbridge_2_islands_LongDist.glb",
+   "bytes": 83068
+  },
+  {
+   "path": "gh-pages/models/GC_Bigbridge_3_LongDist.glb",
+   "bytes": 97780
+  },
+  {
+   "path": "gh-pages/models/GC_Bigbridge_LongDist.glb",
+   "bytes": 202772
+  },
+  {
+   "path": "gh-pages/models/GC_Broken_BigBridge.glb",
+   "bytes": 23428
+  },
+  {
+   "path": "gh-pages/models/GC_Broken_BigBridge_LongDist.glb",
+   "bytes": 192112
+  },
+  {
+   "path": "gh-pages/models/GC_LongDist_Island1_FP1.glb",
+   "bytes": 580592
+  },
+  {
+   "path": "gh-pages/models/GC_LongDist_Island1_FP2.glb",
+   "bytes": 411112
+  },
+  {
+   "path": "gh-pages/models/GC_LongDist_Island1_FP3.glb",
+   "bytes": 573696
+  },
+  {
+   "path": "gh-pages/models/GC_LongDist_Island1_Roads.glb",
+   "bytes": 654040
+  },
+  {
+   "path": "gh-pages/models/GC_Monorail_Island1_LongDist.glb",
+   "bytes": 127340
+  },
+  {
+   "path": "gh-pages/models/GC_Monorail_Island2_LongDist.glb",
+   "bytes": 218672
+  },
+  {
+   "path": "gh-pages/models/GC_Railway_Island2_LongDist.glb",
+   "bytes": 42800
+  },
+  {
+   "path": "gh-pages/models/GC_Small_Bridge_Island2_LongDist.glb",
+   "bytes": 18540
+  },
+  {
+   "path": "gh-pages/models/GC_island1_LongDist.glb",
+   "bytes": 1744440
+  },
+  {
+   "path": "gh-pages/models/batarang.glb",
+   "bytes": 56744
+  },
+  {
+   "path": "gh-pages/models/city_low.glb",
+   "bytes": 1172664
+  },
+  {
+   "path": "gh-pages/models/district_00.glb",
+   "bytes": 985064
+  },
+  {
+   "path": "gh-pages/models/fp_island2.glb",
+   "bytes": 3761992
+  },
+  {
+   "path": "gh-pages/models/street_island1_00.glb",
+   "bytes": 153284
+  },
+  {
+   "path": "gh-pages/models/street_island1_01.glb",
+   "bytes": 3616032
+  },
+  {
+   "path": "gh-pages/models/street_island1_02.glb",
+   "bytes": 4945364
+  },
+  {
+   "path": "gh-pages/models/street_island1_03.glb",
+   "bytes": 981972
+  },
+  {
+   "path": "gh-pages/models/street_island1_04.glb",
+   "bytes": 5863260
+  },
+  {
+   "path": "gh-pages/models/street_island1_05.glb",
+   "bytes": 5812476
+  },
+  {
+   "path": "gh-pages/models/street_island1_06.glb",
+   "bytes": 470700
+  },
+  {
+   "path": "gh-pages/models/street_island1_07.glb",
+   "bytes": 4392572
+  },
+  {
+   "path": "gh-pages/models/street_island1_08.glb",
+   "bytes": 2628948
+  },
+  {
+   "path": "gh-pages/models/street_island2_00.glb",
+   "bytes": 106032
+  },
+  {
+   "path": "gh-pages/models/street_island2_01.glb",
+   "bytes": 1866692
+  },
+  {
+   "path": "gh-pages/models/street_island2_02.glb",
+   "bytes": 289748
+  },
+  {
+   "path": "gh-pages/models/street_island2_03.glb",
+   "bytes": 495700
+  },
+  {
+   "path": "gh-pages/models/street_island2_04.glb",
+   "bytes": 2657048
+  },
+  {
+   "path": "gh-pages/models/street_island2_05.glb",
+   "bytes": 2253476
+  },
+  {
+   "path": "gh-pages/models/street_island2_06.glb",
+   "bytes": 1475224
+  },
+  {
+   "path": "gh-pages/models/street_island2_07.glb",
+   "bytes": 4396948
+  },
+  {
+   "path": "gh-pages/models/street_island2_08.glb",
+   "bytes": 3025280
+  },
+  {
+   "path": "gh-pages/models/street_island2_09.glb",
+   "bytes": 725716
+  },
+  {
+   "path": "gh-pages/models/street_island2_10.glb",
+   "bytes": 5553496
+  },
+  {
+   "path": "gh-pages/models/street_island2_11.glb",
+   "bytes": 924228
+  },
+  {
+   "path": "gh-pages/models/tex/BakeGroup_Island1_A0.jpg",
+   "bytes": 1114011
+  },
+  {
+   "path": "gh-pages/models/tex/BakeGroup_Island1_B0.jpg",
+   "bytes": 1097796
+  },
+  {
+   "path": "gh-pages/models/tex/BakeGroup_Island1_Landmarks0.jpg",
+   "bytes": 935132
+  },
+  {
+   "path": "gh-pages/models/tex/BakeGroup_Island1_Roads0.jpg",
+   "bytes": 894504
+  },
+  {
+   "path": "gh-pages/models/tex/BakeGroup_Island2_A0.jpg",
+   "bytes": 1102176
+  },
+  {
+   "path": "gh-pages/models/tex/BakeGroup_Island2_B0.jpg",
+   "bytes": 816267
+  },
+  {
+   "path": "gh-pages/models/tex/BakeGroup_Island2_Landmarks0.jpg",
+   "bytes": 833197
+  },
+  {
+   "path": "gh-pages/models/tex/BakeGroup_Island2_Roads0.jpg",
+   "bytes": 735143
+  },
+  {
+   "path": "gh-pages/models/tex/City_BKG.jpg",
+   "bytes": 148273
+  },
+  {
+   "path": "gh-pages/models/tex/FX_Coronas.jpg",
+   "bytes": 113769
+  },
+  {
+   "path": "gh-pages/models/tex/GC_CBCE_Atlas.jpg",
+   "bytes": 1194374
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Cath_of_learning_Brick.jpg",
+   "bytes": 65048
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Cath_of_learning_Rooftop_ground.jpg",
+   "bytes": 90464
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Cath_of_learning_Wall.jpg",
+   "bytes": 63078
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Cath_of_learning_Windows2_v.jpg",
+   "bytes": 72722
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Cath_of_learning_Windows_v.jpg",
+   "bytes": 71864
+  },
+  {
+   "path": "gh-pages/models/tex/GC_DMUS_table.jpg",
+   "bytes": 32188
+  },
+  {
+   "path": "gh-pages/models/tex/GC_DMUS_wall.jpg",
+   "bytes": 75158
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Diner_Floor.jpg",
+   "bytes": 28796
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_AWT.jpg",
+   "bytes": 833036
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_AWT_rfl.jpg",
+   "bytes": 16606
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_CC_windows02.jpg",
+   "bytes": 71513
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_GA_TH.jpg",
+   "bytes": 943514
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_GA_T_02.jpg",
+   "bytes": 81728
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_GB_Tex01_TH.jpg",
+   "bytes": 227726
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_GC_floor_T.jpg",
+   "bytes": 88189
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_GC_stuff_T.jpg",
+   "bytes": 242555
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_IC.jpg",
+   "bytes": 295944
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_LB_Cinema.jpg",
+   "bytes": 230833
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_LPOL_ConcreteTile.jpg",
+   "bytes": 95947
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_LPOL_PropsAtlas.jpg",
+   "bytes": 218562
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_STD_Net_T.jpg",
+   "bytes": 43150
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_STD_alpha_T.jpg",
+   "bytes": 161982
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_STD_stuff_TH.jpg",
+   "bytes": 777449
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_VD_Buildings.jpg",
+   "bytes": 427260
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_VD_Buildings_2.jpg",
+   "bytes": 443043
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_VD_Buildings_3.jpg",
+   "bytes": 382901
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_VD_Fence.jpg",
+   "bytes": 25340
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_VD_Floor.jpg",
+   "bytes": 128843
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_VD_Floor_2.jpg",
+   "bytes": 97287
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Footprint_VD_Items.jpg",
+   "bytes": 1157101
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Glass_Building.jpg",
+   "bytes": 75828
+  },
+  {
+   "path": "gh-pages/models/tex/GC_IndustrialProps.jpg",
+   "bytes": 104200
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Island1_LongDist_Low.jpg",
+   "bytes": 816840
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Island2_LongDist_low.jpg",
+   "bytes": 844468
+  },
+  {
+   "path": "gh-pages/models/tex/GC_LongDist_Island1_FP1.jpg",
+   "bytes": 1057356
+  },
+  {
+   "path": "gh-pages/models/tex/GC_LongDist_Island1_FP2.jpg",
+   "bytes": 905597
+  },
+  {
+   "path": "gh-pages/models/tex/GC_LongDist_Island1_FP3.jpg",
+   "bytes": 805639
+  },
+  {
+   "path": "gh-pages/models/tex/GC_LongDist_Island1_Roads.jpg",
+   "bytes": 780804
+  },
+  {
+   "path": "gh-pages/models/tex/GC_LongDist_Island2_FP1.jpg",
+   "bytes": 805446
+  },
+  {
+   "path": "gh-pages/models/tex/GC_LongDist_Island2_FP2.jpg",
+   "bytes": 704091
+  },
+  {
+   "path": "gh-pages/models/tex/GC_LongDist_Island2_FP3.jpg",
+   "bytes": 815787
+  },
+  {
+   "path": "gh-pages/models/tex/GC_LongDist_Island2_Roads.jpg",
+   "bytes": 665364
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Park_atlas_props.jpg",
+   "bytes": 1049234
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Park_atlas_tiles.jpg",
+   "bytes": 409442
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Park_dirt.jpg",
+   "bytes": 107747
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Park_grass.jpg",
+   "bytes": 126158
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Park_statue.jpg",
+   "bytes": 57778
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_01_Door_01.jpg",
+   "bytes": 72358
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_01_Roof_01.jpg",
+   "bytes": 120561
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_01_Windows_04.jpg",
+   "bytes": 19418
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_02_Shop.jpg",
+   "bytes": 73519
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_03_details_01.jpg",
+   "bytes": 1124859
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_03_roof_01.jpg",
+   "bytes": 94069
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_03_roof_02.jpg",
+   "bytes": 44114
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_03_wall_04.jpg",
+   "bytes": 65940
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_03_wall_06.jpg",
+   "bytes": 99590
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_04_Roof_02.jpg",
+   "bytes": 18855
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_04_Wall_02.jpg",
+   "bytes": 62178
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_BD_04_Windows_05_v.jpg",
+   "bytes": 91357
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_Dinner_objects.jpg",
+   "bytes": 1250232
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_Props_Excavator.jpg",
+   "bytes": 47728
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_Props_Locomotive.jpg",
+   "bytes": 30348
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_Props_Monorail.jpg",
+   "bytes": 183196
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Residential_Props_Railroad.jpg",
+   "bytes": 171394
+  },
+  {
+   "path": "gh-pages/models/tex/GC_SXC_Atlas.jpg",
+   "bytes": 309530
+  },
+  {
+   "path": "gh-pages/models/tex/GC_SXC_Atlas2.jpg",
+   "bytes": 213021
+  },
+  {
+   "path": "gh-pages/models/tex/GC_SXC_Brick_02.jpg",
+   "bytes": 68229
+  },
+  {
+   "path": "gh-pages/models/tex/GC_SXC_Rooftop_ground.jpg",
+   "bytes": 99855
+  },
+  {
+   "path": "gh-pages/models/tex/GC_SXC_ground_tile.jpg",
+   "bytes": 101465
+  },
+  {
+   "path": "gh-pages/models/tex/GC_SXC_hedge.jpg",
+   "bytes": 94934
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Shop_Reflections.jpg",
+   "bytes": 35284
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Statues_Atlas.jpg",
+   "bytes": 193649
+  },
+  {
+   "path": "gh-pages/models/tex/GC_T_Concrete_01.jpg",
+   "bytes": 105439
+  },
+  {
+   "path": "gh-pages/models/tex/GC_T_Concrete_02.jpg",
+   "bytes": 118507
+  },
+  {
+   "path": "gh-pages/models/tex/GC_T_Windows_03.jpg",
+   "bytes": 59038
+  },
+  {
+   "path": "gh-pages/models/tex/GC_T_Windows_03_Refl.jpg",
+   "bytes": 16265
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Truck_01.jpg",
+   "bytes": 104528
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Truck_wheels_01.jpg",
+   "bytes": 5605
+  },
+  {
+   "path": "gh-pages/models/tex/GC_VRS_Reservoir.jpg",
+   "bytes": 1376437
+  },
+  {
+   "path": "gh-pages/models/tex/GC_VerticalFOG.png",
+   "bytes": 232230
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Walls.jpg",
+   "bytes": 1255255
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Z1_Props_Rooftop.jpg",
+   "bytes": 995575
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Z1_Props_Rooftop_Alpha.jpg",
+   "bytes": 2175214
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Z1_Props_Street.jpg",
+   "bytes": 646230
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Z1_Props_Street_Alpha.jpg",
+   "bytes": 2124787
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Z1_Shops_01.jpg",
+   "bytes": 973603
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Z1_Shops_01_Refl.jpg",
+   "bytes": 17570
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Z1_Shops_02.jpg",
+   "bytes": 900240
+  },
+  {
+   "path": "gh-pages/models/tex/GC_Z1_Shops_02_Refl.jpg",
+   "bytes": 23463
+  },
+  {
+   "path": "gh-pages/models/tex/GC_footprint_AA_ground.jpg",
+   "bytes": 107072
+  },
+  {
+   "path": "gh-pages/models/tex/GC_footprint_AB_atlas.jpg",
+   "bytes": 1075212
+  },
+  {
+   "path": "gh-pages/models/tex/GC_footprint_GC_ceiling_T.jpg",
+   "bytes": 9586
+  },
+  {
+   "path": "gh-pages/models/tex/GC_footprint_Vpow_furnal.jpg",
+   "bytes": 311218
+  },
+  {
+   "path": "gh-pages/models/tex/GC_footprint_aa_concrete.jpg",
+   "bytes": 73983
+  },
+  {
+   "path": "gh-pages/models/tex/GC_footprint_awt_marble.jpg",
+   "bytes": 108025
+  },
+  {
+   "path": "gh-pages/models/tex/GC_refl_exterior.jpg",
+   "bytes": 38454
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_Road_Crossings_Island_1.jpg",
+   "bytes": 1044727
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_Road_Crossings_Island_2.jpg",
+   "bytes": 1044827
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_Road_Island_2.jpg",
+   "bytes": 1343138
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_Road_v1_Island_1.jpg",
+   "bytes": 1046286
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_Road_v2_Island_1.jpg",
+   "bytes": 1041461
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_Road_v2_Island_2.jpg",
+   "bytes": 1153942
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_asphalt_tile.jpg",
+   "bytes": 26888
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_bridge2.jpg",
+   "bytes": 97813
+  },
+  {
+   "path": "gh-pages/models/tex/GothamCity_sand_tile.jpg",
+   "bytes": 11771
+  },
+  {
+   "path": "gh-pages/models/tex/HC_Prop_BillboardRoof_01.jpg",
+   "bytes": 833889
+  },
+  {
+   "path": "gh-pages/models/tex/HC_Prop_BillboardRoof_Industrial_01.jpg",
+   "bytes": 856492
+  },
+  {
+   "path": "gh-pages/models/tex/LUT_000_default.png",
+   "bytes": 227
+  },
+  {
+   "path": "gh-pages/models/tex/LUT_023_lighting.png",
+   "bytes": 209
+  },
+  {
+   "path": "gh-pages/models/tex/LightMapSampler.jpg",
+   "bytes": 289
+  },
+  {
+   "path": "gh-pages/models/tex/bridge_1.jpg",
+   "bytes": 282568
+  },
+  {
+   "path": "gh-pages/models/tex/bridge_tile.jpg",
+   "bytes": 221431
+  },
+  {
+   "path": "gh-pages/models/tex/gothamcity_roads_details.jpg",
+   "bytes": 86962
+  },
+  {
+   "path": "gh-pages/models/tex/trunk.jpg",
+   "bytes": 217568
+  },
+  {
+   "path": "gh-pages/models/tex/water.jpg",
+   "bytes": 74298
+  }
+ ],
+ "release_assets": []
+}
