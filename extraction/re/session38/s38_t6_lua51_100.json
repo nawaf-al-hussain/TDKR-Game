@@ -1,0 +1,1097 @@
+{
+ "800644:Obj800644_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "HideOccluder",
+    800407.0
+   ],
+   [
+    "HideOccluder",
+    500593.0
+   ]
+  ]
+ },
+ "800645:Obj800645_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "HideOccluder",
+    800531.0
+   ],
+   [
+    "HideOccluder",
+    800198.0
+   ]
+  ]
+ },
+ "703332:Obj703332_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "SetQuestEnabled",
+    113.0
+   ]
+  ]
+ },
+ "401879:Obj401879_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "RemoveGenericObjectFromMap",
+    402172.0
+   ],
+   [
+    "StartSound",
+    "sfx_fly_tutorial_ring",
+    false,
+    0.0
+   ],
+   [
+    "ObjectiveRemove",
+    401878.0
+   ],
+   [
+    "HideObject",
+    401878.0
+   ],
+   [
+    "Disable"
+   ]
+  ]
+ },
+ "401410:Obj401410_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "Enable",
+    401108.0
+   ],
+   [
+    "SetQuestEnabled",
+    904.0
+   ],
+   [
+    "Disable"
+   ]
+  ]
+ },
+ "502631:Obj502631_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "StartFadeOut",
+    500.0
+   ],
+   [
+    "Wait",
+    750.0
+   ],
+   [
+    "TeleportPlayerToZone",
+    502632.0
+   ],
+   [
+    "StartFadeIn",
+    500.0
+   ]
+  ]
+ },
+ "502633:Obj502633_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "StartFadeOut",
+    500.0
+   ],
+   [
+    "Wait",
+    750.0
+   ],
+   [
+    "TeleportPlayerToZone",
+    502634.0
+   ],
+   [
+    "StartFadeIn",
+    500.0
+   ]
+  ]
+ },
+ "502505:Obj502505_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "Disable",
+    800532.0
+   ],
+   [
+    "EnableRain",
+    false
+   ]
+  ]
+ },
+ "80001:Obj80001_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "316204:Obj316204_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "Enable",
+    316197.0
+   ],
+   [
+    "Enable",
+    316202.0
+   ]
+  ]
+ },
+ "316676:Obj316676_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "316728:Obj316728_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "Disable",
+    316729.0
+   ],
+   [
+    "HideObject",
+    316729.0
+   ],
+   [
+    "RemoveGenericObjectFromMap",
+    316729.0
+   ],
+   [
+    "StartSound",
+    "sfx_fly_tutorial_ring",
+    false,
+    0.0
+   ],
+   [
+    "Wait",
+    1.0
+   ]
+  ]
+ },
+ "900008:Obj900008_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "407650:Obj407650_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "Wait",
+    1000.0
+   ],
+   [
+    "fz_sandbox_enable_ALL"
+   ]
+  ]
+ },
+ "402950:Obj402950_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "403292:Obj403292_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "1900040:Obj1900040_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "print",
+    "INNNNNNNNNNNNNNNN"
+   ],
+   [
+    "NextMission",
+    1900035.0
+   ],
+   [
+    "Wait",
+    1000.0
+   ],
+   [
+    "Enable",
+    1900037.0
+   ],
+   [
+    "TeleportPlayerToZone",
+    1900036.0
+   ]
+  ]
+ },
+ "1900070:Obj1900070_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "NextMission",
+    316183.0
+   ]
+  ]
+ },
+ "900153:Obj900153_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "Enable",
+    900016.0
+   ]
+  ]
+ },
+ "900097:Obj900097_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "Enable",
+    900024.0
+   ]
+  ]
+ },
+ "900063:Obj900063_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "502454:Obj502454_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "316296:Obj316296_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "EnableShowObject",
+    316293.0
+   ],
+   [
+    "EnableShowObject",
+    316295.0
+   ],
+   [
+    "EnableShowObject",
+    316297.0
+   ],
+   [
+    "EnableShowObject",
+    316303.0
+   ],
+   [
+    "StartEffect",
+    316297.0
+   ],
+   [
+    "StartEffect",
+    316303.0
+   ]
+  ]
+ },
+ "316315:Obj316315_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "EnableShowObject",
+    316314.0
+   ]
+  ]
+ },
+ "316313:Obj316313_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "EnableShowObject",
+    316310.0
+   ],
+   [
+    "EnableShowObject",
+    316311.0
+   ],
+   [
+    "EnableShowObject",
+    316317.0
+   ],
+   [
+    "EnableShowObject",
+    316312.0
+   ],
+   [
+    "EnableShowObject",
+    316318.0
+   ],
+   [
+    "StartEffect",
+    316312.0
+   ],
+   [
+    "StartEffect",
+    316318.0
+   ]
+  ]
+ },
+ "900412:Obj900412_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "900413:Obj900413_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "900416:Obj900416_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "900594:Obj900594_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "900528:Obj900528_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "SetJumpControlEnable",
+    true
+   ]
+  ]
+ },
+ "900794:Obj900794_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ResetAllIgnoredControls"
+   ]
+  ]
+ },
+ "900614:Obj900614_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "SetJumpControlEnable",
+    false
+   ]
+  ]
+ },
+ "900633:Obj900633_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "SetJumpControlEnable",
+    false
+   ]
+  ]
+ },
+ "702969:Obj702969_OnEnter": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "702561:Obj702561_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorLookTo",
+    null,
+    702596.0
+   ],
+   [
+    "ActorSetState",
+    null,
+    "Homeless_Warming_Up"
+   ]
+  ]
+ },
+ "702562:Obj702562_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorLookTo",
+    null,
+    702596.0
+   ],
+   [
+    "ActorSetState",
+    null,
+    "Homeless_Warming_Up"
+   ]
+  ]
+ },
+ "702563:Obj702563_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorLookTo",
+    null,
+    702596.0
+   ],
+   [
+    "ActorSetState",
+    null,
+    "Homeless_Warming_Up"
+   ]
+  ]
+ },
+ "703289:Obj703289_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "math.random",
+    1.0,
+    3.0
+   ]
+  ]
+ },
+ "703290:Obj703290_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "math.random",
+    1.0,
+    3.0
+   ]
+  ]
+ },
+ "703291:Obj703291_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "KillActor",
+    null,
+    "Death"
+   ]
+  ]
+ },
+ "703298:Obj703298_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "math.random",
+    1.0,
+    3.0
+   ]
+  ]
+ },
+ "703299:Obj703299_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "math.random",
+    1.0,
+    3.0
+   ]
+  ]
+ },
+ "703300:Obj703300_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "KillActor",
+    null,
+    "Death"
+   ]
+  ]
+ },
+ "400971:Obj400971_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "KillActor",
+    null,
+    ""
+   ]
+  ]
+ },
+ "401078:Obj401078_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "KillActor",
+    null,
+    ""
+   ]
+  ]
+ },
+ "315389:Obj315389_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "315452:Obj315452_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "315512:Obj315512_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "315585:Obj315585_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "315658:Obj315658_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "315731:Obj315731_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": []
+ },
+ "412094:Obj412094_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412105:Obj412105_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412113:Obj412113_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412122:Obj412122_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412465:Obj412465_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412473:Obj412473_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412480:Obj412480_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412485:Obj412485_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412846:Obj412846_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412855:Obj412855_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412864:Obj412864_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "412873:Obj412873_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "ActorSetState",
+    null,
+    "Idle"
+   ],
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410851:Obj410851_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410852:Obj410852_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410853:Obj410853_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410854:Obj410854_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410855:Obj410855_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410856:Obj410856_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410857:Obj410857_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410858:Obj410858_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "410873:Obj410873_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "KillActor",
+    null
+   ]
+  ]
+ },
+ "411112:Obj411112_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411113:Obj411113_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411114:Obj411114_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411115:Obj411115_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411116:Obj411116_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411117:Obj411117_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411118:Obj411118_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411119:Obj411119_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411134:Obj411134_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "KillActor",
+    null
+   ]
+  ]
+ },
+ "411364:Obj411364_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411365:Obj411365_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411366:Obj411366_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411367:Obj411367_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411368:Obj411368_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411369:Obj411369_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411370:Obj411370_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411371:Obj411371_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411386:Obj411386_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "KillActor",
+    null
+   ]
+  ]
+ },
+ "411597:Obj411597_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411598:Obj411598_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411599:Obj411599_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411600:Obj411600_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411601:Obj411601_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411602:Obj411602_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411603:Obj411603_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411604:Obj411604_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ },
+ "411619:Obj411619_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "KillActor",
+    null
+   ]
+  ]
+ },
+ "411837:Obj411837_OnReach": {
+  "outcome": "ok",
+  "err": null,
+  "calls": [
+   [
+    "GetTime"
+   ]
+  ]
+ }
+}
