@@ -39,6 +39,23 @@ $('#f').addEventListener('change', async ev => {
     // s38 T5: chunk-lazy — never hold the whole zip; slice + stream-inflate
     // only the three .gla containers, then keep only the needed members.
     const dir = await TDKR.zipDirLazy(file);
+    // s39 T7: clear errors for wrong file / wrong game version
+    const REQ = ['data/actors.gla', 'data/commons.gla', 'data/game_config.gla', 'textures/actors_tex.gla'];
+    const names = Object.keys(dir);
+    const has = re => names.some(n => re.test(n));
+    if (has(/AndroidManifest\.xml$/i) || has(/classes\.dex$/i)) {
+      throw new Error('This is the APK (app code), not the game data. ' +
+        'Repack the OBB (main.<version>.com.gameloft.android.AMAZ.GloftKRAS.obb) into a zip and select that.');
+    }
+    if (!has(/com\.gameloft\.android\.AMAZ\.GloftKRAS\//i)) {
+      throw new Error('No com.gameloft.android.AMAZ.GloftKRAS entries found - this is not a TDKR data file. ' +
+        'Select the zip of the OBB (main.<version>.com.gameloft.android.AMAZ.GloftKRAS.obb), v1.1.6b.');
+    }
+    const missing = REQ.filter(r => !has(new RegExp(r.replace(/\//g, '\\/') + '$', 'i')));
+    if (missing.length) {
+      throw new Error('This OBB does not match TDKR v1.1.6b layout - missing: ' + missing.join(', ') +
+        '. Only v1.1.6b is supported.');
+    }
     const names = [...dir.keys()];
     const find = re => names.find(n => re.test(n));
     log(`zip OK: ${dir.size} entries in ${(performance.now()-t0).toFixed(0)} ms`);
