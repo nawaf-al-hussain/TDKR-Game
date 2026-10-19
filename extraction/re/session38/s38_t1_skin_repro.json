@@ -1,0 +1,34 @@
+{
+ "C0_noRotation_bindpose": {
+  "worst_cm": 239.549,
+  "mean_cm": 118.271
+ },
+ "C1_pageRotation_noBindSandwich": {
+  "worst_cm": 268.824,
+  "mean_cm": 162.589
+ },
+ "C1b_pageRotation_withBindSandwich": {
+  "worst_cm": 159.574,
+  "mean_cm": 22.206
+ },
+ "C2_calculateInverses_beforeUpdate": {
+  "worst_cm": 233.961,
+  "mean_cm": 117.213
+ },
+ "C3_boneInverses_shifted_control": {
+  "worst_cm": 204.43,
+  "mean_cm": 40.008
+ },
+ "C4_weights_x14_control": {
+  "worst_cm": 207.547,
+  "mean_cm": 56.632
+ },
+ "C5_meshRotated_bindIdentity": {
+  "worst_cm": 159.574,
+  "mean_cm": 22.206
+ },
+ "C5b_meshRotated_boundAfter": {
+  "worst_cm": 388.082,
+  "mean_cm": 244.246
+ }
+}
