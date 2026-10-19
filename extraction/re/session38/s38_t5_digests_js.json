@@ -1,0 +1,14 @@
+{
+ "node_names_sha": "02846879fb1e5d17",
+ "parent_idx_sha": "40dfc6a93d5ec2d3",
+ "palette_order_sha": "951e83ce13b4441c",
+ "ibm_sha": "7bdfafc765a7044a",
+ "skin_ids_sha": "d1d89fa17550f19b",
+ "skin_w_sha": "5370862f2329d097",
+ "n_nodes": 107,
+ "n_palette": 31,
+ "parent_idx": "-1,-1,-1,-1,-1,-1,-1,-1,-1,1,9,9,9,-1,10,14,11,16,12,-1,-1,-1,-1,-1,-1,18,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,25,25,25,-1,-1,-1,-1,-1,-1,-1,61,-1,-1,-1,-1,-1,-1,70,77,78,78,78,-1,-1,79,80,81,-1,62,-1,-1,-1,-1,-1,-1,88,95,96,96,96,-1,-1,-1,97,98,99,-1",
+ "palette": "Bip01_R_Foot|Bip01_R_Calf|Bip01_R_Thigh|Bip01_L_Foot|Bip01_L_Calf|Bip01_L_Thigh|Bip01_R_Finger1|Bip01_R_Finger0|Bip01_R_Hand|Bip01_R_Forearm|Bip01_R_UpperArm|Bip01_R_Clavicle|Bip01_L_Finger1|Bip01_L_Finger0|Bip01_L_Hand|Bip01_L_Forearm|Bip01_L_UpperArm|Bip01_L_Clavicle|Bip01_Head|Bip01_Neck|Bip01_Spine1|Bip01_Spine|Bip01_Pelvis|Bip01_L_Finger01|Bip01_L_Finger11|Bip01_L_Finger2|Bip01_L_Finger21|Bip01_R_Finger01|Bip01_R_Finger11|Bip01_R_Finger2|Bip01_R_Finger21",
+ "segs": 663,
+ "clips": 921
+}

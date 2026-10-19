@@ -188,22 +188,37 @@ function assembleClip(anims, clip, pad) {
       const keyT = [], keyV = [];
       for (let i = 0; i < n; i++) {
         const t = dvT.getUint32(i * 4, true);
-        if (t < ts - pad || t > te + pad) continue;
+        // s38 T5 FIX: keys outside the clip window belong to NEIGHBOUR clips
+        // (the s37 boundary-key bug: walk track key0 carried idle's pose, run
+        // carried walk's). Keep only keys inside [ts, te].
+        if (t < ts || t > te) continue;
         keyT.push(t);
         const row = new Float32Array(vdim);
         for (let d = 0; d < vdim; d++) row[d] = dvV.getFloat32(i * vdim * 4 + d * 4, true);
         keyV.push(row);
       }
       if (!keyT.length) continue;
-      if (chans[c] === null) { chans[c] = { t: keyT, v: keyV }; }
+      if (chans[c] === null) {
+        // s38 T5 FIX: dedupe by tick (chunk overlaps duplicate keys) — keep first
+        const seen = new Set(); const t2 = [], v2 = [];
+        for (let i = 0; i < keyT.length; i++) {
+          if (seen.has(keyT[i])) continue;
+          seen.add(keyT[i]); t2.push(keyT[i]); v2.push(keyV[i]);
+        }
+        chans[c] = { t: t2, v: v2 };
+      }
       else {
         const m = chans[c];
         const mg = m.t.concat(keyT);
+        const mv = m.v.concat(keyV);
+        // stable sort by tick, then DEDUPE across chunks (keep first occurrence)
         const ord = mg.map((x, i) => [x, i]).sort((a, b) => a[0] - b[0] || a[1] - b[1]);
-        chans[c] = {
-          t: ord.map(p => mg[p[1]]),
-          v: ord.map(p => (p[1] < m.t.length ? m.v[p[1]] : keyV[p[1] - m.t.length]))
-        };
+        const seen = new Set(); const t2 = [], v2 = [];
+        for (const p of ord) {
+          if (seen.has(p[0])) continue;
+          seen.add(p[0]); t2.push(p[0]); v2.push(mv[p[1]]);
+        }
+        chans[c] = { t: t2, v: v2 };
       }
     }
   }
@@ -328,6 +343,65 @@ function identifyTexture(u8) {
 }
 
 // ---------------------------------------------------------------- export -
-const api = { zipEntries, zipRead, parseGla, decodeAnims, assembleClip, readBdae, identifyTexture, inflateRaw };
+// ---- s38 T5: LAZY zip access (target < 300 MB heap; the eager path held the
+// whole 895 MB zip in an ArrayBuffer). Reads the central directory from a
+// 1 MB tail slice and inflates single members via DecompressionStream.
+async function zipDirLazy(file) {
+  const tail = new Uint8Array(await file.slice(Math.max(0, file.size - 1 << 20)).arrayBuffer());
+  let eocd = -1;
+  for (let i = tail.length - 22; i >= 0; i--) {
+    if (tail[i] === 0x50 && tail[i+1] === 0x4b && tail[i+2] === 0x05 && tail[i+3] === 0x06) { eocd = i; break; }
+  }
+  if (eocd < 0) throw new Error('EOCD not found');
+  const dv = new DataView(tail.buffer, tail.byteOffset);
+  const n = dv.getUint16(eocd + 10, true), cdOff = dv.getUint32(eocd + 16, true);
+  const cd = new Uint8Array(await file.slice(cdOff, cdOff + dv.getUint32(eocd + 12, true)).arrayBuffer());
+  const cddv = new DataView(cd.buffer);
+  const ents = new Map();
+  let p = 0;
+  for (let i = 0; i < n; i++) {
+    if (cddv.getUint32(p, true) !== 0x02014b50) break;
+    const method = cddv.getUint16(p + 10, true), csize = cddv.getUint32(p + 20, true),
+          nlen = cddv.getUint16(p + 28, true), elen = cddv.getUint16(p + 30, true),
+          clen = cddv.getUint16(p + 32, true), lho = cddv.getUint32(p + 42, true);
+    const nm = new TextDecoder().decode(cd.subarray(p + 46, p + 46 + nlen));
+    ents.set(nm, { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return ents;
+}
+async function zipReadLazy(file, name, dir) {
+  const e = dir.get(name);
+  if (!e) throw new Error('no member: ' + name);
+  // local header: 30 B + name + extra
+  const lh = new Uint8Array(await file.slice(e.lho, e.lho + 30).arrayBuffer());
+  const ldv = new DataView(lh.buffer);
+  const nlen = ldv.getUint16(26, true), elen = ldv.getUint16(28, true);
+  const dataOff = e.lho + 30 + nlen + elen;
+  const raw = file.slice(dataOff, dataOff + e.csize);
+  if (e.method === 0) return new Uint8Array(await raw.arrayBuffer());
+  const ds = new DecompressionStream('deflate-raw');
+  const resp = new Response(raw.stream().pipeThrough(ds));
+  const buf = await resp.arrayBuffer();
+  return new Uint8Array(buf);
+}
+function glaSlice(u8, want) {
+  // parse the .gla directory and return ONLY the requested member views
+  const n = (u8[12] << 24) | (u8[13] << 16) | (u8[14] << 8) | u8[15];
+  const pool = 16 + n * 16;
+  const out = {};
+  for (let i = 0; i < n; i++) {
+    const o = 16 + i * 16;
+    const off = (u8[o] << 24) | (u8[o+1] << 16) | (u8[o+2] << 8) | u8[o+3];
+    const size = (u8[o+4] << 24) | (u8[o+5] << 16) | (u8[o+6] << 8) | u8[o+7];
+    const nameOff = (u8[o+8] << 24) | (u8[o+9] << 16) | (u8[o+10] << 8) | u8[o+11];
+    const nb = pool + nameOff;
+    let e = nb; while (e < u8.length && u8[e] !== 0) e++;
+    const nm = new TextDecoder().decode(u8.subarray(nb, e));
+    if (want.has(nm)) out[nm] = u8.subarray(off, off + size);
+  }
+  return out;
+}
+const api = { zipEntries, zipRead, parseGla, decodeAnims, assembleClip, readBdae, identifyTexture, inflateRaw, zipDirLazy, zipReadLazy, glaSlice };
 if (typeof module !== 'undefined' && module.exports) module.exports = api;
 if (typeof globalThis !== 'undefined') globalThis.TDKR = api;

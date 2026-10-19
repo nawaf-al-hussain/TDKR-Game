@@ -35,23 +35,24 @@ $('#f').addEventListener('change', async ev => {
   try {
     const file = ev.target.files[0];
     const t0 = performance.now();
-    log(`reading ${file.name} (${(file.size/1e6).toFixed(0)} MB)…`);
-    const u8 = new Uint8Array(await file.arrayBuffer()); setbar(0.1);
-    const ents = TDKR.zipEntries(u8);
-    const names = [...ents.keys()];
+    log(`reading ${file.name} (${(file.size/1e6).toFixed(0)} MB) — LAZY mode`);
+    // s38 T5: chunk-lazy — never hold the whole zip; slice + stream-inflate
+    // only the three .gla containers, then keep only the needed members.
+    const dir = await TDKR.zipDirLazy(file);
+    const names = [...dir.keys()];
     const find = re => names.find(n => re.test(n));
-    log(`zip OK: ${ents.size} entries in ${(performance.now()-t0).toFixed(0)} ms`);
+    log(`zip OK: ${dir.size} entries in ${(performance.now()-t0).toFixed(0)} ms`);
 
-    // containers
-    const commons = await TDKR.zipRead(u8, find(/data\/commons\.gla$/)); setbar(0.25);
-    const actors = await TDKR.zipRead(u8, find(/data\/actors\.gla$/)); setbar(0.45);
-    const actorsTex = await TDKR.zipRead(u8, find(/textures\/actors_tex\.gla$/)); setbar(0.55);
-    const gc = TDKR.parseGla(commons), ga = TDKR.parseGla(actors), gt = TDKR.parseGla(actorsTex);
-    log(`commons.gla: ${gc.n}; actors.gla: ${ga.n}; actors_tex.gla: ${gt.n} chunks`);
-
-    const sub = (g, u, nm) => { const e = g.ents[nm]; return u.subarray(e.off, e.off + e.size); };
-    const bd = sub(ga, actors, 'batman.bdae');
-    const ad = sub(ga, actors, 'batman_anims.bdae');
+    const commons = await TDKR.zipReadLazy(file, find(/data\/commons\.gla$/), dir); setbar(0.25);
+    const actors = await TDKR.zipReadLazy(file, find(/data\/actors\.gla$/), dir); setbar(0.45);
+    const actorsTex = await TDKR.zipReadLazy(file, find(/textures\/actors_tex\.gla$/), dir); setbar(0.55);
+    const wantActors = new Set(['batman.bdae', 'batman_anims.bdae']);
+    const aMem = TDKR.glaSlice(actors, wantActors);
+    const gt = TDKR.parseGla(actorsTex);
+    const gc = { n: 0 }, ga = { n: 0 };
+    log(`actors.gla members kept: ${Object.keys(aMem).join(', ')}; actors_tex chunks: ${gt.n}`);
+    const bd = aMem['batman.bdae'];
+    const ad = aMem['batman_anims.bdae'];
     const skin = TDKR.readBdae(bd);
     log(`batman.bdae: ${skin.verts.length/3} verts, ${skin.idx.length} idx, ${skin.nodes.length} nodes`);
     const A = TDKR.decodeAnims(ad);
