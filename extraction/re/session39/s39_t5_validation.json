@@ -1,0 +1,41 @@
+{
+ "joined": 517,
+ "classes": {
+  "idle": {
+   "n": 81,
+   "feature": "xy_rate",
+   "real_mean": 0.2699,
+   "null_mean": 0.5529,
+   "null_p95": 0.7155,
+   "p_value": 0.0
+  },
+  "loco": {
+   "n": 58,
+   "feature": "xy_rate",
+   "real_mean": 0.5912,
+   "null_mean": 0.5413,
+   "null_p95": 0.7512,
+   "p_value": 0.325
+  },
+  "turn": {
+   "n": 17,
+   "feature": "abs_yaw",
+   "real_mean": 48.3838,
+   "null_mean": 43.6276,
+   "null_p95": 83.491,
+   "p_value": 0.405
+  },
+  "air": {
+   "n": 41,
+   "feature": "zr",
+   "real_mean": 1.4423,
+   "null_mean": 0.4461,
+   "null_p95": 0.7032,
+   "p_value": 0.0
+  }
+ },
+ "page_wiring_candidates": {
+  "run": "Idle_to_Run -> _716_bat_idle_to_run_speed_min",
+  "idle": "Run_to_Idle -> _562_bat_run_to_idle"
+ }
+}
