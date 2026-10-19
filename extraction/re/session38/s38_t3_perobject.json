@@ -1,0 +1,16 @@
+{
+ "n_real_pairs": 19,
+ "n_null_samples": 560,
+ "real_inside_rate": 0.2857142857142857,
+ "null_inside_rate": 0.0,
+ "real_dn_median": 6.603999999999928,
+ "null_dn_median": 372.30873809523814,
+ "rank_median": 0.024390243902439025,
+ "rank_mean": 0.0975609756097561,
+ "p_rank_le_01": 0.7142857142857143,
+ "n_pairs_S": 13,
+ "n_pairs_L": 1,
+ "shortfall_note": "real pairs < 100: object positions only exist for trigger-table members; non-trigger objects need the LNObject enumeration (next session)",
+ "n_getdist": 0,
+ "getdist": []
+}
