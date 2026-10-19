@@ -131,3 +131,9 @@ Commits this session (main): ce9f12c 5bec388 3f5783a 021e327 f6784d3 7c3072f
 c623076 254ee4d e665e20 + T7/notes commit. gh-pages-release-v21: 54686e4 +
 39298a4 (ready to push AS gh-pages; v21 = upright textured Batman + pipeline
 page). Main mirror: 44bf6dc. Push requires FRESH user credentials.
+
+## Bundles (final)
+- download/bundles_s38/main_s38_inc.bundle — 1,854,620 B, SHA256 027b51287113a6ed40dc20eba55045589b50359bb824cdbcb264b4000e3bfe7a, requires 6620e62, contains main 6620e62..a9948dd (11 commits).
+- download/bundles_s38/essentials_s38.bundle — 251,743 B, SHA256 3d2639feb972b347d714bc4cc3d28007df07b1d1a4691392ce3230f9cea6ffe5 (essentials-s36 ref, unchanged protocol).
+- download/bundles_s38/v21_release_branch.bundle — 1,229,424 B, SHA256 a1ac584ece3955544236bff1f776f6ed2d8c744c8a583cbab53342b64a220202, requires df7b0f7 (origin/gh-pages = v20), contains gh-pages df7b0f7..39298a4 (release v21: 54686e4 + 39298a4; the deploy worktree carried them onto the LOCAL gh-pages branch = push-ready state).
+- PUSH REQUIRES FRESH USER CREDENTIALS. After pushing main->a9948dd and gh-pages->39298a4: site_release_check green, v21 LIVE.
