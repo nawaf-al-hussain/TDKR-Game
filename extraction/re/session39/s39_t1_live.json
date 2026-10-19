@@ -1,0 +1,148 @@
+{
+ "live_url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/",
+ "http_asset_status": {
+  "index.html": 200,
+  "patch.json": 200,
+  "batman.glb": 200,
+  "pipeline.html": 200
+ },
+ "mixer_advancing": {
+  "t_after": 0.5,
+  "moved": 0
+ },
+ "fk_samples_vs_numpy": {
+  "_001_idle_stand@0.5": {
+   "max_cm": 0.015,
+   "mean_cm": 0.0024
+  },
+  "_001_idle_stand@2.0": {
+   "max_cm": 0.025,
+   "mean_cm": 0.0027
+  },
+  "_008_run@0.1": {
+   "max_cm": 0.005,
+   "mean_cm": 0.0018
+  },
+  "_008_run@0.5": {
+   "max_cm": 0.006,
+   "mean_cm": 0.0018
+  },
+  "null_idle@0.5_vs_truth@2.0": {
+   "max_cm": 30.039,
+   "mean_cm": 7.7433
+  },
+  "null_run@0.1_vs_truth@0.5": {
+   "max_cm": 157.766,
+   "mean_cm": 40.6654
+  },
+  "advancing_idle_0.5_vs_2.0_max_cm": 30.041,
+  "advancing_run_0.1_vs_0.5_max_cm": 157.768
+ },
+ "fg_fraction": 0.0325,
+ "iou": 0.9421,
+ "iou_null_lying": 0.0229,
+ "iou_null_wrong_pose": 0.89,
+ "iou_null_shifted": 0.002,
+ "aspect_reference": 1.279,
+ "aspect_browser": 1.312,
+ "feet_min_world_y_m": 0.0953,
+ "albedo_mean_rgb": [
+  37.5,
+  36.0,
+  35.0
+ ],
+ "texture_mean_rgb": [
+  31.4,
+  31.0,
+  31.0
+ ],
+ "texture_std_rgb": [
+  26.4,
+  22.9,
+  21.1
+ ],
+ "albedo_dist_to_texture": 5.0,
+ "albedo_dist_to_grey": 155.1,
+ "texture_presence_std_min": 21.1,
+ "uv": {
+  "shared_position_groups": 335,
+  "pairs": 888,
+  "integer_offset_pair_pct": 0.4887,
+  "match_rate_integer_offset_pairs": 1.0,
+  "match_rate_all_pairs": 0.6655,
+  "null_shuffled_uv_match_rate": 0.2556
+ },
+ "console_errors": [],
+ "console_warnings": [
+  [
+   "index",
+   "warning",
+   "[GroupMarkerNotSet(crbug.com/242999)!:A0D01700842E0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+  ],
+  [
+   "index",
+   "warning",
+   "[.WebGL-0x1b54000f8800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+  ],
+  [
+   "index",
+   "warning",
+   "[.WebGL-0x1b54000f8800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+  ],
+  [
+   "index",
+   "warning",
+   "[.WebGL-0x1b54000f8800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+  ],
+  [
+   "index",
+   "warning",
+   "[.WebGL-0x1b54000f8800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+  ]
+ ],
+ "network_total": 8,
+ "network_non_2xx": [],
+ "network_all": [
+  [
+   "index",
+   200,
+   "https://nawaf-al-hussain.github.io/TDKR-Game/playable/index.html"
+  ],
+  [
+   "index",
+   200,
+   "https://nawaf-al-hussain.github.io/TDKR-Game/playable/fengari-web.js"
+  ],
+  [
+   "index",
+   200,
+   "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+  ],
+  [
+   "index",
+   200,
+   "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+  ],
+  [
+   "index",
+   200,
+   "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js"
+  ],
+  [
+   "index",
+   200,
+   "https://nawaf-al-hussain.github.io/TDKR-Game/playable/patch.json"
+  ],
+  [
+   "index",
+   200,
+   "https://nawaf-al-hussain.github.io/TDKR-Game/playable/batman.glb"
+  ],
+  [
+   "index",
+   200,
+   "blob:https://nawaf-al-hussain.github.io/f7e6087c-e3d2-45e4-803e-47f29e72272b"
+  ]
+ ],
+ "fail": []
+}

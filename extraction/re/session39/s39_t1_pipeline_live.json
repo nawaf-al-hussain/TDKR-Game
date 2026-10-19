@@ -1,0 +1,32 @@
+{
+ "initial_log": "waiting for file\u2026",
+ "ready": true,
+ "final_log": "waiting for file\u2026reading TDKR_v1.1.6b_APK_OBB.zip (895 MB) \u2014 LAZY mode\nzip OK: 164 entries in 19745 ms\nactors.gla members kept: batman.bdae, batman_anims.bdae; actors_tex chunks: 169\nbatman.bdae: 1449 verts, 5431 idx, 107 nodes\nbatman_anims.bdae: 663 segs, 921 clips\nchara_Batman_DIFFUSE: 1024x1024 RGB888 decoded\nGLB assembled in-memory: 175 KB\nskinned mesh loaded via GLTFLoader (engine-verified path)\nclip _001_idle_stand: 33 tracks, 5.00s\nclip _007_walk: 33 tracks, 1.07s\nclip _008_run: 33 tracks, 0.67s\nREADY in 20525 ms \u2014 WASD move, Shift run\n",
+ "err": "",
+ "console_errors": [],
+ "console_all_count": 8,
+ "network_total": 5,
+ "network_non_2xx": [],
+ "network_all": [
+  [
+   200,
+   "https://nawaf-al-hussain.github.io/TDKR-Game/playable/pipeline.html"
+  ],
+  [
+   200,
+   "https://nawaf-al-hussain.github.io/TDKR-Game/playable/tdkr_pipeline.js"
+  ],
+  [
+   200,
+   "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+  ],
+  [
+   200,
+   "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+  ],
+  [
+   200,
+   "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js"
+  ]
+ ]
+}
