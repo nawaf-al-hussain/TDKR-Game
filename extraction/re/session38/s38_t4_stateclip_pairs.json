@@ -1,0 +1,2712 @@
+[
+{
+"off": 641806,
+"state": "heckler_koch_assault_rifle_anim.bdae",
+"clip": "idle"
+},
+{
+"off": 642059,
+"state": "Bane_Combat_Idle",
+"clip": "_839_bane_idle"
+},
+{
+"off": 642394,
+"state": "Bane_Combat_Taunt",
+"clip": "_841_bane_taunt"
+},
+{
+"off": 642714,
+"state": "Bane_Combat_Start_Cross_5x",
+"clip": "_844_bane_start_cross_attack_5x_speed"
+},
+{
+"off": 642785,
+"state": "Bane_Combat_Cross_Attack",
+"clip": "_845_bane_cross_attack"
+},
+{
+"off": 645370,
+"state": "Bane_Combat_Hook_Attack",
+"clip": "_850_bane_hook_attack"
+},
+{
+"off": 647877,
+"state": "Bane_Combat_Kick_Attack",
+"clip": "_853_bane_leg_kick_attack"
+},
+{
+"off": 650388,
+"state": "Bane_Combat_Uppercut_Attack",
+"clip": "_856_bane_uppercut_attack"
+},
+{
+"off": 652903,
+"state": "copy",
+"clip": "_622_batman_heavy_strike_uppercut_kick"
+},
+{
+"off": 655438,
+"state": "Bane_Movement",
+"clip": "_842_bane_walk"
+},
+{
+"off": 656409,
+"state": "Strafe_Left",
+"clip": "_886_bane_sneak_walk_l"
+},
+{
+"off": 656450,
+"state": "Strafe_Right",
+"clip": "_887_bane_sneak_walk_r"
+},
+{
+"off": 656492,
+"state": "Strafe_Up",
+"clip": "_885_bane_sneak_walk_front"
+},
+{
+"off": 656535,
+"state": "Strafe_Down",
+"clip": "_888_bane_sneak_walk_back"
+},
+{
+"off": 659886,
+"state": "Batman_01_Movement",
+"clip": "_001_idle_stand"
+},
+{
+"off": 662321,
+"state": "Idle_To_Idle_Talk",
+"clip": "_765_idle_to_talk"
+},
+{
+"off": 662363,
+"state": "Idle_Talk",
+"clip": "_766_talk"
+},
+{
+"off": 663867,
+"state": "Walk_Stealth",
+"clip": "_859_walk_stealth"
+},
+{
+"off": 665111,
+"state": "Walk_Talk",
+"clip": "_769_walk_talk"
+},
+{
+"off": 665442,
+"state": "Idle_to_Walk",
+"clip": "_559_bat_idle_to_walk"
+},
+{
+"off": 666547,
+"state": "Idle_Talk_to_Walk_Talk",
+"clip": "_768_talk_idle_to_walk_talk"
+},
+{
+"off": 666604,
+"state": "Idle_Talk_to_Idle",
+"clip": "_767_talk_to_idle"
+},
+{
+"off": 666646,
+"state": "Idle_to_Run",
+"clip": "_716_bat_idle_to_run_speed_min"
+},
+{
+"off": 667647,
+"state": "Run_to_Walk",
+"clip": "_563_bat_run_to_walk"
+},
+{
+"off": 668641,
+"state": "Walk_to_Run",
+"clip": "_564_bat_walk_to_run"
+},
+{
+"off": 669635,
+"state": "Run_to_Idle",
+"clip": "_562_bat_run_to_idle"
+},
+{
+"off": 672056,
+"state": "Walk_to_Idle",
+"clip": "_560_bat_walk_to_idle"
+},
+{
+"off": 674518,
+"state": "Walk_Talk_to_Idle_Talk",
+"clip": "_770_walk_talk_to_talk_idle"
+},
+{
+"off": 676035,
+"state": "Run_Roll",
+"clip": "_009_run_jump_rollf"
+},
+{
+"off": 676422,
+"state": "Run_To_Stop",
+"clip": "_406_run_to_stop3"
+},
+{
+"off": 678886,
+"state": "Run_Jump_Start",
+"clip": "_010_run_jump_start"
+},
+{
+"off": 679448,
+"state": "Run_Jump_Loop",
+"clip": "_011_run_jump_loop"
+},
+{
+"off": 679487,
+"state": "Run_Jump_Land",
+"clip": "_013_run_jump_land"
+},
+{
+"off": 680191,
+"state": "Run_Jump_Hang",
+"clip": "_012_run_jump_to_hang"
+},
+{
+"off": 680324,
+"state": "Run_To_Wall_Contact",
+"clip": "_048_run_to_wall_contact"
+},
+{
+"off": 680470,
+"state": "Obstacle_Jump",
+"clip": "_019_jump_obstacle"
+},
+{
+"off": 680685,
+"state": "Obstacle_Climb",
+"clip": "_020_obstacle_get_up"
+},
+{
+"off": 680925,
+"state": "Obstacle_Climb_15",
+"clip": "_688_jump_over_1_5"
+},
+{
+"off": 680968,
+"state": "Obstacle_Climb_20",
+"clip": "_689_jump_over_2"
+},
+{
+"off": 681151,
+"state": "Border_Climb",
+"clip": "_639_20cm_obstacle_get_up"
+},
+{
+"off": 681291,
+"state": "Obstacle_Get_Down",
+"clip": "_021_obstacle_get_down"
+},
+{
+"off": 681433,
+"state": "Hang_Edge_Idle",
+"clip": "_023_hang_edge_idle"
+},
+{
+"off": 681474,
+"state": "Hang_Edge_Get_Up",
+"clip": "_129_hang_edge_to_idle_stand"
+},
+{
+"off": 681621,
+"state": "Hang_Edge_Strafe_Left",
+"clip": "_027_hang_edge_strafe_right"
+},
+{
+"off": 681986,
+"state": "Hang_Edge_Jump_Left",
+"clip": "_024_hang_edge_jump_left"
+},
+{
+"off": 682329,
+"state": "Hang_Edge_Jump_Right",
+"clip": "_025_hang_edge_jump_right"
+},
+{
+"off": 682522,
+"state": "Hang_Edge_Corner_Outside_Left",
+"clip": "_028_hang_corner_outside_left"
+},
+{
+"off": 682737,
+"state": "Hang_Edge_Corner_Outside_Right",
+"clip": "_029_hang_corner_outside_right"
+},
+{
+"off": 683084,
+"state": "Hang_Edge_Corner_Inside_Left",
+"clip": "_031_hang_edge_corner_inside_left"
+},
+{
+"off": 683301,
+"state": "Hang_Edge_Corner_Inside_Right",
+"clip": "_032_hang_edge_corner_inside_right"
+},
+{
+"off": 683520,
+"state": "Hang_Edge_Release_Glide",
+"clip": "_046_hang_edge_jump_towards_glidel"
+},
+{
+"off": 683772,
+"state": "Idle_Jump_Start",
+"clip": "_033_jump_up_start"
+},
+{
+"off": 684202,
+"state": "Idle_Takeoff_Start",
+"clip": "_469_idle_jump_to_glide_parachute"
+},
+{
+"off": 684707,
+"state": "Run_Takeoff_Start",
+"clip": "_470_run_jump_to_glide_parachute"
+},
+{
+"off": 685257,
+"state": "Idle_Jump_Loop",
+"clip": "_034_jump_up_loop"
+},
+{
+"off": 685296,
+"state": "Idle_Jump_Land",
+"clip": "_036_jump_up_land"
+},
+{
+"off": 685683,
+"state": "Wall_Contact_Idle",
+"clip": "_049_wall_contact_idle"
+},
+{
+"off": 685730,
+"state": "Wall_Contact_Idle_To_Fall",
+"clip": "_050_wall_contact_idle_to_fall"
+},
+{
+"off": 685793,
+"state": "Edge_Fall_Start",
+"clip": "_614_bat_fall_start"
+},
+{
+"off": 686304,
+"state": "Edge_Fall_Loop",
+"clip": "_618_gargoyle_takedown_fall"
+},
+{
+"off": 686601,
+"state": "Edge_Fall_Land",
+"clip": "_616_bat_fall_land"
+},
+{
+"off": 687443,
+"state": "Edge_Fall_Land_Hurt",
+"clip": "_912_fall_hurt_to_idle"
+},
+{
+"off": 688250,
+"state": "Directional_Turn_Back_01",
+"clip": "_407_idle_to_run_back2"
+},
+{
+"off": 689213,
+"state": "Cutscene_turn_back",
+"clip": "_820_cutscene_turn_arround"
+},
+{
+"off": 689594,
+"state": "Glide_Idle",
+"clip": "_059_glide_parachute_idle"
+},
+{
+"off": 692524,
+"state": "Glide_Idle_To_Grapnel_Horizontal",
+"clip": "_329_glide_parachute_to_fly_h"
+},
+{
+"off": 693733,
+"state": "Grapnel_Horizontal_To_Glide_Idle",
+"clip": "_330_fly_h_to_glide_parachute"
+},
+{
+"off": 694398,
+"state": "Glide_Idle_To_Land",
+"clip": "_064_glide_parachute_land"
+},
+{
+"off": 695299,
+"state": "Glide_From_Grapnel",
+"clip": "_283_fly_idle_to_glide_parachute"
+},
+{
+"off": 695832,
+"state": "Glide_From_Run",
+"clip": "_063_run_to_glide_parachute"
+},
+{
+"off": 696199,
+"state": "Glide_Idle_To_Run",
+"clip": "_127_glide_parachute_to_run"
+},
+{
+"off": 696681,
+"state": "Glide_Idle_To_Wall_Contact",
+"clip": "_052_glide_parachute_wall_contact_idle"
+},
+{
+"off": 697046,
+"state": "Glide_From_Wall_Contact",
+"clip": "_051_wall_contact_idle_to_glide_parachute"
+},
+{
+"off": 697486,
+"state": "Glide_To_Plunge",
+"clip": "_505_glide_parachute_to_plunge"
+},
+{
+"off": 698052,
+"state": "Plunge",
+"clip": "_503_plunge_idle"
+},
+{
+"off": 702197,
+"state": "Plunge_To_Glide",
+"clip": "_504_plunge_to_glide_parachute"
+},
+{
+"off": 703917,
+"state": "Plunge_Land",
+"clip": "_502_plunge_to_smash"
+},
+{
+"off": 704934,
+"state": "Idle_Plunge_Start",
+"clip": "_565_idle_jump_to_fall"
+},
+{
+"off": 705720,
+"state": "Idle_Plunge_Fall",
+"clip": "_566_fall"
+},
+{
+"off": 707252,
+"state": "Idle_Plunge_CapeOut",
+"clip": "_567_fall_to_glide_parachute"
+},
+{
+"off": 708186,
+"state": "Exhaust_Up",
+"clip": "_522_glide_parachute_stream_jet_air"
+},
+{
+"off": 708831,
+"state": "Exhaust_Left",
+"clip": "_523_glide_parachute_stream_jet_air_left"
+},
+{
+"off": 709483,
+"state": "Exhaust_Right",
+"clip": "_524_glide_parachute_stream_jet_air_right"
+},
+{
+"off": 710137,
+"state": "Glide_Parachute_To_Missile_Counter",
+"clip": "_877_glide_parachute_to_batman_missile_counter"
+},
+{
+"off": 710829,
+"state": "Missile_Counter_Idle",
+"clip": "_878_batman_missile_counter_idle"
+},
+{
+"off": 712383,
+"state": "Missile_Counter_To Glide_Parachute",
+"clip": "_879_batman_missile_counter_to_glide_parachute"
+},
+{
+"off": 713985,
+"state": "Grapnel_Shoot",
+"clip": "_087_idle_to_grapnel"
+},
+{
+"off": 714290,
+"state": "_118_idle_to_grapnel_up",
+"clip": "_120_idle_to_grapnel_down"
+},
+{
+"off": 715198,
+"state": "Grapnel_Aim",
+"clip": "_089_grapnel_idle"
+},
+{
+"off": 715527,
+"state": "_119_grapnel_up_fix",
+"clip": "_121_grapnel_down_fix"
+},
+{
+"off": 717116,
+"state": "Grapnel_Take_Off",
+"clip": "_122_grapnel_up_to_fly"
+},
+{
+"off": 718477,
+"state": "Grapnel_Take_Off_Horizontal",
+"clip": "_180_grapnel_to_fly_h"
+},
+{
+"off": 720002,
+"state": "Grapnel_Fly_Idle_Horizontal",
+"clip": "_178_fly_idle_h"
+},
+{
+"off": 722542,
+"state": "Grapnel_Edge_Climb",
+"clip": "_158_gp_fly_to_idle_stand2"
+},
+{
+"off": 723237,
+"state": "Grapnel_Edge_Climb_Short",
+"clip": "_138_gp_fly_to_idle_stand"
+},
+{
+"off": 723937,
+"state": "Grapnel_Take_Off_Minigame",
+"clip": "_282_object_grab"
+},
+{
+"off": 726668,
+"state": "Grapnel_Jump_Aim",
+"clip": "_141_gp_grapnel_shoot"
+},
+{
+"off": 727471,
+"state": "Grapnel_Glide_Aim",
+"clip": "_123_fly_idle"
+},
+{
+"off": 727509,
+"state": "Grapnel_Glide_Shoot",
+"clip": "_140_glide_parachute_to_gp_grapnel_shoot"
+},
+{
+"off": 728178,
+"state": "Grapnel_Jump_Shoot",
+"clip": "_132_jump_to_gp_grapnel_shoot"
+},
+{
+"off": 728496,
+"state": "Grapnel_Jump_Take_Off",
+"clip": "_142_gp_grapnel_to_fly"
+},
+{
+"off": 729886,
+"state": "Grapnel_Shoot_Walk",
+"clip": "_147_walk_to_grapnel"
+},
+{
+"off": 730107,
+"state": "_148_walk_to_grapnel_up",
+"clip": "_149_walk_to_grapnel_down"
+},
+{
+"off": 730596,
+"state": "Grapnel_Shoot_Run",
+"clip": "_150_run_to_grapnel"
+},
+{
+"off": 730815,
+"state": "_151_run_to_grapnel_up",
+"clip": "_152_run_to_grapnel_down"
+},
+{
+"off": 734260,
+"state": "Fly_To_Car",
+"clip": "_284_glide_parachute_to_gargoyle_idle"
+},
+{
+"off": 735195,
+"state": "Grapnel_Fly_Idle_Down",
+"clip": "_179_fly_idle_d"
+},
+{
+"off": 738715,
+"state": "Grapnel_Enemy_Shoot",
+"clip": "_088_grapnel_shoot"
+},
+{
+"off": 738937,
+"state": "Grapnel_Enemy_Pull_Body",
+"clip": "_093_grapnel_pull_enemy"
+},
+{
+"off": 739337,
+"state": "Grapnel_Enemy_Pull_Weapon",
+"clip": "_092_grapnel_pull_weapon"
+},
+{
+"off": 739564,
+"state": "Grapnel_Enemy_Loop_Pull_Start",
+"clip": "_093_grapnel_pull_enemy_start"
+},
+{
+"off": 740386,
+"state": "Grapnel_Enemy_Loop_Pull_Loop",
+"clip": "_093_grapnel_pull_enemy_loop"
+},
+{
+"off": 740722,
+"state": "Grapnel_Enemy_Loop_Pull_Win",
+"clip": "_093_grapnel_pull_enemy_end"
+},
+{
+"off": 741995,
+"state": "Grapnel_Enemy_Knockdown",
+"clip": "_076_glide_parachute_takedown"
+},
+{
+"off": 744551,
+"state": "Grapnel_Enemy_New_Idle_To_Grapnel_Shoot",
+"clip": "_739_batman_idle_to_grapnel_shoot"
+},
+{
+"off": 745095,
+"state": "Grapnel_Enemy_New_Grapnel_Pull_Loop",
+"clip": "_740_batman_grapnel_grab"
+},
+{
+"off": 745354,
+"state": "Grapnel_Enemy_New_Grapnel_Throw",
+"clip": "_741_batman_grapnel_throw"
+},
+{
+"off": 745660,
+"state": "Batman_Attack_HS_Punch3_RightHand_High_Grapnel",
+"clip": "_242_combat1_uppercut"
+},
+{
+"off": 748689,
+"state": "Combat_Idle_Fists",
+"clip": "_067_idle_combatr"
+},
+{
+"off": 748936,
+"state": "Combat_Jump",
+"clip": "_631_batman_combat_jump"
+},
+{
+"off": 749698,
+"state": "Combat_Jump_Over_Enemy",
+"clip": "_706_batman_jump_over_enemy"
+},
+{
+"off": 750316,
+"state": "Combat_Impulse",
+"clip": "_717_batman_combat_impulse_front"
+},
+{
+"off": 750575,
+"state": "_718_batman_combat_impulse_left",
+"clip": "_720_batman_combat_impulse_back"
+},
+{
+"off": 750681,
+"state": "Combat_Sprint",
+"clip": "_721_batman_combat_sprint"
+},
+{
+"off": 751418,
+"state": "Combat_Attack_01_Jab",
+"clip": "_239_combat1_jab"
+},
+{
+"off": 753414,
+"state": "Combat_Attack_02_Cross",
+"clip": "_240_combat1_cross"
+},
+{
+"off": 758360,
+"state": "Combat_Attack_05_Spin_Kick",
+"clip": "_249_combat1_roundkick"
+},
+{
+"off": 761151,
+"state": "Combat_Attack_05_Hammer_Punch",
+"clip": "_429_doublehammer_hit"
+},
+{
+"off": 764233,
+"state": "Combat_Attack_05_Hammer_Kick",
+"clip": "_430_doubledammer_kick"
+},
+{
+"off": 766838,
+"state": "Combat_Attack_07_DrillKick",
+"clip": "_454_drill-kick"
+},
+{
+"off": 769079,
+"state": "Combat_Attack_08_BackSpin_Kick",
+"clip": "_475_back_spin_kick"
+},
+{
+"off": 779726,
+"state": "Idle_To_Batarang",
+"clip": "_081_idle_to_batarang"
+},
+{
+"off": 780050,
+"state": "Batarang_Throw",
+"clip": "_083_batarang_to_idle"
+},
+{
+"off": 782015,
+"state": "Batarang_Combat_Throw",
+"clip": "_687_batarang_knockback"
+},
+{
+"off": 785767,
+"state": "Gargoyle_Idle",
+"clip": "_054_bat_sitting_breath"
+},
+{
+"off": 789261,
+"state": "Gargoyle_Grab_From_Below",
+"clip": "_145_fly_to_bat_sitting"
+},
+{
+"off": 790426,
+"state": "Gargoyle_Grab_From_Horizontal_Flight",
+"clip": "_184_fly_h_to_gargoyle"
+},
+{
+"off": 791611,
+"state": "Gargoyle_Grab_From_Above",
+"clip": "_185_fly_d_to_gargoyle"
+},
+{
+"off": 792738,
+"state": "Gargoyle_Land_from_Flying",
+"clip": "_144_glide_parachute_to_bat_sitting"
+},
+{
+"off": 793442,
+"state": "Gargoyle_Jump_Fall_Start",
+"clip": "_617_gargoyle_takedown_jump"
+},
+{
+"off": 793787,
+"state": "Gargoyle_Jump_Land",
+"clip": "_621_gargoyle_takedown_land"
+},
+{
+"off": 795206,
+"state": "Gargoyle_Jump_Land_On_Enemy",
+"clip": "_619_gargoyle_takedown_hit"
+},
+{
+"off": 796747,
+"state": "Gargoyle_Jump_Glide",
+"clip": "_143_bat_sitting_to_glide_parachute"
+},
+{
+"off": 797008,
+"state": "Gargoyle_Grapnel_Shoot_Horizontal",
+"clip": "_206_gargoyle_to_gshoot"
+},
+{
+"off": 797560,
+"state": "Gargoyle_Grapnel_Aim_Horizontal",
+"clip": "_208_gargoyle_shoot_idle"
+},
+{
+"off": 797623,
+"state": "Gargoyle_Grapnel_Aim_To_Fly_Horizontal",
+"clip": "_209_gshoot_to_fly_h"
+},
+{
+"off": 798246,
+"state": "Gargoyle_Grapnel_Shoot_Up",
+"clip": "_214_gargoyle_to_gshoot_up"
+},
+{
+"off": 798739,
+"state": "Gargoyle_Grapnel_Aim_Up",
+"clip": "_216_gargoyle_shoot_up_idle"
+},
+{
+"off": 798797,
+"state": "Gargoyle_Grapnel_Aim_To_Fly_Up",
+"clip": "_217_gshoot_up_to_fly"
+},
+{
+"off": 798856,
+"state": "Gargoyle_Grapnel_Shoot_Down",
+"clip": "_210_gargoyle_to_gshoot_down"
+},
+{
+"off": 799353,
+"state": "Gargoyle_Grapnel_Aim_Down",
+"clip": "_212_gargoyle_shoot_down_idle"
+},
+{
+"off": 799415,
+"state": "Gargoyle_Grapnel_Aim_To_Fly_Down",
+"clip": "_213_gshoot_to_fly_d"
+},
+{
+"off": 799611,
+"state": "Gargoyle_Plant_Explosive",
+"clip": "_822_gargoyle_place_explosive"
+},
+{
+"off": 799672,
+"state": "Batman_07_Hurt",
+"clip": "_254_hurt_upper_body"
+},
+{
+"off": 800071,
+"state": "Hurt_Generic",
+"clip": "_130_selina_enmy_hurt_claw_lh"
+},
+{
+"off": 801855,
+"state": "Death_to_Idle",
+"clip": "_895_batman_death_to_idle"
+},
+{
+"off": 801901,
+"state": "Batman_Hurt_01_Jab",
+"clip": "_457_batman_jabhurt_front"
+},
+{
+"off": 802557,
+"state": "_576_batman_jabhurt_left",
+"clip": "_577_batman_jabhurt_back"
+},
+{
+"off": 803107,
+"state": "Batman_Hurt_02_Cross",
+"clip": "_485_batman_crosshurt"
+},
+{
+"off": 803733,
+"state": "_583_batman_crosshurt_left",
+"clip": "_582_batman_crosshurt_back"
+},
+{
+"off": 804289,
+"state": "Batman_Hurt_03_Kick",
+"clip": "_625_batman_leg_kick_hurt_front"
+},
+{
+"off": 804923,
+"state": "_626_batman_leg_kick_hurt_left",
+"clip": "_628_batman_leg_kick_hurt_back"
+},
+{
+"off": 805491,
+"state": "Batman_Hurt_Crowbar_01",
+"clip": "_634_batman_right_crowbar_hurt_front"
+},
+{
+"off": 806135,
+"state": "_635_batman_right_crowbar_hurt_left",
+"clip": "_637_batman_right_crowbar_hurt_back"
+},
+{
+"off": 806723,
+"state": "Batman_Hurt_Crowbar_02",
+"clip": "_642_batman_left_crowbar_hurt_front"
+},
+{
+"off": 807366,
+"state": "_643_batman_left_crowbar_hurt_left",
+"clip": "_645_batman_left_crowbar_hurt_back"
+},
+{
+"off": 807951,
+"state": "Batman_Hurt_Knife_01",
+"clip": "_785_batman_knife_left_hurt_front"
+},
+{
+"off": 808590,
+"state": "_786_batman_knife_left_hurt_left",
+"clip": "_788_batman_knife_left_hurt_back"
+},
+{
+"off": 809169,
+"state": "Batman_Hurt_Knife_02",
+"clip": "_790_batman_knife_right_hurt_front"
+},
+{
+"off": 809809,
+"state": "_791_batman_knife_right_hurt_left",
+"clip": "_793_batman_knife_right_hurt_back"
+},
+{
+"off": 810391,
+"state": "Batman_Hurt_Bane_Cross",
+"clip": "_846_bane_cross_attack_batman_hurt"
+},
+{
+"off": 811503,
+"state": "Batman_Hurt_Bane_Hook",
+"clip": "_851_bane_hook_attack_batman_hurt"
+},
+{
+"off": 812613,
+"state": "Batman_Hurt_Bane_Kick",
+"clip": "_854_bane_leg_kick_attack_batman_hurt"
+},
+{
+"off": 813825,
+"state": "Batman_Hurt_Bane_Uppercut",
+"clip": "_857_bane_uppercut_attack_batman_hurt"
+},
+{
+"off": 814965,
+"state": "Enemy_Throw_Down_Back",
+"clip": "_447_throw_down_back"
+},
+{
+"off": 815309,
+"state": "Enemy_Throw_Down_Front",
+"clip": "_449_throw_down_front"
+},
+{
+"off": 815493,
+"state": "Enemy_Throw_Down_Front_Get_Up",
+"clip": "_450_down_front_get_up"
+},
+{
+"off": 815640,
+"state": "Enemy_Throw_Down_Front2",
+"clip": "_451_throw_down_front2"
+},
+{
+"off": 815826,
+"state": "Enemy_Throw_Down_Right",
+"clip": "_452_throw_down_right"
+},
+{
+"off": 816010,
+"state": "Enemy_Throw_Down_Get_Up",
+"clip": "_448_down_back_get_up"
+},
+{
+"off": 816150,
+"state": "Env_Panel_Smash_1_Hit",
+"clip": "_257_panel_smash_front_bat_hit2"
+},
+{
+"off": 819016,
+"state": "Env_Panel_Smash_1_Hurt",
+"clip": "_258_panel_smash_front_enemy_hurt2"
+},
+{
+"off": 820191,
+"state": "Env_Panel_Smash_2_Hit",
+"clip": "_270_panel_smash_back_bat_hit"
+},
+{
+"off": 823050,
+"state": "Env_Panel_Smash_2_Hurt",
+"clip": "_271_panel_smash_back_enemy_hurt"
+},
+{
+"off": 823538,
+"state": "Env_Panel_Smash_3_Hit",
+"clip": "_280_panel_smash_back_bat_hit1"
+},
+{
+"off": 824638,
+"state": "Env_Panel_Smash_3_Hurt",
+"clip": "_281_panel_smash_back_enemy_hurt1"
+},
+{
+"off": 824921,
+"state": "Silent_Takedown_Choke_Attacker",
+"clip": "_247_wire_silent_takedown"
+},
+{
+"off": 825616,
+"state": "Car_Smash_Dive",
+"clip": "_413_glide_parachute_to_smash"
+},
+{
+"off": 828317,
+"state": "Car_Smash_Kneel",
+"clip": "_414_smash_idle"
+},
+{
+"off": 828355,
+"state": "Car_Smash_Get_Up",
+"clip": "_415_smash_to_idle_stand"
+},
+{
+"off": 828615,
+"state": "Env_Panel_Smash_0m_1m_Hit",
+"clip": "_745_panel_smash_headcrush_batman"
+},
+{
+"off": 831939,
+"state": "Env_Panel_Smash_0m_1m_Hurt",
+"clip": "_746_panel_smash_headcrush_enemy"
+},
+{
+"off": 832426,
+"state": "Env_Panel_Smash_1m_1p5m_Hit",
+"clip": "_747_panel_smash_flykick_batman"
+},
+{
+"off": 835551,
+"state": "Env_Panel_Smash_1m_1p5m_Hurt",
+"clip": "_748_panel_smash_flykick_enemy"
+},
+{
+"off": 836038,
+"state": "Env_Panel_Smash_1p5m_2m_Hit",
+"clip": "_749_panel_smash_shoulder_batman"
+},
+{
+"off": 839126,
+"state": "Env_Panel_Smash_1p5m_2m_Hurt",
+"clip": "_750_panel_smash_shoulder_enemy"
+},
+{
+"off": 839579,
+"state": "Env_Panel_Smash_2m_3m_Hit",
+"clip": "_255_panel_smash_front_bat_hit1"
+},
+{
+"off": 841695,
+"state": "Env_Panel_Smash_2m_3m_Hurt",
+"clip": "_256_panel_smash_front_enemy_hurt1"
+},
+{
+"off": 842369,
+"state": "Combat_SpecialAttack_From_Above",
+"clip": "_821_building_takedown_jump"
+},
+{
+"off": 843046,
+"state": "Idle_stand_breath",
+"clip": "_266_fpp_idle_stand_breath"
+},
+{
+"off": 843423,
+"state": "Idle_stand_breath_to_talk",
+"clip": "_267_fpp_idle_stand_breath_to_talk"
+},
+{
+"off": 843490,
+"state": "Idle_stand_talk",
+"clip": "_268_fpp_talk"
+},
+{
+"off": 843526,
+"state": "Idle_stand_talk_to_idle_breath",
+"clip": "_269_fpp_talk_to_idle_stand_breath"
+},
+{
+"off": 843598,
+"state": "Idle_Run_Back",
+"clip": "_366_idle_to_run_back"
+},
+{
+"off": 843779,
+"state": "Place_Explosives",
+"clip": "_640_place_explosive_wall"
+},
+{
+"off": 844030,
+"state": "Car_Smash_Batman_Fall_Off",
+"clip": "_493_batman_fall_off_car"
+},
+{
+"off": 844269,
+"state": "TheBat_Idle",
+"clip": "_276_car_sit"
+},
+{
+"off": 844300,
+"state": "Car_Smash_Driver_Door_Thrown",
+"clip": "_482_driver_thrown_door"
+},
+{
+"off": 844359,
+"state": "Car_Smash_Driver_Windshield_Thrown",
+"clip": "_480_driver_thrown_windshield"
+},
+{
+"off": 844430,
+"state": "Car_Smash_Driver_Windshield_Pull",
+"clip": "_479_batman_pull_driver_windshield"
+},
+{
+"off": 844651,
+"state": "Car_Smash_Driver_Door_Pull",
+"clip": "_481_batman_pull_driver_door"
+},
+{
+"off": 844941,
+"state": "Drive_One_Hand_Scared",
+"clip": "_477_car_drive_one_hand_scared"
+},
+{
+"off": 845000,
+"state": "Grapnel_Fly_To_Grab_Heli",
+"clip": "_323_grapnel_fly_idle_to_hang_idle"
+},
+{
+"off": 845234,
+"state": "Grab_Heli_Idle",
+"clip": "_324_grapnel_hang_idle"
+},
+{
+"off": 845278,
+"state": "Grab_Heli_Release",
+"clip": "_325_grapnel_hang_release"
+},
+{
+"off": 845328,
+"state": "Car_Windshield_Smash",
+"clip": "_331_car_smash_windshield_start_scratching"
+},
+{
+"off": 845543,
+"state": "Car_Windshield_Smash_Return",
+"clip": "_332_car_smash_windshield_return"
+},
+{
+"off": 845721,
+"state": "Car_Door_Smash",
+"clip": "_333_car_smash_driver_door_break_window"
+},
+{
+"off": 846016,
+"state": "Car_Door_Smash_Return",
+"clip": "_334_car_smash__driver_door_return"
+},
+{
+"off": 846174,
+"state": "Car_Smash_Windshield_Scratching",
+"clip": "_471_car_smash_windshield_scratching"
+},
+{
+"off": 846442,
+"state": "Car_Smash_Windshield_Pull",
+"clip": "_472_car_smash_windshield_pull"
+},
+{
+"off": 846741,
+"state": "Car_Smash_Driver_Door_Pull_Start",
+"clip": "_473_car_smash_driver_door_pull_start"
+},
+{
+"off": 846953,
+"state": "Car_Smash_Driver_Door_Pull_End",
+"clip": "_474_car_smash_driver_door_pull_end"
+},
+{
+"off": 847158,
+"state": "Batpod_Idle",
+"clip": "_751_batpod_idle"
+},
+{
+"off": 847193,
+"state": "Batpod_Ride",
+"clip": "_752_batpod_ride"
+},
+{
+"off": 847228,
+"state": "Batpod_Lean_Left",
+"clip": "_753_batpod_leanl_c"
+},
+{
+"off": 847271,
+"state": "Batpod_Lean_Right",
+"clip": "_754_batpod_leanr_c"
+},
+{
+"off": 847315,
+"state": "Batpod_Jump_Left",
+"clip": "_756_batpod_jumpl"
+},
+{
+"off": 847577,
+"state": "Batpod_Jump_Right",
+"clip": "_755_batpod_jumpr"
+},
+{
+"off": 847840,
+"state": "Batpod_Seat_Jump_LVL1",
+"clip": "_892_seat_launch_4m"
+},
+{
+"off": 848021,
+"state": "Batpod_Seat_Jump_LVL2",
+"clip": "_757_seat_launch"
+},
+{
+"off": 848199,
+"state": "Batpod_Seat_Jump_LVL3",
+"clip": "_893_seat_launch_10m"
+},
+{
+"off": 848405,
+"state": "Idle_Limp",
+"clip": "_526_bruce_limping_idle"
+},
+{
+"off": 848445,
+"state": "Walk_Limp",
+"clip": "_525_bruce_walking_limp"
+},
+{
+"off": 848831,
+"state": "Lean_Balcony",
+"clip": "_527_bruce_leaning_balcony"
+},
+{
+"off": 848877,
+"state": "Bruce_Open_Door",
+"clip": "_529_bruce_open_door_suspiciously"
+},
+{
+"off": 848953,
+"state": "Batman_Disarm_02",
+"clip": "_764_disarm2_batman"
+},
+{
+"off": 849846,
+"state": "Batman_Disarm_03",
+"clip": "_896_new_batman_disarm"
+},
+{
+"off": 850768,
+"state": "Batman_Disarm_01",
+"clip": "_762_disarm1_batman"
+},
+{
+"off": 851216,
+"state": "Batman_Attack_LS1_Punch1_LeftHand_High",
+"clip": "_535_batman_light_strike_punch_left_kick"
+},
+{
+"off": 853735,
+"state": "Batman_Attack_LS1_Punch2_RightHand_High",
+"clip": "_537_batman_light_strike_punch_right_kick"
+},
+{
+"off": 856016,
+"state": "Batman_Attack_LS1_Elbow_High",
+"clip": "_514_light_strike_elbow"
+},
+{
+"off": 859175,
+"state": "Batman_Attack_LS2_Punch1_LeftHand_High",
+"clip": "_555_batman_light_strike_hook_kick"
+},
+{
+"off": 861553,
+"state": "Batman_Attack_LS2_Punch2_RightHand_Low",
+"clip": "_557_batman_light_strike_body_shot"
+},
+{
+"off": 864317,
+"state": "Batman_Attack_LS2_Elbow_High",
+"clip": "_585_batman_light_strike_alt_elbow_kick"
+},
+{
+"off": 866592,
+"state": "Batman_Attack_LS2_Knee_High",
+"clip": "_587_batman_light_strike_alt_knee_kick"
+},
+{
+"off": 869182,
+"state": "Batman_Attack_LS2_Kick_RightFoot_High",
+"clip": "_518_light_strike_spin_kick"
+},
+{
+"off": 871501,
+"state": "Batman_Attack_LS3_Punch1_LeftHand_High",
+"clip": "_241_combat1_hook"
+},
+{
+"off": 873994,
+"state": "Batman_Attack_LS1_Kick_High",
+"clip": "_516_light_kick"
+},
+{
+"off": 876317,
+"state": "Batman_Attack_LS1_Knee_High",
+"clip": "_520_light_strike_knee_kick"
+},
+{
+"off": 878894,
+"state": "Batman_Attack_LS3_Head_High",
+"clip": "_603_batman_light_strike_head_kick"
+},
+{
+"off": 881201,
+"state": "Batman_Attack_HS_Punch1_LeftHand_High",
+"clip": "_605_batman_heavy_strike_punch_left_kick"
+},
+{
+"off": 884209,
+"state": "Batman_Attack_HS_Punch2_RightHand_High",
+"clip": "_607_batman_heavy_strike_punch_right_kick"
+},
+{
+"off": 902554,
+"state": "Combat_Attack_06_JabCounter",
+"clip": "_461_batman_jab_countre_front_attack"
+},
+{
+"off": 904916,
+"state": "Combat_Attack_07_CrossCounter",
+"clip": "_487_batman_cross_countre_attack"
+},
+{
+"off": 907128,
+"state": "Combat_Attack_08_KickCounter",
+"clip": "_630_batman_leg_kick_counter_attack"
+},
+{
+"off": 909302,
+"state": "Combat_Attack_09_RightCrowbarCounter",
+"clip": "_681_batman_right_crowbar_counter_attack"
+},
+{
+"off": 911916,
+"state": "Combat_Attack_10_LeftCrowbarCounter",
+"clip": "_679_batman_left_crowbar_counter_attack"
+},
+{
+"off": 914972,
+"state": "Combat_Attack_LeftKnifeCounter",
+"clip": "_795_batman_knife_left_counter_attack"
+},
+{
+"off": 919220,
+"state": "Combat_Attack_RightKnifeCounter",
+"clip": "_797_batman_knife_right_counter_attack"
+},
+{
+"off": 921694,
+"state": "Combat_Bane_Cross_Deflect",
+"clip": "_847_bane_cross_attack_batman_deflect"
+},
+{
+"off": 923706,
+"state": "Combat_Bane_Hook_Deflect",
+"clip": "_852_bane_hook_attack_batman_deflect"
+},
+{
+"off": 925627,
+"state": "Combat_Bane_Kick_Deflect",
+"clip": "_855_bane_leg_kick_attack_batman_deflect"
+},
+{
+"off": 927812,
+"state": "Combat_Bane_Uppercut_Deflect",
+"clip": "_858_bane_uppercut_attack_batman_deflect"
+},
+{
+"off": 929801,
+"state": "Combat_Bane_Cross_QTE_Counter",
+"clip": "_849_bane_cross_attack_batman_counter"
+},
+{
+"off": 934448,
+"state": "Combat_Bane_Kick_QTE_Counter",
+"clip": "_862_bane_leg_kick_attack_batman_counter"
+},
+{
+"off": 937519,
+"state": "Combat_Bane_Uppercut_QTE_Counter",
+"clip": "_884_bane_uppercut_attack_batman_counter"
+},
+{
+"off": 1002646,
+"state": "Couple_Under_Umbrella_Female",
+"clip": "_380_couple_standing_under_umbrella_female"
+},
+{
+"off": 1002724,
+"state": "Couple_Under_Umbrella_Male",
+"clip": "_379_couple_standing_under_umbrella_male"
+},
+{
+"off": 1002798,
+"state": "Couple_Say_Funny_Female",
+"clip": "_376_couple_say_something_female"
+},
+{
+"off": 1002861,
+"state": "Couple_Say_Funny_Male",
+"clip": "_375_couple_say_something_male"
+},
+{
+"off": 1002920,
+"state": "Couple_Waiting_For_Bus_Idle_Female",
+"clip": "_374_couple_waiting_for_a_bus_idle_female"
+},
+{
+"off": 1003003,
+"state": "Couple_Waiting_For_Bus_Idle_Male",
+"clip": "_373_couple_waiting_for_a_bus_idle_male"
+},
+{
+"off": 1003139,
+"state": "Couple_Walk_Hug_Female",
+"clip": "_370_couple_walking_hug_female"
+},
+{
+"off": 1003199,
+"state": "Couple_Walking_Female",
+"clip": "_368_couple_walking_female"
+},
+{
+"off": 1003254,
+"state": "Couple_Walking_Male",
+"clip": "_367_couple_walking_male"
+},
+{
+"off": 1011853,
+"state": "Car_Sit_Drive",
+"clip": "_275_car_drive"
+},
+{
+"off": 1011888,
+"state": "Car_Get_Down",
+"clip": "_279_car_get_down"
+},
+{
+"off": 1011925,
+"state": "Car_Jump_Out",
+"clip": "_277_car_jump_l"
+},
+{
+"off": 1011977,
+"state": "Rain_newspaper_run",
+"clip": "_293_npc_newspaper_rain_run"
+},
+{
+"off": 1012030,
+"state": "Rain_newspaper_walk",
+"clip": "_321_npc_newspaper_rain_walk"
+},
+{
+"off": 1012085,
+"state": "Rain_run",
+"clip": "_294_npc_rain_run"
+},
+{
+"off": 1012118,
+"state": "Rain_walk",
+"clip": "_322_npc_rain_walk"
+},
+{
+"off": 1012153,
+"state": "Rain_walk_open_umbrella",
+"clip": "_297_npc_umbrella_open_walk"
+},
+{
+"off": 1012211,
+"state": "Rain_walk_umbrella",
+"clip": "_299_npc_umbrella_up_walk"
+},
+{
+"off": 1012262,
+"state": "Rain_walk_close_umbrella",
+"clip": "_300_npc_umbrella_walk"
+},
+{
+"off": 1012316,
+"state": "Decor_Generic_Female",
+"clip": "_319_npc_female_newspaper_rain_walk"
+},
+{
+"off": 1012379,
+"state": "_288_npc_female_newspaper_rain_run",
+"clip": "_289_npc_female_rain_run"
+},
+{
+"off": 1012445,
+"state": "_320_npc_female_rain_walk",
+"clip": "_290_npc_female_umbrella_open_walk"
+},
+{
+"off": 1012512,
+"state": "_291_npc_female_umbrella_up_walk",
+"clip": "_292_npc_female_umbrella_walk"
+},
+{
+"off": 1012600,
+"state": "Prisoner_Kneel",
+"clip": "_224_idle_to_npc_pray"
+},
+{
+"off": 1012643,
+"state": "Prisoner_Kneel_Idle",
+"clip": "_225_npc_pray"
+},
+{
+"off": 1012683,
+"state": "Prisoner_Kneel_Get_Up",
+"clip": "_226_npc_pray_to_idle"
+},
+{
+"off": 1012733,
+"state": "Prisoner_Raise_Hands",
+"clip": "_227_npc_hands_up"
+},
+{
+"off": 1012778,
+"state": "Prisoner_Hands_Up_Idle",
+"clip": "_228_hands_up_idle"
+},
+{
+"off": 1012881,
+"state": "Decor_Social",
+"clip": "_044_fall_loop"
+},
+{
+"off": 1013019,
+"state": "Fall_Land",
+"clip": "_045_fall_land"
+},
+{
+"off": 1013182,
+"state": "Crouch_In_Fear_Idle",
+"clip": "_444_crouch_in_fear_idle"
+},
+{
+"off": 1013233,
+"state": "Walk_To_Crouch_In_Fear_Back",
+"clip": "_372_walk_to_crouch_in_fear_back"
+},
+{
+"off": 1013300,
+"state": "Walk_To_Crouch_In_Fear",
+"clip": "_371_walk_to_crouch_in_fear"
+},
+{
+"off": 1013460,
+"state": "Simple_Talk_Negative",
+"clip": "_338_simple_talk_negative"
+},
+{
+"off": 1013601,
+"state": "Simple_Talk_Affirmative",
+"clip": "_337_simple_talk_affirmative"
+},
+{
+"off": 1013748,
+"state": "Idle_To_Lean_Wall",
+"clip": "_350_idle_to_stand_wall_leans"
+},
+{
+"off": 1013802,
+"state": "Lean_Wall_Idle",
+"clip": "_351_idle_stand_wall_leans"
+},
+{
+"off": 1013850,
+"state": "Wall_Lean_To_Idle",
+"clip": "_352_stand_wall_leans_talk_to_idle"
+},
+{
+"off": 1013998,
+"state": "Talk_01",
+"clip": "_339_simple_talk01"
+},
+{
+"off": 1014120,
+"state": "Talk_02",
+"clip": "_340_simple_talk02"
+},
+{
+"off": 1014242,
+"state": "Talk_03",
+"clip": "_341_simple_talk03"
+},
+{
+"off": 1014364,
+"state": "Talk_04",
+"clip": "_342_simple_talk04"
+},
+{
+"off": 1014486,
+"state": "Talk_05",
+"clip": "_381_argue01"
+},
+{
+"off": 1014602,
+"state": "Talk_06",
+"clip": "_382_argue02"
+},
+{
+"off": 1014718,
+"state": "Talk_07",
+"clip": "_383_argue03"
+},
+{
+"off": 1014834,
+"state": "Talk_08",
+"clip": "_384_argue04"
+},
+{
+"off": 1014950,
+"state": "Talk_09",
+"clip": "_434_npc_tell_a_joke"
+},
+{
+"off": 1015074,
+"state": "Talk_10",
+"clip": "_435_npc_laugh01"
+},
+{
+"off": 1015194,
+"state": "Talk_11",
+"clip": "_436_npc_laugh02"
+},
+{
+"off": 1015314,
+"state": "Down_Get_Up_Start",
+"clip": "_676_down_back_get_up_start"
+},
+{
+"off": 1015366,
+"state": "Down_Get_Up_Idle",
+"clip": "_677_down_back_get_up_idle"
+},
+{
+"off": 1015416,
+"state": "Down_Get_Up_Feign",
+"clip": "_678_down_back_get_up_end"
+},
+{
+"off": 1015466,
+"state": "Decor_aim",
+"clip": "_162_enemy_idle_stand_to_idle_aim"
+},
+{
+"off": 1015516,
+"state": "Throw_Decor_Batarang_Idle",
+"clip": "_082_batarang_idle"
+},
+{
+"off": 1015714,
+"state": "Bump_Into_Actor",
+"clip": "_353_enemy_receive_kick"
+},
+{
+"off": 1015849,
+"state": "Point_Left",
+"clip": "_335_point_left"
+},
+{
+"off": 1015971,
+"state": "Point_Right",
+"clip": "_336_point_right"
+},
+{
+"off": 1016095,
+"state": "Start_Point_Forward",
+"clip": "_397_idle_to_look"
+},
+{
+"off": 1016139,
+"state": "Point_Forward",
+"clip": "_398_look_to_point"
+},
+{
+"off": 1016178,
+"state": "Point_Forward_Loop",
+"clip": "_399_point_idle"
+},
+{
+"off": 1016333,
+"state": "Aggression_Walk_Circle",
+"clip": "_416_npc_walk_circle"
+},
+{
+"off": 1016414,
+"state": "Aggression_Walk_Circle_To_Idle",
+"clip": "_417_npc_walk_to_idle"
+},
+{
+"off": 1016562,
+"state": "Aggression_Provoke_Idle",
+"clip": "_418_npc_idle"
+},
+{
+"off": 1016695,
+"state": "Aggression_Provoke_Cheer",
+"clip": "_427_npc3_punches"
+},
+{
+"off": 1016833,
+"state": "Aggression_Kick_01",
+"clip": "_419_npc_kick"
+},
+{
+"off": 1017090,
+"state": "Homeless_Warming_Up",
+"clip": "_467_npc_homeless_warming_up"
+},
+{
+"off": 1017145,
+"state": "Aggression_Kick_02",
+"clip": "_420_npc_kick2"
+},
+{
+"off": 1017466,
+"state": "Aggression_Victim_Down_Idle",
+"clip": "_421_npc_onground_idle"
+},
+{
+"off": 1017523,
+"state": "Aggression_Victim_Down_Hurt",
+"clip": "_422_npc_onground_hurt"
+},
+{
+"off": 1017580,
+"state": "Aggression_Victim_Get_Up",
+"clip": "_113_enemy_grapnel_pull_normal_stand"
+},
+{
+"off": 1017648,
+"state": "Aggression_Victim_Idle",
+"clip": "_424_npc1_look_idle"
+},
+{
+"off": 1017697,
+"state": "Aggression_Victim_Pushed",
+"clip": "_423_npc1_look"
+},
+{
+"off": 1017832,
+"state": "Aggression_Victim_Idle_Scared_01",
+"clip": "_425_npc2_idle"
+},
+{
+"off": 1017886,
+"state": "Aggression_Victim_Idle_Scared_02",
+"clip": "_426_npc3_idle"
+},
+{
+"off": 1018029,
+"state": "Complex_Talk_Happy",
+"clip": "_346_complex_talk_happy"
+},
+{
+"off": 1018167,
+"state": "Complex_Talk_Worried",
+"clip": "_347_complex_talk_worried"
+},
+{
+"off": 1018309,
+"state": "Complex_Talk_Sad",
+"clip": "_348_complex_talk_sad"
+},
+{
+"off": 1018443,
+"state": "Complex_Talk_Mad",
+"clip": "_349_complex_talk_sad2"
+},
+{
+"off": 1018578,
+"state": "Tying_Shoelace",
+"clip": "_357_trying_shoelaces"
+},
+{
+"off": 1018710,
+"state": "Wait_Bus",
+"clip": "_358_npc_waiting_bus_idle"
+},
+{
+"off": 1018840,
+"state": "Idle_To_Wave",
+"clip": "_402_look_to_wave"
+},
+{
+"off": 1018877,
+"state": "Wave_Idle",
+"clip": "_403_wave_idle"
+},
+{
+"off": 1018908,
+"state": "Sit_Down_Idle",
+"clip": "_920_sit_chair_idle"
+},
+{
+"off": 1019053,
+"state": "Sit_Down_To_Get_Up",
+"clip": "_921_stand_up"
+},
+{
+"off": 1019092,
+"state": "Idle_To_Wave_2",
+"clip": "_404_look_to_wave2"
+},
+{
+"off": 1019132,
+"state": "Wave_Idle_2",
+"clip": "_405_wave2_idle"
+},
+{
+"off": 1019273,
+"state": "Idle_To_ill_show_you",
+"clip": "_400_look_to_show_fist"
+},
+{
+"off": 1019323,
+"state": "ill_show_you_Idle",
+"clip": "_401_show_fist_idle"
+},
+{
+"off": 1019586,
+"state": "Feet_Shuffling_1",
+"clip": "_361_feet_shufling"
+},
+{
+"off": 1019717,
+"state": "Feet_Shuffling_2",
+"clip": "_360_feet_shufling2"
+},
+{
+"off": 1019849,
+"state": "Shot_In_The_Back",
+"clip": "_077_enemy_gun_pr_take_back"
+},
+{
+"off": 1019989,
+"state": "Smoke_Idle",
+"clip": "_433_npc_idle_smoke"
+},
+{
+"off": 1020026,
+"state": "Smoke_Start",
+"clip": "_437_npc_light_up_cigarrette"
+},
+{
+"off": 1020073,
+"state": "Smoke_Inhale",
+"clip": "_438_npc_smoking_cigarrette_loop"
+},
+{
+"off": 1020125,
+"state": "Smoke_Throw_Away",
+"clip": "_439_npc_end_cigarrette"
+},
+{
+"off": 1020261,
+"state": "Phone_Pick_Up",
+"clip": "_440_npc_pick_up_phone"
+},
+{
+"off": 1020304,
+"state": "Phone_Talk_Loop",
+"clip": "_441_npc_talking_phone_loop"
+},
+{
+"off": 1020354,
+"state": "Phone_Hang_Up",
+"clip": "_442_npc_hang_up_phone"
+},
+{
+"off": 1020486,
+"state": "Car_Idle_To_Steal",
+"clip": "_326_character_idle_to_steal_car_lock"
+},
+{
+"off": 1020548,
+"state": "Car_Steal_Loop",
+"clip": "_327_character_steal_car_lock_idle"
+},
+{
+"off": 1020604,
+"state": "Car_Steal_Enter_Vehicle",
+"clip": "_328_character_steal_car_lock_to_enter_car"
+},
+{
+"off": 1020719,
+"state": "Gordon_Walk_Speech",
+"clip": "_530_gordon_walking_speech"
+},
+{
+"off": 1020771,
+"state": "Gordon_Talk_Speech",
+"clip": "_531_gordon_talking_speech"
+},
+{
+"off": 1020823,
+"state": "Selina_Pick_Lock",
+"clip": "_532_selina_open_door_picking_lock"
+},
+{
+"off": 1020970,
+"state": "Selina_Open_Door",
+"clip": "_533_selina_open_door_suspiciously2"
+},
+{
+"off": 1021118,
+"state": "Asking_1",
+"clip": "_863_gesture_male_asking_01"
+},
+{
+"off": 1021161,
+"state": "Asking_2",
+"clip": "_864_gesture_male_asking_02"
+},
+{
+"off": 1021204,
+"state": "Talk_Commanding",
+"clip": "_865_gesture_male_commanding"
+},
+{
+"off": 1021255,
+"state": "Talk_Confirm",
+"clip": "_866_gesture_male_confirm"
+},
+{
+"off": 1021300,
+"state": "Talk_Deny",
+"clip": "_867_gesture_male_deny"
+},
+{
+"off": 1021339,
+"state": "Talk_Generic",
+"clip": "_868_gesture_male_generic"
+},
+{
+"off": 1021384,
+"state": "Talk_Happy",
+"clip": "_869_gesture_male_happy"
+},
+{
+"off": 1021425,
+"state": "Insightfull",
+"clip": "_870_gesture_male_insightfull"
+},
+{
+"off": 1021473,
+"state": "Nervous",
+"clip": "_871_gesture_male_nervous"
+},
+{
+"off": 1021513,
+"state": "Neutral",
+"clip": "_872_gesture_male_neutral"
+},
+{
+"off": 1021553,
+"state": "Talk_Point_Forward",
+"clip": "_873_gesture_male_point"
+},
+{
+"off": 1021602,
+"state": "Talk_Sad",
+"clip": "_874_gesture_male_sad"
+},
+{
+"off": 1021639,
+"state": "Talk_Surprised",
+"clip": "_875_gesture_male_surprised"
+},
+{
+"off": 1021688,
+"state": "Talk_Threatening",
+"clip": "_876_gesture_male_threatning"
+},
+{
+"off": 1021740,
+"state": "Taunt_Bane_Decor",
+"clip": "_917_bane_taunt_new_01"
+},
+{
+"off": 1021786,
+"state": "Dazed_Bane_Decor",
+"clip": "_840_bane_daze"
+},
+{
+"off": 1021824,
+"state": "Bane_Grenade",
+"clip": "_890_bane_grenade"
+},
+{
+"off": 1021861,
+"state": "Fall_Loop_Decor",
+"clip": "_733_enemy_fall_loop"
+},
+{
+"off": 1021904,
+"state": "Fall_To_Hit_Decor",
+"clip": "_734_enemy_fall_to_hit_ground"
+},
+{
+"off": 1026445,
+"state": "Enemy_Up_Aim_SMG_Idle",
+"clip": "_160_enemy_idle_aim"
+},
+{
+"off": 1026493,
+"state": "Enemy_Shoot_Pistol",
+"clip": "_075_idle_enemy_gun"
+},
+{
+"off": 1026538,
+"state": "Enemy_Up_SMG_Shoot",
+"clip": "_176_enemy_idle_aim_shoot"
+},
+{
+"off": 1027403,
+"state": "Low_Cover_Idle",
+"clip": "_301_low_cover_idle"
+},
+{
+"off": 1027444,
+"state": "Enemy_Walk_Backwards_SMG_Shoot",
+"clip": "_315_backwards_walk_shoot"
+},
+{
+"off": 1028055,
+"state": "Low_Cover_Idle_To_Run_Right",
+"clip": "_302_low_cover_idle_to_run_right"
+},
+{
+"off": 1028122,
+"state": "Low_Cover_Idle_To_Shoot",
+"clip": "_303_low_cover_idle_to_shoot_in_cover"
+},
+{
+"off": 1028190,
+"state": "Low_Cover_Shoot_Loop",
+"clip": "_304_low_cover_shoot"
+},
+{
+"off": 1032550,
+"state": "Low_Cover_Shoot_To_Cover",
+"clip": "_305_low_cover_shoot_to_cover_idle"
+},
+{
+"off": 1032616,
+"state": "Low_Cover_Enter",
+"clip": "_306_run_to_low_cover_idle"
+},
+{
+"off": 1032665,
+"state": "High_Cover_Idle",
+"clip": "_309_high_cover_idle"
+},
+{
+"off": 1032708,
+"state": "High_Cover_Idle_To_Run_Right",
+"clip": "_313_high_cover_exit_run_right"
+},
+{
+"off": 1032774,
+"state": "High_Cover_Idle_To_Run_Left",
+"clip": "_312_high_cover_exit_run_left"
+},
+{
+"off": 1032838,
+"state": "High_Cover_Idle_To_Shoot_Left",
+"clip": "_310_high_cover_shoot_left"
+},
+{
+"off": 1032934,
+"state": "High_Cover_Idle_To_Shoot_Right",
+"clip": "_311_high_cover_shoot_right"
+},
+{
+"off": 1033033,
+"state": "High_Cover_Shoot",
+"clip": "_177_enemy_idle_hip_shoot"
+},
+{
+"off": 1034571,
+"state": "High_Cover_Enter",
+"clip": "_308_run_to_high_cover"
+},
+{
+"off": 1035259,
+"state": "Enemy_Grapnel_Pulled_Down",
+"clip": "_111_enemy_grapnel_pull_normal"
+},
+{
+"off": 1035602,
+"state": "Enemy_Grapnel_Pulled_Down_Floor_Idle",
+"clip": "_112_enemy_grapnel_pull_normal_onground"
+},
+{
+"off": 1036658,
+"state": "Enemy_Grapnel_Weapon_Pulled_Away",
+"clip": "_114_enemy_grapnel_pull_weapon"
+},
+{
+"off": 1036728,
+"state": "Enemy_Grapnel_Loopable_Pull_Start",
+"clip": "_115_enemy_pulled_start"
+},
+{
+"off": 1036939,
+"state": "Enemy_Grapnel_Loopable_Pull_Fly",
+"clip": "_116_enemy_pulled_loop"
+},
+{
+"off": 1037000,
+"state": "Enemy_Grapnel_Loopable_Pull_Land",
+"clip": "_117_enemy_pulled_end"
+},
+{
+"off": 1037365,
+"state": "Grapnel_Enemy_Knockdown_Hurt_Front",
+"clip": "_078_enemy_gun_pr_take_front"
+},
+{
+"off": 1037569,
+"state": "Grapnel_Enemy_Knockdown_Hooked",
+"clip": "_104_enemy_pos_to_blinded"
+},
+{
+"off": 1037632,
+"state": "Grapnel_Enemy_Knockdown_Hooked_Idle",
+"clip": "_105_enemy_blinded_idle"
+},
+{
+"off": 1037720,
+"state": "Enemy_Hurt_Idle_To_Grabbed",
+"clip": "_742_enemy_idle_to_grapnel_grabbed"
+},
+{
+"off": 1037788,
+"state": "Enemy_Hurt_Grabbed",
+"clip": "_743_enemy_grapnel_grabbed"
+},
+{
+"off": 1037840,
+"state": "Enemy_Hurt_Grabbed_To_Thrown",
+"clip": "_744_enemy_grapnel_grabbed_to_throw"
+},
+{
+"off": 1038066,
+"state": "Enemy_Combat_Idle",
+"clip": "_014_idle_enemy_combat"
+},
+{
+"off": 1038410,
+"state": "Enemy_Combat_Taunt_1",
+"clip": "_592_enemy_taunt1"
+},
+{
+"off": 1038735,
+"state": "Enemy_Combat_Taunt_2",
+"clip": "_594_enemy_taunt3"
+},
+{
+"off": 1039450,
+"state": "Enemy_Attack_01_Jab",
+"clip": "_455_enemy_jab"
+},
+{
+"off": 1040549,
+"state": "Enemy_Attack_02_Cross",
+"clip": "_484_enemy_cross"
+},
+{
+"off": 1041594,
+"state": "Enemy_Attack_03_Kick",
+"clip": "_624_enemy_leg_kick"
+},
+{
+"off": 1042464,
+"state": "Enemy_Attack_04_Uppercut",
+"clip": "_074_uppercut2"
+},
+{
+"off": 1043401,
+"state": "Enemy_Attack_05_Leg_Jab",
+"clip": "_084_leg_jab"
+},
+{
+"off": 1045070,
+"state": "Enemy_Attack_07_Hook",
+"clip": "_073_hook2"
+},
+{
+"off": 1045995,
+"state": "Crowbar_Combat_Idle",
+"clip": "_632_enemy_crowbar_combat_idle"
+},
+{
+"off": 1046052,
+"state": "Crowbar_Attack_01",
+"clip": "_633_enemy_right_crowbar_hit"
+},
+{
+"off": 1047219,
+"state": "Crowbar_Attack_02",
+"clip": "_641_enemy_left_crowbar_hit"
+},
+{
+"off": 1048384,
+"state": "Crowbar_Taunt_1",
+"clip": "_683_enemy_crowbar_taunt1"
+},
+{
+"off": 1048723,
+"state": "Crowbar_Taunt_2",
+"clip": "_684_enemy_crowbar_taunt2"
+},
+{
+"off": 1049061,
+"state": "Knife_Combat_Idle",
+"clip": "_781_enemy_knife_idle1"
+},
+{
+"off": 1049134,
+"state": "Knife_Taunt_1",
+"clip": "_783_enemy_knife_taunt"
+},
+{
+"off": 1049765,
+"state": "Knife_Attack_01",
+"clip": "_784_enemy_knife_left_attack"
+},
+{
+"off": 1050922,
+"state": "Knife_Attack_02",
+"clip": "_789_enemy_knife_right_attack"
+},
+{
+"off": 1056133,
+"state": "Bane_Combat_Start_Kick_QTE",
+"clip": "_860_bane_start_leg_kick_attack_6x_speed"
+},
+{
+"off": 1059028,
+"state": "Bane_Combat_Start_Uppercut_QTE",
+"clip": "_882_bane_start_uppercut_attack_10x_speed"
+},
+{
+"off": 1064971,
+"state": "Enemy_Crowbar_Idle_to_Block_Low",
+"clip": "_708_enemy_crowbar_idle_to_lower_block"
+},
+{
+"off": 1065048,
+"state": "Enemy_Crowbar_Block_Low _Idle",
+"clip": "_709_enemy_crowbar_lower_block_idle"
+},
+{
+"off": 1065120,
+"state": "Enemy_Crowbar_Block_Low _Recoil",
+"clip": "_710_enemy_crowbar_lower_block_recoil"
+},
+{
+"off": 1065196,
+"state": "Enemy_Crowbar_Block_Low_to_Idle",
+"clip": "_711_enemy_crowbar_lower_block_to_idle"
+},
+{
+"off": 1065273,
+"state": "Enemy_Crowbar_Idle_to_Block_Up",
+"clip": "_712_enemy_crowbar_idle_to_upper_block"
+},
+{
+"off": 1065349,
+"state": "Enemy_Crowbar_Block_Up _Idle",
+"clip": "_713_enemy_crowbar_upper_block_idle"
+},
+{
+"off": 1065420,
+"state": "Enemy_Crowbar_Block_Up _Recoil",
+"clip": "_714_enemy_crowbar_upper_block_recoil"
+},
+{
+"off": 1065495,
+"state": "Enemy_Crowbar_Block_Up_to_Idle",
+"clip": "_715_enemy_crowbar_upper_block_to_idle"
+},
+{
+"off": 1065592,
+"state": "Enemy_Knife_Dodge_High",
+"clip": "_798_enemy_knife_dodge"
+},
+{
+"off": 1065689,
+"state": "Enemy_Cross_Hurt",
+"clip": "_094_enemy_pos_to_deaf"
+},
+{
+"off": 1065980,
+"state": "Enemy_Get_Up",
+"clip": "_638_down_back_get_up2"
+},
+{
+"off": 1066150,
+"state": "Enemy_Deaf_Idle_1",
+"clip": "_095_enemy_deaf_idle"
+},
+{
+"off": 1066195,
+"state": "Enemy_Deaf_Idle_2",
+"clip": "_096_enemy_deaf_idle2"
+},
+{
+"off": 1066241,
+"state": "Enemy_Deaf_Idle_3",
+"clip": "_097_enemy_deaf_idle3"
+},
+{
+"off": 1066287,
+"state": "Enemy_Deaf_To_Idle",
+"clip": "_098_enemy_deaf_to_pos"
+},
+{
+"off": 1066468,
+"state": "Enemy_Blind_Idle_2",
+"clip": "_106_enemy_blinded_idle2"
+},
+{
+"off": 1066518,
+"state": "Enemy_Blind_To_Idle",
+"clip": "_107_enemy_blinded_to_pos"
+},
+{
+"off": 1067337,
+"state": "Enemy_Idle_To_Daze",
+"clip": "_108_enemy_pos_to_daze"
+},
+{
+"off": 1067385,
+"state": "Enemy_Daze_Idle",
+"clip": "_109_enemy_daze_idle"
+},
+{
+"off": 1067428,
+"state": "Enemy_Jumped_Over",
+"clip": "_707_enemy_jumped_over"
+},
+{
+"off": 1067475,
+"state": "Enemy_Daze_To_Idle",
+"clip": "_110_enemy_daze_to_pos"
+},
+{
+"off": 1069045,
+"state": "Enemy_Shot_Death",
+"clip": "_259_police_fall_back"
+},
+{
+"off": 1069666,
+"state": "Enemy_Hurt_Front_Kick",
+"clip": "_222_enemy_hurtr"
+},
+{
+"off": 1070009,
+"state": "Enemy_Hurt_Left_Punch",
+"clip": "_223_enemy_hurtl"
+},
+{
+"off": 1070380,
+"state": "Enemy_Hurt_02_Cross",
+"clip": "_244_combat1_enemy_crosshurt"
+},
+{
+"off": 1070604,
+"state": "Enemy_Hurt_03_Hook",
+"clip": "_245_combat1_enemy_hookhurt"
+},
+{
+"off": 1071746,
+"state": "Enemy_Hurt_04_Uppercut",
+"clip": "_246_combat1_enemy_uppercuthurt"
+},
+{
+"off": 1072110,
+"state": "Enemy_Hurt_05_Hammer_Punch",
+"clip": "_431_doublehammer_enemy_hithurt"
+},
+{
+"off": 1072478,
+"state": "Enemy_Hurt_05_Hammer_Kick",
+"clip": "_432_doublehammer_enemy_kickhurt"
+},
+{
+"off": 1072844,
+"state": "Enemy_Hurt_06_JabCounter",
+"clip": "_456_enemy_jab_countered_hurt"
+},
+{
+"off": 1073072,
+"state": "Enemy_Hurt_07_CrossCounter",
+"clip": "_486_enemy_cross_countered_hurt"
+},
+{
+"off": 1073304,
+"state": "Enemy_Hurt_07_DrillKick",
+"clip": "_466_enemy_death_drill_atack2"
+},
+{
+"off": 1073587,
+"state": "Enemy_Hurt_08_KickCounter",
+"clip": "_629_enemy_leg_kick_countered_hurt"
+},
+{
+"off": 1073654,
+"state": "Enemy_Hurt_08_BackSpin_Kick",
+"clip": "_476_enemy_hurt_back_spin_kick"
+},
+{
+"off": 1074358,
+"state": "Enemy_Hurt_LS1_Punch1_LeftHand_High",
+"clip": "_536_enemy_light_strike_punch_left_hurt"
+},
+{
+"off": 1074498,
+"state": "Enemy_Hurt_LS1_Punch2_RightHand_High",
+"clip": "_538_enemy_light_strike_punch_right_hurt"
+},
+{
+"off": 1074751,
+"state": "Enemy_Hurt_LS1_Elbow_High",
+"clip": "_515_light_strike_elbow_enemy"
+},
+{
+"off": 1074982,
+"state": "Enemy_Hurt_LS1_Knee_High",
+"clip": "_521_light_strike_knee_kick_enemy"
+},
+{
+"off": 1075216,
+"state": "Enemy_Hurt_LS1_Kick_High",
+"clip": "_517_light_kick_enemy"
+},
+{
+"off": 1075436,
+"state": "Enemy_Hurt_LS2_Punch1_LeftHand_High",
+"clip": "_556_enemy_light_strike_hook_hurt"
+},
+{
+"off": 1075681,
+"state": "Enemy_Hurt_LS2_Punch2_RightHand_Low",
+"clip": "_558_enemy_light_strike_body_hurt"
+},
+{
+"off": 1075926,
+"state": "Enemy_Hurt_LS2_Elbow_High",
+"clip": "_586_enemy_light_strike_alt_elbow_hurt"
+},
+{
+"off": 1076164,
+"state": "Enemy_Hurt_LS2_Knee_High",
+"clip": "_588_enemy_light_strike_alt_knee_hurt"
+},
+{
+"off": 1076400,
+"state": "Enemy_Hurt_LS2_Kick_High",
+"clip": "_519_light_strike_spin_kick_enemy"
+},
+{
+"off": 1076632,
+"state": "Enemy_Hurt_LS3_Head_High",
+"clip": "_604_enemy_light_strike_head_hurt"
+},
+{
+"off": 1076864,
+"state": "Enemy_Hurt_HS_Punch1_LeftHand_High",
+"clip": "_606_enemy_heavy_strike_punch_left_hurt"
+},
+{
+"off": 1077246,
+"state": "Enemy_Hurt_HS_Punch2_RightHand_High",
+"clip": "_608_enemy_heavy_strike_punch_right_hurt"
+},
+{
+"off": 1077630,
+"state": "Enemy_Hurt_HS_Punch4_RightHand_High",
+"clip": "_623_enemy_heavy_strike_uppercut_hurt"
+},
+{
+"off": 1077844,
+"state": "Enemy_Hurt_09_RightCrowbarCounter",
+"clip": "_682_enemy_right_crowbar_hit_countered_hurt"
+},
+{
+"off": 1077928,
+"state": "Enemy_Hurt_10_LeftCrowbarCounter",
+"clip": "_680_enemy_left_crowbar_hit_countered_hurt"
+},
+{
+"off": 1078010,
+"state": "Enemy_Hurt_EMP_Batarang",
+"clip": "_100_enemy_electrocuted_idle"
+},
+{
+"off": 1078555,
+"state": "Enemy_Hurt_EMP_Batarang_To_Idle",
+"clip": "_103_enemy_electrocuted_to_pos"
+},
+{
+"off": 1078624,
+"state": "Enemy_Hurt_LeftKnifeCounter",
+"clip": "_794_enemy_knife_left_countered_hurt"
+},
+{
+"off": 1078695,
+"state": "Enemy_Hurt_RightKnifeCounter",
+"clip": "_796_enemy_knife_right_countered_hurt"
+},
+{
+"off": 1078768,
+"state": "Enemy_Hurt_Lose_Balance_To_Fall",
+"clip": "_732_enemy_lose_balance_to_fall"
+},
+{
+"off": 1079430,
+"state": "Bane_Hurt_Cross_QTE_Countered",
+"clip": "_848_bane_cross_attack_countered"
+},
+{
+"off": 1079620,
+"state": "Bane_Hurt_Kick_QTE_Countered",
+"clip": "_861_bane_leg_kick_attack_countered"
+},
+{
+"off": 1079812,
+"state": "Bane_Hurt_Uppercut_QTE_Countered",
+"clip": "_883_bane_uppercut_attack_countered"
+},
+{
+"off": 1080304,
+"state": "Enemy_Melee_Movement",
+"clip": "_002_idle_stand_breath"
+},
+{
+"off": 1080354,
+"state": "_005_idle_stand_check2",
+"clip": "_006_idle_stand_stretch"
+},
+{
+"off": 1083282,
+"state": "Enemy_Disarmed_01",
+"clip": "_761_disarm1_enemy"
+},
+{
+"off": 1083325,
+"state": "Enemy_Disarmed_01_OnPlace",
+"clip": "_880_disarm1_enemy_onplace"
+},
+{
+"off": 1083384,
+"state": "Enemy_Disarmed_02",
+"clip": "_763_disarm2_enemy"
+},
+{
+"off": 1083505,
+"state": "Enemy_Disarmed_02_OnPlace",
+"clip": "_881_disarm2_enemy_onplace"
+},
+{
+"off": 1083564,
+"state": "Enemy_Disarmed_03",
+"clip": "_898_new_enemy_disarmed_hk"
+},
+{
+"off": 1083693,
+"state": "Enemy_Disarmed_03_OnPlace",
+"clip": "_897_new_enemy_disarmed"
+},
+{
+"off": 1091975,
+"state": "Enemy_Idle_Aim",
+"clip": "_161_enemy_idle_hip"
+},
+{
+"off": 1097744,
+"state": "Enemy_Walk_SMG_Shoot",
+"clip": "_199_enemy_walk_aim_shoot"
+},
+{
+"off": 1100022,
+"state": "Enemy_Run_SMG_Shoot",
+"clip": "_198_enemy_run_hip_shoot"
+},
+{
+"off": 1101199,
+"state": "Strafel_Left",
+"clip": "_168_enemy_walk_hip"
+},
+{
+"off": 1101285,
+"state": "Enemy_SMG_Movement",
+"clip": "_159_enemy_idle_stand"
+},
+{
+"off": 1102519,
+"state": "Ranged_Enemy_Run_Aim",
+"clip": "_173_enemy_run_hip"
+},
+{
+"off": 1103008,
+"state": "Silent_Takedown_Choke_Victim",
+"clip": "_248_enemy_wire_silent_takedown"
+},
+{
+"off": 1103712,
+"state": "Silent_Takedown_From_Gargoyle",
+"clip": "_620_gargoyle_takedown_enemy_hurt"
+},
+{
+"off": 1104256,
+"state": "Sniper_Idle_to_Aim",
+"clip": "_825_sniper_idle_stand_to_aim"
+},
+{
+"off": 1104311,
+"state": "Sniper_Aim_Idle",
+"clip": "_823_sniper_aim"
+},
+{
+"off": 1104369,
+"state": "Sniper_Shoot",
+"clip": "_826_sniper_shoot"
+},
+{
+"off": 1106163,
+"state": "Sniper_Reload",
+"clip": "_827_sniper_reload"
+},
+{
+"off": 1106202,
+"state": "Sniper_Aim_to_Idle",
+"clip": "_824_sniper_aim_to_idle_stand"
+},
+{
+"off": 1106257,
+"state": "Sniper_Aim_Idle_Blend",
+"clip": "_830_up_sniper_aim"
+},
+{
+"off": 1106448,
+"state": "Idle_Turn_L90",
+"clip": "_900_idle_stand_turnl_90"
+},
+{
+"off": 1106493,
+"state": "Idle_Turn_L180",
+"clip": "_901_idle_stand_turnl_180"
+},
+{
+"off": 1106540,
+"state": "Idle_Turn_R90",
+"clip": "_902_idle_stand_turnr_90"
+},
+{
+"off": 1106585,
+"state": "Idle_Turn_R180",
+"clip": "_903_idle_stand_turnr_180"
+},
+{
+"off": 1106632,
+"state": "CombatIdle_Turn_L90",
+"clip": "_904_idle_combat_turnl_90"
+},
+{
+"off": 1106684,
+"state": "CombatIdle_Turn_L180",
+"clip": "_905_idle_combat_turnl_180"
+},
+{
+"off": 1106738,
+"state": "CombatIdle_Turn_R90",
+"clip": "_906_idle_combat_turnr_90"
+},
+{
+"off": 1106790,
+"state": "CombatIdle_Turn_R180",
+"clip": "_907_idle_combat_turnr_180"
+},
+{
+"off": 1106844,
+"state": "HipIdle_Turn_L90",
+"clip": "_908_idle_hip_turnl_90"
+},
+{
+"off": 1106890,
+"state": "HipIdle_Turn_L180",
+"clip": "_909_idle_hip_turnl_180"
+},
+{
+"off": 1106938,
+"state": "HipIdle_Turn_R90",
+"clip": "_910_idle_hip_turnr_90"
+},
+{
+"off": 1106984,
+"state": "HipIdle_Turn_R180",
+"clip": "_911_idle_hip_turnr_180"
+},
+{
+"off": 1110628,
+"state": "Female_Neutral",
+"clip": "_700_gesture_female_neutral_02"
+},
+{
+"off": 1110680,
+"state": "Female_Panic",
+"clip": "_701_gesture_female_panic"
+},
+{
+"off": 1110725,
+"state": "Female_Relief",
+"clip": "_702_gesture_female_relief"
+},
+{
+"off": 1110772,
+"state": "Female_Sad",
+"clip": "_703_gesture_female_sad"
+},
+{
+"off": 1110813,
+"state": "Female_Upset_1",
+"clip": "_704_gesture_female_upset_01"
+},
+{
+"off": 1110863,
+"state": "Female_Upset_2",
+"clip": "_705_gesture_female_upset_02"
+},
+{
+"off": 1110913,
+"state": "Catwoman_Underground_Animation",
+"clip": "_708_c.1.3.2_-_underground_02"
+},
+{
+"off": 1111003,
+"state": "Back_Flip_Kick",
+"clip": "_195_back_flip"
+},
+{
+"off": 1111039,
+"state": "Turn_Kick",
+"clip": "_205_turn_kick"
+},
+{
+"off": 1111089,
+"state": "Run_Cat",
+"clip": "_008_catwoman_run"
+}
+]

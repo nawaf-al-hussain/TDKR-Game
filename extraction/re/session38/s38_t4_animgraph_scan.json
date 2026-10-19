@@ -1,0 +1,1439 @@
+{
+ "state_hits": {
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::batman.bdae": {
+   "Cape": 7
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::batman_anims.bdae": {
+   "Run": 1,
+   "Cape": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::batman_anims_low.bdae": {
+   "Cape": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::batman_low.bdae": {
+   "Cape": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::GC_Gargoyle_Test_Collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::GC_StockExchange_Props_Gargoyle_Collision.bdae": {
+   "Walk": 10
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::GC_StockExchange_Props_Stand_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::GC_StockExchange_Props_Stand_mic_Collision.bdae": {
+   "Walk": 10
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::Grapnel_Gun.bdae": {
+   "Grapnel": 11
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::rocket.bdae": {
+   "Grapnel": 7
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::rocket_Anim.bdae": {
+   "Grapnel": 7
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::rockpile_collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla::WalkingStick.bdae": {
+   "Grapnel": 3,
+   "Walk": 9
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla [ARCHIVE-LEVEL]": {
+   "Grapnel": 29,
+   "Run": 1,
+   "Walk": 48,
+   "Cape": 22
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla::Cutscene_01_City_Survey_mesh.bdae": {
+   "Cape": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla::Cutscene_02_Fall_On_Car_mesh.bdae": {
+   "Cape": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla::Cutscene_03_Heli_SE_Entrance_anim_01_TEST.bdae": {
+   "Cape": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla::Cutscene_03_Heli_SE_Entrance_mesh_01.bdae": {
+   "Cape": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla::Cutscene_03_Heli_SE_Entrance_mesh_01_TEST.bdae": {
+   "Cape": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla::Cutscene_03_Seq02_anim_TEST.bdae": {
+   "Cape": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla::Cutscene_03_Seq02_Mesh.bdae": {
+   "Cape": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla::Cutscene_03_Seq02_Mesh_TEST.bdae": {
+   "Cape": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla [ARCHIVE-LEVEL]": {
+   "Fall": 3,
+   "Cape": 40
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::Alert_Post_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::Barricade_Collision_Final.bdae": {
+   "Walk": 14
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::Barricade_Collision_Start.bdae": {
+   "Walk": 12
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::destroyable_crates_collision.bdae": {
+   "Walk": 12
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::destroyable_crate_collision.bdae": {
+   "Walk": 12
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::ExhaustFan_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::Explosive_Pack_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::garbagecan_round_onfire_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::garbagecan_taper_onfire_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::MilitaryLaser_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::mine_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::Simple_C4_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::Stash_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::Stash_released_collision.bdae": {
+   "Walk": 12
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::StorageBox_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla::ThePitCargo_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/commons.gla [ARCHIVE-LEVEL]": {
+   "Walk": 112
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/effects.gla::Cape.bdae": {
+   "Cape": 11
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/effects.gla [ARCHIVE-LEVEL]": {
+   "Cape": 12
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_hires.gla::BatmanHUD.swf": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 4,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_hires.gla::Shop.swf": {
+   "Jump": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_hires.gla [ARCHIVE-LEVEL]": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 6,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9000.gla::BatmanHUD.swf": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 4,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9000.gla::MainMenu.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9000.gla::MainMenu2.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9000.gla::Shop.swf": {
+   "Jump": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9000.gla [ARCHIVE-LEVEL]": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 6,
+   "Land": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9100.gla::BatmanHUD.swf": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 4,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9100.gla::MainMenu.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9100.gla::MainMenu2.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9100.gla::Shop.swf": {
+   "Jump": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9100.gla [ARCHIVE-LEVEL]": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 6,
+   "Land": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9220.gla::BatmanHUD.swf": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 4,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9220.gla::MainMenu.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9220.gla::MainMenu2.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9220.gla::Shop.swf": {
+   "Jump": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9220.gla [ARCHIVE-LEVEL]": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 6,
+   "Land": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9250.gla::BatmanHUD.swf": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 4,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9250.gla::MainMenu.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9250.gla::MainMenu2.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9250.gla::Shop.swf": {
+   "Jump": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9250.gla [ARCHIVE-LEVEL]": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 6,
+   "Land": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9300.gla::BatmanHUD.swf": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 4,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9300.gla::MainMenu.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9300.gla::MainMenu2.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9300.gla::Shop.swf": {
+   "Jump": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_i9300.gla [ARCHIVE-LEVEL]": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 6,
+   "Land": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_lowres.gla::BatmanHUD.swf": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 4,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_lowres.gla::MainMenu.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_lowres.gla::MainMenu2.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_lowres.gla::Shop.swf": {
+   "Jump": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_lowres.gla [ARCHIVE-LEVEL]": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 6,
+   "Land": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_normalres.gla::BatmanHUD.swf": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 4,
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_normalres.gla::MainMenu.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_normalres.gla::MainMenu2.swf": {
+   "Land": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_normalres.gla::Shop.swf": {
+   "Jump": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/gameswf_normalres.gla [ARCHIVE-LEVEL]": {
+   "Idle": 9,
+   "Grapnel": 5,
+   "Jump": 6,
+   "Land": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::gol.bin": {
+   "Idle": 568,
+   "Ranged_Run": 3,
+   "Grapnel": 150,
+   "Glide": 29,
+   "Melee": 425,
+   "Run": 244,
+   "Walk": 224,
+   "Jump": 261,
+   "Fall": 180,
+   "Land": 119,
+   "Dodge": 28,
+   "Dive": 3,
+   "Ranged_Idle": 6,
+   "Cape": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::achievementsDescriptor.bin": {
+   "Land": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::Rewards.bin": {
+   "Glide": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::shop.lvc": {
+   "Grapnel": 34,
+   "Run": 7
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::BatCave.lvc": {
+   "Melee": 17,
+   "Run": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::GothamCity.lvc": {
+   "Idle": 364,
+   "Ranged_Run": 42,
+   "Grapnel": 53,
+   "Glide": 38,
+   "Melee": 337,
+   "Run": 223,
+   "Walk": 260,
+   "Jump": 30,
+   "Fall": 13,
+   "Land": 7,
+   "Dive": 2,
+   "Ranged_Idle": 5,
+   "Cape": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::GothamCity_Island2.lvc": {
+   "Idle": 84,
+   "Glide": 1,
+   "Melee": 129,
+   "Run": 38,
+   "Walk": 14,
+   "Land": 3,
+   "Dive": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::Test.lvc": {
+   "Idle": 7,
+   "Grapnel": 1,
+   "Glide": 2,
+   "Melee": 4,
+   "Run": 5,
+   "Walk": 6,
+   "Fall": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::l_menu.lvc": {
+   "Fall": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::Military.lvc": {
+   "Idle": 38,
+   "Ranged_Run": 14,
+   "Grapnel": 4,
+   "Glide": 2,
+   "Melee": 64,
+   "Run": 25,
+   "Walk": 7,
+   "Jump": 3,
+   "Fall": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::Police_Station.lvc": {
+   "Idle": 29,
+   "Ranged_Run": 6,
+   "Grapnel": 8,
+   "Melee": 68,
+   "Run": 23,
+   "Walk": 7,
+   "Fall": 3,
+   "Land": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::Stadion.lvc": {
+   "Idle": 12,
+   "Ranged_Run": 3,
+   "Grapnel": 1,
+   "Glide": 1,
+   "Melee": 6,
+   "Run": 8,
+   "Walk": 1,
+   "Fall": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::StockExchange.lvc": {
+   "Idle": 26,
+   "Ranged_Run": 11,
+   "Grapnel": 10,
+   "Glide": 1,
+   "Melee": 101,
+   "Run": 18,
+   "Walk": 7
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::ThePit.lvc": {
+   "Idle": 31,
+   "Grapnel": 11,
+   "Glide": 2,
+   "Run": 13,
+   "Walk": 3,
+   "Jump": 4,
+   "Fall": 2,
+   "Ranged_Idle": 5
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla::Underground.lvc": {
+   "Idle": 29,
+   "Ranged_Run": 4,
+   "Grapnel": 6,
+   "Glide": 6,
+   "Melee": 18,
+   "Run": 36,
+   "Walk": 18,
+   "Jump": 9,
+   "Fall": 4,
+   "Land": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla [ARCHIVE-LEVEL]": {
+   "Idle": 1188,
+   "Ranged_Run": 83,
+   "Grapnel": 278,
+   "Glide": 83,
+   "Melee": 1169,
+   "Run": 643,
+   "Walk": 547,
+   "Jump": 307,
+   "Fall": 208,
+   "Land": 138,
+   "Dodge": 28,
+   "Dive": 6,
+   "Ranged_Idle": 16,
+   "Cape": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_batcave.gla::batcave_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_batcave.gla [ARCHIVE-LEVEL]": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Anim_Crane_BoxDrop_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Bigbridge_1_islands_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Bigbridge_2_islands_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Bigbridge_3_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Bigbridge_4_islands_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Bigbridge_5_islands_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Bigbridge_collision.bdae": {
+   "Walk": 14
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_bridge_1_collision.bdae": {
+   "Walk": 14
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Broken_BigBridge_collision.bdae": {
+   "Walk": 14
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Construction_Truck_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Diner_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Diner_Logo_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AA_BigBuiding_Collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AA_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_footprint_aa_elevator_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_footprint_AB_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AC_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AF_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AG_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AH_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AJ_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AWT_balcony_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AWT_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_footprint_AWT_garage_door_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AWT_Wayne_Logo_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_AWT_Wayne_Logo_Damage_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CA_collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CB_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CC_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CD_Collisions.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CE_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CF_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CG_Collision.bdae": {
+   "Walk": 15
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CH_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CJ_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CJ_Scaffolding_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CL_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CM_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_CN_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DA_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DB_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DC_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DD_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DF_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DG_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DH_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_Diner_Logo_Lit_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DMUS_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DMUS_table_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_DSE_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_GA_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_GB_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_GC_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_GD_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_GF_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_IA_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_IB_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_IC_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_IC_Logo_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_ID_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_IE_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_LA_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_LB_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_LC_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_LE_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_LF_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_LG_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_LPOL_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_STD_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_VA_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_VB_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_VC_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_VD_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_VPOW_Furnal_Collision.bdae": {
+   "Walk": 16
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_VRS_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_ZA_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_ZB_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_ZC_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_ZD_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_ZE_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_ZE_window_collisions.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Footprint_ZF_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_island1_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Island2_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Monorail_Island1_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Monorail_Island2_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Props_Monorail_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Props_Monorail_Train_Collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Props_UnderConstructionArea_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Logo_BuildingLogoText_01_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Logo_BuildingLogoText_02_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Logo_BuildingLogo_01_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Logo_BuildingLogo_02_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_ParkLightpole_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_01_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_02_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_03_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_04_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_05_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_06_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_Industrial_01_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_Industrial_02_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_Industrial_03_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_Industrial_04_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_Industrial_05_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Plant_Industrial_06_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_01_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_01_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_01_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_02_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_02_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_02_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_03_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_03_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_03_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_04_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_04_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_04_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_05_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_05_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_05_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_05_XL_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_06_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_06_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_06_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_07_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_07_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_07_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_01_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_01_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_01_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_02_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_02_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_02_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_03_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_03_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_03_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_04_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_04_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_04_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_05_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_05_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_05_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_05_XL_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_06_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_06_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_06_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_07_L_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_07_M_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_Tree_Industrial_07_S_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_01_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_02_blue_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_02_red_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_03_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_04_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_05_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_06_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_07_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_08_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_09_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_10_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_11_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Prop_VNeonSign_12_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Railway_Island1_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Railway_Island2_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Crate2_Collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Crate3_Collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Crate_Collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Excavator_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Gotham_Spotlight_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_lighting_column_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Light_Pillar2_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Light_Pillar3_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Light_Pillar_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_NewsPaperBox2_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_NewsPaperBox_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_RoadBlock2_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_RoadBlock_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_RoadBlock_Cone_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Props_Traffic_Light_No_Illum_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Residential_Shop_Drugs_NeonSign_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Res_Prop_Streetlight_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Small_Bridge_Island2_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Smal_Bridge_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GC_Subway_Entrance_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GothamCity_Map_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::HC_Prop_BillboardRoof_01_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::HC_Prop_BillboardRoof_01_PullDown_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::HC_Prop_BillboardRoof_02_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::HC_Prop_BillboardWallSmall_01_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::HC_Prop_BillboardWallTall_01_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::HC_Prop_BillboardWall_01_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::HC_Prop_Busstop_01_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::HC_Prop_Busstop_Ad_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GothamCity.zip": {
+   "Land": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla::GothamCity_Island2.zip": {
+   "Land": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla [ARCHIVE-LEVEL]": {
+   "Walk": 765,
+   "Land": 12
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_menu.gla::MM_FallingDebris.bdae": {
+   "Fall": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_menu.gla::MM_FallingRocks.bdae": {
+   "Fall": 3
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_menu.gla [ARCHIVE-LEVEL]": {
+   "Fall": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_military.gla::Military_Complex_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_military.gla::Military_Complex_Collision_simple.bdae": {
+   "Walk": 10
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_military.gla [ARCHIVE-LEVEL]": {
+   "Walk": 12
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::box_collision_grapnel_test.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::box_collision_test.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::desk_window_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::GC_Policestation_centralcomputer_collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::GC_Policestation_garadge_glass_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::GC_Policestation_neon_destroy_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::GC_Policestation_spotlight_tower_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::GC_SpBuilding_PoliceStation_01_Collisions.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::GC_SpBuilding_PoliceStation_glass_upstairs_collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla::GC_SpBuilding_PoliceStation_roof_glass_collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_policestation.gla [ARCHIVE-LEVEL]": {
+   "Walk": 56
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stadion.gla::ST_stadium_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stadion.gla [ARCHIVE-LEVEL]": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::box_collision_test.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Final_finish_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Final_start_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Main_Entrance_Exterior_Collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Main_Entrance_Room_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Main_Entrance_Room_NavMesh.bdae": {
+   "Walk": 10
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Props_Floor3_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Props_Floor3_Small_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Props_Monitor_Collision_End.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla::GC_StockExchange_Props_Monitor_Collision_Start.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_stockexchange.gla [ARCHIVE-LEVEL]": {
+   "Walk": 62
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Box1_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Box2_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::box_collision_test.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::FenceFall.bdae": {
+   "Fall": 58
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::FencePlaceHolder_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::FencePlaceHolder_Collision2.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::GC_Residential_Props_UtilityBox_Collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::GC_ThePit_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room1_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room2_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room3_Batman_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room3_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room3_Door_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room3_LightBulb_Collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room4_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room5_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Room6_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Tunel_1_2_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Tunel_2_3_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Tunel_3_4_Collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Tunel_4_5_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla::Tunel_5_6_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla [ARCHIVE-LEVEL]": {
+   "Walk": 114,
+   "Fall": 60
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_elevator_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_panell_fall_collision_after.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_panell_fall_collision_initial.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_ROOM02_bars_gate_collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_ROOM02_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_ROOM03_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_ROOM04_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_ROOM04_nopassing_fence_col.bdae": {
+   "Walk": 12
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_ROOM04_pannell_fall_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_ROOM05_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_ROOM05_wall_explosion_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_train_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_tunnel_01_02_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_tunnel_02_03_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_tunnel_03_04_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_tunnel_04_05_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla::underground_window_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_underground.gla [ARCHIVE-LEVEL]": {
+   "Walk": 56
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/strings.gla::MAIN.xml": {
+   "Grapnel": 34,
+   "Run": 7
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/strings.gla [ARCHIVE-LEVEL]": {
+   "Grapnel": 34,
+   "Run": 7
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::banes_van_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::batpod_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::car_batman_crash_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::construction_truck_collision.bdae": {
+   "Walk": 6
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::limousine_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::MilitaryJeep_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::MilitaryTruck_collision.bdae": {
+   "Walk": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::Military_helicopter_crash_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::monorail_01_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::monorail_02_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::monorail_03_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::PoliceHeli_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::SwatVan_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::theBat_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficCarSUV_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficCarTaxi_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficCoupe_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficHatch_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficPolice_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficSedan_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficSedan_Door_Collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficTruck_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::TrafficVan_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::train_locomotive_collision.bdae": {
+   "Walk": 8
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla::Tumbler_collision.bdae": {
+   "Walk": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/vehicles.gla [ARCHIVE-LEVEL]": {
+   "Walk": 98
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/actors_tex.gla::chara_PitConvict1_c.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/actors_tex.gla [ARCHIVE-LEVEL]": {
+   "Grapnel": 4,
+   "Run": 1,
+   "Walk": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla::GC_Footprint_VD_Items.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla::GC_LongDist_Island2_Roads.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla::GC_Railway_Station.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla::GothamCity_Road_v1_Island_1.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla [ARCHIVE-LEVEL]": {
+   "Run": 4,
+   "Land": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_policestation_tex.gla::police_buildings.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_policestation_tex.gla [ARCHIVE-LEVEL]": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_stadion_tex.gla::ST_grass_TH.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_stadion_tex.gla::ST_wall_TH.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_stadion_tex.gla [ARCHIVE-LEVEL]": {
+   "Run": 2
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_stockexchange_tex.gla::SE_alpha_01.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_stockexchange_tex.gla [ARCHIVE-LEVEL]": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_underground_tex.gla::underground_props.tga": {
+   "Run": 1
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_underground_tex.gla [ARCHIVE-LEVEL]": {
+   "Run": 1
+  },
+  "libKRHP.so [whole file]": {
+   "Idle": 52,
+   "Ranged_Run": 2,
+   "Grapnel": 47,
+   "Glide": 44,
+   "Melee": 91,
+   "Run": 243,
+   "Walk": 42,
+   "Jump": 44,
+   "Fall": 20,
+   "Land": 8,
+   "Dodge": 3,
+   "Dive": 1,
+   "Grapple": 2,
+   "Ranged_Idle": 2,
+   "Cape": 19
+  }
+ },
+ "controls": {
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/actors.gla": {
+   "_001_idle_stand": 4,
+   "_008_run": 4,
+   "Bip01_Pelvis": 148,
+   "chara_Batman_DIFFUSE": 4
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/cinematics.gla": {
+   "Bip01_Pelvis": 32,
+   "chara_Batman_DIFFUSE": 14
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/game_config.gla": {
+   "_001_idle_stand": 2,
+   "_008_run": 1,
+   "Bip01_Pelvis": 5,
+   "GetDistFromMC": 431
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/data/l_thepit.gla": {
+   "Bip01_Pelvis": 26
+  },
+  "com.gameloft.android.AMAZ.GloftKRAS/files/textures/actors_tex.gla": {
+   "chara_Batman_DIFFUSE": 1
+  },
+  "libKRHP.so": {
+   "GetDistFromMC": 6,
+   "PVRTCDecompress": 1
+  }
+ }
+}
