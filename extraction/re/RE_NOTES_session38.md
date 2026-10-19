@@ -67,3 +67,67 @@ python-built batman.glb UNAFFECTED (verify_s34 re-run 0.0004 cm). Fix in T5.
   intentional playable/, now also reading pre-push v20 remote); repo path fixed
   to resolve relative to the script (was the stale /home/z/my-project/repo).
 - PUSH REQUIRES CREDENTIALS. Do NOT push without a fresh user-supplied PAT.
+
+## T2 PVRTC — oracle complete + semantics solved; real-data transform gap OPEN
+1. ORACLE HARNESS FIXED: the s37 UC_ERR_INSN_INVALID was the MISSING RETURN PATH
+   (the function POPs {pc} from the stack; s37 left dest as the top-of-stack word
+   so the decoder "returned" into the DEST mapping and executed zeros). With a
+   proper LR (magic page) + SP: the engine PVRTCDecompress @0x746e34 RUNS TO
+   COMPLETION with ZERO faults (pc = return magic). COMPLETENESS PROVEN:
+   DEST pre-filled 0x00 vs 0xFF -> outputs byte-identical (262,144/262,144),
+   zero fill-dependent bytes, and byte-exact vs the s37-banked output (the s37
+   dump was complete all along). Banked: s38_t2_engine_rgba(_4bpp).bin.
+2. PROLOGUE/FLAGS: cmp r1,#0 -> r6 = 4 (r1==0) / 8 (r1!=0); the conversion-path
+   caller @0x800f84 passes flag=1 ONLY for internal format ids 0x15/0x16 (table
+   of 40-B format descriptors, bpp byte at +0x15, flag byte at +0x24), else 0.
+   Synthetic probes: flag=1 shows 8-px endpoint spacing (2bpp geometry),
+   flag=0 = 4bpp.
+3. MODULATION TABLE SOLVED EMPIRICALLY (uniform-block probes, exact):
+   mod 0 -> colorB (bits 16-30, 555), 1 -> (3A+5B)/8, 2 -> (5A+3B)/8,
+   3 -> colorA (bits 0-14); 555->8 = bit replication; alpha = 255 if bit15
+   (opA) set, else 255*wA/8 (wA = 0,3,5,8); with opA=0 colorA bleeds toward
+   black + neighbor bleed (g=16 signature measured); mode bit31 has NO effect
+   on 555 blocks (the 444+delta path is NOT taken for these).
+4. MORTON STRUCTURE PROVEN BOTH WAYS: the disassembly computes FOUR neighbor
+   block fetches (stack slots 0x130/134/138/13c) via bit-INTERLEAVE loops and
+   `add ip, data, ip, lsl #3`; empirically (8 bit-plane runs, flag=0) the
+   permutation between my LINEAR synthetic input and the decoded output blocks
+   is EXACTLY interleave(by, bx) (by in the low bits) — linmap banked.
+5. OPEN GAP: the REAL .tga mip0 (256^2, first 32,768 B of the 43,704-B chain —
+   size law re-verified: 32768+8192+2048+512+128+32+8+8+8 = 43,704 exact) still
+   decodes to structured noise through the engine under BOTH flags, and my
+   python decoder (empirical table + linear/morton/morton-swapped/tiled order
+   variants) does not reproduce it; block-level de-Morton of the engine OUTPUT
+   also fails. The conversion path must transform the data (or the output)
+   with an additional swizzle/step not yet reversed (caller-of-caller hunt).
+   The 10-level-texture street patch is therefore NOT deliverable this round;
+   T2 verdict: oracle + semantics DONE (4 of 5 items), real-texture decode
+   remains open with all artifacts banked for the next session.
+
+## T7 navmesh clearance-weighted routes (final)
+Clearance per cell = 2D distance from cell center to the nearest non-walkable
+collision edge (cap 2 m, cached); A* edge cost = length*(1+2*max(0,(0.45-clr)/0.45));
+low-clearance waypoints pushed toward the locally clearest of 8 directions.
+RESULT: 13/40 same-region routes ok (s37 baseline 12/40) — MARGINAL (+1).
+Failure classes (40 attempts): stuck_wall 14, fell 6, step_too_high 5,
+no_ground 1, ok 13 + the 24 cross-region engine-rejects unchanged.
+VERDICT: the "missing agent-radius clearance" hypothesis is REFUTED as the
+primary cause — clearance-weighted pathing does not recover the failures;
+they remain collision-layer/data issues (missing walkable flags, step geometry).
+NOTE: the first run clobbered extraction/re/session37/s37_t1_routes2.json
+(save path); restored from git and the s38 output now saves to its own file.
+
+## T8 inventory + release addendum
+gh-pages v20 LIVE = 182 files / 120.0 MB (models 117.3, playable 2.6, shell 0.1).
+playable/ game-derived assets: batman.glb 1.33 MB + patch.json 1.06 MB = 2.41 MB.
+User-supplied-only proposal: ~0.5 MB pure code; batman.glb/patch.json decoded
+at runtime via the T5 lazy pipeline (demonstrated); models/* has no runtime
+pipeline (city decode not built). FINDING ACTIONED: pipeline.html +
+tdkr_pipeline.js were tracked in the main mirror dir but NEVER synced to
+gh-pages — deployed to the v21 tree (39298a4) via deploy_site.py + re-gated.
+
+## Round-28 delivery state
+Commits this session (main): ce9f12c 5bec388 3f5783a 021e327 f6784d3 7c3072f
+c623076 254ee4d e665e20 + T7/notes commit. gh-pages-release-v21: 54686e4 +
+39298a4 (ready to push AS gh-pages; v21 = upright textured Batman + pipeline
+page). Main mirror: 44bf6dc. Push requires FRESH user credentials.
