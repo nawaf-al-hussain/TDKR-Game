@@ -24,28 +24,33 @@ const LOG = document.getElementById('log');
 function log(s){ const d=document.createElement('div'); d.textContent=s; LOG.appendChild(d); LOG.scrollTop=LOG.scrollHeight; }
 
 const patch = await (await fetch('./patch.json')).json();
+const GATE = location.hash.includes('gate');   // test-only: silhouette gate view
 log('collision patch: ' + patch.tris.n + ' tris; triggers: ' + patch.triggers.length +
     ' (' + patch.triggers.filter(t=>t.has_script).length + ' with scripts)');
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.outputColorSpace = THREE.SRGBColorSpace;   // sRGB output (r160 default, explicit per gate)
 renderer.setSize(innerWidth, innerHeight);
 document.body.appendChild(renderer.domElement);
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0a0d12);
-scene.fog = new THREE.Fog(0x0a0d12, 60, 220);
+scene.background = new THREE.Color(GATE ? 0xffffff : 0x0a0d12);
+if (!GATE) scene.fog = new THREE.Fog(0x0a0d12, 60, 220);
+if (GATE) { document.getElementById('log').style.display = 'none'; document.getElementById('hud').style.display = 'none'; }
 const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 800);
-scene.add(new THREE.HemisphereLight(0x8899bb, 0x223322, 1.1));
-const sun = new THREE.DirectionalLight(0xffeecc, 1.2); sun.position.set(60, 120, 40); scene.add(sun);
+// r160 physical light units: legacy intensities render ~3x dark (s38 albedo gate)
+scene.add(new THREE.HemisphereLight(0x8899bb, 0x223322, 2.6));
+scene.add(new THREE.AmbientLight(0xffffff, 1.1));
+const sun = new THREE.DirectionalLight(0xffeecc, 3.0); sun.position.set(60, 120, 40); scene.add(sun);
 
 // collision patch
-{
+if (!GATE) {
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.Float32BufferAttribute(patch.tris.flat, 3));
   g.computeVertexNormals();
   scene.add(new THREE.Mesh(g, new THREE.MeshLambertMaterial({ color: 0x35404d, side: THREE.DoubleSide })));
 }
 // trigger markers
-for (const t of patch.triggers) {
+if (!GATE) for (const t of patch.triggers) {
   const ring = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 0.05, 16),
     new THREE.MeshBasicMaterial({ color: t.has_script ? 0xe8b34b : 0x445566, transparent: true, opacity: 0.6 }));
   ring.position.set(t.pos[0], t.pos[2] + 0.03, -t.pos[1]);
@@ -133,6 +138,10 @@ function mkLua(luaLog) {
 let mixer = null; const actions = {}; let batman = null;
 new GLTFLoader().load('./batman.glb', (g) => {
   batman = g.scene; scene.add(batman);
+  // RAW RIG IS Z-UP: rotate a bone ANCESTOR (never the mesh node — skinned verts
+  // ignore the mesh node transform; bones must carry the rotation). s38 T1a proof:
+  // GPU net skinning = SUM w_b (bone.matrixWorld @ ibm_b) v in world space.
+  batman.rotation.x = -Math.PI / 2;
   mixer = new THREE.AnimationMixer(batman);
   for (const c of g.animations) actions[c.name] = mixer.clipAction(c);
   const idle = actions['_001_idle_stand'], run = actions['_008_run'];
@@ -140,6 +149,14 @@ new GLTFLoader().load('./batman.glb', (g) => {
   if (run) { run.play(); }
   if (idle && run) { idle.setEffectiveWeight(1); run.setEffectiveWeight(0); }
   log('batman.glb: ' + g.animations.map(a => a.name + ' ' + a.duration.toFixed(2) + 's').join(', '));
+  // deterministic pose hook for the release gate (screenshot IoU):
+  if (location.hash.startsWith('#freeze')) {
+    const t = parseFloat(location.hash.slice(8)) || 0.5;
+    const idle = actions['_001_idle_stand'];
+    if (idle) { idle.play(); mixer.setTime(t); }
+    window.__frozen = { mixer, actions, batman, poseT: t };
+    log('FROZEN pose idle@' + t + 's for gate');
+  }
 }, undefined, (e) => log('GLB ERROR: ' + e));
 
 // player (game coords)
@@ -210,18 +227,25 @@ function tick(now) {
 
   if (batman) {
     batman.position.set(P.x, P.z - 0.9, -P.y);
-    if (vx || vy) batman.rotation.y = Math.atan2(-vx, -vy) + Math.PI;
-    if (mixer) {
-      const idle = actions['_001_idle_stand'], run = actions['_008_run'];
-      if (idle && run) {
-        const w = Math.min(1, Math.max(0, (P.speed - 0.2) / 2.0));
-        idle.setEffectiveWeight(1 - w); run.setEffectiveWeight(w);
+    if (!window.__frozen) {
+      if (vx || vy) batman.rotation.y = Math.atan2(-vx, -vy) + Math.PI;
+      if (mixer) {
+        const idle = actions['_001_idle_stand'], run = actions['_008_run'];
+        if (idle && run) {
+          const w = Math.min(1, Math.max(0, (P.speed - 0.2) / 2.0));
+          idle.setEffectiveWeight(1 - w); run.setEffectiveWeight(w);
+        }
+        mixer.update(dt);
       }
-      mixer.update(dt);
     }
   }
-  camera.position.set(P.x, P.z + 3.2, -P.y + 6.5);
-  camera.lookAt(P.x, P.z - 0.4, -P.y);
+  if (GATE) {
+    camera.position.set(P.x, P.z + 0.2, -P.y + 4.2);
+    camera.lookAt(P.x, P.z + 0.1, -P.y);
+  } else {
+    camera.position.set(P.x, P.z + 3.2, -P.y + 6.5);
+    camera.lookAt(P.x, P.z - 0.4, -P.y);
+  }
   document.getElementById('pos').textContent = P.x.toFixed(1) + ', ' + P.y.toFixed(1) + ', ' + P.z.toFixed(1);
   document.getElementById('spd').textContent = P.speed.toFixed(1);
   renderer.render(scene, camera);

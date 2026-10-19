@@ -1,0 +1,23 @@
+{
+ "iou": 0.9421,
+ "iou_null_wrong_pose": 0.89,
+ "iou_null_rotated_ref": 0.4968,
+ "iou_null_shifted_ref": 0.0127,
+ "aspect_reference": 1.279,
+ "aspect_browser": 1.312,
+ "ground_min_y_m": 0.0953,
+ "mean_rgb_fg": [
+  37.5,
+  36.0,
+  35.0
+ ],
+ "texture_mean_rgb": [
+  31.4,
+  31.0,
+  31.0
+ ],
+ "albedo_dist_to_texture": 5.1,
+ "albedo_dist_to_grey": 155.1,
+ "fg_pct": 3.25,
+ "ref_pct": 3.43
+}

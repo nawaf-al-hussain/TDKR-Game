@@ -1,0 +1,8 @@
+{
+ "pairs": 888,
+ "match_rate_real": 0.6655,
+ "match_rate_null_shuffled_uv": 0.2534,
+ "match_rate_null_offset_uv": 0.491,
+ "integer_offset_pair_pct": 0.4887,
+ "match_rate_integer_offset_pairs": 1.0
+}
