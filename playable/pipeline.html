@@ -102,17 +102,18 @@ $('#f').addEventListener('change', async ev => {
       const tw = td[8] | (td[9] << 8) | (td[10] << 16) | (td[11] << 24);
       const px = td.subarray(52, 52 + tw * th * 3);
       const rgba = new Uint8Array(tw * th * 4);
-      // s40 T1 fix: RGB888 memory order is B,G,R (verified pixel-exact vs the
-      // reference pool on all 8 bpp=24 textures incl. Batman DIFFUSE/NM/spec;
-      // the old straight-RGB read swapped R and B - invisible on the grey suit).
+      // s41 T3 correction: RGB888 memory order is R,G,B (the s40 "BGR fix" was
+      // INVERTED; its pool check was circular). Evidence: Batman NM memory means
+      // [125.6,127.2,242.9] = z-in-byte2 = standard normal map under RGB;
+      // GC_Skybox blue-dominant under RGB; City_BKG corr favors RGB.
       for (let i = 0; i < tw * th; i++) {
-        rgba[i*4] = px[i*3+2]; rgba[i*4+1] = px[i*3+1]; rgba[i*4+2] = px[i*3]; rgba[i*4+3] = 255;
+        rgba[i*4] = px[i*3]; rgba[i*4+1] = px[i*3+1]; rgba[i*4+2] = px[i*3+2]; rgba[i*4+3] = 255;
       }
       const tex = new THREE.DataTexture(rgba, tw, th, THREE.RGBAFormat);
       tex.colorSpace = THREE.SRGBColorSpace;
       tex.needsUpdate = true; tex.flipY = false;
       texture = tex;
-      log(`chara_Batman_DIFFUSE: ${tw}x${th} RGB888 decoded (BGR order fixed s40)`);
+      log(`chara_Batman_DIFFUSE: ${tw}x${th} RGB888 decoded (RGB order, s41 T3 correction)`);
     }
 
     // ---- s40 T1: STREET TEXTURE decoded in-browser from YOUR files.
