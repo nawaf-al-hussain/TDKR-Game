@@ -1,0 +1,89 @@
+{
+ "ACTIVE": {
+  "str_locs": [],
+  "pool_words": [],
+  "code_ref_pools": []
+ },
+ "CAMERA_SHAKE_BOMB": {
+  "str_locs": [
+   "0xb3089c"
+  ],
+  "pool_words": [],
+  "code_ref_pools": []
+ },
+ "DISABLED": {
+  "str_locs": [],
+  "pool_words": [],
+  "code_ref_pools": []
+ },
+ "ENABLED": {
+  "str_locs": [],
+  "pool_words": [],
+  "code_ref_pools": []
+ },
+ "FACE_BATMAN": {
+  "str_locs": [
+   "0xb42bf8"
+  ],
+  "pool_words": [
+   "12628008"
+  ],
+  "code_ref_pools": []
+ },
+ "FACE_HOSTAGE": {
+  "str_locs": [
+   "0xb42c6c"
+  ],
+  "pool_words": [
+   "12628048"
+  ],
+  "code_ref_pools": []
+ },
+ "FACE_MERCENARY": {
+  "str_locs": [
+   "0xb42c18"
+  ],
+  "pool_words": [
+   "12628024"
+  ],
+  "code_ref_pools": []
+ },
+ "FACE_NONE": {
+  "str_locs": [
+   "0xb42bdc"
+  ],
+  "pool_words": [
+   "12627992"
+  ],
+  "code_ref_pools": []
+ },
+ "KILLED": {
+  "str_locs": [],
+  "pool_words": [],
+  "code_ref_pools": []
+ },
+ "MC_MAX_DISTANCE": {
+  "str_locs": [
+   "0xb30948"
+  ],
+  "pool_words": [],
+  "code_ref_pools": []
+ },
+ "NUMBERED": {
+  "str_locs": [],
+  "pool_words": [],
+  "code_ref_pools": []
+ },
+ "UNDERGROUND": {
+  "str_locs": [
+   "0xb3fbe2"
+  ],
+  "pool_words": [],
+  "code_ref_pools": []
+ },
+ "ZONE": {
+  "str_locs": [],
+  "pool_words": [],
+  "code_ref_pools": []
+ }
+}

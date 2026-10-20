@@ -1,0 +1,142 @@
+[
+ {
+  "vaddr": "0xc0b018",
+  "name": "FACE_NONE",
+  "next": "None"
+ },
+ {
+  "vaddr": "0xc0b020",
+  "name": "FACE_MC",
+  "next": "Batman"
+ },
+ {
+  "vaddr": "0xc0b028",
+  "name": "FACE_BATMAN",
+  "next": "Batman"
+ },
+ {
+  "vaddr": "0xc0b030",
+  "name": "FACE_ALFRED",
+  "next": "Alfred"
+ },
+ {
+  "vaddr": "0xc0b038",
+  "name": "FACE_MERCENARY",
+  "next": "Mercenary"
+ },
+ {
+  "vaddr": "0xc0b040",
+  "name": "FACE_MERCENARY2",
+  "next": "Mercenary2"
+ },
+ {
+  "vaddr": "0xc0b048",
+  "name": "FACE_MERCENARY3",
+  "next": "Mercenary3"
+ },
+ {
+  "vaddr": "0xc0b050",
+  "name": "FACE_HOSTAGE",
+  "next": "Hostage"
+ },
+ {
+  "vaddr": "0xc0b058",
+  "name": "FACE_HOSTAGE_FEMALE",
+  "next": "Hostage"
+ },
+ {
+  "vaddr": "0xc0b060",
+  "name": "FACE_HOSTAGE_FEMALE2",
+  "next": "HostageF2"
+ },
+ {
+  "vaddr": "0xc0b068",
+  "name": "FACE_HOSTAGE_MALE",
+  "next": "HostageM"
+ },
+ {
+  "vaddr": "0xc0b070",
+  "name": "FACE_HOSTAGE_MALE2",
+  "next": "HostageM2"
+ },
+ {
+  "vaddr": "0xc0b078",
+  "name": "FACE_HOSTAGE_MALE_OLD",
+  "next": "HostageM3"
+ },
+ {
+  "vaddr": "0xc0b080",
+  "name": "FACE_BANE",
+  "next": "Bane"
+ },
+ {
+  "vaddr": "0xc0b088",
+  "name": "FACE_OBJECTIVE",
+  "next": "Objective"
+ },
+ {
+  "vaddr": "0xc0b090",
+  "name": "FACE_POLICE_OFFICER",
+  "next": "PoliceOfficer"
+ },
+ {
+  "vaddr": "0xc0b098",
+  "name": "FACE_LUCIUS",
+  "next": "Lucius"
+ },
+ {
+  "vaddr": "0xc0b0a0",
+  "name": "FACE_SELINA",
+  "next": "Selina"
+ },
+ {
+  "vaddr": "0xc0b0a8",
+  "name": "FACE_GORDON",
+  "next": "Gordon"
+ },
+ {
+  "vaddr": "0xc0b0b0",
+  "name": "FACE_BLAKE",
+  "next": "JohnBlake"
+ },
+ {
+  "vaddr": "0xc0b0b8",
+  "name": "FACE_JOHNBLAKE",
+  "next": "JohnBlake"
+ },
+ {
+  "vaddr": "0xc0b0c0",
+  "name": "FACE_MIRANDATATE",
+  "next": "MirandaTate"
+ },
+ {
+  "vaddr": "0xc0b0c8",
+  "name": "FACE_TURHAN",
+  "next": "Turhan"
+ },
+ {
+  "vaddr": "0xc0b0d0",
+  "name": "FACE_BRUCE",
+  "next": "BrucePit"
+ },
+ {
+  "vaddr": "0xc0b0d8",
+  "name": "FACE_CRANE",
+  "next": "Crane"
+ },
+ {
+  "vaddr": "0xc0b0e0",
+  "name": "FACE_BLINDPRISONER",
+  "next": "BlindPrisoner"
+ },
+ {
+  "vaddr": "0xc0b0e8",
+  "name": "FACE_THUG2",
+  "next": "Thug2"
+ },
+ {
+  "vaddr": "0xc0b0f0",
+  "name": "FACE_THUG4",
+  "next": "Thug4"
+ }
+]
