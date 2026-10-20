@@ -45,3 +45,51 @@ No token this session -> local commits + verified bundles only.
    bit-exact), so no code change — notes only.
 
 Artifacts: extraction/re/session41/s41_t1_*.{py,json,png} + s41_refdec_lib.py.
+
+## T2 (next commit) — PASS: 910/910 chunk parity, 0 exceptions; engine oracle INCONCLUSIVE
+1. FORMAT RECON (s41_t2_recon.py): all 910 OBB chunks classified: 647 ETC1 +
+   205 RGB565 + 8 RGB888 + 2 RGBA8888 + 48 ZIP_SPLIT. Mip semantics PROVEN:
+   dsz(+20) = sum of levels from w x h down to 1 x 1 inclusive (header `mips`
+   field = log2(max dim); the chain holds log2+1 levels) — verified exactly
+   on all 647 ETC1 chains + 96 split-member chains (0 exceptions).
+2. ZIP_SPLIT CRACKED (s41_t2_split.py): each of the 48 entries is an embedded
+   STORED zip: 'SPLIT' (4-byte zero marker) + 'rgb.pvr' + 'alpha.pvr' — both
+   members are complete standalone ETC1 PVRs with full mip chains (rgb e.g.
+   512^2 mips=9, alpha 256^2 mips=8; alpha can be half-res). The combination
+   is shader-side (rgb supplies color, alpha.pvr the alpha plane); parity is
+   per member.
+3. CHANNEL-ORDER CALIBRATION with independent references (s41_t2_calib*.py):
+   - RGB565: u16 LE, R5G6B5, BIT-REPLICATION expansion — EXACT (1.0000) vs
+     the deployed lossless LUT_000_default.png (512x16). (Arithmetic scaling
+     *255//N is wrong: only 0.12 exact.)
+   - RGB888: memory order = R,G,B — NOT BGR as the s40 note claimed (the s40
+     "pixel-exact vs pool" check was circular: the pool shared the same
+     convention). Independent evidence: chara_Batman_NM memory means
+     [125.6,127.2,242.9] = z-in-byte2 = standard normal map under RGB;
+     GC_Skybox [38.6,62.1,77.2] = blue-dominant sky under RGB; City_BKG corr
+     slightly favors RGB. CORRECTION propagated to the live-page question:
+     pipeline.html's s40 "BGR fix" actually SWAPS R/B on 888 textures
+     (invisible on the grey suit); fix prepared, NOT deployed (no push).
+   - RGBA8888: memory order = R,G,B,A (byte3=alpha=255 constant on
+     FX_Coronas_Glow; template match vs deployed FX_Coronas.jpg corr(R)=0.906
+     > corr(B)=0.896; consistent with the RGB888 finding).
+4. FULL PARITY (s41_t2_build.py + s41_t2_parity.js): Python reference decodes
+   ALL 910 chunks incl. every mip level and both split members; node JS
+   decodes the same raw payloads from a pack INDEPENDENTLY (etc1_tdkr.js for
+   ETC1/split, fresh typed-array decoders for 565/888) and compares SHA256
+   per level AND per chunk: ETC1 647/647, RGB565 205/205, RGB888 8/8,
+   RGBA8888 2/2, ZIP_SPLIT 48/48 — 910/910, 0 mismatches, 11.3 s.
+   Reference global sha 38ea26f86c7b5aafbc6a4d25...
+5. MIP CHAINS: all levels decoded + size-checked (see 1); sanity contact
+   sheet for Assault-rifle_HKG36C_d (10 levels 512^2 -> 1x1, dsz exact)
+   saved as s41_t2_mipsanity.png.
+6. ENGINE ORACLE (s41_t2_oracle.py) — INCONCLUSIVE within the time-box:
+   unicorn+capstone installed; whole-image ARM emulation harness with
+   bump-allocator interception reaches the fmt-29 inline decoder (fresh
+   static confirmation: BE-word reads + masks 0xf8000000/0xf80000/0xf800,
+   sbfx sign-extended deltas = standard ETC1 unpack over b0=R,b1=G,b2=B).
+   BLOCKED on the 9-arg convention: 0x800f84 has ZERO direct BL/BLX callers
+   and zero pointer references (dispatch is computed), so the true argument
+   semantics (loop bounds) could not be reconstructed from the function body
+   alone. NAMED NEXT: reconstruct the computed-dispatch call path (ADR/ADD
+   stubs around 0x800f40), then re-run the harness.
