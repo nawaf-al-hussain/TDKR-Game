@@ -218,3 +218,39 @@ is the best available walker). Named next: reconcile navmesh z to soup
 walkable ground (per-cell offset fit), then re-run the 40 routes.
 
 Artifacts: extraction/re/session42/s42_t4_navmesh.py + s42_t4_result.json
+
+## T5 — PASS-WITH-NULL-RESULT: objId+TRS capture SOLVED from existing tokens; spatial per-object test run; 87 pairs < 100 and does NOT discriminate -> volume model stays "unvalidated, engine-derived only"
+
+1. CAPTURE SOLVED (s41's named blocker, without new emulation): the generic
+   object records live in the EXISTING s26 walk TOKEN TREES as contiguous
+   [B][i32 objId][f x9] runs — 907 records (462 GothamCity + 445 Island2),
+   885 distinct objIds, id space 31000..2400056 (engine object-id space).
+   s41's "0 contiguous runs" was a search-scope miss (it scanned the
+   fault-truncated engine-walk token capture, not the full token trees).
+   Floats decoded as [pos3, rot3, scale3] in city coordinates (rec 2 =
+   identity-at-origin scale 1; rec 3 = pos(-820.7,-962.3,-2.1) scale(36.3,34,35);
+   ranges match the trigger pos ranges).
+2. ID-SPACE FINDINGS (all joins measured): trigger-table ids (80001..2400099,
+   n=440) vs component objIds (885): overlap 0; vs walk-record load-order ids
+   (2..14308): overlap 0; trigger-tid records (9803/9809/18250) carry NO
+   [B][i][9f] components at all (their volumes are their OWN record fields —
+   the s36 data-determined halves). The id spaces are three distinct things;
+   any id-based pairing is structurally impossible from the walk products.
+3. SPATIAL JOIN (the workable pairing): objects whose TRS position lies
+   within trigger pos +- (half + 0.25 pad): 635 pairs across 87 of 440
+   triggers (median trigger half = 0.5 -> 1 m boxes; most contain nothing).
+   Nearest-object-per-trigger testable pairs: 87 < the 100-pair GATE.
+4. PER-OBJECT TEST at n=87: corr(log(half_geom), log(scale/2)) = 0.2839;
+   SAME-SIZE-CLASS NULL (log2 scale bucket, 200 shuffles): mean 0.2776,
+   std 0.0066, p95 0.2878 -> the real correlation does NOT exceed the null
+   (0.2839 < 0.2878). The "trigger volumes bound their paired objects"
+   hypothesis is dead for the spatially-pairable subset.
+5. VERDICT per the task's own rule (cannot reach 100 pairs OR discriminate):
+   the trigger-volume model stays "UNVALIDATED, ENGINE-DERIVED ONLY" — now
+   with the pairing mechanism solved, a measured pair count (87), and a
+   quantified null instead of an id-space mystery. Named next (if ever
+   revisited): obtain the trigger->object LINK the scripts use (the 440
+   trigger ids are script-space; the lvc objects are engine-space; the bridge
+   is the per-zone object tables the loader builds, not the walk dumps).
+
+Artifacts: extraction/re/session42/s42_t5_test.py + s42_t5_pairs.json + s42_t5_capture.json
