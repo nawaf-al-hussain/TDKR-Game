@@ -1,0 +1,18 @@
+{
+ "position_table_size": 1323,
+ "trigger_table": 440,
+ "token_only": 883,
+ "callee_resolved": 44,
+ "callee_total": 96,
+ "owner_resolved": 52,
+ "owner_total": 84,
+ "real_pairs_both_trigger": 19,
+ "classified_pairs": 14,
+ "null_samples": 1400,
+ "real_inside_rate": 0.2857142857142857,
+ "null_inside_rate": 0.0007142857142857143,
+ "real_dn_median": 6.603999999999928,
+ "null_dn_median": 363.2064391259105,
+ "rank_median": 0.009900990099009901,
+ "rank_mean": 0.09123055162659123
+}
