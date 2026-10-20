@@ -1,0 +1,14 @@
+{
+ "stateTable": true,
+ "frozen": true,
+ "glbKB": 175,
+ "clipNames": [
+  "_001_idle_stand",
+  "_007_walk",
+  "_008_run"
+ ],
+ "hasSkinned": true,
+ "posHud": "-140.7, -681.2, 1.0",
+ "page_errors": [],
+ "pass": true
+}
