@@ -1,0 +1,68 @@
+{
+ "Idle": {
+  "clip": "_001_idle_stand",
+  "src": "embedded",
+  "lf_rng": 7.9793002381290306,
+  "direction": "low",
+  "rank_below": 0.10843373493975904,
+  "p_extreme": 0.10843373493975904,
+  "zr": 0.0010929703712463379,
+  "lf_ac": 0.6726811680259455,
+  "rf_rng": 8.578824839984255
+ },
+ "Idle_to_Walk": {
+  "clip": "_559_bat_idle_to_walk",
+  "src": "gol",
+  "lf_rng": 21.780819023292192,
+  "direction": "mid",
+  "rank_below": 0.18072289156626506,
+  "p_extreme": null,
+  "zr": 0.07486200332641602,
+  "lf_ac": 0.0,
+  "rf_rng": 19.72436347261544
+ },
+ "Walk": {
+  "clip": "_007_walk",
+  "src": "embedded",
+  "lf_ac": 0.08274153112746652,
+  "direction": "high",
+  "rank_below": 0.5421686746987951,
+  "p_extreme": 0.45783132530120485,
+  "zr": 0.07549703121185303,
+  "lf_rng": 27.037355775781002,
+  "rf_rng": 27.960958087548597
+ },
+ "Walk_to_Run": {
+  "clip": "_564_bat_walk_to_run",
+  "src": "gol",
+  "lf_ac": 0.0,
+  "direction": "high",
+  "rank_below": 0.2289156626506024,
+  "p_extreme": 0.5963855421686747,
+  "zr": 0.1062079668045044,
+  "lf_rng": 0.0,
+  "rf_rng": 0.0
+ },
+ "Run": {
+  "clip": "_008_run",
+  "src": "embedded",
+  "lf_rng": 51.47232235858502,
+  "direction": "high",
+  "rank_below": 0.7409638554216867,
+  "p_extreme": 0.25903614457831325,
+  "zr": 0.0662660002708435,
+  "lf_ac": -0.024793034884367786,
+  "rf_rng": 65.52238695038903
+ },
+ "Run_to_Idle": {
+  "clip": "_562_bat_run_to_idle",
+  "src": "gol",
+  "lf_rng": 34.005484916385804,
+  "direction": "mid",
+  "rank_below": 0.3855421686746988,
+  "p_extreme": null,
+  "zr": 0.08858996629714966,
+  "lf_ac": 0.0,
+  "rf_rng": 26.12259697999392
+ }
+}

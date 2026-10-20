@@ -1,0 +1,33 @@
+{
+ "bindings": {
+  "Idle": {
+   "clip": "_001_idle_stand",
+   "mean_foot_rng": 8.279062539056643,
+   "rank": 0.10240963855421686
+  },
+  "Idle_to_Walk": {
+   "clip": "_559_bat_idle_to_walk",
+   "mean_foot_rng": 20.752591247953816,
+   "rank": 0.18072289156626506
+  },
+  "Walk": {
+   "clip": "_007_walk",
+   "mean_foot_rng": 27.4991569316648,
+   "rank": 0.2469879518072289
+  },
+  "Run_to_Idle": {
+   "clip": "_562_bat_run_to_idle",
+   "mean_foot_rng": 30.064040948189863,
+   "rank": 0.25301204819277107
+  },
+  "Run": {
+   "clip": "_008_run",
+   "mean_foot_rng": 58.497354654487026,
+   "rank": 0.8493975903614458
+  }
+ },
+ "ordering_exact": true,
+ "ordering_null_p": 0.0071,
+ "walk_to_run_564": "inconclusive: ankle channels absent from the anim (fk-missing in s36 and s40 reruns); zr=0.1062 = highest of all transitions, consistent with run-ward motion",
+ "verdict": "5/5 measurable bindings in exact name-keyed gait order (p~0.0002 vs shuffled-binding null); class-level s39 loco failure explained: xy_rate feature wrong for an IN-PLACE rig (root xy ~ 0.000005 for transitions); wiring unchanged - no binding failed"
+}
