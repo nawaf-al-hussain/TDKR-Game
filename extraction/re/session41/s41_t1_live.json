@@ -1,0 +1,130 @@
+{
+ "reference_stats": {
+  "BakeGroup_Island1_Roads0.tga": {
+   "mean": [
+    45.9,
+    53.36,
+    52.23
+   ],
+   "std": [
+    24.91,
+    24.96,
+    23.24
+   ],
+   "w": 2048,
+   "h": 2048
+  },
+  "BakeGroup_Island1_A0.tga": {
+   "mean": [
+    72.33,
+    72.45,
+    66.13
+   ],
+   "std": [
+    62.36,
+    59.82,
+    52.07
+   ],
+   "w": 2048,
+   "h": 2048
+  }
+ },
+ "http_asset_status": {
+  "index.html": 200,
+  "patch.json": 200,
+  "batman.glb": 200,
+  "pipeline.html": 200
+ },
+ "mixer_advancing": {
+  "t_after": 0.5,
+  "moved": 0
+ },
+ "fk_samples_vs_numpy": {
+  "_001_idle_stand@0.5": {
+   "max_cm": 0.015,
+   "mean_cm": 0.0024
+  },
+  "_001_idle_stand@2.0": {
+   "max_cm": 0.025,
+   "mean_cm": 0.0027
+  },
+  "_008_run@0.1": {
+   "max_cm": 0.005,
+   "mean_cm": 0.0018
+  },
+  "_008_run@0.5": {
+   "max_cm": 0.006,
+   "mean_cm": 0.0018
+  },
+  "null_idle_wrongtime": {
+   "max_cm": 30.039,
+   "mean_cm": 7.7433
+  }
+ },
+ "batman": {
+  "fg_fraction": 0.0325,
+  "iou": 0.9421,
+  "iou_null_lying": 0.0229,
+  "iou_null_wrong": 0.89,
+  "iou_null_shift": 0.002,
+  "albedo_mean_rgb": [
+   37.5,
+   36.0,
+   35.0
+  ],
+  "texture_mean_rgb": [
+   31.4,
+   31.0,
+   31.0
+  ],
+  "albedo_dist_to_texture": 5.0
+ },
+ "pipe": {
+  "street_sha": "52fcbf324bdd24146b6261da45fc74f4dc9a1dd3715a9c1f71c83bc615331736",
+  "err_box": "",
+  "log_tail": [
+   "GLB assembled in-memory: 175 KB",
+   "skinned mesh loaded via GLTFLoader (engine-verified path)",
+   "clip _001_idle_stand: 33 tracks, 5.00s",
+   "clip _007_walk: 33 tracks, 1.07s",
+   "clip _008_run: 33 tracks, 0.67s",
+   "READY in 962 ms \u2014 WASD move, Shift run"
+  ],
+  "canvas_stats": {
+   "mean": [
+    45.78,
+    53.24,
+    52.1
+   ],
+   "std": [
+    24.85,
+    24.91,
+    23.19
+   ],
+   "w": 256,
+   "h": 256
+  },
+  "canvas_vs_ref_meandist": 0.12,
+  "canvas_vs_null_meandist": 19.93,
+  "canvas_std": [
+   24.85,
+   24.91,
+   23.19
+  ],
+  "ref_std": [
+   24.91,
+   24.96,
+   23.24
+  ],
+  "std_meandist_vs_ref": 0.05
+ },
+ "street": {
+  "scene_children": 8,
+  "load_status": "streaming city \u00b7 7/21",
+  "tris_text": "596k"
+ },
+ "console_errors": [],
+ "network_non2xx": [],
+ "network_total": 111,
+ "fail": []
+}

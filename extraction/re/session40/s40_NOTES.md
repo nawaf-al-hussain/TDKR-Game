@@ -41,9 +41,12 @@ s39c file committed. Credentials: leftover git credential-store file
    [2,3,0,1]), planeL = u16 with b7 as LOW byte (col order [0,1,2,3]);
    mod = L + 2*H; out = clamp(expand(c) + MOD[t][m], 0, 255) with expand5 =
    (v<<3)|(v>>2), expand4 = (v<<4)|v; flip=0: x<2 uses color1/t1, flip=1: y<2.
-   MODIFIER TABLES = the ENGINE's 8 tables (32 entries @0xb88710); tables 5-7
-   DIFFER from the ETC2-spec punchthrough numbers: {24,80},{33,106},{47,183}
-   (not 74/109/159) — using spec numbers breaks 521/647 textures.
+   MODIFIER TABLES = the ENGINE's 8 tables (32 entries @0xb88710) = the
+   STANDARD ETC1 intensity modifier tables [CORRECTED s41 T1: rows 5-7 are
+   {24,80},{33,106},{47,183} exactly as in the ETC1 spec; the earlier claim
+   that they "DIFFER from the ETC2-spec punchthrough numbers" was WRONG —
+   74/109/159 was a misreading, and using it broke 521/647 textures
+   precisely because the engine/files use the standard table].
 4. JS decoder playable/etc1_tdkr.js: node parity 647/647 SHA256-exact (5.8 s).
 5. pipeline.html: street patch BakeGroup_Island1_Roads0.tga (2048^2, chunk
    @11,198,218 in l_gothamcity_tex.gla) stream-inflated from the USER's zip and

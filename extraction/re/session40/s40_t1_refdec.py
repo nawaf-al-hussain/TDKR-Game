@@ -22,7 +22,7 @@ import texture2ddecoder as t2d
 
 MOD = np.array([[2, 8, -2, -8], [5, 17, -5, -17], [9, 29, -9, -29], [13, 42, -13, -42],
                 [18, 60, -18, -60], [24, 80, -24, -80], [33, 106, -33, -106],
-                [47, 183, -47, -183]], np.int64)  # ENGINE tables (5-7 differ from ETC2-spec punchthrough)
+                [47, 183, -47, -183]], np.int64)  # ENGINE tables = the STANDARD ETC1 intensity modifier table [corrected s41]
 
 def expand5(v): return ((v << 3) | (v >> 2)) & 255
 def expand4(v): return ((v << 4) | v) & 255
