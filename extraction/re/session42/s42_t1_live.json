@@ -1,0 +1,41 @@
+{
+ "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/index.html#freeze0.5",
+ "console_errors": [],
+ "screenshot": true,
+ "bg": [
+  10.0,
+  13.0,
+  18.0
+ ],
+ "sil_px": 16909,
+ "bbox": [
+  10,
+  10,
+  1269,
+  402
+ ],
+ "regions": {
+  "belt": null,
+  "chest": {
+   "n": 2575,
+   "meanRGB": [
+    39.33,
+    36.75,
+    35.03
+   ],
+   "warmth": 4.3,
+   "warmth_if_BGR": -4.3
+  },
+  "legs": {
+   "n": 3650,
+   "meanRGB": [
+    111.86,
+    117.72,
+    126.53
+   ],
+   "warmth": -14.67,
+   "warmth_if_BGR": 14.67
+  }
+ },
+ "verdict": "CHECK: belt not warm \u2014 inspect"
+}
