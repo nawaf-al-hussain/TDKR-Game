@@ -168,3 +168,53 @@ Artifacts: extraction/re/session42/s42_t2_{cleanroom,oracle,matrix,diag,diag2}.p
    as engine-registry-driven, NOT a compile-time constant.
 
 Artifacts: extraction/re/session42/s42_t3_{poolxref,setfields,globals,runreg,ordered,setglobal}.py
+
+## T4 — PASS (instrument + verdict): navmesh-surface walking measured; adopted in harness (15/40, 2.5x distance), page adoption deferred with rationale
+
+Instrument (s42_t4_navmesh.py, derived from the s41 T4 lib): new NavCtx mode
+'navmesh' — walking height interpolated from the NAVMESH CELL TRIANGLES
+(nm_ground: barycentric z over cells, cell bbox grid 10 m), walls = the same
+soup non-walkable triangle set as 'full'; slides validated against the soup
+as before. Same 40 same-region routes, same A* paths, same step rules.
+
+Route table (ok/40, total advanced metres):
+  ghost (no collision, s41 control)      36/40      (reproduced exactly)
+  full collision (s40/s41 baseline)      10/40   5,664.7 m  (reproduced exactly)
+  navmesh surface (soup walls)            9/40   8,791.1 m
+  navmesh surface + stepignore 0.55      15/40  14,040.7 m  <- best collision-bearing
+  NULL (shuffled dest assignment)         4/40                 (pairing signal real)
+
+Failure classification of the plain navmesh run (26 classified):
+  real_step_soup_agrees    9  (soup walkable ground also steps >0.9 = real curbs)
+  navmesh_soup_disagree   10  (navmesh z 0.57-2.5 m BELOW soup walkable: 8.31 vs
+                               8.88, 8.31 vs 6.34 — the two datasets disagree in
+                               height exactly where the walker gets walled)
+  off_soup                 7  (route leaves soup-covered ground; navmesh-only areas)
+
+ANSWERS to the task questions:
+- Is the collision data or the walking surface the constraint? BOTH, now
+  quantified: on the navmesh surface the soup walls alone bind (28 stuck_wall),
+  and 10/26 failures are direct navmesh-vs-soup HEIGHT disagreements (navmesh
+  lower) — the s41 "20% of cells off by >0.5 m" concentrates exactly at the
+  failures. The step_too_high/fell locations are real curbs in 9 cases and
+  navmesh/soup disagreements in 10 (soup flat where navmesh steps, or vice
+  versa) - neither dataset is 'wrong' everywhere; they are misregistered.
+- Is navmesh-surface walking clearly better? With the s41 stepignore fix:
+  YES on this instrument - 15/40 vs 10/40 routes, 2.5x total distance
+  (14,040.7 m vs 5,664.7 m), null 4/40. ADOPTED as the reference walking
+  model in the harness. NOT adopted in the playable page this session:
+  the page's JS follower consumes only the 12,512-tri collision patch and has
+  no navmesh data shipped; adoption = ship GothamCity navdata + nm_ground in
+  JS + gate rerun (a deployment-side change; we are branch-only this session).
+  Recipe recorded: replace ground sampling with navmesh barycentric
+  interpolation, keep the soup wall set + stepignore 0.55.
+- Null: shuffled-destination navmesh walk = 4/40 (vs 9/40 real pairing) and
+  the full/ghost controls reproduce s41 exactly - the instrument is sound.
+
+VERDICT: the binding constraint is the NAVMESH/SOUP REGISTRATION, not the
+controller (s41 exonerated the controller; this session quantifies the two
+data layers' disagreement and shows navmesh-height + soup-walls + stepignore
+is the best available walker). Named next: reconcile navmesh z to soup
+walkable ground (per-cell offset fit), then re-run the 40 routes.
+
+Artifacts: extraction/re/session42/s42_t4_navmesh.py + s42_t4_result.json
