@@ -66,3 +66,50 @@ screenshot path, and content/live measurements.
 
 Artifacts: extraction/re/session42/s42_t1_*.{py,json,png}
 (scripts s42_t1_enum/upload/callsites/updatedata/content/gate/live).
+## T2 — PASS: clean-room ETC1 decoder 647/647 + ENGINE ORACLE SOLVED (9-arg layout cracked)
+
+1. CLEAN-ROOM DECODER (from the Khronos ETC1 spec only, standard modifier
+   tables): implemented independently (s42_t2_cleanroom.py). Two spec details
+   had to be (re)derived during bring-up, both documented in the source: the
+   ETC1 plane-order QUIRK (MSB plane bytes = [b5=cols01, b4=cols23] but LSB
+   plane bytes = [b7=cols01, b6=cols23] — opposite word order between the
+   planes) and the block-row-major image assembly (transpose before reshape).
+   RESULT: 647/647 chunks, 6464 levels, 40,336,337 blocks — 0 mismatches vs
+   the s41 reference (which is itself 910/910-validated vs texture2ddecoder
+   and the deployed JPGs). Nulls: N1 garbage-block conformance vs the
+   reference decoder 40/40 (both spec decoders agree on adversarial input);
+   N2 cross-texture pair 0.25 agreement = the two 32x32 textures share flat
+   regions (weak null, honestly noted); N3 single-bit flip changes the
+   decode (sensitivity) PASS.
+2. ENGINE ORACLE (Unicorn, direct call — the s41 '9-arg convention' blocker
+   SOLVED): the signature is
+   decompress(fmt=r0, src=r1, blockRowPitch=r2, dstFmt=r3, dst=[sp],
+              dstPitch=[sp+4], w=[sp+8], h=[sp+12], flip=[sp+16])
+   - derived statically: prologue saves r0-r3 + 5 stack args; fmt==0x1d
+     branches to the inline ETC1 decoder @0x80110c; end-pointer =
+     src + (h>>2)*r2 => r2 = BYTES PER BLOCK ROW = (w/4)*8 (s41 passed
+     3*w*h — the miss); dstFmt 0xa (R8G8B8) = decode straight into the
+     caller buffer at [sp+4] bytes/row; the bool = VERTICAL FLIP (must be 0).
+   - pixel_format::decompress @0x800f84 confirmed ARM (prologue e92d4ff0);
+     convert @0x802758 HAS 17+ direct callers (decompress truly has none —
+     dispatched); the TGA-loader convert call site @0x80e75c fixed the
+     family convention: (fmtFrom, src, srcPitch, fmtTo, dst, dstPitch, w, h, bool).
+   - RESULT (s42_t2_oracle.py + s42_t2_matrix.py): engine decode == Python
+     reference BIT-EXACT on 4 full textures: 16x16 (16 blocks), 32x32 (64),
+     128x128 (1024), 256x256 (4096) = 5,200 blocks >> the required 50 and
+     2 full textures. Output layout = RGB888, R,G,B (independently re-confirms
+     T1's byte order on the DECODE side).
+   - NULLS: block-order shuffle changes the engine output on the non-flat
+     texture (HeatDistort) as required; flip=1 control drops agreement to
+     0.08/0.04 (sensitive); the flat placeholder (crowbar_placeh, 1 distinct
+     block) is reported as a vacuous-null case, not counted as evidence.
+   - engine internals observed: blocks parsed as rev'ed BIG-ENDIAN words
+     (matches s41's static note); modifier tables/masks standard.
+
+VERDICT: ETC1 decode now has FOUR independent agreements on game data:
+clean-room-from-spec == s41 Python reference == texture2ddecoder (s41) ==
+the ENGINE ITSELF (Unicorn oracle), 0 mismatches everywhere; the pipeline's
+decoder is proven against the engine that shipped the game.
+
+Artifacts: extraction/re/session42/s42_t2_{cleanroom,oracle,matrix,diag,diag2}.py
++ s42_t2_oracle.json.

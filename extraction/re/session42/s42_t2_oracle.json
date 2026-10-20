@@ -1,0 +1,60 @@
+{
+ "A64": {
+  "name": "crowbar_placeh_tex.tga",
+  "w": 32,
+  "h": 32,
+  "blocks": 64,
+  "ref_sha": "c5b71434e215a8b36b7c11285405a66aeb614b8370f553b1e49922802f8e7ff0",
+  "eng_sha": "c5b71434e215a8b36b7c11285405a66aeb614b8370f553b1e49922802f8e7ff0",
+  "bitexact": true,
+  "run": {
+   "ret": 1,
+   "pc_end": 16777216,
+   "allocs": []
+  },
+  "null_shuffle_mismatches": false,
+  "run_0xe": {
+   "error": "Invalid instruction (UC_ERR_INSN_INVALID) pc=0x0",
+   "allocs": [
+    [
+     "0x3e9208",
+     "0x20001000",
+     3072
+    ]
+   ]
+  },
+  "run_dst_null": {
+   "error": null,
+   "allocs": []
+  }
+ },
+ "B128": {
+  "name": "HeatDistort.tga",
+  "w": 128,
+  "h": 128,
+  "blocks": 1024,
+  "ref_sha": "153a020de098667ae64039749aa4c1a6d71e807d2029074a9966e97225678fa2",
+  "eng_sha": "153a020de098667ae64039749aa4c1a6d71e807d2029074a9966e97225678fa2",
+  "bitexact": true,
+  "run": {
+   "ret": 1,
+   "pc_end": 16777216,
+   "allocs": []
+  },
+  "null_shuffle_mismatches": true,
+  "run_0xe": {
+   "error": "Invalid instruction (UC_ERR_INSN_INVALID) pc=0x0",
+   "allocs": [
+    [
+     "0x3e9208",
+     "0x20001000",
+     49152
+    ]
+   ]
+  },
+  "run_dst_null": {
+   "error": null,
+   "allocs": []
+  }
+ }
+}
