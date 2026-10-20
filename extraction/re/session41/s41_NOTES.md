@@ -123,3 +123,30 @@ Artifacts: extraction/re/session41/s41_t1_*.{py,json,png} + s41_refdec_lib.py.
    during boot) is the only remaining route and stays blocked by the Thumb
    glue / computed dispatch (s39/s40 finding, unchanged). Inconclusive on
    the value; conclusive on "must be defined".
+
+## T4 (next commit) — PASS: controller EXONERATED twice; ground-soup layer quantified
+Same 40 same-region routes (s40 set). Four instruments:
+1. GHOST (pure polyline over navmesh cells, no ground, no walls): 36/40
+   reached. The 4 failures = NO walkable ground under the spawn cell center
+   (data, not policy). By construction the navmesh paths are walkable.
+2. GROUND-ONLY collision (no walls at all): 12/40. 28/40 navmesh-adjacent
+   paths break on the walkable soup alone (holes / missing ground).
+3. FULL (s40 analytic wall-slide follower, rerun): 10/40 — EXACT
+   reproduction of s40 (ok 10; verdicts: stuck 21, step 5, no_ground 4).
+4. BLOCKER CLASSIFICATION (top-6 hit triangles per stuck route, 10 routes):
+   12/12 = ONE class 'prop_below_capsule' (non-walkable tri whose top is
+   < 0.55 m above local walkable ground — curbs/low props the engine steps
+   over; my collision model treated them as full walls).
+FIX (stepignore=0.55: ignore blockers whose top <= ground+0.55): verdict
+spectrum SHIFTS — stuck_wall 21->3, ok 10 (unchanged), step_too_high 5->18,
+fell 5; routes advance up to +433 m past the old stuck points, then fail on
+ground-data discontinuities (>0.9 m climbs between navmesh-adjacent cells /
+holes). NULL: shuffled spawn->cell assignment = 10 same-region ok (real 10) —
+the route set is not special; cross-region pairs rejected (engine semantics).
+CONCLUSION (two independent confirmations): the follower POLICY is not the
+binding constraint; the collision DATA layer is — quantified as (a) missing
+walkable ground under navmesh-adjacent segments (28/40 ground-only, 4
+spawns), (b) >0.9 m ground steps along navmesh adjacency (18 post-fix).
+NAMED NEXT: reconcile navmesh adjacency with the walkable soup (patch holes /
+respect soup steps in A*), or derive the walkable ground FROM the navmesh for
+walkable cells.
