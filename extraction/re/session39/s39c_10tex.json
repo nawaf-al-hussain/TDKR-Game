@@ -1,0 +1,62 @@
+{
+ "Assault-rifle_HKG36C_n.tga": {
+  "rmse": 11.235867135493296,
+  "dx": 0.6493361928104575,
+  "uniq": 13670,
+  "fault": false
+ },
+ "Batarang_NRM.tga": {
+  "rmse": 4.505923857859287,
+  "dx": 0.16646752450980393,
+  "uniq": 4628,
+  "fault": false
+ },
+ "Bazooka_n.tga": {
+  "rmse": 8.044057724487441,
+  "dx": 0.7863868464052287,
+  "uniq": 14651,
+  "fault": false
+ },
+ "British_Lantern.tga": {
+  "rmse": 2.680182141619457,
+  "dx": 0.3592473447712418,
+  "uniq": 2788,
+  "fault": false
+ },
+ "chara_alfred_mask.tga": {
+  "rmse": 3.711654775800587,
+  "dx": 0.2096200980392157,
+  "uniq": 136,
+  "fault": false
+ },
+ "chara_BaneMercenaryA_mask.tga": {
+  "rmse": 1.70262357930805,
+  "dx": 0.08358864379084967,
+  "uniq": 49,
+  "fault": false
+ },
+ "chara_Bane_mask.tga": {
+  "rmse": 18.21305671841155,
+  "dx": 1.1777624591503268,
+  "uniq": 249,
+  "fault": false
+ },
+ "chara_Bane_MercenaryB_mask.tga": {
+  "rmse": 1.820447662967413,
+  "dx": 0.06486928104575164,
+  "uniq": 65,
+  "fault": false
+ },
+ "chara_Bane_mercenary_C_mask.tga": {
+  "rmse": 3.609347168566038,
+  "dx": 0.15184334150326798,
+  "uniq": 105,
+  "fault": false
+ },
+ "chara_Bane_Mercenary_Sniper_mask.tga": {
+  "rmse": 5.729540707486945,
+  "dx": 0.21992442810457516,
+  "uniq": 169,
+  "fault": false
+ }
+}
