@@ -186,3 +186,27 @@ Lua shim (fengari, 100/100 parity on 100 scripts), browser asset pipeline
 grapple, combat, AI, mission flow, audio, UI, cloth cape, cross-region
 navigation, city-scale rendering from user files (the T7 slice is the first
 step of that last one).
+
+## Push addendum (post-T8, 2026-10-20) — token supplied, REJECTED, no push
+A classic PAT (ghp_…, same dDfK prefix as the s39 credential) was supplied
+in-session. Two validation pitfalls are worth recording: (1) unauthenticated
+reads of a PUBLIC repo never trigger the HTTP 401 challenge, so a successful
+`git ls-remote` proves NOTHING about a token — the credential helper is never
+consulted; (2) the real test is a push or an authenticated API call. The push
+was rejected ("Invalid username or token"); `api.github.com /user` and
+`/rate_limit` with the same token both return 401 = the token is DEAD
+(revoked/expired), not merely scope-limited. NO PUSH PERFORMED; remote heads
+unchanged: main bd7c709, gh-pages a1bf3b1 (v21.1 LIVE), gh-pages-staged
+39298a4, essentials-s36 7c8defc. Hygiene: the token existed only in the shell
+environment and an ephemeral inline credential helper; never written to any
+file, never entered .git/config; env cleared immediately after the attempt.
+The s39 credential-store cleanup was re-checked this session: no
+credential.helper in any visible git scope (system/global/local), no
+.git-credentials file in any accessible location — nothing to delete.
+Fallback per task book STANDS: local commits + verified incremental bundles.
+main_s40_inc.bundle was REGENERATED after this commit (bd7c709..main, now
+covers part 9); its SHA256 is recorded alongside the unchanged gh-pages and
+slice hashes in download/bundles_s40/BUNDLES_s40_SHA256.txt. NEXT PUSH (when
+a live token with Contents:read+write on TDKR-Game exists, fine-grained
+preferred): `git push origin gh-pages main s40-user-zip-slice` — three
+fast-forwards, locally verified against exactly these remote heads.
