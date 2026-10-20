@@ -137,7 +137,7 @@ function mkLua(luaLog) {
 
 // batman — s40 T7 SLICE: built from the USER's zip through the pipeline
 // (zero shipped game-derived bytes on this branch). Same GLB assembly as
-// pipeline.html (engine-verified r36 path), BGR-fixed texture from T1.
+// pipeline.html (engine-verified r36 path), RGB-order texture (s42 T1: engine maps header 0x15 -> E_PIXEL_FORMAT::R8G8B8, RMask 0x000000FF = byte0=R; the s40 'BGR fix' was inverted).
 if (!window.TDKR) { log('ERROR: tdkr_pipeline.js failed to load'); throw new Error('no TDKR'); }
 const ui = document.createElement('div');
 ui.style.cssText = 'position:fixed;left:10px;bottom:10px;z-index:9;background:#11151ccc;border:1px solid #232a35;padding:8px;border-radius:6px';
@@ -304,11 +304,11 @@ async function loadFromZip(file) {
     const px = td.subarray(52, 52 + tw * th * 3);
     const rgba = new Uint8Array(tw * th * 4);
     for (let i = 0; i < tw * th; i++) {
-      rgba[i*4] = px[i*3+2]; rgba[i*4+1] = px[i*3+1]; rgba[i*4+2] = px[i*3]; rgba[i*4+3] = 255;
+      rgba[i*4] = px[i*3]; rgba[i*4+1] = px[i*3+1]; rgba[i*4+2] = px[i*3+2]; rgba[i*4+3] = 255;
     }
     texture = new THREE.DataTexture(rgba, tw, th, THREE.RGBAFormat);
     texture.colorSpace = THREE.SRGBColorSpace; texture.needsUpdate = true; texture.flipY = false;
-    zlog(`chara_Batman_DIFFUSE: ${tw}x${th} RGB888 (BGR) decoded`);
+    zlog(`chara_Batman_DIFFUSE: ${tw}x${th} RGB888 (RGB order, s42 T1 engine-verified: enum R8G8B8 byte0=R) decoded`);
   }
   const byNameC = Object.fromEntries(A.clips.map(c => [c.name, c]));
   const glbBytes = buildGLB(skin, A, byNameC);
