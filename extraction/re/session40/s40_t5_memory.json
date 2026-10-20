@@ -1,0 +1,42 @@
+{
+ "load_seconds": 1.01,
+ "js_heap_used_peak_bytes": 10000000,
+ "js_heap_total_peak_bytes": 10000000,
+ "js_heap_used_at_ready_end_bytes": 10000000,
+ "renderer_rss_peak_bytes": 379080704,
+ "renderer_rss_peak_pid": 6126,
+ "renderer_rss_near_ready_bytes": 340889600,
+ "cdp_metrics": {
+  "Documents": 1,
+  "Frames": 1,
+  "JSEventListeners": 33,
+  "JSHeapUsedSize": 12602812,
+  "JSHeapTotalSize": 30179328
+ },
+ "held_buffers_reported_by_page": {
+  "commons_gla": 4247154,
+  "actors_gla": 103191472,
+  "actors_tex": 30739731
+ },
+ "street_sha_match": true,
+ "page_errors": [],
+ "n_rss_samples": 27,
+ "timeline_kb": [
+  [
+   1792492593.8453116,
+   83728
+  ],
+  [
+   1792492595.8561673,
+   355688
+  ],
+  [
+   1792492597.8630826,
+   357904
+  ],
+  [
+   1792492599.8705022,
+   357872
+  ]
+ ]
+}
