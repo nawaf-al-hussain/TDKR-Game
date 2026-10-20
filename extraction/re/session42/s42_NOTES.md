@@ -254,3 +254,40 @@ Artifacts: extraction/re/session42/s42_t4_navmesh.py + s42_t4_result.json
    is the per-zone object tables the loader builds, not the walk dumps).
 
 Artifacts: extraction/re/session42/s42_t5_test.py + s42_t5_pairs.json + s42_t5_capture.json
+
+## T6 — PASS (slice 2): the 9 skipped segments EXPLAINED and FIXED (stride-28 family) -> 1526/1526 parity; materials path opened
+
+1. THE 9 SKIPPED SEGMENTS (s41/s16 open item) — ROOT-CAUSED: they are a
+   FOURTH VERTEX FORMAT, stride 28 bytes (the probe candidates were
+   {24, 20, 32} on both sides). All 9 validate cleanly at stride 28:
+   segs #1486-1493 (vb 26180..90692, all %28==0, max vertex index < vb/28,
+   finite positions < 6000) + seg #1525 (vb 12096). Eight share material
+   descriptor +40 = 156, one has 302 — one shared material group. The extra
+   4 bytes vs stride-24 = one additional f32 per vertex (attribute TBD).
+   FIX: add 28 to the stride-probe candidate set in BOTH implementations
+   (s41_t6_pyref.py, s41_t6_slice.js, branch city_slice.html).
+   RESULT: Python reference AND node JS now decode 1526/1526 segments,
+   0 mismatches (counts, strides, position+index SHA256, +40/+36
+   descriptors) — the s41 '1517/1517 + 9 skipped' is now 1526/1526 + 0
+   skipped; s16's matching 9-skip open item is closed by the same cause.
+2. MATERIALS PATH (slice-3 prep): GothamCity.zip contains
+   GothamCity_materials.bdae = an AUTHORING ZIP {big/little_endian x
+   quantized/not variants, source.dae, dependancies.txt, version 0.0.0.859}.
+   dependancies.txt lists the zone's texture universe (GC_* albedos, NRM,
+   Refl variants, BakeGroup_Island1_* bake pages, FX_Coronas, City_BKG...).
+   The runtime-format parse (s6 ground_truth.py chain: texture list ->
+   render units -> samplers -> Coord0/Coord1 scaleoffset) rejected the two
+   variants tried (BE/LE-quantized headers misparse) — the runtime bdae
+   layout for ZONE materials differs from the shipped-file format s6
+   encoded; variant identification = named next (compare against a shipped
+   assembly bdae header, or parse source.dae for ground-truth bindings).
+3. EFFORT UPDATE (option (a) full city): the geometry layer is now 100%
+   covered (1526/1526 both implementations); remaining = materials variant
+   + ETC1 atlas bind + lightmap chain + BIH streaming + LOD selector +
+   draw order — the s41 estimate (2-3 sessions) stands; slice-3 = materials
+   render of the first block + comparison vs the deployed street GLB
+   (colour stats + shuffled-material null), branch-only.
+
+Artifacts: extraction/re/session42/s42_t6_stride28.md (this), patched
+s41_t6_pyref.py / s41_t6_slice.js (main) + city_slice.html (branch
+s41-city-slice).

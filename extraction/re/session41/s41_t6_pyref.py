@@ -50,7 +50,7 @@ def main():
         real = idx[idx != 0xFFFF]
         mx = int(real.max()) if len(real) else 0
         stride = None
-        for s in (24, 20, 32):
+        for s in (24, 20, 32, 28):  # +28: s42 T6 - stride-28 family (the 9 skipped segs)
             if vb % s == 0 and mx < vb // s:
                 t = np.frombuffer(ld[vstart:vstart + vb], '<f4').reshape(-1, s // 4)[:, :3]
                 if np.isfinite(t).all() and np.abs(t).max() < 6000:

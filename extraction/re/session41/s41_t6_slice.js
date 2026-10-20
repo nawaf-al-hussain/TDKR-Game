@@ -99,7 +99,7 @@ for (let k = 0; k < n; k++) {
     if (v !== 0xFFFF) { real++; if (v > mx) mx = v; }
   }
   let stride = 0;
-  for (const s of [24, 20, 32]) {
+  for (const s of [24, 20, 32, 28]) {  // +28: s42 T6 - the 9 skipped segs are stride-28
     if (vb % s === 0 && mx < vb / s) {
       // EXACT mirror of the Python probe: every record, xyz only
       const cnt = vb / s;
