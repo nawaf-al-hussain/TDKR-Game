@@ -165,7 +165,7 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
         if (v !== 0xFFFF) { real++; if (v > mx) mx = v; }
       }
       let stride = 0;
-      for (const s of [24, 20, 32]) {
+      for (const s of [24, 20, 32, 28]) {
         if (vb % s === 0 && mx < vb / s) {
           let ok = true;
           for (let i = 0; i < vb / s; i++) {
