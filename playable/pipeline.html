@@ -24,6 +24,7 @@
   <div id="log">waiting for file…</div><div id="err"></div>
 </div>
 <script src="./tdkr_pipeline.js"></script>
+<script src="./etc1_tdkr.js"></script>
 <script type="module">
 import * as THREE from 'three';
 const $ = s => document.querySelector(s);
@@ -41,14 +42,14 @@ $('#f').addEventListener('change', async ev => {
     const dir = await TDKR.zipDirLazy(file);
     // s39 T7: clear errors for wrong file / wrong game version
     const REQ = ['data/actors.gla', 'data/commons.gla', 'data/game_config.gla', 'textures/actors_tex.gla'];
-    const names = Object.keys(dir);
+    const names = [...dir.keys()];   // dir is a Map - Object.keys(map) is always []
     const has = re => names.some(n => re.test(n));
     if (has(/AndroidManifest\.xml$/i) || has(/classes\.dex$/i)) {
       throw new Error('This is the APK (app code), not the game data. ' +
         'Repack the OBB (main.<version>.com.gameloft.android.AMAZ.GloftKRAS.obb) into a zip and select that.');
     }
     if (!has(/com\.gameloft\.android\.AMAZ\.GloftKRAS\//i)) {
-      throw new Error('No com.gameloft.android.AMAZ.GloftKRAS entries found - this is not a TDKR data file. ' +
+      throw new Error('No com.gameloft.android.AMAZ.GloftKRAS entries found (dir=' + dir.size + ' entries, sample=' + [...dir.keys()].slice(0, 2).join('|') + ') - this is not a TDKR data file. ' +
         'Select the zip of the OBB (main.<version>.com.gameloft.android.AMAZ.GloftKRAS.obb), v1.1.6b.');
     }
     const missing = REQ.filter(r => !has(new RegExp(r.replace(/\//g, '\\/') + '$', 'i')));
@@ -56,7 +57,9 @@ $('#f').addEventListener('change', async ev => {
       throw new Error('This OBB does not match TDKR v1.1.6b layout - missing: ' + missing.join(', ') +
         '. Only v1.1.6b is supported.');
     }
-    const names = [...dir.keys()];
+    // s40 fix: the s39 T7 commit had TWO bugs here - a `names` redeclaration
+    // (SyntaxError killing the whole module) and Object.keys() on a Map (always
+    // []). Single declaration above now serves both.
     const find = re => names.find(n => re.test(n));
     log(`zip OK: ${dir.size} entries in ${(performance.now()-t0).toFixed(0)} ms`);
 
@@ -80,19 +83,101 @@ $('#f').addEventListener('change', async ev => {
     let texture = null;
     if (texE) {
       const td = actorsTex.subarray(texE.off, texE.off + texE.size);
-      const tw = td[4] | (td[5] << 8) | (td[6] << 16) | (td[7] << 24);
-      const th = td[8] | (td[9] << 8) | (td[10] << 16) | (td[11] << 24);
+      // PVR2 header: u32 height @+4, width @+8 (the old code had them swapped;
+      // square textures hid it)
+      const th = td[4] | (td[5] << 8) | (td[6] << 16) | (td[7] << 24);
+      const tw = td[8] | (td[9] << 8) | (td[10] << 16) | (td[11] << 24);
       const px = td.subarray(52, 52 + tw * th * 3);
       const rgba = new Uint8Array(tw * th * 4);
+      // s40 T1 fix: RGB888 memory order is B,G,R (verified pixel-exact vs the
+      // reference pool on all 8 bpp=24 textures incl. Batman DIFFUSE/NM/spec;
+      // the old straight-RGB read swapped R and B - invisible on the grey suit).
       for (let i = 0; i < tw * th; i++) {
-        rgba[i*4] = px[i*3]; rgba[i*4+1] = px[i*3+1]; rgba[i*4+2] = px[i*3+2]; rgba[i*4+3] = 255;
+        rgba[i*4] = px[i*3+2]; rgba[i*4+1] = px[i*3+1]; rgba[i*4+2] = px[i*3]; rgba[i*4+3] = 255;
       }
       const tex = new THREE.DataTexture(rgba, tw, th, THREE.RGBAFormat);
       tex.colorSpace = THREE.SRGBColorSpace;
       tex.needsUpdate = true; tex.flipY = false;
       texture = tex;
-      log(`chara_Batman_DIFFUSE: ${tw}x${th} RGB888 decoded`);
+      log(`chara_Batman_DIFFUSE: ${tw}x${th} RGB888 decoded (BGR order fixed s40)`);
     }
+
+    // ---- s40 T1: STREET TEXTURE decoded in-browser from YOUR files.
+    // BakeGroup_Island1_Roads0.tga (2048x2048 ETC1) out of l_gothamcity_tex.gla,
+    // inflated + decoded at runtime by etc1_tdkr.js — bit-exact vs the engine's
+    // decompressETC1 (647/647 OBB textures SHA256 parity vs the calibrated
+    // reference; nulls: col-major blocks 87-97% wrong, shuffled 94-98%,
+    // word-swap 99.8%+). Stream-inflates only the archive prefix it needs.
+    async function zipReadPrefix(name, need) {
+      const e = dir.get(name);
+      if (!e) throw new Error('no member: ' + name);
+      const lh = new Uint8Array(await file.slice(e.lho, e.lho + 30).arrayBuffer());
+      const ldv = new DataView(lh.buffer);
+      const nlen = ldv.getUint16(26, true), elen = ldv.getUint16(28, true);
+      const dataOff = e.lho + 30 + nlen + elen;
+      if (e.method === 0) return new Uint8Array(await file.slice(dataOff, dataOff + Math.min(need, e.csize)).arrayBuffer());
+      const ds = new DecompressionStream('deflate-raw');
+      const reader = new Response(file.slice(dataOff, dataOff + e.csize).stream().pipeThrough(ds)).body.getReader();
+      const out = new Uint8Array(need); let got = 0;
+      while (got < need) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const take = Math.min(value.length, need - got);
+        out.set(value.subarray(0, take), got); got += take;
+      }
+      try { await reader.cancel(); } catch (_) {}
+      return out.subarray(0, got);
+    }
+    try {
+      const cityPath = find(/textures\/l_gothamcity_tex\.gla$/i);
+      if (cityPath) {
+        const head = await zipReadPrefix(cityPath, 262144);
+        const nE = (head[12] << 24) | (head[13] << 16) | (head[14] << 8) | head[15];
+        const pool = 16 + nE * 16;
+        let so = -1, ssz = 0;
+        const td2 = new TextDecoder();
+        for (let i = 0; i < nE; i++) {
+          const o = 16 + i * 16;
+          const ro = (head[o] << 24) | (head[o+1] << 16) | (head[o+2] << 8) | head[o+3];
+          const rs = (head[o+4] << 24) | (head[o+5] << 16) | (head[o+6] << 8) | head[o+7];
+          const rn = (head[o+8] << 24) | (head[o+9] << 16) | (head[o+10] << 8) | head[o+11];
+          const nb = pool + rn; let e2 = nb; while (e2 < head.length && head[e2] !== 0) e2++;
+          if (td2.decode(head.subarray(nb, e2)) === 'BakeGroup_Island1_Roads0.tga') { so = ro; ssz = rs; break; }
+        }
+        if (so >= 0) {
+          const data = await zipReadPrefix(cityPath, so + ssz);
+          const td = data.subarray(so, so + ssz);
+          const th = td[4] | (td[5] << 8) | (td[6] << 16) | (td[7] << 24);
+          const tw = td[8] | (td[9] << 8) | (td[10] << 16) | (td[11] << 24);
+          const bppS = td[24] | (td[25] << 8) | (td[26] << 16) | (td[27] << 24);
+          const bw = ((tw + 3) >> 2) * ((th + 3) >> 2) * 8;
+          if (bppS === 4 && td.length >= 52 + bw) {
+            const t1s = performance.now();
+            const rgbaS = ETC1_TDKR.decodeRGBA(td.subarray(52, 52 + bw), tw, th);
+            log(`street texture BakeGroup_Island1_Roads0: ${tw}x${th} ETC1 decoded in ${(performance.now()-t1s).toFixed(0)} ms`);
+            const tex = new THREE.DataTexture(rgbaS, tw, th, THREE.RGBAFormat);
+            tex.colorSpace = THREE.SRGBColorSpace; tex.needsUpdate = true; tex.flipY = false;
+            tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+            const patch = new THREE.Mesh(new THREE.PlaneGeometry(16, 16),
+              new THREE.MeshStandardMaterial({ map: tex, roughness: 0.95 }));
+            patch.rotation.x = -Math.PI / 2; patch.position.set(0, 0.02, 0);
+            scene.add(patch);
+            // 2D preview (verifiable without orbiting the 3D view): 512px crop
+            const cv = document.createElement('canvas'); cv.width = 256; cv.height = 256;
+            cv.style.cssText = 'position:fixed;right:8px;top:8px;z-index:9;width:256px;height:256px;border:1px solid #556;border-radius:6px';
+            const full = document.createElement('canvas'); full.width = tw; full.height = th;
+            full.getContext('2d').putImageData(new ImageData(new Uint8ClampedArray(rgbaS.buffer, rgbaS.byteOffset, rgbaS.length), tw, th), 0, 0);
+            cv.getContext('2d').drawImage(full, 0, 0, 512, 512, 0, 0, 256, 256);
+            document.body.appendChild(cv);
+            window.__streetRGBA = rgbaS;
+          } else {
+            log('street texture: unsupported chunk (bpp ' + bppS + ')');
+          }
+        } else {
+          log('street texture: BakeGroup_Island1_Roads0.tga not found');
+        }
+      }
+    } catch (err) { log('street patch skipped: ' + (err && err.message || err)); }
 
     // ---- build the GLB in-memory from pipeline output; load via GLTFLoader
     // (this is the engine-verified r36 path: fresh-state three.js vs numpy
