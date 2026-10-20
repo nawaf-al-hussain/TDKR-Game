@@ -27,6 +27,18 @@
 <script src="./etc1_tdkr.js"></script>
 <script type="module">
 import * as THREE from 'three';
+// s40 T5: JS-heap sampling from module start (Chromium-only API), for the
+// end-to-end memory measurement (zip -> actors.gla -> anims -> skin -> READY).
+window.__memLog = [];
+window.__memDone = false;
+if (performance.memory) {
+  const mt0 = performance.now();
+  const memTimer = setInterval(() => {
+    const m = performance.memory;
+    window.__memLog.push([Math.round(performance.now() - mt0), m.usedJSHeapSize, m.totalJSHeapSize]);
+    if (window.__memDone) clearInterval(memTimer);
+  }, 200);
+}
 const $ = s => document.querySelector(s);
 function log(m){ $('#log').textContent += m + '\n'; }
 function setbar(p){ $('#barfill').style.width = (p*100).toFixed(0)+'%'; }
@@ -63,9 +75,10 @@ $('#f').addEventListener('change', async ev => {
     const find = re => names.find(n => re.test(n));
     log(`zip OK: ${dir.size} entries in ${(performance.now()-t0).toFixed(0)} ms`);
 
-    const commons = await TDKR.zipReadLazy(file, find(/data\/commons\.gla$/), dir); setbar(0.25);
-    const actors = await TDKR.zipReadLazy(file, find(/data\/actors\.gla$/), dir); setbar(0.45);
-    const actorsTex = await TDKR.zipReadLazy(file, find(/textures\/actors_tex\.gla$/), dir); setbar(0.55);
+    let commons = await TDKR.zipReadLazy(file, find(/data\/commons\.gla$/), dir); setbar(0.25);
+    window.__held = { commons_gla: commons.length };
+    let actors = await TDKR.zipReadLazy(file, find(/data\/actors\.gla$/), dir); setbar(0.45);
+    let actorsTex = await TDKR.zipReadLazy(file, find(/textures\/actors_tex\.gla$/), dir); setbar(0.55);
     const wantActors = new Set(['batman.bdae', 'batman_anims.bdae']);
     const aMem = TDKR.glaSlice(actors, wantActors);
     const gt = TDKR.parseGla(actorsTex);
@@ -146,6 +159,7 @@ $('#f').addEventListener('change', async ev => {
         }
         if (so >= 0) {
           const data = await zipReadPrefix(cityPath, so + ssz);
+          window.__cityData = data;
           const td = data.subarray(so, so + ssz);
           const th = td[4] | (td[5] << 8) | (td[6] << 16) | (td[7] << 24);
           const tw = td[8] | (td[9] << 8) | (td[10] << 16) | (td[11] << 24);
@@ -170,6 +184,7 @@ $('#f').addEventListener('change', async ev => {
             cv.getContext('2d').drawImage(full, 0, 0, 512, 512, 0, 0, 256, 256);
             document.body.appendChild(cv);
             window.__streetRGBA = rgbaS;
+            window.__cityData = null;   // release the prefix buffer once decoded
           } else {
             log('street texture: unsupported chunk (bpp ' + bppS + ')');
           }
@@ -336,6 +351,13 @@ $('#f').addEventListener('change', async ev => {
     // animations come from the in-memory GLB (engine-verified assembly)
     const mixer = new THREE.AnimationMixer(sm);
     window.__mixer = mixer;
+    // s40 T5: the big container ArrayBuffers are no longer needed — every
+    // consumer (skin, anims, texture) already decoded/copied. Release them so
+    // steady-state RSS reflects the live scene, not dead containers.
+    window.__held.actors_gla = actors.length;
+    window.__held.actors_tex = actorsTex.length;
+    commons = null; actors = null; actorsTex = null;
+    if (window.__cityData) { window.__held.street_prefix = window.__cityData.length; window.__cityData = null; }
     const acts = {};
     for (const clip of gltf.animations) {
       acts[clip.name] = mixer.clipAction(clip);

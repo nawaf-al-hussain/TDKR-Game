@@ -347,7 +347,10 @@ function identifyTexture(u8) {
 // whole 895 MB zip in an ArrayBuffer). Reads the central directory from a
 // 1 MB tail slice and inflates single members via DecompressionStream.
 async function zipDirLazy(file) {
-  const tail = new Uint8Array(await file.slice(Math.max(0, file.size - 1 << 20)).arrayBuffer());
+  // s40 T5 fix: `file.size - 1 << 20` parses as (file.size-1)<<20 which wraps
+  // to 0 for an 895 MB zip -> the whole file was materialized as the 'tail'
+  // (an ~895 MB transient ArrayBuffer). Read the actual last 1 MiB instead.
+  const tail = new Uint8Array(await file.slice(Math.max(0, file.size - (1 << 20))).arrayBuffer());
   let eocd = -1;
   for (let i = tail.length - 22; i >= 0; i--) {
     if (tail[i] === 0x50 && tail[i+1] === 0x4b && tail[i+2] === 0x05 && tail[i+3] === 0x06) { eocd = i; break; }
