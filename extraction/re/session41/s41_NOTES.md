@@ -93,3 +93,33 @@ Artifacts: extraction/re/session41/s41_t1_*.{py,json,png} + s41_refdec_lib.py.
    semantics (loop bounds) could not be reconstructed from the function body
    alone. NAMED NEXT: reconstruct the computed-dispatch call path (ADR/ADD
    stubs around 0x800f40), then re-run the harness.
+
+## T3 (next commit) — PASS-with-blocker: usage analysis DECISIVE; hook still blocked
+1. POSITIVE CONTROL (same kind) now run formally: FACE_HOSTAGE string
+   @0xb42c6c -> exactly 1 pointer word, the registry entry @0xc0b050 — the
+   scanner sees registered names. Registry 0xc0b018.. = a contiguous
+   name-pointer array (FACE_NONE, FACE_BATMAN, ..., FACE_HOSTAGE, ...).
+2. TAIL-MERGE REFUTED: MC_MAX_DISTANCE occurs EXACTLY ONCE in the loaded
+   image, \0-bounded on both sides (@0xb30948; context: REWARD_PROPERTY |
+   MC_MAX_DISTANCE | INTERFERENCE_COOLDOWN_TIME). Nothing to merge into.
+3. SIXTH NEGATIVE, now exhaustive across ALL address-formation modes:
+   0 pool words, 0 Thumb LDR-literal sites, 0 MOVW/MOVT pairs pointing at
+   0xb30948. The whole sibling name pool (SFX_*, NPC_*_DISTANCE,
+   MC_SOUND_DISTANCE, CAMERA_SHAKE_*, REWARD_*, g* globals) has ZERO pointer
+   words for ANY member — consumed via computed addressing / runtime string
+   registration; the FACE_* registry is a DIFFERENT mechanism.
+4. SCRIPT USAGE (decisive new evidence, 1,210 sites in game_config.gla):
+   313 commented, 897 LIVE — 748 call arguments
+   (StartEventAtObjectNode("env_...", CurrentActor, MC_MAX_DISTANCE) = the AI
+   awareness radius), **149 ARITHMETIC** (e.g. 5 * MC_MAX_DISTANCE) where nil
+   would raise "attempt to perform arithmetic on a nil value", 0 comparisons,
+   0 definitions in ANY data file of the OBB. => The engine MUST define
+   MC_MAX_DISTANCE; the constant is data/code-driven through the
+   computed-addressing mechanism invisible to static xref. MC_MAX_DISTANCE is
+   the ONLY member of its pool with arithmetic use (CAMERA_SHAKE_BOMB 27
+   uses 0 arith; MC_SOUND_DISTANCE 309/0; FACE_* all value-passed).
+5. VERDICT: the 10.0 shim placeholder is REQUIRED (scripts error without
+   it), and its VALUE remains unproven — the Lua C API hook (lua_setglobal
+   during boot) is the only remaining route and stays blocked by the Thumb
+   glue / computed dispatch (s39/s40 finding, unchanged). Inconclusive on
+   the value; conclusive on "must be defined".
