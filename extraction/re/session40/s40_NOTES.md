@@ -210,3 +210,21 @@ slice hashes in download/bundles_s40/BUNDLES_s40_SHA256.txt. NEXT PUSH (when
 a live token with Contents:read+write on TDKR-Game exists, fine-grained
 preferred): `git push origin gh-pages main s40-user-zip-slice` — three
 fast-forwards, locally verified against exactly these remote heads.
+
+## Push 2 addendum (post-part-9, 2026-10-20) — second token VALID, PUSH EXECUTING
+A second in-session token (classic PAT, ghp_GeFq…) was validated the RIGHT way
+this time: authenticated /user -> 200; X-OAuth-Scopes includes `repo` (the
+token is far broader than needed — recommend a fine-grained, Contents-only
+token next round and revoking this one after use, since it transited chat);
+/repos/nawaf-al-hussain/TDKR-Game permissions.push = true. Cache-consistency
+pre-check on the gh-pages delta (a1bf3b1..582a0d0 = +etc1_tdkr.js,
+pipeline.html +127/-11, tdkr_pipeline.js zipDirLazy fix): the site uses NO
+?v= cache-buster convention on playable pages (plain <script src> tags;
+GitHub Pages max-age=600 bounds staleness to 10 min) and models/manifest.json
+stays at version 21 (city model set unchanged) — no bump required. THIS
+COMMIT IS INCLUDED IN THE PUSH EXECUTED IMMEDIATELY AFTER IT: gh-pages
+a1bf3b1..582a0d0, s40-user-zip-slice (NEW branch, tip 3af4b64), main
+bd7c709..(this commit). Post-push ls-remote verification recorded in the
+session worklog. Token handled ephemerally (env var + inline credential
+helper only; nothing persisted to any file or .git/config; env cleared after
+the push).
