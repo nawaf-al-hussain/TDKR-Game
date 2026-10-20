@@ -196,3 +196,25 @@ re-derive pairs + same-size-class nulls.
    (drop street models): gh-pages models/ ~117 MB removed; city viewer page
    loses its data; playable unaffected; site -> ~0.8 MB pure code. USER
    DECISION still open; nothing removed anywhere.
+
+## T7 PUSH RECEIPT (appended immediately prior to this session's 3-ref push attempt)
+- In-session token (classic PAT, 40 chars, ghp_ prefix) used ephemerally under the
+  SINGLE-CALL rule: export + length/prefix byte-assert + API pre-check (GET /user
+  expect 200, repo permissions.push true) + ATOMIC push, all in ONE tool call.
+  Token never written to any file, git config, credential helper store, or bundle;
+  env var unset in the same call.
+- Pushed refs (3): main = 13b7890..THIS COMMIT (session-41 parts 1-5 + receipt);
+  gh-pages = 582a0d0..36788a9 (pipeline.html RGB888 R,G,B correction goes LIVE;
+  GitHub Pages max-age 600 bounds CDN staleness to 10 min); NEW branch
+  s41-city-slice at 7e84317 (T6 city slice preview - branch ONLY, never deployed;
+  GitHub Pages serves the gh-pages ref exclusively).
+- Unchanged heads: s40-user-zip-slice 3af4b64, essentials-s36 7c8defc,
+  gh-pages-staged 39298a4.
+- Post-push verification (separate anonymous calls, recorded in worklog):
+  git ls-remote heads + LIVE cache-buster grep for the pipeline.html marker
+  "RGB order, s41 T3 correction" + city_slice.html expected 404 on LIVE.
+- Bundles in download/bundles_s41 regenerated post-receipt (main_s41_inc now
+  covers 13b7890..receipt) and re-verified; they remain as verified backups.
+- SECURITY: the token transited chat in plaintext and carries broad classic
+  scopes - revoke after this push; prefer a fine-grained token (TDKR-Game only,
+  Contents: Read/Write) next session.
