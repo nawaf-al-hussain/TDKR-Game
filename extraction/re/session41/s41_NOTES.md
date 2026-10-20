@@ -150,3 +150,49 @@ spawns), (b) >0.9 m ground steps along navmesh adjacency (18 post-fix).
 NAMED NEXT: reconcile navmesh adjacency with the walkable soup (patch holes /
 respect soup steps in A*), or derive the walkable ground FROM the navmesh for
 walkable cells.
+
+## T5 (next commit) — INCONCLUSIVE within time-box; blocker sharpened to one surgical change
+No unicorn rerun this session (budget went to T1/T2/T4). Diagnostic over the
+EXISTING engine-walk products (s26_v2_*_records/toks, both islands):
+- walk records 14,313 with top tids {18241: 4369, 9830: 3859, 9800: 949, ...};
+  0x14CA79 appears 0 times as a RECORD tid (it is a component tid).
+- the 440 trigger-table ids have ZERO overlap with the 14,313 walk ids — the
+  walk 'id' field is LOAD-ORDER (confirms s39 T3), so script-id resolution
+  from the walk requires capturing the engine objId from TObjectData during
+  the walk (exactly the task's prescription; not done here).
+- engine-walk token capture yields 0 contiguous [B][i][9f] runs (s40's
+  "fault-truncated" confirmed quantitatively).
+Fallback per task: pairs stay at 19 (14 same-class) << 100 -> the volume
+model remains "UNVALIDATED, ENGINE-DERIVED ONLY". NAMED NEXT (single change):
+patch lvc_tracer's TObjectData path to capture objId + TRS together, rerun,
+re-derive pairs + same-size-class nulls.
+
+## T6 (this commit) — PASS (slice): JS city descriptor+geometry parser, bit-identical to Python
+1. Zone streams LOCATED: per-zone zips are members of l_gothamcity.gla
+   (GothamCity.zip 41.1 MB, GothamCity_Island2.zip 37.9 MB, + low/inorm
+   variants) — the CZipReader zone streams of s15.
+2. PYTHON REFERENCE (s41_t6_pyref.py): GothamCity.zip -> lod_table.bin (u32 n
+   + n (off,sz) pairs) + lod_data.bin segment blocks ([.. +68: data_off,
+   four==4, vb, ib], vertices at data_off+4 with stride probe {24,20,32},
+   u16 strips with 0xFFFF restarts, +40 material descriptor, +36 batch-ish).
+   Result: 1526 descriptors, 1517 decode with a valid stride, 9 skipped by
+   the probe (open item, matches s16's stride uncertainty).
+3. JS MIRROR (s41_t6_slice.js, node): the SAME parse implemented
+   independently, reading the USER'S OBB zip -> l_gothamcity.gla (BE
+   container) -> GothamCity.zip -> lod bins. COMPARE: 1517/1517 decoded
+   segments BIT-IDENTICAL (off, +40, +36, nv, ni, nidx_raw, stride, vb, ib,
+   SHA256(positions f4 xyz), SHA256(indices u32)). 0 mismatches.
+4. BRANCH ARTIFACT (s41-city-slice @7e84317, prepared NOT deployed):
+   playable/city_slice.html — user zip -> tail-scanned CD -> streaming
+   inflate -> in-browser parse -> THREE.BufferGeometry of the first 96
+   segments rendered; counts verified against the s41 reference on-page.
+   Texture/lightmap binding = named next (descriptor +40 -> materials.bdae
+   order per s15; ETC1 decoder already shipped on the pipeline page).
+5. EFFORT ESTIMATE (option (a) full city): the descriptor+geometry layer took
+   ~1.5 h with the s16 oracle in hand; REMAINING for the full city: materials
+   binding (+40 -> bdae order), ETC1 texture atlas decode + upload, lightmap
+   chain, BIH cell streaming (100x100 grid), LOD selector, draw ordering —
+   est. 2-3 more sessions (s39's 3+ sessions stands). Option (b) impact
+   (drop street models): gh-pages models/ ~117 MB removed; city viewer page
+   loses its data; playable unaffected; site -> ~0.8 MB pure code. USER
+   DECISION still open; nothing removed anywhere.
