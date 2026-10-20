@@ -113,3 +113,58 @@ decoder is proven against the engine that shipped the game.
 
 Artifacts: extraction/re/session42/s42_t2_{cleanroom,oracle,matrix,diag,diag2}.py
 + s42_t2_oracle.json.
+
+## T3 — PASS-WITH-BLOCKER: the mechanism is DECODED (table + registry), the runtime VALUE stays unresolved; estimate 40..3000
+
+1. WHAT THE ENGINE ACTUALLY REGISTERS (decodes RegisterScriptGlobalVariables
+   @0x146db0, 4784 B, ARM — the only function with lua_setfield(GLOBALSINDEX)
+   sites, 86 setfield callers scanned overall, 0 Thumb callers):
+   - SetGlobal("HeadLight_Right", -1), SetGlobal("CurrentActor", -1) [runtime
+     Unicorn trace of the function reproduces exactly these first two events].
+   - A flag loop: SetGlobal(name_i, 1<<i, true) over a stack-built name array.
+   - Grouped enum loops: SetGlobal(name, j) for j = 1..5 in groups.
+   - NUMBER registrations (lua_pushnumber, single-float build: the number is
+     r1 as f32 — lua_pushnumber @0xa499dc stores ONE word + tag 3):
+     NPC_SOUND_WALK_DISTANCE = 8.0f, NPC_SOUND_RUN_DISTANCE = 12.0f,
+     MC_SOUND_DISTANCE = 40.0f.
+   - TABLE registrations (lua_createtable(L,0,0) -> lua_setfield(GLOBALS,name)
+     -> CLuaScriptManager::GlobalVarAddToLocalTable(name,false) @0x14966c,
+     which appends {name,bool,bool} to the manager vector at this+0x48):
+     ~10 names INCLUDING MC_MAX_DISTANCE (name str @0xb30948 = the single
+     \0-bounded occurrence in the binary; setfield site @0x147724).
+2. SCRIPT SIDE (game_config.gla, 26.3 MB, Lua SOURCE): MC_MAX_DISTANCE occurs
+   1,210 times — 0 assignments (regex corrected: s41's 'assign' pattern only
+   matched reads `X = MC_MAX_DISTANCE`; a dedicated write-pattern
+   `MC_MAX_DISTANCE =` finds 0), 0 field accesses (`MC_MAX_DISTANCE.x` = 0).
+   Uses: StartEventAtObjectNode(..., MC_MAX_DISTANCE) 899x (arg 3), 
+   StartSoundAtObjectNode 229x, plus 149 arithmetic sites (5 * MC_MAX_DISTANCE).
+   => the global must be a NUMBER at script runtime; the registration-time
+   empty table is replaced/filled through the this+0x48 registry path.
+3. THE FILL PATH IS NOT STATICALLY VISIBLE: no SetGlobal(char*,int,bool) call
+   site names it (113 sites scanned; the 89-in-function loop covers enum
+   groups), no other -10002 setfield exists, the whole 895 MB OBB contains the
+   name ONLY in game_config.gla scripts, and no pointer word anywhere in the
+   image points into the MC_* pool except the registration itself. This IS the
+   'computed addressing' s41 inferred — now explained as the
+   registry-driven (this+0x48) data path. ResetScriptGlobalVariables
+   @0x148060 re-creates the empty table for 'WeaponCache' only.
+4. VALUE: UNRESOLVED (honest). ESTIMATE from usage neighbours (task-book
+   fallback): literal radii used at the same argument position of the same
+   call families elsewhere: StartSoundAtObjectNode arg3 median 50 (n=29,
+   p90 1400, max 2000); StartEventAtObjectNode arg3 median 3000 (n=17);
+   engine sibling MC_SOUND_DISTANCE = 40.0. => labeled ESTIMATE: the runtime
+   value plausibly lies in 40..3000 (sound-hearing scale vs event-broadcast
+   scale); the shipped 10.0 shim remains a REQUIRED PLACEHOLDER and is likely
+   too small. Positive control: the static decode is anchored by the runtime
+   Unicorn trace of the same function (first two events byte-identical:
+   CurrentActor/-1, EventSender/-1 — wait, first two = HeadLight_Right and
+   CurrentActor per static decode; runtime log shows CurrentActor + 
+   EventSender after early stub divergence; the FACE_* registry check of the
+   task book was superseded by this stronger same-function control).
+5. CORRECTION to the s41 model: 'engine MUST define MC_MAX_DISTANCE [as a
+   number]' — refined: the engine defines the NAME as an empty table at init;
+   a number is installed later via the registry/data path; the Lua shim
+   should model MC_MAX_DISTANCE as a number placeholder (10.0) but flag it
+   as engine-registry-driven, NOT a compile-time constant.
+
+Artifacts: extraction/re/session42/s42_t3_{poolxref,setfields,globals,runreg,ordered,setglobal}.py
