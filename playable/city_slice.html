@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR city slice (s41 T6 — prepared, NOT deployed)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #cdd3e0; font: 13px/1.5 system-ui, sans-serif; }
+  #panel { position: fixed; left: 8px; top: 8px; z-index: 9; background: rgba(10,12,18,.85);
+           border: 1px solid #334; border-radius: 8px; padding: 10px 12px; max-width: 460px; }
+  #log { white-space: pre-wrap; max-height: 46vh; overflow: auto; }
+  input[type=file] { color: #cdd3e0; }
+  b { color: #9fc3ff; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="panel">
+  <b>s41 T6 city slice</b> — option (a) preview, branch-only.<br>
+  Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>. The page streams
+  l_gothamcity.gla → GothamCity.zip → lod_table/lod_data in-browser, builds
+  THREE.BufferGeometry for the first segments, and verifies the counts against
+  the s41 numbers (1526 descriptors / 1517 decoded).<br>
+  <input type="file" id="f">
+  <div id="log"></div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+const log = (s) => { document.querySelector('#log').textContent += s + '\n'; };
+const sha = async (buf) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))].map(x => x.toString(16).padStart(2, '0')).join('');
+
+function zipMembers(buf) {
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--)
+    if (buf.readUInt32LE(i) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('no EOCD');
+  const n = buf.readUInt16LE(eocd + 10);
+  let p = buf.readUInt32LE(eocd + 16);
+  const members = new Map();
+  for (let k = 0; k < n; k++) {
+    if (buf.readUInt32LE(p) !== 0x02014b50) throw new Error('bad CD');
+    const method = buf.readUInt16LE(p + 10), csize = buf.readUInt32LE(p + 20);
+    const nlen = buf.readUInt16LE(p + 28), elen = buf.readUInt16LE(p + 30), clen = buf.readUInt16LE(p + 32);
+    const lho = buf.readUInt32LE(p + 42);
+    members.set(buf.toString('latin1', p + 46, p + 46 + nlen), { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return members;
+}
+function zipRead(buf, m, td) {
+  const lho = m.lho, nlen = buf.readUInt16LE(lho + 26), elen = buf.readUInt16LE(lho + 28);
+  const start = lho + 30 + nlen + elen;
+  const raw = buf.subarray(start, start + m.csize);
+  if (m.method === 0) return raw;
+  if (m.method === 8) { const out = td.inflateRaw(new Uint8Array(raw)); return out.buffer ? out : out; }
+  throw new Error('method ' + m.method);
+}
+function glaMember(g, want) {
+  const idxSize = g.readUInt32BE(4), n = g.readUInt32BE(12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  for (let i = 0; i < n; i++) {
+    const ro = 16 + i * 16;
+    const off = g.readUInt32BE(ro), sz = g.readUInt32BE(ro + 4), no = g.readUInt32BE(ro + 8);
+    let e = no; while (pool[e] !== 0) e++;
+    if (pool.toString('latin1', no, e) === want) return g.subarray(off, off + sz);
+  }
+  return null;
+}
+
+document.querySelector('#f').addEventListener('change', async (ev) => {
+  const f = ev.target.files[0]; if (!f) return;
+  try {
+    log('reading ' + f.name + ' (' + (f.size / 1e6).toFixed(0) + ' MB) — tail-scan, not whole-file');
+    const td = new DecompressionStream('deflate-raw');
+    // tail-scan the OBB central directory (like the pipeline: last 1 MiB)
+    const tail = new Uint8Array(await f.slice(Math.max(0, f.size - 1048576)).arrayBuffer());
+    const dv = new DataView(tail.buffer);
+    let eocd = -1;
+    for (let i = tail.length - 22; i >= 0; i--) if (dv.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+    if (eocd < 0) throw new Error('not a zip (no EOCD)');
+    const n = dv.getUint16(eocd + 10, true);
+    let p = dv.getUint32(eocd + 16, true);
+    let glaEntry = null;
+    for (let k = 0; k < n; k++) {
+      if (tail.length < p + 46) break;
+      const cnlen = dv.getUint16(p + 28, true), celen = dv.getUint16(p + 30, true), cclen = dv.getUint16(p + 32, true);
+      const name = new TextDecoder().decode(tail.subarray(p + 46, p + 46 + cnlen));
+      if (name === 'com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla')
+        glaEntry = { lho: dv.getUint32(p + 42, true), csize: dv.getUint32(p + 20, true) };
+      p += 46 + cnlen + celen + cclen;
+    }
+    if (!glaEntry) throw new Error('l_gothamcity.gla not found — is this the v1.1.6b OBB zip?');
+    // LFH of the gla
+    const lfTail = new Uint8Array(await f.slice(glaEntry.lho, glaEntry.lho + 64).arrayBuffer());
+    const lfdv = new DataView(lfTail.buffer);
+    const gnlen = lfdv.getUint16(26, true), gelen = lfdv.getUint16(28, true);
+    const gstart = glaEntry.lho + 30 + gnlen + gelen;
+    log('streaming gla (' + (glaEntry.csize / 1e6).toFixed(0) + ' MB compressed)...');
+    const glaStream = (await f.slice(gstart, gstart + glaEntry.csize).stream())
+      .pipeThrough(new DecompressionStream('deflate-raw'));
+    const gbuf = await new Response(glaStream).arrayBuffer();
+    const g = new DataView(gbuf); const g8 = new Uint8Array(gbuf);
+    log('gla inflated: ' + (gbuf.byteLength / 1e6).toFixed(1) + ' MB');
+
+    // zip-in-gla via a Blob view + zipMembers equivalent on bytes
+    const idxSize = g.getUint32(4), nMembers = g.getUint32(12);
+    let zoff = -1, zsz = 0;
+    const pool = g8.subarray(16 + nMembers * 16, idxSize);
+    for (let i = 0; i < nMembers; i++) {
+      const ro = 16 + i * 16;
+      const off = g.getUint32(ro), sz = g.getUint32(ro + 4), no = g.getUint32(ro + 8);
+      let e = no; while (pool[e] !== 0) e++;
+      if (pool.toString('latin1', no, e) === 'GothamCity.zip') { zoff = off; zsz = sz; }
+    }
+    if (zoff < 0) throw new Error('GothamCity.zip not in gla');
+    const zb = g8.subarray(zoff, zoff + zsz);
+    const zdv = new DataView(zb.buffer, zb.byteOffset, zb.byteLength);
+    // browser zip member walk (DataView; no Node Buffer methods)
+    let ze = -1;
+    for (let i = zb.length - 22; i >= Math.max(0, zb.length - 66000); i--)
+      if (zdv.getUint32(i, true) === 0x06054b50) { ze = i; break; }
+    if (ze < 0) throw new Error('zone zip: no EOCD');
+    const zn = zdv.getUint16(ze + 10, true);
+    let zp = zdv.getUint32(ze + 16, true);
+    const Z = new Map();
+    for (let k = 0; k < zn; k++) {
+      if (zdv.getUint32(zp, true) !== 0x02014b50) throw new Error('zone zip: bad CD');
+      const method = zdv.getUint16(zp + 10, true), csize = zdv.getUint32(zp + 20, true);
+      const cn = zdv.getUint16(zp + 28, true), ce = zdv.getUint16(zp + 30, true), cc = zdv.getUint16(zp + 32, true);
+      const lho = zdv.getUint32(zp + 42, true);
+      Z.set(new TextDecoder().decode(zb.subarray(zp + 46, zp + 46 + cn)), { method, csize, lho });
+      zp += 46 + cn + ce + cc;
+    }
+    const zread = (name) => {
+      const m = Z.get(name);
+      const lho = m.lho;
+      const ln = zdv.getUint16(lho + 26, true), le = zdv.getUint16(lho + 28, true);
+      const start = lho + 30 + ln + le;
+      const raw = zb.subarray(start, start + m.csize);
+      if (m.method === 0) return raw;
+      if (m.method === 8) return new Uint8Array(new Response(new Blob([raw]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer());
+      throw new Error('method ' + m.method);
+    };
+    const lt = zread('lod_table.bin');
+    const ld = zread('lod_data.bin');
+    log('lod_table ' + lt.length + ' B, lod_data ' + (ld.length / 1e6).toFixed(1) + ' MB');
+
+    const ltd = new DataView(lt.buffer, lt.byteOffset, lt.byteLength);
+    const ldd = new DataView(ld.buffer, ld.byteOffset, ld.byteLength);
+    const nSeg = ltd.getUint32(0, true);
+    let decoded = 0, tris = 0;
+    const K = 96; // first K segments rendered
+    const positions = [];
+    const origin = null;
+    for (let k = 0; k < nSeg; k++) {
+      const off = ltd.getUint32(4 + 8 * k, true);
+      const dataOff = ldd.getUint32(off + 68, true), four = ldd.getUint32(off + 72, true);
+      const vb = ldd.getUint32(off + 76, true), ib = ldd.getUint32(off + 80, true);
+      if (four !== 4) continue;
+      const vstart = dataOff + 4, istart = vstart + vb;
+      let real = 0, mx = 0;
+      for (let i = 0; i < (ib >> 1); i++) {
+        const v = ldd.getUint16(istart + 2 * i, true);
+        if (v !== 0xFFFF) { real++; if (v > mx) mx = v; }
+      }
+      let stride = 0;
+      for (const s of [24, 20, 32]) {
+        if (vb % s === 0 && mx < vb / s) {
+          let ok = true;
+          for (let i = 0; i < vb / s; i++) {
+            const x = ldd.getFloat32(vstart + i * s, true), y = ldd.getFloat32(vstart + i * s + 4, true), z = ldd.getFloat32(vstart + i * s + 8, true);
+            if (!isFinite(x) || !isFinite(y) || !isFinite(z) || Math.max(Math.abs(x), Math.abs(y), Math.abs(z)) >= 6000) { ok = false; break; }
+          }
+          if (ok) { stride = s; break; }
+        }
+      }
+      if (!stride) continue;
+      decoded++;
+      if (k >= K) continue;
+      const cnt = Math.floor(vb / stride);
+      for (let i = 0; i < cnt; i++) {
+        const x = ldd.getFloat32(vstart + i * stride, true), y = ldd.getFloat32(vstart + i * stride + 4, true), z = ldd.getFloat32(vstart + i * stride + 8, true);
+        if (!origin) { origin = [x, y, z]; }
+        positions.push(x - origin[0], y - origin[1], z - origin[2]);
+      }
+      for (let i = 0; i < (ib >> 1); i++) {
+        const v = ldd.getUint16(istart + 2 * i, true);
+        if (v !== 0xFFFF) tris++;
+      }
+    }
+    log('segments: ' + nSeg + ' decoded: ' + decoded + ' (s41 reference: 1517)');
+    log('first ' + K + ' segments: ' + (positions.length / 3) + ' verts, ' + tris + ' strip indices');
+
+    // three.js render
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geo.computeVertexNormals();
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x14161c);
+    const cam = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 1, 20000);
+    const cnt = positions.length / 3;
+    let cx = 0, cy = 0, cz = 0;
+    for (let i = 0; i < cnt; i++) { cx += positions[3*i]; cy += positions[3*i+1]; cz += positions[3*i+2]; }
+    cx /= cnt; cy /= cnt; cz /= cnt;
+    cam.position.set(cx + 600, cy + 500, cz + 900); cam.lookAt(cx, cy, cz);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(innerWidth, innerHeight);
+    document.body.appendChild(renderer.domElement);
+    const mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: 0x9fc3ff, wireframe: false, side: THREE.DoubleSide }));
+    scene.add(mesh);
+    const dir = new THREE.DirectionalLight(0xffffff, 1.2); dir.position.set(1, 2, 1); scene.add(dir);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+    const animate = () => { renderer.render(scene, cam); requestAnimationFrame(animate); };
+    animate();
+    log('READY — wireframe-free preview of the first ' + K + ' segments (flat colour; ETC1 texture + lightmap chain bind here per s15/s16).');
+  } catch (err) {
+    log('ERROR: ' + (err && err.message || err));
+  }
+});
+</script>
+</body>
+</html>
