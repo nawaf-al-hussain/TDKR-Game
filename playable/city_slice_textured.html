@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR city slice textured (s46 T2 — branch-only, NOT deployed)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #cdd3e0; font: 13px/1.5 system-ui, sans-serif; }
+  #panel { position: fixed; left: 8px; top: 8px; z-index: 9; background: rgba(10,12,18,.85);
+           border: 1px solid #334; border-radius: 8px; padding: 10px 12px; max-width: 470px; }
+  #log { white-space: pre-wrap; max-height: 42vh; overflow: auto; }
+  #c { position: fixed; right: 8px; top: 8px; border: 1px solid #334; }
+  input[type=file] { color: #cdd3e0; }
+  b { color: #9fc3ff; }
+</style>
+<script src="./etc1_tdkr.js"></script>
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="panel">
+  <b>s46 T2 city slice textured</b> — user zip -> l_gothamcity.gla -> GothamCity.zip
+  (lod_table/lod_data) + l_gothamcity_tex.gla (TDKR-wrapped PVR/ETC1) -> textured
+  seg696 (mat73) top-down, lod UVs, engine binding gothamcity_roads_details.<br>
+  Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>:<br>
+  <input type="file" id="f">
+  <div id="log"></div>
+</div>
+<canvas id="c" width="700" height="700"></canvas>
+<script type="module">
+import * as THREE from 'three';
+const log = (s) => { document.querySelector('#log').textContent += s + '\n'; };
+window.__GATE = { done: false };
+
+const sha = async (buf) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))].map(x => x.toString(16).padStart(2, '0')).join('');
+
+function u16le(u8, i) { return u8[i] | (u8[i + 1] << 8); }
+function u32le(u8, i) { return (u8[i] | (u8[i + 1] << 8) | (u8[i + 2] << 16) | (u8[i + 3] << 24)) >>> 0; }
+function u32be(u8, i) { return ((u8[i] << 24) | (u8[i + 1] << 16) | (u8[i + 2] << 8) | u8[i + 3]) >>> 0; }
+const LATIN = new TextDecoder('latin1');
+
+function zipMembers(buf) {
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--)
+    if (u32le(buf, i) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('no EOCD');
+  const n = u16le(buf, eocd + 10);
+  let p = u32le(buf, eocd + 16);
+  const members = new Map();
+  for (let k = 0; k < n; k++) {
+    if (u32le(buf, p) !== 0x02014b50) throw new Error('bad CD');
+    const method = u16le(buf, p + 10), csize = u32le(buf, p + 20);
+    const nlen = u16le(buf, p + 28), elen = u16le(buf, p + 30), clen = u16le(buf, p + 32);
+    const lho = u32le(buf, p + 42);
+    members.set(LATIN.decode(buf.subarray(p + 46, p + 46 + nlen)), { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return members;
+}
+async function zipRead2(buf, m) {
+  const lho = m.lho, nlen = u16le(buf, lho + 26), elen = u16le(buf, lho + 28);
+  const start = lho + 30 + nlen + elen;
+  const raw = buf.subarray(start, start + m.csize);
+  if (m.method === 0) return raw;
+  if (m.method === 8) {
+    const ds = new DecompressionStream('deflate-raw');
+    const stream = new Response(new Blob([raw])).body.pipeThrough(ds);
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  throw new Error('method ' + m.method);
+}
+function glaMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm === want) return g.subarray(o, o + s);
+  }
+  throw new Error('gla member not found: ' + want);
+}
+
+// ---- TDKR-wrapped PVR/ETC1 texture decode (top mip) ----
+function decodeCityTex(u8) {
+  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+  const tag = dv.getUint32(0, true);
+  if (tag !== 0x34) throw new Error('bad TDKR tex tag ' + tag);
+  const h = dv.getUint32(4, true), w = dv.getUint32(8, true);
+  const magic = String.fromCharCode(u8[44], u8[45], u8[46], u8[47]);
+  if (magic !== 'PVR!') throw new Error('bad PVR tag ' + JSON.stringify(magic));
+  const DATA0 = 52;
+  const bw = (w + 3) >> 2, bh = (h + 3) >> 2;
+  const base = u8.subarray(DATA0, DATA0 + bw * bh * 8);
+  const rgba = window.ETC1_TDKR.decodeRGBA(base, w, h);
+  return { w, h, rgba };
+}
+
+document.querySelector('#f').addEventListener('change', async (ev) => {
+  try {
+    const file = ev.target.files[0];
+    log('zip: ' + file.name + ' (' + file.size + ' B)');
+    const zipBuf = new Uint8Array(await file.arrayBuffer());
+
+    // --- data gla -> GothamCity.zip -> lod_table/lod_data
+    const zmembers = zipMembers(zipBuf);
+    const gla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla'));
+    log('l_gothamcity.gla: ' + gla.length + ' B');
+    const gcityZip = glaMember(gla, 'GothamCity.zip');
+    const gmembers = zipMembers(gcityZip);
+    const lt = await zipRead2(gcityZip, gmembers.get('lod_table.bin'));
+    const ldd = await zipRead2(gcityZip, gmembers.get('lod_data.bin'));
+    const cnt = u32le(lt, 0);
+    const pairs = [];
+    for (let k = 0; k < cnt; k++)
+      pairs.push([u32le(lt, 4 + 8 * k), u32le(lt, 8 + 8 * k)]);
+    log('lod segs: ' + cnt + ' (expect 1526)');
+
+    // seg696
+    const K = 696;
+    const off2 = pairs[K][0];
+    const data_off = u32le(ldd, off2 + 68), four = u32le(ldd, off2 + 72),
+          vb = u32le(ldd, off2 + 76), ib = u32le(ldd, off2 + 80);
+    const hdr = [];
+    for (let i = 0; i < 17; i++) hdr.push(u32le(ldd, off2 + 4 * i));
+    let stride = 20;
+    if (vb % 24 === 0) stride = 24;
+    if (vb % 28 === 0) stride = 28;
+    const nv = (vb / stride) | 0;
+    const vstart = data_off + 4;
+    const raw = ldd.subarray(vstart, vstart + vb);
+    const f32 = new Float32Array(nv * 3);
+    const uv02 = new Float32Array(nv * 2);
+    const fbuf = new DataView(raw.buffer, raw.byteOffset, raw.byteLength);
+    for (let v = 0; v < nv; v++) {
+      const o = v * stride;
+      f32[v * 3] = fbuf.getFloat32(o, true);
+      f32[v * 3 + 1] = fbuf.getFloat32(o + 4, true);
+      f32[v * 3 + 2] = fbuf.getFloat32(o + 8, true);
+      const su = fbuf.getInt16(o + 12, true) / 32767, sv = fbuf.getInt16(o + 14, true) / 32767;
+      uv02[v * 2] = su * 0.5 + 0.5;
+      uv02[v * 2 + 1] = 1.0 - (sv * 0.5 + 0.5);
+    }
+    const idx = new Uint16Array(raw.buffer, raw.byteOffset + vb, (ib / 2) | 0);
+    log('seg696: nv=' + nv + ' stride=' + stride + ' tris=' + (idx.length / 3) + ' mat=' + hdr[10]);
+
+    const geo = new Uint8Array(f32.buffer, f32.byteOffset, f32.byteLength);
+    const dig = await sha(geo) + ':' + await sha(new Uint8Array(idx.buffer, idx.byteOffset, idx.byteLength));
+    log('geo digest: ' + dig);
+    window.__GATE.geo_digest = dig;
+    window.__GATE.nv = nv; window.__GATE.mat = hdr[10];
+
+    // --- textures
+    const texGla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla'));
+    log('l_gothamcity_tex.gla: ' + texGla.length + ' B');
+    const texU8 = glaMember(texGla, 'gothamcity_roads_details.tga');
+    const dec = decodeCityTex(texU8);
+    const texDigest = await sha(dec.rgba.slice(0));
+    log('roads_details: ' + dec.w + 'x' + dec.h + ' ETC1 top-mip digest ' + texDigest.slice(0, 16) + '...');
+    window.__GATE.tex_digest = texDigest;
+
+    // --- three.js top-down ortho (match Python raster orientation)
+    const geo3 = new THREE.BufferGeometry();
+    const posA = new Float32Array(nv * 3);
+    for (let v = 0; v < nv; v++) { posA[v*3] = f32[v*3]; posA[v*3+1] = f32[v*3+1]; posA[v*3+2] = 0; }
+    geo3.setAttribute('position', new THREE.BufferAttribute(posA, 3));
+    geo3.setAttribute('uv', new THREE.BufferAttribute(uv02, 2));
+    geo3.setIndex(new THREE.BufferAttribute(new Uint16Array(idx.buffer.slice(idx.byteOffset, idx.byteOffset + idx.byteLength)), 1));
+    const texObj = new THREE.DataTexture(new Uint8Array(dec.rgba), dec.w, dec.h, THREE.RGBAFormat);
+    texObj.flipY = false; texObj.wrapS = texObj.wrapT = THREE.RepeatWrapping;
+    texObj.magFilter = THREE.NearestFilter; texObj.minFilter = THREE.NearestFilter;
+    texObj.needsUpdate = true;
+    const mesh = new THREE.Mesh(geo3, new THREE.MeshBasicMaterial({ map: texObj, side: THREE.DoubleSide }));
+    const scene = new THREE.Scene();
+    scene.add(mesh);
+    let mn = [1e9, 1e9], mx = [-1e9, -1e9];
+    for (let v = 0; v < nv; v++) {
+      mn[0] = Math.min(mn[0], f32[v*3]); mx[0] = Math.max(mx[0], f32[v*3]);
+      mn[1] = Math.min(mn[1], f32[v*3+1]); mx[1] = Math.max(mx[1], f32[v*3+1]);
+    }
+    const span = Math.max(mx[0] - mn[0], mx[1] - mn[1]) * 1.04;
+    const cx = (mn[0] + mx[0]) / 2, cy = (mn[1] + mx[1]) / 2;
+    const cam = new THREE.OrthographicCamera(-span/2, span/2, span/2, -span/2, -1000, 1000);
+    cam.position.set(cx, cy, 10); cam.lookAt(cx, cy, 0);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#c'), preserveDrawingBuffer: true });
+    renderer.setSize(700, 700, false);
+
+    const dbg = new URLSearchParams(location.search).get('debug');
+    if (dbg === 'red') mesh.material = new THREE.MeshBasicMaterial({ color: 0xff0000, side: THREE.DoubleSide });
+    if (dbg === 'wire') mesh.material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true, side: THREE.DoubleSide });
+    if (dbg === 'box') { scene.add(new THREE.Mesh(new THREE.BoxGeometry(span/4, span/4, span/4), new THREE.MeshBasicMaterial({ color: 0xffff00 }))); }
+    if (dbg === 'quad') {
+      const q = new THREE.Mesh(new THREE.PlaneGeometry(span/2, span/2), new THREE.MeshBasicMaterial({ color: 0x00ffff, side: THREE.DoubleSide }));
+      q.position.set(cx, cy, 0);
+      scene.add(q);
+    }
+    if (dbg === 'origin') {
+      const q = new THREE.Mesh(new THREE.PlaneGeometry(50, 50), new THREE.MeshBasicMaterial({ color: 0x00ffff, side: THREE.DoubleSide }));
+      q.position.set(0, 0, 0);
+      scene.add(q);
+    }
+    mesh.frustumCulled = false;
+    if (dbg === 'ndc') {
+      const ndcScene = new THREE.Scene();
+      const q = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ color: 0x00ffff, side: THREE.DoubleSide }));
+      ndcScene.add(q);
+      const idc = new THREE.Camera();
+      renderer.render(ndcScene, idc);
+    } else {
+      renderer.render(scene, cam);
+    }
+    try {
+      const v3 = new THREE.Vector3(cx, cy, 0).project(cam);
+      window.__GATE.ndc = [v3.x, v3.y, v3.z];
+      window.__GATE.camdbg = { cx, cy, px: cam.position.x, py: cam.position.y, pz: cam.position.z,
+        mw: Array.from(cam.matrixWorld.elements).slice(12, 15),
+        span, firstX: f32[0], firstY: f32[1] };
+    } catch (e) { window.__GATE.ndc = ['err', String(e)]; }
+
+    window.__GATE.rinfo = { calls: renderer.info.render.calls,
+      tris: renderer.info.render.triangles,
+      posCount: geo3.attributes.position.count,
+      idxCount: geo3.index ? geo3.index.count : -1,
+      cam: [cam.left, cam.right, cam.top, cam.bottom],
+      meshPos: [mesh.position.x, mesh.position.y, mesh.position.z],
+      firstPos: Array.from(geo3.attributes.position.array.slice(0, 3)),
+      uvRange: [Math.min(...uv02), Math.max(...uv02)] };
+    const gl = renderer.getContext();
+    const rawpx = new Uint8Array(700 * 700 * 4);
+    gl.readPixels(0, 0, 700, 700, gl.RGBA, gl.UNSIGNED_BYTE, rawpx);
+    // gl origin = bottom-left: flip rows to canvas top-down
+    const img = new Uint8ClampedArray(700 * 700 * 4);
+    for (let y = 0; y < 700; y++)
+      img.set(rawpx.subarray((700 - 1 - y) * 700 * 4, (700 - y) * 700 * 4), y * 700 * 4);
+    let sum = [0, 0, 0], n = 0;
+    for (let i = 0; i < img.length; i += 4) {
+      if (img[i] + img[i+1] + img[i+2] > 0) { sum[0] += img[i]; sum[1] += img[i+1]; sum[2] += img[i+2]; n++; }
+    }
+    window.__GATE.pixels_covered = n;
+    window.__GATE.mean_rgb = sum.map(s => n ? +(s / n).toFixed(2) : 0);
+    log('covered px: ' + n + ' mean rgb: ' + window.__GATE.mean_rgb.join(','));
+    const TH = 16;
+    const th = new Array(TH * TH).fill(0);
+    const cnts = new Array(TH * TH).fill(0);
+    for (let y = 0; y < 700; y++) for (let x = 0; x < 700; x++) {
+      const i = (y * 700 + x) * 4;
+      const g = 0.299 * img[i] + 0.587 * img[i+1] + 0.114 * img[i+2];
+      const tx = Math.min(TH - 1, (x / 700 * TH) | 0), ty = Math.min(TH - 1, (y / 700 * TH) | 0);
+      th[ty * TH + tx] += g; cnts[ty * TH + tx]++;
+    }
+    window.__GATE.thumb16 = th.map((s, i) => +(cnts[i] ? s / cnts[i] : 0).toFixed(2));
+    window.__GATE.png = document.querySelector('#c').toDataURL('image/png');
+    window.__GATE.done = true;
+    log('GATE DONE');
+  } catch (e) {
+    log('ERROR: ' + (e && e.message || e));
+    window.__GATE.error = String(e && e.message || e);
+    window.__GATE.done = true;
+  }
+});
+</script>
+</body>
+</html>
