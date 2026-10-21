@@ -1,0 +1,49 @@
+{
+ "console_errors": 0,
+ "page_errors": 0,
+ "digest_match": true,
+ "digest": "4f6e2d070e7ea2201d9e81cd67502e6e8a27b4f3a2a7160ac28d7a7835fbb26c",
+ "blocks": [
+  {
+   "tag": "road276",
+   "corr": 1,
+   "tv_real": 0.007589795918367386,
+   "tv_shuffle": 0.01884081632653061,
+   "tv_random": 0.019365306122448946,
+   "sep_ok": true
+  },
+  {
+   "tag": "stride28",
+   "corr": 0.9997641096997405,
+   "tv_real": 0.0003938775510204204,
+   "tv_shuffle": 0.005397959183673516,
+   "tv_random": 0.004726530612244936,
+   "sep_ok": true
+  },
+  {
+   "tag": "cls24nc",
+   "corr": 1,
+   "tv_real": 0.001920408163265281,
+   "tv_shuffle": 0.02435714285714287,
+   "tv_random": 0.02557959183673472,
+   "sep_ok": true
+  },
+  {
+   "tag": "cls2017",
+   "corr": 1,
+   "tv_real": 0.0016408163265306341,
+   "tv_shuffle": 0.01775102040816324,
+   "tv_random": 0.020893877551020394,
+   "sep_ok": true
+  },
+  {
+   "tag": "road696",
+   "corr": 0.9999990757263767,
+   "tv_real": 0.011134693877551024,
+   "tv_shuffle": 0.021673469387755107,
+   "tv_random": 0.023518367346938775,
+   "sep_ok": true
+  }
+ ],
+ "verdict": true
+}
