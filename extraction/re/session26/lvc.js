@@ -35,7 +35,9 @@ Reader.prototype.tok = function (kind, size, out) {
     val = (b[0] << 24 | b[1] << 16 | b[2] << 8 | b[3]) | 0;
     this.fields.push(val);
   } else if (kind === 'f') {
-    var u = (b[0] | b[1] << 8 | b[2] << 16 | b[3] << 24) >>> 0;
+    // BIG-endian per lvc_pure ('>f') — the s45 collision export exposed the
+    // LE read as a latent bug (uncaught: floats are rare in the s26 test paths)
+    var u = (b[0] << 24 | b[1] << 16 | b[2] << 8 | b[3]) >>> 0;
     var buf = new ArrayBuffer(4), dv = new DataView(buf);
     dv.setUint32(0, u);
     val = dv.getFloat32(0);
@@ -80,7 +82,10 @@ function replay(spec, r, out) {
   }
 }
 
-function parseLvc(data, table, gol) {
+function parseLvc(data, table, gol, opts) {
+  // opts (optional, s45): { census: bool -> collect a component census
+  //   {tidString -> [[rid, startOff, size], ...]} mirroring lvc_pure.parse's
+  //   census (the per-component offsets/sizes the collision exporter needs). }
   var dv = new DataView(data.buffer, data.byteOffset, data.byteLength);
   if (String.fromCharCode(data[0], data[1], data[2], data[3]) !== 'DICT')
     throw new Error('bad magic');
@@ -117,6 +122,7 @@ function parseLvc(data, table, gol) {
   });
 
   var records = [], tokens = [];
+  var census = (opts && opts.census) ? {} : null;
   var cur = 17, rid = 0;
   while (cur < tableOff) {
     rid++;
@@ -164,6 +170,9 @@ function parseLvc(data, table, gol) {
             r.raw(spansC[ks][cstart], tokens);
           }
         } else replay(cspec, r, tokens);
+        if (census) {
+          (census[ks] = census[ks] || []).push([rid, cstart, r.p - cstart]);
+        }
       });
       kind = 'tmpl 0x' + tid.toString(16);
     } else {
@@ -187,7 +196,7 @@ function parseLvc(data, table, gol) {
       throw new Error('framing error: cursor ' + cur + ' != table ' + tableOff);
   }
   return { records: records, tokens: tokens, tableOff: tableOff,
-           nrecHdr: nrecHdr, strings: strings };
+           nrecHdr: nrecHdr, strings: strings, census: census };
 }
 
 function bytesToString(bytes) {
