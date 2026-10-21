@@ -1,0 +1,41 @@
+{
+ "walktest.html": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/walktest.html",
+  "status": "loaded",
+  "console_errors": [],
+  "n_errors": 0,
+  "n_requests": 6,
+  "gc_collision_bin_requested": false,
+  "patch_json_requested": false,
+  "files": [
+   "lvc.js",
+   "tdkr_pipeline.js",
+   "walktest.html",
+   "walktest.js",
+   "walktest_routes.js",
+   "walktest_run.js"
+  ]
+ },
+ "index.html?userfiles=1": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/index.html?userfiles=1",
+  "status": "loaded",
+  "console_errors": [],
+  "n_errors": 0,
+  "n_requests": 11,
+  "gc_collision_bin_requested": false,
+  "patch_json_requested": true,
+  "files": [
+   "14b094d8-948c-4ed0-8c20-102e2e4a6c71",
+   "BufferGeometryUtils.js",
+   "GLTFLoader.js",
+   "batman.glb",
+   "fengari-web.js",
+   "index.html",
+   "lvc.js",
+   "patch.json",
+   "tdkr_pipeline.js",
+   "three.module.js",
+   "walktest.js"
+  ]
+ }
+}
