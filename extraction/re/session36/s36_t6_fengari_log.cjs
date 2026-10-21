@@ -71,7 +71,7 @@ function makeLogged() {
     'PostProcessingEffectRemove QTE_EnableControl DisableCopAI CameraShake StartSoundAtWaypoint ' +
     'EnableShowObject StartEventAtObjectNode ObjectiveShow SetCurrentActor ActorWa RemoveGenericObjectFromMap EnableRain SetObjectiveText ObjectiveHide ActorWalkTo ActorRunTolkTo ActorRunTo').split(/\s+/);
   for (const nm of VOID) stub(nm);
-  lua.lua_pushnumber(L, 10.0);
+  lua.lua_pushnumber(L, 40.0);
   lua.lua_setglobal(L, to_luastring('MC_MAX_DISTANCE'));
   return { L, calls };
 }

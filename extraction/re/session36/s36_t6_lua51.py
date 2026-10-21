@@ -65,7 +65,7 @@ L.globals()['ObjectGetPosition'] = lambda *a: (-470.09, -960.2, -3.91)
 L.globals()['GetDistFromMC'] = lambda *a: 12.5
 L.globals()['Random'] = lambda *a: 1.0
 L.globals()['ActorGetState'] = lambda *a: 1.0
-L.globals()['MC_MAX_DISTANCE'] = 10.0
+L.globals()['MC_MAX_DISTANCE'] = 40.0
 
 # Wait = coroutine.yield wrapper (5.1)
 L.execute('''
