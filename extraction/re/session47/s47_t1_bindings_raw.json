@@ -1,0 +1,4433 @@
+{
+ "entries": [
+  {
+   "entry": "0x36d7c",
+   "name": "DiffuseMap",
+   "v1": "0x36ddc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x36dac",
+   "name": "MaskMap",
+   "v1": "0x36e0c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x36dc4",
+   "name": "ReflectionMap",
+   "v1": "0x36e28",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x36ee0",
+   "name": "DiffuseMap",
+   "v1": "0x36ef8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x370c8",
+   "name": "LightMap",
+   "v1": "0x37170",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x370e0",
+   "name": "DiffuseMap",
+   "v1": "0x3718c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x373ac",
+   "name": "LightMap",
+   "v1": "0x37454",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x373c4",
+   "name": "DiffuseMap",
+   "v1": "0x37470",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x37660",
+   "name": "LightMap",
+   "v1": "0x376c0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x37678",
+   "name": "DiffuseMap",
+   "v1": "0x376dc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3789c",
+   "name": "LightMap",
+   "v1": "0x378fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x378b4",
+   "name": "DiffuseMap",
+   "v1": "0x37918",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x37ad8",
+   "name": "LightMap",
+   "v1": "0x37b38",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x37af0",
+   "name": "DiffuseMap",
+   "v1": "0x37b54",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x37d14",
+   "name": "LightMap",
+   "v1": "0x37d74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x37d2c",
+   "name": "DiffuseMap",
+   "v1": "0x37d90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x37f50",
+   "name": "LightMap",
+   "v1": "0x37fb0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x37f68",
+   "name": "DiffuseMap",
+   "v1": "0x37fcc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3815c",
+   "name": "DiffuseMap",
+   "v1": "0x38174",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x382e4",
+   "name": "DiffuseMap",
+   "v1": "0x382fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3846c",
+   "name": "DiffuseMap",
+   "v1": "0x38484",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x385f4",
+   "name": "DiffuseMap",
+   "v1": "0x3860c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3878c",
+   "name": "DiffuseMap",
+   "v1": "0x387bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x38960",
+   "name": "LightMap",
+   "v1": "0x389a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x38978",
+   "name": "DiffuseMap",
+   "v1": "0x389c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x38b6c",
+   "name": "LightMap",
+   "v1": "0x38bb4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x38b84",
+   "name": "DiffuseMap",
+   "v1": "0x38bd0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x38d78",
+   "name": "LightMap",
+   "v1": "0x38dc0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x38d90",
+   "name": "DiffuseMap",
+   "v1": "0x38ddc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x38f84",
+   "name": "LightMap",
+   "v1": "0x38fcc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x38f9c",
+   "name": "DiffuseMap",
+   "v1": "0x38fe8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x39190",
+   "name": "LightMap",
+   "v1": "0x391d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x391a8",
+   "name": "DiffuseMap",
+   "v1": "0x391f4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3939c",
+   "name": "LightMap",
+   "v1": "0x393e4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x393b4",
+   "name": "DiffuseMap",
+   "v1": "0x39400",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x395a8",
+   "name": "LightMap",
+   "v1": "0x395f0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x395c0",
+   "name": "DiffuseMap",
+   "v1": "0x3960c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x397b4",
+   "name": "LightMap",
+   "v1": "0x397fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x397cc",
+   "name": "DiffuseMap",
+   "v1": "0x39818",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x399c0",
+   "name": "LightMap",
+   "v1": "0x39a08",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x399d8",
+   "name": "DiffuseMap",
+   "v1": "0x39a24",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x39bcc",
+   "name": "LightMap",
+   "v1": "0x39c14",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x39be4",
+   "name": "DiffuseMap",
+   "v1": "0x39c30",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x39dd8",
+   "name": "LightMap",
+   "v1": "0x39e20",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x39df0",
+   "name": "DiffuseMap",
+   "v1": "0x39e3c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x39fe4",
+   "name": "LightMap",
+   "v1": "0x3a02c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x39ffc",
+   "name": "DiffuseMap",
+   "v1": "0x3a048",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3a1f0",
+   "name": "LightMap",
+   "v1": "0x3a238",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3a208",
+   "name": "DiffuseMap",
+   "v1": "0x3a254",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3a3fc",
+   "name": "LightMap",
+   "v1": "0x3a444",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3a414",
+   "name": "DiffuseMap",
+   "v1": "0x3a460",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3a608",
+   "name": "LightMap",
+   "v1": "0x3a650",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3a620",
+   "name": "DiffuseMap",
+   "v1": "0x3a66c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3a814",
+   "name": "LightMap",
+   "v1": "0x3a85c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3a82c",
+   "name": "DiffuseMap",
+   "v1": "0x3a878",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3aa20",
+   "name": "LightMap",
+   "v1": "0x3aa68",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3aa38",
+   "name": "DiffuseMap",
+   "v1": "0x3aa84",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3ac2c",
+   "name": "LightMap",
+   "v1": "0x3ac74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3ac44",
+   "name": "DiffuseMap",
+   "v1": "0x3ac90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3ae38",
+   "name": "LightMap",
+   "v1": "0x3ae80",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3ae50",
+   "name": "DiffuseMap",
+   "v1": "0x3ae9c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b044",
+   "name": "LightMap",
+   "v1": "0x3b08c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b05c",
+   "name": "DiffuseMap",
+   "v1": "0x3b0a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b250",
+   "name": "LightMap",
+   "v1": "0x3b298",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b268",
+   "name": "DiffuseMap",
+   "v1": "0x3b2b4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b45c",
+   "name": "LightMap",
+   "v1": "0x3b4a4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b474",
+   "name": "DiffuseMap",
+   "v1": "0x3b4c0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b668",
+   "name": "LightMap",
+   "v1": "0x3b6b0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b680",
+   "name": "DiffuseMap",
+   "v1": "0x3b6cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b874",
+   "name": "LightMap",
+   "v1": "0x3b8bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3b88c",
+   "name": "DiffuseMap",
+   "v1": "0x3b8d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3ba80",
+   "name": "LightMap",
+   "v1": "0x3bac8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3ba98",
+   "name": "DiffuseMap",
+   "v1": "0x3bae4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3bc8c",
+   "name": "LightMap",
+   "v1": "0x3bcd4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3bca4",
+   "name": "DiffuseMap",
+   "v1": "0x3bcf0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3be98",
+   "name": "LightMap",
+   "v1": "0x3bee0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3beb0",
+   "name": "DiffuseMap",
+   "v1": "0x3befc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c0a4",
+   "name": "LightMap",
+   "v1": "0x3c0ec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c0bc",
+   "name": "DiffuseMap",
+   "v1": "0x3c108",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c2b0",
+   "name": "LightMap",
+   "v1": "0x3c2f8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c2c8",
+   "name": "DiffuseMap",
+   "v1": "0x3c314",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c4bc",
+   "name": "LightMap",
+   "v1": "0x3c504",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c4d4",
+   "name": "DiffuseMap",
+   "v1": "0x3c520",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c6c8",
+   "name": "LightMap",
+   "v1": "0x3c710",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c6e0",
+   "name": "DiffuseMap",
+   "v1": "0x3c72c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c8d4",
+   "name": "LightMap",
+   "v1": "0x3c91c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3c8ec",
+   "name": "DiffuseMap",
+   "v1": "0x3c938",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3cae0",
+   "name": "LightMap",
+   "v1": "0x3cb28",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3caf8",
+   "name": "DiffuseMap",
+   "v1": "0x3cb44",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3ccec",
+   "name": "LightMap",
+   "v1": "0x3cd34",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3cd04",
+   "name": "DiffuseMap",
+   "v1": "0x3cd50",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3cef8",
+   "name": "LightMap",
+   "v1": "0x3cf40",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3cf10",
+   "name": "DiffuseMap",
+   "v1": "0x3cf5c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d104",
+   "name": "LightMap",
+   "v1": "0x3d14c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d11c",
+   "name": "DiffuseMap",
+   "v1": "0x3d168",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d310",
+   "name": "LightMap",
+   "v1": "0x3d358",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d328",
+   "name": "DiffuseMap",
+   "v1": "0x3d374",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d51c",
+   "name": "LightMap",
+   "v1": "0x3d564",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d534",
+   "name": "DiffuseMap",
+   "v1": "0x3d580",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d728",
+   "name": "LightMap",
+   "v1": "0x3d770",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d740",
+   "name": "DiffuseMap",
+   "v1": "0x3d78c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d934",
+   "name": "LightMap",
+   "v1": "0x3d97c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3d94c",
+   "name": "DiffuseMap",
+   "v1": "0x3d998",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3db40",
+   "name": "LightMap",
+   "v1": "0x3db88",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3db58",
+   "name": "DiffuseMap",
+   "v1": "0x3dba4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3dd4c",
+   "name": "LightMap",
+   "v1": "0x3dd94",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3dd64",
+   "name": "DiffuseMap",
+   "v1": "0x3ddb0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3df58",
+   "name": "LightMap",
+   "v1": "0x3dfa0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3df70",
+   "name": "DiffuseMap",
+   "v1": "0x3dfbc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e164",
+   "name": "LightMap",
+   "v1": "0x3e1ac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e17c",
+   "name": "DiffuseMap",
+   "v1": "0x3e1c8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e370",
+   "name": "LightMap",
+   "v1": "0x3e3b8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e388",
+   "name": "DiffuseMap",
+   "v1": "0x3e3d4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e57c",
+   "name": "LightMap",
+   "v1": "0x3e5c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e594",
+   "name": "DiffuseMap",
+   "v1": "0x3e5e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e788",
+   "name": "LightMap",
+   "v1": "0x3e7d0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e7a0",
+   "name": "DiffuseMap",
+   "v1": "0x3e7ec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e994",
+   "name": "LightMap",
+   "v1": "0x3e9dc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3e9ac",
+   "name": "DiffuseMap",
+   "v1": "0x3e9f8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3eba0",
+   "name": "LightMap",
+   "v1": "0x3ebe8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3ebb8",
+   "name": "DiffuseMap",
+   "v1": "0x3ec04",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3edac",
+   "name": "LightMap",
+   "v1": "0x3edf4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3edc4",
+   "name": "DiffuseMap",
+   "v1": "0x3ee10",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3efb8",
+   "name": "LightMap",
+   "v1": "0x3f000",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3efd0",
+   "name": "DiffuseMap",
+   "v1": "0x3f01c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f1c4",
+   "name": "LightMap",
+   "v1": "0x3f20c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f1dc",
+   "name": "DiffuseMap",
+   "v1": "0x3f228",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f3d0",
+   "name": "LightMap",
+   "v1": "0x3f418",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f3e8",
+   "name": "DiffuseMap",
+   "v1": "0x3f434",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f5dc",
+   "name": "LightMap",
+   "v1": "0x3f624",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f5f4",
+   "name": "DiffuseMap",
+   "v1": "0x3f640",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f7e8",
+   "name": "LightMap",
+   "v1": "0x3f830",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f800",
+   "name": "DiffuseMap",
+   "v1": "0x3f84c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3f9f4",
+   "name": "LightMap",
+   "v1": "0x3fa3c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3fa0c",
+   "name": "DiffuseMap",
+   "v1": "0x3fa58",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3fc00",
+   "name": "LightMap",
+   "v1": "0x3fc48",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3fc18",
+   "name": "DiffuseMap",
+   "v1": "0x3fc64",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3fe0c",
+   "name": "LightMap",
+   "v1": "0x3fe54",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x3fe24",
+   "name": "DiffuseMap",
+   "v1": "0x3fe70",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40018",
+   "name": "LightMap",
+   "v1": "0x40060",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40030",
+   "name": "DiffuseMap",
+   "v1": "0x4007c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40224",
+   "name": "LightMap",
+   "v1": "0x4026c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4023c",
+   "name": "DiffuseMap",
+   "v1": "0x40288",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40430",
+   "name": "LightMap",
+   "v1": "0x40478",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40448",
+   "name": "DiffuseMap",
+   "v1": "0x40494",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4063c",
+   "name": "LightMap",
+   "v1": "0x40684",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40654",
+   "name": "DiffuseMap",
+   "v1": "0x406a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40848",
+   "name": "LightMap",
+   "v1": "0x40890",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40860",
+   "name": "DiffuseMap",
+   "v1": "0x408ac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40a54",
+   "name": "LightMap",
+   "v1": "0x40a9c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40a6c",
+   "name": "DiffuseMap",
+   "v1": "0x40ab8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40c60",
+   "name": "LightMap",
+   "v1": "0x40ca8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40c78",
+   "name": "DiffuseMap",
+   "v1": "0x40cc4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40e6c",
+   "name": "LightMap",
+   "v1": "0x40eb4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x40e84",
+   "name": "DiffuseMap",
+   "v1": "0x40ed0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41078",
+   "name": "LightMap",
+   "v1": "0x410c0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41090",
+   "name": "DiffuseMap",
+   "v1": "0x410dc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41284",
+   "name": "LightMap",
+   "v1": "0x412cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4129c",
+   "name": "DiffuseMap",
+   "v1": "0x412e8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41490",
+   "name": "LightMap",
+   "v1": "0x414d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x414a8",
+   "name": "DiffuseMap",
+   "v1": "0x414f4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4169c",
+   "name": "LightMap",
+   "v1": "0x416e4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x416b4",
+   "name": "DiffuseMap",
+   "v1": "0x41700",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x418a8",
+   "name": "LightMap",
+   "v1": "0x418f0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x418c0",
+   "name": "DiffuseMap",
+   "v1": "0x4190c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41ab4",
+   "name": "LightMap",
+   "v1": "0x41afc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41acc",
+   "name": "DiffuseMap",
+   "v1": "0x41b18",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41cc0",
+   "name": "LightMap",
+   "v1": "0x41d08",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41cd8",
+   "name": "DiffuseMap",
+   "v1": "0x41d24",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41ecc",
+   "name": "LightMap",
+   "v1": "0x41f14",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x41ee4",
+   "name": "DiffuseMap",
+   "v1": "0x41f30",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x420d8",
+   "name": "LightMap",
+   "v1": "0x42120",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x420f0",
+   "name": "DiffuseMap",
+   "v1": "0x4213c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x422e4",
+   "name": "LightMap",
+   "v1": "0x4232c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x422fc",
+   "name": "DiffuseMap",
+   "v1": "0x42348",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x424f0",
+   "name": "LightMap",
+   "v1": "0x42538",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42508",
+   "name": "DiffuseMap",
+   "v1": "0x42554",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x426fc",
+   "name": "LightMap",
+   "v1": "0x42744",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42714",
+   "name": "DiffuseMap",
+   "v1": "0x42760",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42908",
+   "name": "LightMap",
+   "v1": "0x42950",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42920",
+   "name": "DiffuseMap",
+   "v1": "0x4296c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42b14",
+   "name": "LightMap",
+   "v1": "0x42b5c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42b2c",
+   "name": "DiffuseMap",
+   "v1": "0x42b78",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42d20",
+   "name": "LightMap",
+   "v1": "0x42d68",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42d38",
+   "name": "DiffuseMap",
+   "v1": "0x42d84",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42f2c",
+   "name": "LightMap",
+   "v1": "0x42f74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x42f44",
+   "name": "DiffuseMap",
+   "v1": "0x42f90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43138",
+   "name": "LightMap",
+   "v1": "0x43180",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43150",
+   "name": "DiffuseMap",
+   "v1": "0x4319c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43344",
+   "name": "LightMap",
+   "v1": "0x4338c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4335c",
+   "name": "DiffuseMap",
+   "v1": "0x433a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43550",
+   "name": "LightMap",
+   "v1": "0x43598",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43568",
+   "name": "DiffuseMap",
+   "v1": "0x435b4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4375c",
+   "name": "LightMap",
+   "v1": "0x437a4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43774",
+   "name": "DiffuseMap",
+   "v1": "0x437c0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43968",
+   "name": "LightMap",
+   "v1": "0x439b0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43980",
+   "name": "DiffuseMap",
+   "v1": "0x439cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43b74",
+   "name": "LightMap",
+   "v1": "0x43bbc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43b8c",
+   "name": "DiffuseMap",
+   "v1": "0x43bd8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43d80",
+   "name": "LightMap",
+   "v1": "0x43dc8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43d98",
+   "name": "DiffuseMap",
+   "v1": "0x43de4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43f8c",
+   "name": "LightMap",
+   "v1": "0x43fd4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x43fa4",
+   "name": "DiffuseMap",
+   "v1": "0x43ff0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x44198",
+   "name": "LightMap",
+   "v1": "0x441e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x441b0",
+   "name": "DiffuseMap",
+   "v1": "0x441fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x443a4",
+   "name": "LightMap",
+   "v1": "0x443ec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x443bc",
+   "name": "DiffuseMap",
+   "v1": "0x44408",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x445b0",
+   "name": "LightMap",
+   "v1": "0x445f8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x445c8",
+   "name": "DiffuseMap",
+   "v1": "0x44614",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x447bc",
+   "name": "LightMap",
+   "v1": "0x44804",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x447d4",
+   "name": "DiffuseMap",
+   "v1": "0x44820",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x449c8",
+   "name": "LightMap",
+   "v1": "0x44a10",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x449e0",
+   "name": "DiffuseMap",
+   "v1": "0x44a2c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x44bd4",
+   "name": "LightMap",
+   "v1": "0x44c1c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x44bec",
+   "name": "DiffuseMap",
+   "v1": "0x44c38",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x44de0",
+   "name": "LightMap",
+   "v1": "0x44e28",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x44df8",
+   "name": "DiffuseMap",
+   "v1": "0x44e44",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x44fec",
+   "name": "LightMap",
+   "v1": "0x45034",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45004",
+   "name": "DiffuseMap",
+   "v1": "0x45050",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x451f8",
+   "name": "LightMap",
+   "v1": "0x45240",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45210",
+   "name": "DiffuseMap",
+   "v1": "0x4525c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45404",
+   "name": "LightMap",
+   "v1": "0x4544c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4541c",
+   "name": "DiffuseMap",
+   "v1": "0x45468",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45610",
+   "name": "LightMap",
+   "v1": "0x45658",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45628",
+   "name": "DiffuseMap",
+   "v1": "0x45674",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4581c",
+   "name": "LightMap",
+   "v1": "0x45864",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45834",
+   "name": "DiffuseMap",
+   "v1": "0x45880",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45a28",
+   "name": "LightMap",
+   "v1": "0x45a70",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45a40",
+   "name": "DiffuseMap",
+   "v1": "0x45a8c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45c34",
+   "name": "LightMap",
+   "v1": "0x45c7c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45c4c",
+   "name": "DiffuseMap",
+   "v1": "0x45c98",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45e40",
+   "name": "LightMap",
+   "v1": "0x45e88",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x45e58",
+   "name": "DiffuseMap",
+   "v1": "0x45ea4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4604c",
+   "name": "LightMap",
+   "v1": "0x46094",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46064",
+   "name": "DiffuseMap",
+   "v1": "0x460b0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46258",
+   "name": "LightMap",
+   "v1": "0x462a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46270",
+   "name": "DiffuseMap",
+   "v1": "0x462bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46464",
+   "name": "LightMap",
+   "v1": "0x464ac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4647c",
+   "name": "DiffuseMap",
+   "v1": "0x464c8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46670",
+   "name": "LightMap",
+   "v1": "0x466b8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46688",
+   "name": "DiffuseMap",
+   "v1": "0x466d4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4687c",
+   "name": "LightMap",
+   "v1": "0x468c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46894",
+   "name": "DiffuseMap",
+   "v1": "0x468e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46a88",
+   "name": "LightMap",
+   "v1": "0x46ad0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46aa0",
+   "name": "DiffuseMap",
+   "v1": "0x46aec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46c94",
+   "name": "LightMap",
+   "v1": "0x46cdc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46cac",
+   "name": "DiffuseMap",
+   "v1": "0x46cf8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46ea0",
+   "name": "LightMap",
+   "v1": "0x46ee8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x46eb8",
+   "name": "DiffuseMap",
+   "v1": "0x46f04",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x470ac",
+   "name": "LightMap",
+   "v1": "0x470f4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x470c4",
+   "name": "DiffuseMap",
+   "v1": "0x47110",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x472b8",
+   "name": "LightMap",
+   "v1": "0x47300",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x472d0",
+   "name": "DiffuseMap",
+   "v1": "0x4731c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x474c4",
+   "name": "LightMap",
+   "v1": "0x4750c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x474dc",
+   "name": "DiffuseMap",
+   "v1": "0x47528",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x476d0",
+   "name": "LightMap",
+   "v1": "0x47718",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x476e8",
+   "name": "DiffuseMap",
+   "v1": "0x47734",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x478dc",
+   "name": "LightMap",
+   "v1": "0x47924",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x478f4",
+   "name": "DiffuseMap",
+   "v1": "0x47940",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x47ae8",
+   "name": "LightMap",
+   "v1": "0x47b30",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x47b00",
+   "name": "DiffuseMap",
+   "v1": "0x47b4c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x47cf4",
+   "name": "LightMap",
+   "v1": "0x47d3c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x47d0c",
+   "name": "DiffuseMap",
+   "v1": "0x47d58",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x47f00",
+   "name": "LightMap",
+   "v1": "0x47f48",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x47f18",
+   "name": "DiffuseMap",
+   "v1": "0x47f64",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4810c",
+   "name": "LightMap",
+   "v1": "0x48154",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48124",
+   "name": "DiffuseMap",
+   "v1": "0x48170",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48318",
+   "name": "LightMap",
+   "v1": "0x48360",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48330",
+   "name": "DiffuseMap",
+   "v1": "0x4837c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48524",
+   "name": "LightMap",
+   "v1": "0x4856c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4853c",
+   "name": "DiffuseMap",
+   "v1": "0x48588",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48730",
+   "name": "LightMap",
+   "v1": "0x48778",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48748",
+   "name": "DiffuseMap",
+   "v1": "0x48794",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4893c",
+   "name": "LightMap",
+   "v1": "0x48984",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48954",
+   "name": "DiffuseMap",
+   "v1": "0x489a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48b48",
+   "name": "LightMap",
+   "v1": "0x48b90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48b60",
+   "name": "DiffuseMap",
+   "v1": "0x48bac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48d54",
+   "name": "LightMap",
+   "v1": "0x48d9c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48d6c",
+   "name": "DiffuseMap",
+   "v1": "0x48db8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48f70",
+   "name": "LightMap",
+   "v1": "0x48fd0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x48f88",
+   "name": "DiffuseMap",
+   "v1": "0x48fec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x491ac",
+   "name": "LightMap",
+   "v1": "0x4920c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x491c4",
+   "name": "DiffuseMap",
+   "v1": "0x49228",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x493e8",
+   "name": "LightMap",
+   "v1": "0x49448",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49400",
+   "name": "DiffuseMap",
+   "v1": "0x49464",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49624",
+   "name": "LightMap",
+   "v1": "0x49684",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4963c",
+   "name": "DiffuseMap",
+   "v1": "0x496a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49860",
+   "name": "LightMap",
+   "v1": "0x498c0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49878",
+   "name": "DiffuseMap",
+   "v1": "0x498dc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49a9c",
+   "name": "LightMap",
+   "v1": "0x49afc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49ab4",
+   "name": "DiffuseMap",
+   "v1": "0x49b18",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49cd8",
+   "name": "LightMap",
+   "v1": "0x49d38",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49cf0",
+   "name": "DiffuseMap",
+   "v1": "0x49d54",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49f14",
+   "name": "LightMap",
+   "v1": "0x49f74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x49f2c",
+   "name": "DiffuseMap",
+   "v1": "0x49f90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a150",
+   "name": "LightMap",
+   "v1": "0x4a1b0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a168",
+   "name": "Texture1",
+   "v1": "0x4a1cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a180",
+   "name": "Texture2",
+   "v1": "0x4a1e8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a3a4",
+   "name": "LightMap",
+   "v1": "0x4a404",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a3bc",
+   "name": "Texture1",
+   "v1": "0x4a420",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a3d4",
+   "name": "Texture2",
+   "v1": "0x4a43c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a5f8",
+   "name": "LightMap",
+   "v1": "0x4a658",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a610",
+   "name": "Texture1",
+   "v1": "0x4a674",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a628",
+   "name": "Texture2",
+   "v1": "0x4a690",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a84c",
+   "name": "LightMap",
+   "v1": "0x4a8ac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a864",
+   "name": "Texture1",
+   "v1": "0x4a8c8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4a87c",
+   "name": "Texture2",
+   "v1": "0x4a8e4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4aac8",
+   "name": "DiffuseTextureSampler",
+   "v1": "0x4ab34",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4aae0",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4ab50",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4aaf8",
+   "name": "ReflectionMapSampler",
+   "v1": "0x4ab6c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ab10",
+   "name": "LightmapTextureSampler",
+   "v1": "0x4ab88",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ad44",
+   "name": "NormalMap",
+   "v1": "0x4ada4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ad5c",
+   "name": "LightMap",
+   "v1": "0x4adc0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ad74",
+   "name": "DiffuseMap",
+   "v1": "0x4addc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4afa8",
+   "name": "NormalMap",
+   "v1": "0x4b008",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4afc0",
+   "name": "LightMap",
+   "v1": "0x4b024",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4afd8",
+   "name": "DiffuseMap",
+   "v1": "0x4b040",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b20c",
+   "name": "NormalMap",
+   "v1": "0x4b26c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b224",
+   "name": "LightMap",
+   "v1": "0x4b288",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b23c",
+   "name": "DiffuseMap",
+   "v1": "0x4b2a4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b470",
+   "name": "NormalMap",
+   "v1": "0x4b4d0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b488",
+   "name": "LightMap",
+   "v1": "0x4b4ec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b4a0",
+   "name": "DiffuseMap",
+   "v1": "0x4b508",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b6d4",
+   "name": "NormalMap",
+   "v1": "0x4b734",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b6ec",
+   "name": "LightMap",
+   "v1": "0x4b750",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b704",
+   "name": "DiffuseMap",
+   "v1": "0x4b76c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b938",
+   "name": "NormalMap",
+   "v1": "0x4b998",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b950",
+   "name": "LightMap",
+   "v1": "0x4b9b4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4b968",
+   "name": "DiffuseMap",
+   "v1": "0x4b9d0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4bb9c",
+   "name": "NormalMap",
+   "v1": "0x4bbfc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4bbb4",
+   "name": "LightMap",
+   "v1": "0x4bc18",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4bbcc",
+   "name": "DiffuseMap",
+   "v1": "0x4bc34",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4be00",
+   "name": "NormalMap",
+   "v1": "0x4be60",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4be18",
+   "name": "LightMap",
+   "v1": "0x4be7c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4be30",
+   "name": "DiffuseMap",
+   "v1": "0x4be98",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c064",
+   "name": "NormalMap",
+   "v1": "0x4c0c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c07c",
+   "name": "LightMap",
+   "v1": "0x4c0e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c094",
+   "name": "DiffuseMap",
+   "v1": "0x4c0fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c2c8",
+   "name": "NormalMap",
+   "v1": "0x4c328",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c2e0",
+   "name": "LightMap",
+   "v1": "0x4c344",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c2f8",
+   "name": "DiffuseMap",
+   "v1": "0x4c360",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c52c",
+   "name": "NormalMap",
+   "v1": "0x4c58c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c544",
+   "name": "LightMap",
+   "v1": "0x4c5a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c55c",
+   "name": "DiffuseMap",
+   "v1": "0x4c5c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c790",
+   "name": "NormalMap",
+   "v1": "0x4c7f0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c7a8",
+   "name": "LightMap",
+   "v1": "0x4c80c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c7c0",
+   "name": "DiffuseMap",
+   "v1": "0x4c828",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c9e4",
+   "name": "LightMap",
+   "v1": "0x4ca44",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4c9fc",
+   "name": "DiffuseMap",
+   "v1": "0x4ca60",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ca2c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4ca90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4cc38",
+   "name": "LightMap",
+   "v1": "0x4cc98",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4cc50",
+   "name": "DiffuseMap",
+   "v1": "0x4ccb4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4cc80",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4cce4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ce8c",
+   "name": "LightMap",
+   "v1": "0x4ceec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4cea4",
+   "name": "DiffuseMap",
+   "v1": "0x4cf08",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ced4",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4cf38",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d0e0",
+   "name": "LightMap",
+   "v1": "0x4d140",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d0f8",
+   "name": "DiffuseMap",
+   "v1": "0x4d15c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d128",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4d18c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d334",
+   "name": "LightMap",
+   "v1": "0x4d394",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d34c",
+   "name": "DiffuseMap",
+   "v1": "0x4d3b0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d37c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4d3e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d588",
+   "name": "LightMap",
+   "v1": "0x4d5e8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d5a0",
+   "name": "DiffuseMap",
+   "v1": "0x4d604",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d5d0",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4d634",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d7dc",
+   "name": "LightMap",
+   "v1": "0x4d83c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d7f4",
+   "name": "DiffuseMap",
+   "v1": "0x4d858",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4d824",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4d888",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4da30",
+   "name": "LightMap",
+   "v1": "0x4da90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4da48",
+   "name": "DiffuseMap",
+   "v1": "0x4daac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4da78",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4dadc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4dc84",
+   "name": "LightMap",
+   "v1": "0x4dce4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4dc9c",
+   "name": "DiffuseMap",
+   "v1": "0x4dd00",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4dccc",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4dd30",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ded8",
+   "name": "LightMap",
+   "v1": "0x4df38",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4def0",
+   "name": "DiffuseMap",
+   "v1": "0x4df54",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4df20",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4df84",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e12c",
+   "name": "LightMap",
+   "v1": "0x4e18c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e144",
+   "name": "DiffuseMap",
+   "v1": "0x4e1a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e174",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4e1d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e380",
+   "name": "LightMap",
+   "v1": "0x4e3e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e398",
+   "name": "DiffuseMap",
+   "v1": "0x4e3fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e3c8",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4e42c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e5d4",
+   "name": "LightMap",
+   "v1": "0x4e634",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e5ec",
+   "name": "DiffuseMap",
+   "v1": "0x4e650",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e61c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4e680",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e828",
+   "name": "LightMap",
+   "v1": "0x4e888",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e840",
+   "name": "DiffuseMap",
+   "v1": "0x4e8a4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4e870",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4e8d4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ea7c",
+   "name": "LightMap",
+   "v1": "0x4eadc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ea94",
+   "name": "DiffuseMap",
+   "v1": "0x4eaf8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4eac4",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4eb28",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ecd0",
+   "name": "LightMap",
+   "v1": "0x4ed30",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ece8",
+   "name": "DiffuseMap",
+   "v1": "0x4ed4c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ed18",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4ed7c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ef24",
+   "name": "LightMap",
+   "v1": "0x4ef84",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ef3c",
+   "name": "DiffuseMap",
+   "v1": "0x4efa0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ef6c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4efd0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f178",
+   "name": "LightMap",
+   "v1": "0x4f1d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f190",
+   "name": "DiffuseMap",
+   "v1": "0x4f1f4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f1c0",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4f224",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f3cc",
+   "name": "LightMap",
+   "v1": "0x4f42c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f3e4",
+   "name": "DiffuseMap",
+   "v1": "0x4f448",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f414",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4f478",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f620",
+   "name": "LightMap",
+   "v1": "0x4f680",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f638",
+   "name": "DiffuseMap",
+   "v1": "0x4f69c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f668",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4f6cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f874",
+   "name": "LightMap",
+   "v1": "0x4f8d4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f88c",
+   "name": "DiffuseMap",
+   "v1": "0x4f8f0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4f8bc",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4f920",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4fac8",
+   "name": "LightMap",
+   "v1": "0x4fb28",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4fae0",
+   "name": "DiffuseMap",
+   "v1": "0x4fb44",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4fb10",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4fb74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4fd1c",
+   "name": "LightMap",
+   "v1": "0x4fd7c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4fd34",
+   "name": "DiffuseMap",
+   "v1": "0x4fd98",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4fd64",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x4fdc8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ff70",
+   "name": "LightMap",
+   "v1": "0x4ffd0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ff88",
+   "name": "DiffuseMap",
+   "v1": "0x4ffec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x4ffb8",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5001c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x501c4",
+   "name": "LightMap",
+   "v1": "0x50224",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x501dc",
+   "name": "DiffuseMap",
+   "v1": "0x50240",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5020c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x50270",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50418",
+   "name": "LightMap",
+   "v1": "0x50478",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50430",
+   "name": "DiffuseMap",
+   "v1": "0x50494",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50460",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x504c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5066c",
+   "name": "LightMap",
+   "v1": "0x506cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50684",
+   "name": "DiffuseMap",
+   "v1": "0x506e8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x506b4",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x50718",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x508c0",
+   "name": "LightMap",
+   "v1": "0x50920",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x508d8",
+   "name": "DiffuseMap",
+   "v1": "0x5093c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50908",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5096c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50b14",
+   "name": "LightMap",
+   "v1": "0x50b74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50b2c",
+   "name": "DiffuseMap",
+   "v1": "0x50b90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50b5c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x50bc0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50d68",
+   "name": "LightMap",
+   "v1": "0x50dc8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50d80",
+   "name": "DiffuseMap",
+   "v1": "0x50de4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50db0",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x50e14",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50fbc",
+   "name": "LightMap",
+   "v1": "0x5101c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x50fd4",
+   "name": "DiffuseMap",
+   "v1": "0x51038",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51004",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x51068",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51210",
+   "name": "LightMap",
+   "v1": "0x51270",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51228",
+   "name": "DiffuseMap",
+   "v1": "0x5128c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51258",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x512bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51464",
+   "name": "LightMap",
+   "v1": "0x514c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5147c",
+   "name": "DiffuseMap",
+   "v1": "0x514e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x514ac",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x51510",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x516b8",
+   "name": "LightMap",
+   "v1": "0x51718",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x516d0",
+   "name": "DiffuseMap",
+   "v1": "0x51734",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51700",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x51764",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5190c",
+   "name": "LightMap",
+   "v1": "0x5196c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51924",
+   "name": "DiffuseMap",
+   "v1": "0x51988",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51954",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x519b8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51b60",
+   "name": "LightMap",
+   "v1": "0x51bc0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51b78",
+   "name": "DiffuseMap",
+   "v1": "0x51bdc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51ba8",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x51c0c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51db4",
+   "name": "LightMap",
+   "v1": "0x51e14",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51dcc",
+   "name": "DiffuseMap",
+   "v1": "0x51e30",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x51dfc",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x51e60",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52008",
+   "name": "LightMap",
+   "v1": "0x52068",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52020",
+   "name": "DiffuseMap",
+   "v1": "0x52084",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52050",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x520b4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5225c",
+   "name": "LightMap",
+   "v1": "0x522bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52274",
+   "name": "DiffuseMap",
+   "v1": "0x522d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x522a4",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x52308",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x524b0",
+   "name": "LightMap",
+   "v1": "0x52510",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x524c8",
+   "name": "DiffuseMap",
+   "v1": "0x5252c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x524f8",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5255c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52704",
+   "name": "LightMap",
+   "v1": "0x52764",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5271c",
+   "name": "DiffuseMap",
+   "v1": "0x52780",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5274c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x527b0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52958",
+   "name": "LightMap",
+   "v1": "0x529b8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52970",
+   "name": "DiffuseMap",
+   "v1": "0x529d4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x529a0",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x52a04",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52bac",
+   "name": "LightMap",
+   "v1": "0x52c0c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52bc4",
+   "name": "DiffuseMap",
+   "v1": "0x52c28",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52bf4",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x52c58",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52e00",
+   "name": "LightMap",
+   "v1": "0x52e60",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52e18",
+   "name": "DiffuseMap",
+   "v1": "0x52e7c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x52e48",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x52eac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53054",
+   "name": "LightMap",
+   "v1": "0x530b4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5306c",
+   "name": "DiffuseMap",
+   "v1": "0x530d0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5309c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x53100",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x532a8",
+   "name": "LightMap",
+   "v1": "0x53308",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x532c0",
+   "name": "DiffuseMap",
+   "v1": "0x53324",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x532f0",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x53354",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x534fc",
+   "name": "LightMap",
+   "v1": "0x5355c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53514",
+   "name": "DiffuseMap",
+   "v1": "0x53578",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53544",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x535a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53750",
+   "name": "LightMap",
+   "v1": "0x537b0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53768",
+   "name": "DiffuseMap",
+   "v1": "0x537cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53798",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x537fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x539a4",
+   "name": "LightMap",
+   "v1": "0x53a04",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x539bc",
+   "name": "DiffuseMap",
+   "v1": "0x53a20",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x539ec",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x53a50",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53bf8",
+   "name": "LightMap",
+   "v1": "0x53c58",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53c10",
+   "name": "DiffuseMap",
+   "v1": "0x53c74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53c40",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x53ca4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53e4c",
+   "name": "LightMap",
+   "v1": "0x53eac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53e64",
+   "name": "DiffuseMap",
+   "v1": "0x53ec8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x53e94",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x53ef8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x540a0",
+   "name": "LightMap",
+   "v1": "0x54100",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x540b8",
+   "name": "DiffuseMap",
+   "v1": "0x5411c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x540e8",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5414c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x542f4",
+   "name": "LightMap",
+   "v1": "0x54354",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5430c",
+   "name": "DiffuseMap",
+   "v1": "0x54370",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5433c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x543a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54548",
+   "name": "LightMap",
+   "v1": "0x545a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54560",
+   "name": "DiffuseMap",
+   "v1": "0x545c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54590",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x545f4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5479c",
+   "name": "LightMap",
+   "v1": "0x547fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x547b4",
+   "name": "DiffuseMap",
+   "v1": "0x54818",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x547e4",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x54848",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x549f0",
+   "name": "LightMap",
+   "v1": "0x54a50",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54a08",
+   "name": "DiffuseMap",
+   "v1": "0x54a6c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54a38",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x54a9c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54c44",
+   "name": "LightMap",
+   "v1": "0x54ca4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54c5c",
+   "name": "DiffuseMap",
+   "v1": "0x54cc0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54c8c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x54cf0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54e98",
+   "name": "LightMap",
+   "v1": "0x54ef8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54eb0",
+   "name": "DiffuseMap",
+   "v1": "0x54f14",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x54ee0",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x54f44",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x550ec",
+   "name": "LightMap",
+   "v1": "0x5514c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55104",
+   "name": "DiffuseMap",
+   "v1": "0x55168",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55134",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x55198",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55340",
+   "name": "LightMap",
+   "v1": "0x553a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55358",
+   "name": "DiffuseMap",
+   "v1": "0x553bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55388",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x553ec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55594",
+   "name": "LightMap",
+   "v1": "0x555f4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x555ac",
+   "name": "DiffuseMap",
+   "v1": "0x55610",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x555dc",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x55640",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x557e8",
+   "name": "LightMap",
+   "v1": "0x55848",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55800",
+   "name": "DiffuseMap",
+   "v1": "0x55864",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55830",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x55894",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55a3c",
+   "name": "LightMap",
+   "v1": "0x55a9c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55a54",
+   "name": "DiffuseMap",
+   "v1": "0x55ab8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55a84",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x55ae8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55c90",
+   "name": "LightMap",
+   "v1": "0x55cf0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55ca8",
+   "name": "DiffuseMap",
+   "v1": "0x55d0c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55cd8",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x55d3c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55ee4",
+   "name": "LightMap",
+   "v1": "0x55f44",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55efc",
+   "name": "DiffuseMap",
+   "v1": "0x55f60",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x55f2c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x55f90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56138",
+   "name": "LightMap",
+   "v1": "0x56198",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56150",
+   "name": "DiffuseMap",
+   "v1": "0x561b4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56180",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x561e4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5639c",
+   "name": "LightMap",
+   "v1": "0x56414",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x563b4",
+   "name": "DiffuseMap",
+   "v1": "0x56430",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x563e4",
+   "name": "ReflectionMapSampler",
+   "v1": "0x56460",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x563fc",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5647c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56638",
+   "name": "LightMap",
+   "v1": "0x566b0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56650",
+   "name": "DiffuseMap",
+   "v1": "0x566cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56680",
+   "name": "ReflectionMapSampler",
+   "v1": "0x566fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56698",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x56718",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x568d4",
+   "name": "LightMap",
+   "v1": "0x5694c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x568ec",
+   "name": "DiffuseMap",
+   "v1": "0x56968",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5691c",
+   "name": "ReflectionMapSampler",
+   "v1": "0x56998",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56934",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x569b4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56b70",
+   "name": "LightMap",
+   "v1": "0x56be8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56b88",
+   "name": "DiffuseMap",
+   "v1": "0x56c04",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56bb8",
+   "name": "ReflectionMapSampler",
+   "v1": "0x56c34",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56bd0",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x56c50",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56e0c",
+   "name": "LightMap",
+   "v1": "0x56e84",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56e24",
+   "name": "DiffuseMap",
+   "v1": "0x56ea0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56e54",
+   "name": "ReflectionMapSampler",
+   "v1": "0x56ed0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x56e6c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x56eec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x570a8",
+   "name": "LightMap",
+   "v1": "0x57120",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x570c0",
+   "name": "DiffuseMap",
+   "v1": "0x5713c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x570f0",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5716c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57108",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x57188",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57344",
+   "name": "LightMap",
+   "v1": "0x573bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5735c",
+   "name": "DiffuseMap",
+   "v1": "0x573d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5738c",
+   "name": "ReflectionMapSampler",
+   "v1": "0x57408",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x573a4",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x57424",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x575e0",
+   "name": "LightMap",
+   "v1": "0x57658",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x575f8",
+   "name": "DiffuseMap",
+   "v1": "0x57674",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57628",
+   "name": "ReflectionMapSampler",
+   "v1": "0x576a4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57640",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x576c0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5786c",
+   "name": "DiffuseMap",
+   "v1": "0x578cc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57a9c",
+   "name": "NormalMap",
+   "v1": "0x57afc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57ab4",
+   "name": "LightMap",
+   "v1": "0x57b18",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57acc",
+   "name": "DiffuseMap",
+   "v1": "0x57b34",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57d00",
+   "name": "NormalMap",
+   "v1": "0x57d60",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57d18",
+   "name": "LightMap",
+   "v1": "0x57d7c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57d30",
+   "name": "DiffuseMap",
+   "v1": "0x57d98",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57f64",
+   "name": "NormalMap",
+   "v1": "0x57fc4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57f7c",
+   "name": "LightMap",
+   "v1": "0x57fe0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x57f94",
+   "name": "DiffuseMap",
+   "v1": "0x57ffc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x581c8",
+   "name": "NormalMap",
+   "v1": "0x58228",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x581e0",
+   "name": "LightMap",
+   "v1": "0x58244",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x581f8",
+   "name": "DiffuseMap",
+   "v1": "0x58260",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5842c",
+   "name": "NormalMap",
+   "v1": "0x5848c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58444",
+   "name": "LightMap",
+   "v1": "0x584a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5845c",
+   "name": "DiffuseMap",
+   "v1": "0x584c4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58690",
+   "name": "NormalMap",
+   "v1": "0x586f0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x586a8",
+   "name": "LightMap",
+   "v1": "0x5870c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x586c0",
+   "name": "DiffuseMap",
+   "v1": "0x58728",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x588f4",
+   "name": "NormalMap",
+   "v1": "0x58954",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5890c",
+   "name": "LightMap",
+   "v1": "0x58970",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58924",
+   "name": "DiffuseMap",
+   "v1": "0x5898c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58b58",
+   "name": "NormalMap",
+   "v1": "0x58bb8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58b70",
+   "name": "LightMap",
+   "v1": "0x58bd4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58b88",
+   "name": "DiffuseMap",
+   "v1": "0x58bf0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58dbc",
+   "name": "NormalMap",
+   "v1": "0x58e1c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58dd4",
+   "name": "LightMap",
+   "v1": "0x58e38",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x58dec",
+   "name": "DiffuseMap",
+   "v1": "0x58e54",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59020",
+   "name": "NormalMap",
+   "v1": "0x59080",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59038",
+   "name": "LightMap",
+   "v1": "0x5909c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59050",
+   "name": "DiffuseMap",
+   "v1": "0x590b8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59284",
+   "name": "NormalMap",
+   "v1": "0x592e4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5929c",
+   "name": "LightMap",
+   "v1": "0x59300",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x592b4",
+   "name": "DiffuseMap",
+   "v1": "0x5931c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x594e8",
+   "name": "NormalMap",
+   "v1": "0x59548",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59500",
+   "name": "LightMap",
+   "v1": "0x59564",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59518",
+   "name": "DiffuseMap",
+   "v1": "0x59580",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5974c",
+   "name": "NormalMap",
+   "v1": "0x597ac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59764",
+   "name": "LightMap",
+   "v1": "0x597c8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5977c",
+   "name": "DiffuseMap",
+   "v1": "0x597e4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x599b0",
+   "name": "NormalMap",
+   "v1": "0x59a10",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x599c8",
+   "name": "LightMap",
+   "v1": "0x59a2c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x599e0",
+   "name": "DiffuseMap",
+   "v1": "0x59a48",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59c14",
+   "name": "NormalMap",
+   "v1": "0x59c74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59c2c",
+   "name": "LightMap",
+   "v1": "0x59c90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59c44",
+   "name": "DiffuseMap",
+   "v1": "0x59cac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59e78",
+   "name": "NormalMap",
+   "v1": "0x59ed8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59e90",
+   "name": "LightMap",
+   "v1": "0x59ef4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x59ea8",
+   "name": "DiffuseMap",
+   "v1": "0x59f10",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a0dc",
+   "name": "NormalMap",
+   "v1": "0x5a13c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a0f4",
+   "name": "LightMap",
+   "v1": "0x5a158",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a10c",
+   "name": "DiffuseMap",
+   "v1": "0x5a174",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a340",
+   "name": "NormalMap",
+   "v1": "0x5a3a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a358",
+   "name": "LightMap",
+   "v1": "0x5a3bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a370",
+   "name": "DiffuseMap",
+   "v1": "0x5a3d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a5a4",
+   "name": "NormalMap",
+   "v1": "0x5a604",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a5bc",
+   "name": "LightMap",
+   "v1": "0x5a620",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a5d4",
+   "name": "DiffuseMap",
+   "v1": "0x5a63c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a808",
+   "name": "NormalMap",
+   "v1": "0x5a868",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a820",
+   "name": "LightMap",
+   "v1": "0x5a884",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5a838",
+   "name": "DiffuseMap",
+   "v1": "0x5a8a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5aa6c",
+   "name": "NormalMap",
+   "v1": "0x5aacc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5aa84",
+   "name": "LightMap",
+   "v1": "0x5aae8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5aa9c",
+   "name": "DiffuseMap",
+   "v1": "0x5ab04",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5acd0",
+   "name": "NormalMap",
+   "v1": "0x5ad30",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ace8",
+   "name": "LightMap",
+   "v1": "0x5ad4c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ad00",
+   "name": "DiffuseMap",
+   "v1": "0x5ad68",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5af34",
+   "name": "NormalMap",
+   "v1": "0x5af94",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5af4c",
+   "name": "LightMap",
+   "v1": "0x5afb0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5af64",
+   "name": "DiffuseMap",
+   "v1": "0x5afcc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b198",
+   "name": "NormalMap",
+   "v1": "0x5b1f8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b1b0",
+   "name": "LightMap",
+   "v1": "0x5b214",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b1c8",
+   "name": "DiffuseMap",
+   "v1": "0x5b230",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b3dc",
+   "name": "LightMap",
+   "v1": "0x5b424",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b3f4",
+   "name": "DiffuseMap",
+   "v1": "0x5b440",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b5e8",
+   "name": "LightMap",
+   "v1": "0x5b630",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b600",
+   "name": "DiffuseMap",
+   "v1": "0x5b64c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b7f4",
+   "name": "LightMap",
+   "v1": "0x5b83c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5b80c",
+   "name": "DiffuseMap",
+   "v1": "0x5b858",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ba00",
+   "name": "LightMap",
+   "v1": "0x5ba48",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ba18",
+   "name": "DiffuseMap",
+   "v1": "0x5ba64",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5bc0c",
+   "name": "LightMap",
+   "v1": "0x5bc54",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5bc24",
+   "name": "DiffuseMap",
+   "v1": "0x5bc70",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5be18",
+   "name": "LightMap",
+   "v1": "0x5be60",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5be30",
+   "name": "DiffuseMap",
+   "v1": "0x5be7c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c024",
+   "name": "LightMap",
+   "v1": "0x5c06c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c03c",
+   "name": "DiffuseMap",
+   "v1": "0x5c088",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c230",
+   "name": "LightMap",
+   "v1": "0x5c278",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c248",
+   "name": "DiffuseMap",
+   "v1": "0x5c294",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c43c",
+   "name": "LightMap",
+   "v1": "0x5c484",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c454",
+   "name": "DiffuseMap",
+   "v1": "0x5c4a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c648",
+   "name": "LightMap",
+   "v1": "0x5c690",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c660",
+   "name": "DiffuseMap",
+   "v1": "0x5c6ac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c854",
+   "name": "LightMap",
+   "v1": "0x5c89c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5c86c",
+   "name": "DiffuseMap",
+   "v1": "0x5c8b8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ca60",
+   "name": "LightMap",
+   "v1": "0x5caa8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ca78",
+   "name": "DiffuseMap",
+   "v1": "0x5cac4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5cbfc",
+   "name": "NormalMap",
+   "v1": "0x5cc14",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5cda4",
+   "name": "LightMap",
+   "v1": "0x5cdec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5cdbc",
+   "name": "DiffuseMap",
+   "v1": "0x5ce08",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5cfb0",
+   "name": "LightMap",
+   "v1": "0x5cff8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5cfc8",
+   "name": "DiffuseMap",
+   "v1": "0x5d014",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d1dc",
+   "name": "LightMap",
+   "v1": "0x5d254",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d1f4",
+   "name": "DiffuseMap",
+   "v1": "0x5d270",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d224",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5d2a0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d23c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5d2bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d478",
+   "name": "LightMap",
+   "v1": "0x5d4f0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d490",
+   "name": "DiffuseMap",
+   "v1": "0x5d50c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d4c0",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5d53c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d4d8",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5d558",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d714",
+   "name": "LightMap",
+   "v1": "0x5d78c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d72c",
+   "name": "DiffuseMap",
+   "v1": "0x5d7a8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d75c",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5d7d8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d774",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5d7f4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d9b0",
+   "name": "LightMap",
+   "v1": "0x5da28",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d9c8",
+   "name": "DiffuseMap",
+   "v1": "0x5da44",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5d9f8",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5da74",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5da10",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5da90",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5dc4c",
+   "name": "LightMap",
+   "v1": "0x5dcc4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5dc64",
+   "name": "DiffuseMap",
+   "v1": "0x5dce0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5dc94",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5dd10",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5dcac",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5dd2c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5dee8",
+   "name": "LightMap",
+   "v1": "0x5df60",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5df00",
+   "name": "DiffuseMap",
+   "v1": "0x5df7c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5df30",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5dfac",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5df48",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5dfc8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e184",
+   "name": "LightMap",
+   "v1": "0x5e1fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e19c",
+   "name": "DiffuseMap",
+   "v1": "0x5e218",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e1cc",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5e248",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e1e4",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5e264",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e420",
+   "name": "LightMap",
+   "v1": "0x5e498",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e438",
+   "name": "DiffuseMap",
+   "v1": "0x5e4b4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e468",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5e4e4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e480",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5e500",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e6bc",
+   "name": "LightMap",
+   "v1": "0x5e734",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e6d4",
+   "name": "DiffuseMap",
+   "v1": "0x5e750",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e704",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5e780",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e71c",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5e79c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e958",
+   "name": "LightMap",
+   "v1": "0x5e9d0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e970",
+   "name": "DiffuseMap",
+   "v1": "0x5e9ec",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e9a0",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5ea1c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5e9b8",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5ea38",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ebf4",
+   "name": "LightMap",
+   "v1": "0x5ec6c",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ec0c",
+   "name": "DiffuseMap",
+   "v1": "0x5ec88",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ec3c",
+   "name": "ReflectionMapSampler",
+   "v1": "0x5ecb8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5ec54",
+   "name": "DiffuseMaskSampler",
+   "v1": "0x5ecd4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5eda0",
+   "name": "DiffuseMap",
+   "v1": "0x5edd0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5eea4",
+   "name": "DiffuseMap",
+   "v1": "0x5eed4",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5efa8",
+   "name": "DiffuseMap",
+   "v1": "0x5efd8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f0ac",
+   "name": "DiffuseMap",
+   "v1": "0x5f0dc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f1b0",
+   "name": "DiffuseMap",
+   "v1": "0x5f1e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f2a4",
+   "name": "DiffuseMap",
+   "v1": "0x5f2bc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f36c",
+   "name": "DiffuseMap",
+   "v1": "0x5f384",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f554",
+   "name": "LightMap",
+   "v1": "0x5f5fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f56c",
+   "name": "DiffuseMap",
+   "v1": "0x5f618",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f838",
+   "name": "LightMap",
+   "v1": "0x5f8e0",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f850",
+   "name": "DiffuseMap",
+   "v1": "0x5f8fc",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5f9fc",
+   "name": "DiffuseMap",
+   "v1": "0x5fa14",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5fb34",
+   "name": "DiffuseMap",
+   "v1": "0x5fb64",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5fce0",
+   "name": "DiffuseMap",
+   "v1": "0x5fcf8",
+   "idx": 4294967295
+  },
+  {
+   "entry": "0x5fe68",
+   "name": "DiffuseMap",
+   "v1": "0x5fe80",
+   "idx": 4294967295
+  }
+ ],
+ "real": []
+}

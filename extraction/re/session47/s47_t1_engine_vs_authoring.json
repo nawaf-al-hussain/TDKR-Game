@@ -1,0 +1,4353 @@
+{
+ "scene_entries": [
+  {
+   "addr": 392864,
+   "name": "_1_-_Default_1xVPfvJcrg_rQF69AzBla",
+   "effect": "ProfileCOMMON__1_-_Default-fx1338029509_FlippedPlane_frAQBc8Wsa_RYwTiizs2t",
+   "count": 1,
+   "prof": 403916
+  },
+  {
+   "addr": 392936,
+   "name": "StorageBox_pKSKQEDc8M_2iSKoUn9jv",
+   "effect": "TDKR-Vehicles-fx_6X9ISz24DS_olsspWqMwo",
+   "count": 3,
+   "prof": 403960
+  },
+  {
+   "addr": 392972,
+   "name": "Material__6034_xdCAB7nmt6_wNEFXgz2lI",
+   "effect": "Reflections-fx_Nn3SyYcW0u_658emjMaKX",
+   "count": 1,
+   "prof": 404116
+  },
+  {
+   "addr": 393008,
+   "name": "Material__340_CZEYIFmh2K_CXJxhZFaBp",
+   "effect": "AlphaMasking-fx_HKEtXTFKDP_NfmJlqzWBv",
+   "count": 6,
+   "prof": 404168
+  },
+  {
+   "addr": 393044,
+   "name": "_1_-_Default_X4l28T8yGh_WmqflCvCVi",
+   "effect": "AlphaMasking-fx_8uQ5NLHrYz_5UaY0bytXh",
+   "count": 7,
+   "prof": 404436
+  },
+  {
+   "addr": 393080,
+   "name": "buildings4_Gp1a83XIdD_G0mzmTJq4s",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_DLgjznUiKD",
+   "count": 3,
+   "prof": 404736
+  },
+  {
+   "addr": 393116,
+   "name": "buildings4_Gp1a83XIdD_e3CHahREY7",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_vDgj5ogqoU",
+   "count": 3,
+   "prof": 404884
+  },
+  {
+   "addr": 393152,
+   "name": "buildings4_Gp1a83XIdD_UdgZXtS53I",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_DnouIVLqOm",
+   "count": 3,
+   "prof": 405032
+  },
+  {
+   "addr": 393188,
+   "name": "buildings4_Gp1a83XIdD_06SiqRTTdr",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_zCDJAs36iL",
+   "count": 3,
+   "prof": 405180
+  },
+  {
+   "addr": 393224,
+   "name": "buildings4_Gp1a83XIdD_CAquxpxf2A",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_D2STB2EN0B",
+   "count": 3,
+   "prof": 405328
+  },
+  {
+   "addr": 393260,
+   "name": "Material__345_yct4Aj6PKn_nSOKlq8Azr",
+   "effect": "StandardDiffuseDC-fx_hFQr77BIEl_ZpzRiKYpZg",
+   "count": 1,
+   "prof": 405476
+  },
+  {
+   "addr": 393296,
+   "name": "Material__345_yct4Aj6PKn_qyX3g5Ayy6",
+   "effect": "StandardDiffuseDC-fx_hFQr77BIEl_HqDoGL4RHy",
+   "count": 1,
+   "prof": 405528
+  },
+  {
+   "addr": 393332,
+   "name": "Material__345_yct4Aj6PKn_8K69rklPGt",
+   "effect": "StandardDiffuseDC-fx_hFQr77BIEl_1leDYT3CEW",
+   "count": 1,
+   "prof": 405580
+  },
+  {
+   "addr": 393368,
+   "name": "Material__345_yct4Aj6PKn_S7NLt2nQfj",
+   "effect": "StandardDiffuseDC-fx_hFQr77BIEl_fUR2IZ2mB1",
+   "count": 1,
+   "prof": 405632
+  },
+  {
+   "addr": 393404,
+   "name": "Material__79_iQTqVaAUnJ_vHeuSEBMSP",
+   "effect": "StandardDiffuseDC-fx_3SL3XByImc_vUmHVQGsTm",
+   "count": 1,
+   "prof": 405684
+  },
+  {
+   "addr": 393440,
+   "name": "tiles_KjsfSXF4YP_30KKziHtRb",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_8arF3SLLny",
+   "count": 3,
+   "prof": 405736
+  },
+  {
+   "addr": 393476,
+   "name": "tiles_KjsfSXF4YP_B6Uiu1gJ03",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_OE2u8qvJP3",
+   "count": 3,
+   "prof": 405884
+  },
+  {
+   "addr": 393512,
+   "name": "tiles_KjsfSXF4YP_9oDUTOX7NY",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_OhmWvn7MIr",
+   "count": 3,
+   "prof": 406032
+  },
+  {
+   "addr": 393548,
+   "name": "tiles_KjsfSXF4YP_wObdYSEvWR",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_EkZgzUny1s",
+   "count": 3,
+   "prof": 406180
+  },
+  {
+   "addr": 393584,
+   "name": "tiles_KjsfSXF4YP_rlvBndn4cX",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_BLzZ02h67Y",
+   "count": 3,
+   "prof": 406328
+  },
+  {
+   "addr": 393620,
+   "name": "tiles_KjsfSXF4YP_33hfNWPgr8",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_PaoaKk5lQn",
+   "count": 3,
+   "prof": 406476
+  },
+  {
+   "addr": 393656,
+   "name": "tiles_KjsfSXF4YP_FdgcL9fOPy",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_81nP7VxEE4",
+   "count": 3,
+   "prof": 406624
+  },
+  {
+   "addr": 393692,
+   "name": "tiles_KjsfSXF4YP_FtysL1Q4GT",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_c98bI89qTP",
+   "count": 3,
+   "prof": 406772
+  },
+  {
+   "addr": 393728,
+   "name": "tiles_KjsfSXF4YP_Q5PNEEfuTl",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_OPwD7kkqPq",
+   "count": 3,
+   "prof": 406920
+  },
+  {
+   "addr": 393764,
+   "name": "tiles_KjsfSXF4YP_WfUTjlTOSj",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_CH9WpIYaPH",
+   "count": 3,
+   "prof": 407068
+  },
+  {
+   "addr": 393800,
+   "name": "tiles_KjsfSXF4YP_H133TyWLIB",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_3iH7JTRsbY",
+   "count": 3,
+   "prof": 407216
+  },
+  {
+   "addr": 393836,
+   "name": "tiles_KjsfSXF4YP_s7HX27KbNC",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_4G3sV0ykPd",
+   "count": 3,
+   "prof": 407364
+  },
+  {
+   "addr": 393872,
+   "name": "tiles_KjsfSXF4YP_FptEIP68v8",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_CytJR8Cu6X",
+   "count": 3,
+   "prof": 407512
+  },
+  {
+   "addr": 393908,
+   "name": "tiles_KjsfSXF4YP_HAD2vQkWrp",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ZdV60GXAPZ",
+   "count": 3,
+   "prof": 407660
+  },
+  {
+   "addr": 393944,
+   "name": "tiles_KjsfSXF4YP_6z3lSTpgTp",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_qiwdo3Hrdt",
+   "count": 3,
+   "prof": 407808
+  },
+  {
+   "addr": 393980,
+   "name": "tiles_KjsfSXF4YP_8uA8D9eE4Z",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_RpRVcwo6HM",
+   "count": 3,
+   "prof": 407956
+  },
+  {
+   "addr": 394016,
+   "name": "tiles_KjsfSXF4YP_LBHSkD6qr7",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ADtmvWvN20",
+   "count": 3,
+   "prof": 408104
+  },
+  {
+   "addr": 394052,
+   "name": "tiles_KjsfSXF4YP_MA0OSa91e9",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_J1hAkTkUFv",
+   "count": 3,
+   "prof": 408252
+  },
+  {
+   "addr": 394088,
+   "name": "tiles_KjsfSXF4YP_AI4OMrxF2l",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_gqVNBeg10g",
+   "count": 3,
+   "prof": 408400
+  },
+  {
+   "addr": 394124,
+   "name": "tiles_KjsfSXF4YP_Qyw8byxIFw",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_tRPWacKwhz",
+   "count": 3,
+   "prof": 408548
+  },
+  {
+   "addr": 394160,
+   "name": "tiles_KjsfSXF4YP_ubpCzI71MR",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_OQfxFYy0qu",
+   "count": 3,
+   "prof": 408696
+  },
+  {
+   "addr": 394196,
+   "name": "tiles_KjsfSXF4YP_YlapdvxlUs",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_VOgDko8fnP",
+   "count": 3,
+   "prof": 408844
+  },
+  {
+   "addr": 394232,
+   "name": "tiles_KjsfSXF4YP_kfrjRZDdw6",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_BH29Cm3ORY",
+   "count": 3,
+   "prof": 408992
+  },
+  {
+   "addr": 394268,
+   "name": "tiles_KjsfSXF4YP_wWR2uaAtZV",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_LcpX33e1IO",
+   "count": 3,
+   "prof": 409140
+  },
+  {
+   "addr": 394304,
+   "name": "tiles_KjsfSXF4YP_BQjgnZSCe8",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_B5yi9ijSAj",
+   "count": 3,
+   "prof": 409288
+  },
+  {
+   "addr": 394340,
+   "name": "tiles_KjsfSXF4YP_456uNhaAAZ",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_nPQHnppZqt",
+   "count": 3,
+   "prof": 409436
+  },
+  {
+   "addr": 394376,
+   "name": "tiles_KjsfSXF4YP_M9T0ci76Ro",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_7eJqXZMwEC",
+   "count": 3,
+   "prof": 409584
+  },
+  {
+   "addr": 394412,
+   "name": "tiles_KjsfSXF4YP_WsIMd3jKuW",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_jHkpC99IR3",
+   "count": 3,
+   "prof": 409732
+  },
+  {
+   "addr": 394448,
+   "name": "tiles_KjsfSXF4YP_E0pAli9Mk6",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_wPswERoC0n",
+   "count": 3,
+   "prof": 409880
+  },
+  {
+   "addr": 394484,
+   "name": "tiles_KjsfSXF4YP_SsMZ6uUeHJ",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_pyZdABIGpA",
+   "count": 3,
+   "prof": 410028
+  },
+  {
+   "addr": 394520,
+   "name": "tiles_KjsfSXF4YP_0ouihnKJGj",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_j8Ut6sSUOT",
+   "count": 3,
+   "prof": 410176
+  },
+  {
+   "addr": 394556,
+   "name": "tiles_KjsfSXF4YP_USmJqhTmfA",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_kvaPWolzch",
+   "count": 3,
+   "prof": 410324
+  },
+  {
+   "addr": 394592,
+   "name": "tiles_KjsfSXF4YP_pfr6SkbeR8",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_UKYckdKB9P",
+   "count": 3,
+   "prof": 410472
+  },
+  {
+   "addr": 394628,
+   "name": "tiles_KjsfSXF4YP_LUlctAOGXl",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_PKPlKtGBly",
+   "count": 3,
+   "prof": 410620
+  },
+  {
+   "addr": 394664,
+   "name": "tiles_KjsfSXF4YP_zHcL8AII08",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_dP7MVJKo22",
+   "count": 3,
+   "prof": 410768
+  },
+  {
+   "addr": 394700,
+   "name": "tiles_KjsfSXF4YP_NLYG35SqTG",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_n8YXDzJFnl",
+   "count": 3,
+   "prof": 410916
+  },
+  {
+   "addr": 394736,
+   "name": "tiles_KjsfSXF4YP_gKq6MbYsSX",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_tifPRHmoGr",
+   "count": 3,
+   "prof": 411064
+  },
+  {
+   "addr": 394772,
+   "name": "tiles_KjsfSXF4YP_K31tz14EbA",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_vy60MjweSb",
+   "count": 3,
+   "prof": 411212
+  },
+  {
+   "addr": 394808,
+   "name": "tiles_KjsfSXF4YP_mnfMwafStM",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1KG3aMSFgD",
+   "count": 3,
+   "prof": 411360
+  },
+  {
+   "addr": 394844,
+   "name": "tiles_KjsfSXF4YP_tw5K1eD28K",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_icLMPCqabz",
+   "count": 3,
+   "prof": 411508
+  },
+  {
+   "addr": 394880,
+   "name": "tiles_KjsfSXF4YP_nWrc6hIXQd",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_in4mMxkcNZ",
+   "count": 3,
+   "prof": 411656
+  },
+  {
+   "addr": 394916,
+   "name": "tiles_KjsfSXF4YP_ivVlvkI3S1",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_czX4fr0RMt",
+   "count": 3,
+   "prof": 411804
+  },
+  {
+   "addr": 394952,
+   "name": "tiles_KjsfSXF4YP_GEdkVpeKgH",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_WSxzzthFYq",
+   "count": 3,
+   "prof": 411952
+  },
+  {
+   "addr": 394988,
+   "name": "tiles_KjsfSXF4YP_YMq1we9QL2",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_aJ5P1fJXE0",
+   "count": 3,
+   "prof": 412100
+  },
+  {
+   "addr": 395024,
+   "name": "tiles_KjsfSXF4YP_n3QLJwWy0v",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_rKEs8yKDAV",
+   "count": 3,
+   "prof": 412248
+  },
+  {
+   "addr": 395060,
+   "name": "tiles_KjsfSXF4YP_Lq080gXW8z",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_NKb4LTfLMM",
+   "count": 3,
+   "prof": 412396
+  },
+  {
+   "addr": 395096,
+   "name": "tiles_KjsfSXF4YP_aErAnGePtx",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_W5v6qCQNwW",
+   "count": 3,
+   "prof": 412544
+  },
+  {
+   "addr": 395132,
+   "name": "tiles_KjsfSXF4YP_7iE8TLmAZu",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_5v3gYKbBkp",
+   "count": 3,
+   "prof": 412692
+  },
+  {
+   "addr": 395168,
+   "name": "tiles_KjsfSXF4YP_AOg1vriJN0",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_sXVJpKqtgP",
+   "count": 3,
+   "prof": 412840
+  },
+  {
+   "addr": 395204,
+   "name": "tiles_KjsfSXF4YP_0SCA0zKFZd",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_4X29XdBh8j",
+   "count": 3,
+   "prof": 412988
+  },
+  {
+   "addr": 395240,
+   "name": "tiles_KjsfSXF4YP_ykKPltKud5",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_SKQc5eTRuv",
+   "count": 3,
+   "prof": 413136
+  },
+  {
+   "addr": 395276,
+   "name": "tiles_KjsfSXF4YP_svmUM03Ymj",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_EUWDutAgMV",
+   "count": 3,
+   "prof": 413284
+  },
+  {
+   "addr": 395312,
+   "name": "tiles_KjsfSXF4YP_gwsA1Anevj",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_IqtYFpEFlj",
+   "count": 3,
+   "prof": 413432
+  },
+  {
+   "addr": 395348,
+   "name": "tiles_KjsfSXF4YP_YLjC0XVLuq",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_PJC0d543tU",
+   "count": 3,
+   "prof": 413580
+  },
+  {
+   "addr": 395384,
+   "name": "tiles_KjsfSXF4YP_VYO3dJfBuC",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9CaGJhxWkh",
+   "count": 3,
+   "prof": 413728
+  },
+  {
+   "addr": 395420,
+   "name": "tiles_KjsfSXF4YP_RXXNsyE4NH",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ov1eETvOmd",
+   "count": 3,
+   "prof": 413876
+  },
+  {
+   "addr": 395456,
+   "name": "tiles_KjsfSXF4YP_bSUz2k4XdH",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_RkTZCBldIk",
+   "count": 3,
+   "prof": 414024
+  },
+  {
+   "addr": 395492,
+   "name": "tiles_KjsfSXF4YP_vgEsjieOpx",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9VxSffSaIT",
+   "count": 3,
+   "prof": 414172
+  },
+  {
+   "addr": 395528,
+   "name": "tiles_KjsfSXF4YP_ythRDUSLUc",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_cfBn4tzYAB",
+   "count": 3,
+   "prof": 414320
+  },
+  {
+   "addr": 395564,
+   "name": "tiles_KjsfSXF4YP_ZaOA2jb1ND",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_bCkFeXVwVQ",
+   "count": 3,
+   "prof": 414468
+  },
+  {
+   "addr": 395600,
+   "name": "tiles_KjsfSXF4YP_X6hhgnz4Mf",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_CX3vP20n39",
+   "count": 3,
+   "prof": 414616
+  },
+  {
+   "addr": 395636,
+   "name": "tiles_KjsfSXF4YP_m9WgMaF0mJ",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1it18OLKdt",
+   "count": 3,
+   "prof": 414764
+  },
+  {
+   "addr": 395672,
+   "name": "tiles_KjsfSXF4YP_AQsoC7WO95",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_KATWd43Ofl",
+   "count": 3,
+   "prof": 414912
+  },
+  {
+   "addr": 395708,
+   "name": "tiles_KjsfSXF4YP_TDHqyzKXoJ",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_efK2h3B98k",
+   "count": 3,
+   "prof": 415060
+  },
+  {
+   "addr": 395744,
+   "name": "tiles_KjsfSXF4YP_I67ekrUydL",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_MFchjR1wTY",
+   "count": 3,
+   "prof": 415208
+  },
+  {
+   "addr": 395780,
+   "name": "tiles_KjsfSXF4YP_xfRWIz9RwJ",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_RJBUDZXXFy",
+   "count": 3,
+   "prof": 415356
+  },
+  {
+   "addr": 395816,
+   "name": "tiles_KjsfSXF4YP_CRyp0qZbXH",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_akyvPmMoLB",
+   "count": 3,
+   "prof": 415504
+  },
+  {
+   "addr": 395852,
+   "name": "tiles_KjsfSXF4YP_fLf8hgMcVO",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_jtanzWWpCm",
+   "count": 3,
+   "prof": 415652
+  },
+  {
+   "addr": 395888,
+   "name": "tiles_KjsfSXF4YP_8m6xqqEZ1E",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_xm7E0c9GUa",
+   "count": 3,
+   "prof": 415800
+  },
+  {
+   "addr": 395924,
+   "name": "tiles_KjsfSXF4YP_hqhH2Wlcvy",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_NaQPFKnSJu",
+   "count": 3,
+   "prof": 415948
+  },
+  {
+   "addr": 395960,
+   "name": "tiles_KjsfSXF4YP_nn79XAVJRr",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_L4MAeQXggM",
+   "count": 3,
+   "prof": 416096
+  },
+  {
+   "addr": 395996,
+   "name": "tiles_KjsfSXF4YP_C4iU1b6GvS",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_z1uBdbraRv",
+   "count": 3,
+   "prof": 416244
+  },
+  {
+   "addr": 396032,
+   "name": "tiles_KjsfSXF4YP_cY7RJCXTNI",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1TiZMqvUrw",
+   "count": 3,
+   "prof": 416392
+  },
+  {
+   "addr": 396068,
+   "name": "tiles_KjsfSXF4YP_xYctR9RF3Y",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_fkulpeHgd1",
+   "count": 3,
+   "prof": 416540
+  },
+  {
+   "addr": 396104,
+   "name": "tiles_KjsfSXF4YP_A0XTaehlb8",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_xVeBJKYQu7",
+   "count": 3,
+   "prof": 416688
+  },
+  {
+   "addr": 396140,
+   "name": "tiles_KjsfSXF4YP_1I6BDvjwRg",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_tRbhXVz9Az",
+   "count": 3,
+   "prof": 416836
+  },
+  {
+   "addr": 396176,
+   "name": "tiles_KjsfSXF4YP_qZTqOpaZDA",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_w6eX3aKWTS",
+   "count": 2,
+   "prof": 416984
+  },
+  {
+   "addr": 396212,
+   "name": "tiles_KjsfSXF4YP_n3VsamFkqU",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_qyRvJykTwF",
+   "count": 3,
+   "prof": 417080
+  },
+  {
+   "addr": 396248,
+   "name": "tiles_KjsfSXF4YP_jq873tLM70",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1BcDuG07mj",
+   "count": 3,
+   "prof": 417228
+  },
+  {
+   "addr": 396284,
+   "name": "tiles_KjsfSXF4YP_pMSsvHgod6",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_Rm3tBHYf2F",
+   "count": 3,
+   "prof": 417376
+  },
+  {
+   "addr": 396320,
+   "name": "tiles_KjsfSXF4YP_uFDFDHnZw3",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_GX3LkY8vbd",
+   "count": 3,
+   "prof": 417524
+  },
+  {
+   "addr": 396356,
+   "name": "tiles_KjsfSXF4YP_aUSvXonVZY",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_L1gm3H3VlG",
+   "count": 3,
+   "prof": 417672
+  },
+  {
+   "addr": 396392,
+   "name": "tiles_KjsfSXF4YP_zs08I7m4ba",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_jXaRgVNcJN",
+   "count": 3,
+   "prof": 417820
+  },
+  {
+   "addr": 396428,
+   "name": "tiles_KjsfSXF4YP_ozZhzLj2hX",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_YXjmxEHysO",
+   "count": 3,
+   "prof": 417968
+  },
+  {
+   "addr": 396464,
+   "name": "tiles_KjsfSXF4YP_YpOhzGZdGT",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_yhlbqHeXKI",
+   "count": 3,
+   "prof": 418116
+  },
+  {
+   "addr": 396500,
+   "name": "tiles_KjsfSXF4YP_vRdS9AaopP",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_zkPJe5AhAz",
+   "count": 3,
+   "prof": 418264
+  },
+  {
+   "addr": 396536,
+   "name": "tiles_KjsfSXF4YP_K38Dwmj69I",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_bPCxcxwTJI",
+   "count": 3,
+   "prof": 418412
+  },
+  {
+   "addr": 396572,
+   "name": "tiles_KjsfSXF4YP_0SCl9nTdej",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_K6KVxSN2yF",
+   "count": 3,
+   "prof": 418560
+  },
+  {
+   "addr": 396608,
+   "name": "tiles_KjsfSXF4YP_8vuKrACuTi",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_MgZRlccTGX",
+   "count": 3,
+   "prof": 418708
+  },
+  {
+   "addr": 396644,
+   "name": "tiles_KjsfSXF4YP_KZABTNEQDg",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9DM5uXp9fE",
+   "count": 3,
+   "prof": 418856
+  },
+  {
+   "addr": 396680,
+   "name": "tiles_KjsfSXF4YP_KCjSE1FtVo",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_sYmP69ydQs",
+   "count": 3,
+   "prof": 419004
+  },
+  {
+   "addr": 396716,
+   "name": "tiles_KjsfSXF4YP_ZWwjV3ZoDN",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_sqEsoZncwB",
+   "count": 3,
+   "prof": 419152
+  },
+  {
+   "addr": 396752,
+   "name": "tiles_KjsfSXF4YP_J8jECD92Bx",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_Jq8VJQUEOL",
+   "count": 3,
+   "prof": 419300
+  },
+  {
+   "addr": 396788,
+   "name": "tiles_KjsfSXF4YP_i8nfR9Od6x",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ch5N00ZEPd",
+   "count": 3,
+   "prof": 419448
+  },
+  {
+   "addr": 396824,
+   "name": "tiles_KjsfSXF4YP_Z93mGppF3l",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_mldTHodT9c",
+   "count": 3,
+   "prof": 419596
+  },
+  {
+   "addr": 396860,
+   "name": "tiles_KjsfSXF4YP_cgVSEe4d3m",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9bgtUaYhSJ",
+   "count": 3,
+   "prof": 419744
+  },
+  {
+   "addr": 396896,
+   "name": "tiles_KjsfSXF4YP_t3KmuvFnij",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_bHE3wyiGOf",
+   "count": 3,
+   "prof": 419892
+  },
+  {
+   "addr": 396932,
+   "name": "tiles_KjsfSXF4YP_W1ssFwxwZr",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_wndit6Bb5r",
+   "count": 3,
+   "prof": 420040
+  },
+  {
+   "addr": 396968,
+   "name": "tiles_KjsfSXF4YP_vojWNZSlQi",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ptnzsTGlZH",
+   "count": 3,
+   "prof": 420188
+  },
+  {
+   "addr": 397004,
+   "name": "tiles_KjsfSXF4YP_aWXxsxi3AC",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_FqDMeb4hgx",
+   "count": 3,
+   "prof": 420336
+  },
+  {
+   "addr": 397040,
+   "name": "tiles_KjsfSXF4YP_fNw0Kkibxe",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_h0XXdea2vQ",
+   "count": 3,
+   "prof": 420484
+  },
+  {
+   "addr": 397076,
+   "name": "tiles_KjsfSXF4YP_gKZmCVSQ9i",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_hT3v5G2OhZ",
+   "count": 3,
+   "prof": 420632
+  },
+  {
+   "addr": 397112,
+   "name": "tiles_KjsfSXF4YP_TeVZOXj6Sj",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_CvUX1zCN8t",
+   "count": 3,
+   "prof": 420780
+  },
+  {
+   "addr": 397148,
+   "name": "tiles_KjsfSXF4YP_Ruv0HclWhC",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9AMQKHQNTk",
+   "count": 3,
+   "prof": 420928
+  },
+  {
+   "addr": 397184,
+   "name": "tiles_KjsfSXF4YP_kPrCtcI90G",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9NY7bxX4xf",
+   "count": 3,
+   "prof": 421076
+  },
+  {
+   "addr": 397220,
+   "name": "tiles_KjsfSXF4YP_JSCLwxsz3z",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_p8YjRnkbQU",
+   "count": 3,
+   "prof": 421224
+  },
+  {
+   "addr": 397256,
+   "name": "tiles_KjsfSXF4YP_9LhIU3FqTy",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_S3mPW6Yl2M",
+   "count": 3,
+   "prof": 421372
+  },
+  {
+   "addr": 397292,
+   "name": "tiles_KjsfSXF4YP_Z37CFjIy9z",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_DvZdPUBXCB",
+   "count": 3,
+   "prof": 421520
+  },
+  {
+   "addr": 397328,
+   "name": "tiles_KjsfSXF4YP_IgH05yfrCM",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_nmJIgWyT7Y",
+   "count": 3,
+   "prof": 421668
+  },
+  {
+   "addr": 397364,
+   "name": "tiles_KjsfSXF4YP_cf1hKIKIEQ",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_vfoH1VDKMY",
+   "count": 3,
+   "prof": 421816
+  },
+  {
+   "addr": 397400,
+   "name": "tiles_KjsfSXF4YP_goKEVwwgXE",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_xiTmCX4VVS",
+   "count": 3,
+   "prof": 421964
+  },
+  {
+   "addr": 397436,
+   "name": "tiles_KjsfSXF4YP_41w2UFYwoX",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_GiQUNloYdC",
+   "count": 3,
+   "prof": 422112
+  },
+  {
+   "addr": 397472,
+   "name": "tiles_KjsfSXF4YP_R03U9ph3iH",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_BcjNemZauO",
+   "count": 3,
+   "prof": 422260
+  },
+  {
+   "addr": 397508,
+   "name": "tiles_KjsfSXF4YP_9cdbhY3sPW",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_a1QFt7EeMp",
+   "count": 3,
+   "prof": 422408
+  },
+  {
+   "addr": 397544,
+   "name": "tiles_KjsfSXF4YP_NEaZDFtvsX",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_bgPei2Rv4z",
+   "count": 3,
+   "prof": 422556
+  },
+  {
+   "addr": 397580,
+   "name": "tiles_KjsfSXF4YP_2JPwKFB81i",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_Zw234XoJil",
+   "count": 3,
+   "prof": 422704
+  },
+  {
+   "addr": 397616,
+   "name": "tiles_KjsfSXF4YP_STc7TxJS5f",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_FPt8VwYU9K",
+   "count": 3,
+   "prof": 422852
+  },
+  {
+   "addr": 397652,
+   "name": "tiles_KjsfSXF4YP_BPg1kIAEXD",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_gjZIwWsOrk",
+   "count": 3,
+   "prof": 423000
+  },
+  {
+   "addr": 397688,
+   "name": "tiles_KjsfSXF4YP_tf4IA5WaZ8",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_dao2rPY9Tm",
+   "count": 3,
+   "prof": 423148
+  },
+  {
+   "addr": 397724,
+   "name": "tiles_KjsfSXF4YP_utVL7pdQQG",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_awIzaTgyKn",
+   "count": 3,
+   "prof": 423296
+  },
+  {
+   "addr": 397760,
+   "name": "tiles_KjsfSXF4YP_i6BxMDmjoT",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_nJwoIY54dG",
+   "count": 3,
+   "prof": 423444
+  },
+  {
+   "addr": 397796,
+   "name": "tiles_KjsfSXF4YP_NCjFkhMJ9N",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_D3Roe9tUhz",
+   "count": 3,
+   "prof": 423592
+  },
+  {
+   "addr": 397832,
+   "name": "tiles_KjsfSXF4YP_b526TR5xSc",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1XXwN9r6Mj",
+   "count": 3,
+   "prof": 423740
+  },
+  {
+   "addr": 397868,
+   "name": "tiles_KjsfSXF4YP_mOZGylOWSP",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_J1D4Vjfrfw",
+   "count": 3,
+   "prof": 423888
+  },
+  {
+   "addr": 397904,
+   "name": "tiles_KjsfSXF4YP_ROc6poyfsR",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_dkICuBVbdX",
+   "count": 3,
+   "prof": 424036
+  },
+  {
+   "addr": 397940,
+   "name": "tiles_KjsfSXF4YP_JjXwy5PcXL",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_aUwIQjMDtC",
+   "count": 3,
+   "prof": 424184
+  },
+  {
+   "addr": 397976,
+   "name": "tiles_KjsfSXF4YP_NVufCXt5NW",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_icsSIwDbDS",
+   "count": 3,
+   "prof": 424332
+  },
+  {
+   "addr": 398012,
+   "name": "tiles_KjsfSXF4YP_fSWL3TtuQP",
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_zVipntaBaw",
+   "count": 3,
+   "prof": 424480
+  },
+  {
+   "addr": 398048,
+   "name": "buildings4_Gp1a83XIdD_MlNG8fszdH",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_qfbroh4tkB",
+   "count": 3,
+   "prof": 424628
+  },
+  {
+   "addr": 398084,
+   "name": "buildings4_Gp1a83XIdD_EfxVJqn0Hi",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_9IUg7z2jqh",
+   "count": 3,
+   "prof": 424776
+  },
+  {
+   "addr": 398120,
+   "name": "buildings4_Gp1a83XIdD_4ZYyjogess",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_GqKDZGxoOe",
+   "count": 3,
+   "prof": 424924
+  },
+  {
+   "addr": 398156,
+   "name": "buildings4_Gp1a83XIdD_guZlHg4yAL",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_TwRWUvJTqu",
+   "count": 3,
+   "prof": 425072
+  },
+  {
+   "addr": 398192,
+   "name": "buildings4_Gp1a83XIdD_rFTqQfhtdH",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_rtybk1crWf",
+   "count": 3,
+   "prof": 425220
+  },
+  {
+   "addr": 398228,
+   "name": "buildings4_Gp1a83XIdD_y3pukiyS5c",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_O2D3GWHdcV",
+   "count": 3,
+   "prof": 425368
+  },
+  {
+   "addr": 398264,
+   "name": "buildings4_Gp1a83XIdD_oH1PmUbEzv",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_HfowD8t408",
+   "count": 3,
+   "prof": 425516
+  },
+  {
+   "addr": 398300,
+   "name": "buildings4_Gp1a83XIdD_im9qx2ctP2",
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_9d9dqvxWr1",
+   "count": 3,
+   "prof": 425664
+  },
+  {
+   "addr": 398336,
+   "name": "Material__4182_hGiU3Q1VBL_Y82GV5gMZ8",
+   "effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_WIgNsQjiC0",
+   "count": 4,
+   "prof": 425812
+  },
+  {
+   "addr": 398372,
+   "name": "Material__4182_hGiU3Q1VBL_poeCYHjZQn",
+   "effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_ORXtJTrPEv",
+   "count": 4,
+   "prof": 426012
+  },
+  {
+   "addr": 398408,
+   "name": "Material__4182_hGiU3Q1VBL_gLTfbnLjBs",
+   "effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_b5anh2CV0A",
+   "count": 4,
+   "prof": 426212
+  },
+  {
+   "addr": 398444,
+   "name": "Material__4182_hGiU3Q1VBL_x2xDOyFyOI",
+   "effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_AljpV00j6G",
+   "count": 4,
+   "prof": 426412
+  },
+  {
+   "addr": 398480,
+   "name": "_3_-_Default_kGwrJFxR6N_ispIM9oCIp",
+   "effect": "NV_Glass-fx_bXt18J7NQQ_BB3moSVgHC",
+   "count": 4,
+   "prof": 426612
+  },
+  {
+   "addr": 398516,
+   "name": "Material__3242_XsC6Pt0GIs_SH4aSk6eXu",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_AgZw3YzTY1",
+   "count": 4,
+   "prof": 426820
+  },
+  {
+   "addr": 398552,
+   "name": "Material__3242_XsC6Pt0GIs_paaiWPLwDT",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_zT0P5A2R8G",
+   "count": 3,
+   "prof": 427020
+  },
+  {
+   "addr": 398588,
+   "name": "Material__3242_XsC6Pt0GIs_kTRm0MKHCq",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_bxzgyMxVMM",
+   "count": 4,
+   "prof": 427168
+  },
+  {
+   "addr": 398624,
+   "name": "Material__3242_XsC6Pt0GIs_53zPevMKwf",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_cOGIWhSQHa",
+   "count": 4,
+   "prof": 427368
+  },
+  {
+   "addr": 398660,
+   "name": "Material__3242_XsC6Pt0GIs_0rNljM2zbn",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wPrNZH0cPG",
+   "count": 4,
+   "prof": 427568
+  },
+  {
+   "addr": 398696,
+   "name": "Material__3242_XsC6Pt0GIs_tGETz3g9Yt",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_vVM24tZMky",
+   "count": 4,
+   "prof": 427768
+  },
+  {
+   "addr": 398732,
+   "name": "Material__3242_XsC6Pt0GIs_9cieLr3N4d",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_xRBW8B9EZF",
+   "count": 4,
+   "prof": 427968
+  },
+  {
+   "addr": 398768,
+   "name": "Material__3242_XsC6Pt0GIs_S6HVFpazsC",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wp5rVitT7q",
+   "count": 4,
+   "prof": 428168
+  },
+  {
+   "addr": 398804,
+   "name": "Material__3242_XsC6Pt0GIs_SQmAsorh9h",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wvlefn03A5",
+   "count": 4,
+   "prof": 428368
+  },
+  {
+   "addr": 398840,
+   "name": "Material__3242_XsC6Pt0GIs_BbDr9YDQSY",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ztcvK8XzZb",
+   "count": 4,
+   "prof": 428568
+  },
+  {
+   "addr": 398876,
+   "name": "Material__3242_XsC6Pt0GIs_L5gdRpIXJ6",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_7SfOAI8xkp",
+   "count": 4,
+   "prof": 428768
+  },
+  {
+   "addr": 398912,
+   "name": "Material__3242_XsC6Pt0GIs_3uv8WaDDx4",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_3fb1fXqfm8",
+   "count": 4,
+   "prof": 428968
+  },
+  {
+   "addr": 398948,
+   "name": "Material__69_zHOTJcJwef_r7bed0KPb9",
+   "effect": "LightMapDC-fx_a5jiZPnCED_0hg0ANLZMu",
+   "count": 4,
+   "prof": 429168
+  },
+  {
+   "addr": 398984,
+   "name": "Material__69_zHOTJcJwef_bIbSBRl1sc",
+   "effect": "LightMapDC-fx_a5jiZPnCED_PBkwzFeaKQ",
+   "count": 4,
+   "prof": 429368
+  },
+  {
+   "addr": 399020,
+   "name": "Material__69_zHOTJcJwef_kSP3msI6XZ",
+   "effect": "LightMapDC-fx_a5jiZPnCED_Ex8ksHpDhF",
+   "count": 4,
+   "prof": 429568
+  },
+  {
+   "addr": 399056,
+   "name": "Material__69_zHOTJcJwef_wgyDrgY9Tc",
+   "effect": "LightMapDC-fx_a5jiZPnCED_MEwGusP3Sj",
+   "count": 4,
+   "prof": 429768
+  },
+  {
+   "addr": 399092,
+   "name": "Material__69_zHOTJcJwef_UY16XSOiiZ",
+   "effect": "LightMapDC-fx_a5jiZPnCED_X1dY3RIctv",
+   "count": 3,
+   "prof": 429968
+  },
+  {
+   "addr": 399128,
+   "name": "Material__69_zHOTJcJwef_EFPgTs79ax",
+   "effect": "LightMapDC-fx_a5jiZPnCED_qTo9VxlSDa",
+   "count": 4,
+   "prof": 430116
+  },
+  {
+   "addr": 399164,
+   "name": "Material__69_zHOTJcJwef_ifOpKg0RM3",
+   "effect": "LightMapDC-fx_a5jiZPnCED_7uR5QwN3gc",
+   "count": 4,
+   "prof": 430316
+  },
+  {
+   "addr": 399200,
+   "name": "Material__69_zHOTJcJwef_0OvEXdaEYS",
+   "effect": "LightMapDC-fx_a5jiZPnCED_RXuN3aKtr6",
+   "count": 4,
+   "prof": 430516
+  },
+  {
+   "addr": 399236,
+   "name": "Material__69_zHOTJcJwef_2Yl4L4vSa6",
+   "effect": "LightMapDC-fx_a5jiZPnCED_8fsa4aLEli",
+   "count": 4,
+   "prof": 430716
+  },
+  {
+   "addr": 399272,
+   "name": "Material__69_zHOTJcJwef_iMpIzXoasw",
+   "effect": "LightMapDC-fx_a5jiZPnCED_xKTm1QJJ0A",
+   "count": 4,
+   "prof": 430916
+  },
+  {
+   "addr": 399308,
+   "name": "Material__69_zHOTJcJwef_xz2Y2fKO8c",
+   "effect": "LightMapDC-fx_a5jiZPnCED_tGzU6wy9iU",
+   "count": 4,
+   "prof": 431116
+  },
+  {
+   "addr": 399344,
+   "name": "Material__69_zHOTJcJwef_Un6TDQvVpD",
+   "effect": "LightMapDC-fx_a5jiZPnCED_7WYFWJhnUq",
+   "count": 4,
+   "prof": 431316
+  },
+  {
+   "addr": 399380,
+   "name": "Material__69_zHOTJcJwef_ABJkOmfySd",
+   "effect": "LightMapDC-fx_a5jiZPnCED_lfyXC9nuPU",
+   "count": 4,
+   "prof": 431516
+  },
+  {
+   "addr": 399416,
+   "name": "Material__69_zHOTJcJwef_U59vVJVXO6",
+   "effect": "LightMapDC-fx_a5jiZPnCED_sZHXrZ3S2G",
+   "count": 4,
+   "prof": 431716
+  },
+  {
+   "addr": 399452,
+   "name": "Material__69_zHOTJcJwef_2pI1y7pEgB",
+   "effect": "LightMapDC-fx_a5jiZPnCED_aMx3QRb0xN",
+   "count": 4,
+   "prof": 431916
+  },
+  {
+   "addr": 399488,
+   "name": "Material__69_zHOTJcJwef_76uAIrnHfc",
+   "effect": "LightMapDC-fx_a5jiZPnCED_pN6u9bEKwO",
+   "count": 4,
+   "prof": 432116
+  },
+  {
+   "addr": 399524,
+   "name": "Material__69_zHOTJcJwef_8iYfRYDLB9",
+   "effect": "LightMapDC-fx_a5jiZPnCED_FYWeSgMJM0",
+   "count": 4,
+   "prof": 432316
+  },
+  {
+   "addr": 399560,
+   "name": "Material__69_zHOTJcJwef_6ebsOTWbp8",
+   "effect": "LightMapDC-fx_a5jiZPnCED_RxG5WLsE9f",
+   "count": 4,
+   "prof": 432516
+  },
+  {
+   "addr": 399596,
+   "name": "Material__69_zHOTJcJwef_ELxdEQOmio",
+   "effect": "LightMapDC-fx_a5jiZPnCED_XIDgvWpgXG",
+   "count": 4,
+   "prof": 432716
+  },
+  {
+   "addr": 399632,
+   "name": "Material__69_zHOTJcJwef_nsaw4Ee2fg",
+   "effect": "LightMapDC-fx_a5jiZPnCED_gcVQq7sZe2",
+   "count": 4,
+   "prof": 432916
+  },
+  {
+   "addr": 399668,
+   "name": "Material__69_zHOTJcJwef_6E5F6wvy5J",
+   "effect": "LightMapDC-fx_a5jiZPnCED_Wq21JU2Idl",
+   "count": 4,
+   "prof": 433116
+  },
+  {
+   "addr": 399704,
+   "name": "Material__69_zHOTJcJwef_vFDy6HLhk9",
+   "effect": "LightMapDC-fx_a5jiZPnCED_vKJa2djXrv",
+   "count": 3,
+   "prof": 433316
+  },
+  {
+   "addr": 399740,
+   "name": "Material__69_zHOTJcJwef_wYsVx5W0yG",
+   "effect": "LightMapDC-fx_a5jiZPnCED_1Rggxp9WW1",
+   "count": 4,
+   "prof": 433464
+  },
+  {
+   "addr": 399776,
+   "name": "Material__69_zHOTJcJwef_yefMSqsKTl",
+   "effect": "LightMapDC-fx_a5jiZPnCED_83ALuOHiI6",
+   "count": 3,
+   "prof": 433664
+  },
+  {
+   "addr": 399812,
+   "name": "Material__69_zHOTJcJwef_Sd1tY9cmDz",
+   "effect": "LightMapDC-fx_a5jiZPnCED_XhBhUCvxQX",
+   "count": 4,
+   "prof": 433812
+  },
+  {
+   "addr": 399848,
+   "name": "Material__69_zHOTJcJwef_XVZsObjhSX",
+   "effect": "LightMapDC-fx_a5jiZPnCED_PdSIiwEtLH",
+   "count": 4,
+   "prof": 434012
+  },
+  {
+   "addr": 399884,
+   "name": "Material__69_zHOTJcJwef_ujLwzo8X96",
+   "effect": "LightMapDC-fx_a5jiZPnCED_pcfJ2aHgWe",
+   "count": 4,
+   "prof": 434212
+  },
+  {
+   "addr": 399920,
+   "name": "Material__69_zHOTJcJwef_PRW0M25Q8A",
+   "effect": "LightMapDC-fx_a5jiZPnCED_pNpLPnVhxS",
+   "count": 4,
+   "prof": 434412
+  },
+  {
+   "addr": 399956,
+   "name": "Material__69_zHOTJcJwef_AfmWR9Y4CP",
+   "effect": "LightMapDC-fx_a5jiZPnCED_WyfdiFwB4s",
+   "count": 3,
+   "prof": 434612
+  },
+  {
+   "addr": 399992,
+   "name": "Material__69_zHOTJcJwef_VaDXAq6SHA",
+   "effect": "LightMapDC-fx_a5jiZPnCED_51DYzsDa6K",
+   "count": 4,
+   "prof": 434760
+  },
+  {
+   "addr": 400028,
+   "name": "Material__69_zHOTJcJwef_3eM6KWvIAA",
+   "effect": "LightMapDC-fx_a5jiZPnCED_LXYpYf1bCi",
+   "count": 4,
+   "prof": 434960
+  },
+  {
+   "addr": 400064,
+   "name": "Material__69_zHOTJcJwef_WozXys0QpZ",
+   "effect": "LightMapDC-fx_a5jiZPnCED_SKJEO4Lb4b",
+   "count": 4,
+   "prof": 435160
+  },
+  {
+   "addr": 400100,
+   "name": "Material__69_zHOTJcJwef_U5Qe8dZhX6",
+   "effect": "LightMapDC-fx_a5jiZPnCED_G9Uv54oGDD",
+   "count": 4,
+   "prof": 435360
+  },
+  {
+   "addr": 400136,
+   "name": "Material__69_zHOTJcJwef_8jpgBfQtNR",
+   "effect": "LightMapDC-fx_a5jiZPnCED_3rnPGGKZPb",
+   "count": 4,
+   "prof": 435560
+  },
+  {
+   "addr": 400172,
+   "name": "Material__69_zHOTJcJwef_MY20H08Xwi",
+   "effect": "LightMapDC-fx_a5jiZPnCED_RxJ7Gc2dwP",
+   "count": 3,
+   "prof": 435760
+  },
+  {
+   "addr": 400208,
+   "name": "Material__69_zHOTJcJwef_hUPEYYFiiH",
+   "effect": "LightMapDC-fx_a5jiZPnCED_0at2jVEr6i",
+   "count": 4,
+   "prof": 435908
+  },
+  {
+   "addr": 400244,
+   "name": "Material__69_zHOTJcJwef_s8yv2BTixW",
+   "effect": "LightMapDC-fx_a5jiZPnCED_S6HDN1kvhy",
+   "count": 3,
+   "prof": 436108
+  },
+  {
+   "addr": 400280,
+   "name": "Material__69_zHOTJcJwef_wOCWaqQ12l",
+   "effect": "LightMapDC-fx_a5jiZPnCED_go5eeCVjy4",
+   "count": 4,
+   "prof": 436256
+  },
+  {
+   "addr": 400316,
+   "name": "Material__69_zHOTJcJwef_4BG5xMLLGy",
+   "effect": "LightMapDC-fx_a5jiZPnCED_rf58Tp9dlF",
+   "count": 4,
+   "prof": 436456
+  },
+  {
+   "addr": 400352,
+   "name": "Material__69_zHOTJcJwef_YsA4K3Z6qe",
+   "effect": "LightMapDC-fx_a5jiZPnCED_bR4bVrNFVC",
+   "count": 4,
+   "prof": 436656
+  },
+  {
+   "addr": 400388,
+   "name": "Material__69_zHOTJcJwef_EehjTFOB7B",
+   "effect": "LightMapDC-fx_a5jiZPnCED_Y0dLL7FNP3",
+   "count": 4,
+   "prof": 436856
+  },
+  {
+   "addr": 400424,
+   "name": "Material__69_zHOTJcJwef_ohRDz6vZVD",
+   "effect": "LightMapDC-fx_a5jiZPnCED_oSptqXhGNF",
+   "count": 4,
+   "prof": 437056
+  },
+  {
+   "addr": 400460,
+   "name": "Material__69_zHOTJcJwef_axbIRBtHa9",
+   "effect": "LightMapDC-fx_a5jiZPnCED_ReB6mxB0ZR",
+   "count": 4,
+   "prof": 437256
+  },
+  {
+   "addr": 400496,
+   "name": "Material__69_zHOTJcJwef_K7lIhDLqGD",
+   "effect": "LightMapDC-fx_a5jiZPnCED_qrMZEYnTQm",
+   "count": 4,
+   "prof": 437456
+  },
+  {
+   "addr": 400532,
+   "name": "Material__69_zHOTJcJwef_m5SgMHz26Y",
+   "effect": "LightMapDC-fx_a5jiZPnCED_yxsvVr0wSS",
+   "count": 4,
+   "prof": 437656
+  },
+  {
+   "addr": 400568,
+   "name": "Material__69_zHOTJcJwef_NakyOO9TJX",
+   "effect": "LightMapDC-fx_a5jiZPnCED_jkS8taguJg",
+   "count": 4,
+   "prof": 437856
+  },
+  {
+   "addr": 400604,
+   "name": "Material__69_zHOTJcJwef_kxga7ZYwr4",
+   "effect": "LightMapDC-fx_a5jiZPnCED_QXpS68k8Rb",
+   "count": 4,
+   "prof": 438056
+  },
+  {
+   "addr": 400640,
+   "name": "Material__69_zHOTJcJwef_eeMydkfj2i",
+   "effect": "LightMapDC-fx_a5jiZPnCED_aTG2C7Qia3",
+   "count": 4,
+   "prof": 438256
+  },
+  {
+   "addr": 400676,
+   "name": "Material__69_zHOTJcJwef_J8zmglOu2G",
+   "effect": "LightMapDC-fx_a5jiZPnCED_13Pl32CTfF",
+   "count": 4,
+   "prof": 438456
+  },
+  {
+   "addr": 400712,
+   "name": "Material__69_zHOTJcJwef_Kos6Ydc0ah",
+   "effect": "LightMapDC-fx_a5jiZPnCED_ohPm2YQox9",
+   "count": 4,
+   "prof": 438656
+  },
+  {
+   "addr": 400748,
+   "name": "Material__69_zHOTJcJwef_9SKb47Qxlf",
+   "effect": "LightMapDC-fx_a5jiZPnCED_MkQYpMbiZj",
+   "count": 4,
+   "prof": 438856
+  },
+  {
+   "addr": 400784,
+   "name": "Material__69_zHOTJcJwef_rqy3wHKdP8",
+   "effect": "LightMapDC-fx_a5jiZPnCED_FjnWpMXD22",
+   "count": 4,
+   "prof": 439056
+  },
+  {
+   "addr": 400820,
+   "name": "Material__69_zHOTJcJwef_XjkOCjQJ0c",
+   "effect": "LightMapDC-fx_a5jiZPnCED_es092dAcDH",
+   "count": 4,
+   "prof": 439256
+  },
+  {
+   "addr": 400856,
+   "name": "Material__69_zHOTJcJwef_hXnZfIpnL4",
+   "effect": "LightMapDC-fx_a5jiZPnCED_yIXmWiNHDa",
+   "count": 4,
+   "prof": 439456
+  },
+  {
+   "addr": 400892,
+   "name": "Material__69_zHOTJcJwef_wYWcp6k8ca",
+   "effect": "LightMapDC-fx_a5jiZPnCED_IzwW8GrZPp",
+   "count": 4,
+   "prof": 439656
+  },
+  {
+   "addr": 400928,
+   "name": "Material__69_zHOTJcJwef_HSGvY134iP",
+   "effect": "LightMapDC-fx_a5jiZPnCED_ctZ8rqYI0j",
+   "count": 4,
+   "prof": 439856
+  },
+  {
+   "addr": 400964,
+   "name": "Material__69_zHOTJcJwef_OdAsExNBNc",
+   "effect": "LightMapDC-fx_a5jiZPnCED_lCeClSxjb7",
+   "count": 4,
+   "prof": 440056
+  },
+  {
+   "addr": 401000,
+   "name": "Material__69_zHOTJcJwef_Eu75ImAuFo",
+   "effect": "LightMapDC-fx_a5jiZPnCED_NDG5OqjGag",
+   "count": 4,
+   "prof": 440256
+  },
+  {
+   "addr": 401036,
+   "name": "Material__69_zHOTJcJwef_gEfAATAO8k",
+   "effect": "LightMapDC-fx_a5jiZPnCED_iMD1uTyJ7x",
+   "count": 4,
+   "prof": 440456
+  },
+  {
+   "addr": 401072,
+   "name": "Material__69_zHOTJcJwef_bIRxxEqm7G",
+   "effect": "LightMapDC-fx_a5jiZPnCED_k8zTp0KVDi",
+   "count": 3,
+   "prof": 440656
+  },
+  {
+   "addr": 401108,
+   "name": "Material__69_zHOTJcJwef_LXY4dLywY6",
+   "effect": "LightMapDC-fx_a5jiZPnCED_YOpb2ewRo8",
+   "count": 4,
+   "prof": 440804
+  },
+  {
+   "addr": 401144,
+   "name": "Material__69_zHOTJcJwef_8bIc6hBsZX",
+   "effect": "LightMapDC-fx_a5jiZPnCED_pHUqINoKRX",
+   "count": 4,
+   "prof": 441004
+  },
+  {
+   "addr": 401180,
+   "name": "Material__69_zHOTJcJwef_4Lq5Tx60lu",
+   "effect": "LightMapDC-fx_a5jiZPnCED_DwghPpNQni",
+   "count": 4,
+   "prof": 441204
+  },
+  {
+   "addr": 401216,
+   "name": "Material__69_zHOTJcJwef_efyAMnFn1x",
+   "effect": "LightMapDC-fx_a5jiZPnCED_da1xIhy5fB",
+   "count": 4,
+   "prof": 441404
+  },
+  {
+   "addr": 401252,
+   "name": "Material__69_zHOTJcJwef_E2HxsdX1Kl",
+   "effect": "LightMapDC-fx_a5jiZPnCED_H2rTdqgIka",
+   "count": 4,
+   "prof": 441604
+  },
+  {
+   "addr": 401288,
+   "name": "Material__69_zHOTJcJwef_Sva2AIvKLu",
+   "effect": "LightMapDC-fx_a5jiZPnCED_WXtqtyKwsZ",
+   "count": 4,
+   "prof": 441804
+  },
+  {
+   "addr": 401324,
+   "name": "Material__21_NGl6WXVW0i_kXT8ZpDQjl",
+   "effect": "LightMapDC-fx_vHJniJMmpQ_dt8Zaj95Sz",
+   "count": 5,
+   "prof": 442004
+  },
+  {
+   "addr": 401360,
+   "name": "Material__21_NGl6WXVW0i_0FlcbtqyiC",
+   "effect": "LightMapDC-fx_vHJniJMmpQ_947fr7MoUF",
+   "count": 5,
+   "prof": 442256
+  },
+  {
+   "addr": 401396,
+   "name": "Material__21_NGl6WXVW0i_nG96tWCTpb",
+   "effect": "LightMapDC-fx_vHJniJMmpQ_vQEAVXHGUE",
+   "count": 5,
+   "prof": 442508
+  },
+  {
+   "addr": 401432,
+   "name": "Material__21_NGl6WXVW0i_8QRKGcEr9E",
+   "effect": "LightMapDC-fx_vHJniJMmpQ_JXpgSkSjBb",
+   "count": 5,
+   "prof": 442760
+  },
+  {
+   "addr": 401468,
+   "name": "Material__21_NGl6WXVW0i_PZXdphPRP5",
+   "effect": "LightMapDC-fx_vHJniJMmpQ_jJT8GSvwdk",
+   "count": 5,
+   "prof": 443012
+  },
+  {
+   "addr": 401504,
+   "name": "Material__21_NGl6WXVW0i_dPcNj711hz",
+   "effect": "LightMapDC-fx_vHJniJMmpQ_Ylz86bsQem",
+   "count": 5,
+   "prof": 443264
+  },
+  {
+   "addr": 401540,
+   "name": "Material__21_NGl6WXVW0i_EldWDBwkev",
+   "effect": "LightMapDC-fx_vHJniJMmpQ_V7fdWFcRBR",
+   "count": 5,
+   "prof": 443516
+  },
+  {
+   "addr": 401576,
+   "name": "Material__21_NGl6WXVW0i_WK2uFXHuib",
+   "effect": "LightMapDC-fx_vHJniJMmpQ_QR4yfm8dE4",
+   "count": 5,
+   "prof": 443768
+  },
+  {
+   "addr": 401612,
+   "name": "diner2_IAQI66y2qt_OM1JOkib5I",
+   "effect": "NormalSpecOverbright-fx_siEsoM3wSt_uF65y5qC32",
+   "count": 3,
+   "prof": 444020
+  },
+  {
+   "addr": 401648,
+   "name": "Material__3242_XsC6Pt0GIs_DgG1FdC5dy",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_FTnTZSg06V",
+   "count": 4,
+   "prof": 444136
+  },
+  {
+   "addr": 401684,
+   "name": "Material__3242_XsC6Pt0GIs_RZVStdwwCU",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_GE2qW4HvjB",
+   "count": 4,
+   "prof": 444336
+  },
+  {
+   "addr": 401720,
+   "name": "Material__3242_XsC6Pt0GIs_Zf5LDFzwJs",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_zCgWm0oojR",
+   "count": 4,
+   "prof": 444536
+  },
+  {
+   "addr": 401756,
+   "name": "Material__3242_XsC6Pt0GIs_6sah2jzzjF",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_EkG1BZUdWp",
+   "count": 4,
+   "prof": 444736
+  },
+  {
+   "addr": 401792,
+   "name": "Material__3242_XsC6Pt0GIs_2vYTHHoJCD",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_WtxsrDzQOU",
+   "count": 4,
+   "prof": 444936
+  },
+  {
+   "addr": 401828,
+   "name": "Material__3242_XsC6Pt0GIs_aLUO3NPVQN",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_eC83luem7r",
+   "count": 4,
+   "prof": 445136
+  },
+  {
+   "addr": 401864,
+   "name": "Material__3242_XsC6Pt0GIs_we7p5ieeI8",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_jnEo925b76",
+   "count": 4,
+   "prof": 445336
+  },
+  {
+   "addr": 401900,
+   "name": "Material__3242_XsC6Pt0GIs_cRjrXkzmQa",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_tYWmFGzuR3",
+   "count": 4,
+   "prof": 445536
+  },
+  {
+   "addr": 401936,
+   "name": "Material__3242_XsC6Pt0GIs_yIUFl0XjDq",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_4DXFe9OH46",
+   "count": 4,
+   "prof": 445736
+  },
+  {
+   "addr": 401972,
+   "name": "Material__3242_XsC6Pt0GIs_0YKI4JSgVS",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_DsE9G4Pxx5",
+   "count": 4,
+   "prof": 445936
+  },
+  {
+   "addr": 402008,
+   "name": "Material__3242_XsC6Pt0GIs_0TPW4sVCdF",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_0qZFUD7BQv",
+   "count": 4,
+   "prof": 446136
+  },
+  {
+   "addr": 402044,
+   "name": "Material__3242_XsC6Pt0GIs_yCCsn00KTM",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_sdgaixwB9d",
+   "count": 4,
+   "prof": 446336
+  },
+  {
+   "addr": 402080,
+   "name": "Material__3242_XsC6Pt0GIs_KL4au1o6yA",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ZMvbcowhjv",
+   "count": 4,
+   "prof": 446536
+  },
+  {
+   "addr": 402116,
+   "name": "Material__3242_XsC6Pt0GIs_HDPQPeQ8Hz",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_LKxH3WfdXC",
+   "count": 4,
+   "prof": 446736
+  },
+  {
+   "addr": 402152,
+   "name": "Material__3242_XsC6Pt0GIs_j95k7Ai4Z9",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ynx6mMA0N7",
+   "count": 4,
+   "prof": 446936
+  },
+  {
+   "addr": 402188,
+   "name": "Material__3242_XsC6Pt0GIs_ZNxGFFhR1Q",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_3xaG0PEPp1",
+   "count": 4,
+   "prof": 447136
+  },
+  {
+   "addr": 402224,
+   "name": "Material__3242_XsC6Pt0GIs_98VVWnEzSJ",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_MD6Wuzlezf",
+   "count": 4,
+   "prof": 447336
+  },
+  {
+   "addr": 402260,
+   "name": "Material__3242_XsC6Pt0GIs_fQv2MeiKlE",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_sfumcgLBzV",
+   "count": 4,
+   "prof": 447536
+  },
+  {
+   "addr": 402296,
+   "name": "Material__3242_XsC6Pt0GIs_yDwOvqaIeg",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_OowgmHlpbl",
+   "count": 4,
+   "prof": 447736
+  },
+  {
+   "addr": 402332,
+   "name": "Material__3242_XsC6Pt0GIs_ZjCzIKAtaB",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_kroPTZZPye",
+   "count": 4,
+   "prof": 447936
+  },
+  {
+   "addr": 402368,
+   "name": "Material__3242_XsC6Pt0GIs_R85PlbWG9m",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_nf44veM0gC",
+   "count": 4,
+   "prof": 448136
+  },
+  {
+   "addr": 402404,
+   "name": "Material__3242_XsC6Pt0GIs_rOHYmmgZ0T",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_VUhDpTNHVc",
+   "count": 4,
+   "prof": 448336
+  },
+  {
+   "addr": 402440,
+   "name": "Material__3242_XsC6Pt0GIs_of9VjztUg5",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wQHuylQvPu",
+   "count": 4,
+   "prof": 448536
+  },
+  {
+   "addr": 402476,
+   "name": "Material__3242_XsC6Pt0GIs_ngdq6ON7GZ",
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_Wq0L8hVnUs",
+   "count": 4,
+   "prof": 448736
+  },
+  {
+   "addr": 402512,
+   "name": "Material__4534_6eYBQFaJ81_S46TFudBBK",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_dIoA7DDHLh",
+   "count": 3,
+   "prof": 448936
+  },
+  {
+   "addr": 402548,
+   "name": "Material__4534_6eYBQFaJ81_atIYHgVdPe",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_N9wGTC2s6a",
+   "count": 3,
+   "prof": 449084
+  },
+  {
+   "addr": 402584,
+   "name": "Material__4534_6eYBQFaJ81_FHZl1F6yKW",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_Y5kinZQ6Xe",
+   "count": 3,
+   "prof": 449232
+  },
+  {
+   "addr": 402620,
+   "name": "Material__4534_6eYBQFaJ81_RWaNEKvGkm",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_MlRxwQ0gpL",
+   "count": 3,
+   "prof": 449380
+  },
+  {
+   "addr": 402656,
+   "name": "Material__4534_6eYBQFaJ81_rN8p5O7p6U",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_pupEkLJQ65",
+   "count": 3,
+   "prof": 449528
+  },
+  {
+   "addr": 402692,
+   "name": "Material__4534_6eYBQFaJ81_rciLwRDfos",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_0pUZ63bMA4",
+   "count": 3,
+   "prof": 449676
+  },
+  {
+   "addr": 402728,
+   "name": "Material__4534_6eYBQFaJ81_m9kFydOVVq",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_zwzAENDGJV",
+   "count": 3,
+   "prof": 449824
+  },
+  {
+   "addr": 402764,
+   "name": "Material__4534_6eYBQFaJ81_oTPRr0e6FA",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_101S7HPjM8",
+   "count": 3,
+   "prof": 449972
+  },
+  {
+   "addr": 402800,
+   "name": "Material__4534_6eYBQFaJ81_omYqLMlfqg",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_APnUt1fm1j",
+   "count": 3,
+   "prof": 450120
+  },
+  {
+   "addr": 402836,
+   "name": "Material__4534_6eYBQFaJ81_FFc8Ah5Qrf",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_IaW8hqeueI",
+   "count": 3,
+   "prof": 450268
+  },
+  {
+   "addr": 402872,
+   "name": "Material__4534_6eYBQFaJ81_hPvYlRIDNg",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_TkARVZR0Ds",
+   "count": 3,
+   "prof": 450416
+  },
+  {
+   "addr": 402908,
+   "name": "Material__4534_6eYBQFaJ81_8pIK3y8Peb",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_HYEMyEWq1n",
+   "count": 3,
+   "prof": 450564
+  },
+  {
+   "addr": 402944,
+   "name": "Material__66_5K4r9Xc2Pk_IWI7qF4VkH",
+   "effect": "NormalSpecOverbright-fx_8RAumtZfM1_frYQWDPotZ",
+   "count": 1,
+   "prof": 450712
+  },
+  {
+   "addr": 402980,
+   "name": "Material__4534_6eYBQFaJ81_9exXT5bbbv",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_RrqVxLAOy9",
+   "count": 3,
+   "prof": 450764
+  },
+  {
+   "addr": 403016,
+   "name": "Material__4534_6eYBQFaJ81_r4R3MBFj8v",
+   "effect": "LightMapDC-fx_HGNfzs4hiV_eyTn3iSAM5",
+   "count": 3,
+   "prof": 450912
+  },
+  {
+   "addr": 403052,
+   "name": "Material__4161_ynipUKG3No_1H1JyHaoYL",
+   "effect": "LightMapDC-fx_2t0APmhI0s_I9YZU23lIc",
+   "count": 5,
+   "prof": 451060
+  },
+  {
+   "addr": 403088,
+   "name": "Material__4161_ynipUKG3No_tI8m19vmCZ",
+   "effect": "LightMapDC-fx_2t0APmhI0s_eGjxoXjAGx",
+   "count": 5,
+   "prof": 451312
+  },
+  {
+   "addr": 403124,
+   "name": "Material__4161_ynipUKG3No_oV5Y4fYPkS",
+   "effect": "LightMapDC-fx_2t0APmhI0s_4jF7ZYNRVd",
+   "count": 5,
+   "prof": 451564
+  },
+  {
+   "addr": 403160,
+   "name": "Material__4161_ynipUKG3No_crqCQMsVUX",
+   "effect": "LightMapDC-fx_2t0APmhI0s_STGR3su0Hx",
+   "count": 5,
+   "prof": 451816
+  },
+  {
+   "addr": 403196,
+   "name": "Material__4161_ynipUKG3No_Scrbhzxfz0",
+   "effect": "LightMapDC-fx_2t0APmhI0s_TPiUphdxe2",
+   "count": 5,
+   "prof": 452068
+  },
+  {
+   "addr": 403232,
+   "name": "Material__4161_ynipUKG3No_zspgnKy5tE",
+   "effect": "LightMapDC-fx_2t0APmhI0s_g5YOvtVkrn",
+   "count": 5,
+   "prof": 452320
+  },
+  {
+   "addr": 403268,
+   "name": "Material__4161_ynipUKG3No_KNVH7Wfi1z",
+   "effect": "LightMapDC-fx_2t0APmhI0s_PhKATD4GMs",
+   "count": 5,
+   "prof": 452572
+  },
+  {
+   "addr": 403304,
+   "name": "Material__4161_ynipUKG3No_fta7oiKuQl",
+   "effect": "LightMapDC-fx_2t0APmhI0s_yo4opxOK84",
+   "count": 5,
+   "prof": 452824
+  },
+  {
+   "addr": 403340,
+   "name": "Material__4161_ynipUKG3No_R0FvWCDz06",
+   "effect": "LightMapDC-fx_2t0APmhI0s_5HTaYd7tFs",
+   "count": 4,
+   "prof": 453076
+  },
+  {
+   "addr": 403376,
+   "name": "Material__4161_ynipUKG3No_OsN03T3z4D",
+   "effect": "LightMapDC-fx_2t0APmhI0s_U2zn9kaY4m",
+   "count": 5,
+   "prof": 453276
+  },
+  {
+   "addr": 403412,
+   "name": "Material__4161_ynipUKG3No_cPu6Q5IJB1",
+   "effect": "LightMapDC-fx_2t0APmhI0s_PJ53xAdfUx",
+   "count": 5,
+   "prof": 453528
+  },
+  {
+   "addr": 403448,
+   "name": "StorageBox_add_usZBauFkrF_DIIXJNZI95",
+   "effect": "SimpleAdditive-fx_5u9t3tgj2t_CJCmZFOv1Q",
+   "count": 1,
+   "prof": 453780
+  },
+  {
+   "addr": 403484,
+   "name": "Material__3220_8DYdD3ojxS_NIsNrmwUlN",
+   "effect": "SimpleAdditive-fx_ZMrF6cI6NX_lsaqv6Updv",
+   "count": 2,
+   "prof": 453832
+  },
+  {
+   "addr": 403520,
+   "name": "Material__3220_8DYdD3ojxS_KUUTsGCoRb",
+   "effect": "SimpleAdditive-fx_ZMrF6cI6NX_OzOLMrbAyf",
+   "count": 2,
+   "prof": 453928
+  },
+  {
+   "addr": 403556,
+   "name": "Material__3220_8DYdD3ojxS_gTxSl1C00G",
+   "effect": "SimpleAdditive-fx_ZMrF6cI6NX_JboH8S4kwI",
+   "count": 1,
+   "prof": 454024
+  },
+  {
+   "addr": 403592,
+   "name": "Material__3220_8DYdD3ojxS_OYGxlSXPtL",
+   "effect": "SimpleAdditive-fx_ZMrF6cI6NX_nqPTGfRyil",
+   "count": 1,
+   "prof": 454076
+  },
+  {
+   "addr": 403628,
+   "name": "Material__10_zdGc81tBDK_zMCk8R6BEu",
+   "effect": "SimpleAdditive-fx_xrpMCARCr4_oZYFYZ5B6k",
+   "count": 1,
+   "prof": 454128
+  },
+  {
+   "addr": 403664,
+   "name": "Material__10_zdGc81tBDK_aMeAjSWfch",
+   "effect": "SimpleAdditive-fx_xrpMCARCr4_JBdT3hVOfo",
+   "count": 1,
+   "prof": 454180
+  },
+  {
+   "addr": 403700,
+   "name": "Material__28_ItdsWlhi1v_W2rLc6AveP",
+   "effect": "AlphaMasking-fx_m1eHxtWPB1_hT8FDDaKoH",
+   "count": 6,
+   "prof": 454232
+  }
+ ],
+ "engine": {
+  "_1_-_Default_1xVPfvJcrg_rQF69AzBla": {
+   "effect": "ProfileCOMMON__1_-_Default-fx1338029509_FlippedPlane_frAQBc8Wsa_RYwTiizs2t",
+   "bind": {}
+  },
+  "StorageBox_pKSKQEDc8M_2iSKoUn9jv": {
+   "effect": "TDKR-Vehicles-fx_6X9ISz24DS_olsspWqMwo",
+   "bind": {
+    "DiffuseMap": "StorageBox_D.tga",
+    "MaskMap": "StorageBox_M.tga",
+    "ReflectionMap": "GC_refl_exterior.tga"
+   }
+  },
+  "Material__6034_xdCAB7nmt6_wNEFXgz2lI": {
+   "effect": "Reflections-fx_Nn3SyYcW0u_658emjMaKX",
+   "bind": {
+    "DiffuseMap": "GC_Shop_Reflections.tga"
+   }
+  },
+  "Material__340_CZEYIFmh2K_CXJxhZFaBp": {
+   "effect": "AlphaMasking-fx_HKEtXTFKDP_NfmJlqzWBv",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop.tga"
+   }
+  },
+  "_1_-_Default_X4l28T8yGh_WmqflCvCVi": {
+   "effect": "AlphaMasking-fx_8uQ5NLHrYz_5UaY0bytXh",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "vegetation.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_G0mzmTJq4s": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_DLgjznUiKD",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Fence.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_e3CHahREY7": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_vDgj5ogqoU",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_UdgZXtS53I": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_DnouIVLqOm",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_06SiqRTTdr": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_zCDJAs36iL",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_DMUS_fence.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_CAquxpxf2A": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_D2STB2EN0B",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  },
+  "Material__345_yct4Aj6PKn_nSOKlq8Azr": {
+   "effect": "StandardDiffuseDC-fx_hFQr77BIEl_ZpzRiKYpZg",
+   "bind": {
+    "DiffuseMap": "GC_Z1_Props_Street.tga"
+   }
+  },
+  "Material__345_yct4Aj6PKn_qyX3g5Ayy6": {
+   "effect": "StandardDiffuseDC-fx_hFQr77BIEl_HqDoGL4RHy",
+   "bind": {
+    "DiffuseMap": "GC_Park_atlas_props.tga"
+   }
+  },
+  "Material__345_yct4Aj6PKn_8K69rklPGt": {
+   "effect": "StandardDiffuseDC-fx_hFQr77BIEl_1leDYT3CEW",
+   "bind": {
+    "DiffuseMap": "GC_Z1_Props_Rooftop.tga"
+   }
+  },
+  "Material__345_yct4Aj6PKn_S7NLt2nQfj": {
+   "effect": "StandardDiffuseDC-fx_hFQr77BIEl_fUR2IZ2mB1",
+   "bind": {
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga"
+   }
+  },
+  "Material__79_iQTqVaAUnJ_vHeuSEBMSP": {
+   "effect": "StandardDiffuseDC-fx_3SL3XByImc_vUmHVQGsTm",
+   "bind": {
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_30KKziHtRb": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_8arF3SLLny",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Park_atlas_tiles.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_B6Uiu1gJ03": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_OE2u8qvJP3",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_footprint_Vpow_furnal.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_9oDUTOX7NY": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_OhmWvn7MIr",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Wall.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_wObdYSEvWR": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_EkZgzUny1s",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_SXC_Rooftop_ground.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_rlvBndn4cX": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_BLzZ02h67Y",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_33hfNWPgr8": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_PaoaKk5lQn",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Park_statue.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_FdgcL9fOPy": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_81nP7VxEE4",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_FtysL1Q4GT": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_c98bI89qTP",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_Q5PNEEfuTl": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_OPwD7kkqPq",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_IndustrialProps.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_WfUTjlTOSj": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_CH9WpIYaPH",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_DMUS_wall.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_H133TyWLIB": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_3iH7JTRsbY",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_DMUS_wall.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_s7HX27KbNC": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_4G3sV0ykPd",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_GA_T_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_FptEIP68v8": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_CytJR8Cu6X",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Door_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_HAD2vQkWrp": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ZdV60GXAPZ",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_footprint_AA_ground.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_6z3lSTpgTp": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_qiwdo3Hrdt",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_SXC_hedge.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_8uA8D9eE4Z": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_RpRVcwo6HM",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GothamCity_bridge2.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_LBHSkD6qr7": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ADtmvWvN20",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Truck_wheels_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_MA0OSa91e9": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_J1hAkTkUFv",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Walls.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_AI4OMrxF2l": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_gqVNBeg10g",
+   "bind": {
+    "LightMap": "LightMapSampler.tga",
+    "DiffuseMap": "GC_Footprint_IC.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_Qyw8byxIFw": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_tRPWacKwhz",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_T_Concrete_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_ubpCzI71MR": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_OQfxFYy0qu",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_T_Concrete_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_YlapdvxlUs": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_VOgDko8fnP",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_kfrjRZDdw6": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_BH29Cm3ORY",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Brick.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_wWR2uaAtZV": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_LcpX33e1IO",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_roof_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_BQjgnZSCe8": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_B5yi9ijSAj",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Roof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_456uNhaAAZ": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_nPQHnppZqt",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings_3.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_M9T0ci76Ro": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_7eJqXZMwEC",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_VPOW_Tiles2.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_WsIMd3jKuW": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_jHkpC99IR3",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "LightMapSampler.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_E0pAli9Mk6": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_wPswERoC0n",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Roof_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_SsMZ6uUeHJ": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_pyZdABIGpA",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Items.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_0ouihnKJGj": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_j8Ut6sSUOT",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Items.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_USmJqhTmfA": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_kvaPWolzch",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_footprint_AA_ground_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_pfr6SkbeR8": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_UKYckdKB9P",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor_2.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_LUlctAOGXl": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_PKPlKtGBly",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_footprint_awt_marble.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_zHcL8AII08": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_dP7MVJKo22",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "bridge_tile.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_NLYG35SqTG": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_n8YXDzJFnl",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "bridge_tile.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_gKq6MbYsSX": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_tifPRHmoGr",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_GA_T_00.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_K31tz14EbA": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_vy60MjweSb",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Park_atlas_tiles.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_mnfMwafStM": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1KG3aMSFgD",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_Dinner_objects.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_tw5K1eD28K": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_icLMPCqabz",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_GA_TH.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_nWrc6hIXQd": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_in4mMxkcNZ",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_ivVlvkI3S1": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_czX4fr0RMt",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Wall.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_GEdkVpeKgH": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_WSxzzthFYq",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_LB_Cinema.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_YMq1we9QL2": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_aJ5P1fJXE0",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_VRS_Reservoir.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_n3QLJwWy0v": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_rKEs8yKDAV",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_roof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_Lq080gXW8z": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_NKb4LTfLMM",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_footprint_aa_concrete.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_aErAnGePtx": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_W5v6qCQNwW",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Door_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_7iE8TLmAZu": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_5v3gYKbBkp",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Walls.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_AOg1vriJN0": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_sXVJpKqtgP",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Park_grass.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_0SCA0zKFZd": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_4X29XdBh8j",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_CBCE_Atlas.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_ykKPltKud5": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_SKQc5eTRuv",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_T_Concrete_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_svmUM03Ymj": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_EUWDutAgMV",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_gwsA1Anevj": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_IqtYFpEFlj",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_T_Concrete_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_YLjC0XVLuq": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_PJC0d543tU",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Brick.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_VYO3dJfBuC": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9CaGJhxWkh",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_RXXNsyE4NH": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ov1eETvOmd",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_IndustrialProps.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_bSUz2k4XdH": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_RkTZCBldIk",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Roof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_vgEsjieOpx": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9VxSffSaIT",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "gothamcity_roads_details.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_ythRDUSLUc": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_cfBn4tzYAB",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "trunk.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_ZaOA2jb1ND": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_bCkFeXVwVQ",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Diner_Floor.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_X6hhgnz4Mf": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_CX3vP20n39",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Items.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_m9WgMaF0mJ": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1it18OLKdt",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor_2.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_AQsoC7WO95": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_KATWd43Ofl",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_SXC_Brick.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_TDHqyzKXoJ": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_efK2h3B98k",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_02_Shop.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_I67ekrUydL": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_MFchjR1wTY",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Truck_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_xfRWIz9RwJ": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_RJBUDZXXFy",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_Dinner_objects.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_CRyp0qZbXH": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_akyvPmMoLB",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_GA_TH.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_fLf8hgMcVO": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_jtanzWWpCm",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_details_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_8m6xqqEZ1E": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_xm7E0c9GUa",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Roof_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_hqhH2Wlcvy": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_NaQPFKnSJu",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_SXC_Brick_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_nn79XAVJRr": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_L4MAeQXggM",
+   "bind": {
+    "LightMap": "LightMapSampler.tga",
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_C4iU1b6GvS": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_z1uBdbraRv",
+   "bind": {
+    "LightMap": "LightMapSampler.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_cY7RJCXTNI": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1TiZMqvUrw",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Park_dirt.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_xYctR9RF3Y": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_fkulpeHgd1",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_04.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_A0XTaehlb8": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_xVeBJKYQu7",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Residential_Props_Railroad.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_1I6BDvjwRg": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_tRbhXVz9Az",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_qZTqOpaZDA": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_w6eX3aKWTS",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_n3VsamFkqU": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_qyRvJykTwF",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Wall.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_jq873tLM70": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1BcDuG07mj",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_SXC_Rooftop_ground.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_pMSsvHgod6": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_Rm3tBHYf2F",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_GA_T_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_uFDFDHnZw3": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_GX3LkY8vbd",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_DMUS_wall.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_aUSvXonVZY": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_L1gm3H3VlG",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_T_Concrete_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_zs08I7m4ba": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_jXaRgVNcJN",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Shops_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_ozZhzLj2hX": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_YXjmxEHysO",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Statues_Atlas.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_YpOhzGZdGT": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_yhlbqHeXKI",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Truck_wheels_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_vRdS9AaopP": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_zkPJe5AhAz",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Wall_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_K38Dwmj69I": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_bPCxcxwTJI",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_VPOW_Tiles.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_0SCl9nTdej": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_K6KVxSN2yF",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_8vuKrACuTi": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_MgZRlccTGX",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Rooftop_ground.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_KZABTNEQDg": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9DM5uXp9fE",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Park_atlas_props.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_KCjSE1FtVo": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_sYmP69ydQs",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_details_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_ZWwjV3ZoDN": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_sqEsoZncwB",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Items.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_J8jECD92Bx": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_Jq8VJQUEOL",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_footprint_GC_ceiling_T.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_i8nfR9Od6x": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ch5N00ZEPd",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor_2.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_Z93mGppF3l": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_mldTHodT9c",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_GA_TH.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_cgVSEe4d3m": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9bgtUaYhSJ",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_t3KmuvFnij": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_bHE3wyiGOf",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_W1ssFwxwZr": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_wndit6Bb5r",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_SXC_Brick_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_vojWNZSlQi": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_ptnzsTGlZH",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_footprint_GC_zebra_T.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_aWXxsxi3AC": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_FqDMeb4hgx",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_02_v.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_fNw0Kkibxe": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_h0XXdea2vQ",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_roof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_gKZmCVSQ9i": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_hT3v5G2OhZ",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Shops_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_TeVZOXj6Sj": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_CvUX1zCN8t",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Shops_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_Ruv0HclWhC": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9AMQKHQNTk",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Statues_Atlas.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_kPrCtcI90G": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_9NY7bxX4xf",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "bridge_1.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_JSCLwxsz3z": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_p8YjRnkbQU",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "bridge_1.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_9LhIU3FqTy": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_S3mPW6Yl2M",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Wall_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_Z37CFjIy9z": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_DvZdPUBXCB",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings_2.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_IgH05yfrCM": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_nmJIgWyT7Y",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_SXC_Atlas2.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_cf1hKIKIEQ": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_vfoH1VDKMY",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_goKEVwwgXE": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_xiTmCX4VVS",
+   "bind": {
+    "LightMap": "LightMapSampler.tga",
+    "DiffuseMap": "GC_Footprint_VD_Items.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_41w2UFYwoX": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_GiQUNloYdC",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GothamCity_asphalt_tile.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_R03U9ph3iH": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_BcjNemZauO",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_9cdbhY3sPW": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_a1QFt7EeMp",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Park_statue.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_NEaZDFtvsX": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_bgPei2Rv4z",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_2JPwKFB81i": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_Zw234XoJil",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_STc7TxJS5f": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_FPt8VwYU9K",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Rooftop_ground.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_BPg1kIAEXD": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_gjZIwWsOrk",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Park_atlas_props.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_tf4IA5WaZ8": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_dao2rPY9Tm",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_roof_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_utVL7pdQQG": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_awIzaTgyKn",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Truck_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_i6BxMDmjoT": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_nJwoIY54dG",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_CC_windows02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_NCjFkhMJ9N": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_D3Roe9tUhz",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_GA_floor_T_00.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_b526TR5xSc": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_1XXwN9r6Mj",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_mOZGylOWSP": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_J1D4Vjfrfw",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_footprint_GC_ceiling_T.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_ROc6poyfsR": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_dkICuBVbdX",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Roof_02.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_JjXwy5PcXL": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_aUwIQjMDtC",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_Props_Excavator.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_NVufCXt5NW": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_icsSIwDbDS",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_roof_01.tga"
+   }
+  },
+  "tiles_KjsfSXF4YP_fSWL3TtuQP": {
+   "effect": "LightMapDC-fx_h2Q6dQAjy4_zVipntaBaw",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Shops_02.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_MlNG8fszdH": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_qfbroh4tkB",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_EfxVJqn0Hi": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_9IUg7z2jqh",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_4ZYyjogess": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_GqKDZGxoOe",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_guZlHg4yAL": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_TwRWUvJTqu",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_rFTqQfhtdH": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_rtybk1crWf",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "City_BKG.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_y3pukiyS5c": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_O2D3GWHdcV",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_oH1PmUbEzv": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_HfowD8t408",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "buildings4_Gp1a83XIdD_im9qx2ctP2": {
+   "effect": "AlphaMasking-fx_pHG8vmB5uw_9d9dqvxWr1",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "Material__4182_hGiU3Q1VBL_Y82GV5gMZ8": {
+   "effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_WIgNsQjiC0",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "Texture1": "GC_Park_grass.tga",
+    "Texture2": "GC_Park_dirt.tga"
+   }
+  },
+  "Material__4182_hGiU3Q1VBL_poeCYHjZQn": {
+   "effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_ORXtJTrPEv",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "Texture1": "GC_Park_dirt.tga",
+    "Texture2": "GC_Park_grass.tga"
+   }
+  },
+  "Material__4182_hGiU3Q1VBL_gLTfbnLjBs": {
+   "effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_b5anh2CV0A",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "Texture1": "GC_Park_dirt.tga",
+    "Texture2": "GC_Park_grass.tga"
+   }
+  },
+  "Material__4182_hGiU3Q1VBL_x2xDOyFyOI": {
+   "effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_AljpV00j6G",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "Texture1": "GC_Park_grass.tga",
+    "Texture2": "GC_Park_dirt.tga"
+   }
+  },
+  "_3_-_Default_kGwrJFxR6N_ispIM9oCIp": {
+   "effect": "NV_Glass-fx_bXt18J7NQQ_BB3moSVgHC",
+   "bind": {
+    "DiffuseTextureSampler": "GC_footprint_AB_atlas.tga",
+    "DiffuseMaskSampler": "GC_footprint_AB_atlas_rfl.tga",
+    "ReflectionMapSampler": "confroom_Reflection.tga",
+    "LightmapTextureSampler": "confroom_lightmap.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_SH4aSk6eXu": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_AgZw3YzTY1",
+   "bind": {
+    "NormalMap": "GothamCity_Road_v2_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GothamCity_Road_v1_Island_1.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_paaiWPLwDT": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_zT0P5A2R8G",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_roof_01.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_kTRm0MKHCq": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_bxzgyMxVMM",
+   "bind": {
+    "NormalMap": "GC_Footprint_VD_Floor_2_NRM.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor_2.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_53zPevMKwf": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_cOGIWhSQHa",
+   "bind": {
+    "NormalMap": "GC_footprint_awt_marble.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_footprint_awt_marble.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_0rNljM2zbn": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wPrNZH0cPG",
+   "bind": {
+    "NormalMap": "GC_Footprint_VD_Floor_2_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_tGETz3g9Yt": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_vVM24tZMky",
+   "bind": {
+    "NormalMap": "GC_VPOW_Tiles_NRM.tga",
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_VPOW_Tiles.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_9cieLr3N4d": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_xRBW8B9EZF",
+   "bind": {
+    "NormalMap": "GC_Cath_of_learning_Rooftop_ground.tga",
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Rooftop_ground.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_S6HVFpazsC": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wp5rVitT7q",
+   "bind": {
+    "NormalMap": "GC_T_Concrete_01_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_T_Concrete_02.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_SQmAsorh9h": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wvlefn03A5",
+   "bind": {
+    "NormalMap": "GC_VPOW_Ground_Tile_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_SXC_Rooftop_ground.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_BbDr9YDQSY": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ztcvK8XzZb",
+   "bind": {
+    "NormalMap": "GC_SXC_Rooftop_ground_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_SXC_Rooftop_ground.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_L5gdRpIXJ6": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_7SfOAI8xkp",
+   "bind": {
+    "NormalMap": "GC_Footprint_VD_Floor_2_NRM.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_3uv8WaDDx4": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_3fb1fXqfm8",
+   "bind": {
+    "NormalMap": "bridge_tile_nrm.tga",
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "bridge_tile.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_r7bed0KPb9": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_0hg0ANLZMu",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga",
+    "DiffuseMaskSampler": "HC_Prop_BillboardRoof_01_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_bIbSBRl1sc": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_PBkwzFeaKQ",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_CC_windows02.tga",
+    "DiffuseMaskSampler": "GC_Footprint_CC_windows02_ref.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_kSP3msI6XZ": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_Ex8ksHpDhF",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Glass_Building.tga",
+    "DiffuseMaskSampler": "GC_Glass_Building_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_wgyDrgY9Tc": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_MEwGusP3Sj",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_AWT.tga",
+    "DiffuseMaskSampler": "GC_Footprint_AWT_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_UY16XSOiiZ": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_X1dY3RIctv",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_IC.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_EFPgTs79ax": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_qTo9VxlSDa",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_RandomObj.tga",
+    "DiffuseMaskSampler": "GC_Cath_of_learning_RandomObj_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_ifOpKg0RM3": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_7uR5QwN3gc",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_T_Windows_03.tga",
+    "DiffuseMaskSampler": "GC_T_Windows_03_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_0OvEXdaEYS": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_RXuN3aKtr6",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_footprint_VA_BAR.tga",
+    "DiffuseMaskSampler": "GC_footprint_VA_BAR_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_2Yl4L4vSa6": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_8fsa4aLEli",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows2_v.tga",
+    "DiffuseMaskSampler": "GC_Cath_of_learning_Windows2_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_iMpIzXoasw": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_xKTm1QJJ0A",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Residential_Props_Monorail.tga",
+    "DiffuseMaskSampler": "GC_Residential_Props_Monorail_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_xz2Y2fKO8c": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_tGzU6wy9iU",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_01.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Windows_01_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_Un6TDQvVpD": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_7WYFWJhnUq",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Windows_05_v.TGA",
+    "DiffuseMaskSampler": "GC_Residential_BD_04_Windows_05_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_ABJkOmfySd": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_lfyXC9nuPU",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_CBCE_Atlas.tga",
+    "DiffuseMaskSampler": "GC_CBCE_Atlas_ref.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_U59vVJVXO6": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_sZHXrZ3S2G",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_06.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_06_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_2pI1y7pEgB": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_aMx3QRb0xN",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_LB_Cinema.tga",
+    "DiffuseMaskSampler": "GC_Footprint_LB_Cinema_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_76uAIrnHfc": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_pN6u9bEKwO",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings_2.tga",
+    "DiffuseMaskSampler": "GC_Footprint_VD_Buildings_2_Refl.TGA"
+   }
+  },
+  "Material__69_zHOTJcJwef_8iYfRYDLB9": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_FYWeSgMJM0",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Glass_Building.tga",
+    "DiffuseMaskSampler": "GC_Glass_Building_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_6ebsOTWbp8": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_RxG5WLsE9f",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_02_v.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Windows_02_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_ELxdEQOmio": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_XIDgvWpgXG",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows_v.tga",
+    "DiffuseMaskSampler": "GC_Cath_of_learning_Windows_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_nsaw4Ee2fg": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_gcVQq7sZe2",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows2_v.tga",
+    "DiffuseMaskSampler": "GC_Cath_of_learning_Windows2_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_6E5F6wvy5J": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_Wq21JU2Idl",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_01.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Windows_01_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_vFDy6HLhk9": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_vKJa2djXrv",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows_v.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_wYsVx5W0yG": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_1Rggxp9WW1",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Windows_05_v.TGA",
+    "DiffuseMaskSampler": "GC_Residential_BD_04_Windows_05_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_yefMSqsKTl": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_83ALuOHiI6",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows2_v.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_Sd1tY9cmDz": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_XhBhUCvxQX",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Shops_02.tga",
+    "DiffuseMaskSampler": "GC_Z1_Shops_02_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_XVZsObjhSX": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_PdSIiwEtLH",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_06.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_06_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_ujLwzo8X96": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_pcfJ2aHgWe",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_details_01.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_details_01_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_PRW0M25Q8A": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_pNpLPnVhxS",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_LB_Cinema.tga",
+    "DiffuseMaskSampler": "GC_Footprint_LB_Cinema_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_AfmWR9Y4CP": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_WyfdiFwB4s",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_VaDXAq6SHA": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_51DYzsDa6K",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings_2.tga",
+    "DiffuseMaskSampler": "GC_Footprint_VD_Buildings_2_Refl.TGA"
+   }
+  },
+  "Material__69_zHOTJcJwef_3eM6KWvIAA": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_LXYpYf1bCi",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_02_v.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Windows_02_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_WozXys0QpZ": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_SKJEO4Lb4b",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings_3.tga",
+    "DiffuseMaskSampler": "GC_Footprint_VD_Buildings_3_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_U5Qe8dZhX6": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_G9Uv54oGDD",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_TallBuilding.tga",
+    "DiffuseMaskSampler": "GC_TallBuilding_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_8jpgBfQtNR": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_3rnPGGKZPb",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows_v.tga",
+    "DiffuseMaskSampler": "GC_Cath_of_learning_Windows_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_MY20H08Xwi": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_RxJ7Gc2dwP",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_CBCE_Atlas.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_hUPEYYFiiH": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_0at2jVEr6i",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_T_Windows_03.tga",
+    "DiffuseMaskSampler": "GC_T_Windows_03_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_s8yv2BTixW": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_S6HDN1kvhy",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows_v.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_wOCWaqQ12l": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_go5eeCVjy4",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_GC_windows_T.tga",
+    "DiffuseMaskSampler": "GC_Footprint_GC_windows_T_refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_4BG5xMLLGy": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_rf58Tp9dlF",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_03.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Windows_03_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_YsA4K3Z6qe": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_bR4bVrNFVC",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_04.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Windows_04_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_EehjTFOB7B": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_Y0dLL7FNP3",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Door_01.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Door_01_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_ohRDz6vZVD": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_oSptqXhGNF",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows3_v.tga",
+    "DiffuseMaskSampler": "GC_Cath_of_learning_Windows3_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_axbIRBtHa9": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_ReB6mxB0ZR",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_CBCE_Atlas.tga",
+    "DiffuseMaskSampler": "GC_CBCE_Atlas_ref.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_K7lIhDLqGD": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_qrMZEYnTQm",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Door_02.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_04_Door_02_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_m5SgMHz26Y": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_yxsvVr0wSS",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings_3.tga",
+    "DiffuseMaskSampler": "GC_Footprint_VD_Buildings_3_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_NakyOO9TJX": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_jkS8taguJg",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings_2.tga",
+    "DiffuseMaskSampler": "GC_Footprint_VD_Buildings_2_Refl.TGA"
+   }
+  },
+  "Material__69_zHOTJcJwef_kxga7ZYwr4": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_QXpS68k8Rb",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings.tga",
+    "DiffuseMaskSampler": "GC_Footprint_VD_Buildings_Refl.TGA"
+   }
+  },
+  "Material__69_zHOTJcJwef_eeMydkfj2i": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_aTG2C7Qia3",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_04.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_04_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_J8zmglOu2G": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_13Pl32CTfF",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Windows_06.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_04_Windows_06_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_Kos6Ydc0ah": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_ohPm2YQox9",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga",
+    "DiffuseMaskSampler": "HC_Prop_BillboardRoof_01_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_9SKb47Qxlf": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_MkQYpMbiZj",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_CC_windows02.tga",
+    "DiffuseMaskSampler": "GC_Footprint_CC_windows02_ref.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_rqy3wHKdP8": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_FjnWpMXD22",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_03.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Windows_03_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_XjkOCjQJ0c": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_es092dAcDH",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Windows_04.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Windows_04_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_hXnZfIpnL4": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_yIXmWiNHDa",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_01_Door_01.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_01_Door_01_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_wYWcp6k8ca": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_IzwW8GrZPp",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows3_v.tga",
+    "DiffuseMaskSampler": "GC_Cath_of_learning_Windows3_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_HSGvY134iP": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_ctZ8rqYI0j",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_05.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_05_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_OdAsExNBNc": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_lCeClSxjb7",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Z1_Shops_02.tga",
+    "DiffuseMaskSampler": "GC_Z1_Shops_02_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_Eu75ImAuFo": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_NDG5OqjGag",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_04_Door_02.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_04_Door_02_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_gEfAATAO8k": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_iMD1uTyJ7x",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_details_01.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_details_01_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_bIRxxEqm7G": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_k8zTp0KVDi",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Windows2_v.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_LXY4dLywY6": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_YOpb2ewRo8",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_footprint_AB_atlas.tga",
+    "DiffuseMaskSampler": "GC_footprint_AB_atlas_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_8bIc6hBsZX": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_pHUqINoKRX",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_SXC_Atlas.tga",
+    "DiffuseMaskSampler": "GC_SXC_Atlas_Refl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_4Lq5Tx60lu": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_DwghPpNQni",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Buildings.tga",
+    "DiffuseMaskSampler": "GC_Footprint_VD_Buildings_Refl.TGA"
+   }
+  },
+  "Material__69_zHOTJcJwef_efyAMnFn1x": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_da1xIhy5fB",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_07.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_07_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_E2HxsdX1Kl": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_H2rTdqgIka",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_01.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_01_rfl.tga"
+   }
+  },
+  "Material__69_zHOTJcJwef_Sva2AIvKLu": {
+   "effect": "LightMapDC-fx_a5jiZPnCED_WXtqtyKwsZ",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_04.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_04_rfl.tga"
+   }
+  },
+  "Material__21_NGl6WXVW0i_kXT8ZpDQjl": {
+   "effect": "LightMapDC-fx_vHJniJMmpQ_dt8Zaj95Sz",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_GB_windows_01_TH.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Footprint_GB_windows_01_TH_refl.tga"
+   }
+  },
+  "Material__21_NGl6WXVW0i_0FlcbtqyiC": {
+   "effect": "LightMapDC-fx_vHJniJMmpQ_947fr7MoUF",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_04.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_04_rfl.tga"
+   }
+  },
+  "Material__21_NGl6WXVW0i_nG96tWCTpb": {
+   "effect": "LightMapDC-fx_vHJniJMmpQ_vQEAVXHGUE",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_04.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_04_rfl.tga"
+   }
+  },
+  "Material__21_NGl6WXVW0i_8QRKGcEr9E": {
+   "effect": "LightMapDC-fx_vHJniJMmpQ_JXpgSkSjBb",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Footprint_CC_windows02.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Footprint_CC_windows02_ref.tga"
+   }
+  },
+  "Material__21_NGl6WXVW0i_PZXdphPRP5": {
+   "effect": "LightMapDC-fx_vHJniJMmpQ_jJT8GSvwdk",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_footprint_AB_atlas.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_footprint_AB_atlas_rfl.tga"
+   }
+  },
+  "Material__21_NGl6WXVW0i_dPcNj711hz": {
+   "effect": "LightMapDC-fx_vHJniJMmpQ_Ylz86bsQem",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_03.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_03_refl.tga"
+   }
+  },
+  "Material__21_NGl6WXVW0i_EldWDBwkev": {
+   "effect": "LightMapDC-fx_vHJniJMmpQ_V7fdWFcRBR",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_wall_03.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Residential_BD_03_wall_03_refl.tga"
+   }
+  },
+  "Material__21_NGl6WXVW0i_WK2uFXHuib": {
+   "effect": "LightMapDC-fx_vHJniJMmpQ_QR4yfm8dE4",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_CBCE_Atlas.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_CBCE_Atlas_ref.tga"
+   }
+  },
+  "diner2_IAQI66y2qt_OM1JOkib5I": {
+   "effect": "NormalSpecOverbright-fx_siEsoM3wSt_uF65y5qC32",
+   "bind": {
+    "DiffuseMap": "GC_Cath_of_learning_Rooftop_ground.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_DgG1FdC5dy": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_FTnTZSg06V",
+   "bind": {
+    "NormalMap": "GC_T_Concrete_02_NRM.tga",
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_T_Concrete_02.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_RZVStdwwCU": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_GE2qW4HvjB",
+   "bind": {
+    "NormalMap": "GC_SXC_ground_tile.tga",
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_SXC_ground_tile.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_Zf5LDFzwJs": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_zCgWm0oojR",
+   "bind": {
+    "NormalMap": "GC_Cath_of_learning_Rooftop_ground_NRM.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Rooftop_ground.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_6sah2jzzjF": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_EkG1BZUdWp",
+   "bind": {
+    "NormalMap": "GothamCity_asphalt_tile_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GothamCity_asphalt_tile.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_2vYTHHoJCD": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_WtxsrDzQOU",
+   "bind": {
+    "NormalMap": "GC_SXC_Rooftop_ground_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Park_atlas_tiles.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_aLUO3NPVQN": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_eC83luem7r",
+   "bind": {
+    "NormalMap": "GC_T_Concrete_02_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_T_Concrete_02.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_we7p5ieeI8": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_jnEo925b76",
+   "bind": {
+    "NormalMap": "GothamCity_Road_Crossings_NRM.tga",
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GothamCity_Road_Crossings_Island_1.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_cRjrXkzmQa": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_tYWmFGzuR3",
+   "bind": {
+    "NormalMap": "GothamCity_Road_v3_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GothamCity_Road_v2_Island_1.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_yIUFl0XjDq": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_4DXFe9OH46",
+   "bind": {
+    "NormalMap": "GC_T_Concrete_01_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_T_Concrete_01.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_0YKI4JSgVS": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_DsE9G4Pxx5",
+   "bind": {
+    "NormalMap": "GC_Footprint_GC_floor_NRM.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_GC_floor_T.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_0TPW4sVCdF": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_0qZFUD7BQv",
+   "bind": {
+    "NormalMap": "GC_Cath_of_learning_Rooftop_ground_NRM.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Cath_of_learning_Rooftop_ground.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_yCCsn00KTM": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_sdgaixwB9d",
+   "bind": {
+    "NormalMap": "GC_Park_atlas_tiles_Refl.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Park_atlas_tiles.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_KL4au1o6yA": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ZMvbcowhjv",
+   "bind": {
+    "NormalMap": "GC_Footprint_GC_floor_NRM.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Residential_BD_03_roof_01.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_HDPQPeQ8Hz": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_LKxH3WfdXC",
+   "bind": {
+    "NormalMap": "bridge_tile_nrm.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "bridge_tile.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_j95k7Ai4Z9": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ynx6mMA0N7",
+   "bind": {
+    "NormalMap": "GC_footprint_AA_ground_02.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_footprint_AA_ground_02.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_ZNxGFFhR1Q": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_3xaG0PEPp1",
+   "bind": {
+    "NormalMap": "GC_Park_atlas_tiles_Refl.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Park_atlas_tiles.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_98VVWnEzSJ": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_MD6Wuzlezf",
+   "bind": {
+    "NormalMap": "GothamCity_Road_v2_NRM.tga",
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GothamCity_Road_v1_Island_1.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_fQv2MeiKlE": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_sfumcgLBzV",
+   "bind": {
+    "NormalMap": "GothamCity_Road_v3_NRM.tga",
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GothamCity_Road_v2_Island_1.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_yDwOvqaIeg": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_OowgmHlpbl",
+   "bind": {
+    "NormalMap": "GC_footprint_AA_ground_02_NRM.tga",
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_footprint_AA_ground_02.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_ZjCzIKAtaB": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_kroPTZZPye",
+   "bind": {
+    "NormalMap": "GC_VPOW_Ground_Tile_NRM.tga",
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_VPOW_Ground_Tile.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_R85PlbWG9m": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_nf44veM0gC",
+   "bind": {
+    "NormalMap": "GC_Footprint_VD_Floor_NRM.tga",
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Floor.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_rOHYmmgZ0T": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_VUhDpTNHVc",
+   "bind": {
+    "NormalMap": "GC_SXC_Rooftop_ground_NRM.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_SXC_Rooftop_ground.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_of9VjztUg5": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wQHuylQvPu",
+   "bind": {
+    "NormalMap": "GC_SXC_Rooftop_ground.tga",
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_SXC_Rooftop_ground.tga"
+   }
+  },
+  "Material__3242_XsC6Pt0GIs_ngdq6ON7GZ": {
+   "effect": "NormalSpecOverbright-fx_5qY2lFhXWG_Wq0L8hVnUs",
+   "bind": {
+    "NormalMap": "GC_Residential_Dinner_objects_Refl.tga",
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_Dinner_objects.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_S46TFudBBK": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_dIoA7DDHLh",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "vegetation.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_atIYHgVdPe": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_N9wGTC2s6a",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_VD_Fence.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_FHZl1F6yKW": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_Y5kinZQ6Xe",
+   "bind": {
+    "LightMap": "LightMapSampler.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_RWaNEKvGkm": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_MlRxwQ0gpL",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Footprint_STD_alpha_T.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_rN8p5O7p6U": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_pupEkLJQ65",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Roads0.tga",
+    "DiffuseMap": "GC_Footprint_STD_alpha_T.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_rciLwRDfos": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_0pUZ63bMA4",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_m9kFydOVVq": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_zwzAENDGJV",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_oTPRr0e6FA": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_101S7HPjM8",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_omYqLMlfqg": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_APnUt1fm1j",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_FFc8Ah5Qrf": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_IaW8hqeueI",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_hPvYlRIDNg": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_TkARVZR0Ds",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_8pIK3y8Peb": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_HYEMyEWq1n",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "Material__66_5K4r9Xc2Pk_IWI7qF4VkH": {
+   "effect": "NormalSpecOverbright-fx_8RAumtZfM1_frYQWDPotZ",
+   "bind": {
+    "NormalMap": "GC_Park_water.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_9exXT5bbbv": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_RrqVxLAOy9",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "Material__4534_6eYBQFaJ81_r4R3MBFj8v": {
+   "effect": "LightMapDC-fx_HGNfzs4hiV_eyTn3iSAM5",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Rooftop_Alpha.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_1H1JyHaoYL": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_I9YZU23lIc",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Shops_02.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Z1_Shops_02_Refl.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_tI8m19vmCZ": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_eGjxoXjAGx",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Shops_01.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Z1_Shops_01_Refl.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_oV5Y4fYPkS": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_4jF7ZYNRVd",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_CBCE_Atlas.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_CBCE_Atlas_ref.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_crqCQMsVUX": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_STGR3su0Hx",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_Z1_Shops_02.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Z1_Shops_02_Refl.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_Scrbhzxfz0": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_TPiUphdxe2",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Z1_Shops_02.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Z1_Shops_02_Refl.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_zspgnKy5tE": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_g5YOvtVkrn",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Residential_Dinner_objects.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Residential_Dinner_objects_Refl.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_KNVH7Wfi1z": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_PhKATD4GMs",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_LB_Cinema.tga",
+    "ReflectionMapSampler": null,
+    "DiffuseMaskSampler": "GC_Footprint_LB_Cinema_Refl.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_fta7oiKuQl": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_yo4opxOK84",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_Footprint_LB_Cinema.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Footprint_LB_Cinema_Refl.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_R0FvWCDz06": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_5HTaYd7tFs",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_B0.tga",
+    "DiffuseMap": "GC_footprint_GC_zebra_T.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga"
+   }
+  },
+  "Material__4161_ynipUKG3No_OsN03T3z4D": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_U2zn9kaY4m",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_Landmarks0.tga",
+    "DiffuseMap": "GC_SXC_Atlas2.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": null
+   }
+  },
+  "Material__4161_ynipUKG3No_cPu6Q5IJB1": {
+   "effect": "LightMapDC-fx_2t0APmhI0s_PJ53xAdfUx",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Shops_01.tga",
+    "ReflectionMapSampler": "GC_refl_exterior.tga",
+    "DiffuseMaskSampler": "GC_Z1_Shops_01_Refl.tga"
+   }
+  },
+  "StorageBox_add_usZBauFkrF_DIIXJNZI95": {
+   "effect": "SimpleAdditive-fx_5u9t3tgj2t_CJCmZFOv1Q",
+   "bind": {
+    "DiffuseMap": "StorageBox_D.tga"
+   }
+  },
+  "Material__3220_8DYdD3ojxS_NIsNrmwUlN": {
+   "effect": "SimpleAdditive-fx_ZMrF6cI6NX_lsaqv6Updv",
+   "bind": {
+    "DiffuseMap": null
+   }
+  },
+  "Material__3220_8DYdD3ojxS_KUUTsGCoRb": {
+   "effect": "SimpleAdditive-fx_ZMrF6cI6NX_OzOLMrbAyf",
+   "bind": {
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga"
+   }
+  },
+  "Material__3220_8DYdD3ojxS_gTxSl1C00G": {
+   "effect": "SimpleAdditive-fx_ZMrF6cI6NX_JboH8S4kwI",
+   "bind": {
+    "DiffuseMap": "GC_Residential_Dinner_objects.tga"
+   }
+  },
+  "Material__3220_8DYdD3ojxS_OYGxlSXPtL": {
+   "effect": "SimpleAdditive-fx_ZMrF6cI6NX_nqPTGfRyil",
+   "bind": {
+    "DiffuseMap": "GC_Footprint_AWT.tga"
+   }
+  },
+  "Material__10_zdGc81tBDK_zMCk8R6BEu": {
+   "effect": "SimpleAdditive-fx_xrpMCARCr4_oZYFYZ5B6k",
+   "bind": {
+    "DiffuseMap": null
+   }
+  },
+  "Material__10_zdGc81tBDK_aMeAjSWfch": {
+   "effect": "SimpleAdditive-fx_xrpMCARCr4_JBdT3hVOfo",
+   "bind": {
+    "DiffuseMap": "HC_Prop_BillboardRoof_01.tga"
+   }
+  },
+  "Material__28_ItdsWlhi1v_W2rLc6AveP": {
+   "effect": "AlphaMasking-fx_m1eHxtWPB1_hT8FDDaKoH",
+   "bind": {
+    "LightMap": "BakeGroup_Island1_A0.tga",
+    "DiffuseMap": "GC_Z1_Props_Street_Alpha.tga"
+   }
+  }
+ },
+ "mismatches": [
+  [
+   "Material__3220_8DYdD3ojxS_NIsNrmwUlN",
+   "DiffuseMap",
+   null,
+   "FX_Coronas.tga"
+  ],
+  [
+   "Material__10_zdGc81tBDK_zMCk8R6BEu",
+   "DiffuseMap",
+   null,
+   "FX_Coronas.tga"
+  ]
+ ]
+}
