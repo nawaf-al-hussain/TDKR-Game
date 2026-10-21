@@ -1,0 +1,109 @@
+{
+ "island1": {
+  "zone": "GothamCity.zip",
+  "segments": 1526,
+  "stats": {
+   "indeterminate": 140,
+   "ok": 904,
+   "fail_smooth": 615,
+   "fail_F": 2,
+   "fail_pos": 5
+  },
+  "per_stride": {
+   "20": 5,
+   "24": 896,
+   "28": 3
+  },
+  "unit_normal_segs": 302,
+  "smooth_real_mean": 0.5911706610007583,
+  "smooth_real_p95": 1.062414551183604,
+  "smooth_null_mean": 1.437135233632553,
+  "smooth_null_p05": 0.0,
+  "first_fails": [
+   [
+    6,
+    "smooth"
+   ],
+   [
+    7,
+    "smooth"
+   ],
+   [
+    8,
+    "smooth"
+   ],
+   [
+    9,
+    "smooth"
+   ],
+   [
+    10,
+    "smooth"
+   ],
+   [
+    11,
+    "smooth"
+   ],
+   [
+    12,
+    "smooth"
+   ],
+   [
+    13,
+    "smooth"
+   ]
+  ]
+ },
+ "island2": {
+  "zone": "GothamCity_Island2.zip",
+  "segments": 1020,
+  "stats": {
+   "fail_smooth": 305,
+   "indeterminate": 87,
+   "ok": 712,
+   "fail_F": 3
+  },
+  "per_stride": {
+   "24": 712
+  },
+  "unit_normal_segs": 337,
+  "smooth_real_mean": 0.5864840972565097,
+  "smooth_real_p95": 0.9986818130731138,
+  "smooth_null_mean": 1.5724308418052035,
+  "smooth_null_p05": 0.0,
+  "first_fails": [
+   [
+    0,
+    "smooth"
+   ],
+   [
+    1,
+    "smooth"
+   ],
+   [
+    2,
+    "smooth"
+   ],
+   [
+    3,
+    "smooth"
+   ],
+   [
+    4,
+    "smooth"
+   ],
+   [
+    5,
+    "smooth"
+   ],
+   [
+    6,
+    "smooth"
+   ],
+   [
+    7,
+    "smooth"
+   ]
+  ]
+ }
+}
