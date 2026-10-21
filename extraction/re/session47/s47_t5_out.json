@@ -1,0 +1,11 @@
+{
+ "pairs": 0,
+ "verdict": "record-join EMPTY: no trigger object owns a CComponentBuiltinBox in its own lvc record block (0 of 437 scripted triggers, either direction); the s36 spatial join cannot be replaced by a record join; volume model stays unvalidated, engine-derived only \u2014 recorded and STOPPED per the task rule",
+ "anchors": {
+  "C_BASE owners": 3905,
+  "script records": 440,
+  "script owners": 157,
+  "BuiltinBox records": 484,
+  "box owners": 241
+ }
+}
