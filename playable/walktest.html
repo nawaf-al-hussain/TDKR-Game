@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>TDKR walktest — navmesh walker (s44 T4, staged)</title>
+<title>TDKR walktest — navmesh walker (s45 T2: soup from user files)</title>
 <style>
   html,body{margin:0;background:#101014;color:#cfd3dc;font:13px/1.4 system-ui}
   #ui{position:fixed;top:8px;left:8px;z-index:9;background:#0008;padding:8px 10px;border-radius:8px;max-width:520px}
@@ -13,13 +13,16 @@
 <body>
 <div id="ui">
   <b>TDKR walktest</b> (s44 T4 staged instrument) — navmesh-surface walker in the browser.<br>
-  Navmesh parsed at runtime from YOUR zip (game_config.gla &rarr; GothamCity_502299_navdata.nm);
-  collision soup = staged derived file (untracked, code-only branch); walls-only + stepignore 0.55.<br>
+  Navmesh AND collision soup parsed at runtime from YOUR zip (game_config.gla &rarr;
+  GothamCity_502299_navdata.nm + GothamCity.lvc &rarr; lvc.js census &rarr; CCollisionComponent
+  triangles, byte-verified vs the Python export); walls-only + stepignore 0.55.<br>
+  <code>?corrupt=1</code> runs the negative control (corrupted navmesh must be caught).<br>
   Pick the release zip (TDKR_v1.1.6b_APK_OBB.zip).<br>
   <input type="file" id="f">
   <div id="log">waiting for file&hellip;</div><div id="err"></div>
 </div>
 <script src="./tdkr_pipeline.js"></script>
+<script src="./lvc.js"></script>
 <script src="./walktest.js"></script>
 <script src="./walktest_routes.js"></script>
 <script src="./walktest_run.js"></script>

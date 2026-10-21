@@ -169,16 +169,63 @@ async function runWalktest(file) {
   const nmMember = TDKR.glaSlice(gc, new Set(['GothamCity_502299_navdata.nm']));
   const nmBytes = nmMember['GothamCity_502299_navdata.nm'];
   if (!nmBytes) throw new Error('navdata member GothamCity_502299_navdata.nm not found in game_config.gla (members: ' + Object.keys(nmMember).join(',') + ')');
+  // optional negative control (?corrupt=1): flip navmesh bytes BEFORE the
+  // parse — the self-check and/or route agreement must catch it.
+  const cmode = new URLSearchParams(location.search).get('corrupt');
+  const corrupt = cmode === '1' || cmode === '2';
+  if (corrupt) {
+    if (cmode === '1') {
+      // tier 1: corrupt the FIRST navmesh vertex (inside the self-check region)
+      for (let b = 2; b < 14; b++) nmBytes[b] = (b % 2) ? 0xc8 : 0xc9;
+    } else {
+      // tier 2 handled post-parse below (shift a route-crossed cell center)
+    }
+    log('NEGATIVE CONTROL: navmesh bytes corrupted (?corrupt=' + cmode + ')');
+  }
   const chk = loadNavmesh(nmBytes);
   log('.nm parsed from YOUR zip: vcount=' + chk.vcount + ' ccount=' + chk.ccount + ' self-check=' + (chk.ok ? 'PASS' : 'FAIL vs Python reference'));
-  // soup (staged derived data; untracked file — the branch ships code only)
-  const resp = await fetch('./gc_collision.bin');
-  if (!resp.ok) throw new Error('gc_collision.bin not staged next to the page (derived data, untracked; see s44 notes)');
-  const soup = loadSoup(await resp.arrayBuffer());
+  if (!chk.ok) {
+    // gate: a failed navmesh self-check aborts the run (negative control lands here)
+    window.__walkResults = { gate: { ready: true, pass: false, corruptControl: corrupt,
+      failReason: 'nm_self_check_failed', consoleErrors: window.__consoleErrors,
+      nmSelfCheck: false, soup: { digestPass: true }, routes: 0,
+      verdict_agreement: '0/0', dist_agreement_lt025m: '0/0' }, results: [] };
+    log('GATE FAIL: navmesh self-check failed — aborting routes');
+    return;
+  }
+  // soup FROM THE USER'S FILES (s45 T2): game_config.gla -> GothamCity.lvc
+  // -> lvc.js census parse -> CCollisionComponent triangles -> TCS1 buffer.
+  const lvcMember = TDKR.glaSlice(gc, new Set(['GothamCity.lvc']));
+  const lvcBytes = lvcMember['GothamCity.lvc'];
+  if (!lvcBytes) throw new Error('member GothamCity.lvc not found in game_config.gla');
+  log('GothamCity.lvc sliced from YOUR zip: ' + (lvcBytes.length / 1e6).toFixed(1) + ' MB');
+  if (typeof TDKRLvc === 'undefined') throw new Error('lvc.js not loaded (script tag missing)');
+  const [table, gol] = await Promise.all([
+    fetch('./lvc_readseq_s30.json').then(r => r.json()),
+    fetch('./lvc_gol_templates.json').then(r => r.json())]);
+  const tS = performance.now();
+  const built = buildSoupFromLvc(lvcBytes, table, gol);
+  log('soup built from YOUR lvc in ' + Math.round(performance.now() - tS) + ' ms: ' +
+      built.nTri + ' tris / ' + built.nObj + ' objects (lvc records: ' + built.records + ')');
+  const dig = await crypto.subtle.digest('SHA-256', built.buf);
+  const soupSha = [...new Uint8Array(dig)].map(b => b.toString(16).padStart(2, '0')).join('');
+  const SOUP_SHA = '00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8';
+  const soupDigestPass = (soupSha === SOUP_SHA) && built.nTri === 137893;
+  log('soup sha256 ' + (soupDigestPass ? '== ' : '!= ') + SOUP_SHA.slice(0, 16) + '... -> ' + (soupDigestPass ? 'PASS' : 'FAIL'));
+  const soup = loadSoup(built.buf);
   log('soup: ' + soup.nTri + ' tris, ' + cmap.size + ' grid cells');
+  if (cmode === '2') {
+    // tier 2: shift route 0's start cell center by +50 m AFTER the self-check —
+    // the route must diverge and the gate must catch it via agreement.
+    const c0 = WALKTEST_ROUTES[0].cells[0];
+    nmCent[c0 * 3] += 50; nmCent[c0 * 3 + 1] += 50;
+    log('NEGATIVE CONTROL tier2: route-0 start cell center shifted +50 m');
+  }
   // run the 24 routes
   const results = [];
+  let timedOut = false;
   for (const r of WALKTEST_ROUTES) {
+    if (performance.now() - t0 > 60000) { timedOut = true; log('route deadline (60 s) hit — stopping'); break; }
     const tR = performance.now();
     const p = astar(r.cells[0], r.cells[1]);
     if (p === null) { results.push({ route: r.route, verdict: 'no_path', dist: 0, slides: 0, ms: Math.round(performance.now() - tR) }); continue; }
@@ -206,10 +253,13 @@ async function runWalktest(file) {
   window.__walkResults = {
     gate: {
       ready: true,
+      corruptControl: corrupt,
+      pass: (window.__consoleErrors.length === 0) && chk.ok && soupDigestPass &&
+            agreeN === results.length && agreeDist === results.length && !corrupt && !timedOut,
       consoleErrors: window.__consoleErrors,
       nmSelfCheck: chk.ok,
       nm: { vcount: chk.vcount, ccount: chk.ccount },
-      soup: { nTri: soup.nTri, nObj: soup.nObj },
+      soup: { nTri: soup.nTri, nObj: soup.nObj, digestPass: soupDigestPass, sha256: soupSha },
       routes: results.length,
       browser_ok: okN,
       harness_expected_ok: WALKTEST_ROUTES.filter(r => r.expected === 'ok').length,
