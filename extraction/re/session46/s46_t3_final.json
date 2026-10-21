@@ -1,0 +1,153 @@
+{
+ "tiling_exact": 276,
+ "stride_class_mats": 306,
+ "decl_table": {
+  "20": {
+   "Color0(t4)@0": 11,
+   "Normal(t3)@0": 1,
+   "Position(t3)@12": 12,
+   "Normal(t3)@16": 1,
+   "TexCoord0(t2)@16": 11
+  },
+  "24": {
+   "Color0(t4)@0": 9,
+   "Normal(t3)@0": 276,
+   "Position(t3)@12": 285,
+   "TexCoord0(t2)@16": 285,
+   "Normal(t3)@20": 9,
+   "TexCoord1(t2)@20": 276
+  },
+  "28": {
+   "Color0(t4)@0": 9,
+   "Position(t3)@12": 9,
+   "TexCoord0(t2)@16": 9,
+   "TexCoord1(t2)@20": 9,
+   "Normal(t3)@24": 9
+  }
+ },
+ "seg_agreement": 1507,
+ "seg_mismatch": 19,
+ "bad_list": [
+  [
+   6,
+   303,
+   24,
+   20
+  ],
+  [
+   14,
+   300,
+   24,
+   20
+  ],
+  [
+   15,
+   300,
+   24,
+   20
+  ],
+  [
+   16,
+   300,
+   24,
+   20
+  ],
+  [
+   24,
+   300,
+   24,
+   20
+  ],
+  [
+   25,
+   300,
+   24,
+   20
+  ],
+  [
+   26,
+   300,
+   24,
+   20
+  ],
+  [
+   27,
+   300,
+   24,
+   20
+  ],
+  [
+   28,
+   300,
+   24,
+   20
+  ],
+  [
+   29,
+   300,
+   24,
+   20
+  ],
+  [
+   30,
+   300,
+   24,
+   20
+  ],
+  [
+   31,
+   300,
+   24,
+   20
+  ],
+  [
+   32,
+   300,
+   24,
+   20
+  ],
+  [
+   92,
+   299,
+   28,
+   20
+  ],
+  [
+   93,
+   299,
+   28,
+   20
+  ],
+  [
+   97,
+   296,
+   24,
+   20
+  ],
+  [
+   99,
+   295,
+   24,
+   20
+  ],
+  [
+   1465,
+   243,
+   28,
+   20
+  ],
+  [
+   1525,
+   302,
+   24,
+   28
+  ]
+ ],
+ "null_mismatch": 185,
+ "reconciliation": {
+  "criterion_s43_single_null": "F-field row-shuffled once; seg fails if real F smoothness (mean |dF| over adjacent-vertex pairs) fails to beat its single shuffled null; on the shared 1,526-island1 population -> 238 fail",
+  "criterion_s44_strict": "min-of-4 nulls (4 independent shuffles); seg must beat ALL 4 -> stricter; 301 fail on the same population",
+  "criterion_s43_reported_615": "s43 run reported 615 = its looser single-null pass on a different threshold + island2 305 added; not a population contradiction (s45 reconciliation)",
+  "adopted": "s44 strict min-of-4 = 301/1526 island1 (conservative; the other counts are criterion variants, not population disagreements)"
+ }
+}
