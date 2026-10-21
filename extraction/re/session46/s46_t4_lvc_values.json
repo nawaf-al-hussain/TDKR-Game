@@ -1,0 +1,86 @@
+{
+ "verdict": "PASS",
+ "levels": {
+  "GothamCity.lvc": {
+   "match": true,
+   "py": {
+    "count": 1710117,
+    "sha": "386614c6d26d4936cce87c56a762b8903e8dba6a542549d17eb33c89ab7ec108",
+    "kinds": {
+     "i": 147757,
+     "STR": 16731,
+     "c": 211193,
+     "f": 1331305,
+     "B": 582,
+     "raw": 2549
+    }
+   },
+   "js": {
+    "count": 1710117,
+    "sha": "386614c6d26d4936cce87c56a762b8903e8dba6a542549d17eb33c89ab7ec108",
+    "kinds": {
+     "i": 147757,
+     "STR": 16731,
+     "c": 211193,
+     "f": 1331305,
+     "B": 582,
+     "raw": 2549
+    }
+   }
+  },
+  "GothamCity_Island2.lvc": {
+   "match": true,
+   "py": {
+    "count": 1518149,
+    "sha": "46e08251c5cb6857a467811bdc87e7dbcedf7c57233ceef11de6d12fcae585fb",
+    "kinds": {
+     "i": 75871,
+     "STR": 7848,
+     "c": 178963,
+     "f": 1253240,
+     "B": 617,
+     "raw": 1610
+    }
+   },
+   "js": {
+    "count": 1518149,
+    "sha": "46e08251c5cb6857a467811bdc87e7dbcedf7c57233ceef11de6d12fcae585fb",
+    "kinds": {
+     "i": 75871,
+     "STR": 7848,
+     "c": 178963,
+     "f": 1253240,
+     "B": 617,
+     "raw": 1610
+    }
+   }
+  },
+  "ThePit.lvc": {
+   "match": true,
+   "py": {
+    "count": 597947,
+    "sha": "b63b60edb81121ef9e43648ec124b271a188b005613769f34f60a2d4d4988b9f",
+    "kinds": {
+     "i": 5500,
+     "STR": 1152,
+     "c": 63648,
+     "f": 527136,
+     "B": 130,
+     "raw": 381
+    }
+   },
+   "js": {
+    "count": 597947,
+    "sha": "b63b60edb81121ef9e43648ec124b271a188b005613769f34f60a2d4d4988b9f",
+    "kinds": {
+     "i": 5500,
+     "STR": 1152,
+     "c": 63648,
+     "f": 527136,
+     "B": 130,
+     "raw": 381
+    }
+   }
+  }
+ }
+}
