@@ -1,0 +1,29 @@
+{
+ "pairs": 402,
+ "real_med": 83.03550319723368,
+ "nullA_med": 153.23627303428674,
+ "aucA": 0.7357512953367875,
+ "nullB_med": 178.74555629053754,
+ "aucB": 0.736318407960199,
+ "nullA_shuffle_mean": 0.7298056994818655,
+ "nullA_shuffle_std": 0.013725185912828302,
+ "nullA_shuffle_p95": 0.7538860103626943,
+ "z_vs_nullA": 0.4331887300240481,
+ "z_vs_nullB": -1.2656610963831691,
+ "aucA_paired": 0.7357512953367875,
+ "aucB_paired": 0.736318407960199,
+ "nullA_pair_mean": 0.7298056994818655,
+ "nullA_pair_std": 0.013725185912828302,
+ "nullA_pair_p95": 0.7538860103626943,
+ "nullB_pair_mean": 0.7517910447761195,
+ "nullB_pair_std": 0.012224944623909228,
+ "nullB_pair_p95": 0.7711442786069652,
+ "inside_real": 0.15422885572139303,
+ "inside_nullA": 0.07772020725388601,
+ "inside_nullB": 0.029850746268656716,
+ "skips": {
+  "A": 16,
+  "B": 0
+ },
+ "verdict": "UNVALIDATED, engine-derived only (effect shrinks to region nulls)"
+}
