@@ -1,0 +1,1043 @@
+{
+ "modes": {
+  "navmesh_stepignore055": {
+   "ok": 15,
+   "rows": [
+    {
+     "route": 3,
+     "result": "stuck_wall",
+     "dist": 305.2,
+     "slides": 19
+    },
+    {
+     "route": 6,
+     "result": "fell",
+     "dist": 321.0,
+     "slides": 0
+    },
+    {
+     "route": 7,
+     "result": "fell",
+     "dist": 382.5,
+     "slides": 0
+    },
+    {
+     "route": 10,
+     "result": "stuck_wall",
+     "dist": 1076.0,
+     "slides": 11
+    },
+    {
+     "route": 12,
+     "result": "ok",
+     "dist": 392.0,
+     "slides": 0
+    },
+    {
+     "route": 15,
+     "result": "stuck_wall",
+     "dist": 443.1,
+     "slides": 23
+    },
+    {
+     "route": 19,
+     "result": "ok",
+     "dist": 931.0,
+     "slides": 0
+    },
+    {
+     "route": 22,
+     "result": "fell",
+     "dist": 62.7,
+     "slides": 0
+    },
+    {
+     "route": 27,
+     "result": "stuck_wall",
+     "dist": 301.2,
+     "slides": 6
+    },
+    {
+     "route": 33,
+     "result": "stuck_wall",
+     "dist": 122.0,
+     "slides": 22
+    },
+    {
+     "route": 34,
+     "result": "stuck_wall",
+     "dist": 22.2,
+     "slides": 0
+    },
+    {
+     "route": 35,
+     "result": "ok",
+     "dist": 438.0,
+     "slides": 0
+    },
+    {
+     "route": 36,
+     "result": "ok",
+     "dist": 277.5,
+     "slides": 0
+    },
+    {
+     "route": 37,
+     "result": "fell",
+     "dist": 425.2,
+     "slides": 0
+    },
+    {
+     "route": 38,
+     "result": "ok",
+     "dist": 157.0,
+     "slides": 0
+    },
+    {
+     "route": 39,
+     "result": "fell",
+     "dist": 567.2,
+     "slides": 0
+    },
+    {
+     "route": 40,
+     "result": "ok",
+     "dist": 377.0,
+     "slides": 0
+    },
+    {
+     "route": 41,
+     "result": "fell",
+     "dist": 936.4,
+     "slides": 8
+    },
+    {
+     "route": 42,
+     "result": "stuck_wall",
+     "dist": 929.0,
+     "slides": 0
+    },
+    {
+     "route": 43,
+     "result": "fell",
+     "dist": 455.5,
+     "slides": 0
+    },
+    {
+     "route": 44,
+     "result": "ok",
+     "dist": 824.0,
+     "slides": 0
+    },
+    {
+     "route": 45,
+     "result": "ok",
+     "dist": 845.0,
+     "slides": 3
+    },
+    {
+     "route": 46,
+     "result": "stuck_wall",
+     "dist": 28.7,
+     "slides": 2
+    },
+    {
+     "route": 47,
+     "result": "stuck_wall",
+     "dist": 247.2,
+     "slides": 0
+    },
+    {
+     "route": 48,
+     "result": "ok",
+     "dist": 257.5,
+     "slides": 0
+    },
+    {
+     "route": 49,
+     "result": "stuck_wall",
+     "dist": 27.5,
+     "slides": 0
+    },
+    {
+     "route": 50,
+     "result": "stuck_wall",
+     "dist": 259.1,
+     "slides": 4
+    },
+    {
+     "route": 51,
+     "result": "fell",
+     "dist": 73.9,
+     "slides": 7
+    },
+    {
+     "route": 52,
+     "result": "ok",
+     "dist": 262.0,
+     "slides": 0
+    },
+    {
+     "route": 53,
+     "result": "stuck_wall",
+     "dist": 0.0,
+     "slides": 0
+    },
+    {
+     "route": 54,
+     "result": "stuck_wall",
+     "dist": 0.0,
+     "slides": 0
+    },
+    {
+     "route": 55,
+     "result": "ok",
+     "dist": 72.0,
+     "slides": 0
+    },
+    {
+     "route": 56,
+     "result": "stuck_wall",
+     "dist": 1109.1,
+     "slides": 20
+    },
+    {
+     "route": 57,
+     "result": "stuck_wall",
+     "dist": 99.6,
+     "slides": 4
+    },
+    {
+     "route": 58,
+     "result": "ok",
+     "dist": 208.5,
+     "slides": 0
+    },
+    {
+     "route": 59,
+     "result": "fell",
+     "dist": 5.5,
+     "slides": 0
+    },
+    {
+     "route": 60,
+     "result": "ok",
+     "dist": 260.5,
+     "slides": 0
+    },
+    {
+     "route": 61,
+     "result": "fell",
+     "dist": 87.9,
+     "slides": 0
+    },
+    {
+     "route": 62,
+     "result": "ok",
+     "dist": 118.5,
+     "slides": 0
+    },
+    {
+     "route": 63,
+     "result": "ok",
+     "dist": 332.5,
+     "slides": 0
+    }
+   ]
+  },
+  "full": {
+   "ok": 10,
+   "rows": [
+    {
+     "route": 3,
+     "result": "stuck_wall",
+     "dist": 17.2
+    },
+    {
+     "route": 6,
+     "result": "stuck_wall",
+     "dist": 40.8
+    },
+    {
+     "route": 7,
+     "result": "stuck_wall",
+     "dist": 75.4
+    },
+    {
+     "route": 10,
+     "result": "stuck_wall",
+     "dist": 617.5
+    },
+    {
+     "route": 12,
+     "result": "stuck_wall",
+     "dist": 18.4
+    },
+    {
+     "route": 15,
+     "result": "no_ground",
+     "dist": 0.0
+    },
+    {
+     "route": 19,
+     "result": "stuck_wall",
+     "dist": 423.7
+    },
+    {
+     "route": 22,
+     "result": "stuck_wall",
+     "dist": 37.5
+    },
+    {
+     "route": 27,
+     "result": "no_ground",
+     "dist": 0.0
+    },
+    {
+     "route": 33,
+     "result": "no_ground",
+     "dist": 0.0
+    },
+    {
+     "route": 34,
+     "result": "step_too_high",
+     "dist": 53.2
+    },
+    {
+     "route": 35,
+     "result": "stuck_wall",
+     "dist": 0.5
+    },
+    {
+     "route": 36,
+     "result": "ok",
+     "dist": 277.5
+    },
+    {
+     "route": 37,
+     "result": "ok",
+     "dist": 473.0
+    },
+    {
+     "route": 38,
+     "result": "ok",
+     "dist": 158.0
+    },
+    {
+     "route": 39,
+     "result": "step_too_high",
+     "dist": 107.0
+    },
+    {
+     "route": 40,
+     "result": "ok",
+     "dist": 377.5
+    },
+    {
+     "route": 41,
+     "result": "stuck_wall",
+     "dist": 5.6
+    },
+    {
+     "route": 42,
+     "result": "step_too_high",
+     "dist": 63.9
+    },
+    {
+     "route": 43,
+     "result": "stuck_wall",
+     "dist": 225.5
+    },
+    {
+     "route": 44,
+     "result": "stuck_wall",
+     "dist": 29.8
+    },
+    {
+     "route": 45,
+     "result": "stuck_wall",
+     "dist": 0.4
+    },
+    {
+     "route": 46,
+     "result": "stuck_wall",
+     "dist": 28.2
+    },
+    {
+     "route": 47,
+     "result": "stuck_wall",
+     "dist": 123.7
+    },
+    {
+     "route": 48,
+     "result": "ok",
+     "dist": 258.0
+    },
+    {
+     "route": 49,
+     "result": "step_too_high",
+     "dist": 70.7
+    },
+    {
+     "route": 50,
+     "result": "stuck_wall",
+     "dist": 260.5
+    },
+    {
+     "route": 51,
+     "result": "stuck_wall",
+     "dist": 5.9
+    },
+    {
+     "route": 52,
+     "result": "ok",
+     "dist": 262.0
+    },
+    {
+     "route": 53,
+     "result": "stuck_wall",
+     "dist": 0.0
+    },
+    {
+     "route": 54,
+     "result": "step_too_high",
+     "dist": 196.0
+    },
+    {
+     "route": 55,
+     "result": "ok",
+     "dist": 72.5
+    },
+    {
+     "route": 56,
+     "result": "stuck_wall",
+     "dist": 441.5
+    },
+    {
+     "route": 57,
+     "result": "stuck_wall",
+     "dist": 100.0
+    },
+    {
+     "route": 58,
+     "result": "ok",
+     "dist": 209.0
+    },
+    {
+     "route": 59,
+     "result": "no_ground",
+     "dist": 0.0
+    },
+    {
+     "route": 60,
+     "result": "stuck_wall",
+     "dist": 45.0
+    },
+    {
+     "route": 61,
+     "result": "stuck_wall",
+     "dist": 136.3
+    },
+    {
+     "route": 62,
+     "result": "ok",
+     "dist": 118.5
+    },
+    {
+     "route": 63,
+     "result": "ok",
+     "dist": 334.5
+    }
+   ]
+  },
+  "ghost": {
+   "ok": 36,
+   "rows": [
+    {
+     "route": 3,
+     "result": "ok",
+     "dist": 802.0
+    },
+    {
+     "route": 6,
+     "result": "ok",
+     "dist": 358.0
+    },
+    {
+     "route": 7,
+     "result": "ok",
+     "dist": 744.0
+    },
+    {
+     "route": 10,
+     "result": "ok",
+     "dist": 1096.0
+    },
+    {
+     "route": 12,
+     "result": "ok",
+     "dist": 392.0
+    },
+    {
+     "route": 15,
+     "result": "no_ground",
+     "dist": 0.0
+    },
+    {
+     "route": 19,
+     "result": "ok",
+     "dist": 931.0
+    },
+    {
+     "route": 22,
+     "result": "ok",
+     "dist": 273.0
+    },
+    {
+     "route": 27,
+     "result": "no_ground",
+     "dist": 0.0
+    },
+    {
+     "route": 33,
+     "result": "no_ground",
+     "dist": 0.0
+    },
+    {
+     "route": 34,
+     "result": "ok",
+     "dist": 573.5
+    },
+    {
+     "route": 35,
+     "result": "ok",
+     "dist": 438.0
+    },
+    {
+     "route": 36,
+     "result": "ok",
+     "dist": 277.5
+    },
+    {
+     "route": 37,
+     "result": "ok",
+     "dist": 472.5
+    },
+    {
+     "route": 38,
+     "result": "ok",
+     "dist": 157.0
+    },
+    {
+     "route": 39,
+     "result": "ok",
+     "dist": 514.0
+    },
+    {
+     "route": 40,
+     "result": "ok",
+     "dist": 377.0
+    },
+    {
+     "route": 41,
+     "result": "ok",
+     "dist": 956.5
+    },
+    {
+     "route": 42,
+     "result": "ok",
+     "dist": 994.3
+    },
+    {
+     "route": 43,
+     "result": "ok",
+     "dist": 1023.0
+    },
+    {
+     "route": 44,
+     "result": "ok",
+     "dist": 824.0
+    },
+    {
+     "route": 45,
+     "result": "ok",
+     "dist": 421.5
+    },
+    {
+     "route": 46,
+     "result": "ok",
+     "dist": 439.5
+    },
+    {
+     "route": 47,
+     "result": "ok",
+     "dist": 1049.4
+    },
+    {
+     "route": 48,
+     "result": "ok",
+     "dist": 257.5
+    },
+    {
+     "route": 49,
+     "result": "ok",
+     "dist": 391.5
+    },
+    {
+     "route": 50,
+     "result": "ok",
+     "dist": 265.0
+    },
+    {
+     "route": 51,
+     "result": "ok",
+     "dist": 622.0
+    },
+    {
+     "route": 52,
+     "result": "ok",
+     "dist": 262.0
+    },
+    {
+     "route": 53,
+     "result": "ok",
+     "dist": 750.5
+    },
+    {
+     "route": 54,
+     "result": "ok",
+     "dist": 485.0
+    },
+    {
+     "route": 55,
+     "result": "ok",
+     "dist": 72.0
+    },
+    {
+     "route": 56,
+     "result": "ok",
+     "dist": 1671.0
+    },
+    {
+     "route": 57,
+     "result": "ok",
+     "dist": 110.0
+    },
+    {
+     "route": 58,
+     "result": "ok",
+     "dist": 208.5
+    },
+    {
+     "route": 59,
+     "result": "no_ground",
+     "dist": 0.0
+    },
+    {
+     "route": 60,
+     "result": "ok",
+     "dist": 260.5
+    },
+    {
+     "route": 61,
+     "result": "ok",
+     "dist": 892.7
+    },
+    {
+     "route": 62,
+     "result": "ok",
+     "dist": 118.5
+    },
+    {
+     "route": 63,
+     "result": "ok",
+     "dist": 332.5
+    }
+   ]
+  }
+ },
+ "per_route_fails": {
+  "3": {
+   "route": 3,
+   "why": "stuck_wall_stall",
+   "x": -123.7961755079466,
+   "y": -677.1627867000255,
+   "z": -0.3654940128326416
+  },
+  "6": {
+   "route": 6,
+   "why": "fell",
+   "x": -924.8492060682256,
+   "y": -861.4326297536352,
+   "z": 0.2056010067462921
+  },
+  "7": {
+   "route": 7,
+   "why": "fell",
+   "x": -572.3525406549596,
+   "y": -745.5093329030227,
+   "z": 0.20560100674629211
+  },
+  "10": {
+   "route": 10,
+   "why": "stuck_wall_stall",
+   "x": -771.9030351946693,
+   "y": -806.6302819665137,
+   "z": 0.9609517254120213
+  },
+  "15": {
+   "route": 15,
+   "why": "stuck_wall_stall",
+   "x": -739.3539102388147,
+   "y": -923.662511548831,
+   "z": -0.2199999988079071
+  },
+  "22": {
+   "route": 22,
+   "why": "fell",
+   "x": -576.0349843497793,
+   "y": -742.2979378909512,
+   "z": 0.20560100674629211
+  },
+  "27": {
+   "route": 27,
+   "why": "stuck_wall_stall",
+   "x": -729.8258100724718,
+   "y": -917.7579931335382,
+   "z": -0.22372948313081797
+  },
+  "33": {
+   "route": 33,
+   "why": "stuck_wall_stall",
+   "x": -673.5410873800856,
+   "y": -779.7818678744283,
+   "z": 8.838662250961161e-07
+  },
+  "34": {
+   "route": 34,
+   "why": "stuck_wall",
+   "x": -111.88114204216191,
+   "y": -713.9550436279108,
+   "z": 8.3056001663208
+  },
+  "37": {
+   "route": 37,
+   "why": "fell",
+   "x": -119.42242733690671,
+   "y": -759.5888394620044,
+   "z": 0.20560100674629211
+  },
+  "39": {
+   "route": 39,
+   "why": "fell",
+   "x": -636.0862503894189,
+   "y": -565.4928945962549,
+   "z": 0.21418168452291042
+  },
+  "41": {
+   "route": 41,
+   "why": "fell",
+   "x": -267.125450081117,
+   "y": -734.7314775371359,
+   "z": 0.21435293713854947
+  },
+  "42": {
+   "route": 42,
+   "why": "stuck_wall_stall",
+   "x": -92.84468672891418,
+   "y": -908.3132395760157,
+   "z": -9.581994954443063e-08
+  },
+  "43": {
+   "route": 43,
+   "why": "fell",
+   "x": -648.7738710735489,
+   "y": -495.76298864515496,
+   "z": -0.008061443313943154
+  },
+  "46": {
+   "route": 46,
+   "why": "stuck_wall_stall",
+   "x": -708.5911995582335,
+   "y": -697.0724984441795,
+   "z": 8.883197691871073
+  },
+  "47": {
+   "route": 47,
+   "why": "fell",
+   "x": -317.9740192982363,
+   "y": -964.7371623244121,
+   "z": 0.26549332419225197
+  },
+  "49": {
+   "route": 49,
+   "why": "stuck_wall",
+   "x": 42.098304333802304,
+   "y": -715.0110542800147,
+   "z": 8.3056001663208
+  },
+  "50": {
+   "route": 50,
+   "why": "stuck_wall_stall",
+   "x": 14.313227911669976,
+   "y": -807.9457300689483,
+   "z": 0.0
+  },
+  "51": {
+   "route": 51,
+   "why": "fell",
+   "x": -642.7191700873161,
+   "y": -559.4229586397554,
+   "z": 0.21399984405653752
+  },
+  "53": {
+   "route": 53,
+   "why": "stuck_wall",
+   "x": -454.43700154622394,
+   "y": -1021.5159708658854,
+   "z": 1.1055999994277954
+  },
+  "54": {
+   "route": 54,
+   "why": "stuck_wall",
+   "x": -282.8870035807292,
+   "y": -753.5490201888714,
+   "z": 8.458512916202615
+  },
+  "56": {
+   "route": 56,
+   "why": "stuck_wall_stall",
+   "x": -549.8839277965903,
+   "y": -997.3022006058546,
+   "z": 0.0
+  },
+  "57": {
+   "route": 57,
+   "why": "stuck_wall_stall",
+   "x": 14.313225248653596,
+   "y": -807.9457271554849,
+   "z": 0.0
+  },
+  "59": {
+   "route": 59,
+   "why": "fell",
+   "x": -572.3425608664909,
+   "y": -745.5099394826971,
+   "z": 0.20560100674629211
+  },
+  "61": {
+   "route": 61,
+   "why": "fell",
+   "x": -81.12965899175992,
+   "y": -923.3225732040291,
+   "z": 0.20560100674629214
+  },
+  "12": {
+   "route": 12,
+   "why": "stuck_wall_stall",
+   "x": -457.9541881749235,
+   "y": -776.4424344012263,
+   "z": 0.0
+  },
+  "19": {
+   "route": 19,
+   "why": "stuck_wall_stall",
+   "x": -817.0909588541489,
+   "y": -780.9193545953518,
+   "z": -1.0063314365680033e-06
+  },
+  "35": {
+   "route": 35,
+   "why": "stuck_wall_stall",
+   "x": -693.4735481711671,
+   "y": -983.4151652097527,
+   "z": 8.523735862569216e-07
+  },
+  "36": {
+   "route": 36,
+   "why": "fell",
+   "x": -119.42242733690671,
+   "y": -759.5888394620044,
+   "z": 0.20560100674629211
+  },
+  "44": {
+   "route": 44,
+   "why": "stuck_wall_stall",
+   "x": -900.2587635351164,
+   "y": -996.5138284901868,
+   "z": 0.0
+  },
+  "60": {
+   "route": 60,
+   "why": "stuck_wall_stall",
+   "x": -796.4296615766448,
+   "y": -932.5186999484634,
+   "z": -0.21918525013661597
+  }
+ },
+ "null_shuffled_dest_navmesh": {
+  "ok": 4,
+  "rows": [
+   {
+    "route": 3,
+    "result": "no_path"
+   },
+   {
+    "route": 6,
+    "result": "no_path"
+   },
+   {
+    "route": 7,
+    "result": "no_path"
+   },
+   {
+    "route": 10,
+    "result": "no_path"
+   },
+   {
+    "route": 12,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 15,
+    "result": "no_path"
+   },
+   {
+    "route": 19,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 22,
+    "result": "no_path"
+   },
+   {
+    "route": 27,
+    "result": "no_path"
+   },
+   {
+    "route": 33,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 34,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 35,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 36,
+    "result": "fell"
+   },
+   {
+    "route": 37,
+    "result": "ok"
+   },
+   {
+    "route": 38,
+    "result": "ok"
+   },
+   {
+    "route": 39,
+    "result": "no_path"
+   },
+   {
+    "route": 40,
+    "result": "no_path"
+   },
+   {
+    "route": 41,
+    "result": "no_path"
+   },
+   {
+    "route": 42,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 43,
+    "result": "no_path"
+   },
+   {
+    "route": 44,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 45,
+    "result": "no_path"
+   },
+   {
+    "route": 46,
+    "result": "no_path"
+   },
+   {
+    "route": 47,
+    "result": "fell"
+   },
+   {
+    "route": 48,
+    "result": "no_path"
+   },
+   {
+    "route": 49,
+    "result": "no_path"
+   },
+   {
+    "route": 50,
+    "result": "no_path"
+   },
+   {
+    "route": 51,
+    "result": "no_path"
+   },
+   {
+    "route": 52,
+    "result": "no_path"
+   },
+   {
+    "route": 53,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 54,
+    "result": "no_path"
+   },
+   {
+    "route": 55,
+    "result": "no_path"
+   },
+   {
+    "route": 56,
+    "result": "no_path"
+   },
+   {
+    "route": 57,
+    "result": "no_path"
+   },
+   {
+    "route": 58,
+    "result": "no_path"
+   },
+   {
+    "route": 59,
+    "result": "fell"
+   },
+   {
+    "route": 60,
+    "result": "stuck_wall"
+   },
+   {
+    "route": 61,
+    "result": "no_path"
+   },
+   {
+    "route": 62,
+    "result": "ok"
+   },
+   {
+    "route": 63,
+    "result": "ok"
+   }
+  ]
+ }
+}
