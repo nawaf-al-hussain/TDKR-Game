@@ -1,0 +1,129 @@
+{
+ "mat73_gothamcity_roads_details": {
+  "seg": 696,
+  "mat": 73,
+  "stride": 24,
+  "mine_dif": "gothamcity_roads_details",
+  "glb_dif": "gothamcity_roads_details",
+  "AB_diffuse": {
+   "meandiff": 44.35,
+   "histTV": 0.3771,
+   "ssim": 0.1111,
+   "covered": 27041
+  }
+ },
+ "mat11_GC_Z1_Props_Street": {
+  "seg": 100,
+  "mat": 11,
+  "stride": 24,
+  "mine_dif": "GC_Z1_Props_Street",
+  "glb_dif": "GC_Z1_Props_Street",
+  "AB_diffuse": {
+   "meandiff": 102.02,
+   "histTV": 0.731,
+   "ssim": -0.0015,
+   "covered": 21919
+  }
+ },
+ "mat23_GC_Z1_Props_Rooftop": {
+  "seg": 485,
+  "mat": 23,
+  "stride": 24,
+  "mine_dif": "GC_Z1_Props_Rooftop",
+  "glb_dif": "GC_Z1_Props_Rooftop",
+  "AB_diffuse": {
+   "meandiff": 79.5,
+   "histTV": 0.5746,
+   "ssim": -0.0302,
+   "covered": 13813
+  }
+ },
+ "mat180_GC_Residential_BD_04_Win": {
+  "seg": 1383,
+  "mat": 180,
+  "stride": 24,
+  "mine_dif": "GC_Residential_BD_04_Windows_05_v",
+  "glb_dif": "GC_Residential_BD_04_Windows_05_v",
+  "AB_diffuse": {
+   "meandiff": 50.5,
+   "histTV": 0.6879,
+   "ssim": 0.0144,
+   "covered": 55811
+  }
+ },
+ "mat196_GC_Footprint_LB_Cinema": {
+  "seg": 1403,
+  "mat": 196,
+  "stride": 24,
+  "mine_dif": "GC_Footprint_LB_Cinema",
+  "glb_dif": "GC_Footprint_LB_Cinema",
+  "AB_diffuse": {
+   "meandiff": 64.21,
+   "histTV": 0.5925,
+   "ssim": -0.0996,
+   "covered": 11107
+  }
+ },
+ "_nulls": {
+  "mat11_GC_Z1_Props_Street_shuffledmat_vs_B": {
+   "meandiff": 111.65,
+   "histTV": 0.8571,
+   "ssim": 0.0002,
+   "covered": 15323
+  },
+  "mat23_GC_Z1_Props_Rooftop_shuffledmat_vs_B": {
+   "meandiff": 108.46,
+   "histTV": 0.8867,
+   "ssim": 0.0329,
+   "covered": 13813
+  },
+  "mat180_GC_Residential_BD_04_Win_shuffledmat_vs_B": {
+   "meandiff": 54.83,
+   "histTV": 0.974,
+   "ssim": 0.0047,
+   "covered": 55811
+  },
+  "mat196_GC_Footprint_LB_Cinema_shuffledmat_vs_B": {
+   "meandiff": 49.34,
+   "histTV": 0.4914,
+   "ssim": 0.1551,
+   "covered": 11107
+  },
+  "mat73_gothamcity_roads_details_shuffledmat_vs_B": {
+   "meandiff": 120.07,
+   "histTV": 0.8754,
+   "ssim": 0.1296,
+   "covered": 27041
+  },
+  "diffblock_mat73_gothamcity_roads_details_A_vs_mat11_GC_Z1_Props_Street_B": {
+   "meandiff": 89.37,
+   "histTV": 0.9083,
+   "ssim": 0.017,
+   "covered": 3190
+  },
+  "diffblock_mat11_GC_Z1_Props_Street_A_vs_mat23_GC_Z1_Props_Rooftop_B": {
+   "meandiff": 77.75,
+   "histTV": 0.5075,
+   "ssim": 0.3289,
+   "covered": 2235
+  },
+  "diffblock_mat23_GC_Z1_Props_Rooftop_A_vs_mat180_GC_Residential_BD_04_Win_B": {
+   "meandiff": 101.31,
+   "histTV": 0.611,
+   "ssim": 0.0879,
+   "covered": 5627
+  },
+  "diffblock_mat180_GC_Residential_BD_04_Win_A_vs_mat196_GC_Footprint_LB_Cinema_B": {
+   "meandiff": 38.47,
+   "histTV": 0.4989,
+   "ssim": 0.0269,
+   "covered": 1492
+  },
+  "diffblock_mat196_GC_Footprint_LB_Cinema_A_vs_mat73_gothamcity_roads_details_B": {
+   "meandiff": 72.19,
+   "histTV": 0.5253,
+   "ssim": 0.1116,
+   "covered": 1613
+  }
+ }
+}

@@ -1,0 +1,10577 @@
+[
+{
+"i": 0,
+"name": "_1_-_Default_1xVPfvJcrg_rQF69AzBla",
+"effect": "ProfileCOMMON__1_-_Default-fx1338029509_FlippedPlane_frAQBc8Wsa_RYwTiizs2t",
+"bind": {
+"diffuse-color": {
+"float4": [
+0.584314,
+0.584314,
+0.584314,
+1.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 1,
+"name": "Null Material",
+"effect": "Null Material Renderer",
+"bind": {},
+"wrap": []
+},
+{
+"i": 2,
+"name": "StorageBox_pKSKQEDc8M_2iSKoUn9jv",
+"effect": "TDKR-Vehicles-fx_6X9ISz24DS_olsspWqMwo",
+"bind": {
+"texture0": {
+"tga": "StorageBox_D.tga",
+"ordinal": 0
+},
+"DiffuseMap": {
+"tga": "StorageBox_D.tga",
+"ordinal": 0
+},
+"texture1": {
+"tga": "StorageBox_M.tga",
+"ordinal": 1
+},
+"MaskMap": {
+"tga": "StorageBox_M.tga",
+"ordinal": 1
+},
+"texture2": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMap": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+}
+},
+"wrap": []
+},
+{
+"i": 3,
+"name": "Material__6034_xdCAB7nmt6_wNEFXgz2lI",
+"effect": "Reflections-fx_Nn3SyYcW0u_658emjMaKX",
+"bind": {
+"texture3": {
+"tga": "GC_Shop_Reflections.tga",
+"ordinal": 3
+},
+"DiffuseMap": {
+"tga": "GC_Shop_Reflections.tga",
+"ordinal": 3
+}
+},
+"wrap": []
+},
+{
+"i": 4,
+"name": "Material__340_CZEYIFmh2K_CXJxhZFaBp",
+"effect": "AlphaMasking-fx_HKEtXTFKDP_NfmJlqzWBv",
+"bind": {
+"texture4": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture5": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 5,
+"name": "_1_-_Default_X4l28T8yGh_WmqflCvCVi",
+"effect": "AlphaMasking-fx_8uQ5NLHrYz_5UaY0bytXh",
+"bind": {
+"texture6": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture7": {
+"tga": "vegetation.tga",
+"ordinal": 7
+},
+"DiffuseMap": {
+"tga": "vegetation.tga",
+"ordinal": 7
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 6,
+"name": "buildings4_Gp1a83XIdD_G0mzmTJq4s",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_DLgjznUiKD",
+"bind": {
+"texture8": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture9": {
+"tga": "GC_Footprint_VD_Fence.tga",
+"ordinal": 8
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Fence.tga",
+"ordinal": 8
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 7,
+"name": "buildings4_Gp1a83XIdD_e3CHahREY7",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_vDgj5ogqoU",
+"bind": {
+"texture10": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture11": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 8,
+"name": "buildings4_Gp1a83XIdD_UdgZXtS53I",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_DnouIVLqOm",
+"bind": {
+"texture12": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture13": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 9,
+"name": "buildings4_Gp1a83XIdD_06SiqRTTdr",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_zCDJAs36iL",
+"bind": {
+"texture14": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture15": {
+"tga": "GC_DMUS_fence.tga",
+"ordinal": 12
+},
+"DiffuseMap": {
+"tga": "GC_DMUS_fence.tga",
+"ordinal": 12
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 10,
+"name": "buildings4_Gp1a83XIdD_CAquxpxf2A",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_D2STB2EN0B",
+"bind": {
+"texture16": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture17": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 11,
+"name": "Material__345_yct4Aj6PKn_nSOKlq8Azr",
+"effect": "StandardDiffuseDC-fx_hFQr77BIEl_ZpzRiKYpZg",
+"bind": {
+"texture18": {
+"tga": "GC_Z1_Props_Street.tga",
+"ordinal": 14
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street.tga",
+"ordinal": 14
+}
+},
+"wrap": []
+},
+{
+"i": 12,
+"name": "Material__345_yct4Aj6PKn_qyX3g5Ayy6",
+"effect": "StandardDiffuseDC-fx_hFQr77BIEl_HqDoGL4RHy",
+"bind": {
+"texture19": {
+"tga": "GC_Park_atlas_props.tga",
+"ordinal": 15
+},
+"DiffuseMap": {
+"tga": "GC_Park_atlas_props.tga",
+"ordinal": 15
+}
+},
+"wrap": []
+},
+{
+"i": 13,
+"name": "Material__345_yct4Aj6PKn_8K69rklPGt",
+"effect": "StandardDiffuseDC-fx_hFQr77BIEl_1leDYT3CEW",
+"bind": {
+"texture20": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+}
+},
+"wrap": []
+},
+{
+"i": 14,
+"name": "Material__345_yct4Aj6PKn_S7NLt2nQfj",
+"effect": "StandardDiffuseDC-fx_hFQr77BIEl_fUR2IZ2mB1",
+"bind": {
+"texture21": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+}
+},
+"wrap": []
+},
+{
+"i": 15,
+"name": "Material__79_iQTqVaAUnJ_vHeuSEBMSP",
+"effect": "StandardDiffuseDC-fx_3SL3XByImc_vUmHVQGsTm",
+"bind": {
+"texture22": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+}
+},
+"wrap": []
+},
+{
+"i": 16,
+"name": "tiles_KjsfSXF4YP_30KKziHtRb",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_8arF3SLLny",
+"bind": {
+"texture23": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture24": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"DiffuseMap": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 17,
+"name": "tiles_KjsfSXF4YP_B6Uiu1gJ03",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_OE2u8qvJP3",
+"bind": {
+"texture25": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture26": {
+"tga": "GC_footprint_Vpow_furnal.tga",
+"ordinal": 18
+},
+"DiffuseMap": {
+"tga": "GC_footprint_Vpow_furnal.tga",
+"ordinal": 18
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 18,
+"name": "tiles_KjsfSXF4YP_9oDUTOX7NY",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_OhmWvn7MIr",
+"bind": {
+"texture27": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture28": {
+"tga": "GC_Cath_of_learning_Wall.tga",
+"ordinal": 19
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Wall.tga",
+"ordinal": 19
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 19,
+"name": "tiles_KjsfSXF4YP_wObdYSEvWR",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_EkZgzUny1s",
+"bind": {
+"texture29": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture30": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 20,
+"name": "tiles_KjsfSXF4YP_rlvBndn4cX",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_BLzZ02h67Y",
+"bind": {
+"texture31": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture32": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 21,
+"name": "tiles_KjsfSXF4YP_33hfNWPgr8",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_PaoaKk5lQn",
+"bind": {
+"texture33": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture34": {
+"tga": "GC_Park_statue.tga",
+"ordinal": 21
+},
+"DiffuseMap": {
+"tga": "GC_Park_statue.tga",
+"ordinal": 21
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 22,
+"name": "tiles_KjsfSXF4YP_FdgcL9fOPy",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_81nP7VxEE4",
+"bind": {
+"texture35": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture36": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 23,
+"name": "tiles_KjsfSXF4YP_FtysL1Q4GT",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_c98bI89qTP",
+"bind": {
+"texture37": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture38": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 24,
+"name": "tiles_KjsfSXF4YP_Q5PNEEfuTl",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_OPwD7kkqPq",
+"bind": {
+"texture39": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture40": {
+"tga": "GC_IndustrialProps.tga",
+"ordinal": 22
+},
+"DiffuseMap": {
+"tga": "GC_IndustrialProps.tga",
+"ordinal": 22
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 25,
+"name": "tiles_KjsfSXF4YP_WfUTjlTOSj",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_CH9WpIYaPH",
+"bind": {
+"texture41": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture42": {
+"tga": "GC_DMUS_wall.tga",
+"ordinal": 23
+},
+"DiffuseMap": {
+"tga": "GC_DMUS_wall.tga",
+"ordinal": 23
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 26,
+"name": "tiles_KjsfSXF4YP_H133TyWLIB",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_3iH7JTRsbY",
+"bind": {
+"texture43": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture44": {
+"tga": "GC_DMUS_wall.tga",
+"ordinal": 23
+},
+"DiffuseMap": {
+"tga": "GC_DMUS_wall.tga",
+"ordinal": 23
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 27,
+"name": "tiles_KjsfSXF4YP_s7HX27KbNC",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_4G3sV0ykPd",
+"bind": {
+"texture45": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture46": {
+"tga": "GC_Footprint_GA_T_02.tga",
+"ordinal": 24
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GA_T_02.tga",
+"ordinal": 24
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 28,
+"name": "tiles_KjsfSXF4YP_FptEIP68v8",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_CytJR8Cu6X",
+"bind": {
+"texture47": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture48": {
+"tga": "GC_Residential_BD_01_Door_01.tga",
+"ordinal": 25
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Door_01.tga",
+"ordinal": 25
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 29,
+"name": "tiles_KjsfSXF4YP_HAD2vQkWrp",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_ZdV60GXAPZ",
+"bind": {
+"texture49": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture50": {
+"tga": "GC_footprint_AA_ground.tga",
+"ordinal": 26
+},
+"DiffuseMap": {
+"tga": "GC_footprint_AA_ground.tga",
+"ordinal": 26
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 30,
+"name": "tiles_KjsfSXF4YP_6z3lSTpgTp",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_qiwdo3Hrdt",
+"bind": {
+"texture51": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture52": {
+"tga": "GC_SXC_hedge.tga",
+"ordinal": 27
+},
+"DiffuseMap": {
+"tga": "GC_SXC_hedge.tga",
+"ordinal": 27
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 31,
+"name": "tiles_KjsfSXF4YP_8uA8D9eE4Z",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_RpRVcwo6HM",
+"bind": {
+"texture53": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture54": {
+"tga": "GothamCity_bridge2.tga",
+"ordinal": 28
+},
+"DiffuseMap": {
+"tga": "GothamCity_bridge2.tga",
+"ordinal": 28
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 32,
+"name": "tiles_KjsfSXF4YP_LBHSkD6qr7",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_ADtmvWvN20",
+"bind": {
+"texture55": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture56": {
+"tga": "GC_Truck_wheels_01.tga",
+"ordinal": 29
+},
+"DiffuseMap": {
+"tga": "GC_Truck_wheels_01.tga",
+"ordinal": 29
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 33,
+"name": "tiles_KjsfSXF4YP_MA0OSa91e9",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_J1hAkTkUFv",
+"bind": {
+"texture57": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture58": {
+"tga": "GC_Walls.tga",
+"ordinal": 30
+},
+"DiffuseMap": {
+"tga": "GC_Walls.tga",
+"ordinal": 30
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 34,
+"name": "tiles_KjsfSXF4YP_AI4OMrxF2l",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_gqVNBeg10g",
+"bind": {
+"texture59": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"LightMap": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"texture60": {
+"tga": "GC_Footprint_IC.tga",
+"ordinal": 32
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_IC.tga",
+"ordinal": 32
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 35,
+"name": "tiles_KjsfSXF4YP_Qyw8byxIFw",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_tRPWacKwhz",
+"bind": {
+"texture61": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture62": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 36,
+"name": "tiles_KjsfSXF4YP_ubpCzI71MR",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_OQfxFYy0qu",
+"bind": {
+"texture63": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture64": {
+"tga": "GC_T_Concrete_01.tga",
+"ordinal": 34
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_01.tga",
+"ordinal": 34
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 37,
+"name": "tiles_KjsfSXF4YP_YlapdvxlUs",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_VOgDko8fnP",
+"bind": {
+"texture65": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture66": {
+"tga": "GC_Footprint_VD_Buildings.tga",
+"ordinal": 35
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings.tga",
+"ordinal": 35
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 38,
+"name": "tiles_KjsfSXF4YP_kfrjRZDdw6",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_BH29Cm3ORY",
+"bind": {
+"texture67": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture68": {
+"tga": "GC_Cath_of_learning_Brick.tga",
+"ordinal": 36
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Brick.tga",
+"ordinal": 36
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 39,
+"name": "tiles_KjsfSXF4YP_wWR2uaAtZV",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_LcpX33e1IO",
+"bind": {
+"texture69": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture70": {
+"tga": "GC_Residential_BD_03_roof_02.tga",
+"ordinal": 37
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_roof_02.tga",
+"ordinal": 37
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 40,
+"name": "tiles_KjsfSXF4YP_BQjgnZSCe8",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_B5yi9ijSAj",
+"bind": {
+"texture71": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture72": {
+"tga": "GC_Residential_BD_01_Roof_01.tga",
+"ordinal": 38
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Roof_01.tga",
+"ordinal": 38
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 41,
+"name": "tiles_KjsfSXF4YP_456uNhaAAZ",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_nPQHnppZqt",
+"bind": {
+"texture73": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture74": {
+"tga": "GC_Footprint_VD_Buildings_3.tga",
+"ordinal": 39
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings_3.tga",
+"ordinal": 39
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 42,
+"name": "tiles_KjsfSXF4YP_M9T0ci76Ro",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_7eJqXZMwEC",
+"bind": {
+"texture75": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture76": {
+"tga": "GC_VPOW_Tiles2.tga",
+"ordinal": 40
+},
+"DiffuseMap": {
+"tga": "GC_VPOW_Tiles2.tga",
+"ordinal": 40
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 43,
+"name": "tiles_KjsfSXF4YP_WsIMd3jKuW",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_jHkpC99IR3",
+"bind": {
+"texture77": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture78": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"DiffuseMap": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 44,
+"name": "tiles_KjsfSXF4YP_E0pAli9Mk6",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_wPswERoC0n",
+"bind": {
+"texture79": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture80": {
+"tga": "GC_Residential_BD_04_Roof_02.tga",
+"ordinal": 41
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Roof_02.tga",
+"ordinal": 41
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 45,
+"name": "tiles_KjsfSXF4YP_SsMZ6uUeHJ",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_pyZdABIGpA",
+"bind": {
+"texture81": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture82": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 46,
+"name": "tiles_KjsfSXF4YP_0ouihnKJGj",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_j8Ut6sSUOT",
+"bind": {
+"texture83": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture84": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 47,
+"name": "tiles_KjsfSXF4YP_USmJqhTmfA",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_kvaPWolzch",
+"bind": {
+"texture85": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture86": {
+"tga": "GC_footprint_AA_ground_02.tga",
+"ordinal": 43
+},
+"DiffuseMap": {
+"tga": "GC_footprint_AA_ground_02.tga",
+"ordinal": 43
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 48,
+"name": "tiles_KjsfSXF4YP_pfr6SkbeR8",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_UKYckdKB9P",
+"bind": {
+"texture87": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture88": {
+"tga": "GC_Footprint_VD_Floor_2.tga",
+"ordinal": 44
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor_2.tga",
+"ordinal": 44
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 49,
+"name": "tiles_KjsfSXF4YP_LUlctAOGXl",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_PKPlKtGBly",
+"bind": {
+"texture89": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture90": {
+"tga": "GC_footprint_awt_marble.tga",
+"ordinal": 45
+},
+"DiffuseMap": {
+"tga": "GC_footprint_awt_marble.tga",
+"ordinal": 45
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 50,
+"name": "tiles_KjsfSXF4YP_zHcL8AII08",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_dP7MVJKo22",
+"bind": {
+"texture91": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture92": {
+"tga": "bridge_tile.tga",
+"ordinal": 46
+},
+"DiffuseMap": {
+"tga": "bridge_tile.tga",
+"ordinal": 46
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 51,
+"name": "tiles_KjsfSXF4YP_NLYG35SqTG",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_n8YXDzJFnl",
+"bind": {
+"texture93": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture94": {
+"tga": "bridge_tile.tga",
+"ordinal": 46
+},
+"DiffuseMap": {
+"tga": "bridge_tile.tga",
+"ordinal": 46
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 52,
+"name": "tiles_KjsfSXF4YP_gKq6MbYsSX",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_tifPRHmoGr",
+"bind": {
+"texture95": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture96": {
+"tga": "GC_Footprint_GA_T_00.tga",
+"ordinal": 47
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GA_T_00.tga",
+"ordinal": 47
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 53,
+"name": "tiles_KjsfSXF4YP_K31tz14EbA",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_vy60MjweSb",
+"bind": {
+"texture97": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture98": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"DiffuseMap": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 54,
+"name": "tiles_KjsfSXF4YP_mnfMwafStM",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_1KG3aMSFgD",
+"bind": {
+"texture99": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture100": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 55,
+"name": "tiles_KjsfSXF4YP_tw5K1eD28K",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_icLMPCqabz",
+"bind": {
+"texture101": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture102": {
+"tga": "GC_Footprint_GA_TH.tga",
+"ordinal": 49
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GA_TH.tga",
+"ordinal": 49
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 56,
+"name": "tiles_KjsfSXF4YP_nWrc6hIXQd",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_in4mMxkcNZ",
+"bind": {
+"texture103": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture104": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 57,
+"name": "tiles_KjsfSXF4YP_ivVlvkI3S1",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_czX4fr0RMt",
+"bind": {
+"texture105": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture106": {
+"tga": "GC_Cath_of_learning_Wall.tga",
+"ordinal": 19
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Wall.tga",
+"ordinal": 19
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 58,
+"name": "tiles_KjsfSXF4YP_GEdkVpeKgH",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_WSxzzthFYq",
+"bind": {
+"texture107": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture108": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 59,
+"name": "tiles_KjsfSXF4YP_YMq1we9QL2",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_aJ5P1fJXE0",
+"bind": {
+"texture109": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture110": {
+"tga": "GC_VRS_Reservoir.tga",
+"ordinal": 51
+},
+"DiffuseMap": {
+"tga": "GC_VRS_Reservoir.tga",
+"ordinal": 51
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 60,
+"name": "tiles_KjsfSXF4YP_n3QLJwWy0v",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_rKEs8yKDAV",
+"bind": {
+"texture111": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture112": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 61,
+"name": "tiles_KjsfSXF4YP_Lq080gXW8z",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_NKb4LTfLMM",
+"bind": {
+"texture113": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture114": {
+"tga": "GC_footprint_aa_concrete.tga",
+"ordinal": 53
+},
+"DiffuseMap": {
+"tga": "GC_footprint_aa_concrete.tga",
+"ordinal": 53
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 62,
+"name": "tiles_KjsfSXF4YP_aErAnGePtx",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_W5v6qCQNwW",
+"bind": {
+"texture115": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture116": {
+"tga": "GC_Residential_BD_01_Door_01.tga",
+"ordinal": 25
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Door_01.tga",
+"ordinal": 25
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 63,
+"name": "tiles_KjsfSXF4YP_7iE8TLmAZu",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_5v3gYKbBkp",
+"bind": {
+"texture117": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture118": {
+"tga": "GC_Walls.tga",
+"ordinal": 30
+},
+"DiffuseMap": {
+"tga": "GC_Walls.tga",
+"ordinal": 30
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 64,
+"name": "tiles_KjsfSXF4YP_AOg1vriJN0",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_sXVJpKqtgP",
+"bind": {
+"texture119": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture120": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"DiffuseMap": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 65,
+"name": "tiles_KjsfSXF4YP_0SCA0zKFZd",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_4X29XdBh8j",
+"bind": {
+"texture121": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture122": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"DiffuseMap": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 66,
+"name": "tiles_KjsfSXF4YP_ykKPltKud5",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_SKQc5eTRuv",
+"bind": {
+"texture123": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture124": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 67,
+"name": "tiles_KjsfSXF4YP_svmUM03Ymj",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_EUWDutAgMV",
+"bind": {
+"texture125": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture126": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 68,
+"name": "tiles_KjsfSXF4YP_gwsA1Anevj",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_IqtYFpEFlj",
+"bind": {
+"texture127": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture128": {
+"tga": "GC_T_Concrete_01.tga",
+"ordinal": 34
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_01.tga",
+"ordinal": 34
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 69,
+"name": "tiles_KjsfSXF4YP_YLjC0XVLuq",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_PJC0d543tU",
+"bind": {
+"texture129": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture130": {
+"tga": "GC_Cath_of_learning_Brick.tga",
+"ordinal": 36
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Brick.tga",
+"ordinal": 36
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 70,
+"name": "tiles_KjsfSXF4YP_VYO3dJfBuC",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_9CaGJhxWkh",
+"bind": {
+"texture131": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture132": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 71,
+"name": "tiles_KjsfSXF4YP_RXXNsyE4NH",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_ov1eETvOmd",
+"bind": {
+"texture133": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture134": {
+"tga": "GC_IndustrialProps.tga",
+"ordinal": 22
+},
+"DiffuseMap": {
+"tga": "GC_IndustrialProps.tga",
+"ordinal": 22
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 72,
+"name": "tiles_KjsfSXF4YP_bSUz2k4XdH",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_RkTZCBldIk",
+"bind": {
+"texture135": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture136": {
+"tga": "GC_Residential_BD_01_Roof_01.tga",
+"ordinal": 38
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Roof_01.tga",
+"ordinal": 38
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 73,
+"name": "tiles_KjsfSXF4YP_vgEsjieOpx",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_9VxSffSaIT",
+"bind": {
+"texture137": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture138": {
+"tga": "gothamcity_roads_details.tga",
+"ordinal": 56
+},
+"DiffuseMap": {
+"tga": "gothamcity_roads_details.tga",
+"ordinal": 56
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 74,
+"name": "tiles_KjsfSXF4YP_ythRDUSLUc",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_cfBn4tzYAB",
+"bind": {
+"texture139": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture140": {
+"tga": "trunk.tga",
+"ordinal": 57
+},
+"DiffuseMap": {
+"tga": "trunk.tga",
+"ordinal": 57
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 75,
+"name": "tiles_KjsfSXF4YP_ZaOA2jb1ND",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_bCkFeXVwVQ",
+"bind": {
+"texture141": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture142": {
+"tga": "GC_Diner_Floor.tga",
+"ordinal": 58
+},
+"DiffuseMap": {
+"tga": "GC_Diner_Floor.tga",
+"ordinal": 58
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 76,
+"name": "tiles_KjsfSXF4YP_X6hhgnz4Mf",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_CX3vP20n39",
+"bind": {
+"texture143": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture144": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 77,
+"name": "tiles_KjsfSXF4YP_m9WgMaF0mJ",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_1it18OLKdt",
+"bind": {
+"texture145": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture146": {
+"tga": "GC_Footprint_VD_Floor_2.tga",
+"ordinal": 44
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor_2.tga",
+"ordinal": 44
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 78,
+"name": "tiles_KjsfSXF4YP_AQsoC7WO95",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_KATWd43Ofl",
+"bind": {
+"texture147": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture148": {
+"tga": "GC_SXC_Brick.tga",
+"ordinal": 59
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Brick.tga",
+"ordinal": 59
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 79,
+"name": "tiles_KjsfSXF4YP_TDHqyzKXoJ",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_efK2h3B98k",
+"bind": {
+"texture149": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture150": {
+"tga": "GC_Residential_BD_02_Shop.tga",
+"ordinal": 60
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_02_Shop.tga",
+"ordinal": 60
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 80,
+"name": "tiles_KjsfSXF4YP_I67ekrUydL",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_MFchjR1wTY",
+"bind": {
+"texture151": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture152": {
+"tga": "GC_Truck_01.tga",
+"ordinal": 61
+},
+"DiffuseMap": {
+"tga": "GC_Truck_01.tga",
+"ordinal": 61
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 81,
+"name": "tiles_KjsfSXF4YP_xfRWIz9RwJ",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_RJBUDZXXFy",
+"bind": {
+"texture153": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture154": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 82,
+"name": "tiles_KjsfSXF4YP_CRyp0qZbXH",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_akyvPmMoLB",
+"bind": {
+"texture155": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture156": {
+"tga": "GC_Footprint_GA_TH.tga",
+"ordinal": 49
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GA_TH.tga",
+"ordinal": 49
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 83,
+"name": "tiles_KjsfSXF4YP_fLf8hgMcVO",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_jtanzWWpCm",
+"bind": {
+"texture157": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture158": {
+"tga": "GC_Residential_BD_03_details_01.tga",
+"ordinal": 62
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_details_01.tga",
+"ordinal": 62
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 84,
+"name": "tiles_KjsfSXF4YP_8m6xqqEZ1E",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_xm7E0c9GUa",
+"bind": {
+"texture159": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture160": {
+"tga": "GC_Residential_BD_04_Roof_02.tga",
+"ordinal": 41
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Roof_02.tga",
+"ordinal": 41
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 85,
+"name": "tiles_KjsfSXF4YP_hqhH2Wlcvy",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_NaQPFKnSJu",
+"bind": {
+"texture161": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture162": {
+"tga": "GC_SXC_Brick_02.tga",
+"ordinal": 63
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Brick_02.tga",
+"ordinal": 63
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 86,
+"name": "tiles_KjsfSXF4YP_nn79XAVJRr",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_L4MAeQXggM",
+"bind": {
+"texture163": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"LightMap": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"texture164": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 87,
+"name": "tiles_KjsfSXF4YP_C4iU1b6GvS",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_z1uBdbraRv",
+"bind": {
+"texture165": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"LightMap": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"texture166": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 88,
+"name": "tiles_KjsfSXF4YP_cY7RJCXTNI",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_1TiZMqvUrw",
+"bind": {
+"texture167": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture168": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"DiffuseMap": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 89,
+"name": "tiles_KjsfSXF4YP_xYctR9RF3Y",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_fkulpeHgd1",
+"bind": {
+"texture169": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture170": {
+"tga": "GC_Residential_BD_01_Windows_04.tga",
+"ordinal": 65
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_04.tga",
+"ordinal": 65
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 90,
+"name": "tiles_KjsfSXF4YP_A0XTaehlb8",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_xVeBJKYQu7",
+"bind": {
+"texture171": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture172": {
+"tga": "GC_Residential_Props_Railroad.tga",
+"ordinal": 66
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Props_Railroad.tga",
+"ordinal": 66
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 91,
+"name": "tiles_KjsfSXF4YP_1I6BDvjwRg",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_tRbhXVz9Az",
+"bind": {
+"texture173": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture174": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 92,
+"name": "tiles_KjsfSXF4YP_qZTqOpaZDA",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_w6eX3aKWTS",
+"bind": {
+"texture175": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 93,
+"name": "tiles_KjsfSXF4YP_n3VsamFkqU",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_qyRvJykTwF",
+"bind": {
+"texture177": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture178": {
+"tga": "GC_Cath_of_learning_Wall.tga",
+"ordinal": 19
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Wall.tga",
+"ordinal": 19
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 94,
+"name": "tiles_KjsfSXF4YP_jq873tLM70",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_1BcDuG07mj",
+"bind": {
+"texture179": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture180": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 95,
+"name": "tiles_KjsfSXF4YP_pMSsvHgod6",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_Rm3tBHYf2F",
+"bind": {
+"texture181": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture182": {
+"tga": "GC_Footprint_GA_T_01.tga",
+"ordinal": 67
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GA_T_01.tga",
+"ordinal": 67
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 96,
+"name": "tiles_KjsfSXF4YP_uFDFDHnZw3",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_GX3LkY8vbd",
+"bind": {
+"texture183": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture184": {
+"tga": "GC_DMUS_wall.tga",
+"ordinal": 23
+},
+"DiffuseMap": {
+"tga": "GC_DMUS_wall.tga",
+"ordinal": 23
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 97,
+"name": "tiles_KjsfSXF4YP_aUSvXonVZY",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_L1gm3H3VlG",
+"bind": {
+"texture185": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture186": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 98,
+"name": "tiles_KjsfSXF4YP_zs08I7m4ba",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_jXaRgVNcJN",
+"bind": {
+"texture187": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture188": {
+"tga": "GC_Z1_Shops_01.tga",
+"ordinal": 68
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_01.tga",
+"ordinal": 68
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 99,
+"name": "tiles_KjsfSXF4YP_ozZhzLj2hX",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_YXjmxEHysO",
+"bind": {
+"texture189": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture190": {
+"tga": "GC_Statues_Atlas.tga",
+"ordinal": 69
+},
+"DiffuseMap": {
+"tga": "GC_Statues_Atlas.tga",
+"ordinal": 69
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 100,
+"name": "tiles_KjsfSXF4YP_YpOhzGZdGT",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_yhlbqHeXKI",
+"bind": {
+"texture191": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture192": {
+"tga": "GC_Truck_wheels_01.tga",
+"ordinal": 29
+},
+"DiffuseMap": {
+"tga": "GC_Truck_wheels_01.tga",
+"ordinal": 29
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 101,
+"name": "tiles_KjsfSXF4YP_vRdS9AaopP",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_zkPJe5AhAz",
+"bind": {
+"texture193": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture194": {
+"tga": "GC_Residential_BD_04_Wall_02.tga",
+"ordinal": 70
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Wall_02.tga",
+"ordinal": 70
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 102,
+"name": "tiles_KjsfSXF4YP_K38Dwmj69I",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_bPCxcxwTJI",
+"bind": {
+"texture195": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture196": {
+"tga": "GC_VPOW_Tiles.tga",
+"ordinal": 71
+},
+"DiffuseMap": {
+"tga": "GC_VPOW_Tiles.tga",
+"ordinal": 71
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 103,
+"name": "tiles_KjsfSXF4YP_0SCl9nTdej",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_K6KVxSN2yF",
+"bind": {
+"texture197": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture198": {
+"tga": "GC_Z1_Props_Street.tga",
+"ordinal": 14
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street.tga",
+"ordinal": 14
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 104,
+"name": "tiles_KjsfSXF4YP_8vuKrACuTi",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_MgZRlccTGX",
+"bind": {
+"texture199": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture200": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 105,
+"name": "tiles_KjsfSXF4YP_KZABTNEQDg",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_9DM5uXp9fE",
+"bind": {
+"texture201": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture202": {
+"tga": "GC_Park_atlas_props.tga",
+"ordinal": 15
+},
+"DiffuseMap": {
+"tga": "GC_Park_atlas_props.tga",
+"ordinal": 15
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 106,
+"name": "tiles_KjsfSXF4YP_KCjSE1FtVo",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_sYmP69ydQs",
+"bind": {
+"texture203": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture204": {
+"tga": "GC_Residential_BD_03_details_01.tga",
+"ordinal": 62
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_details_01.tga",
+"ordinal": 62
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 107,
+"name": "tiles_KjsfSXF4YP_ZWwjV3ZoDN",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_sqEsoZncwB",
+"bind": {
+"texture205": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture206": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 108,
+"name": "tiles_KjsfSXF4YP_J8jECD92Bx",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_Jq8VJQUEOL",
+"bind": {
+"texture207": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture208": {
+"tga": "GC_footprint_GC_ceiling_T.tga",
+"ordinal": 73
+},
+"DiffuseMap": {
+"tga": "GC_footprint_GC_ceiling_T.tga",
+"ordinal": 73
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 109,
+"name": "tiles_KjsfSXF4YP_i8nfR9Od6x",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_ch5N00ZEPd",
+"bind": {
+"texture209": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture210": {
+"tga": "GC_Footprint_VD_Floor_2.tga",
+"ordinal": 44
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor_2.tga",
+"ordinal": 44
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 110,
+"name": "tiles_KjsfSXF4YP_Z93mGppF3l",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_mldTHodT9c",
+"bind": {
+"texture211": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture212": {
+"tga": "GC_Footprint_GA_TH.tga",
+"ordinal": 49
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GA_TH.tga",
+"ordinal": 49
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 111,
+"name": "tiles_KjsfSXF4YP_cgVSEe4d3m",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_9bgtUaYhSJ",
+"bind": {
+"texture213": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture214": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 112,
+"name": "tiles_KjsfSXF4YP_t3KmuvFnij",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_bHE3wyiGOf",
+"bind": {
+"texture215": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture216": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 113,
+"name": "tiles_KjsfSXF4YP_W1ssFwxwZr",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_wndit6Bb5r",
+"bind": {
+"texture217": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture218": {
+"tga": "GC_SXC_Brick_02.tga",
+"ordinal": 63
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Brick_02.tga",
+"ordinal": 63
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 114,
+"name": "tiles_KjsfSXF4YP_vojWNZSlQi",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_ptnzsTGlZH",
+"bind": {
+"texture219": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture220": {
+"tga": "GC_footprint_GC_zebra_T.tga",
+"ordinal": 75
+},
+"DiffuseMap": {
+"tga": "GC_footprint_GC_zebra_T.tga",
+"ordinal": 75
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 115,
+"name": "tiles_KjsfSXF4YP_aWXxsxi3AC",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_FqDMeb4hgx",
+"bind": {
+"texture221": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture222": {
+"tga": "GC_Residential_BD_01_Windows_02_v.tga",
+"ordinal": 76
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_02_v.tga",
+"ordinal": 76
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 116,
+"name": "tiles_KjsfSXF4YP_fNw0Kkibxe",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_h0XXdea2vQ",
+"bind": {
+"texture223": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture224": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 117,
+"name": "tiles_KjsfSXF4YP_gKZmCVSQ9i",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_hT3v5G2OhZ",
+"bind": {
+"texture225": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture226": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 118,
+"name": "tiles_KjsfSXF4YP_TeVZOXj6Sj",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_CvUX1zCN8t",
+"bind": {
+"texture227": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture228": {
+"tga": "GC_Z1_Shops_01.tga",
+"ordinal": 68
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_01.tga",
+"ordinal": 68
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 119,
+"name": "tiles_KjsfSXF4YP_Ruv0HclWhC",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_9AMQKHQNTk",
+"bind": {
+"texture229": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture230": {
+"tga": "GC_Statues_Atlas.tga",
+"ordinal": 69
+},
+"DiffuseMap": {
+"tga": "GC_Statues_Atlas.tga",
+"ordinal": 69
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 120,
+"name": "tiles_KjsfSXF4YP_kPrCtcI90G",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_9NY7bxX4xf",
+"bind": {
+"texture231": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture232": {
+"tga": "bridge_1.tga",
+"ordinal": 78
+},
+"DiffuseMap": {
+"tga": "bridge_1.tga",
+"ordinal": 78
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 121,
+"name": "tiles_KjsfSXF4YP_JSCLwxsz3z",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_p8YjRnkbQU",
+"bind": {
+"texture233": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture234": {
+"tga": "bridge_1.tga",
+"ordinal": 78
+},
+"DiffuseMap": {
+"tga": "bridge_1.tga",
+"ordinal": 78
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 122,
+"name": "tiles_KjsfSXF4YP_9LhIU3FqTy",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_S3mPW6Yl2M",
+"bind": {
+"texture235": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture236": {
+"tga": "GC_Residential_BD_04_Wall_02.tga",
+"ordinal": 70
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Wall_02.tga",
+"ordinal": 70
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 123,
+"name": "tiles_KjsfSXF4YP_Z37CFjIy9z",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_DvZdPUBXCB",
+"bind": {
+"texture237": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture238": {
+"tga": "GC_Footprint_VD_Buildings_2.tga",
+"ordinal": 79
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings_2.tga",
+"ordinal": 79
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 124,
+"name": "tiles_KjsfSXF4YP_IgH05yfrCM",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_nmJIgWyT7Y",
+"bind": {
+"texture239": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture240": {
+"tga": "GC_SXC_Atlas2.tga",
+"ordinal": 80
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Atlas2.tga",
+"ordinal": 80
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 125,
+"name": "tiles_KjsfSXF4YP_cf1hKIKIEQ",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_vfoH1VDKMY",
+"bind": {
+"texture241": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture242": {
+"tga": "GC_Z1_Props_Street.tga",
+"ordinal": 14
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street.tga",
+"ordinal": 14
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 126,
+"name": "tiles_KjsfSXF4YP_goKEVwwgXE",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_xiTmCX4VVS",
+"bind": {
+"texture243": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"LightMap": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"texture244": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Items.tga",
+"ordinal": 42
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 127,
+"name": "tiles_KjsfSXF4YP_41w2UFYwoX",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_GiQUNloYdC",
+"bind": {
+"texture245": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture246": {
+"tga": "GothamCity_asphalt_tile.tga",
+"ordinal": 81
+},
+"DiffuseMap": {
+"tga": "GothamCity_asphalt_tile.tga",
+"ordinal": 81
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 128,
+"name": "tiles_KjsfSXF4YP_R03U9ph3iH",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_BcjNemZauO",
+"bind": {
+"texture247": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture248": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 129,
+"name": "tiles_KjsfSXF4YP_9cdbhY3sPW",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_a1QFt7EeMp",
+"bind": {
+"texture249": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture250": {
+"tga": "GC_Park_statue.tga",
+"ordinal": 21
+},
+"DiffuseMap": {
+"tga": "GC_Park_statue.tga",
+"ordinal": 21
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 130,
+"name": "tiles_KjsfSXF4YP_NEaZDFtvsX",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_bgPei2Rv4z",
+"bind": {
+"texture251": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture252": {
+"tga": "GC_Footprint_VD_Buildings.tga",
+"ordinal": 35
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings.tga",
+"ordinal": 35
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 131,
+"name": "tiles_KjsfSXF4YP_2JPwKFB81i",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_Zw234XoJil",
+"bind": {
+"texture253": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture254": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 132,
+"name": "tiles_KjsfSXF4YP_STc7TxJS5f",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_FPt8VwYU9K",
+"bind": {
+"texture255": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture256": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 133,
+"name": "tiles_KjsfSXF4YP_BPg1kIAEXD",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_gjZIwWsOrk",
+"bind": {
+"texture257": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture258": {
+"tga": "GC_Park_atlas_props.tga",
+"ordinal": 15
+},
+"DiffuseMap": {
+"tga": "GC_Park_atlas_props.tga",
+"ordinal": 15
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 134,
+"name": "tiles_KjsfSXF4YP_tf4IA5WaZ8",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_dao2rPY9Tm",
+"bind": {
+"texture259": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture260": {
+"tga": "GC_Residential_BD_03_roof_02.tga",
+"ordinal": 37
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_roof_02.tga",
+"ordinal": 37
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 135,
+"name": "tiles_KjsfSXF4YP_utVL7pdQQG",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_awIzaTgyKn",
+"bind": {
+"texture261": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture262": {
+"tga": "GC_Truck_01.tga",
+"ordinal": 61
+},
+"DiffuseMap": {
+"tga": "GC_Truck_01.tga",
+"ordinal": 61
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 136,
+"name": "tiles_KjsfSXF4YP_i6BxMDmjoT",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_nJwoIY54dG",
+"bind": {
+"texture263": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture264": {
+"tga": "GC_Footprint_CC_windows02.tga",
+"ordinal": 82
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_CC_windows02.tga",
+"ordinal": 82
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 137,
+"name": "tiles_KjsfSXF4YP_NCjFkhMJ9N",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_D3Roe9tUhz",
+"bind": {
+"texture265": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture266": {
+"tga": "GC_Footprint_GA_floor_T_00.tga",
+"ordinal": 83
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GA_floor_T_00.tga",
+"ordinal": 83
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 138,
+"name": "tiles_KjsfSXF4YP_b526TR5xSc",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_1XXwN9r6Mj",
+"bind": {
+"texture267": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture268": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 139,
+"name": "tiles_KjsfSXF4YP_mOZGylOWSP",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_J1D4Vjfrfw",
+"bind": {
+"texture269": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture270": {
+"tga": "GC_footprint_GC_ceiling_T.tga",
+"ordinal": 73
+},
+"DiffuseMap": {
+"tga": "GC_footprint_GC_ceiling_T.tga",
+"ordinal": 73
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 140,
+"name": "tiles_KjsfSXF4YP_ROc6poyfsR",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_dkICuBVbdX",
+"bind": {
+"texture271": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture272": {
+"tga": "GC_Residential_BD_04_Roof_02.tga",
+"ordinal": 41
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Roof_02.tga",
+"ordinal": 41
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 141,
+"name": "tiles_KjsfSXF4YP_JjXwy5PcXL",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_aUwIQjMDtC",
+"bind": {
+"texture273": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture274": {
+"tga": "GC_Residential_Props_Excavator.tga",
+"ordinal": 84
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Props_Excavator.tga",
+"ordinal": 84
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 142,
+"name": "tiles_KjsfSXF4YP_NVufCXt5NW",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_icsSIwDbDS",
+"bind": {
+"texture275": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture276": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 143,
+"name": "tiles_KjsfSXF4YP_fSWL3TtuQP",
+"effect": "LightMapDC-fx_h2Q6dQAjy4_zVipntaBaw",
+"bind": {
+"texture277": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture278": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 144,
+"name": "buildings4_Gp1a83XIdD_MlNG8fszdH",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_qfbroh4tkB",
+"bind": {
+"texture279": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture280": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 145,
+"name": "buildings4_Gp1a83XIdD_EfxVJqn0Hi",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_9IUg7z2jqh",
+"bind": {
+"texture281": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture282": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 146,
+"name": "buildings4_Gp1a83XIdD_4ZYyjogess",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_GqKDZGxoOe",
+"bind": {
+"texture283": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture284": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 147,
+"name": "buildings4_Gp1a83XIdD_guZlHg4yAL",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_TwRWUvJTqu",
+"bind": {
+"texture285": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture286": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 148,
+"name": "buildings4_Gp1a83XIdD_rFTqQfhtdH",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_rtybk1crWf",
+"bind": {
+"texture287": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture288": {
+"tga": "City_BKG.tga",
+"ordinal": 85
+},
+"DiffuseMap": {
+"tga": "City_BKG.tga",
+"ordinal": 85
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 149,
+"name": "buildings4_Gp1a83XIdD_y3pukiyS5c",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_O2D3GWHdcV",
+"bind": {
+"texture289": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture290": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 150,
+"name": "buildings4_Gp1a83XIdD_oH1PmUbEzv",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_HfowD8t408",
+"bind": {
+"texture291": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture292": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 151,
+"name": "buildings4_Gp1a83XIdD_im9qx2ctP2",
+"effect": "AlphaMasking-fx_pHG8vmB5uw_9d9dqvxWr1",
+"bind": {
+"texture293": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture294": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 152,
+"name": "Material__4182_hGiU3Q1VBL_Y82GV5gMZ8",
+"effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_WIgNsQjiC0",
+"bind": {
+"texture295": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture296": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"Texture1": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"texture297": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"Texture2": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 153,
+"name": "Material__4182_hGiU3Q1VBL_poeCYHjZQn",
+"effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_ORXtJTrPEv",
+"bind": {
+"texture298": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture299": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"Texture1": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"texture300": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"Texture2": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 154,
+"name": "Material__4182_hGiU3Q1VBL_gLTfbnLjBs",
+"effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_b5anh2CV0A",
+"bind": {
+"texture301": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture302": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"Texture1": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"texture303": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"Texture2": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 155,
+"name": "Material__4182_hGiU3Q1VBL_x2xDOyFyOI",
+"effect": "LightmapVCBlendDC-fx_xKMcjIlYnF_AljpV00j6G",
+"bind": {
+"texture304": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture305": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"Texture1": {
+"tga": "GC_Park_grass.tga",
+"ordinal": 54
+},
+"texture306": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"Texture2": {
+"tga": "GC_Park_dirt.tga",
+"ordinal": 64
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 156,
+"name": "_3_-_Default_kGwrJFxR6N_ispIM9oCIp",
+"effect": "NV_Glass-fx_bXt18J7NQQ_BB3moSVgHC",
+"bind": {
+"texture307": {
+"tga": "GC_footprint_AB_atlas.tga",
+"ordinal": 86
+},
+"DiffuseTextureSampler": {
+"tga": "GC_footprint_AB_atlas.tga",
+"ordinal": 86
+},
+"texture308": {
+"tga": "GC_footprint_AB_atlas_rfl.tga",
+"ordinal": 87
+},
+"DiffuseMaskSampler": {
+"tga": "GC_footprint_AB_atlas_rfl.tga",
+"ordinal": 87
+},
+"texture309": {
+"tga": "confroom_Reflection.tga",
+"ordinal": 88
+},
+"ReflectionMapSampler": {
+"tga": "confroom_Reflection.tga",
+"ordinal": 88
+},
+"texture310": {
+"tga": "confroom_lightmap.tga",
+"ordinal": 89
+},
+"LightmapTextureSampler": {
+"tga": "confroom_lightmap.tga",
+"ordinal": 89
+}
+},
+"wrap": []
+},
+{
+"i": 157,
+"name": "Material__3242_XsC6Pt0GIs_SH4aSk6eXu",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_AgZw3YzTY1",
+"bind": {
+"texture311": {
+"tga": "GothamCity_Road_v2_NRM.tga",
+"ordinal": 90
+},
+"NormalMap": {
+"tga": "GothamCity_Road_v2_NRM.tga",
+"ordinal": 90
+},
+"texture312": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture313": {
+"tga": "GothamCity_Road_v1_Island_1.tga",
+"ordinal": 91
+},
+"DiffuseMap": {
+"tga": "GothamCity_Road_v1_Island_1.tga",
+"ordinal": 91
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 158,
+"name": "Material__3242_XsC6Pt0GIs_paaiWPLwDT",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_zT0P5A2R8G",
+"bind": {
+"texture315": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture316": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 159,
+"name": "Material__3242_XsC6Pt0GIs_kTRm0MKHCq",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_bxzgyMxVMM",
+"bind": {
+"texture317": {
+"tga": "GC_Footprint_VD_Floor_2_NRM.tga",
+"ordinal": 92
+},
+"NormalMap": {
+"tga": "GC_Footprint_VD_Floor_2_NRM.tga",
+"ordinal": 92
+},
+"texture318": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture319": {
+"tga": "GC_Footprint_VD_Floor_2.tga",
+"ordinal": 44
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor_2.tga",
+"ordinal": 44
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 160,
+"name": "Material__3242_XsC6Pt0GIs_53zPevMKwf",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_cOGIWhSQHa",
+"bind": {
+"texture320": {
+"tga": "GC_footprint_awt_marble.tga",
+"ordinal": 45
+},
+"NormalMap": {
+"tga": "GC_footprint_awt_marble.tga",
+"ordinal": 45
+},
+"texture321": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture322": {
+"tga": "GC_footprint_awt_marble.tga",
+"ordinal": 45
+},
+"DiffuseMap": {
+"tga": "GC_footprint_awt_marble.tga",
+"ordinal": 45
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 161,
+"name": "Material__3242_XsC6Pt0GIs_0rNljM2zbn",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wPrNZH0cPG",
+"bind": {
+"texture323": {
+"tga": "GC_Footprint_VD_Floor_2_NRM.tga",
+"ordinal": 92
+},
+"NormalMap": {
+"tga": "GC_Footprint_VD_Floor_2_NRM.tga",
+"ordinal": 92
+},
+"texture324": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture325": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 162,
+"name": "Material__3242_XsC6Pt0GIs_tGETz3g9Yt",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_vVM24tZMky",
+"bind": {
+"texture326": {
+"tga": "GC_VPOW_Tiles_NRM.tga",
+"ordinal": 93
+},
+"NormalMap": {
+"tga": "GC_VPOW_Tiles_NRM.tga",
+"ordinal": 93
+},
+"texture327": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture328": {
+"tga": "GC_VPOW_Tiles.tga",
+"ordinal": 71
+},
+"DiffuseMap": {
+"tga": "GC_VPOW_Tiles.tga",
+"ordinal": 71
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 163,
+"name": "Material__3242_XsC6Pt0GIs_9cieLr3N4d",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_xRBW8B9EZF",
+"bind": {
+"texture329": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"NormalMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"texture330": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture331": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 164,
+"name": "Material__3242_XsC6Pt0GIs_S6HVFpazsC",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wp5rVitT7q",
+"bind": {
+"texture332": {
+"tga": "GC_T_Concrete_01_NRM.tga",
+"ordinal": 94
+},
+"NormalMap": {
+"tga": "GC_T_Concrete_01_NRM.tga",
+"ordinal": 94
+},
+"texture333": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture334": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 165,
+"name": "Material__3242_XsC6Pt0GIs_SQmAsorh9h",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wvlefn03A5",
+"bind": {
+"texture335": {
+"tga": "GC_VPOW_Ground_Tile_NRM.tga",
+"ordinal": 95
+},
+"NormalMap": {
+"tga": "GC_VPOW_Ground_Tile_NRM.tga",
+"ordinal": 95
+},
+"texture336": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture337": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 166,
+"name": "Material__3242_XsC6Pt0GIs_BbDr9YDQSY",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ztcvK8XzZb",
+"bind": {
+"texture338": {
+"tga": "GC_SXC_Rooftop_ground_NRM.tga",
+"ordinal": 96
+},
+"NormalMap": {
+"tga": "GC_SXC_Rooftop_ground_NRM.tga",
+"ordinal": 96
+},
+"texture339": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture340": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 167,
+"name": "Material__3242_XsC6Pt0GIs_L5gdRpIXJ6",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_7SfOAI8xkp",
+"bind": {
+"texture341": {
+"tga": "GC_Footprint_VD_Floor_2_NRM.tga",
+"ordinal": 92
+},
+"NormalMap": {
+"tga": "GC_Footprint_VD_Floor_2_NRM.tga",
+"ordinal": 92
+},
+"texture342": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture343": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 168,
+"name": "Material__3242_XsC6Pt0GIs_3uv8WaDDx4",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_3fb1fXqfm8",
+"bind": {
+"texture344": {
+"tga": "bridge_tile_nrm.tga",
+"ordinal": 97
+},
+"NormalMap": {
+"tga": "bridge_tile_nrm.tga",
+"ordinal": 97
+},
+"texture345": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture346": {
+"tga": "bridge_tile.tga",
+"ordinal": 46
+},
+"DiffuseMap": {
+"tga": "bridge_tile.tga",
+"ordinal": 46
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 169,
+"name": "Material__69_zHOTJcJwef_r7bed0KPb9",
+"effect": "LightMapDC-fx_a5jiZPnCED_0hg0ANLZMu",
+"bind": {
+"texture347": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture348": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture349": {
+"tga": "HC_Prop_BillboardRoof_01_Refl.tga",
+"ordinal": 98
+},
+"DiffuseMaskSampler": {
+"tga": "HC_Prop_BillboardRoof_01_Refl.tga",
+"ordinal": 98
+}
+},
+"wrap": []
+},
+{
+"i": 170,
+"name": "Material__69_zHOTJcJwef_bIbSBRl1sc",
+"effect": "LightMapDC-fx_a5jiZPnCED_PBkwzFeaKQ",
+"bind": {
+"texture350": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture351": {
+"tga": "GC_Footprint_CC_windows02.tga",
+"ordinal": 82
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_CC_windows02.tga",
+"ordinal": 82
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture352": {
+"tga": "GC_Footprint_CC_windows02_ref.tga",
+"ordinal": 99
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_CC_windows02_ref.tga",
+"ordinal": 99
+}
+},
+"wrap": []
+},
+{
+"i": 171,
+"name": "Material__69_zHOTJcJwef_kSP3msI6XZ",
+"effect": "LightMapDC-fx_a5jiZPnCED_Ex8ksHpDhF",
+"bind": {
+"texture353": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture354": {
+"tga": "GC_Glass_Building.tga",
+"ordinal": 100
+},
+"DiffuseMap": {
+"tga": "GC_Glass_Building.tga",
+"ordinal": 100
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture355": {
+"tga": "GC_Glass_Building_Refl.tga",
+"ordinal": 101
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Glass_Building_Refl.tga",
+"ordinal": 101
+}
+},
+"wrap": []
+},
+{
+"i": 172,
+"name": "Material__69_zHOTJcJwef_wgyDrgY9Tc",
+"effect": "LightMapDC-fx_a5jiZPnCED_MEwGusP3Sj",
+"bind": {
+"texture356": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture357": {
+"tga": "GC_Footprint_AWT.tga",
+"ordinal": 102
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_AWT.tga",
+"ordinal": 102
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture358": {
+"tga": "GC_Footprint_AWT_rfl.tga",
+"ordinal": 103
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_AWT_rfl.tga",
+"ordinal": 103
+}
+},
+"wrap": []
+},
+{
+"i": 173,
+"name": "Material__69_zHOTJcJwef_UY16XSOiiZ",
+"effect": "LightMapDC-fx_a5jiZPnCED_X1dY3RIctv",
+"bind": {
+"texture359": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture360": {
+"tga": "GC_Footprint_IC.tga",
+"ordinal": 32
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_IC.tga",
+"ordinal": 32
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 174,
+"name": "Material__69_zHOTJcJwef_EFPgTs79ax",
+"effect": "LightMapDC-fx_a5jiZPnCED_qTo9VxlSDa",
+"bind": {
+"texture362": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture363": {
+"tga": "GC_Cath_of_learning_RandomObj.tga",
+"ordinal": 104
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_RandomObj.tga",
+"ordinal": 104
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture364": {
+"tga": "GC_Cath_of_learning_RandomObj_Refl.tga",
+"ordinal": 105
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Cath_of_learning_RandomObj_Refl.tga",
+"ordinal": 105
+}
+},
+"wrap": []
+},
+{
+"i": 175,
+"name": "Material__69_zHOTJcJwef_ifOpKg0RM3",
+"effect": "LightMapDC-fx_a5jiZPnCED_7uR5QwN3gc",
+"bind": {
+"texture365": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture366": {
+"tga": "GC_T_Windows_03.tga",
+"ordinal": 106
+},
+"DiffuseMap": {
+"tga": "GC_T_Windows_03.tga",
+"ordinal": 106
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture367": {
+"tga": "GC_T_Windows_03_Refl.tga",
+"ordinal": 107
+},
+"DiffuseMaskSampler": {
+"tga": "GC_T_Windows_03_Refl.tga",
+"ordinal": 107
+}
+},
+"wrap": []
+},
+{
+"i": 176,
+"name": "Material__69_zHOTJcJwef_0OvEXdaEYS",
+"effect": "LightMapDC-fx_a5jiZPnCED_RXuN3aKtr6",
+"bind": {
+"texture368": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture369": {
+"tga": "GC_footprint_VA_BAR.tga",
+"ordinal": 108
+},
+"DiffuseMap": {
+"tga": "GC_footprint_VA_BAR.tga",
+"ordinal": 108
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture370": {
+"tga": "GC_footprint_VA_BAR_Refl.tga",
+"ordinal": 109
+},
+"DiffuseMaskSampler": {
+"tga": "GC_footprint_VA_BAR_Refl.tga",
+"ordinal": 109
+}
+},
+"wrap": []
+},
+{
+"i": 177,
+"name": "Material__69_zHOTJcJwef_2Yl4L4vSa6",
+"effect": "LightMapDC-fx_a5jiZPnCED_8fsa4aLEli",
+"bind": {
+"texture371": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture372": {
+"tga": "GC_Cath_of_learning_Windows2_v.tga",
+"ordinal": 110
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows2_v.tga",
+"ordinal": 110
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture373": {
+"tga": "GC_Cath_of_learning_Windows2_Refl.tga",
+"ordinal": 111
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Cath_of_learning_Windows2_Refl.tga",
+"ordinal": 111
+}
+},
+"wrap": []
+},
+{
+"i": 178,
+"name": "Material__69_zHOTJcJwef_iMpIzXoasw",
+"effect": "LightMapDC-fx_a5jiZPnCED_xKTm1QJJ0A",
+"bind": {
+"texture374": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture375": {
+"tga": "GC_Residential_Props_Monorail.tga",
+"ordinal": 112
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Props_Monorail.tga",
+"ordinal": 112
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture376": {
+"tga": "GC_Residential_Props_Monorail_Refl.tga",
+"ordinal": 113
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_Props_Monorail_Refl.tga",
+"ordinal": 113
+}
+},
+"wrap": []
+},
+{
+"i": 179,
+"name": "Material__69_zHOTJcJwef_xz2Y2fKO8c",
+"effect": "LightMapDC-fx_a5jiZPnCED_tGzU6wy9iU",
+"bind": {
+"texture377": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture378": {
+"tga": "GC_Residential_BD_01_Windows_01.tga",
+"ordinal": 114
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_01.tga",
+"ordinal": 114
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture379": {
+"tga": "GC_Residential_BD_01_Windows_01_Refl.tga",
+"ordinal": 115
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Windows_01_Refl.tga",
+"ordinal": 115
+}
+},
+"wrap": []
+},
+{
+"i": 180,
+"name": "Material__69_zHOTJcJwef_Un6TDQvVpD",
+"effect": "LightMapDC-fx_a5jiZPnCED_7WYFWJhnUq",
+"bind": {
+"texture380": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture381": {
+"tga": "GC_Residential_BD_04_Windows_05_v.TGA",
+"ordinal": 116
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Windows_05_v.TGA",
+"ordinal": 116
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture382": {
+"tga": "GC_Residential_BD_04_Windows_05_Refl.tga",
+"ordinal": 117
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_04_Windows_05_Refl.tga",
+"ordinal": 117
+}
+},
+"wrap": []
+},
+{
+"i": 181,
+"name": "Material__69_zHOTJcJwef_ABJkOmfySd",
+"effect": "LightMapDC-fx_a5jiZPnCED_lfyXC9nuPU",
+"bind": {
+"texture383": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture384": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"DiffuseMap": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture385": {
+"tga": "GC_CBCE_Atlas_ref.tga",
+"ordinal": 118
+},
+"DiffuseMaskSampler": {
+"tga": "GC_CBCE_Atlas_ref.tga",
+"ordinal": 118
+}
+},
+"wrap": []
+},
+{
+"i": 182,
+"name": "Material__69_zHOTJcJwef_U59vVJVXO6",
+"effect": "LightMapDC-fx_a5jiZPnCED_sZHXrZ3S2G",
+"bind": {
+"texture386": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture387": {
+"tga": "GC_Residential_BD_03_wall_06.tga",
+"ordinal": 119
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_06.tga",
+"ordinal": 119
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture388": {
+"tga": "GC_Residential_BD_03_wall_06_rfl.tga",
+"ordinal": 120
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_06_rfl.tga",
+"ordinal": 120
+}
+},
+"wrap": []
+},
+{
+"i": 183,
+"name": "Material__69_zHOTJcJwef_2pI1y7pEgB",
+"effect": "LightMapDC-fx_a5jiZPnCED_aMx3QRb0xN",
+"bind": {
+"texture389": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture390": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture391": {
+"tga": "GC_Footprint_LB_Cinema_Refl.tga",
+"ordinal": 121
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_LB_Cinema_Refl.tga",
+"ordinal": 121
+}
+},
+"wrap": []
+},
+{
+"i": 184,
+"name": "Material__69_zHOTJcJwef_76uAIrnHfc",
+"effect": "LightMapDC-fx_a5jiZPnCED_pN6u9bEKwO",
+"bind": {
+"texture392": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture393": {
+"tga": "GC_Footprint_VD_Buildings_2.tga",
+"ordinal": 79
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings_2.tga",
+"ordinal": 79
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture394": {
+"tga": "GC_Footprint_VD_Buildings_2_Refl.TGA",
+"ordinal": 122
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_VD_Buildings_2_Refl.TGA",
+"ordinal": 122
+}
+},
+"wrap": []
+},
+{
+"i": 185,
+"name": "Material__69_zHOTJcJwef_8iYfRYDLB9",
+"effect": "LightMapDC-fx_a5jiZPnCED_FYWeSgMJM0",
+"bind": {
+"texture395": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture396": {
+"tga": "GC_Glass_Building.tga",
+"ordinal": 100
+},
+"DiffuseMap": {
+"tga": "GC_Glass_Building.tga",
+"ordinal": 100
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture397": {
+"tga": "GC_Glass_Building_Refl.tga",
+"ordinal": 101
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Glass_Building_Refl.tga",
+"ordinal": 101
+}
+},
+"wrap": []
+},
+{
+"i": 186,
+"name": "Material__69_zHOTJcJwef_6ebsOTWbp8",
+"effect": "LightMapDC-fx_a5jiZPnCED_RxG5WLsE9f",
+"bind": {
+"texture398": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture399": {
+"tga": "GC_Residential_BD_01_Windows_02_v.tga",
+"ordinal": 76
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_02_v.tga",
+"ordinal": 76
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture400": {
+"tga": "GC_Residential_BD_01_Windows_02_Refl.tga",
+"ordinal": 123
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Windows_02_Refl.tga",
+"ordinal": 123
+}
+},
+"wrap": []
+},
+{
+"i": 187,
+"name": "Material__69_zHOTJcJwef_ELxdEQOmio",
+"effect": "LightMapDC-fx_a5jiZPnCED_XIDgvWpgXG",
+"bind": {
+"texture401": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture402": {
+"tga": "GC_Cath_of_learning_Windows_v.tga",
+"ordinal": 124
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows_v.tga",
+"ordinal": 124
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture403": {
+"tga": "GC_Cath_of_learning_Windows_Refl.tga",
+"ordinal": 125
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Cath_of_learning_Windows_Refl.tga",
+"ordinal": 125
+}
+},
+"wrap": []
+},
+{
+"i": 188,
+"name": "Material__69_zHOTJcJwef_nsaw4Ee2fg",
+"effect": "LightMapDC-fx_a5jiZPnCED_gcVQq7sZe2",
+"bind": {
+"texture404": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture405": {
+"tga": "GC_Cath_of_learning_Windows2_v.tga",
+"ordinal": 110
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows2_v.tga",
+"ordinal": 110
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture406": {
+"tga": "GC_Cath_of_learning_Windows2_Refl.tga",
+"ordinal": 111
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Cath_of_learning_Windows2_Refl.tga",
+"ordinal": 111
+}
+},
+"wrap": []
+},
+{
+"i": 189,
+"name": "Material__69_zHOTJcJwef_6E5F6wvy5J",
+"effect": "LightMapDC-fx_a5jiZPnCED_Wq21JU2Idl",
+"bind": {
+"texture407": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture408": {
+"tga": "GC_Residential_BD_01_Windows_01.tga",
+"ordinal": 114
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_01.tga",
+"ordinal": 114
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture409": {
+"tga": "GC_Residential_BD_01_Windows_01_Refl.tga",
+"ordinal": 115
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Windows_01_Refl.tga",
+"ordinal": 115
+}
+},
+"wrap": []
+},
+{
+"i": 190,
+"name": "Material__69_zHOTJcJwef_vFDy6HLhk9",
+"effect": "LightMapDC-fx_a5jiZPnCED_vKJa2djXrv",
+"bind": {
+"texture410": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture411": {
+"tga": "GC_Cath_of_learning_Windows_v.tga",
+"ordinal": 124
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows_v.tga",
+"ordinal": 124
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 191,
+"name": "Material__69_zHOTJcJwef_wYsVx5W0yG",
+"effect": "LightMapDC-fx_a5jiZPnCED_1Rggxp9WW1",
+"bind": {
+"texture413": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture414": {
+"tga": "GC_Residential_BD_04_Windows_05_v.TGA",
+"ordinal": 116
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Windows_05_v.TGA",
+"ordinal": 116
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture415": {
+"tga": "GC_Residential_BD_04_Windows_05_Refl.tga",
+"ordinal": 117
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_04_Windows_05_Refl.tga",
+"ordinal": 117
+}
+},
+"wrap": []
+},
+{
+"i": 192,
+"name": "Material__69_zHOTJcJwef_yefMSqsKTl",
+"effect": "LightMapDC-fx_a5jiZPnCED_83ALuOHiI6",
+"bind": {
+"texture416": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture417": {
+"tga": "GC_Cath_of_learning_Windows2_v.tga",
+"ordinal": 110
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows2_v.tga",
+"ordinal": 110
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 193,
+"name": "Material__69_zHOTJcJwef_Sd1tY9cmDz",
+"effect": "LightMapDC-fx_a5jiZPnCED_XhBhUCvxQX",
+"bind": {
+"texture419": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture420": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture421": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+}
+},
+"wrap": []
+},
+{
+"i": 194,
+"name": "Material__69_zHOTJcJwef_XVZsObjhSX",
+"effect": "LightMapDC-fx_a5jiZPnCED_PdSIiwEtLH",
+"bind": {
+"texture422": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture423": {
+"tga": "GC_Residential_BD_03_wall_06.tga",
+"ordinal": 119
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_06.tga",
+"ordinal": 119
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture424": {
+"tga": "GC_Residential_BD_03_wall_06_rfl.tga",
+"ordinal": 120
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_06_rfl.tga",
+"ordinal": 120
+}
+},
+"wrap": []
+},
+{
+"i": 195,
+"name": "Material__69_zHOTJcJwef_ujLwzo8X96",
+"effect": "LightMapDC-fx_a5jiZPnCED_pcfJ2aHgWe",
+"bind": {
+"texture425": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture426": {
+"tga": "GC_Residential_BD_03_details_01.tga",
+"ordinal": 62
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_details_01.tga",
+"ordinal": 62
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture427": {
+"tga": "GC_Residential_BD_03_details_01_rfl.tga",
+"ordinal": 127
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_details_01_rfl.tga",
+"ordinal": 127
+}
+},
+"wrap": []
+},
+{
+"i": 196,
+"name": "Material__69_zHOTJcJwef_PRW0M25Q8A",
+"effect": "LightMapDC-fx_a5jiZPnCED_pNpLPnVhxS",
+"bind": {
+"texture428": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture429": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture430": {
+"tga": "GC_Footprint_LB_Cinema_Refl.tga",
+"ordinal": 121
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_LB_Cinema_Refl.tga",
+"ordinal": 121
+}
+},
+"wrap": []
+},
+{
+"i": 197,
+"name": "Material__69_zHOTJcJwef_AfmWR9Y4CP",
+"effect": "LightMapDC-fx_a5jiZPnCED_WyfdiFwB4s",
+"bind": {
+"texture431": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture432": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop.tga",
+"ordinal": 5
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 198,
+"name": "Material__69_zHOTJcJwef_VaDXAq6SHA",
+"effect": "LightMapDC-fx_a5jiZPnCED_51DYzsDa6K",
+"bind": {
+"texture434": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture435": {
+"tga": "GC_Footprint_VD_Buildings_2.tga",
+"ordinal": 79
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings_2.tga",
+"ordinal": 79
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture436": {
+"tga": "GC_Footprint_VD_Buildings_2_Refl.TGA",
+"ordinal": 122
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_VD_Buildings_2_Refl.TGA",
+"ordinal": 122
+}
+},
+"wrap": []
+},
+{
+"i": 199,
+"name": "Material__69_zHOTJcJwef_3eM6KWvIAA",
+"effect": "LightMapDC-fx_a5jiZPnCED_LXYpYf1bCi",
+"bind": {
+"texture437": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture438": {
+"tga": "GC_Residential_BD_01_Windows_02_v.tga",
+"ordinal": 76
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_02_v.tga",
+"ordinal": 76
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture439": {
+"tga": "GC_Residential_BD_01_Windows_02_Refl.tga",
+"ordinal": 123
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Windows_02_Refl.tga",
+"ordinal": 123
+}
+},
+"wrap": []
+},
+{
+"i": 200,
+"name": "Material__69_zHOTJcJwef_WozXys0QpZ",
+"effect": "LightMapDC-fx_a5jiZPnCED_SKJEO4Lb4b",
+"bind": {
+"texture440": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture441": {
+"tga": "GC_Footprint_VD_Buildings_3.tga",
+"ordinal": 39
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings_3.tga",
+"ordinal": 39
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture442": {
+"tga": "GC_Footprint_VD_Buildings_3_Refl.tga",
+"ordinal": 128
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_VD_Buildings_3_Refl.tga",
+"ordinal": 128
+}
+},
+"wrap": []
+},
+{
+"i": 201,
+"name": "Material__69_zHOTJcJwef_U5Qe8dZhX6",
+"effect": "LightMapDC-fx_a5jiZPnCED_G9Uv54oGDD",
+"bind": {
+"texture443": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture444": {
+"tga": "GC_TallBuilding.tga",
+"ordinal": 129
+},
+"DiffuseMap": {
+"tga": "GC_TallBuilding.tga",
+"ordinal": 129
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture445": {
+"tga": "GC_TallBuilding_Refl.tga",
+"ordinal": 130
+},
+"DiffuseMaskSampler": {
+"tga": "GC_TallBuilding_Refl.tga",
+"ordinal": 130
+}
+},
+"wrap": []
+},
+{
+"i": 202,
+"name": "Material__69_zHOTJcJwef_8jpgBfQtNR",
+"effect": "LightMapDC-fx_a5jiZPnCED_3rnPGGKZPb",
+"bind": {
+"texture446": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture447": {
+"tga": "GC_Cath_of_learning_Windows_v.tga",
+"ordinal": 124
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows_v.tga",
+"ordinal": 124
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture448": {
+"tga": "GC_Cath_of_learning_Windows_Refl.tga",
+"ordinal": 125
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Cath_of_learning_Windows_Refl.tga",
+"ordinal": 125
+}
+},
+"wrap": []
+},
+{
+"i": 203,
+"name": "Material__69_zHOTJcJwef_MY20H08Xwi",
+"effect": "LightMapDC-fx_a5jiZPnCED_RxJ7Gc2dwP",
+"bind": {
+"texture449": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture450": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"DiffuseMap": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 204,
+"name": "Material__69_zHOTJcJwef_hUPEYYFiiH",
+"effect": "LightMapDC-fx_a5jiZPnCED_0at2jVEr6i",
+"bind": {
+"texture452": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture453": {
+"tga": "GC_T_Windows_03.tga",
+"ordinal": 106
+},
+"DiffuseMap": {
+"tga": "GC_T_Windows_03.tga",
+"ordinal": 106
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture454": {
+"tga": "GC_T_Windows_03_Refl.tga",
+"ordinal": 107
+},
+"DiffuseMaskSampler": {
+"tga": "GC_T_Windows_03_Refl.tga",
+"ordinal": 107
+}
+},
+"wrap": []
+},
+{
+"i": 205,
+"name": "Material__69_zHOTJcJwef_s8yv2BTixW",
+"effect": "LightMapDC-fx_a5jiZPnCED_S6HDN1kvhy",
+"bind": {
+"texture455": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture456": {
+"tga": "GC_Cath_of_learning_Windows_v.tga",
+"ordinal": 124
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows_v.tga",
+"ordinal": 124
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 206,
+"name": "Material__69_zHOTJcJwef_wOCWaqQ12l",
+"effect": "LightMapDC-fx_a5jiZPnCED_go5eeCVjy4",
+"bind": {
+"texture458": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture459": {
+"tga": "GC_Footprint_GC_windows_T.tga",
+"ordinal": 131
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GC_windows_T.tga",
+"ordinal": 131
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture460": {
+"tga": "GC_Footprint_GC_windows_T_refl.tga",
+"ordinal": 132
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_GC_windows_T_refl.tga",
+"ordinal": 132
+}
+},
+"wrap": []
+},
+{
+"i": 207,
+"name": "Material__69_zHOTJcJwef_4BG5xMLLGy",
+"effect": "LightMapDC-fx_a5jiZPnCED_rf58Tp9dlF",
+"bind": {
+"texture461": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture462": {
+"tga": "GC_Residential_BD_01_Windows_03.tga",
+"ordinal": 133
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_03.tga",
+"ordinal": 133
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture463": {
+"tga": "GC_Residential_BD_01_Windows_03_Refl.tga",
+"ordinal": 134
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Windows_03_Refl.tga",
+"ordinal": 134
+}
+},
+"wrap": []
+},
+{
+"i": 208,
+"name": "Material__69_zHOTJcJwef_YsA4K3Z6qe",
+"effect": "LightMapDC-fx_a5jiZPnCED_bR4bVrNFVC",
+"bind": {
+"texture464": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture465": {
+"tga": "GC_Residential_BD_01_Windows_04.tga",
+"ordinal": 65
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_04.tga",
+"ordinal": 65
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture466": {
+"tga": "GC_Residential_BD_01_Windows_04_Refl.tga",
+"ordinal": 135
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Windows_04_Refl.tga",
+"ordinal": 135
+}
+},
+"wrap": []
+},
+{
+"i": 209,
+"name": "Material__69_zHOTJcJwef_EehjTFOB7B",
+"effect": "LightMapDC-fx_a5jiZPnCED_Y0dLL7FNP3",
+"bind": {
+"texture467": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture468": {
+"tga": "GC_Residential_BD_01_Door_01.tga",
+"ordinal": 25
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Door_01.tga",
+"ordinal": 25
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture469": {
+"tga": "GC_Residential_BD_01_Door_01_Refl.tga",
+"ordinal": 136
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Door_01_Refl.tga",
+"ordinal": 136
+}
+},
+"wrap": []
+},
+{
+"i": 210,
+"name": "Material__69_zHOTJcJwef_ohRDz6vZVD",
+"effect": "LightMapDC-fx_a5jiZPnCED_oSptqXhGNF",
+"bind": {
+"texture470": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture471": {
+"tga": "GC_Cath_of_learning_Windows3_v.tga",
+"ordinal": 137
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows3_v.tga",
+"ordinal": 137
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture472": {
+"tga": "GC_Cath_of_learning_Windows3_Refl.tga",
+"ordinal": 138
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Cath_of_learning_Windows3_Refl.tga",
+"ordinal": 138
+}
+},
+"wrap": []
+},
+{
+"i": 211,
+"name": "Material__69_zHOTJcJwef_axbIRBtHa9",
+"effect": "LightMapDC-fx_a5jiZPnCED_ReB6mxB0ZR",
+"bind": {
+"texture473": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture474": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"DiffuseMap": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture475": {
+"tga": "GC_CBCE_Atlas_ref.tga",
+"ordinal": 118
+},
+"DiffuseMaskSampler": {
+"tga": "GC_CBCE_Atlas_ref.tga",
+"ordinal": 118
+}
+},
+"wrap": []
+},
+{
+"i": 212,
+"name": "Material__69_zHOTJcJwef_K7lIhDLqGD",
+"effect": "LightMapDC-fx_a5jiZPnCED_qrMZEYnTQm",
+"bind": {
+"texture476": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture477": {
+"tga": "GC_Residential_BD_04_Door_02.tga",
+"ordinal": 139
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Door_02.tga",
+"ordinal": 139
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture478": {
+"tga": "GC_Residential_BD_04_Door_02_Refl.tga",
+"ordinal": 140
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_04_Door_02_Refl.tga",
+"ordinal": 140
+}
+},
+"wrap": []
+},
+{
+"i": 213,
+"name": "Material__69_zHOTJcJwef_m5SgMHz26Y",
+"effect": "LightMapDC-fx_a5jiZPnCED_yxsvVr0wSS",
+"bind": {
+"texture479": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture480": {
+"tga": "GC_Footprint_VD_Buildings_3.tga",
+"ordinal": 39
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings_3.tga",
+"ordinal": 39
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture481": {
+"tga": "GC_Footprint_VD_Buildings_3_Refl.tga",
+"ordinal": 128
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_VD_Buildings_3_Refl.tga",
+"ordinal": 128
+}
+},
+"wrap": []
+},
+{
+"i": 214,
+"name": "Material__69_zHOTJcJwef_NakyOO9TJX",
+"effect": "LightMapDC-fx_a5jiZPnCED_jkS8taguJg",
+"bind": {
+"texture482": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture483": {
+"tga": "GC_Footprint_VD_Buildings_2.tga",
+"ordinal": 79
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings_2.tga",
+"ordinal": 79
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture484": {
+"tga": "GC_Footprint_VD_Buildings_2_Refl.TGA",
+"ordinal": 122
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_VD_Buildings_2_Refl.TGA",
+"ordinal": 122
+}
+},
+"wrap": []
+},
+{
+"i": 215,
+"name": "Material__69_zHOTJcJwef_kxga7ZYwr4",
+"effect": "LightMapDC-fx_a5jiZPnCED_QXpS68k8Rb",
+"bind": {
+"texture485": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture486": {
+"tga": "GC_Footprint_VD_Buildings.tga",
+"ordinal": 35
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings.tga",
+"ordinal": 35
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture487": {
+"tga": "GC_Footprint_VD_Buildings_Refl.TGA",
+"ordinal": 141
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_VD_Buildings_Refl.TGA",
+"ordinal": 141
+}
+},
+"wrap": []
+},
+{
+"i": 216,
+"name": "Material__69_zHOTJcJwef_eeMydkfj2i",
+"effect": "LightMapDC-fx_a5jiZPnCED_aTG2C7Qia3",
+"bind": {
+"texture488": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture489": {
+"tga": "GC_Residential_BD_03_wall_04.tga",
+"ordinal": 142
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_04.tga",
+"ordinal": 142
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture490": {
+"tga": "GC_Residential_BD_03_wall_04_rfl.tga",
+"ordinal": 143
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_04_rfl.tga",
+"ordinal": 143
+}
+},
+"wrap": []
+},
+{
+"i": 217,
+"name": "Material__69_zHOTJcJwef_J8zmglOu2G",
+"effect": "LightMapDC-fx_a5jiZPnCED_13Pl32CTfF",
+"bind": {
+"texture491": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture492": {
+"tga": "GC_Residential_BD_04_Windows_06.tga",
+"ordinal": 144
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Windows_06.tga",
+"ordinal": 144
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture493": {
+"tga": "GC_Residential_BD_04_Windows_06_Refl.tga",
+"ordinal": 145
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_04_Windows_06_Refl.tga",
+"ordinal": 145
+}
+},
+"wrap": []
+},
+{
+"i": 218,
+"name": "Material__69_zHOTJcJwef_Kos6Ydc0ah",
+"effect": "LightMapDC-fx_a5jiZPnCED_ohPm2YQox9",
+"bind": {
+"texture494": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture495": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture496": {
+"tga": "HC_Prop_BillboardRoof_01_Refl.tga",
+"ordinal": 98
+},
+"DiffuseMaskSampler": {
+"tga": "HC_Prop_BillboardRoof_01_Refl.tga",
+"ordinal": 98
+}
+},
+"wrap": []
+},
+{
+"i": 219,
+"name": "Material__69_zHOTJcJwef_9SKb47Qxlf",
+"effect": "LightMapDC-fx_a5jiZPnCED_MkQYpMbiZj",
+"bind": {
+"texture497": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture498": {
+"tga": "GC_Footprint_CC_windows02.tga",
+"ordinal": 82
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_CC_windows02.tga",
+"ordinal": 82
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture499": {
+"tga": "GC_Footprint_CC_windows02_ref.tga",
+"ordinal": 99
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_CC_windows02_ref.tga",
+"ordinal": 99
+}
+},
+"wrap": []
+},
+{
+"i": 220,
+"name": "Material__69_zHOTJcJwef_rqy3wHKdP8",
+"effect": "LightMapDC-fx_a5jiZPnCED_FjnWpMXD22",
+"bind": {
+"texture500": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture501": {
+"tga": "GC_Residential_BD_01_Windows_03.tga",
+"ordinal": 133
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_03.tga",
+"ordinal": 133
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture502": {
+"tga": "GC_Residential_BD_01_Windows_03_Refl.tga",
+"ordinal": 134
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Windows_03_Refl.tga",
+"ordinal": 134
+}
+},
+"wrap": []
+},
+{
+"i": 221,
+"name": "Material__69_zHOTJcJwef_XjkOCjQJ0c",
+"effect": "LightMapDC-fx_a5jiZPnCED_es092dAcDH",
+"bind": {
+"texture503": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture504": {
+"tga": "GC_Residential_BD_01_Windows_04.tga",
+"ordinal": 65
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Windows_04.tga",
+"ordinal": 65
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture505": {
+"tga": "GC_Residential_BD_01_Windows_04_Refl.tga",
+"ordinal": 135
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Windows_04_Refl.tga",
+"ordinal": 135
+}
+},
+"wrap": []
+},
+{
+"i": 222,
+"name": "Material__69_zHOTJcJwef_hXnZfIpnL4",
+"effect": "LightMapDC-fx_a5jiZPnCED_yIXmWiNHDa",
+"bind": {
+"texture506": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture507": {
+"tga": "GC_Residential_BD_01_Door_01.tga",
+"ordinal": 25
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_01_Door_01.tga",
+"ordinal": 25
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture508": {
+"tga": "GC_Residential_BD_01_Door_01_Refl.tga",
+"ordinal": 136
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_01_Door_01_Refl.tga",
+"ordinal": 136
+}
+},
+"wrap": []
+},
+{
+"i": 223,
+"name": "Material__69_zHOTJcJwef_wYWcp6k8ca",
+"effect": "LightMapDC-fx_a5jiZPnCED_IzwW8GrZPp",
+"bind": {
+"texture509": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture510": {
+"tga": "GC_Cath_of_learning_Windows3_v.tga",
+"ordinal": 137
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows3_v.tga",
+"ordinal": 137
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture511": {
+"tga": "GC_Cath_of_learning_Windows3_Refl.tga",
+"ordinal": 138
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Cath_of_learning_Windows3_Refl.tga",
+"ordinal": 138
+}
+},
+"wrap": []
+},
+{
+"i": 224,
+"name": "Material__69_zHOTJcJwef_HSGvY134iP",
+"effect": "LightMapDC-fx_a5jiZPnCED_ctZ8rqYI0j",
+"bind": {
+"texture512": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture513": {
+"tga": "GC_Residential_BD_03_wall_05.tga",
+"ordinal": 146
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_05.tga",
+"ordinal": 146
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture514": {
+"tga": "GC_Residential_BD_03_wall_05_rfl.tga",
+"ordinal": 147
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_05_rfl.tga",
+"ordinal": 147
+}
+},
+"wrap": []
+},
+{
+"i": 225,
+"name": "Material__69_zHOTJcJwef_OdAsExNBNc",
+"effect": "LightMapDC-fx_a5jiZPnCED_lCeClSxjb7",
+"bind": {
+"texture515": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture516": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture517": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+}
+},
+"wrap": []
+},
+{
+"i": 226,
+"name": "Material__69_zHOTJcJwef_Eu75ImAuFo",
+"effect": "LightMapDC-fx_a5jiZPnCED_NDG5OqjGag",
+"bind": {
+"texture518": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture519": {
+"tga": "GC_Residential_BD_04_Door_02.tga",
+"ordinal": 139
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_04_Door_02.tga",
+"ordinal": 139
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture520": {
+"tga": "GC_Residential_BD_04_Door_02_Refl.tga",
+"ordinal": 140
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_04_Door_02_Refl.tga",
+"ordinal": 140
+}
+},
+"wrap": []
+},
+{
+"i": 227,
+"name": "Material__69_zHOTJcJwef_gEfAATAO8k",
+"effect": "LightMapDC-fx_a5jiZPnCED_iMD1uTyJ7x",
+"bind": {
+"texture521": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture522": {
+"tga": "GC_Residential_BD_03_details_01.tga",
+"ordinal": 62
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_details_01.tga",
+"ordinal": 62
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture523": {
+"tga": "GC_Residential_BD_03_details_01_rfl.tga",
+"ordinal": 127
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_details_01_rfl.tga",
+"ordinal": 127
+}
+},
+"wrap": []
+},
+{
+"i": 228,
+"name": "Material__69_zHOTJcJwef_bIRxxEqm7G",
+"effect": "LightMapDC-fx_a5jiZPnCED_k8zTp0KVDi",
+"bind": {
+"texture524": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture525": {
+"tga": "GC_Cath_of_learning_Windows2_v.tga",
+"ordinal": 110
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Windows2_v.tga",
+"ordinal": 110
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 229,
+"name": "Material__69_zHOTJcJwef_LXY4dLywY6",
+"effect": "LightMapDC-fx_a5jiZPnCED_YOpb2ewRo8",
+"bind": {
+"texture527": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture528": {
+"tga": "GC_footprint_AB_atlas.tga",
+"ordinal": 86
+},
+"DiffuseMap": {
+"tga": "GC_footprint_AB_atlas.tga",
+"ordinal": 86
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture529": {
+"tga": "GC_footprint_AB_atlas_rfl.tga",
+"ordinal": 87
+},
+"DiffuseMaskSampler": {
+"tga": "GC_footprint_AB_atlas_rfl.tga",
+"ordinal": 87
+}
+},
+"wrap": []
+},
+{
+"i": 230,
+"name": "Material__69_zHOTJcJwef_8bIc6hBsZX",
+"effect": "LightMapDC-fx_a5jiZPnCED_pHUqINoKRX",
+"bind": {
+"texture530": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture531": {
+"tga": "GC_SXC_Atlas.tga",
+"ordinal": 148
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Atlas.tga",
+"ordinal": 148
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture532": {
+"tga": "GC_SXC_Atlas_Refl.tga",
+"ordinal": 149
+},
+"DiffuseMaskSampler": {
+"tga": "GC_SXC_Atlas_Refl.tga",
+"ordinal": 149
+}
+},
+"wrap": []
+},
+{
+"i": 231,
+"name": "Material__69_zHOTJcJwef_4Lq5Tx60lu",
+"effect": "LightMapDC-fx_a5jiZPnCED_DwghPpNQni",
+"bind": {
+"texture533": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture534": {
+"tga": "GC_Footprint_VD_Buildings.tga",
+"ordinal": 35
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Buildings.tga",
+"ordinal": 35
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture535": {
+"tga": "GC_Footprint_VD_Buildings_Refl.TGA",
+"ordinal": 141
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_VD_Buildings_Refl.TGA",
+"ordinal": 141
+}
+},
+"wrap": []
+},
+{
+"i": 232,
+"name": "Material__69_zHOTJcJwef_efyAMnFn1x",
+"effect": "LightMapDC-fx_a5jiZPnCED_da1xIhy5fB",
+"bind": {
+"texture536": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture537": {
+"tga": "GC_Residential_BD_03_wall_07.tga",
+"ordinal": 150
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_07.tga",
+"ordinal": 150
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture538": {
+"tga": "GC_Residential_BD_03_wall_07_rfl.tga",
+"ordinal": 151
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_07_rfl.tga",
+"ordinal": 151
+}
+},
+"wrap": []
+},
+{
+"i": 233,
+"name": "Material__69_zHOTJcJwef_E2HxsdX1Kl",
+"effect": "LightMapDC-fx_a5jiZPnCED_H2rTdqgIka",
+"bind": {
+"texture539": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture540": {
+"tga": "GC_Residential_BD_03_wall_01.tga",
+"ordinal": 152
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_01.tga",
+"ordinal": 152
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture541": {
+"tga": "GC_Residential_BD_03_wall_01_rfl.tga",
+"ordinal": 153
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_01_rfl.tga",
+"ordinal": 153
+}
+},
+"wrap": []
+},
+{
+"i": 234,
+"name": "Material__69_zHOTJcJwef_Sva2AIvKLu",
+"effect": "LightMapDC-fx_a5jiZPnCED_WXtqtyKwsZ",
+"bind": {
+"texture542": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture543": {
+"tga": "GC_Residential_BD_03_wall_04.tga",
+"ordinal": 142
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_04.tga",
+"ordinal": 142
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture544": {
+"tga": "GC_Residential_BD_03_wall_04_rfl.tga",
+"ordinal": 143
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_04_rfl.tga",
+"ordinal": 143
+}
+},
+"wrap": []
+},
+{
+"i": 235,
+"name": "Material__21_NGl6WXVW0i_kXT8ZpDQjl",
+"effect": "LightMapDC-fx_vHJniJMmpQ_dt8Zaj95Sz",
+"bind": {
+"texture545": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture546": {
+"tga": "GC_Footprint_GB_windows_01_TH.tga",
+"ordinal": 154
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GB_windows_01_TH.tga",
+"ordinal": 154
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture547": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture548": {
+"tga": "GC_Footprint_GB_windows_01_TH_refl.tga",
+"ordinal": 155
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_GB_windows_01_TH_refl.tga",
+"ordinal": 155
+}
+},
+"wrap": []
+},
+{
+"i": 236,
+"name": "Material__21_NGl6WXVW0i_0FlcbtqyiC",
+"effect": "LightMapDC-fx_vHJniJMmpQ_947fr7MoUF",
+"bind": {
+"texture549": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture550": {
+"tga": "GC_Residential_BD_03_wall_04.tga",
+"ordinal": 142
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_04.tga",
+"ordinal": 142
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture551": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture552": {
+"tga": "GC_Residential_BD_03_wall_04_rfl.tga",
+"ordinal": 143
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_04_rfl.tga",
+"ordinal": 143
+}
+},
+"wrap": []
+},
+{
+"i": 237,
+"name": "Material__21_NGl6WXVW0i_nG96tWCTpb",
+"effect": "LightMapDC-fx_vHJniJMmpQ_vQEAVXHGUE",
+"bind": {
+"texture553": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture554": {
+"tga": "GC_Residential_BD_03_wall_04.tga",
+"ordinal": 142
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_04.tga",
+"ordinal": 142
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture555": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture556": {
+"tga": "GC_Residential_BD_03_wall_04_rfl.tga",
+"ordinal": 143
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_04_rfl.tga",
+"ordinal": 143
+}
+},
+"wrap": []
+},
+{
+"i": 238,
+"name": "Material__21_NGl6WXVW0i_8QRKGcEr9E",
+"effect": "LightMapDC-fx_vHJniJMmpQ_JXpgSkSjBb",
+"bind": {
+"texture557": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture558": {
+"tga": "GC_Footprint_CC_windows02.tga",
+"ordinal": 82
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_CC_windows02.tga",
+"ordinal": 82
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture559": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture560": {
+"tga": "GC_Footprint_CC_windows02_ref.tga",
+"ordinal": 99
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_CC_windows02_ref.tga",
+"ordinal": 99
+}
+},
+"wrap": []
+},
+{
+"i": 239,
+"name": "Material__21_NGl6WXVW0i_PZXdphPRP5",
+"effect": "LightMapDC-fx_vHJniJMmpQ_jJT8GSvwdk",
+"bind": {
+"texture561": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture562": {
+"tga": "GC_footprint_AB_atlas.tga",
+"ordinal": 86
+},
+"DiffuseMap": {
+"tga": "GC_footprint_AB_atlas.tga",
+"ordinal": 86
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture563": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture564": {
+"tga": "GC_footprint_AB_atlas_rfl.tga",
+"ordinal": 87
+},
+"DiffuseMaskSampler": {
+"tga": "GC_footprint_AB_atlas_rfl.tga",
+"ordinal": 87
+}
+},
+"wrap": []
+},
+{
+"i": 240,
+"name": "Material__21_NGl6WXVW0i_dPcNj711hz",
+"effect": "LightMapDC-fx_vHJniJMmpQ_Ylz86bsQem",
+"bind": {
+"texture565": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture566": {
+"tga": "GC_Residential_BD_03_wall_03.tga",
+"ordinal": 156
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_03.tga",
+"ordinal": 156
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture567": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture568": {
+"tga": "GC_Residential_BD_03_wall_03_refl.tga",
+"ordinal": 157
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_03_refl.tga",
+"ordinal": 157
+}
+},
+"wrap": []
+},
+{
+"i": 241,
+"name": "Material__21_NGl6WXVW0i_EldWDBwkev",
+"effect": "LightMapDC-fx_vHJniJMmpQ_V7fdWFcRBR",
+"bind": {
+"texture569": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture570": {
+"tga": "GC_Residential_BD_03_wall_03.tga",
+"ordinal": 156
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_wall_03.tga",
+"ordinal": 156
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture571": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture572": {
+"tga": "GC_Residential_BD_03_wall_03_refl.tga",
+"ordinal": 157
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_BD_03_wall_03_refl.tga",
+"ordinal": 157
+}
+},
+"wrap": []
+},
+{
+"i": 242,
+"name": "Material__21_NGl6WXVW0i_WK2uFXHuib",
+"effect": "LightMapDC-fx_vHJniJMmpQ_QR4yfm8dE4",
+"bind": {
+"texture573": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture574": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"DiffuseMap": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture575": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture576": {
+"tga": "GC_CBCE_Atlas_ref.tga",
+"ordinal": 118
+},
+"DiffuseMaskSampler": {
+"tga": "GC_CBCE_Atlas_ref.tga",
+"ordinal": 118
+}
+},
+"wrap": []
+},
+{
+"i": 243,
+"name": "diner2_IAQI66y2qt_OM1JOkib5I",
+"effect": "NormalSpecOverbright-fx_siEsoM3wSt_uF65y5qC32",
+"bind": {
+"texture577": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+}
+},
+"wrap": []
+},
+{
+"i": 244,
+"name": "Material__3242_XsC6Pt0GIs_DgG1FdC5dy",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_FTnTZSg06V",
+"bind": {
+"texture578": {
+"tga": "GC_T_Concrete_02_NRM.tga",
+"ordinal": 158
+},
+"NormalMap": {
+"tga": "GC_T_Concrete_02_NRM.tga",
+"ordinal": 158
+},
+"texture579": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture580": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 245,
+"name": "Material__3242_XsC6Pt0GIs_RZVStdwwCU",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_GE2qW4HvjB",
+"bind": {
+"texture581": {
+"tga": "GC_SXC_ground_tile.tga",
+"ordinal": 159
+},
+"NormalMap": {
+"tga": "GC_SXC_ground_tile.tga",
+"ordinal": 159
+},
+"texture582": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture583": {
+"tga": "GC_SXC_ground_tile.tga",
+"ordinal": 159
+},
+"DiffuseMap": {
+"tga": "GC_SXC_ground_tile.tga",
+"ordinal": 159
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 246,
+"name": "Material__3242_XsC6Pt0GIs_Zf5LDFzwJs",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_zCgWm0oojR",
+"bind": {
+"texture584": {
+"tga": "GC_Cath_of_learning_Rooftop_ground_NRM.tga",
+"ordinal": 160
+},
+"NormalMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground_NRM.tga",
+"ordinal": 160
+},
+"texture585": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture586": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 247,
+"name": "Material__3242_XsC6Pt0GIs_6sah2jzzjF",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_EkG1BZUdWp",
+"bind": {
+"texture587": {
+"tga": "GothamCity_asphalt_tile_NRM.tga",
+"ordinal": 161
+},
+"NormalMap": {
+"tga": "GothamCity_asphalt_tile_NRM.tga",
+"ordinal": 161
+},
+"texture588": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture589": {
+"tga": "GothamCity_asphalt_tile.tga",
+"ordinal": 81
+},
+"DiffuseMap": {
+"tga": "GothamCity_asphalt_tile.tga",
+"ordinal": 81
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 248,
+"name": "Material__3242_XsC6Pt0GIs_2vYTHHoJCD",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_WtxsrDzQOU",
+"bind": {
+"texture590": {
+"tga": "GC_SXC_Rooftop_ground_NRM.tga",
+"ordinal": 96
+},
+"NormalMap": {
+"tga": "GC_SXC_Rooftop_ground_NRM.tga",
+"ordinal": 96
+},
+"texture591": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture592": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"DiffuseMap": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 249,
+"name": "Material__3242_XsC6Pt0GIs_aLUO3NPVQN",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_eC83luem7r",
+"bind": {
+"texture593": {
+"tga": "GC_T_Concrete_02_NRM.tga",
+"ordinal": 158
+},
+"NormalMap": {
+"tga": "GC_T_Concrete_02_NRM.tga",
+"ordinal": 158
+},
+"texture594": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture595": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_02.tga",
+"ordinal": 33
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 250,
+"name": "Material__3242_XsC6Pt0GIs_we7p5ieeI8",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_jnEo925b76",
+"bind": {
+"texture596": {
+"tga": "GothamCity_Road_Crossings_NRM.tga",
+"ordinal": 162
+},
+"NormalMap": {
+"tga": "GothamCity_Road_Crossings_NRM.tga",
+"ordinal": 162
+},
+"texture597": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture598": {
+"tga": "GothamCity_Road_Crossings_Island_1.tga",
+"ordinal": 163
+},
+"DiffuseMap": {
+"tga": "GothamCity_Road_Crossings_Island_1.tga",
+"ordinal": 163
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 251,
+"name": "Material__3242_XsC6Pt0GIs_cRjrXkzmQa",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_tYWmFGzuR3",
+"bind": {
+"texture599": {
+"tga": "GothamCity_Road_v3_NRM.tga",
+"ordinal": 164
+},
+"NormalMap": {
+"tga": "GothamCity_Road_v3_NRM.tga",
+"ordinal": 164
+},
+"texture600": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture601": {
+"tga": "GothamCity_Road_v2_Island_1.tga",
+"ordinal": 165
+},
+"DiffuseMap": {
+"tga": "GothamCity_Road_v2_Island_1.tga",
+"ordinal": 165
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 252,
+"name": "Material__3242_XsC6Pt0GIs_yIUFl0XjDq",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_4DXFe9OH46",
+"bind": {
+"texture602": {
+"tga": "GC_T_Concrete_01_NRM.tga",
+"ordinal": 94
+},
+"NormalMap": {
+"tga": "GC_T_Concrete_01_NRM.tga",
+"ordinal": 94
+},
+"texture603": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture604": {
+"tga": "GC_T_Concrete_01.tga",
+"ordinal": 34
+},
+"DiffuseMap": {
+"tga": "GC_T_Concrete_01.tga",
+"ordinal": 34
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 253,
+"name": "Material__3242_XsC6Pt0GIs_0YKI4JSgVS",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_DsE9G4Pxx5",
+"bind": {
+"texture605": {
+"tga": "GC_Footprint_GC_floor_NRM.tga",
+"ordinal": 166
+},
+"NormalMap": {
+"tga": "GC_Footprint_GC_floor_NRM.tga",
+"ordinal": 166
+},
+"texture606": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture607": {
+"tga": "GC_Footprint_GC_floor_T.tga",
+"ordinal": 167
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GC_floor_T.tga",
+"ordinal": 167
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 254,
+"name": "Material__3242_XsC6Pt0GIs_0TPW4sVCdF",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_0qZFUD7BQv",
+"bind": {
+"texture608": {
+"tga": "GC_Cath_of_learning_Rooftop_ground_NRM.tga",
+"ordinal": 160
+},
+"NormalMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground_NRM.tga",
+"ordinal": 160
+},
+"texture609": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture610": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"DiffuseMap": {
+"tga": "GC_Cath_of_learning_Rooftop_ground.tga",
+"ordinal": 72
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 255,
+"name": "Material__3242_XsC6Pt0GIs_yCCsn00KTM",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_sdgaixwB9d",
+"bind": {
+"texture611": {
+"tga": "GC_Park_atlas_tiles_Refl.tga",
+"ordinal": 168
+},
+"NormalMap": {
+"tga": "GC_Park_atlas_tiles_Refl.tga",
+"ordinal": 168
+},
+"texture612": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture613": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"DiffuseMap": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 256,
+"name": "Material__3242_XsC6Pt0GIs_KL4au1o6yA",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ZMvbcowhjv",
+"bind": {
+"texture614": {
+"tga": "GC_Footprint_GC_floor_NRM.tga",
+"ordinal": 166
+},
+"NormalMap": {
+"tga": "GC_Footprint_GC_floor_NRM.tga",
+"ordinal": 166
+},
+"texture615": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture616": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"DiffuseMap": {
+"tga": "GC_Residential_BD_03_roof_01.tga",
+"ordinal": 52
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 257,
+"name": "Material__3242_XsC6Pt0GIs_HDPQPeQ8Hz",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_LKxH3WfdXC",
+"bind": {
+"texture617": {
+"tga": "bridge_tile_nrm.tga",
+"ordinal": 97
+},
+"NormalMap": {
+"tga": "bridge_tile_nrm.tga",
+"ordinal": 97
+},
+"texture618": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture619": {
+"tga": "bridge_tile.tga",
+"ordinal": 46
+},
+"DiffuseMap": {
+"tga": "bridge_tile.tga",
+"ordinal": 46
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 258,
+"name": "Material__3242_XsC6Pt0GIs_j95k7Ai4Z9",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_ynx6mMA0N7",
+"bind": {
+"texture620": {
+"tga": "GC_footprint_AA_ground_02.tga",
+"ordinal": 43
+},
+"NormalMap": {
+"tga": "GC_footprint_AA_ground_02.tga",
+"ordinal": 43
+},
+"texture621": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture622": {
+"tga": "GC_footprint_AA_ground_02.tga",
+"ordinal": 43
+},
+"DiffuseMap": {
+"tga": "GC_footprint_AA_ground_02.tga",
+"ordinal": 43
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 259,
+"name": "Material__3242_XsC6Pt0GIs_ZNxGFFhR1Q",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_3xaG0PEPp1",
+"bind": {
+"texture623": {
+"tga": "GC_Park_atlas_tiles_Refl.tga",
+"ordinal": 168
+},
+"NormalMap": {
+"tga": "GC_Park_atlas_tiles_Refl.tga",
+"ordinal": 168
+},
+"texture624": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture625": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"DiffuseMap": {
+"tga": "GC_Park_atlas_tiles.tga",
+"ordinal": 17
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 260,
+"name": "Material__3242_XsC6Pt0GIs_98VVWnEzSJ",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_MD6Wuzlezf",
+"bind": {
+"texture626": {
+"tga": "GothamCity_Road_v2_NRM.tga",
+"ordinal": 90
+},
+"NormalMap": {
+"tga": "GothamCity_Road_v2_NRM.tga",
+"ordinal": 90
+},
+"texture627": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture628": {
+"tga": "GothamCity_Road_v1_Island_1.tga",
+"ordinal": 91
+},
+"DiffuseMap": {
+"tga": "GothamCity_Road_v1_Island_1.tga",
+"ordinal": 91
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 261,
+"name": "Material__3242_XsC6Pt0GIs_fQv2MeiKlE",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_sfumcgLBzV",
+"bind": {
+"texture629": {
+"tga": "GothamCity_Road_v3_NRM.tga",
+"ordinal": 164
+},
+"NormalMap": {
+"tga": "GothamCity_Road_v3_NRM.tga",
+"ordinal": 164
+},
+"texture630": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture631": {
+"tga": "GothamCity_Road_v2_Island_1.tga",
+"ordinal": 165
+},
+"DiffuseMap": {
+"tga": "GothamCity_Road_v2_Island_1.tga",
+"ordinal": 165
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 262,
+"name": "Material__3242_XsC6Pt0GIs_yDwOvqaIeg",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_OowgmHlpbl",
+"bind": {
+"texture632": {
+"tga": "GC_footprint_AA_ground_02_NRM.tga",
+"ordinal": 169
+},
+"NormalMap": {
+"tga": "GC_footprint_AA_ground_02_NRM.tga",
+"ordinal": 169
+},
+"texture633": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture634": {
+"tga": "GC_footprint_AA_ground_02.tga",
+"ordinal": 43
+},
+"DiffuseMap": {
+"tga": "GC_footprint_AA_ground_02.tga",
+"ordinal": 43
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 263,
+"name": "Material__3242_XsC6Pt0GIs_ZjCzIKAtaB",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_kroPTZZPye",
+"bind": {
+"texture635": {
+"tga": "GC_VPOW_Ground_Tile_NRM.tga",
+"ordinal": 95
+},
+"NormalMap": {
+"tga": "GC_VPOW_Ground_Tile_NRM.tga",
+"ordinal": 95
+},
+"texture636": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture637": {
+"tga": "GC_VPOW_Ground_Tile.tga",
+"ordinal": 170
+},
+"DiffuseMap": {
+"tga": "GC_VPOW_Ground_Tile.tga",
+"ordinal": 170
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 264,
+"name": "Material__3242_XsC6Pt0GIs_R85PlbWG9m",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_nf44veM0gC",
+"bind": {
+"texture638": {
+"tga": "GC_Footprint_VD_Floor_NRM.tga",
+"ordinal": 171
+},
+"NormalMap": {
+"tga": "GC_Footprint_VD_Floor_NRM.tga",
+"ordinal": 171
+},
+"texture639": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture640": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Floor.tga",
+"ordinal": 74
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 265,
+"name": "Material__3242_XsC6Pt0GIs_rOHYmmgZ0T",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_VUhDpTNHVc",
+"bind": {
+"texture641": {
+"tga": "GC_SXC_Rooftop_ground_NRM.tga",
+"ordinal": 96
+},
+"NormalMap": {
+"tga": "GC_SXC_Rooftop_ground_NRM.tga",
+"ordinal": 96
+},
+"texture642": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture643": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 266,
+"name": "Material__3242_XsC6Pt0GIs_of9VjztUg5",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_wQHuylQvPu",
+"bind": {
+"texture644": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"NormalMap": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"texture645": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture646": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Rooftop_ground.tga",
+"ordinal": 20
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 267,
+"name": "Material__3242_XsC6Pt0GIs_ngdq6ON7GZ",
+"effect": "NormalSpecOverbright-fx_5qY2lFhXWG_Wq0L8hVnUs",
+"bind": {
+"texture647": {
+"tga": "GC_Residential_Dinner_objects_Refl.tga",
+"ordinal": 172
+},
+"NormalMap": {
+"tga": "GC_Residential_Dinner_objects_Refl.tga",
+"ordinal": 172
+},
+"texture648": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture649": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 268,
+"name": "Material__4534_6eYBQFaJ81_S46TFudBBK",
+"effect": "LightMapDC-fx_HGNfzs4hiV_dIoA7DDHLh",
+"bind": {
+"texture650": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture651": {
+"tga": "vegetation.tga",
+"ordinal": 7
+},
+"DiffuseMap": {
+"tga": "vegetation.tga",
+"ordinal": 7
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 269,
+"name": "Material__4534_6eYBQFaJ81_atIYHgVdPe",
+"effect": "LightMapDC-fx_HGNfzs4hiV_N9wGTC2s6a",
+"bind": {
+"texture652": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture653": {
+"tga": "GC_Footprint_VD_Fence.tga",
+"ordinal": 8
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_VD_Fence.tga",
+"ordinal": 8
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 270,
+"name": "Material__4534_6eYBQFaJ81_FHZl1F6yKW",
+"effect": "LightMapDC-fx_HGNfzs4hiV_Y5kinZQ6Xe",
+"bind": {
+"texture654": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"LightMap": {
+"tga": "LightMapSampler.tga",
+"ordinal": 31
+},
+"texture655": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 271,
+"name": "Material__4534_6eYBQFaJ81_RWaNEKvGkm",
+"effect": "LightMapDC-fx_HGNfzs4hiV_MlRxwQ0gpL",
+"bind": {
+"texture656": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture657": {
+"tga": "GC_Footprint_STD_alpha_T.tga",
+"ordinal": 173
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_STD_alpha_T.tga",
+"ordinal": 173
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 272,
+"name": "Material__4534_6eYBQFaJ81_rN8p5O7p6U",
+"effect": "LightMapDC-fx_HGNfzs4hiV_pupEkLJQ65",
+"bind": {
+"texture658": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Roads0.tga",
+"ordinal": 6
+},
+"texture659": {
+"tga": "GC_Footprint_STD_alpha_T.tga",
+"ordinal": 173
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_STD_alpha_T.tga",
+"ordinal": 173
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 273,
+"name": "Material__4534_6eYBQFaJ81_rciLwRDfos",
+"effect": "LightMapDC-fx_HGNfzs4hiV_0pUZ63bMA4",
+"bind": {
+"texture660": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture661": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 274,
+"name": "Material__4534_6eYBQFaJ81_m9kFydOVVq",
+"effect": "LightMapDC-fx_HGNfzs4hiV_zwzAENDGJV",
+"bind": {
+"texture662": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture663": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 275,
+"name": "Material__4534_6eYBQFaJ81_oTPRr0e6FA",
+"effect": "LightMapDC-fx_HGNfzs4hiV_101S7HPjM8",
+"bind": {
+"texture664": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture665": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 276,
+"name": "Material__4534_6eYBQFaJ81_omYqLMlfqg",
+"effect": "LightMapDC-fx_HGNfzs4hiV_APnUt1fm1j",
+"bind": {
+"texture666": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture667": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 277,
+"name": "Material__4534_6eYBQFaJ81_FFc8Ah5Qrf",
+"effect": "LightMapDC-fx_HGNfzs4hiV_IaW8hqeueI",
+"bind": {
+"texture668": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture669": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 278,
+"name": "Material__4534_6eYBQFaJ81_hPvYlRIDNg",
+"effect": "LightMapDC-fx_HGNfzs4hiV_TkARVZR0Ds",
+"bind": {
+"texture670": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture671": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 279,
+"name": "Material__4534_6eYBQFaJ81_8pIK3y8Peb",
+"effect": "LightMapDC-fx_HGNfzs4hiV_HYEMyEWq1n",
+"bind": {
+"texture672": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture673": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 280,
+"name": "Material__66_5K4r9Xc2Pk_IWI7qF4VkH",
+"effect": "NormalSpecOverbright-fx_8RAumtZfM1_frYQWDPotZ",
+"bind": {
+"texture674": {
+"tga": "GC_Park_water.tga",
+"ordinal": 174
+},
+"NormalMap": {
+"tga": "GC_Park_water.tga",
+"ordinal": 174
+}
+},
+"wrap": []
+},
+{
+"i": 281,
+"name": "Material__4534_6eYBQFaJ81_9exXT5bbbv",
+"effect": "LightMapDC-fx_HGNfzs4hiV_RrqVxLAOy9",
+"bind": {
+"texture675": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture676": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 282,
+"name": "Material__4534_6eYBQFaJ81_r4R3MBFj8v",
+"effect": "LightMapDC-fx_HGNfzs4hiV_eyTn3iSAM5",
+"bind": {
+"texture677": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture678": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 283,
+"name": "Material__4161_ynipUKG3No_1H1JyHaoYL",
+"effect": "LightMapDC-fx_2t0APmhI0s_I9YZU23lIc",
+"bind": {
+"texture679": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture680": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture681": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture682": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+}
+},
+"wrap": []
+},
+{
+"i": 284,
+"name": "Material__4161_ynipUKG3No_tI8m19vmCZ",
+"effect": "LightMapDC-fx_2t0APmhI0s_eGjxoXjAGx",
+"bind": {
+"texture683": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture684": {
+"tga": "GC_Z1_Shops_01.tga",
+"ordinal": 68
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_01.tga",
+"ordinal": 68
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture685": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture686": {
+"tga": "GC_Z1_Shops_01_Refl.tga",
+"ordinal": 175
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Z1_Shops_01_Refl.tga",
+"ordinal": 175
+}
+},
+"wrap": []
+},
+{
+"i": 285,
+"name": "Material__4161_ynipUKG3No_oV5Y4fYPkS",
+"effect": "LightMapDC-fx_2t0APmhI0s_4jF7ZYNRVd",
+"bind": {
+"texture687": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture688": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"DiffuseMap": {
+"tga": "GC_CBCE_Atlas.tga",
+"ordinal": 55
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture689": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture690": {
+"tga": "GC_CBCE_Atlas_ref.tga",
+"ordinal": 118
+},
+"DiffuseMaskSampler": {
+"tga": "GC_CBCE_Atlas_ref.tga",
+"ordinal": 118
+}
+},
+"wrap": []
+},
+{
+"i": 286,
+"name": "Material__4161_ynipUKG3No_crqCQMsVUX",
+"effect": "LightMapDC-fx_2t0APmhI0s_STGR3su0Hx",
+"bind": {
+"texture691": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture692": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture693": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture694": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+}
+},
+"wrap": []
+},
+{
+"i": 287,
+"name": "Material__4161_ynipUKG3No_Scrbhzxfz0",
+"effect": "LightMapDC-fx_2t0APmhI0s_TPiUphdxe2",
+"bind": {
+"texture695": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture696": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_02.tga",
+"ordinal": 77
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture697": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture698": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Z1_Shops_02_Refl.tga",
+"ordinal": 126
+}
+},
+"wrap": []
+},
+{
+"i": 288,
+"name": "Material__4161_ynipUKG3No_zspgnKy5tE",
+"effect": "LightMapDC-fx_2t0APmhI0s_g5YOvtVkrn",
+"bind": {
+"texture699": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture700": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture701": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture702": {
+"tga": "GC_Residential_Dinner_objects_Refl.tga",
+"ordinal": 172
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Residential_Dinner_objects_Refl.tga",
+"ordinal": 172
+}
+},
+"wrap": []
+},
+{
+"i": 289,
+"name": "Material__4161_ynipUKG3No_KNVH7Wfi1z",
+"effect": "LightMapDC-fx_2t0APmhI0s_PhKATD4GMs",
+"bind": {
+"texture703": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture704": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture705": {
+"tga": "GC_Skybox.tga",
+"ordinal": null
+},
+"ReflectionMapSampler": {
+"tga": "GC_Skybox.tga",
+"ordinal": null
+},
+"texture706": {
+"tga": "GC_Footprint_LB_Cinema_Refl.tga",
+"ordinal": 121
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_LB_Cinema_Refl.tga",
+"ordinal": 121
+}
+},
+"wrap": []
+},
+{
+"i": 290,
+"name": "Material__4161_ynipUKG3No_fta7oiKuQl",
+"effect": "LightMapDC-fx_2t0APmhI0s_yo4opxOK84",
+"bind": {
+"texture707": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture708": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_LB_Cinema.tga",
+"ordinal": 50
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture709": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture710": {
+"tga": "GC_Footprint_LB_Cinema_Refl.tga",
+"ordinal": 121
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Footprint_LB_Cinema_Refl.tga",
+"ordinal": 121
+}
+},
+"wrap": []
+},
+{
+"i": 291,
+"name": "Material__4161_ynipUKG3No_R0FvWCDz06",
+"effect": "LightMapDC-fx_2t0APmhI0s_5HTaYd7tFs",
+"bind": {
+"texture711": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_B0.tga",
+"ordinal": 4
+},
+"texture712": {
+"tga": "GC_footprint_GC_zebra_T.tga",
+"ordinal": 75
+},
+"DiffuseMap": {
+"tga": "GC_footprint_GC_zebra_T.tga",
+"ordinal": 75
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture713": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+}
+},
+"wrap": []
+},
+{
+"i": 292,
+"name": "Material__4161_ynipUKG3No_OsN03T3z4D",
+"effect": "LightMapDC-fx_2t0APmhI0s_U2zn9kaY4m",
+"bind": {
+"texture715": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_Landmarks0.tga",
+"ordinal": 9
+},
+"texture716": {
+"tga": "GC_SXC_Atlas2.tga",
+"ordinal": 80
+},
+"DiffuseMap": {
+"tga": "GC_SXC_Atlas2.tga",
+"ordinal": 80
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture717": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture718": {
+"tga": "GC_SXC_Atlas2_Refl.tga",
+"ordinal": null
+},
+"DiffuseMaskSampler": {
+"tga": "GC_SXC_Atlas2_Refl.tga",
+"ordinal": null
+}
+},
+"wrap": []
+},
+{
+"i": 293,
+"name": "Material__4161_ynipUKG3No_cPu6Q5IJB1",
+"effect": "LightMapDC-fx_2t0APmhI0s_PJ53xAdfUx",
+"bind": {
+"texture719": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture720": {
+"tga": "GC_Z1_Shops_01.tga",
+"ordinal": 68
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Shops_01.tga",
+"ordinal": 68
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+},
+"texture721": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"ReflectionMapSampler": {
+"tga": "GC_refl_exterior.tga",
+"ordinal": 2
+},
+"texture722": {
+"tga": "GC_Z1_Shops_01_Refl.tga",
+"ordinal": 175
+},
+"DiffuseMaskSampler": {
+"tga": "GC_Z1_Shops_01_Refl.tga",
+"ordinal": 175
+}
+},
+"wrap": []
+},
+{
+"i": 294,
+"name": "StorageBox_add_usZBauFkrF_DIIXJNZI95",
+"effect": "SimpleAdditive-fx_5u9t3tgj2t_CJCmZFOv1Q",
+"bind": {
+"texture723": {
+"tga": "StorageBox_D.tga",
+"ordinal": 0
+},
+"DiffuseMap": {
+"tga": "StorageBox_D.tga",
+"ordinal": 0
+}
+},
+"wrap": []
+},
+{
+"i": 295,
+"name": "Material__3220_8DYdD3ojxS_NIsNrmwUlN",
+"effect": "SimpleAdditive-fx_ZMrF6cI6NX_lsaqv6Updv",
+"bind": {
+"texture724": {
+"tga": "FX_Coronas.tga",
+"ordinal": null
+},
+"DiffuseMap": {
+"tga": "FX_Coronas.tga",
+"ordinal": null
+},
+"ExtraDiffuse": {
+"float4": [
+0.894118,
+0.894118,
+0.894118,
+1.77058
+]
+}
+},
+"wrap": []
+},
+{
+"i": 296,
+"name": "Material__3220_8DYdD3ojxS_KUUTsGCoRb",
+"effect": "SimpleAdditive-fx_ZMrF6cI6NX_OzOLMrbAyf",
+"bind": {
+"texture725": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"ExtraDiffuse": {
+"float4": [
+0.003921,
+0.168627,
+1.0,
+1.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 297,
+"name": "Material__3220_8DYdD3ojxS_gTxSl1C00G",
+"effect": "SimpleAdditive-fx_ZMrF6cI6NX_JboH8S4kwI",
+"bind": {
+"texture726": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+}
+},
+"wrap": []
+},
+{
+"i": 298,
+"name": "Material__3220_8DYdD3ojxS_OYGxlSXPtL",
+"effect": "SimpleAdditive-fx_ZMrF6cI6NX_nqPTGfRyil",
+"bind": {
+"texture727": {
+"tga": "GC_Footprint_AWT.tga",
+"ordinal": 102
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_AWT.tga",
+"ordinal": 102
+}
+},
+"wrap": []
+},
+{
+"i": 299,
+"name": "Material__10_zdGc81tBDK_zMCk8R6BEu",
+"effect": "SimpleAdditive-fx_xrpMCARCr4_oZYFYZ5B6k",
+"bind": {
+"texture728": {
+"tga": "FX_Coronas.tga",
+"ordinal": null
+},
+"DiffuseMap": {
+"tga": "FX_Coronas.tga",
+"ordinal": null
+}
+},
+"wrap": []
+},
+{
+"i": 300,
+"name": "Material__10_zdGc81tBDK_aMeAjSWfch",
+"effect": "SimpleAdditive-fx_xrpMCARCr4_JBdT3hVOfo",
+"bind": {
+"texture729": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+},
+"DiffuseMap": {
+"tga": "HC_Prop_BillboardRoof_01.tga",
+"ordinal": 16
+}
+},
+"wrap": []
+},
+{
+"i": 301,
+"name": "Material__28_ItdsWlhi1v_W2rLc6AveP",
+"effect": "AlphaMasking-fx_m1eHxtWPB1_hT8FDDaKoH",
+"bind": {
+"texture730": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture731": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 302,
+"name": "Material__28_ItdsWlhi1v_s0G9s83W4B",
+"effect": "AlphaMasking-fx_m1eHxtWPB1_JWgxsxcwv8",
+"bind": {
+"texture732": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"LightMap": {
+"tga": "BakeGroup_Island1_A0.tga",
+"ordinal": 13
+},
+"texture733": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"LightMapAtlas": {
+"float4": [
+1.0,
+1.0,
+0.0,
+0.0
+]
+}
+},
+"wrap": []
+},
+{
+"i": 303,
+"name": "Material__10_zdGc81tBDK_8YFOGKjxRr",
+"effect": "SimpleAdditive-fx_xrpMCARCr4_sMlaZTXC1O",
+"bind": {
+"texture734": {
+"tga": "GC_Footprint_GA_TH.tga",
+"ordinal": 49
+},
+"DiffuseMap": {
+"tga": "GC_Footprint_GA_TH.tga",
+"ordinal": 49
+}
+},
+"wrap": []
+},
+{
+"i": 304,
+"name": "uvanim_ubuHR3UKKW_lzSSjBbvvi",
+"effect": "SimpleModulateUVAnimDC-fx_G41uJDsKLE_U1bTwDwHKE",
+"bind": {
+"texture735": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+},
+"DiffuseMap": {
+"tga": "GC_Residential_Dinner_objects.tga",
+"ordinal": 48
+}
+},
+"wrap": []
+},
+{
+"i": 305,
+"name": "Material__390_3soLBPh71Y_IDCdJOyapn",
+"effect": "SimpleModulate_ZWrite-fx_x3CF3EDNhm_bbSqWy6yhK",
+"bind": {
+"texture736": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Rooftop_Alpha.tga",
+"ordinal": 10
+}
+},
+"wrap": []
+},
+{
+"i": 306,
+"name": "Material__390_3soLBPh71Y_gxIX4a2dRE",
+"effect": "SimpleModulate_ZWrite-fx_x3CF3EDNhm_exuieaoEiI",
+"bind": {
+"texture737": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+},
+"DiffuseMap": {
+"tga": "GC_Z1_Props_Street_Alpha.tga",
+"ordinal": 11
+}
+},
+"wrap": []
+}
+]
