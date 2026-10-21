@@ -1,0 +1,39 @@
+{
+ "road680_diffuse": {
+  "mean": [
+   94.6,
+   87.2,
+   74.2
+  ],
+  "warmth": 20.48,
+  "covered": 0.064
+ },
+ "road680_lightmap": {
+  "mean": [
+   35.5,
+   41.8,
+   41.4
+  ],
+  "warmth": -5.93,
+  "covered": 0.064
+ },
+ "road680_combined": {
+  "mean": [
+   22.1,
+   24.0,
+   20.2
+  ],
+  "warmth": 1.87,
+  "covered": 0.064
+ },
+ "road680_null_grass": {
+  "mean": [
+   31.0,
+   34.3,
+   27.8
+  ],
+  "warmth": 3.13,
+  "covered": 0.064
+ },
+ "diff_vs_null": 58.84557342529297
+}
