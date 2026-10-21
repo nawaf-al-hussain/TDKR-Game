@@ -1,0 +1,916 @@
+{
+ "by_scope": {
+  "IN_FUNC": 88,
+  "TOPLEVEL": 14
+ },
+ "by_reach": {
+  "CALLED": 88,
+  "TOPLEVEL": 14
+ },
+ "uses": [
+  {
+   "file": "GothamCity.lvc",
+   "line": 24657,
+   "scope": "IN_FUNC",
+   "func": "Obj401716_Failed",
+   "text": "StartSoundAtObjectNode(\"sfx_diner_explosion\", MC, 5*MC_MAX_DISTANCE,0,false,false);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 24713,
+   "scope": "IN_FUNC",
+   "func": "Obj401716_Failed",
+   "text": "StartSoundAtObjectNode(\"sfx_diner_explosion\", MC, 5*MC_MAX_DISTANCE,0,false,false);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 24725,
+   "scope": "IN_FUNC",
+   "func": "Obj401716_Failed",
+   "text": "StartSoundAtObjectNode(\"sfx_diner_explosion\", MC, 5*MC_MAX_DISTANCE,0,false,false);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 26129,
+   "scope": "IN_FUNC",
+   "func": "Obj400958_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_train_loop\", 401025, MC_MAX_DISTANCE*9,3000,true,true);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 26306,
+   "scope": "IN_FUNC",
+   "func": "Obj401072_OnEnter",
+   "text": "StartSoundAtObjectNode(\"sfx_train_loop\", 401025, MC_MAX_DISTANCE*9,3000,true,true);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 26322,
+   "scope": "IN_FUNC",
+   "func": "Obj401072_OnEnter",
+   "text": "StartEventAtObjectNode(\"evt_thunder_strike\", CurrentActor, MC_MAX_DISTANCE*20);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 26331,
+   "scope": "IN_FUNC",
+   "func": "Obj401072_OnEnter",
+   "text": "StartEventAtObjectNode(\"evt_thunder_strike\", CurrentActor, MC_MAX_DISTANCE*20);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 30117,
+   "scope": "IN_FUNC",
+   "func": "Obj412957_Failed",
+   "text": "StartSoundAtObjectNode(\"env_weapon_cache_explode\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 31652,
+   "scope": "IN_FUNC",
+   "func": "Obj402413_Failed",
+   "text": "StartSoundAtObjectNode(\"env_weapon_cache_explode\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 32968,
+   "scope": "IN_FUNC",
+   "func": "Obj403554_Running",
+   "text": "StartSoundAtObjectNode(\"sfx_vehicle_explode_1\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 33884,
+   "scope": "IN_FUNC",
+   "func": "Obj405983_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_emp_explosion_1\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 33957,
+   "scope": "IN_FUNC",
+   "func": "Obj405983_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_vehicle_explode_2\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 33996,
+   "scope": "IN_FUNC",
+   "func": "Obj405983_Always",
+   "text": "StartSoundAtObjectNode(\"env_vehicle_explode\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 36286,
+   "scope": "IN_FUNC",
+   "func": "fz_grapnel_start",
+   "text": "StartSoundAtObjectNode(\"sfx_intro_cutscene_batman_land\", vz_civilian_car, 5*MC_MAX_DISTANCE,0,false,false);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 36321,
+   "scope": "IN_FUNC",
+   "func": "fz_grapnel_start",
+   "text": "StartSoundAtWaypoint(\"sfx_car_alarm_1\", vz_civilian_car, true, MC_MAX_DISTANCE*3, 0);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 39050,
+   "scope": "IN_FUNC",
+   "func": "Obj405985_Canceled",
+   "text": "StartSoundAtObjectNode(\"sfx_emp_explosion_1\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 43183,
+   "scope": "IN_FUNC",
+   "func": "Obj702251_OnReach",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_3\", 702119, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 43220,
+   "scope": "IN_FUNC",
+   "func": "r_find_array_key",
+   "text": "StartSoundAtObjectNode(\"env_vehicle_explode\", 702316, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 8
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 43245,
+   "scope": "IN_FUNC",
+   "func": "Obj702113_OnReach",
+   "text": "StartEventAtObjectNode(\"env_qte_car_tumble\", 702316, MC_MAX_DISTANCE*5)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 43529,
+   "scope": "IN_FUNC",
+   "func": "Obj401609_Canceled",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_2\", 702148, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 43639,
+   "scope": "IN_FUNC",
+   "func": "Obj401609_Canceled",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_1\", 702149, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 43641,
+   "scope": "IN_FUNC",
+   "func": "Obj401609_Canceled",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_2\", 702148, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 44087,
+   "scope": "IN_FUNC",
+   "func": "RemoveIdFromTable",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_2\", 702148, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 44203,
+   "scope": "IN_FUNC",
+   "func": "RemoveIdFromTable",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_1\", 702149, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 44205,
+   "scope": "IN_FUNC",
+   "func": "RemoveIdFromTable",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_2\", 702148, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50053,
+   "scope": "IN_FUNC",
+   "func": "Obj400560_OnReach",
+   "text": "StartEventAtObjectNode(\"env_npc_police_brake\", 400637, MC_MAX_DISTANCE*40);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50059,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartEventAtObjectNode(\"env_car_door_open\", CurrentActor, MC_MAX_DISTANCE*5);",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50072,
+   "scope": "IN_FUNC",
+   "func": "Obj400572_OnReach",
+   "text": "StartEventAtObjectNode(\"env_npc_police_brake\", 400952, MC_MAX_DISTANCE*40)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50081,
+   "scope": "IN_FUNC",
+   "func": "Obj400580_OnReach",
+   "text": "StartEventAtObjectNode(\"env_npc_police_brake\", CurrentActor, MC_MAX_DISTANCE*40);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50085,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartEventAtObjectNode(\"env_car_door_open\", CurrentActor, MC_MAX_DISTANCE*5);",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50242,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_night_vision_start\", 0, MC_MAX_DISTANCE*5,100);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50318,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_1\", police_car_1, MC_MAX_DISTANCE*4,3000,true,true);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50322,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_2\", police_van_2, MC_MAX_DISTANCE*4,3000,true,true);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50326,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_npc_police_siren_loop_3\", police_van_1, MC_MAX_DISTANCE*4,3000,true,true);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50514,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_diner_explosion\", MC, 5*MC_MAX_DISTANCE,0,false,false);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50529,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartEventAtObjectNode(\"env_diner_debris_crashing\", MC, MC_MAX_DISTANCE*3);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50531,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartEventAtObjectNode(\"env_diner_debris_crashing\", MC, MC_MAX_DISTANCE*3);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50578,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartSoundAtWaypoint(\"sfx_car_alarm_1\", 400995, true, MC_MAX_DISTANCE*3, 0);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50608,
+   "scope": "IN_FUNC",
+   "func": "Obj400553_Always",
+   "text": "StartSoundAtWaypoint(\"sfx_car_alarm_1\", 400998, true, MC_MAX_DISTANCE*3, 0);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50656,
+   "scope": "IN_FUNC",
+   "func": "Obj400768_Always",
+   "text": "StartSoundAtWaypoint(\"sfx_car_alarm_1\", 401000, true, MC_MAX_DISTANCE*30, 0);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50734,
+   "scope": "IN_FUNC",
+   "func": "Obj400768_Always",
+   "text": "StartSoundAtWaypoint(\"sfx_car_alarm_1\", 400999, true, MC_MAX_DISTANCE*30, 0);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50742,
+   "scope": "IN_FUNC",
+   "func": "Obj400768_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_intro_cutscene_mercenaries_run\", runner_fpp_1, 5*MC_MAX_DISTANCE,0,false,false);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50760,
+   "scope": "IN_FUNC",
+   "func": "Obj400768_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_intro_cutscene_batman_land\", 400979, 5*MC_MAX_DISTANCE,0,false,false);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50792,
+   "scope": "IN_FUNC",
+   "func": "Obj400768_Always",
+   "text": "StartSoundAtWaypoint(\"sfx_car_alarm_1\", 400676, true, MC_MAX_DISTANCE*3, 0);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 50795,
+   "scope": "IN_FUNC",
+   "func": "Obj400768_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_car_alarm_2\", 400516, MC_MAX_DISTANCE*3,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 51330,
+   "scope": "IN_FUNC",
+   "func": "Obj1900199_OnEnter",
+   "text": "StartSoundAtObjectNode(\"sfx_merc_gas_grenade_coughing_1\", 0, MC_MAX_DISTANCE*3);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 51542,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartEventAtObjectNode(\"env_impact_kick\", z_Selina_after_combat, MC_MAX_DISTANCE*3)",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 51982,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartSoundAtObjectNode(\"sfx_train_top_loop\", 502111, 2*MC_MAX_DISTANCE,0,true,true)",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52071,
+   "scope": "IN_FUNC",
+   "func": "Obj502280_OnReach",
+   "text": "StartSoundAtObjectNode(\"sfx_helicopter_loop\", 502287, 3*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52099,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartSoundAtObjectNode(\"sfx_qte_drop_steel\", 502198, MC_MAX_DISTANCE*10)",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52356,
+   "scope": "IN_FUNC",
+   "func": "Obj502224_Always",
+   "text": "StartEventAtObjectNode(\"env_npc_police_brake\", 502141, MC_MAX_DISTANCE*40);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52360,
+   "scope": "IN_FUNC",
+   "func": "Obj502224_Always",
+   "text": "StartEventAtObjectNode(\"env_npc_police_brake\", 900766, MC_MAX_DISTANCE*40);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52386,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartEventAtObjectNode(\"env_qte_car_explode\", 502208, MC_MAX_DISTANCE*3)",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52545,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartEventAtObjectNode(\"env_npc_police_brake\", 502141, MC_MAX_DISTANCE*40);",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52549,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartEventAtObjectNode(\"env_npc_police_brake\", 900766, MC_MAX_DISTANCE*40);",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52586,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartEventAtObjectNode(\"env_qte_car_explode\", m_spawned_car1, MC_MAX_DISTANCE*3);",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 52679,
+   "scope": "IN_FUNC",
+   "func": "Obj315206_OnReach",
+   "text": "StartEventAtObjectNode(\"env_qte_helicopter_explode\", 315203, MC_MAX_DISTANCE*3);",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 53819,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartSoundAtWaypoint(\"sfx_qte_car_explode_2\", 316270, false, MC_MAX_DISTANCE*30, 0);",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 53832,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartSoundAtWaypoint(\"sfx_qte_car_tumble_1\", 316289, false, MC_MAX_DISTANCE*30, 0);",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity.lvc",
+   "line": 53848,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartSoundAtWaypoint(\"sfx_qte_car_tumble_1\", 316300, false, MC_MAX_DISTANCE*30, 0);",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "GothamCity_Island2.lvc",
+   "line": 18944,
+   "scope": "IN_FUNC",
+   "func": "Obj400190_Failed",
+   "text": "StartSoundAtObjectNode(\"env_weapon_cache_explode\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity_Island2.lvc",
+   "line": 20262,
+   "scope": "IN_FUNC",
+   "func": "Obj400432_Running",
+   "text": "StartSoundAtObjectNode(\"sfx_vehicle_explode_1\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity_Island2.lvc",
+   "line": 21171,
+   "scope": "IN_FUNC",
+   "func": "Obj400672_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_emp_explosion_1\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity_Island2.lvc",
+   "line": 21244,
+   "scope": "IN_FUNC",
+   "func": "Obj400672_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_vehicle_explode_2\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity_Island2.lvc",
+   "line": 21290,
+   "scope": "IN_FUNC",
+   "func": "Obj400672_Always",
+   "text": "StartSoundAtObjectNode(\"env_vehicle_explode\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity_Island2.lvc",
+   "line": 23569,
+   "scope": "IN_FUNC",
+   "func": "Obj405445_Canceled",
+   "text": "StartSoundAtObjectNode(\"sfx_emp_explosion_1\", MC, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "GothamCity_Island2.lvc",
+   "line": 28454,
+   "scope": "IN_FUNC",
+   "func": "Obj703323_Running",
+   "text": "StartSoundAtObjectNode(\"sfx_drop_boxes\", CurrentActor, 2*MC_MAX_DISTANCE, 0)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "Military.lvc",
+   "line": 2699,
+   "scope": "IN_FUNC",
+   "func": "m_explode_heli",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300018, 5*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 2822,
+   "scope": "IN_FUNC",
+   "func": "Obj700022_OnCamDetectTarget",
+   "text": "StartSoundAtObjectNode(\"sfx_car_alarm_2\", 700022, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 2844,
+   "scope": "IN_FUNC",
+   "func": "Obj700022_OnCamDetectTarget",
+   "text": "StartSoundAtObjectNode(\"sfx_car_alarm_2\", 700023, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 2860,
+   "scope": "IN_FUNC",
+   "func": "ff_checkClosestFacingInArrayM",
+   "text": "StartSoundAtObjectNode(\"sfx_car_alarm_2\", 700027, 5*MC_MAX_DISTANCE,300,true,true)",
+   "reach": "CALLED",
+   "calls_seen": 22
+  },
+  {
+   "file": "Military.lvc",
+   "line": 2892,
+   "scope": "IN_FUNC",
+   "func": "ff_checkClosestFacingInArrayM",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", c_value_Cars, 10*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 22
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3046,
+   "scope": "IN_FUNC",
+   "func": "Obj300005_OnEnter",
+   "text": "StartSoundAtObjectNode(\"sfx_helicopter_loop\",700648, 5*MC_MAX_DISTANCE, 0, true,true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3082,
+   "scope": "IN_FUNC",
+   "func": "Obj300005_OnEnter",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 700695, 10*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3157,
+   "scope": "IN_FUNC",
+   "func": "Obj300024_Always",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300018, 4*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3161,
+   "scope": "IN_FUNC",
+   "func": "Obj300024_Always",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300019, 5*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3165,
+   "scope": "IN_FUNC",
+   "func": "Obj300024_Always",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300020, 4*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3169,
+   "scope": "IN_FUNC",
+   "func": "Obj300024_Always",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300021, 5*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3173,
+   "scope": "IN_FUNC",
+   "func": "Obj300024_Always",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300022, 6*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3177,
+   "scope": "IN_FUNC",
+   "func": "Obj300024_Always",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300023, 5*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3181,
+   "scope": "IN_FUNC",
+   "func": "Obj300024_Always",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300025, 4*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3185,
+   "scope": "IN_FUNC",
+   "func": "Obj300024_Always",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 300026, 3*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3375,
+   "scope": "IN_FUNC",
+   "func": "Obj700695_0_2_OnScriptEvent",
+   "text": "StartEventAtObjectNode('env_missile_impact_batpod',700696, 4*MC_MAX_DISTANCE, 0)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3377,
+   "scope": "IN_FUNC",
+   "func": "Obj700695_0_2_OnScriptEvent",
+   "text": "StartSoundAtObjectNode('sfx_helicopter_blow_up',700696, 4*MC_MAX_DISTANCE, 0, true, true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Military.lvc",
+   "line": 3682,
+   "scope": "IN_FUNC",
+   "func": "Obj701055_OnEnter",
+   "text": "StartEventAtObjectNode(\"env_vehicle_explode\", 701167, 5*MC_MAX_DISTANCE,300)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Stadion.lvc",
+   "line": 2519,
+   "scope": "IN_FUNC",
+   "func": "r_shuffle_array",
+   "text": "StartSoundAtObjectNode('sfx_batman_voice_coughing_x',0, 2*MC_MAX_DISTANCE, 0, true, true)",
+   "reach": "CALLED",
+   "calls_seen": 6
+  },
+  {
+   "file": "StockExchange.lvc",
+   "line": 2003,
+   "scope": "IN_FUNC",
+   "func": "Obj702315_Always",
+   "text": "StartSoundAtObjectNode(\"env_vehicle_explode\", 702316, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "StockExchange.lvc",
+   "line": 2004,
+   "scope": "IN_FUNC",
+   "func": "Obj702315_Always",
+   "text": "StartEventAtObjectNode(\"env_qte_car_tumble\", 702316, MC_MAX_DISTANCE*5)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "StockExchange.lvc",
+   "line": 2353,
+   "scope": "IN_FUNC",
+   "func": "Obj702371_OnScriptEvent",
+   "text": "StartSoundAtObjectNode(\"sfx_qte_drop_statue\", 702371, MC_MAX_DISTANCE*10)",
+   "reach": "CALLED",
+   "calls_seen": 4
+  },
+  {
+   "file": "StockExchange.lvc",
+   "line": 3438,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartSoundAtObjectNode('VO_THUG_ENGAGING_1', person, 5*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "StockExchange.lvc",
+   "line": 4162,
+   "scope": "IN_FUNC",
+   "func": "Obj702972_Always",
+   "text": "StartSoundAtObjectNode(\"SE_FINAL_CINEMATIC3\", 0, 2*MC_MAX_DISTANCE, 0, true, true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "StockExchange.lvc",
+   "line": 4462,
+   "scope": "IN_FUNC",
+   "func": "Obj703060_Always",
+   "text": "StartSoundAtObjectNode(Sound, enemyAround[Random(1, #enemyAround)], 1*MC_MAX_DISTANCE,0,false,false)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "ThePit.lvc",
+   "line": 10483,
+   "scope": "TOPLEVEL",
+   "func": null,
+   "text": "StartEventAtObjectNode(\"env_rock_hit_crate\", CurrentActor, 2*MC_MAX_DISTANCE)",
+   "reach": "TOPLEVEL"
+  },
+  {
+   "file": "ThePit.lvc",
+   "line": 10493,
+   "scope": "IN_FUNC",
+   "func": "Obj1501217_OnScriptEvent",
+   "text": "StartEventAtObjectNode(\"env_rock_hit_crate\", CurrentActor, 2*MC_MAX_DISTANCE)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "ThePit.lvc",
+   "line": 10495,
+   "scope": "IN_FUNC",
+   "func": "Obj1501217_OnScriptEvent",
+   "text": "StartSoundAtObjectNode(\"sfx_drop_boxes\", CurrentActor, 3*MC_MAX_DISTANCE)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Underground.lvc",
+   "line": 8188,
+   "scope": "IN_FUNC",
+   "func": "Obj300249_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_monorail_loop\", 300264, 300*MC_MAX_DISTANCE, 0, true, true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Underground.lvc",
+   "line": 8189,
+   "scope": "IN_FUNC",
+   "func": "Obj300249_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_monorail_loop\", 300265, 300*MC_MAX_DISTANCE, 0, true, true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Underground.lvc",
+   "line": 8190,
+   "scope": "IN_FUNC",
+   "func": "Obj300249_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_monorail_loop\", 300266, 300*MC_MAX_DISTANCE, 0, true, true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Underground.lvc",
+   "line": 8191,
+   "scope": "IN_FUNC",
+   "func": "Obj300249_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_monorail_loop\", 300267, 300*MC_MAX_DISTANCE, 0, true, true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Underground.lvc",
+   "line": 8192,
+   "scope": "IN_FUNC",
+   "func": "Obj300249_Always",
+   "text": "StartSoundAtObjectNode(\"sfx_monorail_loop\", 300268, 300*MC_MAX_DISTANCE, 0, true, true)",
+   "reach": "CALLED",
+   "calls_seen": 2
+  },
+  {
+   "file": "Underground.lvc",
+   "line": 11186,
+   "scope": "IN_FUNC",
+   "func": "arrayCopy",
+   "text": "StartSoundAtObjectNode(Sound, enemyAround[Random(1,#enemyAround)], 1*MC_MAX_DISTANCE,0,false,false);Wait(3000)",
+   "reach": "CALLED",
+   "calls_seen": 10
+  },
+  {
+   "file": "Underground.lvc",
+   "line": 11208,
+   "scope": "IN_FUNC",
+   "func": "arrayCopy",
+   "text": "StartSoundAtObjectNode(SpottedSound, enemyAround[Random(1,#enemyAround)], 1*MC_MAX_DISTANCE,0,false,false);Wait(3000)",
+   "reach": "CALLED",
+   "calls_seen": 10
+  }
+ ]
+}
