@@ -291,3 +291,31 @@ Artifacts: extraction/re/session42/s42_t5_test.py + s42_t5_pairs.json + s42_t5_c
 Artifacts: extraction/re/session42/s42_t6_stride28.md (this), patched
 s41_t6_pyref.py / s41_t6_slice.js (main) + city_slice.html (branch
 s41-city-slice).
+
+## T7 PUSH RECEIPT (appended immediately prior to this session's 3-ref push attempt)
+- In-session token (classic PAT, 40 chars, ghp_ prefix, provided by the repo owner
+  in-session) used ephemerally under the SINGLE-CALL rule: export + length/prefix
+  byte-assert + API pre-check (GET /user expect 200, repo permissions.push true) +
+  ATOMIC push, all in ONE tool call. Token never written to any file, git config,
+  credential helper store, or bundle; env var unset in the same call.
+- Pushed refs (3): main = 501388a..THIS COMMIT (session-42 T1-T5 + T6-main +
+  receipt; six task commits c9acb10/a5f0af3/5bd7049/7bfe9de/4a27f2c/fb1b064 plus
+  this receipt); s40-user-zip-slice = 3af4b64..80274a1 (T1 BGR-line fix in
+  user-zip page, branch ONLY); s41-city-slice = 7e84317..d2ba838 (T6 stride-28
+  fix, city_slice.html 1526/1526, branch ONLY). gh-pages UNCHANGED at 36788a9 -
+  no LIVE content change this session; GitHub Pages serves the gh-pages ref
+  exclusively, so both fixed pages remain branch-only previews.
+- Unchanged heads: gh-pages 36788a9, essentials-s36 7c8defc, gh-pages-staged 39298a4.
+- Pre-push gates (all anonymous): ls-remote matched expected six heads exactly;
+  three bundles sha256sum -c OK; merge-base --is-ancestor ff-assertions PASS for
+  all three refs.
+- Post-push verification (separate anonymous calls, recorded in worklog):
+  git ls-remote heads (expect main = receipt, 80274a1, d2ba838, gh-pages
+  36788a9) + LIVE cache-buster grep for the pipeline.html marker "RGB order,
+  s41 T3 correction" (stability, expect 2 hits).
+- Bundles: download/bundles_s42 (main_s42_inc 501388a..fb1b064, slice_s42_branch
+  3af4b64..80274a1, city_slice_s42 7e84317..d2ba838) all git bundle verify PASS
+  and sha256-verified; they remain as verified backups of the six task commits.
+- SECURITY: the token transited chat in plaintext and carries broad classic
+  scopes - revoke after this push; prefer a fine-grained token (TDKR-Game only,
+  Contents: Read/Write) next session.
