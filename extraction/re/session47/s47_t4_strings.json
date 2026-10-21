@@ -1,0 +1,23 @@
+{
+ "GothamCity.lvc": {
+  "strings": 899,
+  "with_high_bytes": 0,
+  "samples_high": [],
+  "valid_utf8_when_latin1_bytes": 899,
+  "latin1_sorted_digest": "781233735c996509070c76d3307702211231fa2c95e50b477b85822b77e6b5ff"
+ },
+ "GothamCity_Island2.lvc": {
+  "strings": 567,
+  "with_high_bytes": 0,
+  "samples_high": [],
+  "valid_utf8_when_latin1_bytes": 567,
+  "latin1_sorted_digest": "5e18a16b913d4fcfd60ad8800b5f393bf76a04a4c5f80a5c445b3b7c50f62548"
+ },
+ "ThePit.lvc": {
+  "strings": 77,
+  "with_high_bytes": 0,
+  "samples_high": [],
+  "valid_utf8_when_latin1_bytes": 77,
+  "latin1_sorted_digest": "5833c3e2f40083ff9636bb6cc4defe5077161cceaae2ed11235c333e18d91d3a"
+ }
+}

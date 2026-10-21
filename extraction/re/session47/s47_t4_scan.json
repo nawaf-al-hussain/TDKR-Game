@@ -1,0 +1,314 @@
+{
+ "shop.lvc": {
+  "high_byte_count": 3605,
+  "glued_runs": 263,
+  "samples": [
+   [
+    "0x3a",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0xdb",
+    "\u00ff\u00ff\u00ff\u00ffBp"
+   ],
+   [
+    "0x10a",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x12e",
+    "=aG\u00ae(((\u00ff"
+   ],
+   [
+    "0x1cb",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ]
+  ]
+ },
+ "BatCave.lvc": {
+  "high_byte_count": 198566,
+  "glued_runs": 28325,
+  "samples": [
+   [
+    "0xcc",
+    ">L\u00cc\u00cdB\u00c8"
+   ],
+   [
+    "0x12a",
+    "\\8#\u00ffB\u00c8"
+   ],
+   [
+    "0x140",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x164",
+    "=aG\u00ae(((\u00ff"
+   ],
+   [
+    "0x20c",
+    "58@\u00d0\u00fa\u00ad\u00c1T"
+   ]
+  ]
+ },
+ "GothamCity.lvc": {
+  "high_byte_count": 2589320,
+  "glued_runs": 306890,
+  "samples": [
+   [
+    "0x498",
+    ">L\u00cc\u00cd@\u00a0"
+   ],
+   [
+    "0x4e0",
+    "|?\u0088\u00f5\u00c3>\u00cc\u00cc\u00cd"
+   ],
+   [
+    "0x4f6",
+    "@fw\u00a0B\u0096"
+   ],
+   [
+    "0x50c",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00c4\u0097@"
+   ],
+   [
+    "0x52b",
+    "}?&ff<T\u00fd\u00f42<<\u00ff"
+   ]
+  ]
+ },
+ "GothamCity_Island2.lvc": {
+  "high_byte_count": 2359676,
+  "glued_runs": 303652,
+  "samples": [
+   [
+    "0x27c",
+    ">L\u00cc\u00cd@\u00a0"
+   ],
+   [
+    "0x2f3",
+    "@\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00c4\u0096"
+   ],
+   [
+    "0x38a",
+    "C\u009f\u00e9\u00db?\u0080"
+   ],
+   [
+    "0x3b9",
+    "AE\u00ef\u009eBW\u00c1\u0089\u0080"
+   ],
+   [
+    "0x3c9",
+    "B\u00ae\u00a0\u00c5>\u0080"
+   ]
+  ]
+ },
+ "Test.lvc": {
+  "high_byte_count": 372287,
+  "glued_runs": 51090,
+  "samples": [
+   [
+    "0x96",
+    ">L\u00cc\u00cd@\u00a0"
+   ],
+   [
+    "0xdb",
+    "\u00ff\u00ff\u00ff\u00ffC\u00c8"
+   ],
+   [
+    "0x10a",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x12e",
+    "=aG\u00ae(((\u00ff"
+   ],
+   [
+    "0x18e",
+    "\u00ae}BR\\)C\u00a2\u008b"
+   ]
+  ]
+ },
+ "l_menu.lvc": {
+  "high_byte_count": 687,
+  "glued_runs": 50,
+  "samples": [
+   [
+    "0x96",
+    ">L\u00cc\u00cdA "
+   ],
+   [
+    "0xdb",
+    "\u00ff\u00ff\u00ff\u00ffBp"
+   ],
+   [
+    "0x10a",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x12e",
+    "=aG\u00ae(((\u00ff"
+   ],
+   [
+    "0x27c",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff?\u0080"
+   ]
+  ]
+ },
+ "Military.lvc": {
+  "high_byte_count": 196999,
+  "glued_runs": 24478,
+  "samples": [
+   [
+    "0xcc",
+    ">L\u00cc\u00cd@\u00a0"
+   ],
+   [
+    "0x117",
+    "G\u00ae?L\u00cc\u00cd"
+   ],
+   [
+    "0x12a",
+    "PPP\u0096B\u00c8"
+   ],
+   [
+    "0x140",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x160",
+    ">\u0099\u0099\u009a=\u0087+"
+   ]
+  ]
+ },
+ "Police_Station.lvc": {
+  "high_byte_count": 164083,
+  "glued_runs": 18432,
+  "samples": [
+   [
+    "0xcc",
+    ">L\u00cc\u00cd@\u00a0"
+   ],
+   [
+    "0x115",
+    "@0\u00a3\u00d7?G\u00ae"
+   ],
+   [
+    "0x12a",
+    ")aadB\u00c8"
+   ],
+   [
+    "0x140",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x164",
+    "=aG\u00ae----"
+   ]
+  ]
+ },
+ "Stadion.lvc": {
+  "high_byte_count": 95679,
+  "glued_runs": 11950,
+  "samples": [
+   [
+    "0xcc",
+    ">L\u00cc\u00cd@\u00a0"
+   ],
+   [
+    "0x140",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x160",
+    ">\u008a=q=aG\u00ae"
+   ],
+   [
+    "0x1c6",
+    "\u00c1=\u00ba^BI>w\u00c1.A\u0089"
+   ],
+   [
+    "0x1da",
+    "C<\u0095??\u0080"
+   ]
+  ]
+ },
+ "StockExchange.lvc": {
+  "high_byte_count": 156071,
+  "glued_runs": 19091,
+  "samples": [
+   [
+    "0x60",
+    ">L\u00cc\u00cdB\u00c8"
+   ],
+   [
+    "0xd4",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0xf4",
+    ">L\u00cc\u00cd=aG\u00ae(((\u00ff"
+   ],
+   [
+    "0x157",
+    "\u00b5\u00be\u00c2dbN>"
+   ],
+   [
+    "0x15f",
+    "bNAW&\u00e9"
+   ]
+  ]
+ },
+ "ThePit.lvc": {
+  "high_byte_count": 980279,
+  "glued_runs": 123913,
+  "samples": [
+   [
+    "0xcc",
+    ">L\u00cc\u00cdB\u00c8"
+   ],
+   [
+    "0x12a",
+    "19O\u00b4B\u00c8"
+   ],
+   [
+    "0x140",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x167",
+    "{(((\u00ff?"
+   ],
+   [
+    "0x172",
+    "\u0099\u009a>\u0099\u0099\u009a\u00e6\u00e6\u00ff\u00ff"
+   ]
+  ]
+ },
+ "Underground.lvc": {
+  "high_byte_count": 548215,
+  "glued_runs": 71789,
+  "samples": [
+   [
+    "0x96",
+    ">L\u00cc\u00cdB\u00c8"
+   ],
+   [
+    "0xdf",
+    "@L\u00cc\u00cd?L\u00cc\u00cd"
+   ],
+   [
+    "0xf4",
+    "b\u00aa\u00d0}B\u00c8"
+   ],
+   [
+    "0x10a",
+    "\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff"
+   ],
+   [
+    "0x12e",
+    "=aG\u00ae(((\u00ff"
+   ]
+  ]
+ }
+}
