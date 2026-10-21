@@ -31,7 +31,7 @@ const GATE = location.hash.includes('gate');   // test-only: silhouette gate vie
 log('collision patch: ' + patch.tris.n + ' tris; triggers: ' + patch.triggers.length +
     ' (' + patch.triggers.filter(t=>t.has_script).length + ' with scripts)');
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;   // sRGB output (r160 default, explicit per gate)
 renderer.setSize(innerWidth, innerHeight);
 document.body.appendChild(renderer.domElement);
@@ -194,12 +194,19 @@ if (new URLSearchParams(location.search).get('userfiles') === '1') {
       const gc = await TDKR.zipReadLazy(file, gcPath, dir);
       const nmBytes = TDKR.glaSlice(gc, new Set(['GothamCity_502299_navdata.nm']))['GothamCity_502299_navdata.nm'];
       if (!nmBytes) throw new Error('navdata member not found');
+      const cmode = new URLSearchParams(location.search).get('corrupt');
+      if (cmode === '1') { nmBytes[3] ^= 0xff; log('NEGATIVE CONTROL: navmesh byte corrupted (?corrupt=1)'); }
+      if (cmode === '2') { log('NEGATIVE CONTROL: lvc bytes corrupted (?corrupt=2)'); }
       WALKER.chk = loadNavmesh(nmBytes);
       if (!WALKER.chk.ok) throw new Error('navmesh self-check FAILED');
       const lvcBytes = TDKR.glaSlice(gc, new Set(['GothamCity.lvc']))['GothamCity.lvc'];
+      if (cmode === '2') { for (let zb = 4000000; zb < 4000064; zb++) lvcBytes[zb] ^= 0xff; }
       const table = await (await fetch('./lvc_readseq_s30.json')).json();
       const gol = await (await fetch('./lvc_gol_templates.json')).json();
       const built = buildSoupFromLvc(lvcBytes, table, gol);
+      const soupSha = [...new Uint8Array(await crypto.subtle.digest('SHA-256', built.buf))].map(x => x.toString(16).padStart(2, '0')).join('');
+      const SOUP_SHA = '00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8';
+      if (soupSha !== SOUP_SHA) throw new Error('soup digest MISMATCH: ' + soupSha.slice(0, 16) + ' (expected ' + SOUP_SHA.slice(0, 16) + ')');
       loadSoup(built.buf);
       WALKER.soupN = built.nTri;
       WALKER.active = true;
