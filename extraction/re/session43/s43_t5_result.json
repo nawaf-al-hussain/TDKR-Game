@@ -1,0 +1,11 @@
+{
+ "objects": 8064,
+ "triggers": 440,
+ "pairs": 5589,
+ "testable_triggers": 440,
+ "corr": 0.06355638317950023,
+ "null_mean": 0.0809214547238041,
+ "null_p95": 0.08157396351135347,
+ "null_max": 0.08182400630729572,
+ "verdict": false
+}
