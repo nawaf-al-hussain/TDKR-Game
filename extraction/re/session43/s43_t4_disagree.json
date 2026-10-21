@@ -1,0 +1,214 @@
+[
+ {
+  "route": 37,
+  "why": "fell",
+  "x": -119.4,
+  "y": -759.6,
+  "z": 0.21,
+  "nm_levels_near": [
+   0.21,
+   2.61
+  ],
+  "nm_levels_all": [
+   0.21,
+   2.61,
+   21.21,
+   26.01,
+   32.91
+  ],
+  "soup_walkable_levels": [
+   0.0
+  ],
+  "soup_any_levels": [
+   0.0
+  ],
+  "class": "GROUND_LEVEL_REGISTRATION",
+  "verdict": "fell",
+  "dist": 425.2
+ },
+ {
+  "route": 39,
+  "why": "stuck_wall",
+  "x": -318.7,
+  "y": -717.5,
+  "z": 8.88,
+  "nm_levels_near": [
+   8.31,
+   8.41,
+   8.61,
+   8.81,
+   8.91
+  ],
+  "nm_levels_all": [
+   0.21,
+   8.31,
+   8.41,
+   8.61,
+   8.81,
+   8.91
+  ],
+  "soup_walkable_levels": [
+   -0.23,
+   6.34,
+   8.88
+  ],
+  "soup_any_levels": [
+   -0.23,
+   6.34,
+   8.31,
+   8.88
+  ],
+  "class": "ELEVATED_DECK_OVER_STREET (bridge/overpass/upper plaza)",
+  "verdict": "stuck_wall",
+  "dist": 428.8
+ },
+ {
+  "route": 41,
+  "why": "stuck_wall(stall,no-record)",
+  "x": 15.2,
+  "y": -715.7,
+  "z": -0.09,
+  "nm_levels_near": [],
+  "soup_walkable_levels": [
+   -0.09,
+   6.34
+  ],
+  "class": "GROUND_LEVEL",
+  "verdict": "stuck_wall",
+  "dist": 61.9
+ },
+ {
+  "route": 42,
+  "why": "stuck_wall(stall,no-record)",
+  "x": -92.8,
+  "y": -908.3,
+  "z": -0.0,
+  "nm_levels_near": [
+   0.11,
+   0.21
+  ],
+  "soup_walkable_levels": [
+   -0.0
+  ],
+  "class": "GROUND_LEVEL",
+  "verdict": "stuck_wall",
+  "dist": 268.3
+ },
+ {
+  "route": 43,
+  "why": "stuck_wall(stall,no-record)",
+  "x": -690.7,
+  "y": -496.1,
+  "z": -0.24,
+  "nm_levels_near": [
+   0.01,
+   0.11
+  ],
+  "soup_walkable_levels": [
+   -0.24
+  ],
+  "class": "GROUND_LEVEL",
+  "verdict": "stuck_wall",
+  "dist": 264.9
+ },
+ {
+  "route": 44,
+  "why": "stuck_wall(stall,no-record)",
+  "x": -900.3,
+  "y": -996.5,
+  "z": 0.0,
+  "nm_levels_near": [
+   0.21
+  ],
+  "soup_walkable_levels": [
+   0.0
+  ],
+  "class": "GROUND_LEVEL",
+  "verdict": "stuck_wall",
+  "dist": 29.3
+ },
+ {
+  "route": 45,
+  "why": "stuck_wall(stall,no-record)",
+  "x": -279.4,
+  "y": -754.5,
+  "z": 8.88,
+  "nm_levels_near": [
+   8.31,
+   8.41,
+   8.51,
+   8.61,
+   8.71,
+   8.81,
+   8.91
+  ],
+  "soup_walkable_levels": [
+   -0.23,
+   6.34,
+   8.88
+  ],
+  "class": "ELEVATED_DECK_OVER_STREET",
+  "verdict": "stuck_wall",
+  "dist": 0.4
+ },
+ {
+  "route": 46,
+  "why": "stuck_wall(stall,no-record)",
+  "x": -708.2,
+  "y": -697.4,
+  "z": 8.88,
+  "nm_levels_near": [
+   8.71,
+   8.81,
+   8.91
+  ],
+  "soup_walkable_levels": [
+   6.34,
+   8.88
+  ],
+  "class": "ELEVATED_NO_GROUND_BELOW",
+  "verdict": "stuck_wall",
+  "dist": 28.2
+ },
+ {
+  "route": 47,
+  "why": "stuck_wall(stall,no-record)",
+  "x": -310.2,
+  "y": -995.2,
+  "z": 0.0,
+  "nm_levels_near": [
+   0.21,
+   0.31,
+   0.41
+  ],
+  "soup_walkable_levels": [
+   0.0
+  ],
+  "class": "GROUND_LEVEL",
+  "verdict": "stuck_wall",
+  "dist": 45.1
+ },
+ {
+  "route": 61,
+  "why": "fell",
+  "x": -81.1,
+  "y": -923.3,
+  "z": 0.21,
+  "nm_levels_near": [
+   0.21
+  ],
+  "nm_levels_all": [
+   0.21,
+   4.11
+  ],
+  "soup_walkable_levels": [
+   -0.0
+  ],
+  "soup_any_levels": [
+   -0.0
+  ],
+  "class": "GROUND_LEVEL_REGISTRATION",
+  "verdict": "fell",
+  "dist": 87.9
+ }
+]
