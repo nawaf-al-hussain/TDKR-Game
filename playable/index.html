@@ -8,7 +8,7 @@
       border:1px solid #232a35;padding:8px;border-radius:6px;white-space:pre-wrap;z-index:5}
  #hud{position:fixed;right:10px;top:10px;text-align:right;z-index:5;color:#7d8794}
 </style></head><body>
-<div id="log">T6 first playable — WASD/arrows to walk, Shift = run.<br>Triggers fire Lua via fengari.</div>
+<div id="log">T6 first playable — WASD/arrows to walk, Shift = run.<br>Triggers fire Lua via fengari.<br>?userfiles=1: ground = navmesh + walls = collision soup, both parsed from YOUR zip (s45 T2 walker adoption).</div>
 <div id="hud">FPS: <span id="fps">-</span><br>pos <span id="pos">-</span><br>
 speed <span id="spd">0</span> m/s<br>triggers hit <span id="hits">0</span></div>
 <script type="importmap">
@@ -16,6 +16,9 @@ speed <span id="spd">0</span> m/s<br>triggers hit <span id="hits">0</span></div>
 "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
 </script>
 <script src="./fengari-web.js"></script>
+<script src="./tdkr_pipeline.js"></script>
+<script src="./lvc.js"></script>
+<script src="./walktest.js"></script>
 <script type="module">
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -171,6 +174,41 @@ new GLTFLoader().load('./batman.glb', (g) => {
   }
 }, undefined, (e) => log('GLB ERROR: ' + e));
 
+// s45 T2 walker adoption (?userfiles=1): ground = navmesh surface, walls =
+// user-zip collision soup (step-ignore 0.55) — the capsule is driven by the
+// same code the walktest harness verifies (24/24 route agreement).
+const WALKER = { active: false, chk: null, soupN: 0 };
+window.__WALKER = WALKER;
+if (new URLSearchParams(location.search).get('userfiles') === '1') {
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.id = 'zipfile'; inp.style.cssText = 'position:fixed;left:10px;bottom:10px;z-index:9';
+  document.body.appendChild(inp);
+  log('pick the release zip (TDKR_v1.1.6b_APK_OBB.zip) to activate navmesh+soup grounding');
+  inp.addEventListener('change', async ev => {
+    try {
+      const file = ev.target.files[0];
+      const dir = await TDKR.zipDirLazy(file);
+      const names = [...dir.keys()];
+      const gcPath = names.find(n => /data\/game_config\.gla$/i.test(n));
+      if (!gcPath) throw new Error('game_config.gla not found in the zip');
+      const gc = await TDKR.zipReadLazy(file, gcPath, dir);
+      const nmBytes = TDKR.glaSlice(gc, new Set(['GothamCity_502299_navdata.nm']))['GothamCity_502299_navdata.nm'];
+      if (!nmBytes) throw new Error('navdata member not found');
+      WALKER.chk = loadNavmesh(nmBytes);
+      if (!WALKER.chk.ok) throw new Error('navmesh self-check FAILED');
+      const lvcBytes = TDKR.glaSlice(gc, new Set(['GothamCity.lvc']))['GothamCity.lvc'];
+      const table = await (await fetch('./lvc_readseq_s30.json')).json();
+      const gol = await (await fetch('./lvc_gol_templates.json')).json();
+      const built = buildSoupFromLvc(lvcBytes, table, gol);
+      loadSoup(built.buf);
+      WALKER.soupN = built.nTri;
+      WALKER.active = true;
+      inp.remove();
+      log('WALKER ACTIVE: navmesh ' + WALKER.chk.vcount + 'v/' + WALKER.chk.ccount +
+          'c, soup ' + built.nTri + ' tris (sha-verified) — capsule now walks the navmesh');
+    } catch (e) { log('WALKER ERROR: ' + (e && e.message || e)); console.error(e); }
+  });
+}
 // player (game coords)
 const spawn = patch.spawns[0] ? patch.spawns[0].pos : [-140.7, -681.2, 0.1];
 const P = { x: spawn[0], y: spawn[1], z: spawn[2] + 0.9, speed: 0 };
@@ -232,9 +270,16 @@ function tick(now) {
     const L2 = Math.hypot(vx, vy); vx /= L2; vy /= L2;
     const sp = P.speed * dt;
     const nx = P.x + vx * sp, ny = P.y + vy * sp;
-    const gz = groundAt(nx, ny, P.z, 0.85);
-    if (gz > -1e8 && gz - (P.z - 0.9) < 0.85) { P.x = nx; P.y = ny; P.z = gz + 0.9; }
+    if (WALKER.active) {
+      const sp2 = [nx, ny, P.z];
+      const gz2 = nm_ground(nx, ny, P.z + 2.6);
+      if (gz2 > -1e8 && !blocked(sp2) && gz2 - (P.z - 0.9) < 0.85) { P.x = nx; P.y = ny; P.z = gz2 + 0.9; }
+    } else {
+      const gz = groundAt(nx, ny, P.z, 0.85);
+      if (gz > -1e8 && gz - (P.z - 0.9) < 0.85) { P.x = nx; P.y = ny; P.z = gz + 0.9; }
+    }
   }
+  window.__P = P;
   checkTriggers();
 
   if (batman) {
