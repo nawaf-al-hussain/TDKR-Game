@@ -1,0 +1,77 @@
+{
+ "verdict": "PASS",
+ "checks": {
+  "pos_walker_active": true,
+  "pos_no_console_errors": true,
+  "pos_track_ge20": true,
+  "pos_ground_3dec": true,
+  "pos_silhouette_present": true,
+  "corrupt1_detected": true,
+  "corrupt2_detected": true,
+  "nozip_safe": true
+ },
+ "results": {
+  "pos": {
+   "mode": "pos",
+   "console_errors": [],
+   "log_tail": "navmesh+soup groundingbatman.glb: _001_idle_stand 5.00s, _007_walk 1.07s, _008_run 0.67s, _010_run_jump_start 0.90s, _461_batman_jab_countre_front_attack 1.50sWALKER ACTIVE: navmesh 30824v/31647c, soup 137893 tris (sha-verified) \u2014 capsule now walks the navmesh",
+   "walker_active": true,
+   "walker_error": false,
+   "track_n": 24,
+   "track_head": [
+    [
+     -140.69,
+     -680.1400994084568,
+     1.0730472775341604
+    ],
+    [
+     -140.69,
+     -678.871729593644,
+     1.0039375464281115
+    ],
+    [
+     -140.69,
+     -677.4880845391132,
+     0.9285468074274736
+    ],
+    [
+     -140.69,
+     -676.1020444015248,
+     0.8826378937407579
+    ]
+   ],
+   "ground_checked": 24,
+   "ground_ok": 24,
+   "ground_maxdiff": 0.0,
+   "silhouette_px": [
+    2284,
+    2415,
+    2451
+   ],
+   "console_error_count": 0
+  },
+  "corrupt1": {
+   "mode": "corrupt1",
+   "console_errors": [],
+   "log_tail": "activate navmesh+soup groundingbatman.glb: _001_idle_stand 5.00s, _007_walk 1.07s, _008_run 0.67s, _010_run_jump_start 0.90s, _461_batman_jab_countre_front_attack 1.50sNEGATIVE CONTROL: navmesh byte corrupted (?corrupt=1)WALKER ERROR: navmesh self-check FAILED",
+   "walker_active": false,
+   "walker_error": true,
+   "console_error_count": 1
+  },
+  "corrupt2": {
+   "mode": "corrupt2",
+   "console_errors": [],
+   "log_tail": "glb: _001_idle_stand 5.00s, _007_walk 1.07s, _008_run 0.67s, _010_run_jump_start 0.90s, _461_batman_jab_countre_front_attack 1.50sNEGATIVE CONTROL: lvc bytes corrupted (?corrupt=2)WALKER ERROR: soup digest MISMATCH: 26a154ca85738bd3 (expected 00ce7970e45adc85)",
+   "walker_active": false,
+   "walker_error": true,
+   "console_error_count": 1
+  },
+  "nozip": {
+   "mode": "nozip",
+   "console_errors": [],
+   "walker_active": false,
+   "log_tail": "on).collision patch: 12512 tris; triggers: 13 (11 with scripts)batman.glb: _001_idle_stand 5.00s, _007_walk 1.07s, _008_run 0.67s, _010_run_jump_start 0.90s, _461_batman_jab_countre_front_attack 1.50s",
+   "batman_canvas_nonempty": true
+  }
+ }
+}
