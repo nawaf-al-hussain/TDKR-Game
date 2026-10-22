@@ -38,7 +38,7 @@ for i in range(IMG_N):
     w = u32[a // 4: a // 4 + 3]
     imgs.append((int(w[0]), int(w[2])))
 
-INST_BASE, INST_N, INST_REC = 0x5fea0, 301, 36
+INST_BASE, INST_N, INST_REC = 0x5fea0, 307, 36
 rows = []
 for i in range(INST_N):
     a = INST_BASE + i * INST_REC
@@ -47,17 +47,14 @@ for i in range(INST_N):
     effect = cstr(w[3])
     np_count, prof_ptr, ident = w[4], w[5], w[6]
     sam = {}
-    ok = True
     for j in range(np_count):
         pa = prof_ptr + j * 24
         pw = [int(u32[(pa + k * 4) // 4]) for k in range(6)]
         pname = cstr(pw[0])
         if pw[2] != 13 or pw[3] != 1:
-            ok = False
             continue
         v1 = pw[4]
         if int(u32[v1 // 4]) != 1 or int(u32[v1 // 4 + 1]) != v1 + 24:
-            ok = False
             continue
         idx = int(u32[(v1 + 24) // 4])
         if 0 <= idx < IMG_N:
@@ -66,19 +63,18 @@ for i in range(INST_N):
         elif idx == 0xffffffff:
             sam[pname] = ''
     rows.append({'i': i, 'name': name, 'effect': effect, 'id': ident,
-                 'np_count': np_count, 'params_ok': ok,
+                 'np_count': np_count,
                  'diff': sam.get('DiffuseMap', ''), 'lm': sam.get('LightMap', ''),
                  'n_sam': len(sam)})
 
 print('instance rows:', len(rows), 'names resolved:', sum(1 for r in rows if r['name']))
-print('params_ok:', sum(1 for r in rows if r['params_ok']), '/', len(rows))
 canon = json.dumps(sorted([[r['name'], r['diff'], r['lm']] for r in rows],
                           key=lambda x: x[0]), separators=(',', ':'))
 digest = hashlib.sha256(canon.encode()).hexdigest()
 print('COMPILED table digest:', digest)
 print('diff bound:', sum(1 for r in rows if r['diff']), 'lm bound:', sum(1 for r in rows if r['lm']))
 
-# id-word analysis: which geometry material ids does the scene table carry?
+# id word == entry index; every DB material id 0..306 has an instance row
 ids = sorted(r['id'] for r in rows)
 missing = [i for i in range(307) if i not in set(ids)]
 print('ids: min', ids[0], 'max', ids[-1], 'count', len(set(ids)), 'missing from 0..306:', missing)
@@ -128,11 +124,10 @@ for a in arows:
 print('name match: %d/%d  full-row agreement: %d/%d' % (matched, len(rows), row_ok, len(rows)))
 print('row diffs:', json.dumps(diffs))
 print('authoring rows without scene entry (%d):' % len(no_scene), no_scene)
-# mat 302 resolution: which instance row covers geometry id 302?
+# mat 302 resolution: instance row 302 exists (effect AlphaMasking, not the
+# s46-record's SimpleAdditive — the 260-B records are NOT keyed by material id)
 r302 = [r for r in rows if r['id'] == 302]
-print('instance row with id==302:', json.dumps(r302))
-twin = [r for r in rows if r['name'] and 'W2rLc6AveP' in r['name']]
-print('twin row:', json.dumps(twin))
+print('instance row id==302:', json.dumps(r302))
 
 out = {'digest': digest, 'rows': rows, 'n': len(rows),
        'matched': matched, 'row_ok': row_ok, 'diffs': diffs,

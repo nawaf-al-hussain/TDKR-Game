@@ -1,0 +1,44 @@
+{
+ "done": true,
+ "n_compiled": 307,
+ "n_xml": 307,
+ "t_compiled_ms": 4.2999999998137355,
+ "t_xml_ms": 56.5,
+ "speedup": 13.1395348842901,
+ "mem_compiled_mb": 0,
+ "mem_xml_mb": 0,
+ "digest_compiled": "1d0f1930cf10e5d37edccd911472bd8ed5e9660b01c586c7140281bc4cf4dedf",
+ "digest_xml": "4f6e2d070e7ea2201d9e81cd67502e6e8a27b4f3a2a7160ac28d7a7835fbb26c",
+ "digest_compiled_match": true,
+ "digest_xml_match": true,
+ "name_match": 307,
+ "row_ok": 305,
+ "diffs": [
+  {
+   "name": "Material__3220_8DYdD3ojxS_NIsNrmwUlN",
+   "authoring": [
+    "FX_Coronas.tga",
+    ""
+   ],
+   "compiled": [
+    "",
+    ""
+   ]
+  },
+  {
+   "name": "Material__10_zdGc81tBDK_zMCk8R6BEu",
+   "authoring": [
+    "FX_Coronas.tga",
+    ""
+   ],
+   "compiled": [
+    "",
+    ""
+   ]
+  }
+ ],
+ "no_scene_n": 0,
+ "console_errors": 0,
+ "page_errors": 0,
+ "verdict": true
+}
