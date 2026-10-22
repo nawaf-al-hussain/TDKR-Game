@@ -17,9 +17,11 @@
 <body>
 <div id="panel">
   <b>s48 T1 engine-math gate</b> — LightMapDC: Color = Diffuse * (LM*2.0);
-  SimpleAdditive: Color = Diffuse * vColor (Color0, NO lightmap — the effect FS
-  never samples LightMap and its VS has no Coord1). User zip -> data gla ->
-  GothamCity.zip + materials.bdae source.dae table + textures gla.<br>
+  AlphaMasking (mat 302 street decal): Color = Diffuse * (LM*2 + Overbright[1.0]),
+  alpha = SPLIT alpha.pvr .r, discard fAlpha &lt; 0.3; SimpleAdditive/StandardDiffuseDC:
+  Color = Diffuse * vColor (Color0). Effects from the compiled scene-instance table
+  (307 rows, == authoring). User zip -&gt; data gla -&gt; GothamCity.zip + materials.bdae
+  source.dae table + textures gla.<br>
   Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>:<br>
   <input type="file" id="f">
   <div id="log"></div>
@@ -190,16 +192,17 @@ function decodeDecls(bi8, count) {
   return decls;
 }
 
-// engine effect per material id (from the compiled DB, s46 T1 walk)
+// engine effect per material id — from the compiled scene-instance table
+// (307 rows @0x5fea0, stride 36; 307/307 effect URLs == source.dae authoring)
 const EFFECT_OF = {
-  73: 'LightMapDC', 302: 'SimpleAdditive', 11: 'StandardDiffuseDC',
-  300: 'AlphaMasking',
+  73: 'LightMapDC', 302: 'AlphaMasking', 11: 'StandardDiffuseDC',
+  300: 'SimpleAdditive',
 };
 const BLOCKS = [
   { tag: 'road276', k: 695, mat: 73, mode: 'lm2' },
-  { tag: 'stride28', k: 1525, mat: 302, mode: 'additive' },
+  { tag: 'stride28', k: 1525, mat: 302, mode: 'lm2o' },
   { tag: 'cls24nc', k: 100, mat: 11, mode: 'plain' },
-  { tag: 'cls2017', k: 28, mat: 300, mode: 'plain' },
+  { tag: 'cls2017', k: 28, mat: 300, mode: 'additive' },
   { tag: 'road696', k: 696, mat: 73, mode: 'lm2' },
 ];
 
@@ -337,6 +340,25 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
               r = r * (lmData[lo] / 255 * 2.0);
               g = g * (lmData[lo + 1] / 255 * 2.0);
               b = b * (lmData[lo + 2] / 255 * 2.0);
+            } else if (cfg.mode === 'lm2o' && lmData) {
+              // AlphaMasking: Color = Diff * (LM*2 + Overbright[1.0]);
+              // alpha = DiffuseMap_alpha.r (own dims); discard fAlpha < 0.3
+              const lu = w0 * uv1[i0 * 2] + w1 * uv1[i1 * 2] + w2 * uv1[i2 * 2];
+              const lv = w0 * uv1[i0 * 2 + 1] + w1 * uv1[i1 * 2 + 1] + w2 * uv1[i2 * 2 + 1];
+              let ltx = Math.floor(lu * lmW) % lmW; if (ltx < 0) ltx += lmW;
+              let lty = Math.floor(lv * lmH) % lmH; if (lty < 0) lty += lmH;
+              const lo = (lty * lmW + ltx) * 4;
+              const f = lmData[lo] / 255 * 2.0 + 1.0;
+              const fg = lmData[lo + 1] / 255 * 2.0 + 1.0;
+              const fb = lmData[lo + 2] / 255 * 2.0 + 1.0;
+              const al = diffTex.alpha;
+              if (al) {
+                let atx = Math.floor(uu * al.w) % al.w; if (atx < 0) atx += al.w;
+                let aty = Math.floor(vv * al.h) % al.h; if (aty < 0) aty += al.h;
+                const av = al.data[(aty * al.w + atx) * 4] / 255;
+                if (av < 0.3) continue;
+              }
+              r = r * f; g = g * fg; b = b * fb;
             } else if (cfg.mode === 'additive' && c0) {
               const cr = w0 * c0[i0 * 4] + w1 * c0[i1 * 4] + w2 * c0[i2 * 4];
               const cg = w0 * c0[i0 * 4 + 1] + w1 * c0[i1 * 4 + 1] + w2 * c0[i2 * 4 + 1];
