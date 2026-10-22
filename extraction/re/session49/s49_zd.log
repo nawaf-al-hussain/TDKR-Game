@@ -1,0 +1,5 @@
+127.0.0.1 - - [22/Oct/2026 13:01:14] "GET /playable/city_zone2.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 13:01:14] "GET /playable/etc1_tdkr.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 13:01:20] "GET /playable/s48_ref_zone.png HTTP/1.1" 200 -
+saved s49_js_zone.png
+['texmiss 3 decoded 71 misses ["","trunk.tga","LightMapSampler.tga"]', 'corr vs s48_ref_zone: 0.6813  js_mean 2.76 ref_mean 5.11', 'DONE', '']

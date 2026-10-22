@@ -2,3 +2,8 @@ TDKR_v1.1.6b_APK_OBB.zip
 apk_inspect/
 dm2.txt
 ghpages_site/
+
+# s49: derived data dumps stay out of history (generators kept)
+extraction/re/session44/s44_tokens_island1.json.gz
+extraction/re/session44/s44_tokens_island2.json.gz
+extraction/re/session49/*.npy

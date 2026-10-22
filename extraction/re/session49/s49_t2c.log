@@ -1,0 +1,14 @@
+atlas pages: ['GC_Z1_Props_Rooftop_Alpha.tga', 'HC_Prop_BillboardRoof_01.tga', 'GC_Z1_Props_Street.tga', 'GC_Z1_Props_Rooftop.tga', 'GC_Residential_Props_Railroad.tga', 'GC_Park_atlas_props.tga', 'GC_Z1_Props_Street_Alpha.tga', 'GC_Residential_Props_Monorail.tga']
+scipy: True
+A GC_Z1_Props_Rooftop_Alpha.tga real 1.0 null 0.867 +/- 0.202 z 0.66
+A HC_Prop_BillboardRoof_01.tga real 0.783 null 0.688 +/- 0.387 z 0.25
+A GC_Z1_Props_Street.tga real 0.899 null 0.969 +/- 0.083 z -0.84
+A GC_Z1_Props_Rooftop.tga real 0.75 null 0.811 +/- 0.206 z -0.3
+A GC_Residential_Props_Railroad.tga real 0.686 null 0.967 +/- 0.096 z -2.93
+A GC_Park_atlas_props.tga real 1.0 null 0.842 +/- 0.292 z 0.54
+B real |ori-axis| mean 43.4 vs shuffled-texture 45.5
+LM seam pairs: 107
+C seam |dLM| real 27.49 vs permuted-page 36.77 (n=107/283)
+saved /tmp/my-project/work/TDKR-Game/extraction/re/session49/s49_t2_checks.json
+real mean 27.495 (n=107) | null-perm means 37.171 +/- 1.226 (n=12 perms) | z = -7.89
+saved s49_t2c_z.json

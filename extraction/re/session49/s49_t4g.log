@@ -1,0 +1,15 @@
+server: True
+127.0.0.1 - - [22/Oct/2026 13:04:48] "GET /playable/city_zone2.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 13:04:48] "GET /playable/etc1_tdkr.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 13:04:52] "GET /playable/s48_ref_zone.png HTTP/1.1" 200 -
+load 2334 ms heap 1373 MB
+AABB x[-1620 157] z[-1311 -247]
+AABB full x[-1620.0 185.2] z[-1312.7 -246.8] scale 0.5673
+batch build 159 ms, 138 material batches, heap 1373 MB
+draw 1312 ms, 138 draws, 368739 tris, textures decoded 71, heap 1373 MB
+texmiss 3 decoded 71 misses ["","trunk.tga","LightMapSampler.tga"]
+corr vs s48_ref_zone: 0.6813  js_mean 2.76 ref_mean 5.11
+DONE
+
+CHECKS: {'corr>=0.99': False, 'corr_recorded': 0.6813128142816742, 'first_image<10s': True, 'heap<400MB': False, 'no_errors': True}
+GATE FAIL
