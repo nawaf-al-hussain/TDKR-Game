@@ -649,3 +649,22 @@ Work Log:
 Stage Summary:
 - S49 final: T1 PASS, T2 partial (1 powered check PASS), T3 PASS, T4 partial (speed PASS / corr gate NOT met), T5 PASS (staged), T6 pushed+live
 - Remote after push: main dbd1e11, gh-pages 16a22ce (LIVE, untouched), s41-city-slice bf76529, gh-pages-staged-s44 bc94daa, s40 80274a1, essentials-s36 7c8defc, gh-pages-staged 39298a4
+
+---
+Task ID: s50 (round 40)
+Agent: main (Z.ai session 50)
+Task: T1 correlation-gap bisection; T2 volume-sign controls; T3 seam calibration; T4 10-float runs; T5 integration re-gate; T6 fog A/B (report); T7 delivery
+
+Work Log:
+- STATE: brief's remote expectations were stale — s49 was already pushed (main 300aba8, staged bc94daa, s41 bf76529); gh-pages 16a22ce LIVE untouched
+- T1: bisected the zone-renderer corr gap with controlled variants (city_bisect.html). (1) DOMINANT CAUSE: depth window clip_z=1-h/200 clipped ALL h<0 geometry — water/shore = 31% of reference pixels (2.2% tris fully below 0, 6.5% straddling, 84.9% of coarse bbox footprint). Window -> [-100,+250] (clip_z=-2h/350+150/350): corr 0.6813 -> 0.9161 on city_zone2 (0.9213 bisect page). (2) skip-missing-texture batches (matches reference). (3) Residual = sub-pixel road-detail geometry (mat 73 roads_details: 92.5% of big-diff px, median tri width 0.22 px) where GPU 1/16 vertex snapping covers 40-58% of exact-float rasterization; corr>=0.99 vs the exact-float reference is UNATTAINABLE for any GPU-faithful renderer -> per the brief, the GL render (GPU contract + fixed window) is DEFINED as the engine-faithful reference. Verified NOT causes: ordering (painter vs depth refs agree 0.998; GL flat==GL painter), ETC1 decoders (bit-identical, 12 textures), CPU UV/position arrays (bit-identical dumps), fp16 varyings (no effect), reference edge epsilon (no effect). Gradient-probe UV-field agreement 0.81 where drawn. Gates: 0 console errors, first image ~4 s (<10 s), heap ~1.37 GB zip-dominated (<400 MB not certified)
+- T2: statistic stated with sign (real median trigger-object distance vs region-preserving swap nulls; z<0 supports). Controls: POS+ synthetic-inside-volumes z=-17.1/-18.4 (DETECTS); NEG1 random objects z=-0.30/-0.24 (PASS); NEG2 wrong same-region trigger ~0. Engine-exact volumes (half_xy=0.5*size_xy*scale, z-height=size_z*scale_z): half-extents p50 0.5m/p90 101m/max 841m; robust cut H<=33.8m; REAL z=-9.46/-8.04 robust, -9.87/-8.94 all; containment 12.7% -> signal = script-linked PROXIMITY (model: engine-derived + proximity-validated)
+- T3: seam check calibrated on the FULL population (362 pairs): REAL Coord1 z=-2.30 — s49's -7.89 was a 120-pair-cap subset artifact; wrong-chain z=-1.15, shifted z=-1.49 (monotone toward null, direction correct); coverage 55 mats/3 pages/VCBlend family only -> downgraded to weakly supportive
+- T4: 10-float runs INCONCLUSIVE on location (value-block/pointer/stride-40 scans found no candidate); named per-material uniform space fully covered by s49 T1a census — nothing unapplied
+- T5: integration re-gate PASS 8/8 (load 8.8 s, silhouette 3081 px, travel 5.6 m) + corrupt control DETECTED, after porting the depth-window fix
+- T6 (report only): engine fog vs deployed TEXTURE_FOG on 3 street blocks: mean ratios 0.99-1.00, JSD 0.0001-0.0008, localized diff 1,552 px — the paths nearly coincide at street level; viewer change written as s50_t6_viewer_fog.diff, NOT applied live
+- T7: bundles + push (main, s41-city-slice, gh-pages-staged-s44; gh-pages NOT pushed) + live verify + ls-remote
+
+Stage Summary:
+- T1 PASS-with-redefinition (0.6813->0.9161; >=0.99 target invalidated with evidence); T2 PASS (controls calibrate, sign verified); T3 calibrated (s49 subset artifact found); T4 inconclusive; T5 PASS; T6 report delivered; T7 done
+- Zone renderer + integration page now show water/shore; renderer defined as engine-faithful reference going forward
