@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR zone-scale render (s48 T6 — branch-only, NOT deployed)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #cdd3e0; font: 13px/1.5 system-ui, sans-serif; }
+  #panel { position: fixed; left: 8px; top: 8px; z-index: 9; background: rgba(10,12,18,.85);
+           border: 1px solid #334; border-radius: 8px; padding: 10px 12px; max-width: 520px; }
+  #log { white-space: pre-wrap; max-height: 40vh; overflow: auto; }
+  #c { position: fixed; right: 8px; top: 8px; border: 1px solid #334; }
+  input[type=file] { color: #cdd3e0; }
+  b { color: #9fc3ff; }
+</style>
+<script src="./etc1_tdkr.js"></script>
+</head>
+<body>
+<div id="panel">
+  <b>s48 T6 zone render</b> — ALL GothamCity segments (1,526), engine bindings
+  from the compiled instance table, declaration-driven decode, ETC1 textures with
+  LRU cache (cap 20 RGBA), per-effect shading (LightMapDC x2; AlphaMasking x2+1
+  + SPLIT alpha discard 0.3; SimpleAdditive/StandardDiffuse Color0 tint; other
+  effects diffuse-only). Orthographic top-down camera, 1024x605, painter order
+  by height.<br>
+  Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>:<br>
+  <input type="file" id="f">
+  <div id="log"></div>
+</div>
+<canvas id="c" width="1024" height="605"></canvas>
+<script type="module">
+const log = (s) => { document.querySelector('#log').textContent += s + '\n'; };
+window.__GATE = { done: false, heapSamples: [] };
+const heap = () => {
+  if (performance.memory) {
+    window.__GATE.heapSamples.push(performance.memory.usedJSHeapSize);
+  }
+};
+
+function u16le(u8, i) { return u8[i] | (u8[i + 1] << 8); }
+function u32le(u8, i) { return (u8[i] | (u8[i + 1] << 8) | (u8[i + 2] << 16) | (u8[i + 3] << 24)) >>> 0; }
+function u32be(u8, i) { return ((u8[i] << 24) | (u8[i + 1] << 16) | (u8[i + 2] << 8) | u8[i + 3]) >>> 0; }
+const LATIN = new TextDecoder('latin1');
+
+function zipMembers(buf) {
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--)
+    if (u32le(buf, i) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('no EOCD');
+  const n = u16le(buf, eocd + 10);
+  let p = u32le(buf, eocd + 16);
+  const members = new Map();
+  for (let k = 0; k < n; k++) {
+    if (u32le(buf, p) !== 0x02014b50) throw new Error('bad CD');
+    const method = u16le(buf, p + 10), csize = u32le(buf, p + 20);
+    const nlen = u16le(buf, p + 28), elen = u16le(buf, p + 30), clen = u32le(buf, p + 32);
+    const lho = u32le(buf, p + 42);
+    members.set(LATIN.decode(buf.subarray(p + 46, p + 46 + nlen)), { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return members;
+}
+async function zipRead2(buf, m) {
+  const lho = m.lho, nlen = u16le(buf, lho + 26), elen = u16le(buf, lho + 28);
+  const start = lho + 30 + nlen + elen;
+  const raw = buf.subarray(start, start + m.csize);
+  if (m.method === 0) return raw;
+  if (m.method === 8) {
+    const ds = new DecompressionStream('deflate-raw');
+    const stream = new Response(new Blob([raw])).body.pipeThrough(ds);
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  throw new Error('method ' + m.method);
+}
+function glaMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm === want) return g.subarray(o, o + s);
+  }
+  throw new Error('gla member not found: ' + want);
+}
+
+function cstrAt(u8, off, maxn = 96) {
+  if (!(off > 0 && off < u8.length)) return null;
+  let e = off;
+  const lim = Math.min(u8.length, off + maxn);
+  while (e < lim && u8[e] !== 0) e++;
+  if (e === off || e === lim) return null;
+  const s = LATIN.decode(u8.subarray(off, e));
+  for (let i = 0; i < s.length; i++) {
+    const c = s.charCodeAt(i);
+    if (c < 32 || c > 126) return null;
+  }
+  return s;
+}
+
+// compiled instance table (s48 T3): effects + DiffuseMap/LightMap bindings
+function parseCompiledTable(le) {
+  const dv = new DataView(le.buffer, le.byteOffset, le.byteLength);
+  const IMG_BASE = 0x22a9c, IMG_N = 176;
+  const imgs = [];
+  for (let i = 0; i < IMG_N; i++) {
+    imgs.push([dv.getUint32(IMG_BASE + i * 12, true), dv.getUint32(IMG_BASE + i * 12 + 8, true)]);
+  }
+  const bind = {}, fx = {};
+  for (let i = 0; i < 307; i++) {
+    const a = 0x5fea0 + i * 36;
+    const w = [];
+    for (let k = 0; k < 9; k++) w.push(dv.getUint32(a + k * 4, true));
+    const sam = {};
+    for (let j = 0; j < w[4]; j++) {
+      const pa = w[5] + j * 24;
+      const pw = [];
+      for (let k = 0; k < 6; k++) pw.push(dv.getUint32(pa + k * 4, true));
+      const pname = cstrAt(le, pw[0]);
+      if (pw[2] !== 13 || pw[3] !== 1) continue;
+      const v1 = pw[4];
+      if (dv.getUint32(v1, true) !== 1 || dv.getUint32(v1 + 4, true) !== v1 + 24) continue;
+      const idx = dv.getUint32(v1 + 24, true);
+      if (idx < IMG_N) sam[pname] = cstrAt(le, imgs[idx][1]) || '';
+      else if (idx === 0xffffffff) sam[pname] = '';
+    }
+    bind[i] = [sam['DiffuseMap'] || '', sam['LightMap'] || ''];
+    fx[i] = (cstrAt(le, w[3]) || '').split('-fx')[0].replace('#', '');
+  }
+  return { bind, fx };
+}
+
+const VAVT = [1, 1, 2, 2, 4, 4, 4];
+function declOf(bi8, mid) {
+  const bstride = u32le(bi8, 0);
+  const base = 4 + mid * bstride;
+  const N = bi8[base + 33];
+  const ds = [];
+  let start = 0;
+  for (let j = 0; j < N; j++) {
+    const d = base + 40 + j * 12;
+    const A = (bi8[d] << 8) | bi8[d + 1];
+    const B = (bi8[d + 2] << 8) | bi8[d + 3];
+    const C = (bi8[d + 4] << 8) | bi8[d + 5];
+    const st = (bi8[d + 6] << 8) | bi8[d + 7];
+    const off = (bi8[d + 8] << 8) | bi8[d + 9];
+    const size = B === 0 ? 3 : B * VAVT[C];
+    const end = off === 0 ? st : off;
+    ds.push({ attr: A, start, end, size });
+    start = end;
+  }
+  return ds;
+}
+
+// ---- SPLIT-aware ETC1 decode with LRU ----
+const LRU_CAP = 20;
+const texLRU = new Map();
+const texStats = { miss: 0, hit: 0, evict: 0 };
+function unwrapSplitParts(u8) {
+  if (!(u8[0] === 0x50 && u8[1] === 0x4b && u8[2] === 0x03 && u8[3] === 0x04)) return { rgb: u8 };
+  const out = {};
+  let pos = 0;
+  while (pos + 30 <= u8.length && u8[pos] === 0x50 && u8[pos + 1] === 0x4b &&
+         u8[pos + 2] === 0x03 && u8[pos + 3] === 0x04) {
+    const csz = u32le(u8, pos + 18);
+    const nlen = u16le(u8, pos + 26), elen = u16le(u8, pos + 28);
+    const nm = LATIN.decode(u8.subarray(pos + 30, pos + 30 + nlen));
+    const dstart = pos + 30 + nlen + elen;
+    if (nm.trim() !== 'SPLIT') out[nm] = u8.subarray(dstart, dstart + csz);
+    pos = dstart + csz;
+  }
+  if (!out['rgb.pvr']) throw new Error('split-zip: no rgb.pvr');
+  return out;
+}
+function decodePvr(u8) {
+  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+  if (dv.getUint32(0, true) !== 0x34) throw new Error('bad tex tag');
+  const h = dv.getUint32(4, true), w = dv.getUint32(8, true);
+  if (String.fromCharCode(u8[44], u8[45], u8[46], u8[47]) !== 'PVR!') throw new Error('bad PVR');
+  const bw = (w + 3) >> 2, bh = (h + 3) >> 2;
+  const rgba = window.ETC1_TDKR.decodeRGBA(u8.subarray(52, 52 + bw * bh * 8), w, h);
+  return { w, h, rgba };
+}
+function texMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  const wantL = want.toLowerCase();
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm.toLowerCase() === wantL) return g.subarray(o, o + s);
+  }
+  return null;
+}
+function getTex(texGla, name, wantAlpha) {
+  const key = name + '|' + (wantAlpha ? 'a' : 'r');
+  if (texLRU.has(key)) {
+    texStats.hit++;
+    const v = texLRU.get(key);
+    texLRU.delete(key);
+    texLRU.set(key, v);
+    return v;
+  }
+  texStats.miss++;
+  let t = null;
+  const tu = texMember(texGla, name);
+  if (tu) {
+    try {
+      const parts = unwrapSplitParts(tu);
+      const rgb = decodePvr(parts['rgb.pvr'] || parts['rgb']);
+      let al = null;
+      if (wantAlpha && parts['alpha.pvr']) {
+        const a = decodePvr(parts['alpha.pvr']);
+        al = { w: a.w, h: a.h, data: a.rgba };
+      }
+      t = { w: rgb.w, h: rgb.h, data: rgb.rgba, alpha: al };
+    } catch (e) { t = null; }
+  }
+  texLRU.set(key, t);
+  if (texLRU.size > LRU_CAP) {
+    const old = texLRU.keys().next().value;
+    texLRU.delete(old);
+    texStats.evict++;
+  }
+  return t;
+}
+
+document.querySelector('#f').addEventListener('change', async (ev) => {
+  try {
+    const t0 = performance.now();
+    const file = ev.target.files[0];
+    log('zip: ' + file.name + ' (' + file.size + ' B)');
+    const zipBuf = new Uint8Array(await file.arrayBuffer());
+    const zmembers = zipMembers(zipBuf);
+    const gla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla'));
+    const gcityZip = glaMember(gla, 'GothamCity.zip');
+    const gmembers = zipMembers(gcityZip);
+    const lt = await zipRead2(gcityZip, gmembers.get('lod_table.bin'));
+    const ldd = await zipRead2(gcityZip, gmembers.get('lod_data.bin'));
+    const bi8 = await zipRead2(gcityZip, gmembers.get('batch_info.bin'));
+    const mb = await zipRead2(gcityZip, gmembers.get('GothamCity_materials.bdae'));
+    const mbMembers = zipMembers(mb);
+    const le = await zipRead2(mb, mbMembers.get('little_endian_not_quantized.bdae'));
+    const texGla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla'));
+    const { bind, fx } = parseCompiledTable(le);
+    const t_load = performance.now() - t0;
+    heap();
+    log('load: ' + t_load.toFixed(0) + ' ms');
+
+    const cnt = u32le(lt, 0);
+    const pairs = [];
+    for (let k = 0; k < cnt; k++) pairs.push([u32le(lt, 4 + 8 * k), u32le(lt, 8 + 8 * k)]);
+    const fbuf = new DataView(ldd.buffer, ldd.byteOffset, ldd.byteLength);
+    const segs = [];
+    let minX = 1e9, maxX = -1e9, minZ = 1e9, maxZ = -1e9;
+    for (let k = 0; k < cnt; k++) {
+      const off2 = pairs[k][0];
+      const mid = u32le(ldd, off2 + 40);
+      const data_off = u32le(ldd, off2 + 68), vb = u32le(ldd, off2 + 76), ib = u32le(ldd, off2 + 80);
+      const ds = declOf(bi8, mid);
+      const dmap = {};
+      for (const d of ds) dmap[d.attr] = d;
+      const stride = ds[ds.length - 1].end;
+      const nv = (vb / stride) | 0;
+      if (nv <= 0 || vb % stride !== 0 || ib < 6) continue;
+      for (let v = 0; v < nv; v++) {
+        const o = data_off + 4 + v * stride;
+        const x = fbuf.getFloat32(o, true), z = fbuf.getFloat32(o + 4, true);
+        if (x < minX) minX = x; if (x > maxX) maxX = x;
+        if (z < minZ) minZ = z; if (z > maxZ) maxZ = z;
+      }
+      segs.push({ k, mid, data_off, vb, ib, nv, stride, dmap });
+    }
+    const W = 1024, H = 605;
+    const scale = Math.min(W / (maxX - minX), H / (maxZ - minZ));
+    const xm = (minX + maxX) / 2, zm = (minZ + maxZ) / 2;
+    log('zone AABB x[' + minX.toFixed(1) + ' ' + maxX.toFixed(1) + '] z[' +
+        minZ.toFixed(1) + ' ' + maxZ.toFixed(1) + '] scale ' + scale.toFixed(4));
+    heap();
+
+    // decode all segments + build global painter order
+    const t_d0 = performance.now();
+    const order = [];
+    let trisTotal = 0;
+    for (const s of segs) {
+      const px = new Float32Array(s.nv), py = new Float32Array(s.nv), pz = new Float32Array(s.nv);
+      for (let v = 0; v < s.nv; v++) {
+        const o = s.data_off + 4 + v * s.stride;
+        const x = fbuf.getFloat32(o, true), z = fbuf.getFloat32(o + 4, true), y = fbuf.getFloat32(o + 8, true);
+        px[v] = (x - xm) * scale + W / 2;
+        py[v] = (zm - z) * scale + H / 2;
+        pz[v] = y;
+      }
+      const tris = new Uint32Array((s.ib / 2) | 0); // one entry per INDEX
+      let nt = 0;
+      for (let t = 0; t + 2 < s.ib / 2; t += 3) {
+        const a = u16le(ldd, s.data_off + 4 + s.vb + t * 2);
+        const b = u16le(ldd, s.data_off + 4 + s.vb + t * 2 + 2);
+        const c = u16le(ldd, s.data_off + 4 + s.vb + t * 2 + 4);
+        if (a < s.nv && b < s.nv && c < s.nv) {
+          tris[nt] = a; tris[nt + 1] = b; tris[nt + 2] = c;
+          nt += 3;
+        }
+      }
+      const ttris = tris.subarray(0, nt);
+      const zm3 = new Float64Array(nt / 3);
+      for (let t = 0; t < nt; t += 3) {
+        zm3[t / 3] = (pz[ttris[t]] + pz[ttris[t + 1]] + pz[ttris[t + 2]]) / 3;
+      }
+      trisTotal += nt / 3;
+      order.push({ s, px, py, pz, tris: ttris, zm3, uv0: null, uv1: null, c0: null });
+      const d0 = s.dmap[1];
+      if (d0) {
+        const uv0 = new Float32Array(s.nv * 2);
+        for (let v = 0; v < s.nv; v++) {
+          const o = s.data_off + 4 + v * s.stride + d0.start;
+          uv0[v * 2] = fbuf.getInt16(o, true) / 32767.0 * 0.5 + 0.5;
+          uv0[v * 2 + 1] = 1.0 - (fbuf.getInt16(o + 2, true) / 32767.0 * 0.5 + 0.5);
+        }
+        order[order.length - 1].uv0 = uv0;
+      }
+      const d1 = s.dmap[2];
+      if (d1) {
+        const uv1 = new Float32Array(s.nv * 2);
+        for (let v = 0; v < s.nv; v++) {
+          const o = s.data_off + 4 + v * s.stride + d1.start;
+          uv1[v * 2] = fbuf.getInt16(o, true) / 32767.0 * 0.5 + 0.5;
+          uv1[v * 2 + 1] = 1.0 - (fbuf.getInt16(o + 2, true) / 32767.0 * 0.5 + 0.5);
+        }
+        order[order.length - 1].uv1 = uv1;
+      }
+      const d17 = s.dmap[17];
+      if (d17) {
+        const c0 = new Float32Array(s.nv * 4);
+        for (let v = 0; v < s.nv; v++) {
+          const o = s.data_off + 4 + v * s.stride + d17.start;
+          c0[v * 4] = ldd[o] / 255; c0[v * 4 + 1] = ldd[o + 1] / 255;
+          c0[v * 4 + 2] = ldd[o + 2] / 255; c0[v * 4 + 3] = ldd[o + 3] / 255;
+        }
+        order[order.length - 1].c0 = c0;
+      }
+    }
+    const t_decode = performance.now() - t_d0;
+    heap();
+    log('decode: ' + t_decode.toFixed(0) + ' ms, tris ' + trisTotal);
+
+    // global painter order (stable ties = insertion order: si-major, ti-ascending)
+    const items = [];
+    for (let si = 0; si < order.length; si++) {
+      const o = order[si];
+      for (let t = 0; t < o.zm3.length; t++) items.push((si << 20) | t);
+    }
+    const getZ = (code) => order[code >>> 20].zm3[code & 0xfffff];
+    // deterministic total order: primary mean height, ties by (seg, tri)
+    items.sort((a, b) => {
+      const d = getZ(a) - getZ(b);
+      if (d !== 0) return d;
+      const sa = a >>> 20, sb = b >>> 20;
+      if (sa !== sb) return sa - sb;
+      return (a & 0xfffff) - (b & 0xfffff);
+    });
+    const t_sort = performance.now();
+    // debug: first 12 painter entries (si, ti, z) + key changes over first 1000
+    const dbg = [];
+    for (let i = 0; i < 12; i++) {
+      const code = items[i];
+      const si = code >>> 20, ti = code & 0xfffff;
+      dbg.push([si, ti, order[si].zm3[ti], order[si].s.mid]);
+    }
+    log('painter head: ' + JSON.stringify(dbg));
+    heap();
+
+    // raster
+    const ctx = document.querySelector('#c').getContext('2d', { willReadFrequently: true });
+    const imgd = ctx.createImageData(W, H);
+    const img = imgd.data;
+    let trisDrawn = 0, texBinds = 0;
+    let curTexKey = null;
+    const t_r0 = performance.now();
+    for (const code of items) {
+      const si = code >>> 20, ti = code & 0xfffff;
+      const o = order[si];
+      const effect = fx[o.s.mid] || '';
+      const bn = bind[o.s.mid] || ['', ''];
+      const tex = getTex(texGla, bn[0], effect === 'AlphaMasking');
+      if (!tex) continue;
+      const tk = bn[0] + '|' + (effect === 'AlphaMasking' ? 'a' : 'r');
+      if (tk !== curTexKey) { curTexKey = tk; texBinds++; }
+      trisDrawn++;
+      const i0 = o.tris[ti * 3], i1 = o.tris[ti * 3 + 1], i2 = o.tris[ti * 3 + 2];
+      const x0t = o.px[i0], y0t = o.py[i0], x1t = o.px[i1], y1t = o.py[i1], x2t = o.px[i2], y2t = o.py[i2];
+      const xlo = Math.max(0, Math.floor(Math.min(x0t, x1t, x2t)));
+      const xhi = Math.min(W - 1, Math.ceil(Math.max(x0t, x1t, x2t)));
+      const ylo = Math.max(0, Math.floor(Math.min(y0t, y1t, y2t)));
+      const yhi = Math.min(H - 1, Math.ceil(Math.max(y0t, y1t, y2t)));
+      if (xlo > xhi || ylo > yhi) continue;
+      const d = (y1t - y2t) * (x0t - x2t) + (x2t - x1t) * (y0t - y2t);
+      if (Math.abs(d) < 1e-9) continue;
+      const tw = tex.w, th = tex.h, tdata = tex.data;
+      const lmName = bn[1];
+      let lmt = null;
+      if ((effect === 'LightMapDC' || effect === 'AlphaMasking') && lmName && o.uv1) {
+        lmt = getTex(texGla, lmName, false);
+      }
+      const lmW = lmt ? lmt.w : 0, lmH = lmt ? lmt.h : 0, lmData = lmt ? lmt.data : null;
+      const al = (effect === 'AlphaMasking') ? tex.alpha : null;
+      const uv0 = o.uv0;
+      if (!uv0) continue;
+      const c0 = (effect === 'SimpleAdditive' || effect === 'StandardDiffuseDC') ? o.c0 : null;
+      for (let yy = ylo; yy <= yhi; yy++) {
+        for (let xx = xlo; xx <= xhi; xx++) {
+          const gx = xx + 0.5, gy = yy + 0.5;
+          const w0 = ((y1t - y2t) * (gx - x2t) + (x2t - x1t) * (gy - y2t)) / d;
+          const w1 = ((y2t - y0t) * (gx - x2t) + (x0t - x2t) * (gy - y2t)) / d;
+          const w2 = 1 - w0 - w1;
+          if (w0 < -0.001 || w1 < -0.001 || w2 < -0.001) continue;
+          const uu = w0 * uv0[i0 * 2] + w1 * uv0[i1 * 2] + w2 * uv0[i2 * 2];
+          const vv = w0 * uv0[i0 * 2 + 1] + w1 * uv0[i1 * 2 + 1] + w2 * uv0[i2 * 2 + 1];
+          let tx = Math.floor(uu * tw) % tw; if (tx < 0) tx += tw;
+          let ty = Math.floor(vv * th) % th; if (ty < 0) ty += th;
+          const to = (ty * tw + tx) * 4;
+          let r = tdata[to], g = tdata[to + 1], b = tdata[to + 2];
+          if (al) {
+            let atx = Math.floor(uu * al.w) % al.w; if (atx < 0) atx += al.w;
+            let aty = Math.floor(vv * al.h) % al.h; if (aty < 0) aty += al.h;
+            const av = al.data[(aty * al.w + atx) * 4] / 255;
+            if (av < 0.3) continue;
+          }
+          if (lmData) {
+            const lu = w0 * o.uv1[i0 * 2] + w1 * o.uv1[i1 * 2] + w2 * o.uv1[i2 * 2];
+            const lv = w0 * o.uv1[i0 * 2 + 1] + w1 * o.uv1[i1 * 2 + 1] + w2 * o.uv1[i2 * 2 + 1];
+            let ltx = Math.floor(lu * lmW) % lmW; if (ltx < 0) ltx += lmW;
+            let lty = Math.floor(lv * lmH) % lmH; if (lty < 0) lty += lmH;
+            const lo = (lty * lmW + ltx) * 4;
+            const sc = effect === 'AlphaMasking' ? 1.0 : 0.0;
+            r = r * (lmData[lo] / 255 * 2.0 + sc);
+            g = g * (lmData[lo + 1] / 255 * 2.0 + sc);
+            b = b * (lmData[lo + 2] / 255 * 2.0 + sc);
+          } else if (c0) {
+            const cr = w0 * c0[i0 * 4] + w1 * c0[i1 * 4] + w2 * c0[i2 * 4];
+            const cg = w0 * c0[i0 * 4 + 1] + w1 * c0[i1 * 4 + 1] + w2 * c0[i2 * 4 + 1];
+            const cb = w0 * c0[i0 * 4 + 2] + w1 * c0[i1 * 4 + 2] + w2 * c0[i2 * 4 + 2];
+            r = r * cr; g = g * cg; b = b * cb;
+          }
+          const oo = (yy * W + xx) * 4;
+          img[oo] = r; img[oo + 1] = g; img[oo + 2] = b; img[oo + 3] = 255;
+        }
+      }
+    }
+    const t_render = performance.now() - t_r0;
+    heap();
+    ctx.putImageData(imgd, 0, 0);
+    log('render: ' + t_render.toFixed(0) + ' ms, tris drawn ' + trisDrawn +
+        ', tex binds ' + texBinds + ', LRU ' + JSON.stringify(texStats));
+    const peak = window.__GATE.heapSamples.length
+      ? Math.max(...window.__GATE.heapSamples) / 1048576 : null;
+
+    // pixel correlation vs the Python render
+    let corr = null;
+    const resp = await fetch('./s48_ref_zone.png');
+    if (resp.ok) {
+      const bmp = await createImageBitmap(await resp.blob());
+      const cc = document.createElement('canvas');
+      cc.width = W; cc.height = H;
+      const cx2 = cc.getContext('2d', { willReadFrequently: true });
+      cx2.drawImage(bmp, 0, 0);
+      const ref = cx2.getImageData(0, 0, W, H).data;
+      let sa = 0, sb = 0, saa = 0, sbb = 0, sab = 0;
+      const n = W * H;
+      for (let i = 0; i < n; i++) {
+        const a = (img[i * 4] + img[i * 4 + 1] + img[i * 4 + 2]) / 3;
+        const b = (ref[i * 4] + ref[i * 4 + 1] + ref[i * 4 + 2]) / 3;
+        sa += a; sb += b; saa += a * a; sbb += b * b; sab += a * b;
+      }
+      const cov = sab / n - (sa / n) * (sb / n);
+      const va = saa / n - (sa / n) ** 2;
+      const vb = sbb / n - (sb / n) ** 2;
+      corr = cov / Math.sqrt(va * vb);
+      log('pixel corr vs Python: ' + corr.toFixed(4));
+    }
+    window.__GATE.done = true;
+    Object.assign(window.__GATE, {
+      t_load_ms: t_load, t_decode_ms: t_decode, t_render_ms: t_render,
+      segs: segs.length, tris_total: trisTotal, tris_drawn: trisDrawn,
+      tex_binds: texBinds, tex_lru: texStats, peak_heap_mb: peak,
+      corr, scale,
+    });
+    log('DONE (peak heap ' + (peak ? peak.toFixed(0) + ' MB' : 'n/a') + ')');
+  } catch (e) {
+    log('ERROR: ' + (e && e.stack || e));
+    window.__GATE = { done: true, error: String(e && e.stack || e) };
+  }
+});
+</script>
+</body>
+</html>
