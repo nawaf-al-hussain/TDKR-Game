@@ -179,8 +179,8 @@ def block_geom(k, mid):
     return posf, uv0, uv1, tris, stride
 
 # ---------- effect-aware raster ----------
-def raster(posf, uv0, tex, tris, lm=None, luv=None, lm_scale=2.0, alpha_discard=False,
-           vcolor=None):
+def raster(posf, uv0, tex, tris, lm=None, luv=None, lm_scale=2.0, lm_offset=0.0,
+           alpha_discard=False, alpha_thr=128.0, vcolor=None):
     """Effect-aware top-down raster.
     LightMapDC:    Color.rgb = Diffuse.rgb * (LightMap.rgb * lm_scale)  [x2 hardcoded]
     SimpleAdditive:Color.rgb = Diffuse.rgb * vColor.rgb (vertex Color0/255; NO lightmap
@@ -243,7 +243,7 @@ def raster(posf, uv0, tex, tris, lm=None, luv=None, lm_scale=2.0, alpha_discard=
             aty = np.clip((vv * AH).astype(np.int64) % AH, 0, AH - 1)
             av = tal[aty, atx].astype(np.float32)
             if alpha_discard:
-                keep = av >= 128.0
+                keep = av >= alpha_thr
                 if not keep.any():
                     continue
                 mask = mask & keep
@@ -258,7 +258,7 @@ def raster(posf, uv0, tex, tris, lm=None, luv=None, lm_scale=2.0, alpha_discard=
             lv = w0 * luv_t[i0, 1] + w1 * luv_t[i1, 1] + w2 * luv_t[i2, 1]
             ltx = np.clip((lu * LW).astype(np.int64) % LW, 0, LW - 1)
             lty = np.clip((lv * LH).astype(np.int64) % LH, 0, LH - 1)
-            lcol = lrgb[lty, ltx].astype(np.float32) / 255.0 * lm_scale
+            lcol = lrgb[lty, ltx].astype(np.float32) / 255.0 * lm_scale + lm_offset
             col = col * lcol
         region = img[ylo:yhi + 1, xlo:xhi + 1]
         regc = cov[ylo:yhi + 1, xlo:xhi + 1]
@@ -294,10 +294,28 @@ for b in BLOCKS:
     b['stride'] = decl_of(b['mat'])[-1][2]
     print(b['tag'], 'mat', b['mat'], 'stride', b['stride'], 'diff', b['diff'], 'lm', b['lmname'])
 
-fx_of = {e['i']: e['effect'].split('-')[0]
-         for e in json.load(open('/tmp/my-project/work/TDKR-Game/extraction/re/session46/s46_t1_setparam_walk.json'))}
+# ---------- authoritative per-material effect: scene instance table (307) ----------
+def instance_fx_table():
+    bdae = zipfile.ZipFile(io.BytesIO(open(BDAE, 'rb').read())).read(
+        'little_endian_not_quantized.bdae')
+    w32 = np.frombuffer(bdae, '<u4', len(bdae) // 4)
+    nb = len(bdae)
+    fx = {}
+    for i in range(307):
+        a = 0x5fea0 + i * 36
+        ws = [int(w32[(a + k * 4) // 4]) for k in range(9)]
+        e = int(bdae.find(b'\0', ws[3])) if 0 < ws[3] < nb else -1
+        nm = bdae[ws[3]:e].decode('ascii', 'replace') if e > ws[3] else ''
+        fx[i] = nm.split('-fx')[0].lstrip('#')
+    return fx
+
+fx_of = instance_fx_table()
 rng = np.random.default_rng(48)
-out = {'blocks': [], 'note': 'effect-aware: LightMapDC Color=Diff*LM*2; SimpleAdditive Color=Diff*vColor (no LM); AlphaMasking Diff*(LM*2+Overbright) discard a<0.3'}
+out = {'blocks': [],
+       'note': 'effects from the compiled scene-instance table (307 rows, 307/307 == authoring URLs); '
+               'LightMapDC Color=Diff*(LM*2); AlphaMasking Color=Diff*(LM*2+Overbright[default 1.0 '
+               'from AlphaMasking.bdae]) with SPLIT alpha.r discard a<0.3; SimpleAdditive/'
+               'StandardDiffuseDC Color=Diff*vColor'}
 lms = {}
 for b in BLOCKS:
     posf, uv0, uv1, tris, stride = block_geom(b['k'], b['mat'])
@@ -338,28 +356,57 @@ for b in BLOCKS:
         img1, cov1 = raster(posf, uv0, dtex, tris, lm=lmtex, luv=uv1, lm_scale=1.0)
         entry['mean_lm1'] = float(lum(img1)[cov1].mean())
         entry['hist_lm1_lum'] = lum_hist(img1, cov1)
-        other = lms[[nm for nm in lms if nm != b['lmname']][0]]
+        other = lms[[nm2 for nm2 in lms if nm2 != b['lmname']][0]]
         imgs, covs = raster(posf, uv0, dtex, tris, lm=other, luv=uv1, lm_scale=2.0)
         entry['mean_lm2_swapatlas'] = float(lum(imgs)[covs].mean())
         entry['swap_delta_mean'] = float(np.abs(lum(imgs) - lum(img2))[covs].mean())
-    elif effect == 'SimpleAdditive':
-        # engine mode: Color = Diffuse * vColor (Color0 ubyte/255); NO lightmap
+    elif effect == 'AlphaMasking':
+        # engine mode: Color = Diffuse * (LM*2 + Overbright[1.0]); alpha = SPLIT
+        # alpha.r (own dims); discard fAlpha < 0.3 (76.5/255)
+        imga, cova = raster(posf, uv0, dtex, tris, lm=lmtex, luv=uv1, lm_scale=2.0,
+                            lm_offset=1.0, alpha_discard=True, alpha_thr=76.5)
+        entry['mean_lm2o'] = float(lum(imga)[cova].mean())
+        entry['cov_lm2o'] = int(cova.sum())
+        entry['hist_lm2o_lum'] = lum_hist(imga, cova)
+        entry['hist_lm2o_rgb'] = rgb_hist(imga, cova)
+        Image.fromarray(np.clip(imga, 0, 255).astype(np.uint8)).save(
+            f'{WT_PAGE}/s48_ref_{b["tag"]}_lm2o.png')
+        # no-discard variant for coverage stats
+        imgnd, covnd = raster(posf, uv0, dtex, tris, lm=lmtex, luv=uv1, lm_scale=2.0,
+                              lm_offset=1.0)
+        entry['mean_lm2o_nodiscard'] = float(lum(imgnd)[covnd].mean())
+        entry['discard_kept_fraction'] = float(cova.sum()) / max(1, int(covnd.sum()))
+        # the two WRONG models, for the record
         off2 = pairs[b['k']][0]
         data_off, four, vb, ib = struct.unpack_from('<4I', ld, off2 + 68)
         rawv = np.frombuffer(ld, np.uint8, vb, data_off + 4).reshape(vb // b['stride'], b['stride'])
         c0 = rawv[:, 24:28]
         entry['color0_mean'] = [float(x) for x in c0.mean(axis=0)]
-        entry['color0_unique'] = int(len(np.unique(c0, axis=0)))
-        imga, cova = raster(posf, uv0, dtex, tris, vcolor=c0)
-        entry['mean_additive'] = float(lum(imga)[cova].mean())
-        entry['cov_additive'] = int(cova.sum())
-        entry['hist_additive_lum'] = lum_hist(imga, cova)
-        entry['hist_additive_rgb'] = rgb_hist(imga, cova)
-        Image.fromarray(np.clip(imga, 0, 255).astype(np.uint8)).save(
-            f'{WT_PAGE}/s48_ref_{b["tag"]}_additive.png')
-        # the s47 WRONG model (lightmap multiply) for the record
+        imgv, covv = raster(posf, uv0, dtex, tris, vcolor=c0)
+        entry['mean_vcolor_wrongmodel'] = float(lum(imgv)[covv].mean())
         imgw, covw = raster(posf, uv0, dtex, tris, lm=lmtex, luv=uv1, lm_scale=2.0)
         entry['mean_lm2_wrongmodel'] = float(lum(imgw)[covw].mean())
+    elif effect in ('SimpleAdditive', 'StandardDiffuseDC'):
+        # engine mode: Color = Diffuse * vColor (Color0/255 at its declared slot)
+        off2 = pairs[b['k']][0]
+        data_off, four, vb, ib = struct.unpack_from('<4I', ld, off2 + 68)
+        ds = decl_of(b['mat'])
+        d17 = [d for d in ds if d[0] == 17]
+        stride = ds[-1][2]
+        rawv = np.frombuffer(ld, np.uint8, vb, data_off + 4).reshape(vb // stride, stride)
+        if d17:
+            c0 = rawv[:, d17[0][1]:d17[0][1] + 4]
+            entry['color0_mean'] = [float(x) for x in c0.mean(axis=0)]
+            entry['color0_unique'] = int(len(np.unique(c0, axis=0)))
+            imga, cova = raster(posf, uv0, dtex, tris, vcolor=c0)
+            entry['mean_additive'] = float(lum(imga)[cova].mean())
+            entry['cov_additive'] = int(cova.sum())
+            entry['hist_additive_lum'] = lum_hist(imga, cova)
+            entry['hist_additive_rgb'] = rgb_hist(imga, cova)
+            Image.fromarray(np.clip(imga, 0, 255).astype(np.uint8)).save(
+                f'{WT_PAGE}/s48_ref_{b["tag"]}_additive.png')
+        else:
+            entry['mean_additive'] = entry['mean_plain']
     else:
         img2, cov2 = raster(posf, uv0, dtex, tris, lm=lmtex, luv=uv1, lm_scale=2.0)
         entry['mean_lm2'] = float(lum(img2)[cov2].mean())
@@ -392,6 +439,7 @@ for b in BLOCKS:
     out['blocks'].append(entry)
     print(b['tag'], 'plain', round(entry['mean_plain'], 2),
           'lm2', round(entry.get('mean_lm2', -1), 2),
+          'lm2o', round(entry.get('mean_lm2o', -1), 2),
           'additive', round(entry.get('mean_additive', -1), 2),
           'tc1_area', entry.get('tc1_area'), 'lm_enrich', entry.get('lm_enrichment_nonempty'))
 

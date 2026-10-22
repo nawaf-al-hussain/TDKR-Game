@@ -13,8 +13,8 @@
   },
   {
    "tag": "stride28",
-   "mode": "additive",
-   "corr": 0.9997922125378741,
+   "mode": "lm2o",
+   "corr": 0.9995170725229042,
    "color0_mean_py": 16.71759259259259,
    "color0_mean_js": 0.06555918818425939,
    "ok": true
@@ -23,12 +23,16 @@
    "tag": "cls24nc",
    "mode": "plain",
    "corr": 1,
+   "color0_mean_py": 255.0,
+   "color0_mean_js": 1,
    "ok": true
   },
   {
    "tag": "cls2017",
-   "mode": "plain",
-   "corr": 1,
+   "mode": "additive",
+   "corr": 0.999904623404559,
+   "color0_mean_py": 3.0,
+   "color0_mean_js": 0.22701526050352386,
    "ok": true
   },
   {
