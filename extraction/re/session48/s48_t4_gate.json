@@ -1,0 +1,51 @@
+{
+ "console_errors": 0,
+ "page_errors": 0,
+ "zones": [
+  {
+   "zone": "GothamCity.zip",
+   "segs": 1526,
+   "verts": 667188,
+   "ms": 1076.8999999994412,
+   "digest_match": {
+    "pos": true,
+    "nrm": true,
+    "uv0": true,
+    "uv1": true
+   },
+   "digests": {
+    "pos": "6fe853d12653ff499286b331ed100729a670ae35629034e91ba006a87b79d9d8",
+    "nrm": "ce93cef48809422f77b6488eaa5cfe7e786273288ceafaf2b02ce2e2d7a95919",
+    "uv0": "f4f865ae81bb7f49a398861603df25dc6677a57fbc5ee8586fe3a0fae36f0712",
+    "uv1": "ffec19acb8bb670774117912b4fc34894ec8d8921f9c3f436f3b3f57c960a253"
+   },
+   "null": {
+    "tried": 200,
+    "changed": 145
+   }
+  },
+  {
+   "zone": "GothamCity_Island2.zip",
+   "segs": 1020,
+   "verts": 536668,
+   "ms": 854.4000000003725,
+   "digest_match": {
+    "pos": true,
+    "nrm": true,
+    "uv0": true,
+    "uv1": true
+   },
+   "digests": {
+    "pos": "719acd622d910f003a034764c8a9764a1ebf79961ba4a7ba7aa2d6ebf5ee4326",
+    "nrm": "8b90a5f7292a5d11232a4d3d6ef6f42b492265dd30eca66fc5c860a84ddf35ae",
+    "uv0": "7eb1893eaa83a45b4beac640afd18e867d31ceda9e342a2c8cccd66855b08b26",
+    "uv1": "a846781141241ab5e9febc2b698f526ddc0f9cbf0d94471642f2d859196ae7bc"
+   },
+   "null": {
+    "tried": 200,
+    "changed": 147
+   }
+  }
+ ],
+ "verdict": true
+}
