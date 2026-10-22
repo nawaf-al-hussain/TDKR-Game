@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR city slice 9 — engine GLSL via RawShaderMaterial (s49 T1 — branch-only, NOT deployed)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #cdd3e0; font: 13px/1.5 system-ui, sans-serif; }
+  #panel { position: fixed; left: 8px; top: 8px; z-index: 9; background: rgba(10,12,18,.85);
+           border: 1px solid #334; border-radius: 8px; padding: 10px 12px; max-width: 470px; }
+  #log { white-space: pre-wrap; max-height: 46vh; overflow: auto; }
+  #c { position: fixed; right: 8px; top: 8px; border: 1px solid #334; }
+  input[type=file] { color: #cdd3e0; }
+  b { color: #9fc3ff; }
+</style>
+<script src="./etc1_tdkr.js"></script>
+<script type="importmap">
+{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+} }
+</script>
+</head>
+<body>
+<div id="panel">
+  <b>s49 T1 engine-GLSL gate</b> — the REAL effects.gla sources (LightMapDC, AlphaMasking,
+  NV_Glass, LightmapVCBlendDC) run through THREE.RawShaderMaterial with the engine's own
+  uniform values (Coord scaleoffset (1,1,0,0) engine default — no per-material override in the
+  compiled table; LightMapAtlas (1,1,0,0) x284; Overbright 1.0 default) and the Default
+  compiled-profile #ifdef resolution (TDKR_SPLIT_ALPHA on SPLIT-texture materials;
+  DIFFUSE_MASK on NV_Glass; plain LightMapDC/VCBlend). NearestFilter mirrors the Python
+  reference sampler. Compare vs s49_ref_*.png (corr + mean).<br>
+  Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>:<br>
+  <input type="file" id="f">
+  <div id="log"></div>
+</div>
+<canvas id="c" width="700" height="700"></canvas>
+<script type="module">
+import * as THREE from 'three';
+
+const log = (s) => { document.querySelector('#log').textContent += s + '\n'; };
+window.__GATE = { done: false };
+
+function u16le(u8, i) { return u8[i] | (u8[i + 1] << 8); }
+function u32le(u8, i) { return (u8[i] | (u8[i + 1] << 8) | (u8[i + 2] << 16) | (u8[i + 3] << 24)) >>> 0; }
+function u32be(u8, i) { return ((u8[i] << 24) | (u8[i + 1] << 16) | (u8[i + 2] << 8) | u8[i + 3]) >>> 0; }
+const LATIN = new TextDecoder('latin1');
+
+function zipMembers(buf) {
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--)
+    if (u32le(buf, i) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('no EOCD');
+  const n = u16le(buf, eocd + 10);
+  let p = u32le(buf, eocd + 16);
+  const members = new Map();
+  for (let k = 0; k < n; k++) {
+    if (u32le(buf, p) !== 0x02014b50) throw new Error('bad CD');
+    const method = u16le(buf, p + 10), csize = u32le(buf, p + 20);
+    const nlen = u16le(buf, p + 28), elen = u16le(buf, p + 30), clen = u32le(buf, p + 32);
+    const lho = u32le(buf, p + 42);
+    members.set(LATIN.decode(buf.subarray(p + 46, p + 46 + nlen)), { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return members;
+}
+async function zipRead2(buf, m) {
+  const lho = m.lho, nlen = u16le(buf, lho + 26), elen = u16le(buf, lho + 28);
+  const start = lho + 30 + nlen + elen;
+  const raw = buf.subarray(start, start + m.csize);
+  if (m.method === 0) return raw;
+  if (m.method === 8) {
+    const ds = new DecompressionStream('deflate-raw');
+    const stream = new Response(new Blob([raw])).body.pipeThrough(ds);
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  throw new Error('method ' + m.method);
+}
+function glaMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm === want) return g.subarray(o, o + s);
+  }
+  throw new Error('gla member not found: ' + want);
+}
+function unwrapSplitParts(u8) {
+  if (!(u8[0] === 0x50 && u8[1] === 0x4b && u8[2] === 0x03 && u8[3] === 0x04)) return { rgb: u8 };
+  const out = {};
+  let pos = 0;
+  while (pos + 30 <= u8.length && u8[pos] === 0x50 && u8[pos + 1] === 0x4b &&
+         u8[pos + 2] === 0x03 && u8[pos + 3] === 0x04) {
+    const csz = u32le(u8, pos + 18);
+    const nlen = u16le(u8, pos + 26), elen = u16le(u8, pos + 28);
+    const nm = LATIN.decode(u8.subarray(pos + 30, pos + 30 + nlen));
+    const dstart = pos + 30 + nlen + elen;
+    const data = u8.subarray(dstart, dstart + csz);
+    if (nm.trim() !== 'SPLIT') out[nm] = data;
+    pos = dstart + csz;
+  }
+  if (!out['rgb.pvr']) throw new Error('split-zip: no rgb.pvr');
+  return out;
+}
+function decodePvr(u8) {
+  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+  const tag = dv.getUint32(0, true);
+  if (tag !== 0x34) throw new Error('bad TDKR tex tag ' + tag);
+  const h = dv.getUint32(4, true), w = dv.getUint32(8, true);
+  const magic = String.fromCharCode(u8[44], u8[45], u8[46], u8[47]);
+  if (magic !== 'PVR!') throw new Error('bad PVR tag ' + JSON.stringify(magic));
+  const bw = (w + 3) >> 2, bh = (h + 3) >> 2;
+  const base = u8.subarray(52, 52 + bw * bh * 8);
+  const rgba = window.ETC1_TDKR.decodeRGBA(base, w, h);
+  return { w, h, rgba };
+}
+function decodeTex(name, texGla) {
+  const parts = unwrapSplitParts(glaMember(texGla, name));
+  const rgb = decodePvr(parts['rgb.pvr'] || parts['rgb']);
+  let al = null;
+  if (parts['alpha.pvr']) {
+    const a = decodePvr(parts['alpha.pvr']);
+    al = { w: a.w, h: a.h, data: a.rgba };
+  }
+  return { w: rgb.w, h: rgb.h, data: rgb.rgba, alpha: al, split: !!parts['alpha.pvr'] };
+}
+const VAVT = [1, 1, 2, 2, 4, 4, 4];
+function decodeDecls(bi8, count) {
+  const bstride = u32le(bi8, 0);
+  const decls = [];
+  for (let idx = 0; idx < count; idx++) {
+    const base = 4 + idx * bstride;
+    const N = bi8[base + 33];
+    const ds = [];
+    let start = 0;
+    for (let j = 0; j < N; j++) {
+      const d = base + 40 + j * 12;
+      const A = (bi8[d] << 8) | bi8[d + 1];
+      const B = (bi8[d + 2] << 8) | bi8[d + 3];
+      const C = (bi8[d + 4] << 8) | bi8[d + 5];
+      const st = (bi8[d + 6] << 8) | bi8[d + 7];
+      const off = (bi8[d + 8] << 8) | bi8[d + 9];
+      const size = B === 0 ? 3 : B * VAVT[C];
+      const end = off === 0 ? st : off;
+      ds.push({ attr: A, start, end, size });
+      start = end;
+    }
+    decls.push(ds);
+  }
+  return decls;
+}
+
+/* ---------------- engine GLSL (verbatim from effects.gla extraction) ---------------- */
+const CONFIG = `
+precision highp float;
+#define VERTICAL_FOG_COLOR vec4(0.93, 0.76, 0.47, 0.35)
+#define VERTICAL_FOG_HEIGHT 18.0
+#define LOD_BIAS -1.0
+#define FOG_DECAY 0.5
+`;
+const LIGHTMAPDC_V = CONFIG + `
+attribute 	highp	vec3 	Normal;
+attribute 	highp	vec4	Position;
+attribute	lowp	vec4	Color;
+attribute 	highp	vec2 	Coord0;
+attribute 	highp	vec2 	Coord1;
+uniform 	highp 	vec4 	Coord0_scaleoffset;
+uniform 	highp 	vec4 	Coord1_scaleoffset;
+uniform 	highp	mat4	WorldViewProjection;
+uniform     highp	vec4	LightMapAtlas;
+varying		highp	vec2 	vCoord0;
+varying		highp	vec2 	vCoord1;
+uniform 	highp	mat4	WorldViewTransposed;
+uniform 	highp	vec2 	FogStartEnd;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+void main()
+{
+	vCoord0 					= Coord0 * Coord0_scaleoffset.xy + Coord0_scaleoffset.zw;
+	vCoord1						= (Coord1 * Coord1_scaleoffset.xy + Coord1_scaleoffset.zw) * LightMapAtlas.xy + LightMapAtlas.zw;
+	highp vec4 pos 				= Position;
+	gl_Position 				= WorldViewProjection * pos;
+	FogFactor                       = (-dot(WorldViewTransposed[2], Position) - FogStartEnd.x) * FogStartEnd.y;
+}
+`;
+const LIGHTMAPDC_F = CONFIG + `
+uniform 	lowp	sampler2D 		DiffuseMap;
+uniform 	lowp	sampler2D 		LightMap;
+varying		mediump	vec2 	vCoord0;
+varying		mediump	vec2 	vCoord1;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+lowp vec4 ComputeFogFS(lowp vec4 col, lowp vec4 fogCol, lowp float fogF)
+{
+	lowp 	float 	GrayScale 	= dot(col.xyz, vec3(0.149, 0.293, 0.57));
+	lowp 	float 	fFactor		= fogF * (1.0 - GrayScale);
+	return vec4(mix(col.rgb, fogCol.rgb, fFactor * fogCol.a), col.a);
+}
+void main()
+{
+	lowp	vec4 	LightMapColor	= texture2D(LightMap, vCoord1) * 2.0;
+	highp	vec4 	DiffuseMapColor	= texture2D(DiffuseMap, vCoord0, LOD_BIAS);
+	lowp	vec4  Color				= DiffuseMapColor * LightMapColor;
+	Color							= ComputeFogFS(Color, FogColor, clamp(FogFactor, 0.0, 1.0));
+	gl_FragColor					= Color;
+}
+`;
+const ALPHAMASKING_V = CONFIG + `
+attribute 	highp	vec4 	Position;
+attribute	lowp	vec4	Color;
+attribute 	highp	vec2 	TexCoord0;
+attribute 	highp	vec2 	TexCoord1;
+uniform 	highp 	vec4 	TexCoord0_scaleoffset;
+uniform 	highp 	vec4 	TexCoord1_scaleoffset;
+uniform 	highp	mat4	WorldViewProjection;
+uniform     highp	vec4	LightMapAtlas;
+varying		highp	vec2 	vCoord0;
+varying		highp	vec2 	vCoord1;
+uniform 	highp	mat4	WorldViewTransposed;
+uniform 	highp	vec2 	FogStartEnd;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+void main()
+{
+	vCoord0 					= TexCoord0 * TexCoord0_scaleoffset.xy + TexCoord0_scaleoffset.zw;
+	vCoord1						= (TexCoord1 * TexCoord1_scaleoffset.xy + TexCoord1_scaleoffset.zw) * LightMapAtlas.xy + LightMapAtlas.zw;
+	highp vec4 pos 				= Position;
+	gl_Position 				= WorldViewProjection * pos;
+	FogFactor                       = (-dot(WorldViewTransposed[2], Position) - FogStartEnd.x) * FogStartEnd.y;
+}
+`;
+const ALPHAMASKING_F = CONFIG + `
+#ifdef TDKR_SPLIT_ALPHA
+uniform		lowp	sampler2D 		DiffuseMap_alpha;
+#endif
+uniform 	lowp	sampler2D 		DiffuseMap;
+uniform 	lowp	sampler2D 		LightMap;
+uniform		lowp	float	Overbright;
+varying		mediump	vec2 	vCoord0;
+varying		mediump	vec2 	vCoord1;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+lowp vec4 ComputeFogFS(lowp vec4 col, lowp vec4 fogCol, lowp float fogF)
+{
+	lowp 	float 	GrayScale 	= dot(col.xyz, vec3(0.149, 0.293, 0.57));
+	lowp 	float 	fFactor		= fogF * (1.0 - GrayScale);
+	return vec4(mix(col.rgb, fogCol.rgb, fFactor * fogCol.a), col.a);
+}
+void main()
+{
+#if defined(TDKR_SPLIT_ALPHA) && !defined(NO_ALPHA)
+	highp	vec4  DiffuseMapColor	= vec4(texture2D(DiffuseMap, vCoord0).rgb, texture2D(DiffuseMap_alpha, vCoord0, -2.0).r);
+#else
+	highp	vec4  DiffuseMapColor	= texture2D(DiffuseMap, vCoord0);
+#endif
+	highp float fAlpha				= DiffuseMapColor.a ;
+	lowp	vec4  LightMapColor		= texture2D(LightMap, vCoord1) * 2.0 + vec4(Overbright);
+	lowp	vec4  Color				= DiffuseMapColor * LightMapColor ;
+	Color							= ComputeFogFS(Color, FogColor, clamp(FogFactor, 0.0, 1.0));
+	gl_FragColor					= vec4(Color.rgb, fAlpha);
+#if !defined(MODULATE) && !defined(NO_ALPHA)
+	if (fAlpha < 0.3)
+		discard;
+#endif
+}
+`;
+const NVGLASS_V = `
+attribute highp	vec4 Position;
+attribute highp	vec3 Normal;
+attribute mediump vec2 TexCoord0;
+uniform 	highp 	vec4 	TexCoord0_scaleoffset;
+attribute mediump vec2 TexCoord1;
+uniform 	highp 	vec4 	TexCoord1_scaleoffset;
+attribute lowp vec4 Color0;
+uniform mediump vec2 uvOffset;
+uniform highp   mat4 WorldViewProjectionMatrix;
+#if defined(LIGHTMAP)
+	varying mediump vec2 vCoord1;
+#endif
+varying highp vec2 vCoord0;
+varying lowp vec4 vColor0;
+uniform 	highp	mat4	WorldViewTransposed;
+uniform 	highp	vec2 	FogStartEnd;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+void main()
+{
+	vCoord0 = TexCoord0 * TexCoord0_scaleoffset.xy + TexCoord0_scaleoffset.zw + uvOffset;
+	vColor0 = Color0;
+#if defined(LIGHTMAP)
+	vCoord1 = TexCoord1 * TexCoord1_scaleoffset.xy + TexCoord1_scaleoffset.zw;
+#endif
+	gl_Position			= WorldViewProjectionMatrix * Position;
+	FogFactor                       = (-dot(WorldViewTransposed[2], Position) - FogStartEnd.x) * FogStartEnd.y;
+}
+`;
+const NVGLASS_F = `
+precision mediump float;
+#ifdef TDKR_SPLIT_ALPHA
+uniform lowp	sampler2D DiffuseTextureSampler_alpha;
+#endif
+uniform lowp	sampler2D DiffuseTextureSampler;
+#if defined(TEX2)
+	uniform lowp	sampler2D Diffuse2TextureSampler;
+#endif
+#if defined(REFLECTION)
+uniform lowp	sampler2D ReflectionMapSampler;
+varying mediump   vec3	vViewDir;
+varying mediump   vec3	vNormal;
+#endif
+#if defined(LIGHTMAP)
+uniform lowp	sampler2D LightmapTextureSampler;
+#endif
+#if defined(DIFFUSE_MASK)
+uniform lowp	sampler2D DiffuseMaskSampler;
+#else
+uniform lowp float BlendFactor;
+#endif
+uniform lowp vec4 Ambient;
+varying mediump vec2 vCoord0;
+varying lowp vec4 vColor0;
+#if defined(LIGHTMAP)
+	varying mediump vec2 vCoord1;
+#endif
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+lowp vec4 ComputeFogFS(lowp vec4 col, lowp vec4 fogCol, lowp float fogF)
+{
+	lowp 	float 	GrayScale 	= dot(col.xyz, vec3(0.149, 0.293, 0.57));
+	lowp 	float 	fFactor		= fogF * (1.0 - GrayScale);
+	return vec4(mix(col.rgb, fogCol.rgb, fFactor * fogCol.a), col.a);
+}
+void main()
+{
+#if defined(TDKR_SPLIT_ALPHA) && defined(HAS_ALPHA)
+	lowp vec4 Color	= vec4(texture2D(DiffuseTextureSampler, vCoord0).rgb, texture2D(DiffuseTextureSampler_alpha, vCoord0).r);
+#else
+	lowp vec4 Color = texture2D(DiffuseTextureSampler, vCoord0);
+#endif
+#if !defined(TEX2)
+	Color = Color * vColor0;
+#endif
+#if defined(DIFFUSE_MASK)
+	lowp vec4 Mask  = texture2D(DiffuseMaskSampler, vCoord0);
+#endif
+	lowp vec4 Lighting = vec4(1.0);
+#if defined(LIGHTMAP)
+	lowp vec4 lmColor = texture2D(LightmapTextureSampler, vCoord1) * 2.0;
+	Lighting = lmColor;
+#endif
+	Color *= Lighting;
+#if defined(DIFFUSE_MASK)
+	gl_FragColor = vec4(Color.rgb, Mask.g * vColor0.a);
+#else
+	gl_FragColor = Color;
+#endif
+	Color							= ComputeFogFS(gl_FragColor, FogColor, clamp(FogFactor, 0.0, 1.0));
+	gl_FragColor					= Color;
+}
+`;
+const VCBLEND_V = `
+attribute highp	vec4 Position;
+attribute highp	vec3 Normal;
+attribute lowp	vec4 Color;
+attribute highp	vec2 Coord0;
+attribute highp	vec2 Coord1;
+uniform 	highp 	vec4 	Coord0_scaleoffset;
+uniform 	highp 	vec4 	Coord1_scaleoffset;
+uniform 	highp	mat4	WorldViewProjection;
+uniform     highp	vec4	LightMapAtlas;
+varying lowp    vec4 	vColor;
+varying mediump	vec2 	vCoord0;
+varying mediump	vec2 	vCoord1;
+uniform 	highp	mat4	WorldViewTransposed;
+uniform 	highp	vec2 	FogStartEnd;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+void main()
+{
+	vColor						= Color;
+	vCoord0 					= Coord0 * Coord0_scaleoffset.xy + Coord0_scaleoffset.zw;
+	vCoord1						= (Coord1 * Coord1_scaleoffset.xy + Coord1_scaleoffset.zw) * LightMapAtlas.xy + LightMapAtlas.zw;
+	gl_Position 				= WorldViewProjection * Position;
+	FogFactor                       = (-dot(WorldViewTransposed[2], Position) - FogStartEnd.x) * FogStartEnd.y;
+}
+`;
+const VCBLEND_F = `
+precision mediump float;
+uniform lowp	sampler2D LightMapSampler;
+uniform lowp	sampler2D Texture1;
+uniform lowp	sampler2D Texture2;
+varying lowp    vec4 	vColor;
+varying mediump	vec2 	vCoord0;
+varying mediump	vec2 	vCoord1;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+lowp vec4 ComputeFogFS(lowp vec4 col, lowp vec4 fogCol, lowp float fogF)
+{
+	lowp 	float 	GrayScale 	= dot(col.xyz, vec3(0.149, 0.293, 0.57));
+	lowp 	float 	fFactor		= fogF * (1.0 - GrayScale);
+	return vec4(mix(col.rgb, fogCol.rgb, fFactor * fogCol.a), col.a);
+}
+void main()
+{
+    lowp vec4 _LightMap	= texture2D(LightMapSampler, vCoord1, -1.0) * 2.0;
+	lowp vec4 _Texture1	= texture2D(Texture1, vCoord0, -1.0);
+	lowp vec4 _Texture2	= texture2D(Texture2, vCoord0, -1.0);
+	lowp float BlendFactor = vColor.a;
+	lowp vec4 Color 	= _LightMap * mix(_Texture1, _Texture2, BlendFactor) * vec4(vColor.rgb, 1.0);
+	Color							= ComputeFogFS(Color, FogColor, clamp(FogFactor, 0.0, 1.0));
+	gl_FragColor					= vec4(Color.rgb, 1.0);
+}
+`;
+
+
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'),
+  preserveDrawingBuffer: true, antialias: false });
+renderer.setSize(700, 700, false);
+const scene = new THREE.Scene();
+window.__R = renderer; window.__S = scene;
+
+function makeTex(t) {
+  const tx = new THREE.DataTexture(t.data, t.w, t.h, THREE.RGBAFormat);
+  tx.wrapS = tx.wrapT = THREE.RepeatWrapping;
+  tx.magFilter = tx.minFilter = THREE.NearestFilter;
+  tx.needsUpdate = true;
+  return tx;
+}
+function makeAlphaTex(t) {
+  const n = t.w * t.h;
+  const arr = new Uint8Array(n * 4);
+  for (let i = 0; i < n; i++) {
+    const v = t.data[i * 4];
+    arr[i * 4] = v; arr[i * 4 + 1] = v; arr[i * 4 + 2] = v; arr[i * 4 + 3] = 255;
+  }
+  const tx = new THREE.DataTexture(arr, t.w, t.h, THREE.RGBAFormat);
+  tx.wrapS = tx.wrapT = THREE.RepeatWrapping;
+  tx.magFilter = tx.minFilter = THREE.NearestFilter;
+  tx.needsUpdate = true;
+  return tx;
+}
+
+const CFG = {
+  scaleoffset: new THREE.Vector4(1, 1, 0, 0),      // engine default (no override in table)
+  atlas: new THREE.Vector4(1, 1, 0, 0),            // x284 in the compiled table
+  overbright: 1.0,                                  // AlphaMasking.bdae default (16/17 mats)
+  fogColorClear: new THREE.Vector4(64/255, 102/255, 119/255, 0.0),
+  fogColor: new THREE.Vector4(64/255, 102/255, 119/255, 160/255),
+  fogSE: new THREE.Vector2(0.0, 1.0/140.0),
+};
+
+function baseUniforms() {
+  return {
+    Coord0_scaleoffset: { value: CFG.scaleoffset },
+    Coord1_scaleoffset: { value: CFG.scaleoffset },
+    TexCoord0_scaleoffset: { value: CFG.scaleoffset },
+    TexCoord1_scaleoffset: { value: CFG.scaleoffset },
+    LightMapAtlas: { value: CFG.atlas },
+    Overbright: { value: CFG.overbright },
+    WorldViewProjection: { value: new THREE.Matrix4() },
+    WorldViewProjectionMatrix: { value: new THREE.Matrix4() },
+    WorldViewTransposed: { value: new THREE.Matrix4() },
+    FogStartEnd: { value: CFG.fogSE },
+    FogColor: { value: CFG.fogColorClear },
+    uvOffset: { value: new THREE.Vector2(0, 0) },
+    Ambient: { value: new THREE.Vector4(0, 0, 0, 1) },
+  };
+}
+
+function blockGeom(pairs, ldd, decls, k, mat) {
+  const off2 = pairs[k][0];
+  const data_off = u32le(ldd, off2 + 68), vb = u32le(ldd, off2 + 76), ib = u32le(ldd, off2 + 80);
+  const ds = decls[mat];
+  const dmap = {};
+  for (const d of ds) dmap[d.attr] = d;
+  const stride = ds[ds.length - 1].end;
+  const nv = (vb / stride) | 0;
+  const vstart = data_off + 4;
+  const raw = ldd.subarray(vstart, vstart + vb);
+  const fbuf = new DataView(raw.buffer, raw.byteOffset, raw.byteLength);
+  const pos = new Float32Array(nv * 4);
+  const pos3 = new Float32Array(nv * 3);
+  const uv0 = new Float32Array(nv * 2);
+  const uv1 = dmap[2] ? new Float32Array(nv * 2) : null;
+  const col = dmap[17] ? new Uint8Array(nv * 4) : null;
+  const colf = dmap[17] ? new Float32Array(nv * 4) : null;
+  for (let v = 0; v < nv; v++) {
+    const o = v * stride;
+    pos[v*4] = fbuf.getFloat32(o, true);
+    pos[v*4+1] = fbuf.getFloat32(o+4, true);
+    pos[v*4+2] = fbuf.getFloat32(o+8, true);
+    pos[v*4+3] = 1.0;
+    pos3[v*3] = pos[v*4]; pos3[v*3+1] = pos[v*4+1]; pos3[v*3+2] = pos[v*4+2];
+    uv0[v*2] = fbuf.getInt16(o + dmap[1].start, true)/32767*0.5 + 0.5;
+    uv0[v*2+1] = 1.0 - (fbuf.getInt16(o + dmap[1].start + 2, true)/32767*0.5 + 0.5);
+    if (uv1) {
+      uv1[v*2] = fbuf.getInt16(o + dmap[2].start, true)/32767*0.5 + 0.5;
+      uv1[v*2+1] = 1.0 - (fbuf.getInt16(o + dmap[2].start + 2, true)/32767*0.5 + 0.5);
+    }
+    if (col) {
+      for (let c = 0; c < 4; c++) col[v*4+c] = raw[o + dmap[17].start + c];
+      for (let c = 0; c < 4; c++) colf[v*4+c] = col[v*4+c]/255;
+    }
+  }
+  const idx = new Uint16Array(raw.buffer, raw.byteOffset + vb, (ib/2)|0).slice();
+  return { pos, pos3, uv0, uv1, col, colf, idx, stride, nv };
+}
+
+function boundsOf(geoms) {
+  let mn = [1e9, 1e9], mx = [-1e9, -1e9];
+  for (const g of geoms) {
+    for (let v = 0; v < g.nv; v++) {
+      mn[0] = Math.min(mn[0], g.pos3[v*3]); mx[0] = Math.max(mx[0], g.pos3[v*3]);
+      mn[1] = Math.min(mn[1], g.pos3[v*3+1]); mx[1] = Math.max(mx[1], g.pos3[v*3+1]);
+    }
+  }
+  return { mn, mx };
+}
+
+function renderBlock(geoms, effect, opts) {
+  if (opts && opts.debugShim) {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('Position', new THREE.BufferAttribute(new Float32Array(
+      [-0.5,-0.5,0,1, 0.5,-0.5,0,1, 0,0.5,0,1]), 4));
+    g.setAttribute('Normal', new THREE.BufferAttribute(new Float32Array(9), 3));
+    g.setAttribute('Coord0', new THREE.BufferAttribute(new Float32Array([0,0, 1,0, 0.5,1]), 2));
+    g.setAttribute('TexCoord0', g.getAttribute('Coord0'));
+    g.setIndex(new THREE.BufferAttribute(new Uint16Array([0,1,2]), 1));
+    geoms = [{ pos3: { min: () => ({}) }, nv: 3, idx: { length: 3 } }];
+    // shim: bypass merge/bounds with fixed unit path
+    const u = baseUniforms();
+    for (const [un, t] of Object.entries(opts.tex || {})) {
+      u[un] = { value: makeTex({ w: 2, h: 2, data: new Uint8Array(16).fill(200) }) };
+    }
+    const cam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
+    cam.position.set(0, 0, 5); cam.lookAt(0, 0, 0);
+    cam.updateMatrixWorld(); cam.updateProjectionMatrix();
+    const wvp = new THREE.Matrix4().multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse);
+    u.WorldViewProjection.value = wvp;
+    u.WorldViewProjectionMatrix.value = wvp;
+    let vs2, fs2;
+    if (effect === 'LightMapDC') { vs2 = LIGHTMAPDC_V; fs2 = LIGHTMAPDC_F; }
+    const mat = new THREE.RawShaderMaterial({ vertexShader: vs2, fragmentShader: fs2,
+      uniforms: u, side: THREE.DoubleSide });
+    const mesh = new THREE.Mesh(g, mat); mesh.frustumCulled = false;
+    scene.add(mesh);
+    const rt = new THREE.WebGLRenderTarget(700, 700, { depthBuffer: true, stencilBuffer: false });
+    renderer.setRenderTarget(rt);
+    renderer.render(scene, cam);
+    const buf = new Uint8Array(700*700*4);
+    renderer.readRenderTargetPixels(rt, 0, 0, 700, 700, buf);
+    renderer.setRenderTarget(null);
+    rt.dispose();
+    scene.remove(mesh);
+    let nz = 0;
+    for (let i = 0; i < buf.length; i += 4) if (buf[i] || buf[i+1] || buf[i+2]) nz++;
+    log('SHIM nonzero=' + nz);
+    return buf;
+  }
+  // merge
+  let vtot = 0, itot = 0;
+  for (const g of geoms) { vtot += g.nv; itot += g.idx.length; }
+  const pos = new Float32Array(vtot*4), pos3 = new Float32Array(vtot*3);
+  const uv0 = new Float32Array(vtot*2);
+  const uv1 = geoms[0].uv1 ? new Float32Array(vtot*2) : null;
+  const colf = geoms[0].colf ? new Float32Array(vtot*4) : null;
+  const use32 = vtot > 65535;
+  const idx = use32 ? new Uint32Array(itot) : new Uint16Array(itot);
+  let vo = 0, io = 0;
+  for (const g of geoms) {
+    pos.set(g.pos, vo*4); pos3.set(g.pos3, vo*3); uv0.set(g.uv0, vo*2);
+    if (uv1) uv1.set(g.uv1, vo*2);
+    if (colf) colf.set(g.colf, vo*4);
+    for (let i = 0; i < g.idx.length; i++) idx[io+i] = g.idx[i] + vo;
+    io += g.idx.length; vo += g.nv;
+  }
+  window.__LASTGEO = { vtot, itot, use32, posSample: [...pos.slice(0, 8)] };
+  const b = boundsOf(geoms);
+  const span = Math.max(b.mx[0]-b.mn[0], b.mx[1]-b.mn[1]) * 1.04;
+  const cx = (b.mn[0]+b.mx[0])/2, cy = (b.mn[1]+b.mx[1])/2;
+  let zmin = 1e9, zmax = -1e9;
+  for (const g of geoms) for (let v = 0; v < g.nv; v++) {
+    zmin = Math.min(zmin, g.pos3[v*3+2]); zmax = Math.max(zmax, g.pos3[v*3+2]);
+  }
+  const camH = Math.max(opts.camH || 0.0, zmax + 25.0);
+  // hand-built ortho WVP (view = translate(0,0,-camH); projection maps world x/y directly)
+  const L = b.mn[0], R = b.mx[0], T = b.mx[1], B = b.mn[1];
+  const N = 0.1, F = camH + zmax + 100.0;
+  const WVP = new THREE.Matrix4().set(
+    2/(R-L), 0, 0, -(R+L)/(R-L),
+    0, 2/(T-B), 0, -(T+B)/(T-B),
+    0, 0, -2/(F-N), -(F+N)/(F-N),
+    0, 0, 0, 1);
+  WVP.multiply(new THREE.Matrix4().makeTranslation(0, 0, -camH));
+  const WVT = new THREE.Matrix4().makeTranslation(0, 0, -camH).transpose();
+  const camera = new THREE.OrthographicCamera(L, R, T, B, N, F);
+  camera.position.set(0, 0, camH);
+  camera.lookAt(0, 0, 0);
+  camera.updateMatrixWorld();
+  camera.updateProjectionMatrix();
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('Position', new THREE.BufferAttribute(pos, 4));
+  geo.setAttribute('Normal', new THREE.BufferAttribute(pos3.slice(), 3));
+  geo.setAttribute('Coord0', new THREE.BufferAttribute(uv0, 2));
+  geo.setAttribute('TexCoord0', new THREE.BufferAttribute(uv0, 2));
+  if (uv1) {
+    geo.setAttribute('Coord1', new THREE.BufferAttribute(uv1, 2));
+    geo.setAttribute('TexCoord1', new THREE.BufferAttribute(uv1, 2));
+  }
+  if (colf) {
+    geo.setAttribute('Color', new THREE.BufferAttribute(colf, 4));
+    geo.setAttribute('Color0', new THREE.BufferAttribute(colf, 4));
+  }
+  geo.setIndex(new THREE.BufferAttribute(idx, 1));
+
+  const u = baseUniforms();
+  if (opts.fog) u.FogColor.value = CFG.fogColor;
+  // textures: opts.tex = { uniformName: decodedTex }
+  for (const [un, t] of Object.entries(opts.tex || {})) {
+    if (t === null || t === undefined) continue;
+    if (opts.solidTex) {
+      const c = { DiffuseMap: [220, 40, 40, 255], LightMap: [128, 128, 128, 255],
+                  DiffuseMaskSampler: [128, 128, 128, 255],
+                  LightmapTextureSampler: [128, 128, 128, 255],
+                  LightMapSampler: [128, 128, 128, 255],
+                  Texture1: [220, 40, 40, 255], Texture2: [40, 220, 40, 255] }[un] || [90, 90, 90, 255];
+      u[un] = { value: makeTex({ w: 2, h: 2, data: new Uint8Array([c[0],c[1],c[2],255, c[0],c[1],c[2],255, c[0],c[1],c[2],255, c[0],c[1],c[2],255]) }) };
+    } else {
+      u[un] = { value: (un === 'DiffuseMap_alpha') ? makeAlphaTex(t) : makeTex(t) };
+    }
+  }
+  let vs, fs, defs = opts.defines || '';
+  if (effect === 'LightMapDC') { vs = LIGHTMAPDC_V; fs = LIGHTMAPDC_F; }
+  else if (effect === 'AlphaMasking') { vs = ALPHAMASKING_V; fs = ALPHAMASKING_F; }
+  else if (effect === 'NV_Glass') { vs = NVGLASS_V; fs = NVGLASS_F; }
+  else if (effect === 'LightmapVCBlendDC') { vs = VCBLEND_V; fs = VCBLEND_F; }
+  else if (effect === 'AlphaMasking_NoBias') { vs = ALPHAMASKING_V; fs = ALPHAMASKING_F.replace('texture2D(DiffuseMap_alpha, vCoord0, -2.0)', 'texture2D(DiffuseMap_alpha, vCoord0)'); }
+  else throw new Error('effect? ' + effect);
+  const mat = new THREE.RawShaderMaterial({
+    vertexShader: defs + vs,
+    fragmentShader: opts.flatColor ? ('precision mediump float; uniform highp vec4 uFlat; void main(){ gl_FragColor = uFlat; }') : (defs + fs),
+    uniforms: Object.assign(u, opts.flatColor ? { uFlat: { value: new THREE.Vector4(0.2, 0.9, 0.2, 1) } } : {}),
+    side: THREE.DoubleSide, transparent: false,
+    depthTest: opts.nodepth ? false : true, depthWrite: opts.nodepth ? false : true,
+  });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.frustumCulled = false;
+  scene.add(mesh);
+  const nodepth = !!opts.nodepth;
+  const rt = new THREE.WebGLRenderTarget(700, 700, {
+    minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter,
+    depthBuffer: !nodepth, stencilBuffer: false });
+  renderer.setRenderTarget(rt);
+  renderer.clear();
+  renderer.render(scene, camera);
+  const buf = new Uint8Array(700*700*4);
+  renderer.readRenderTargetPixels(rt, 0, 0, 700, 700, buf);
+  const px4 = new Uint8Array(64);
+  renderer.readRenderTargetPixels(rt, 348, 348, 4, 4, px4);
+  renderer.setRenderTarget(null);
+  rt.dispose();
+  scene.remove(mesh);
+  let lo = 255, hi = 0, nnz = 0;
+  for (let i = 0; i < buf.length; i += 4) {
+    const v = (buf[i] + buf[i+1] + buf[i+2]) / 3;
+    if (v < lo) lo = v; if (v > hi) hi = v; if (v > 0) nnz++;
+  }
+  log('RENDER ' + (opts.tag || effect) + ': camH=' + camH.toFixed(1) +
+      ' lum=[' + lo.toFixed(0) + ',' + hi.toFixed(0) + '] nonzero=' + nnz +
+      ' tris=' + renderer.info.render.triangles + ' px4=' + [...px4.slice(0, 4)]);
+  geo.dispose(); mat.dispose();
+  return buf;
+}
+
+async function corrVsRef(buf, tag) {
+  const resp = await fetch('./s49_ref_' + tag + '.png');
+  if (!resp.ok) return { corr: -1, js_mean: -1, ref_mean: -1 };
+  const bmp = await createImageBitmap(await resp.blob());
+  const cc = document.createElement('canvas');
+  cc.width = 700; cc.height = 700;
+  const cx2 = cc.getContext('2d', { willReadFrequently: true });
+  cx2.drawImage(bmp, 0, 0);
+  const ref = cx2.getImageData(0, 0, 700, 700).data;
+  let sa = 0, sb = 0, saa = 0, sbb = 0, sab = 0;
+  const n = 700*700;
+  const means = { js: 0, ref: 0 };
+  const W = 700;
+  for (let i = 0; i < n; i++) {
+    const row = (i / W) | 0, col = i % W;
+    const j = ((W - 1 - row) * W + col) * 4;   // flip: GL row0 = bottom
+    const a = (buf[j] + buf[j+1] + buf[j+2])/3;
+    const bb = (ref[i*4] + ref[i*4+1] + ref[i*4+2])/3;
+    sa += a; sb += bb; saa += a*a; sbb += bb*bb; sab += a*bb;
+    means.js += a; means.ref += bb;
+  }
+  means.js /= n; means.ref /= n;
+  const cov = sab/n - (sa/n)*(sb/n);
+  const va = saa/n - (sa/n)**2, vb = sbb/n - (sb/n)**2;
+  return { corr: cov/Math.sqrt(va*vb), js_mean: means.js, ref_mean: means.ref };
+}
+
+/* ---------- raw WebGL1 pipeline (engine GLES2 path; deterministic readback) ---------- */
+const glc = document.createElement('canvas');
+glc.width = 700; glc.height = 700;
+const gl1 = glc.getContext('webgl', { preserveDrawingBuffer: true, antialias: false,
+                                      depth: true });
+if (!gl1) throw new Error('no webgl1');
+function compileGL(type, src) {
+  const s = gl1.createShader(type);
+  gl1.shaderSource(s, src);
+  gl1.compileShader(s);
+  if (!gl1.getShaderParameter(s, gl1.COMPILE_STATUS))
+    throw new Error('shader: ' + gl1.getShaderInfoLog(s) + '\n---\n' + src.slice(0, 400));
+  return s;
+}
+const progCache = new Map();
+function getProg(key, vs, fs) {
+  if (progCache.has(key)) return progCache.get(key);
+  const p = gl1.createProgram();
+  gl1.attachShader(p, compileGL(gl1.VERTEX_SHADER, vs));
+  gl1.attachShader(p, compileGL(gl1.FRAGMENT_SHADER, fs));
+  gl1.linkProgram(p);
+  if (!gl1.getProgramParameter(p, gl1.LINK_STATUS))
+    throw new Error('link: ' + gl1.getProgramInfoLog(p));
+  const o = { prog: p, attr: {}, uni: {} };
+  const na = gl1.getProgramParameter(p, gl1.ACTIVE_ATTRIBUTES);
+  for (let i = 0; i < na; i++) {
+    const inf = gl1.getActiveAttrib(p, i);
+    o.attr[inf.name] = gl1.getAttribLocation(p, inf.name);
+  }
+  const nu = gl1.getProgramParameter(p, gl1.ACTIVE_UNIFORMS);
+  for (let i = 0; i < nu; i++) {
+    const inf = gl1.getActiveUniform(p, i);
+    o.uni[inf.name.replace('[0]', '')] = gl1.getUniformLocation(p, inf.name);
+  }
+  progCache.set(key, o);
+  return o;
+}
+function texFromData(t) {
+  const tx = gl1.createTexture();
+  gl1.bindTexture(gl1.TEXTURE_2D, tx);
+  gl1.texImage2D(gl1.TEXTURE_2D, 0, gl1.RGBA, t.w, t.h, 0, gl1.RGBA, gl1.UNSIGNED_BYTE,
+                 new Uint8Array(t.data.buffer ? t.data : t.data));
+  gl1.texParameteri(gl1.TEXTURE_2D, gl1.TEXTURE_WRAP_S, gl1.REPEAT);
+  gl1.texParameteri(gl1.TEXTURE_2D, gl1.TEXTURE_WRAP_T, gl1.REPEAT);
+  gl1.texParameteri(gl1.TEXTURE_2D, gl1.TEXTURE_MIN_FILTER, gl1.NEAREST);
+  gl1.texParameteri(gl1.TEXTURE_2D, gl1.TEXTURE_MAG_FILTER, gl1.NEAREST);
+  return tx;
+}
+let texUnitN = 0;
+function renderBlockGL(geoms, effect, opts) {
+  // merge
+  let vtot = 0, itot = 0;
+  for (const g of geoms) { vtot += g.nv; itot += g.idx.length; }
+  const pos = new Float32Array(vtot*4), pos3 = new Float32Array(vtot*3);
+  const uv0 = new Float32Array(vtot*2);
+  const uv1 = geoms[0].uv1 ? new Float32Array(vtot*2) : null;
+  const colf = geoms[0].colf ? new Float32Array(vtot*4) : null;
+  const use32 = vtot > 65535;
+  const idx = use32 ? new Uint32Array(itot) : new Uint16Array(itot);
+  let vo = 0, io = 0;
+  for (const g of geoms) {
+    pos.set(g.pos, vo*4); pos3.set(g.pos3, vo*3); uv0.set(g.uv0, vo*2);
+    if (uv1) uv1.set(g.uv1, vo*2);
+    if (colf) colf.set(g.colf, vo*4);
+    for (let i = 0; i < g.idx.length; i++) idx[io+i] = g.idx[i] + vo;
+    io += g.idx.length; vo += g.nv;
+  }
+  let mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9, mnz = 1e9, mxz = -1e9;
+  for (let v = 0; v < vtot; v++) {
+    mnx = Math.min(mnx, pos3[v*3]); mxx = Math.max(mxx, pos3[v*3]);
+    mny = Math.min(mny, pos3[v*3+1]); mxy = Math.max(mxy, pos3[v*3+1]);
+    mnz = Math.min(mnz, pos3[v*3+2]); mxz = Math.max(mxz, pos3[v*3+2]);
+  }
+  const span = Math.max(mxx-mnx, mxy-mny) * 1.04;
+  const cx = (mnx+mxx)/2, cy = (mny+mxy)/2;
+  const camH = Math.max(opts.camH || 0.0, mxz + 25.0);
+  const L = cx-span/2, R = cx+span/2, T = cy+span/2, B = cy-span/2;
+  const N = 0.1, F = camH + mxz + 100.0;
+  // ortho * translate(0,0,-camH)  (column-major mat4 for uniformMatrix4fv)
+  const WVP = new Float32Array([
+    2/(R-L), 0, 0, 0,
+    0, 2/(T-B), 0, 0,
+    0, 0, -2/(F-N), 0,
+    -(R+L)/(R-L), -(T+B)/(T-B), -(F+N)/(F-N) - camH * (-2/(F-N)), 1,
+  ]);
+  const WVTrow2 = [0, 0, 1, -camH];   // WorldViewTransposed row 2 (dot with Position)
+  // shaders + defines
+  const defs = opts.defines || '';
+  let vs, fs;
+  if (effect === 'LightMapDC') { vs = LIGHTMAPDC_V; fs = LIGHTMAPDC_F; }
+  else if (effect === 'AlphaMasking') { vs = ALPHAMASKING_V; fs = ALPHAMASKING_F; }
+  else if (effect === 'NV_Glass') { vs = NVGLASS_V; fs = NVGLASS_F; }
+  else if (effect === 'LightmapVCBlendDC') { vs = VCBLEND_V; fs = VCBLEND_F; }
+  else if (effect === 'AlphaMasking_NoBias') { vs = ALPHAMASKING_V; fs = ALPHAMASKING_F.replace('texture2D(DiffuseMap_alpha, vCoord0, -2.0)', 'texture2D(DiffuseMap_alpha, vCoord0)'); }
+  else throw new Error('effect? ' + effect);
+  const P = getProg(effect + '|' + defs, defs + vs, defs + fs);
+  gl1.viewport(0, 0, 700, 700);
+  gl1.clearColor(0, 0, 0, 0);
+  gl1.clear(gl1.COLOR_BUFFER_BIT | gl1.DEPTH_BUFFER_BIT);
+  gl1.useProgram(P.prog);
+  gl1.enable(gl1.DEPTH_TEST);
+  gl1.depthFunc(gl1.LEQUAL);
+  gl1.disable(gl1.CULL_FACE);
+  // attributes
+  function bindAttr(name, arr, size) {
+    if (P.attr[name] === undefined || P.attr[name] < 0) return;
+    const b = gl1.createBuffer();
+    gl1.bindBuffer(gl1.ARRAY_BUFFER, b);
+    gl1.bufferData(gl1.ARRAY_BUFFER, arr, gl1.STATIC_DRAW);
+    gl1.enableVertexAttribArray(P.attr[name]);
+    gl1.vertexAttribPointer(P.attr[name], size, gl1.FLOAT, false, 0, 0);
+  }
+  bindAttr('Position', pos, 4);
+  bindAttr('Normal', pos3, 3);
+  bindAttr('Coord0', uv0, 2);
+  bindAttr('TexCoord0', uv0, 2);
+  if (uv1) { bindAttr('Coord1', uv1, 2); bindAttr('TexCoord1', uv1, 2); }
+  if (colf) { bindAttr('Color', colf, 4); bindAttr('Color0', colf, 4); }
+  const ib = gl1.createBuffer();
+  gl1.bindBuffer(gl1.ELEMENT_ARRAY_BUFFER, ib);
+  gl1.bufferData(gl1.ELEMENT_ARRAY_BUFFER, idx, gl1.STATIC_DRAW);
+  // uniforms
+  const U = P.uni;
+  if (U.WorldViewProjection) gl1.uniformMatrix4fv(U.WorldViewProjection, false, WVP);
+  if (U.WorldViewProjectionMatrix) gl1.uniformMatrix4fv(U.WorldViewProjectionMatrix, false, WVP);
+  const so = [1, 1, 0, 0];
+  for (const nm of ['Coord0_scaleoffset', 'Coord1_scaleoffset', 'TexCoord0_scaleoffset',
+                    'TexCoord1_scaleoffset'])
+    if (U[nm]) gl1.uniform4fv(U[nm], so);
+  if (U.LightMapAtlas) gl1.uniform4fv(U.LightMapAtlas, [1, 1, 0, 0]);
+  if (U.Overbright) gl1.uniform1f(U.Overbright, 1.0);
+  if (U.uvOffset) gl1.uniform2f(U.uvOffset, 0, 0);
+  if (U.Ambient) gl1.uniform4f(U.Ambient, 0, 0, 0, 1);
+  const fc = opts.fog ? [64/255, 102/255, 119/255, 160/255] : [64/255, 102/255, 119/255, 0];
+  if (U.FogColor) gl1.uniform4fv(U.FogColor, fc);
+  if (U.FogStartEnd) gl1.uniform2fv(U.FogStartEnd, [0, 1/140]);
+  if (U.WorldViewTransposed) gl1.uniformMatrix4fv(U.WorldViewTransposed, false,
+    new Float32Array([1,0,0,0, 0,1,0,0, WVTrow2[0],WVTrow2[1],WVTrow2[2],WVTrow2[3], 0,0,0,1]));
+  // textures
+  let unit = 0;
+  for (const [un, t] of Object.entries(opts.tex || {})) {
+    if (t === undefined || t === null) continue;
+    if (!U[un]) continue;
+    gl1.activeTexture(gl1.TEXTURE0 + unit);
+    let src = t;
+    if (un === 'DiffuseMap_alpha') {
+      const n = t.w * t.h;
+      const arr = new Uint8Array(n * 4);
+      for (let i = 0; i < n; i++) {
+        const v = t.data[i * 4];
+        arr[i*4] = v; arr[i*4+1] = v; arr[i*4+2] = v; arr[i*4+3] = 255;
+      }
+      src = { w: t.w, h: t.h, data: arr };
+    }
+    gl1.bindTexture(gl1.TEXTURE_2D, texFromData(src));
+    gl1.uniform1i(U[un], unit);
+    unit++;
+  }
+  gl1.drawElements(gl1.TRIANGLES, itot, use32 ? gl1.UNSIGNED_INT : gl1.UNSIGNED_SHORT, 0);
+  const buf = new Uint8Array(700*700*4);
+  gl1.readPixels(0, 0, 700, 700, gl1.RGBA, gl1.UNSIGNED_BYTE, buf);
+  let lo = 255, hi = 0, nz = 0;
+  for (let i = 0; i < buf.length; i += 4) {
+    const v = (buf[i] + buf[i+1] + buf[i+2]) / 3;
+    if (v < lo) lo = v; if (v > hi) hi = v; if (v > 0) nz++;
+  }
+  log('GL ' + (opts.tag || effect) + ': camH=' + camH.toFixed(1) +
+      ' lum=[' + lo.toFixed(0) + ',' + hi.toFixed(0) + '] nonzero=' + nz +
+      ' err=' + gl1.getError());
+  return buf;
+}
+window.__SELFTEST = () => {
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('Position', new THREE.BufferAttribute(
+    new Float32Array([-1,-1,0,1, 1,-1,0,1, 0,1,0,1]), 4));
+  g.setAttribute('Normal', new THREE.BufferAttribute(new Float32Array(9), 3));
+  g.setAttribute('Coord0', new THREE.BufferAttribute(new Float32Array([0,0, 1,0, 0.5,1]), 2));
+  g.setAttribute('TexCoord0', new THREE.BufferAttribute(new Float32Array([0,0, 1,0, 0.5,1]), 2));
+  g.setAttribute('Color', new THREE.BufferAttribute(new Float32Array([1,1,1,1, 1,1,1,1, 1,1,1,1]), 4));
+  g.setAttribute('Color0', g.getAttribute('Color'));
+  g.setIndex([0,1,2]);
+  const cam = new THREE.OrthographicCamera(-1,1,1,-1,0.1,100);
+  cam.position.set(0,0,5); cam.lookAt(0,0,0); cam.updateMatrixWorld(); cam.updateProjectionMatrix();
+  const wvp = new THREE.Matrix4().multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse);
+  const u = baseUniforms();
+  u.WorldViewProjection.value = wvp;
+  u.WorldViewProjectionMatrix.value = wvp;
+  u.DiffuseMap = { value: makeTex({ w: 4, h: 4, data: new Uint8Array(4*4*4).fill(200) }) };
+  u.LightMap = { value: makeTex({ w: 4, h: 4, data: new Uint8Array(4*4*4).fill(255) }) };
+  const m = new THREE.RawShaderMaterial({ vertexShader: LIGHTMAPDC_V, fragmentShader: LIGHTMAPDC_F,
+    uniforms: u, side: THREE.DoubleSide });
+  const mesh = new THREE.Mesh(g, m); mesh.frustumCulled = false;
+  scene.add(mesh);
+  const rt = new THREE.WebGLRenderTarget(700, 700, { depthBuffer: true, stencilBuffer: false });
+  renderer.setRenderTarget(rt);
+  renderer.render(scene, cam);
+  const px = new Uint8Array(4*4*4);
+  renderer.readRenderTargetPixels(rt, 348, 348, 4, 4, px);
+  renderer.setRenderTarget(null);
+  rt.dispose();
+  scene.remove(mesh);
+  return { px: [...px.slice(0, 12)], glerr: renderer.getContext().getError() };
+};
+
+window.__ST3 = () => {
+  const C = window.__CTX;
+  const g = C.blockGeom(C.pairs, C.ldd, C.decls, 695, 73);
+  let mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9, mnz = 1e9, mxz = -1e9;
+  for (let v = 0; v < g.nv; v++) {
+    mnx = Math.min(mnx, g.pos3[v*3]); mxx = Math.max(mxx, g.pos3[v*3]);
+    mny = Math.min(mny, g.pos3[v*3+1]); mxy = Math.max(mxy, g.pos3[v*3+1]);
+    mnz = Math.min(mnz, g.pos3[v*3+2]); mxz = Math.max(mxz, g.pos3[v*3+2]);
+  }
+  const span = Math.max(mxx-mnx, mxy-mny) * 1.04;
+  const cx = (mnx+mxx)/2, cy = (mny+mxy)/2;
+  const out = {};
+  for (const mode of ['campos', 'origin']) {
+    const cam = new THREE.OrthographicCamera(cx-span/2, cx+span/2, cy+span/2, cy-span/2, 0.1, 200);
+    if (mode === 'campos') { cam.position.set(cx, cy, mxz + 25); cam.lookAt(cx, cy, 0); }
+    else { cam.position.set(0, 0, mxz + 25); cam.lookAt(0, 0, 0); }
+    cam.updateMatrixWorld(); cam.updateProjectionMatrix();
+    const wvp = new THREE.Matrix4().multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse);
+    const v = new THREE.Vector4(g.pos3[0], g.pos3[1], g.pos3[2], 1).applyMatrix4(wvp);
+    out[mode] = { wvp0: [...wvp.elements.slice(12, 16)].map(x => +x.toFixed(2)),
+                  clip: [+v.x.toFixed(4), +v.y.toFixed(4), +v.z.toFixed(4), +v.w.toFixed(4)] };
+  }
+  return out;
+};
+
+window.__SELFTEST2 = (mode) => {
+  const C = window.__CTX;
+  const g = C.blockGeom(C.pairs, C.ldd, C.decls, 695, 73);
+  let geo, cam;
+  const mkCam = (cx, cy, zmin, zmax) => {
+    const span = Math.max(g.pos3.slice().reduce);
+    return null;
+  };
+  if (mode === 'centered') {
+    let mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9, mnz = 1e9, mxz = -1e9;
+    for (let v = 0; v < g.nv; v++) {
+      mnx = Math.min(mnx, g.pos3[v*3]); mxx = Math.max(mxx, g.pos3[v*3]);
+      mny = Math.min(mny, g.pos3[v*3+1]); mxy = Math.max(mxy, g.pos3[v*3+1]);
+      mnz = Math.min(mnz, g.pos3[v*3+2]); mxz = Math.max(mxz, g.pos3[v*3+2]);
+    }
+    const cx = (mnx+mxx)/2, cy = (mny+mxy)/2;
+    const posC = g.pos.slice();
+    for (let v = 0; v < g.nv; v++) { posC[v*4] -= cx; posC[v*4+1] -= cy; }
+    geo = new THREE.BufferGeometry();
+    geo.setAttribute('Position', new THREE.BufferAttribute(posC, 4));
+    geo.setIndex(new THREE.BufferAttribute(g.idx, 1));
+    cam = new THREE.OrthographicCamera(-160, 160, 160, -160, 0.1, 200);
+    cam.position.set(0, 0, mxz + 25); cam.lookAt(0, 0, 0);
+    log('ST2C cx=' + cx.toFixed(1) + ' cy=' + cy.toFixed(1));
+  } else if (mode === 'boundsreal_camorigin') {
+    geo = new THREE.BufferGeometry();
+    geo.setAttribute('Position', new THREE.BufferAttribute(g.pos, 4));
+    geo.setIndex(new THREE.BufferAttribute(g.idx, 1));
+    let mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9, mnz = 1e9, mxz = -1e9;
+    for (let v = 0; v < g.nv; v++) {
+      mnx = Math.min(mnx, g.pos3[v*3]); mxx = Math.max(mxx, g.pos3[v*3]);
+      mny = Math.min(mny, g.pos3[v*3+1]); mxy = Math.max(mxy, g.pos3[v*3+1]);
+      mnz = Math.min(mnz, g.pos3[v*3+2]); mxz = Math.max(mxz, g.pos3[v*3+2]);
+    }
+    const span = Math.max(mxx-mnx, mxy-mny) * 1.04;
+    const cx = (mnx+mxx)/2, cy = (mny+mxy)/2;
+    cam = new THREE.OrthographicCamera(cx-span/2, cx+span/2, cy+span/2, cy-span/2, 0.1, 200);
+    cam.position.set(0, 0, mxz + 25); cam.lookAt(0, 0, 0);
+    log('ST2B camorigin: bounds around cx=' + cx.toFixed(1) + ' cy=' + cy.toFixed(1));
+  } else if (mode === 'unit') {
+    geo = new THREE.BufferGeometry();
+    geo.setAttribute('Position', new THREE.BufferAttribute(new Float32Array(
+      [-100,-100,-3,1, 100,-100,-3,1, 0,100,-3,1]), 4));
+    geo.setIndex([0,1,2]);
+    cam = new THREE.OrthographicCamera(-160, 160, 160, -160, 0.1, 200);
+    cam.position.set(0, 0, 25); cam.lookAt(0, 0, 0);
+  } else {
+    geo = new THREE.BufferGeometry();
+    geo.setAttribute('Position', new THREE.BufferAttribute(g.pos, 4));
+    geo.setIndex(new THREE.BufferAttribute(g.idx, 1));
+    let mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9, mnz = 1e9, mxz = -1e9;
+    for (let v = 0; v < g.nv; v++) {
+      mnx = Math.min(mnx, g.pos3[v*3]); mxx = Math.max(mxx, g.pos3[v*3]);
+      mny = Math.min(mny, g.pos3[v*3+1]); mxy = Math.max(mxy, g.pos3[v*3+1]);
+      mnz = Math.min(mnz, g.pos3[v*3+2]); mxz = Math.max(mxz, g.pos3[v*3+2]);
+    }
+    const span = Math.max(mxx-mnx, mxy-mny) * 1.04;
+    const cx = (mnx+mxx)/2, cy = (mny+mxy)/2;
+    cam = new THREE.OrthographicCamera(cx-span/2, cx+span/2, cy+span/2, cy-span/2, 0.1, 200);
+    cam.position.set(cx, cy, mxz + 25); cam.lookAt(cx, cy, 0);
+    log('ST2 bbox x[' + mnx.toFixed(1) + ',' + mxx.toFixed(1) + '] y[' + mny.toFixed(1) + ',' +
+        mxy.toFixed(1) + '] z[' + mnz.toFixed(2) + ',' + mxz.toFixed(2) + '] span=' + span.toFixed(1) +
+        ' nv=' + g.nv + ' idx=' + g.idx.length);
+  }
+  cam.updateMatrixWorld(); cam.updateProjectionMatrix();
+  const wvp = new THREE.Matrix4().multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse);
+  const u = baseUniforms();
+  u.WorldViewProjection.value = wvp;
+  u.WorldViewProjectionMatrix.value = wvp;
+  if (mode === 'real') {
+    const d = C.getTex('gothamcity_roads_details.tga'), lm = C.getTex('BakeGroup_Island1_Roads0.tga');
+    u.DiffuseMap = { value: makeTex(d) };
+    u.LightMap = { value: makeTex(lm) };
+  } else {
+    u.DiffuseMap = { value: makeTex({ w: 2, h: 2, data: new Uint8Array(16).fill(220) }) };
+    u.LightMap = { value: makeTex({ w: 2, h: 2, data: new Uint8Array(16).fill(128) }) };
+  }
+  const m = new THREE.RawShaderMaterial({ vertexShader: LIGHTMAPDC_V, fragmentShader: LIGHTMAPDC_F,
+    uniforms: u, side: THREE.DoubleSide });
+  const mesh = new THREE.Mesh(geo, m); mesh.frustumCulled = false;
+  scene.add(mesh);
+  const rt = new THREE.WebGLRenderTarget(700, 700, { depthBuffer: true, stencilBuffer: false });
+  renderer.setRenderTarget(rt);
+  renderer.render(scene, cam);
+  const px = new Uint8Array(700*700*4);
+  renderer.readRenderTargetPixels(rt, 0, 0, 700, 700, px);
+  renderer.setRenderTarget(null);
+  rt.dispose();
+  scene.remove(mesh);
+  let s = 0, mx = 0;
+  for (let i = 0; i < px.length; i += 4) { const v = (px[i]+px[i+1]+px[i+2])/3; s += v; if (v > mx) mx = v; }
+  return { mean: (s/(px.length/4)).toFixed(2), max: mx, glerr: renderer.getContext().getError() };
+};
+
+function dumpPNG(buf, name) {
+  const c = document.createElement('canvas');
+  c.width = 700; c.height = 700;
+  const cx = c.getContext('2d');
+  const flipped = new Uint8ClampedArray(700*700*4);
+  for (let y = 0; y < 700; y++)
+    flipped.set(buf.subarray(((699-y)*700)*4, ((699-y)*700+700)*4), y*700*4);
+  const im = new ImageData(flipped, 700, 700);
+  cx.putImageData(im, 0, 0);
+  window.__PNGS = window.__PNGS || {};
+  window.__PNGS[name] = c.toDataURL('image/png');
+}
+function dumpUV(g, name) {
+  let mnu = 1e9, mxu = -1e9, mnv = 1e9, mxv = -1e9;
+  for (let v = 0; v < g.nv; v++) {
+    mnu = Math.min(mnu, g.uv0[v*2]); mxu = Math.max(mxu, g.uv0[v*2]);
+    mnv = Math.min(mnv, g.uv0[v*2+1]); mxv = Math.max(mxv, g.uv0[v*2+1]);
+  }
+  window.__UVBOX = window.__UVBOX || {};
+  window.__UVBOX[name] = [mnu, mnv, mxu, mxv];
+}
+document.querySelector('#f').addEventListener('change', async (ev) => {
+  try {
+    const file = ev.target.files[0];
+    log('zip: ' + file.name + ' (' + file.size + ' B)');
+    const zipBuf = new Uint8Array(await file.arrayBuffer());
+    const zmembers = zipMembers(zipBuf);
+    const gla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla'));
+    const gcityZip = glaMember(gla, 'GothamCity.zip');
+    const gmembers = zipMembers(gcityZip);
+    const lt = await zipRead2(gcityZip, gmembers.get('lod_table.bin'));
+    const ldd = await zipRead2(gcityZip, gmembers.get('lod_data.bin'));
+    const bi8 = await zipRead2(gcityZip, gmembers.get('batch_info.bin'));
+    const texGlaBuf = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla'));
+    const cnt = u32le(lt, 0);
+    const decls = decodeDecls(bi8, cnt);
+    const pairs = [];
+    for (let k = 0; k < cnt; k++) pairs.push([u32le(lt, 4 + 8*k), u32le(lt, 8 + 8*k)]);
+    window.__CTX = { pairs, ldd, decls, getTex, blockGeom };
+    const texCache = new Map();
+    function getTex(n) {
+      if (texCache.has(n)) return texCache.get(n);
+      const t = decodeTex(n, texGlaBuf);
+      texCache.set(n, t);
+      return t;
+    }
+    window.__GATE.blocks = [];
+
+    // road276: LightMapDC pre-fog + fog@25u
+    {
+      const g = blockGeom(pairs, ldd, decls, 695, 73);
+      const d = getTex('gothamcity_roads_details.tga'), lm = getTex('BakeGroup_Island1_Roads0.tga');
+      for (const variant of ['lm2', 'lm2_cfog_25u']) {
+        const buf = renderBlockGL([g], 'LightMapDC', { tag: 'road276_' + variant, camH: 25.0, fog: variant.includes('cfog'),
+          defines: '', tex: { DiffuseMap: d, LightMap: lm } });
+        const r = await corrVsRef(buf, variant === 'lm2' ? 'road276_lm2' : 'road276_cfog_25u');
+        log('road276 ' + variant + ': corr=' + r.corr.toFixed(4) + ' js=' + r.js_mean.toFixed(1) + ' ref=' + r.ref_mean.toFixed(1));
+        window.__GATE.blocks.push({ tag: 'road276_' + variant, ...r });
+      }
+    }
+    // glass7: NV_Glass LIGHTMAP profile, segs 1486-92 merged
+    {
+      const gs = [];
+      for (let k = 1486; k <= 1492; k++) gs.push(blockGeom(pairs, ldd, decls, k, 156));
+      const d = getTex('GC_footprint_AB_atlas.tga');
+      const mk = getTex('GC_footprint_AB_atlas_rfl.tga');
+      const lm = getTex('confroom_lightmap.tga');
+      const buf = renderBlockGL(gs, 'NV_Glass', { tag: 'glass7_lm', camH: 25.0, fog: false,
+        defines: '#define DIFFUSE_MASK\n#define LIGHTMAP\n',
+        tex: { DiffuseTextureSampler: d, DiffuseMaskSampler: mk, LightmapTextureSampler: lm } });
+      const r = await corrVsRef(buf, 'glass7_lm');
+      log('glass7 lm: corr=' + r.corr.toFixed(4) + ' js=' + r.js_mean.toFixed(1) + ' ref=' + r.ref_mean.toFixed(1));
+      window.__GATE.blocks.push({ tag: 'glass7_lm', ...r });
+      dumpPNG(buf, 'glass7');
+      // also the Default (no LIGHTMAP) profile
+      const buf2 = renderBlockGL(gs, 'NV_Glass', { tag: 'glass7_nolm', camH: 25.0, fog: false,
+        defines: '#define DIFFUSE_MASK\n',
+        tex: { DiffuseTextureSampler: d, DiffuseMaskSampler: mk, LightmapTextureSampler: lm } });
+      const r2 = await corrVsRef(buf2, 'glass7_lm');
+      log('glass7 nolm: corr=' + r2.corr.toFixed(4) + ' js=' + r2.js_mean.toFixed(1) + ' ref=' + r2.ref_mean.toFixed(1));
+      window.__GATE.blocks.push({ tag: 'glass7_nolm', ...r2 });
+    }
+    // vcblend: seg 1493
+    {
+      const g = blockGeom(pairs, ldd, decls, 1493, 153);
+      const lm = getTex('BakeGroup_Island1_A0.tga');
+      const t1 = getTex('GC_Park_dirt.tga');
+      const t2 = getTex('GC_Park_grass.tga');
+      const buf = renderBlockGL([g], 'LightmapVCBlendDC', { tag: 'vcblend', camH: 25.0, fog: false, defines: '',
+        tex: { LightMapSampler: lm, Texture1: t1, Texture2: t2 } });
+      const r = await corrVsRef(buf, 'vcblend_tex2');
+      log('vcblend(=tex2, alpha=1): corr=' + r.corr.toFixed(4) + ' js=' + r.js_mean.toFixed(1) + ' ref=' + r.ref_mean.toFixed(1));
+      window.__GATE.blocks.push({ tag: 'vcblend', ...r });
+    }
+    // stride28: seg 1525 AlphaMasking (SPLIT)
+    {
+      const g = blockGeom(pairs, ldd, decls, 1525, 302);
+      const d = getTex('GC_Z1_Props_Street_Alpha.tga');
+      const lm = getTex('BakeGroup_Island1_A0.tga');
+      const buf = renderBlockGL([g], 'AlphaMasking', { tag: 'stride28', camH: 25.0, fog: false,
+        defines: '#define TDKR_SPLIT_ALPHA\n', tex: { DiffuseMap: d, LightMap: lm, DiffuseMap_alpha: d.alpha || d } });
+      const r = await corrVsRef(buf, 'stride28_lm2o');
+      log('stride28 lm2o: corr=' + r.corr.toFixed(4) + ' js=' + r.js_mean.toFixed(1) + ' ref=' + r.ref_mean.toFixed(1));
+      window.__GATE.blocks.push({ tag: 'stride28_lm2o', ...r });
+      dumpPNG(buf, 'stride28');
+      const g2 = blockGeom(pairs, ldd, decls, 1525, 302);
+      dumpUV(g2, 'stride28');
+      {
+        const f2 = ALPHAMASKING_F.replace('texture2D(DiffuseMap_alpha, vCoord0, -2.0)', 'texture2D(DiffuseMap_alpha, vCoord0)');
+        const saved = ALPHAMASKING_F;
+        // temporarily swap via a custom defines key: easiest is a second program key
+        const buf2 = renderBlockGL([g2], 'AlphaMasking_NoBias', { tag: 'stride28_nobias', camH: 25.0, fog: false,
+          defines: '#define TDKR_SPLIT_ALPHA\n', tex: { DiffuseMap: d, LightMap: lm, DiffuseMap_alpha: d.alpha || d } });
+        const r2b = await corrVsRef(buf2, 'stride28_lm2o');
+        log('stride28 nobias corr=' + r2b.corr.toFixed(4));
+      }
+    }
+    window.__GATE.done = true;
+    log('DONE');
+  } catch (e) {
+    log('ERROR: ' + (e && e.stack || e));
+    window.__GATE.error = String(e && e.stack || e);
+    window.__GATE.done = true;
+  }
+});
+</script>
+</body>
+</html>
