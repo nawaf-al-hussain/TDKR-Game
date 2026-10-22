@@ -1,0 +1,118 @@
+segments used: 1521 of 1526
+distinct diffuse textures: 69
+textures missing/bad: ['FX_Coronas.tga', 'trunk.tga']
+REAL: {
+ "billboard": {
+  "segs": 183,
+  "verts": 24767,
+  "rate_vertw": 0.7819679434045235,
+  "enrichment_vertw": 1.1570140466146681,
+  "enrichment_median": 1.3114798039896844,
+  "tex_rand_rate_mean": 0.6758499999999997
+ },
+ "facade": {
+  "segs": 342,
+  "verts": 312403,
+  "rate_vertw": 0.879652243203801,
+  "enrichment_vertw": 0.9504188488921929,
+  "enrichment_median": 1.0,
+  "tex_rand_rate_mean": 0.9194739766081872
+ },
+ "other": {
+  "segs": 107,
+  "verts": 67981,
+  "rate_vertw": 0.915976524003629,
+  "enrichment_vertw": 0.958908761706555,
+  "enrichment_median": 1.0009509033581903,
+  "tex_rand_rate_mean": 0.9393397196261682
+ },
+ "props": {
+  "segs": 278,
+  "verts": 81284,
+  "rate_vertw": 0.765784175547991,
+  "enrichment_vertw": 0.9401690055852968,
+  "enrichment_median": 0.9635371149615565,
+  "tex_rand_rate_mean": 0.7584048561151079
+ },
+ "road": {
+  "segs": 157,
+  "verts": 67767,
+  "rate_vertw": 0.6857172358659996,
+  "enrichment_vertw": 1.136784574694683,
+  "enrichment_median": 1.0076582023377672,
+  "tex_rand_rate_mean": 0.6164853503184713
+ },
+ "rooftop": {
+  "segs": 173,
+  "verts": 74428,
+  "rate_vertw": 0.905129788537044,
+  "enrichment_vertw": 1.0607540051526674,
+  "enrichment_median": 1.0413653180886806,
+  "tex_rand_rate_mean": 0.8443028901734104
+ }
+}
+perm 0 done
+perm 1 done
+perm 2 done
+perm 3 done
+perm 4 done
+perm 5 done
+perm 6 done
+perm 7 done
+perm 8 done
+perm 9 done
+perm 10 done
+perm 11 done
+perm 12 done
+perm 13 done
+perm 14 done
+perm 15 done
+perm 16 done
+perm 17 done
+perm 18 done
+perm 19 done
+perm 20 done
+perm 21 done
+perm 22 done
+perm 23 done
+perm 24 done
+perm 25 done
+perm 26 done
+perm 27 done
+perm 28 done
+perm 29 done
+perm 30 done
+perm 31 done
+perm 32 done
+perm 33 done
+perm 34 done
+perm 35 done
+perm 36 done
+perm 37 done
+perm 38 done
+perm 39 done
+perm 40 done
+perm 41 done
+perm 42 done
+perm 43 done
+perm 44 done
+perm 45 done
+perm 46 done
+perm 47 done
+perm 48 done
+perm 49 done
+perm 50 done
+perm 51 done
+perm 52 done
+perm 53 done
+perm 54 done
+perm 55 done
+perm 56 done
+perm 57 done
+perm 58 done
+perm 59 done
+perm 60 done
+perm 61 done
+perm 62 done
+perm 63 done
+saved /tmp/my-project/work/TDKR-Game/extraction/re/session48/s48_t2_enrich.json

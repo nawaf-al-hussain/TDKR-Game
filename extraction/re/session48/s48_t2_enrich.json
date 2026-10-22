@@ -1,0 +1,777 @@
+{
+ "n_segs": 1521,
+ "n_tex": 69,
+ "nperm": 64,
+ "families": {
+  "billboard": {
+   "segs": 183,
+   "verts": 24767,
+   "rate_vertw": 0.7819679434045235,
+   "enrichment_vertw": 1.1570140466146681,
+   "enrichment_median": 1.3114798039896844,
+   "tex_rand_rate_mean": 0.6758499999999997,
+   "null_mean": 1.3104314230460972,
+   "null_std": 0.1413867513874787,
+   "z": -1.0850901864906326,
+   "log2_ratio": -0.17963547767476348,
+   "decisive": false,
+   "silent": false
+  },
+  "facade": {
+   "segs": 342,
+   "verts": 312403,
+   "rate_vertw": 0.879652243203801,
+   "enrichment_vertw": 0.9504188488921929,
+   "enrichment_median": 1.0,
+   "tex_rand_rate_mean": 0.9194739766081872,
+   "null_mean": 0.9501925740883012,
+   "null_std": 0.08729527827546542,
+   "z": 0.002592062347004452,
+   "log2_ratio": 0.00034351633905594427,
+   "decisive": false,
+   "silent": false
+  },
+  "other": {
+   "segs": 107,
+   "verts": 67981,
+   "rate_vertw": 0.915976524003629,
+   "enrichment_vertw": 0.958908761706555,
+   "enrichment_median": 1.0009509033581903,
+   "tex_rand_rate_mean": 0.9393397196261682,
+   "null_mean": 0.9212035780548877,
+   "null_std": 0.056002234318987466,
+   "z": 0.673279988013088,
+   "log2_ratio": 0.05787353743554923,
+   "decisive": false,
+   "silent": false
+  },
+  "props": {
+   "segs": 278,
+   "verts": 81284,
+   "rate_vertw": 0.765784175547991,
+   "enrichment_vertw": 0.9401690055852968,
+   "enrichment_median": 0.9635371149615565,
+   "tex_rand_rate_mean": 0.7584048561151079,
+   "null_mean": 1.1151365706559262,
+   "null_std": 0.14905365328477044,
+   "z": -1.1738562672809902,
+   "log2_ratio": -0.2462283823615191,
+   "decisive": false,
+   "silent": false
+  },
+  "road": {
+   "segs": 157,
+   "verts": 67767,
+   "rate_vertw": 0.6857172358659996,
+   "enrichment_vertw": 1.136784574694683,
+   "enrichment_median": 1.0076582023377672,
+   "tex_rand_rate_mean": 0.6164853503184713,
+   "null_mean": 1.5298018980558052,
+   "null_std": 0.32169879259714557,
+   "z": -1.2216934984026044,
+   "log2_ratio": -0.42838595943792085,
+   "decisive": false,
+   "silent": false
+  },
+  "rooftop": {
+   "segs": 173,
+   "verts": 74428,
+   "rate_vertw": 0.905129788537044,
+   "enrichment_vertw": 1.0607540051526674,
+   "enrichment_median": 1.0413653180886806,
+   "tex_rand_rate_mean": 0.8443028901734104,
+   "null_mean": 1.0540873629155723,
+   "null_std": 0.14844689534349587,
+   "z": 0.04490927359325409,
+   "log2_ratio": 0.009095683201865483,
+   "decisive": false,
+   "silent": false
+  }
+ },
+ "tex_census": [
+  {
+   "tex": "FX_Coronas.tga",
+   "family": "other",
+   "rand_rate": null,
+   "size": null,
+   "split": null
+  },
+  {
+   "tex": "GC_CBCE_Atlas.tga",
+   "family": "other",
+   "rand_rate": 0.99265,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Cath_of_learning_Brick.tga",
+   "family": "other",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Cath_of_learning_Rooftop_ground.tga",
+   "family": "rooftop",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Cath_of_learning_Wall.tga",
+   "family": "facade",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Cath_of_learning_Windows2_v.tga",
+   "family": "other",
+   "rand_rate": 0.99785,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Cath_of_learning_Windows_v.tga",
+   "family": "other",
+   "rand_rate": 0.99965,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_DMUS_wall.tga",
+   "family": "facade",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_AWT.tga",
+   "family": "facade",
+   "rand_rate": 0.87995,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_CC_windows02.tga",
+   "family": "facade",
+   "rand_rate": 0.97955,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_GA_TH.tga",
+   "family": "facade",
+   "rand_rate": 0.91105,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_GA_T_02.tga",
+   "family": "facade",
+   "rand_rate": 0.9999,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_IC.tga",
+   "family": "facade",
+   "rand_rate": 0.9046,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_LB_Cinema.tga",
+   "family": "facade",
+   "rand_rate": 0.94825,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_STD_alpha_T.tga",
+   "family": "facade",
+   "rand_rate": 0.68195,
+   "size": [
+    512,
+    512
+   ],
+   "split": true
+  },
+  {
+   "tex": "GC_Footprint_VD_Buildings.tga",
+   "family": "facade",
+   "rand_rate": 0.99395,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_VD_Buildings_2.tga",
+   "family": "facade",
+   "rand_rate": 0.99195,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_VD_Floor.tga",
+   "family": "facade",
+   "rand_rate": 0.979,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_VD_Floor_2.tga",
+   "family": "facade",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Footprint_VD_Items.tga",
+   "family": "facade",
+   "rand_rate": 0.93335,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Glass_Building.tga",
+   "family": "facade",
+   "rand_rate": 0.8817,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_IndustrialProps.tga",
+   "family": "props",
+   "rand_rate": 0.96775,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Park_atlas_props.tga",
+   "family": "props",
+   "rand_rate": 0.9937,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Park_atlas_tiles.tga",
+   "family": "other",
+   "rand_rate": 0.99975,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Park_statue.tga",
+   "family": "other",
+   "rand_rate": 0.64655,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_01_Door_01.tga",
+   "family": "facade",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_01_Roof_01.tga",
+   "family": "facade",
+   "rand_rate": 0.9998,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_01_Windows_04.tga",
+   "family": "facade",
+   "rand_rate": 1.0,
+   "size": [
+    256,
+    256
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_02_Shop.tga",
+   "family": "facade",
+   "rand_rate": 0.9981,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_03_details_01.tga",
+   "family": "facade",
+   "rand_rate": 0.9331,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_03_roof_01.tga",
+   "family": "facade",
+   "rand_rate": 0.993,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_03_roof_02.tga",
+   "family": "facade",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_03_wall_04.tga",
+   "family": "facade",
+   "rand_rate": 0.98185,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_04_Roof_02.tga",
+   "family": "facade",
+   "rand_rate": 0.999,
+   "size": [
+    256,
+    256
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_04_Wall_02.tga",
+   "family": "facade",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_BD_04_Windows_05_v.TGA",
+   "family": "facade",
+   "rand_rate": 0.99915,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_Dinner_objects.tga",
+   "family": "facade",
+   "rand_rate": 0.9228,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_Props_Excavator.tga",
+   "family": "facade",
+   "rand_rate": 0.4032,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_Props_Monorail.tga",
+   "family": "facade",
+   "rand_rate": 0.72115,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Residential_Props_Railroad.tga",
+   "family": "road",
+   "rand_rate": 0.4994,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_SXC_Atlas.tga",
+   "family": "other",
+   "rand_rate": 0.9981,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_SXC_Atlas2.tga",
+   "family": "other",
+   "rand_rate": 0.8206,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_SXC_Brick_02.tga",
+   "family": "other",
+   "rand_rate": 0.99935,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_SXC_Rooftop_ground.tga",
+   "family": "rooftop",
+   "rand_rate": 0.99995,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_SXC_hedge.tga",
+   "family": "other",
+   "rand_rate": 0.92835,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Statues_Atlas.tga",
+   "family": "other",
+   "rand_rate": 0.8296,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_T_Concrete_01.tga",
+   "family": "other",
+   "rand_rate": 0.99985,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_T_Concrete_02.tga",
+   "family": "other",
+   "rand_rate": 0.99905,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Truck_01.tga",
+   "family": "other",
+   "rand_rate": 0.9508,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Truck_wheels_01.tga",
+   "family": "other",
+   "rand_rate": 0.88015,
+   "size": [
+    128,
+    128
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Walls.tga",
+   "family": "facade",
+   "rand_rate": 0.98245,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Z1_Props_Rooftop.tga",
+   "family": "rooftop",
+   "rand_rate": 0.86425,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Z1_Props_Rooftop_Alpha.tga",
+   "family": "rooftop",
+   "rand_rate": 0.42415,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": true
+  },
+  {
+   "tex": "GC_Z1_Props_Street.tga",
+   "family": "props",
+   "rand_rate": 0.79045,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Z1_Props_Street_Alpha.tga",
+   "family": "props",
+   "rand_rate": 0.43355,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": true
+  },
+  {
+   "tex": "GC_Z1_Shops_01.tga",
+   "family": "other",
+   "rand_rate": 0.9308,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_Z1_Shops_02.tga",
+   "family": "other",
+   "rand_rate": 0.92825,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_footprint_AA_ground.tga",
+   "family": "facade",
+   "rand_rate": 0.99715,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_footprint_AB_atlas.tga",
+   "family": "facade",
+   "rand_rate": 0.91835,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_footprint_Vpow_furnal.tga",
+   "family": "facade",
+   "rand_rate": 0.99995,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_footprint_aa_concrete.tga",
+   "family": "facade",
+   "rand_rate": 0.9999,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GC_footprint_awt_marble.tga",
+   "family": "facade",
+   "rand_rate": 1.0,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "GothamCity_Road_Crossings_Island_1.tga",
+   "family": "road",
+   "rand_rate": 0.9088,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "GothamCity_bridge2.tga",
+   "family": "other",
+   "rand_rate": 0.94235,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "HC_Prop_BillboardRoof_01.tga",
+   "family": "billboard",
+   "rand_rate": 0.67585,
+   "size": [
+    2048,
+    2048
+   ],
+   "split": false
+  },
+  {
+   "tex": "bridge_1.tga",
+   "family": "other",
+   "rand_rate": 0.97675,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "bridge_tile.tga",
+   "family": "other",
+   "rand_rate": 0.67775,
+   "size": [
+    1024,
+    1024
+   ],
+   "split": false
+  },
+  {
+   "tex": "gothamcity_roads_details.tga",
+   "family": "road",
+   "rand_rate": 0.9924,
+   "size": [
+    512,
+    512
+   ],
+   "split": false
+  },
+  {
+   "tex": "trunk.tga",
+   "family": "other",
+   "rand_rate": null,
+   "size": null,
+   "split": null
+  }
+ ]
+}

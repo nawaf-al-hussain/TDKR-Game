@@ -1,0 +1,54 @@
+{
+ "road276 GLB-proven": {
+  "k": 695,
+  "mat": 73,
+  "own_tex": "gothamcity_roads_details.tga",
+  "own_rate": 1.0,
+  "own_rand_rate": 0.99295,
+  "own_enrichment": 1.007100055390503,
+  "n_others": 89,
+  "others_rate_mean": 0.8869370750446371,
+  "others_rate_std": 0.21461513852735897,
+  "others_rate_p90": 1.0,
+  "z_vs_others": 0.5268171002784263
+ },
+ "stride28 SPLIT": {
+  "k": 1525,
+  "mat": 302,
+  "own_tex": "GC_Z1_Props_Street_Alpha.tga",
+  "own_rate": 0.24074074074074073,
+  "own_rand_rate": 0.4282,
+  "own_enrichment": 0.562215648623869,
+  "n_others": 90,
+  "others_rate_mean": 0.8511316872427983,
+  "others_rate_std": 0.25410712487710624,
+  "others_rate_p90": 1.0,
+  "z_vs_others": -2.402100872987559
+ },
+ "cls2017 billboard": {
+  "k": 14,
+  "mat": 300,
+  "own_tex": "HC_Prop_BillboardRoof_01.tga",
+  "own_rate": 0.6666666666666666,
+  "own_rand_rate": 0.6818,
+  "own_enrichment": 0.977803852547179,
+  "n_others": 89,
+  "others_rate_mean": 0.8436329588014982,
+  "others_rate_std": 0.2589895087745649,
+  "others_rate_p90": 1.0,
+  "z_vs_others": -0.6832952152057521
+ },
+ "cls24nc props": {
+  "k": 100,
+  "mat": 11,
+  "own_tex": "GC_Z1_Props_Street.tga",
+  "own_rate": 0.7131630648330058,
+  "own_rand_rate": 0.7921,
+  "own_enrichment": 0.9003447353023681,
+  "n_others": 90,
+  "others_rate_mean": 0.8871207160008733,
+  "others_rate_std": 0.1942340547169123,
+  "others_rate_p90": 1.0,
+  "z_vs_others": -0.8956084010113857
+ }
+}
