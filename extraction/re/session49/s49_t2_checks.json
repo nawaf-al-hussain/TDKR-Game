@@ -1,0 +1,170 @@
+{
+ "a_atlas_containment": {
+  "pages": [
+   {
+    "page": "GC_Z1_Props_Rooftop_Alpha.tga",
+    "segs": 10,
+    "cells": 11,
+    "real_mean": 1.0,
+    "null_mean": 0.8666,
+    "null_std": 0.2023,
+    "z": 0.66
+   },
+   {
+    "page": "HC_Prop_BillboardRoof_01.tga",
+    "segs": 60,
+    "cells": 27,
+    "real_mean": 0.7833,
+    "null_mean": 0.6876,
+    "null_std": 0.3873,
+    "z": 0.25
+   },
+   {
+    "page": "GC_Z1_Props_Street.tga",
+    "segs": 60,
+    "cells": 49,
+    "real_mean": 0.8993,
+    "null_mean": 0.9688,
+    "null_std": 0.0825,
+    "z": -0.84
+   },
+   {
+    "page": "GC_Z1_Props_Rooftop.tga",
+    "segs": 60,
+    "cells": 12,
+    "real_mean": 0.75,
+    "null_mean": 0.8111,
+    "null_std": 0.2064,
+    "z": -0.3
+   },
+   {
+    "page": "GC_Residential_Props_Railroad.tga",
+    "segs": 60,
+    "cells": 1,
+    "real_mean": 0.6859,
+    "null_mean": 0.9671,
+    "null_std": 0.0959,
+    "z": -2.93
+   },
+   {
+    "page": "GC_Park_atlas_props.tga",
+    "segs": 15,
+    "cells": 1,
+    "real_mean": 1.0,
+    "null_mean": 0.8423,
+    "null_std": 0.2918,
+    "z": 0.54
+   }
+  ]
+ },
+ "b_road_direction": {
+  "real_mean_deg": 43.42,
+  "null_mean_deg": 45.53,
+  "per_seg": [
+   {
+    "k": 673,
+    "axis": 143.2,
+    "ori": 137.6,
+    "d_real": 5.6,
+    "d_null_mean": 12.0
+   },
+   {
+    "k": 674,
+    "axis": 176.2,
+    "ori": 96.3,
+    "d_real": 79.9,
+    "d_null_mean": 78.2
+   },
+   {
+    "k": 675,
+    "axis": 165.4,
+    "ori": 104.9,
+    "d_real": 60.5,
+    "d_null_mean": 43.4
+   },
+   {
+    "k": 676,
+    "axis": 103.9,
+    "ori": 149.3,
+    "d_real": 45.4,
+    "d_null_mean": 55.8
+   },
+   {
+    "k": 677,
+    "axis": 53.0,
+    "ori": 69.1,
+    "d_real": 16.1,
+    "d_null_mean": 26.3
+   },
+   {
+    "k": 678,
+    "axis": 84.1,
+    "ori": 6.7,
+    "d_real": 77.4,
+    "d_null_mean": 83.2
+   },
+   {
+    "k": 679,
+    "axis": 109.5,
+    "ori": 164.1,
+    "d_real": 54.6,
+    "d_null_mean": 47.1
+   },
+   {
+    "k": 680,
+    "axis": 16.1,
+    "ori": 64.9,
+    "d_real": 48.8,
+    "d_null_mean": 33.4
+   },
+   {
+    "k": 681,
+    "axis": 27.1,
+    "ori": 53.6,
+    "d_real": 26.5,
+    "d_null_mean": 26.9
+   },
+   {
+    "k": 682,
+    "axis": 67.6,
+    "ori": 96.2,
+    "d_real": 28.6,
+    "d_null_mean": 28.6
+   },
+   {
+    "k": 683,
+    "axis": 73.5,
+    "ori": 26.6,
+    "d_real": 46.8,
+    "d_null_mean": 46.0
+   },
+   {
+    "k": 684,
+    "axis": 155.2,
+    "ori": 122.9,
+    "d_real": 32.3,
+    "d_null_mean": 38.0
+   },
+   {
+    "k": 685,
+    "axis": 77.2,
+    "ori": 20.5,
+    "d_real": 56.7,
+    "d_null_mean": 63.8
+   },
+   {
+    "k": 686,
+    "axis": 124.4,
+    "ori": 153.1,
+    "d_real": 28.7,
+    "d_null_mean": 54.7
+   }
+  ]
+ },
+ "c_lm_seam": {
+  "real_mean": 27.495,
+  "null_mean": 36.773,
+  "n_real": 107,
+  "n_null": 283
+ }
+}
