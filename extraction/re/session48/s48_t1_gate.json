@@ -1,0 +1,44 @@
+{
+ "console_errors": 0,
+ "page_errors": 0,
+ "digest_match": true,
+ "blocks": [
+  {
+   "tag": "road276",
+   "mode": "lm2",
+   "corr": 0.9999570372440362,
+   "tc1_bbox_maxdiff": 0.0,
+   "tc1_area_diff": 0.0,
+   "ok": true
+  },
+  {
+   "tag": "stride28",
+   "mode": "additive",
+   "corr": 0.9997922125378741,
+   "color0_mean_py": 16.71759259259259,
+   "color0_mean_js": 0.06555918818425939,
+   "ok": true
+  },
+  {
+   "tag": "cls24nc",
+   "mode": "plain",
+   "corr": 1,
+   "ok": true
+  },
+  {
+   "tag": "cls2017",
+   "mode": "plain",
+   "corr": 1,
+   "ok": true
+  },
+  {
+   "tag": "road696",
+   "mode": "lm2",
+   "corr": 0.9999669501625479,
+   "tc1_bbox_maxdiff": 0.0,
+   "tc1_area_diff": 0.0,
+   "ok": true
+  }
+ ],
+ "verdict": true
+}
