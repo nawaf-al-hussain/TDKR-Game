@@ -602,14 +602,14 @@ const DEFS_Z = {
 const IDENT4 = new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]);
 
 /* follow camera: top-down ortho centered on the capsule, height = depth.
- * Same math family as city_zone2 (pixel-space ortho, clip_z = 1 - h/200). */
+ * Same math family as city_zone2 (pixel-space ortho; s50 T1: depth window [-100,+250], clip_z = -2h/350 + 150/350 — the old 1-h/200 clipped all h<0 water/shore). */
 const VIEWW = 240, VIEWH = 240 * H / W;
 function camWVP(cx, cz) {
   return new Float32Array([
     2 / VIEWW, 0, 0, 0,
     0, -2 / VIEWH, 0, 0,
-    0, 0, -1 / 200, 0,
-    -2 * cx / VIEWW, 2 * cz / VIEWH, 1, 1,
+    0, 0, -2 / 350, 0,
+    -2 * cx / VIEWW, 2 * cz / VIEWH, 150 / 350, 1,
   ]);
 }
 
