@@ -1,0 +1,49 @@
+{
+ "qs": "?probe=1&skipmiss=1&only=SimpleAdditive&ref=s50_ref_SimpleAdditive.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 2885.8000000044703,
+  "heap_mb": 1373,
+  "draws": 5,
+  "tris": 640,
+  "tex_decoded": 4,
+  "corr": 0.9576989922343371,
+  "js_mean": 0.0034941029614325068,
+  "ref_mean": 0.003408014807162534,
+  "glerr": [
+   [
+    "skipmiss:SimpleAdditive",
+    942,
+    0
+   ],
+   [
+    "skipmiss:SimpleAdditive",
+    72,
+    0
+   ]
+  ],
+  "mode": {
+   "flat": false,
+   "only": "SimpleAdditive",
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [
+  [
+   "skipmiss:SimpleAdditive",
+   942,
+   0
+  ],
+  [
+   "skipmiss:SimpleAdditive",
+   72,
+   0
+  ]
+ ],
+ "console_errors": [],
+ "page_errors": []
+}

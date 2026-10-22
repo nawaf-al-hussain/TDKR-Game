@@ -1,0 +1,27 @@
+{
+ "qs": "?probe=1&skipmiss=1&mat=73&nolm=1&bb=-260,-1230,85,-1030&ref=s50_ref_seg695_snap.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 2765.4999999962747,
+  "heap_mb": 1373,
+  "draws": 1,
+  "tris": 8525,
+  "tex_decoded": 2,
+  "corr": 0.756412872258952,
+  "js_mean": 8.519270833332278,
+  "ref_mean": 21.871256241393112,
+  "glerr": [],
+  "mode": {
+   "flat": false,
+   "only": null,
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [],
+ "console_errors": [],
+ "page_errors": []
+}

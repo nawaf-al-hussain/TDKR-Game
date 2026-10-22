@@ -1,0 +1,18 @@
+{
+ "variant": {
+  "flat": false,
+  "only": "other"
+ },
+ "W": 1024,
+ "H": 605,
+ "scale": 0.5672529339790344,
+ "n_seg_drawn": 1521,
+ "batches": 1139,
+ "tex_stats": {
+  "miss": 6,
+  "hit": 12068,
+  "evict": 0
+ },
+ "mean_lum": 2.0069308280944824,
+ "digest": "660d00ba2e08cfafe59aa1160f1e3990d56d9d10e67752a9cfe22b003cdaecbd"
+}

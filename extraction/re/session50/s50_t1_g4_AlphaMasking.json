@@ -1,0 +1,27 @@
+{
+ "qs": "?probe=1&skipmiss=1&only=AlphaMasking&ref=s50_ref_AlphaMasking.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 2824.2000000067055,
+  "heap_mb": 1373,
+  "draws": 5,
+  "tris": 1640,
+  "tex_decoded": 5,
+  "corr": 0.5708831761309601,
+  "js_mean": 0.01307679063360882,
+  "ref_mean": 0.007816266356749311,
+  "glerr": [],
+  "mode": {
+   "flat": false,
+   "only": "AlphaMasking",
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [],
+ "console_errors": [],
+ "page_errors": []
+}

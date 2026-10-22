@@ -1,0 +1,89 @@
+{
+ "qs": "?probe=1&skipmiss=1",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 3961.900000002235,
+  "heap_mb": 1373,
+  "draws": 132,
+  "tris": 346772,
+  "tex_decoded": 71,
+  "corr": 0.9212618782099569,
+  "js_mean": 4.103659822658343,
+  "ref_mean": 5.109806516873219,
+  "glerr": [
+   [
+    "skipmiss:SimpleAdditive",
+    942,
+    0
+   ],
+   [
+    "skipmiss:other",
+    906,
+    0
+   ],
+   [
+    "skipmiss:LightMapDC",
+    42291,
+    0
+   ],
+   [
+    "skipmiss:LightMapDC",
+    12,
+    0
+   ],
+   [
+    "skipmiss:SimpleAdditive",
+    72,
+    0
+   ],
+   [
+    "skipmiss:other",
+    21678,
+    0
+   ]
+  ],
+  "mode": {
+   "flat": false,
+   "only": null,
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [
+  [
+   "skipmiss:SimpleAdditive",
+   942,
+   0
+  ],
+  [
+   "skipmiss:other",
+   906,
+   0
+  ],
+  [
+   "skipmiss:LightMapDC",
+   42291,
+   0
+  ],
+  [
+   "skipmiss:LightMapDC",
+   12,
+   0
+  ],
+  [
+   "skipmiss:SimpleAdditive",
+   72,
+   0
+  ],
+  [
+   "skipmiss:other",
+   21678,
+   0
+  ]
+ ],
+ "console_errors": [],
+ "page_errors": []
+}

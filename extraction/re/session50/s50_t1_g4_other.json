@@ -1,0 +1,49 @@
+{
+ "qs": "?probe=1&skipmiss=1&only=other&ref=s50_ref_other.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 2670.800000000745,
+  "heap_mb": 1373,
+  "draws": 6,
+  "tris": 4546,
+  "tex_decoded": 5,
+  "corr": 0.994497321603495,
+  "js_mean": 2.010999375860926,
+  "ref_mean": 2.006930634469741,
+  "glerr": [
+   [
+    "skipmiss:other",
+    906,
+    0
+   ],
+   [
+    "skipmiss:other",
+    21678,
+    0
+   ]
+  ],
+  "mode": {
+   "flat": false,
+   "only": "other",
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [
+  [
+   "skipmiss:other",
+   906,
+   0
+  ],
+  [
+   "skipmiss:other",
+   21678,
+   0
+  ]
+ ],
+ "console_errors": [],
+ "page_errors": []
+}

@@ -1,0 +1,27 @@
+{
+ "qs": "?only=LightMapDC&skipmiss=1&lmonly=1&ref=s50_ref_LMDC_lmonly.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 3758.5000000037253,
+  "heap_mb": 1373,
+  "draws": 113,
+  "tris": 283717,
+  "tex_decoded": 70,
+  "corr": 0.4430753635735872,
+  "js_mean": 13.466298101761275,
+  "ref_mean": 0.0052002625688705095,
+  "glerr": [],
+  "mode": {
+   "flat": false,
+   "only": "LightMapDC",
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [],
+ "console_errors": [],
+ "page_errors": []
+}

@@ -1,0 +1,18 @@
+{
+ "variant": {
+  "flat": false,
+  "only": "LightMapDC"
+ },
+ "W": 1024,
+ "H": 605,
+ "scale": 0.5672529339790344,
+ "n_seg_drawn": 1521,
+ "batches": 23721,
+ "tex_stats": {
+  "miss": 90,
+  "hit": 321449,
+  "evict": 68
+ },
+ "mean_lum": 11.401900291442871,
+ "digest": "c3891d64681a566eaf4773e5b1acce03a15236561b9d0ac476a570c5f23aea1f"
+}

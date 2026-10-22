@@ -1,0 +1,27 @@
+{
+ "qs": "?probe=1&skipmiss=1&mat=73&nolm=1&ref=s50_ref_mat73_noLM.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 2550.5,
+  "heap_mb": 1373,
+  "draws": 1,
+  "tris": 8525,
+  "tex_decoded": 2,
+  "corr": 0.7816221914893289,
+  "js_mean": 2.192368823174844,
+  "ref_mean": 5.878910016357073,
+  "glerr": [],
+  "mode": {
+   "flat": false,
+   "only": null,
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [],
+ "console_errors": [],
+ "page_errors": []
+}

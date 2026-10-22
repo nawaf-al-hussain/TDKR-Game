@@ -1,0 +1,25 @@
+{
+ "qs": "?painter=1&probe=1&ref=s50_ref_flat.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 2729.89999999851,
+  "painter": {
+   "tris": 368749,
+   "ms": 317
+  },
+  "corr": 0.8066725967662667,
+  "js_mean": 15.983264462809917,
+  "ref_mean": 22.739669421487605
+ },
+ "glerr": [
+  [
+   "painter",
+   368749,
+   0
+  ]
+ ],
+ "console_errors": [],
+ "page_errors": []
+}

@@ -1,0 +1,49 @@
+{
+ "qs": "?probe=1&skipmiss=1&only=LightMapDC&nolm=1&ref=s50_ref_LMDC_noLM_zb.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 3983.60000000149,
+  "heap_mb": 1373,
+  "draws": 113,
+  "tris": 283717,
+  "tex_decoded": 70,
+  "corr": 0.8345454106365812,
+  "js_mean": 7.763736441114299,
+  "ref_mean": 11.401901472106228,
+  "glerr": [
+   [
+    "skipmiss:LightMapDC",
+    42291,
+    0
+   ],
+   [
+    "skipmiss:LightMapDC",
+    12,
+    0
+   ]
+  ],
+  "mode": {
+   "flat": false,
+   "only": "LightMapDC",
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [
+  [
+   "skipmiss:LightMapDC",
+   42291,
+   0
+  ],
+  [
+   "skipmiss:LightMapDC",
+   12,
+   0
+  ]
+ ],
+ "console_errors": [],
+ "page_errors": []
+}

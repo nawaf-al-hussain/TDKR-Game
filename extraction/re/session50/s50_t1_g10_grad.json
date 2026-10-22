@@ -1,0 +1,27 @@
+{
+ "qs": "?probe=1&skipmiss=1&mat=73&grad=1&bb=-260,-1230,85,-1030&ref=s50_ref_seg695_grad.png",
+ "no_errors": true,
+ "gate": {
+  "done": true,
+  "heapSamples": [],
+  "first_image_ms": 2630.5,
+  "heap_mb": 1373,
+  "draws": 1,
+  "tris": 8525,
+  "tex_decoded": 2,
+  "corr": 0.8132557046981018,
+  "js_mean": 2.412237969180082,
+  "ref_mean": 7.050232438016858,
+  "glerr": [],
+  "mode": {
+   "flat": false,
+   "only": null,
+   "skipmiss": true,
+   "ext": true,
+   "painter": false
+  }
+ },
+ "glerr": [],
+ "console_errors": [],
+ "page_errors": []
+}
