@@ -1,0 +1,28 @@
+{
+ "done": true,
+ "heapSamples": [
+  1440000000,
+  1440000000,
+  1440000000,
+  1440000000,
+  1440000000
+ ],
+ "t_load_ms": 2456.39999999851,
+ "t_decode_ms": 71.10000000149012,
+ "t_render_ms": 46068.199999999255,
+ "segs": 1526,
+ "tris_total": 368749,
+ "tris_drawn": 346772,
+ "tex_binds": 30500,
+ "tex_lru": {
+  "miss": 2147,
+  "hit": 541532,
+  "evict": 2127
+ },
+ "peak_heap_mb": 1373.291015625,
+ "corr": 0.9999359633986026,
+ "scale": 0.5672529625205034,
+ "console_errors": 0,
+ "page_errors": 0,
+ "verdict": true
+}

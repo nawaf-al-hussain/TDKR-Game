@@ -1,0 +1,16 @@
+{
+ "W": 1024,
+ "H": 605,
+ "scale": 0.5672529339790344,
+ "n_seg_drawn": 1526,
+ "batches": 346772,
+ "tex_binds": 30500,
+ "tex_stats": {
+  "miss": 549,
+  "hit": 392014,
+  "evict": 508
+ },
+ "mean_lum": 5.17225456237793,
+ "digest": "5ff8f73180b21e6ceac22da0c15879884093671fcf2f344b54233fb9602983ff",
+ "note": "NormalSpecOverbright/NV_Glass/LightmapVCBlendDC/unknown rendered diffuse-only (documented deviation, same both sides)"
+}

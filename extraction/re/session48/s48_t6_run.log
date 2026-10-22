@@ -1,0 +1,6 @@
+bindings from compiled table: diff 296, lm 284
+segments drawn: 1526
+zone AABB x[-1620.0 185.2] z[-1312.7 -246.8] scale 0.5673 px/u
+total triangles: 368749 painter order built at 0.4 s
+raster done at 101.9 s (batches 346772, tex binds 30500, tex stats {'miss': 549, 'hit': 392014, 'evict': 508})
+saved /tmp/my-project/work/city_slice_wt/playable/s48_ref_zone.png digest 5ff8f73180b21e6c mean 5.17
