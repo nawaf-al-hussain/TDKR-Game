@@ -1,0 +1,46 @@
+{
+ "qs": "?corrupt=1",
+ "gate_pass": false,
+ "checks": {
+  "no_errors": true,
+  "nm_self_check": false,
+  "soup_digest": false,
+  "routes_agree": false,
+  "batman_ok": false,
+  "silhouette_in_range": false,
+  "motion_detected": false,
+  "camera_followed": false
+ },
+ "gate": {
+  "ready": true,
+  "done": true,
+  "heapSamples": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10
+  ],
+  "corruptControl": true,
+  "nmSelfCheck": false,
+  "failReason": "nm_self_check_failed",
+  "consoleErrors": [],
+  "heap_mb": 10,
+  "heap_mb_peak": 10,
+  "wall_ms": 17314
+ },
+ "console_errors": [],
+ "page_errors": []
+}

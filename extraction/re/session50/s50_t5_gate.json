@@ -1,0 +1,198 @@
+{
+ "qs": "",
+ "gate_pass": true,
+ "checks": {
+  "no_errors": true,
+  "nm_self_check": true,
+  "soup_digest": true,
+  "routes_agree": true,
+  "batman_ok": true,
+  "silhouette_in_range": true,
+  "motion_detected": true,
+  "camera_followed": true
+ },
+ "gate": {
+  "ready": true,
+  "done": true,
+  "heapSamples": [
+   905,
+   905,
+   905,
+   905,
+   905,
+   905,
+   905,
+   905,
+   905,
+   905,
+   905,
+   905,
+   905,
+   905
+  ],
+  "corruptControl": false,
+  "nmSelfCheck": true,
+  "soupDigestPass": true,
+  "soup": {
+   "nTri": 137893,
+   "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+  },
+  "routes": {
+   "run": 10,
+   "agree": 10,
+   "results": [
+    {
+     "route": 3,
+     "verdict": "stuck_wall",
+     "dist": 305.23,
+     "expected": "stuck_wall",
+     "expected_dist": 305.2,
+     "agree": true,
+     "dist_delta": 0.03,
+     "ms": 38
+    },
+    {
+     "route": 6,
+     "verdict": "fell",
+     "dist": 321,
+     "expected": "fell",
+     "expected_dist": 321,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 15
+    },
+    {
+     "route": 7,
+     "verdict": "fell",
+     "dist": 382.5,
+     "expected": "fell",
+     "expected_dist": 382.5,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 28
+    },
+    {
+     "route": 10,
+     "verdict": "stuck_wall",
+     "dist": 1076.038,
+     "expected": "stuck_wall",
+     "expected_dist": 1076,
+     "agree": true,
+     "dist_delta": 0.038,
+     "ms": 52
+    },
+    {
+     "route": 12,
+     "verdict": "ok",
+     "dist": 392,
+     "expected": "ok",
+     "expected_dist": 392,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 25
+    },
+    {
+     "route": 15,
+     "verdict": "stuck_wall",
+     "dist": 443.067,
+     "expected": "stuck_wall",
+     "expected_dist": 443.1,
+     "agree": true,
+     "dist_delta": 0.033,
+     "ms": 36
+    },
+    {
+     "route": 19,
+     "verdict": "ok",
+     "dist": 931,
+     "expected": "ok",
+     "expected_dist": 931,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 48
+    },
+    {
+     "route": 22,
+     "verdict": "fell",
+     "dist": 62.7,
+     "expected": "fell",
+     "expected_dist": 62.7,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 3
+    },
+    {
+     "route": 27,
+     "verdict": "stuck_wall",
+     "dist": 301.235,
+     "expected": "stuck_wall",
+     "expected_dist": 301.2,
+     "agree": true,
+     "dist_delta": 0.035,
+     "ms": 31
+    },
+    {
+     "route": 33,
+     "verdict": "stuck_wall",
+     "dist": 122.009,
+     "expected": "stuck_wall",
+     "expected_dist": 122,
+     "agree": true,
+     "dist_delta": 0.009,
+     "ms": 8
+    }
+   ]
+  },
+  "zone": {
+   "batches": 138,
+   "texDecoded": 71,
+   "texMiss": 2,
+   "buildMs": 1820
+  },
+  "batman": {
+   "ok": true,
+   "verts": 1449,
+   "clips": [
+    "_001_idle_stand",
+    "_007_walk",
+    "_008_run"
+   ]
+  },
+  "first_image_ms": 8823,
+  "draws": 138,
+  "tris": 368739,
+  "pixelStats": [
+   {
+    "mean": 16.183,
+    "std": 36.308
+   },
+   {
+    "mean": 15.886,
+    "std": 36.103
+   },
+   {
+    "mean": 15.813,
+    "std": 36.042
+   }
+  ],
+  "camera": {
+   "frameDiffWalk": [
+    406223,
+    535154
+   ],
+   "frameDiffIdle": 0,
+   "cameraTravelM": 5.6,
+   "silhouettePx": 3081
+  },
+  "silhouetteInRange": true,
+  "motionDetected": true,
+  "cameraFollowed": true,
+  "pass": true,
+  "consoleErrors": [],
+  "heap_mb": 905,
+  "heap_mb_peak": 905,
+  "wall_ms": 16091
+ },
+ "console_errors": [],
+ "page_errors": []
+}
