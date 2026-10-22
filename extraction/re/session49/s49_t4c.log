@@ -1,0 +1,12 @@
+GothamCity.zip failing segs with normal data: 197 passing: 1329
+  face-normal agreement (verts with n.v>0.85): failing mean 0.006 median 0.000 | passing mean 0.011 median 0.000
+  failing top materials: [(13, 95), (14, 29), (74, 12), (86, 11), (116, 11), (0, 5), (138, 4), (35, 3)]
+  failing strides: {20: 5, 24: 192} effects: {'StandardDiffuseDC': 124, 'LightMapDC': 66, 'ProfileCOMMON__1_-_Default': 5, 'NormalSpecOverbright': 2}
+  passing strides: {24: 1225, 20: 95, 28: 9} effects: {'LightMapDC': 975, 'StandardDiffuseDC': 200, 'SimpleAdditive': 94, 'AlphaMasking': 32, 'NormalSpecOverbright': 19}
+fx table skip: index 98216 is out of bounds for axis 0 with size 73553
+GothamCity_Island2.zip failing segs with normal data: 156 passing: 864
+  face-normal agreement (verts with n.v>0.85): failing mean 0.001 median 0.000 | passing mean 0.016 median 0.011
+  failing top materials: [(5, 84), (14, 6), (22, 6), (27, 5), (77, 5), (108, 5), (127, 5), (13, 4)]
+  failing strides: {24: 156} effects: {'?': 156}
+  passing strides: {24: 839, 20: 25} effects: {'?': 864}
+saved /tmp/my-project/work/TDKR-Game/extraction/re/session49/s49_t4_classify.json
