@@ -1,0 +1,34 @@
+{
+ "blocks": [
+  {
+   "block": [
+    -462,
+    -768
+   ],
+   "mean_deployed": 6.435078125,
+   "mean_engine": 6.4222724609375,
+   "ratio_engine_over_deployed": 0.9980100219742865,
+   "js_hist64": 0.0001930424110218887
+  },
+  {
+   "block": [
+    -900,
+    -600
+   ],
+   "mean_deployed": 6.13387890625,
+   "mean_engine": 6.1288232421875,
+   "ratio_engine_over_deployed": 0.999175780262413,
+   "js_hist64": 0.0001281815994705338
+  },
+  {
+   "block": [
+    -300,
+    -1100
+   ],
+   "mean_deployed": 7.23454296875,
+   "mean_engine": 7.1909423828125,
+   "ratio_engine_over_deployed": 0.9939732770783399,
+   "js_hist64": 0.0007644896548502812
+  }
+ ]
+}

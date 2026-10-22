@@ -1,0 +1,35 @@
+--- app_orig.js	2026-10-22 15:45:56.529323167 +0000
++++ app_fogonly.js	2026-10-22 15:45:56.622601296 +0000
+@@ -53,9 +53,10 @@
+ // 0xc22ce4; C2 ctor default 1.0f @0x4a91f0; DeviceOptions::LoadOptions key
+ // "Fog distance factor" -> +0x1c). Shipped GPU_5.xml (top profile) = 1.1.
+ // SetFogDistance: start' = start*s, end' = end*s -> FogStartEnd=(0, 1/154).
++const ENGFOG = new URLSearchParams(location.search).has('engfog');
+ const FOG = {
+-  start: 0.0,                    // GI +0x0c  (fogStart)
+-  end: 154.0,                    // GI +0x10 140.0 x GPU_5 "Fog distance factor" 1.1
++  start: 0.0,
++  end: (typeof ENGFOG !== 'undefined' && ENGFOG) ? 140.0 : 154.0,                    // GI +0x10 140.0 x GPU_5 "Fog distance factor" 1.1
+   color: [64 / 255, 102 / 255, 119 / 255],  // GI +0x14 RGBA(64,102,119,160)
+   colorA: 160 / 255,
+   vfogHeight: 0.013,             // GI +0x58 -> global param (VerticalFogHeight)
+@@ -427,7 +428,8 @@
+   // exact TEXTURE_FOG path (LightmapVCBlendDC-f.glsl):
+   vec4 FogMapColor = vec4(texture2D(uFogTex, vFogUV).rgb, uVFogAlpha);
+   vec4 fogCol2 = mix(FogMapColor, vec4(uFogColor, uFogAlpha), clamp(vFogY, 0.0, 1.0));
+-  col = mix(col, fogCol2.rgb, clamp(vFogFactor, 0.0, 1.0) * fogCol2.a);
++${ENGFOG ? ("  float gsCF = dot(col, vec3(0.149, 0.293, 0.57));\n  col = mix(col, uFogColor, clamp(vFogFactor, 0.0, 1.0) * (1.0 - gsCF) * uFogAlpha);  // s50 T6 ENGINE path (ComputeFogFS)") : (
++  "  col = mix(col, fogCol2.rgb, clamp(vFogFactor, 0.0, 1.0) * fogCol2.a);")}
+   gl_FragColor = vec4(col, 1.0);
+ }`;
+ 
+@@ -494,7 +496,8 @@
+         vec3 col = texture2D(map, vUv).rgb * texture2D(lmap, vUv1).rgb * uMult;
+         vec4 FogMapColor = vec4(texture2D(uFogTex, vFogUV).rgb, uVFogAlpha);
+         vec4 fogCol2 = mix(FogMapColor, vec4(uFogColor, uFogAlpha), clamp(vFogY, 0.0, 1.0));
+-        col = mix(col, fogCol2.rgb, clamp(vFogFactor, 0.0, 1.0) * fogCol2.a);
++      ${ENGFOG ? ("  float gsCF = dot(col, vec3(0.149, 0.293, 0.57));\n  col = mix(col, uFogColor, clamp(vFogFactor, 0.0, 1.0) * (1.0 - gsCF) * uFogAlpha);  // s50 T6 ENGINE path (ComputeFogFS)") : (
++  "  col = mix(col, fogCol2.rgb, clamp(vFogFactor, 0.0, 1.0) * fogCol2.a);")}
+         gl_FragColor = vec4(col, 1.0);
+       }`,
+     side: THREE.DoubleSide,
