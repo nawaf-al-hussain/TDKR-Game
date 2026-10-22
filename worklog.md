@@ -633,3 +633,19 @@ Stage Summary:
 - T5 PASS (staged only, NOT deployed). Integration page demonstrates: engine shaders + engine bindings zone render, user-file walker with harness-verified physics, user-zip Batman, camera follow, full gate set with a detecting negative control
 - Heap note: zip-dominated peak (~905 MB in-browser during load) as in T4a; <400 MB steady state NOT certified
 - Carry-over: zone renderer fidelity gap (T4a corr 0.68) unresolved and inherited by the integration view; fog/post not yet composited into the zone path
+
+---
+Task ID: s49-T6
+Agent: main (Z.ai session 49 continuation)
+Task: T6 push / live verify / bundles / final refs
+
+Work Log:
+- Bundles (verified, untracked): download/bundles_s49/main_s49_inc.bundle 58b7f3a..dbd1e11 (1,401,015 B, SHA256 086484f5...90c25); branch_s41_s49inc.bundle 08ec3b3..bf76529 (21,007 B, 1d2c95db...ed16); branch_staged_s49.bundle 62b4ffd..bc94daa (19,447 B, f0c97ecf...0812)
+- Push (token via askpass, single invocation): main 58b7f3a->dbd1e11, s41-city-slice 646a267->bf76529, gh-pages-staged-s44 62b4ffd->bc94daa. gh-pages NOT pushed (no deploy instruction) — LIVE stays 16a22ce
+- Live verified: https://nawaf-al-hussain.github.io/TDKR-Game/ 200 "Gotham City — TDKR (2012) viewer" 0 console errors; /playable/index.html?userfiles=1 200 "TDKR first playable — walk as Batman", app booted (three_loaded, __P live), walker ?userfiles=1 note rendered, 0 console errors (s49_t6_live.json/png)
+- Backup mirror synced (plain file mirror, no .git, rsync)
+- Option (a) estimate (carried from receipt + T5): zone GL renderer fidelity gap (corr 0.68 -> 0.99: per-pixel shading/binding diff), fog/post into the zone path, integration-page city-lit polish, cross-region navigation + mission flow — ~1.5-2 sessions
+
+Stage Summary:
+- S49 final: T1 PASS, T2 partial (1 powered check PASS), T3 PASS, T4 partial (speed PASS / corr gate NOT met), T5 PASS (staged), T6 pushed+live
+- Remote after push: main dbd1e11, gh-pages 16a22ce (LIVE, untouched), s41-city-slice bf76529, gh-pages-staged-s44 bc94daa, s40 80274a1, essentials-s36 7c8defc, gh-pages-staged 39298a4

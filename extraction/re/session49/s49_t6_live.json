@@ -1,0 +1,10 @@
+{
+ "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/index.html",
+ "status": 200,
+ "title": "TDKR first playable \u2014 walk as Batman (r25 T6)",
+ "has_zip_input": false,
+ "zip_input_note": "appears after ?userfiles=1 init",
+ "walker_note": "T6 first playable \u2014 WASD/arrows to walk, Shift = run.\nTriggers fire Lua via fengari.\n?userfiles=1: ground = navmesh + walls = collision soup, both parsed from YOUR zip (s45 T2 walker adoption).",
+ "console_errors": [],
+ "three_loaded": true
+}
