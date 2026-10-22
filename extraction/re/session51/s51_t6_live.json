@@ -1,0 +1,17 @@
+{
+ "viewer": {
+  "console_errors": [],
+  "n_requests": 142,
+  "has_gc_collision": false,
+  "glb_probe": "scene children 25",
+  "body": "Batarang\neaster egg\nStreet level\n21 glb \u00b7 1446k tris\nSkyline (baked city)\n5 glb \u00b7 58k tris\nHero units\n11 glb \u00b7 17k tris\n"
+ },
+ "walktest": {
+  "console_errors": [
+   "Failed to load resource: the server responded with a status of 404 ()"
+  ],
+  "n_requests": 1,
+  "has_gc_collision": false,
+  "body": "404\n\nFile not found\n\nThe site configured at this address does not contain the requested file.\n\nIf this is your site, make sure that the filename case "
+ }
+}

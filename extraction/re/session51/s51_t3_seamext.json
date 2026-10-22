@@ -1,0 +1,185 @@
+{
+ "eps_0.1": {
+  "pairs_total": 362,
+  "by_family": {
+   "mixed": 35,
+   "LightMapDC": 313,
+   "AlphaMasking": 13,
+   "NormalSpecOverbright": 1
+  }
+ },
+ "eps_0.1__fam_LightMapDC": {
+  "REAL_Coord1": {
+   "real_mean": 30.915181434954317,
+   "n_real": 313,
+   "null_mean": 38.731297351426655,
+   "null_std": 0.8309938095390577,
+   "n_perm": 12,
+   "z": -9.405745057003305
+  },
+  "WRONG_Coord0": {
+   "real_mean": 24.714528641571253,
+   "n_real": 313,
+   "null_mean": 29.337035708305194,
+   "null_std": 2.3522458662802874,
+   "n_perm": 12,
+   "z": -1.965146217492868
+  },
+  "SHIFTED_37": {
+   "real_mean": 31.10308147924015,
+   "n_real": 313,
+   "null_mean": 37.13208204688596,
+   "null_std": 0.9718184932120059,
+   "n_perm": 12,
+   "z": -6.203833956399679
+  }
+ },
+ "eps_0.1__fam_AlphaMasking": {
+  "REAL_Coord1": {
+   "real_mean": 21.49359020820031,
+   "n_real": 13,
+   "null_mean": 42.885684031706596,
+   "null_std": 13.080274457427475,
+   "n_perm": 12,
+   "z": -1.635446862612202
+  },
+  "WRONG_Coord0": {
+   "real_mean": 27.69230813246507,
+   "n_real": 13,
+   "null_mean": 30.35363252346332,
+   "null_std": 2.1150733779666346,
+   "n_perm": 12,
+   "z": -1.2582657503621775
+  },
+  "SHIFTED_37": {
+   "real_mean": 23.49358976804293,
+   "n_real": 13,
+   "null_mean": 34.809828990545036,
+   "null_std": 10.278937797035887,
+   "n_perm": 12,
+   "z": -1.1009152352070213
+  }
+ },
+ "eps_0.5": {
+  "pairs_total": 589,
+  "by_family": {
+   "mixed": 86,
+   "LightMapDC": 486,
+   "AlphaMasking": 16,
+   "NormalSpecOverbright": 1
+  }
+ },
+ "eps_0.5__fam_LightMapDC": {
+  "REAL_Coord1": {
+   "real_mean": 32.961670715009234,
+   "n_real": 486,
+   "null_mean": 38.78513483242268,
+   "null_std": 1.1922179019922667,
+   "n_perm": 12,
+   "z": -4.8845635581231335
+  },
+  "WRONG_Coord0": {
+   "real_mean": 29.991750030360596,
+   "n_real": 486,
+   "null_mean": 33.11156980839554,
+   "null_std": 2.1807385395516667,
+   "n_perm": 12,
+   "z": -1.4306253232339985
+  },
+  "SHIFTED_37": {
+   "real_mean": 33.27277451385687,
+   "n_real": 486,
+   "null_mean": 37.972049193909726,
+   "null_std": 1.0317350203944446,
+   "n_perm": 12,
+   "z": -4.5547302235183125
+  }
+ },
+ "eps_0.5__fam_AlphaMasking": {
+  "REAL_Coord1": {
+   "real_mean": 20.0312502682209,
+   "n_real": 16,
+   "null_mean": 42.23914935439825,
+   "null_std": 14.109873933028062,
+   "n_perm": 12,
+   "z": -1.5739261166744813
+  },
+  "WRONG_Coord0": {
+   "real_mean": 25.65625011920929,
+   "n_real": 16,
+   "null_mean": 27.876736134290695,
+   "null_std": 5.671627270389616,
+   "n_perm": 12,
+   "z": -0.39150774711062214
+  },
+  "SHIFTED_37": {
+   "real_mean": 22.677082926034927,
+   "n_real": 16,
+   "null_mean": 38.88151008635759,
+   "null_std": 10.424178783387488,
+   "n_perm": 12,
+   "z": -1.554503956335331
+  }
+ },
+ "eps_1.0": {
+  "pairs_total": 675,
+  "by_family": {
+   "mixed": 98,
+   "LightMapDC": 558,
+   "AlphaMasking": 18,
+   "NormalSpecOverbright": 1
+  }
+ },
+ "eps_1.0__fam_LightMapDC": {
+  "REAL_Coord1": {
+   "real_mean": 34.67702725273307,
+   "n_real": 558,
+   "null_mean": 38.96666615187606,
+   "null_std": 1.0182889872469616,
+   "n_perm": 12,
+   "z": -4.21259480645119
+  },
+  "WRONG_Coord0": {
+   "real_mean": 31.73885485946491,
+   "n_real": 558,
+   "null_mean": 33.9311587689263,
+   "null_std": 1.8728825671233866,
+   "n_perm": 12,
+   "z": -1.1705506516773299
+  },
+  "SHIFTED_37": {
+   "real_mean": 33.39510576955734,
+   "n_real": 558,
+   "null_mean": 38.34443499438611,
+   "null_std": 1.2588194850785754,
+   "n_perm": 12,
+   "z": -3.931722763665226
+  }
+ },
+ "eps_1.0__fam_AlphaMasking": {
+  "REAL_Coord1": {
+   "real_mean": 22.598765929539997,
+   "n_real": 18,
+   "null_mean": 40.35661026945821,
+   "null_std": 10.820404821132845,
+   "n_perm": 12,
+   "z": -1.6411441746833877
+  },
+  "WRONG_Coord0": {
+   "real_mean": 28.364197492599487,
+   "n_real": 18,
+   "null_mean": 29.80015430847804,
+   "null_std": 5.250281973998859,
+   "n_perm": 12,
+   "z": -0.27350089442622066
+  },
+  "SHIFTED_37": {
+   "real_mean": 22.273148245281643,
+   "n_real": 18,
+   "null_mean": 37.30799880513439,
+   "null_std": 10.316598081100253,
+   "n_perm": 12,
+   "z": -1.457345768601397
+  }
+ }
+}
