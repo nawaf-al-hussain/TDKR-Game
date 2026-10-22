@@ -1,0 +1,51 @@
+{
+ "all_real_Coord1": {
+  "label": "REAL (Coord1)",
+  "real_mean": 30.904069274169963,
+  "n_real": 362,
+  "null_mean": 37.57097740590613,
+  "null_std": 2.9024900231444883,
+  "n_perm": 12,
+  "z": -2.2969616014436443
+ },
+ "wrong_chain_Coord0": {
+  "label": "WRONG chain (Coord0)",
+  "real_mean": 25.334591541665695,
+  "n_real": 362,
+  "null_mean": 28.746317463795666,
+  "null_std": 2.970642891423016,
+  "n_perm": 12,
+  "z": -1.148480664566068
+ },
+ "shifted_37tex": {
+  "label": "SHIFTED (+37,0 tex)",
+  "real_mean": 32.09726145912929,
+  "n_real": 362,
+  "null_mean": 36.07186061108984,
+  "null_std": 2.675072187380455,
+  "n_perm": 12,
+  "z": -1.485791363205284
+ },
+ "coverage": {
+  "pairs_total": 362,
+  "distinct_materials": 55,
+  "distinct_pages": 3,
+  "top_pages": [
+   [
+    "BakeGroup_Island1_Roads0.tga",
+    233
+   ],
+   [
+    "BakeGroup_Island1_A0.tga",
+    90
+   ],
+   [
+    "BakeGroup_Island1_B0.tga",
+    39
+   ]
+  ],
+  "family_pairs": {
+   "other": 362
+  }
+ }
+}
