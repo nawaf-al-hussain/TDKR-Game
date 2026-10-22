@@ -1,0 +1,69 @@
+{
+ "real_robust": {
+  "label": "REAL(robust)",
+  "n": 378,
+  "real_median": 75.2297587927493,
+  "nullA_mean": 140.72689024074614,
+  "nullA_std": 6.909660079162554,
+  "zA": -9.455339724245654,
+  "nullB_mean": 140.40985292751938,
+  "nullB_std": 8.0861325191657,
+  "zB": -8.040548376707884,
+  "frac_inside": 0.12698412698412698
+ },
+ "real_all": {
+  "label": "REAL(all)",
+  "n": 393,
+  "real_median": 80.93485569555946,
+  "nullA_mean": 140.5403742611626,
+  "nullA_std": 6.024313607922938,
+  "zA": -9.869392914177077,
+  "nullB_mean": 140.42887605072013,
+  "nullB_std": 6.639585929801741,
+  "zB": -8.938072275386093,
+  "frac_inside": 0.15521628498727735
+ },
+ "pos_inside": {
+  "label": "POS+ inside",
+  "n": 378,
+  "real_median": 0.8178808592842628,
+  "nullA_mean": 102.00124541208896,
+  "nullA_std": 5.886954558042905,
+  "zA": -17.144703285086724,
+  "nullB_mean": 100.98622445179029,
+  "nullB_std": 5.4418376669688895,
+  "zB": -18.361005056971127,
+  "frac_inside": 1.0
+ },
+ "neg_random_obj": {
+  "label": "NEG1 random",
+  "n": 378,
+  "real_median": 399.7970808914618,
+  "nullA_mean": 403.45883448769337,
+  "nullA_std": 12.380001113041619,
+  "zA": -0.29503937093479277,
+  "nullB_mean": 402.9230720970806,
+  "nullB_std": 12.820626258376187,
+  "zB": -0.24321482987982893,
+  "frac_inside": 0.0
+ },
+ "neg_wrong_trigger": {
+  "label": "NEG2 wrongtrig",
+  "n": 378,
+  "real_median": 124.25960452918878,
+  "nullA_mean": 117.00948423044993,
+  "nullA_std": 6.062372958078536,
+  "zA": 1.1929276431120537,
+  "nullB_mean": 145.14810887093847,
+  "nullB_std": 9.89308747515172,
+  "zB": -2.106139028180028,
+  "frac_inside": 0.06613756613756613
+ },
+ "volume_stats": {
+  "half_xy_p50": 0.5,
+  "half_xy_p95": 264.2999023437498,
+  "half_xy_max": 841.0494995117188,
+  "height_p95": 150.0,
+  "convention": "half_xy = 0.5*size_xy*scale_xy; z-height = size_z*scale_z (BuiltinBox size is FULL; CTriggerShapeAABB halves x/y, z as height)"
+ }
+}
