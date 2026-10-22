@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR zone decoder — declaration-driven digests (s48 T4 — branch-only)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #cdd3e0; font: 13px/1.5 system-ui, sans-serif; }
+  #panel { position: fixed; left: 8px; top: 8px; z-index: 9; background: rgba(10,12,18,.85);
+           border: 1px solid #334; border-radius: 8px; padding: 10px 12px; max-width: 520px; }
+  #log { white-space: pre-wrap; max-height: 60vh; overflow: auto; }
+  input[type=file] { color: #cdd3e0; }
+  b { color: #9fc3ff; }
+</style>
+</head>
+<body>
+<div id="panel">
+  <b>s48 T4</b> — zone decoder driven ENTIRELY by batch_info declarations
+  (END-offset semantics; no stride probes): all GothamCity (1,526) + Island2
+  (1,020) segments; f64 canonical value digests for positions/normals/UVs must
+  equal the Python decoder. Includes a shuffled-descriptor null.<br>
+  Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>:<br>
+  <input type="file" id="f">
+  <div id="log"></div>
+</div>
+<script type="module">
+const log = (s) => { document.querySelector('#log').textContent += s + '\n'; };
+window.__GATE = { done: false };
+
+function u16le(u8, i) { return u8[i] | (u8[i + 1] << 8); }
+function u32le(u8, i) { return (u8[i] | (u8[i + 1] << 8) | (u8[i + 2] << 16) | (u8[i + 3] << 24)) >>> 0; }
+function u32be(u8, i) { return ((u8[i] << 24) | (u8[i + 1] << 16) | (u8[i + 2] << 8) | u8[i + 3]) >>> 0; }
+const LATIN = new TextDecoder('latin1');
+
+function zipMembers(buf) {
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--)
+    if (u32le(buf, i) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('no EOCD');
+  const n = u16le(buf, eocd + 10);
+  let p = u32le(buf, eocd + 16);
+  const members = new Map();
+  for (let k = 0; k < n; k++) {
+    if (u32le(buf, p) !== 0x02014b50) throw new Error('bad CD');
+    const method = u16le(buf, p + 10), csize = u32le(buf, p + 20);
+    const nlen = u16le(buf, p + 28), elen = u16le(buf, p + 30), clen = u32le(buf, p + 32);
+    const lho = u32le(buf, p + 42);
+    members.set(LATIN.decode(buf.subarray(p + 46, p + 46 + nlen)), { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return members;
+}
+async function zipRead2(buf, m) {
+  const lho = m.lho, nlen = u16le(buf, lho + 26), elen = u16le(buf, lho + 28);
+  const start = lho + 30 + nlen + elen;
+  const raw = buf.subarray(start, start + m.csize);
+  if (m.method === 0) return raw;
+  if (m.method === 8) {
+    const ds = new DecompressionStream('deflate-raw');
+    const stream = new Response(new Blob([raw])).body.pipeThrough(ds);
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  throw new Error('method ' + m.method);
+}
+function glaMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm === want) return g.subarray(o, o + s);
+  }
+  throw new Error('gla member not found: ' + want);
+}
+async function shaBuf(buf) {
+  return [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))]
+    .map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
+const VAVT = [1, 1, 2, 2, 4, 4, 4];
+function declOf(bi8, mid) {
+  const bstride = u32le(bi8, 0);
+  const base = 4 + mid * bstride;
+  const N = bi8[base + 33];
+  const ds = [];
+  let start = 0;
+  for (let j = 0; j < N; j++) {
+    const d = base + 40 + j * 12;
+    const A = (bi8[d] << 8) | bi8[d + 1];
+    const B = (bi8[d + 2] << 8) | bi8[d + 3];
+    const C = (bi8[d + 4] << 8) | bi8[d + 5];
+    const st = (bi8[d + 6] << 8) | bi8[d + 7];
+    const off = (bi8[d + 8] << 8) | bi8[d + 9];
+    const size = B === 0 ? 3 : B * VAVT[C];
+    const end = off === 0 ? st : off;
+    ds.push({ attr: A, start, end, size });
+    start = end;
+  }
+  return ds;
+}
+
+class StreamBuf {
+  constructor() { this.chunks = []; this.len = 0; }
+  u32(v) {
+    const b = new Uint8Array(4);
+    b[0] = v & 255; b[1] = (v >>> 8) & 255; b[2] = (v >>> 16) & 255; b[3] = (v >>> 24) & 255;
+    this.chunks.push(b); this.len += 4;
+  }
+  f64x(values) {
+    const b = new Uint8Array(values.length * 8);
+    const dv = new DataView(b.buffer);
+    for (let i = 0; i < values.length; i++) dv.setFloat64(i * 8, values[i], true);
+    this.chunks.push(b); this.len += b.length;
+  }
+  async digest() {
+    const all = new Uint8Array(this.len);
+    let p = 0;
+    for (const c of this.chunks) { all.set(c, p); p += c.length; }
+    return shaBuf(all.buffer);
+  }
+}
+
+function posStream(ds, stride, nv, fbuf, dataOff) {
+  const dmap = {};
+  for (const d of ds) dmap[d.attr] = d;
+  if (!dmap[0] || nv <= 0) return null;
+  const s0 = dmap[0].start;
+  const b = new Float64Array(nv * 3);
+  for (let v = 0; v < nv; v++) {
+    const o = dataOff + 4 + v * stride + s0;
+    b[v * 3] = fbuf.getFloat32(o, true);
+    b[v * 3 + 1] = fbuf.getFloat32(o + 4, true);
+    b[v * 3 + 2] = fbuf.getFloat32(o + 8, true);
+  }
+  return b;
+}
+
+function decodeZone(ld, lt, bi8, shuffleFirstN) {
+  const cnt = u32le(lt, 0);
+  const pairs = [];
+  for (let k = 0; k < cnt; k++) pairs.push([u32le(lt, 4 + 8 * k), u32le(lt, 8 + 8 * k)]);
+  const streams = { pos: new StreamBuf(), nrm: new StreamBuf(),
+                    uv0: new StreamBuf(), uv1: new StreamBuf() };
+  let nverts = 0, nseg = 0;
+  const nullInfo = { tried: 0, changed: 0 };
+  const rngState = shuffleFirstN ? (typeof rngSeed === 'number' ? rngSeed : 48) : 0;
+  let rngS = 48;
+  const rnd = () => { rngS = (rngS * 1103515245 + 12345) & 0x7fffffff; return rngS / 0x80000000; };
+  for (let k = 0; k < cnt; k++) {
+    const off2 = pairs[k][0];
+    const mid = u32le(ld, off2 + 40);
+    const data_off = u32le(ld, off2 + 68), vb = u32le(ld, off2 + 76), ib = u32le(ld, off2 + 80);
+    const dsReal = declOf(bi8, mid);
+    const strideReal = dsReal[dsReal.length - 1].end;
+    const nvReal = strideReal > 0 ? ((vb / strideReal) | 0) : 0;
+    // shuffled-descriptor null on the first shuffleFirstN segments: permute the
+    // attr labels over the declared spans; positions must change
+    if (shuffleFirstN && k < shuffleFirstN && dsReal.length > 1 && nvReal > 0 &&
+        vb % strideReal === 0) {
+      const attrs = dsReal.map(d => d.attr);
+      for (let i = attrs.length - 1; i > 0; i--) {
+        const j = Math.floor(rnd() * (i + 1));
+        [attrs[i], attrs[j]] = [attrs[j], attrs[i]];
+      }
+      const dsShuf = dsReal.map((d, i) => ({ ...d, attr: attrs[i] }));
+      const dmapR = {};
+      for (const d of dsReal) dmapR[d.attr] = d;
+      const dmapS = {};
+      for (const d of dsShuf) dmapS[d.attr] = d;
+      if (dmapR[0] && dmapS[0]) {
+        nullInfo.tried++;
+        const fbuf0 = new DataView(ld.buffer, ld.byteOffset, ld.byteLength);
+        const realP = posStream(dsReal, strideReal, nvReal, fbuf0, data_off);
+        const shufP = posStream(dsShuf, strideReal, nvReal, fbuf0, data_off);
+        let same = true;
+        for (let i = 0; i < realP.length; i++) {
+          if (realP[i] !== shufP[i]) { same = false; break; }
+        }
+        if (!same) nullInfo.changed++;
+      }
+    }
+    const ds = dsReal;
+    const dmap = {};
+    for (const d of ds) dmap[d.attr] = d;
+    const stride = ds[ds.length - 1].end;
+    const nv = (vb / stride) | 0;
+    // canonical form matches the Python decoder: EVERY stream gets the u32 nv
+    // header per segment; data follows only for declared attributes
+    streams.pos.u32(nv); streams.nrm.u32(nv);
+    streams.uv0.u32(nv); streams.uv1.u32(nv);
+    if (nv <= 0) continue;
+    nseg++; nverts += nv;
+    const fbuf = new DataView(ld.buffer, ld.byteOffset, ld.byteLength);
+    const pos = new Float64Array(nv * 3);
+    for (let v = 0; v < nv; v++) {
+      const o = data_off + 4 + v * stride;
+      pos[v * 3] = fbuf.getFloat32(o, true);
+      pos[v * 3 + 1] = fbuf.getFloat32(o + 4, true);
+      pos[v * 3 + 2] = fbuf.getFloat32(o + 8, true);
+    }
+    streams.pos.f64x(pos);
+    if (dmap[16]) {
+      const ns = dmap[16].start;
+      const nrm = new Float64Array(nv * 3);
+      for (let v = 0; v < nv; v++) {
+        const o = data_off + 4 + v * stride + ns;
+        for (let c = 0; c < 3; c++) {
+          let b = ld[o + c];
+          if (b >= 128) b -= 256;
+          nrm[v * 3 + c] = b / 127.0;
+        }
+      }
+      streams.nrm.f64x(nrm);
+    }
+    for (const [attr, key] of [[1, 'uv0'], [2, 'uv1']]) {
+      if (dmap[attr]) {
+        const s0 = dmap[attr].start;
+        const uv = new Float64Array(nv * 2);
+        for (let v = 0; v < nv; v++) {
+          const o = data_off + 4 + v * stride + s0;
+          uv[v * 2] = fbuf.getInt16(o, true) / 32767.0;
+          uv[v * 2 + 1] = fbuf.getInt16(o + 2, true) / 32767.0;
+        }
+        streams[key].f64x(uv);
+      }
+    }
+  }
+  return { streams, nverts, nseg, nullInfo, cnt };
+}
+
+document.querySelector('#f').addEventListener('change', async (ev) => {
+  try {
+    const file = ev.target.files[0];
+    log('zip: ' + file.name + ' (' + file.size + ' B)');
+    const zipBuf = new Uint8Array(await file.arrayBuffer());
+    const zmembers = zipMembers(zipBuf);
+    const gla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla'));
+    window.__GATE.zones = {};
+    for (const zname of ['GothamCity.zip', 'GothamCity_Island2.zip']) {
+      const t0 = performance.now();
+      const zZip = glaMember(gla, zname);
+      const zm = zipMembers(zZip);
+      const ld = await zipRead2(zZip, zm.get('lod_data.bin'));
+      const lt = await zipRead2(zZip, zm.get('lod_table.bin'));
+      const bi8 = await zipRead2(zZip, zm.get('batch_info.bin'));
+      const r = decodeZone(ld, lt, bi8, 200);
+      const dig = {
+        pos: await r.streams.pos.digest(),
+        nrm: await r.streams.nrm.digest(),
+        uv0: await r.streams.uv0.digest(),
+        uv1: await r.streams.uv1.digest(),
+      };
+      const dt = performance.now() - t0;
+      log(zname + ': segs ' + r.nseg + ' verts ' + r.nverts + ' (' + dt.toFixed(0) + ' ms)');
+      log('  pos ' + dig.pos);
+      log('  nrm ' + dig.nrm);
+      log('  uv0 ' + dig.uv0);
+      log('  uv1 ' + dig.uv1);
+      window.__GATE.zones[zname] = { nseg: r.nseg, nverts: r.nverts, digests: dig,
+                                     ms: dt, nullInfo: r.nullInfo };
+    }
+    window.__GATE.done = true;
+    log('DONE');
+  } catch (e) {
+    log('ERROR: ' + (e && e.stack || e));
+    window.__GATE = { done: true, error: String(e && e.stack || e) };
+  }
+});
+</script>
+</body>
+</html>
