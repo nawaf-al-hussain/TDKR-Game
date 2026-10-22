@@ -609,6 +609,7 @@ function drawZoneBatches(batches, W, H) {
     let unit = 0;
     const bn = b.bind;
     const dTex = texZget(bn[0], false);
+    if (!dTex) continue;   // s50 T1: missing diffuse -> skip (matches the Python reference's tex=None skip; stale unit-0 sampling was wrong)
     if (dTex && P.uni.DiffuseMap !== undefined && P.uni.DiffuseMap) {
       G.activeTexture(G.TEXTURE0); G.bindTexture(G.TEXTURE_2D, dTex.tx);
       G.uniform1i(P.uni.DiffuseMap, 0); unit = 1;
@@ -738,8 +739,8 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
     const wvp = new Float32Array([
       2/W, 0, 0, 0,
       0, 2/H, 0, 0,
-      0, 0, -1/200, 0,
-      -1, -1, 1, 1,
+      0, 0, -2/350, 0,
+      -1, -1, 150/350, 1,
     ]);
     for (const [mid, segs] of byMat) {
       if (!segs[0].ds.find(d => d.attr === 1)) continue;   // no TC0 -> not rendered (matches s48 ref)
