@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR zone-scale render (s48 T6 — branch-only, NOT deployed)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #cdd3e0; font: 13px/1.5 system-ui, sans-serif; }
+  #panel { position: fixed; left: 8px; top: 8px; z-index: 9; background: rgba(10,12,18,.85);
+           border: 1px solid #334; border-radius: 8px; padding: 10px 12px; max-width: 520px; }
+  #log { white-space: pre-wrap; max-height: 40vh; overflow: auto; }
+  #c { position: fixed; right: 8px; top: 8px; border: 1px solid #334; }
+  input[type=file] { color: #cdd3e0; }
+  b { color: #9fc3ff; }
+</style>
+<script src="./etc1_tdkr.js"></script>
+</head>
+<body>
+<div id="panel">
+  <b>s48 T6 zone render</b> — ALL GothamCity segments (1,526), engine bindings
+  from the compiled instance table, declaration-driven decode, ETC1 textures with
+  LRU cache (cap 20 RGBA), per-effect shading (LightMapDC x2; AlphaMasking x2+1
+  + SPLIT alpha discard 0.3; SimpleAdditive/StandardDiffuse Color0 tint; other
+  effects diffuse-only). Orthographic top-down camera, 1024x605, painter order
+  by height.<br>
+  Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>:<br>
+  <input type="file" id="f">
+  <div id="log"></div>
+</div>
+<canvas id="c" width="1024" height="605"></canvas>
+<script type="module">
+const log = (s) => { document.querySelector('#log').textContent += s + '\n'; };
+window.__GATE = { done: false, heapSamples: [] };
+const heap = () => {
+  if (performance.memory) {
+    window.__GATE.heapSamples.push(performance.memory.usedJSHeapSize);
+  }
+};
+
+function u16le(u8, i) { return u8[i] | (u8[i + 1] << 8); }
+function u32le(u8, i) { return (u8[i] | (u8[i + 1] << 8) | (u8[i + 2] << 16) | (u8[i + 3] << 24)) >>> 0; }
+function u32be(u8, i) { return ((u8[i] << 24) | (u8[i + 1] << 16) | (u8[i + 2] << 8) | u8[i + 3]) >>> 0; }
+const LATIN = new TextDecoder('latin1');
+
+function zipMembers(buf) {
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--)
+    if (u32le(buf, i) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('no EOCD');
+  const n = u16le(buf, eocd + 10);
+  let p = u32le(buf, eocd + 16);
+  const members = new Map();
+  for (let k = 0; k < n; k++) {
+    if (u32le(buf, p) !== 0x02014b50) throw new Error('bad CD');
+    const method = u16le(buf, p + 10), csize = u32le(buf, p + 20);
+    const nlen = u16le(buf, p + 28), elen = u16le(buf, p + 30), clen = u32le(buf, p + 32);
+    const lho = u32le(buf, p + 42);
+    members.set(LATIN.decode(buf.subarray(p + 46, p + 46 + nlen)), { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return members;
+}
+async function zipRead2(buf, m) {
+  const lho = m.lho, nlen = u16le(buf, lho + 26), elen = u16le(buf, lho + 28);
+  const start = lho + 30 + nlen + elen;
+  const raw = buf.subarray(start, start + m.csize);
+  if (m.method === 0) return raw;
+  if (m.method === 8) {
+    const ds = new DecompressionStream('deflate-raw');
+    const stream = new Response(new Blob([raw])).body.pipeThrough(ds);
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  throw new Error('method ' + m.method);
+}
+function glaMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm === want) return g.subarray(o, o + s);
+  }
+  throw new Error('gla member not found: ' + want);
+}
+
+function cstrAt(u8, off, maxn = 96) {
+  if (!(off > 0 && off < u8.length)) return null;
+  let e = off;
+  const lim = Math.min(u8.length, off + maxn);
+  while (e < lim && u8[e] !== 0) e++;
+  if (e === off || e === lim) return null;
+  const s = LATIN.decode(u8.subarray(off, e));
+  for (let i = 0; i < s.length; i++) {
+    const c = s.charCodeAt(i);
+    if (c < 32 || c > 126) return null;
+  }
+  return s;
+}
+
+// compiled instance table (s48 T3): effects + DiffuseMap/LightMap bindings
+function parseCompiledTable(le) {
+  const dv = new DataView(le.buffer, le.byteOffset, le.byteLength);
+  const IMG_BASE = 0x22a9c, IMG_N = 176;
+  const imgs = [];
+  for (let i = 0; i < IMG_N; i++) {
+    imgs.push([dv.getUint32(IMG_BASE + i * 12, true), dv.getUint32(IMG_BASE + i * 12 + 8, true)]);
+  }
+  const bind = {}, fx = {};
+  for (let i = 0; i < 307; i++) {
+    const a = 0x5fea0 + i * 36;
+    const w = [];
+    for (let k = 0; k < 9; k++) w.push(dv.getUint32(a + k * 4, true));
+    const sam = {};
+    for (let j = 0; j < w[4]; j++) {
+      const pa = w[5] + j * 24;
+      const pw = [];
+      for (let k = 0; k < 6; k++) pw.push(dv.getUint32(pa + k * 4, true));
+      const pname = cstrAt(le, pw[0]);
+      if (pw[2] !== 13 || pw[3] !== 1) continue;
+      const v1 = pw[4];
+      if (dv.getUint32(v1, true) !== 1 || dv.getUint32(v1 + 4, true) !== v1 + 24) continue;
+      const idx = dv.getUint32(v1 + 24, true);
+      if (idx < IMG_N) sam[pname] = cstrAt(le, imgs[idx][1]) || '';
+      else if (idx === 0xffffffff) sam[pname] = '';
+    }
+    bind[i] = [sam['DiffuseMap'] || '', sam['LightMap'] || ''];
+    fx[i] = (cstrAt(le, w[3]) || '').split('-fx')[0].replace('#', '');
+  }
+  return { bind, fx };
+}
+
+const VAVT = [1, 1, 2, 2, 4, 4, 4];
+function declOf(bi8, mid) {
+  const bstride = u32le(bi8, 0);
+  const base = 4 + mid * bstride;
+  const N = bi8[base + 33];
+  const ds = [];
+  let start = 0;
+  for (let j = 0; j < N; j++) {
+    const d = base + 40 + j * 12;
+    const A = (bi8[d] << 8) | bi8[d + 1];
+    const B = (bi8[d + 2] << 8) | bi8[d + 3];
+    const C = (bi8[d + 4] << 8) | bi8[d + 5];
+    const st = (bi8[d + 6] << 8) | bi8[d + 7];
+    const off = (bi8[d + 8] << 8) | bi8[d + 9];
+    const size = B === 0 ? 3 : B * VAVT[C];
+    const end = off === 0 ? st : off;
+    ds.push({ attr: A, start, end, size });
+    start = end;
+  }
+  return ds;
+}
+
+// ---- SPLIT-aware ETC1 decode with LRU ----
+const LRU_CAP = 20;
+const texLRU = new Map();
+const texStats = { miss: 0, hit: 0, evict: 0 };
+function unwrapSplitParts(u8) {
+  if (!(u8[0] === 0x50 && u8[1] === 0x4b && u8[2] === 0x03 && u8[3] === 0x04)) return { rgb: u8 };
+  const out = {};
+  let pos = 0;
+  while (pos + 30 <= u8.length && u8[pos] === 0x50 && u8[pos + 1] === 0x4b &&
+         u8[pos + 2] === 0x03 && u8[pos + 3] === 0x04) {
+    const csz = u32le(u8, pos + 18);
+    const nlen = u16le(u8, pos + 26), elen = u16le(u8, pos + 28);
+    const nm = LATIN.decode(u8.subarray(pos + 30, pos + 30 + nlen));
+    const dstart = pos + 30 + nlen + elen;
+    if (nm.trim() !== 'SPLIT') out[nm] = u8.subarray(dstart, dstart + csz);
+    pos = dstart + csz;
+  }
+  if (!out['rgb.pvr']) throw new Error('split-zip: no rgb.pvr');
+  return out;
+}
+function decodePvrMips(u8) {
+  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+  if (dv.getUint32(0, true) !== 0x34) throw new Error('bad tex tag');
+  const h0 = dv.getUint32(4, true), w0 = dv.getUint32(8, true);
+  if (String.fromCharCode(u8[44], u8[45], u8[46], u8[47]) !== 'PVR!') throw new Error('bad PVR');
+  const levels = [];
+  let off = 52, w = w0, h = h0;
+  for (let i = 0; i < 16 && w >= 1 && h >= 1; i++) {
+    const bw = (w + 3) >> 2, bh = (h + 3) >> 2;
+    const sz = bw * bh * 8;
+    if (off + sz > u8.length) break;
+    const rgba = window.ETC1_TDKR.decodeRGBA(u8.subarray(off, off + sz), w, h);
+    levels.push({ w, h, rgba });
+    off += sz;
+    w = w >> 1; h = h >> 1;
+    if (w === 0) w = 1;
+    if (h === 0) h = 1;
+    if (w0 === 1 && h0 === 1) break;
+  }
+  return { w: w0, h: h0, levels };
+}
+function decodePvr(u8) {
+  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+  if (dv.getUint32(0, true) !== 0x34) throw new Error('bad tex tag');
+  const h = dv.getUint32(4, true), w = dv.getUint32(8, true);
+  if (String.fromCharCode(u8[44], u8[45], u8[46], u8[47]) !== 'PVR!') throw new Error('bad PVR');
+  const bw = (w + 3) >> 2, bh = (h + 3) >> 2;
+  const rgba = window.ETC1_TDKR.decodeRGBA(u8.subarray(52, 52 + bw * bh * 8), w, h);
+  return { w, h, rgba };
+}
+function texMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  const wantL = want.toLowerCase();
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm.toLowerCase() === wantL) return g.subarray(o, o + s);
+  }
+  return null;
+}
+function getTex(texGla, name, wantAlpha) {
+  const key = name + '|' + (wantAlpha ? 'a' : 'r');
+  if (texLRU.has(key)) {
+    texStats.hit++;
+    const v = texLRU.get(key);
+    texLRU.delete(key);
+    texLRU.set(key, v);
+    return v;
+  }
+  texStats.miss++;
+  let t = null;
+  const tu = texMember(texGla, name);
+  if (tu) {
+    try {
+      const parts = unwrapSplitParts(tu);
+      const rgb = decodePvr(parts['rgb.pvr'] || parts['rgb']);
+      let al = null;
+      if (wantAlpha && parts['alpha.pvr']) {
+        const a = decodePvr(parts['alpha.pvr']);
+        al = { w: a.w, h: a.h, data: a.rgba };
+      }
+      t = { w: rgb.w, h: rgb.h, data: rgb.rgba, alpha: al };
+    } catch (e) { t = null; }
+  }
+  texLRU.set(key, t);
+  if (texLRU.size > LRU_CAP) {
+    const old = texLRU.keys().next().value;
+    texLRU.delete(old);
+    texStats.evict++;
+  }
+  return t;
+}
+
+
+/* ---------------- engine GLSL (verbatim from effects.gla extraction) ---------------- */
+const CONFIG = `
+precision highp float;
+#define VERTICAL_FOG_COLOR vec4(0.93, 0.76, 0.47, 0.35)
+#define VERTICAL_FOG_HEIGHT 18.0
+#define LOD_BIAS __LODBIAS__
+#define FOG_DECAY 0.5
+`;
+const LIGHTMAPDC_V = CONFIG + `
+attribute 	highp	vec3 	Normal;
+attribute 	highp	vec4	Position;
+attribute	lowp	vec4	Color;
+attribute 	highp	vec2 	Coord0;
+attribute 	highp	vec2 	Coord1;
+uniform 	highp 	vec4 	Coord0_scaleoffset;
+uniform 	highp 	vec4 	Coord1_scaleoffset;
+uniform 	highp	mat4	WorldViewProjection;
+uniform     highp	vec4	LightMapAtlas;
+varying		highp	vec2 	vCoord0;
+varying		highp	vec2 	vCoord1;
+uniform 	highp	mat4	WorldViewTransposed;
+uniform 	highp	vec2 	FogStartEnd;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+void main()
+{
+	vCoord0 					= Coord0 * Coord0_scaleoffset.xy + Coord0_scaleoffset.zw;
+	vCoord1						= (Coord1 * Coord1_scaleoffset.xy + Coord1_scaleoffset.zw) * LightMapAtlas.xy + LightMapAtlas.zw;
+	highp vec4 pos 				= Position;
+	gl_Position 				= WorldViewProjection * pos;
+	FogFactor                       = (-dot(WorldViewTransposed[2], Position) - FogStartEnd.x) * FogStartEnd.y;
+}
+`;
+const LIGHTMAPDC_F = CONFIG + `
+uniform 	lowp	sampler2D 		DiffuseMap;
+uniform 	lowp	sampler2D 		LightMap;
+varying		mediump	vec2 	vCoord0;
+varying		mediump	vec2 	vCoord1;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+lowp vec4 ComputeFogFS(lowp vec4 col, lowp vec4 fogCol, lowp float fogF)
+{
+	lowp 	float 	GrayScale 	= dot(col.xyz, vec3(0.149, 0.293, 0.57));
+	lowp 	float 	fFactor		= fogF * (1.0 - GrayScale);
+	return vec4(mix(col.rgb, fogCol.rgb, fFactor * fogCol.a), col.a);
+}
+void main()
+{
+	lowp	vec4 	LightMapColor	= texture2D(LightMap, vCoord1) * 2.0;
+	highp	vec4 	DiffuseMapColor	= texture2D(DiffuseMap, vCoord0, LOD_BIAS);
+	lowp	vec4  Color				= DiffuseMapColor * LightMapColor;
+	Color							= ComputeFogFS(Color, FogColor, clamp(FogFactor, 0.0, 1.0));
+	gl_FragColor					= Color;
+}
+`;
+const ALPHAMASKING_V = CONFIG + `
+attribute 	highp	vec4 	Position;
+attribute	lowp	vec4	Color;
+attribute 	highp	vec2 	TexCoord0;
+attribute 	highp	vec2 	TexCoord1;
+uniform 	highp 	vec4 	TexCoord0_scaleoffset;
+uniform 	highp 	vec4 	TexCoord1_scaleoffset;
+uniform 	highp	mat4	WorldViewProjection;
+uniform     highp	vec4	LightMapAtlas;
+varying		highp	vec2 	vCoord0;
+varying		highp	vec2 	vCoord1;
+uniform 	highp	mat4	WorldViewTransposed;
+uniform 	highp	vec2 	FogStartEnd;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+void main()
+{
+	vCoord0 					= TexCoord0 * TexCoord0_scaleoffset.xy + TexCoord0_scaleoffset.zw;
+	vCoord1						= (TexCoord1 * TexCoord1_scaleoffset.xy + TexCoord1_scaleoffset.zw) * LightMapAtlas.xy + LightMapAtlas.zw;
+	highp vec4 pos 				= Position;
+	gl_Position 				= WorldViewProjection * pos;
+	FogFactor                       = (-dot(WorldViewTransposed[2], Position) - FogStartEnd.x) * FogStartEnd.y;
+}
+`;
+const ALPHAMASKING_F = CONFIG + `
+#ifdef TDKR_SPLIT_ALPHA
+uniform		lowp	sampler2D 		DiffuseMap_alpha;
+#endif
+uniform 	lowp	sampler2D 		DiffuseMap;
+uniform 	lowp	sampler2D 		LightMap;
+uniform		lowp	float	Overbright;
+varying		mediump	vec2 	vCoord0;
+varying		mediump	vec2 	vCoord1;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+lowp vec4 ComputeFogFS(lowp vec4 col, lowp vec4 fogCol, lowp float fogF)
+{
+	lowp 	float 	GrayScale 	= dot(col.xyz, vec3(0.149, 0.293, 0.57));
+	lowp 	float 	fFactor		= fogF * (1.0 - GrayScale);
+	return vec4(mix(col.rgb, fogCol.rgb, fFactor * fogCol.a), col.a);
+}
+void main()
+{
+#if defined(TDKR_SPLIT_ALPHA) && !defined(NO_ALPHA)
+	highp	vec4  DiffuseMapColor	= vec4(texture2D(DiffuseMap, vCoord0).rgb, texture2D(DiffuseMap_alpha, vCoord0, -2.0).r);
+#else
+	highp	vec4  DiffuseMapColor	= texture2D(DiffuseMap, vCoord0);
+#endif
+	highp float fAlpha				= DiffuseMapColor.a ;
+	lowp	vec4  LightMapColor		= texture2D(LightMap, vCoord1) * 2.0 + vec4(Overbright);
+	lowp	vec4  Color				= DiffuseMapColor * LightMapColor ;
+	Color							= ComputeFogFS(Color, FogColor, clamp(FogFactor, 0.0, 1.0));
+	gl_FragColor					= vec4(Color.rgb, fAlpha);
+#if !defined(MODULATE) && !defined(NO_ALPHA)
+	if (fAlpha < 0.3)
+		discard;
+#endif
+}
+`;
+const NVGLASS_V = `
+attribute highp	vec4 Position;
+attribute highp	vec3 Normal;
+attribute mediump vec2 TexCoord0;
+uniform 	highp 	vec4 	TexCoord0_scaleoffset;
+attribute mediump vec2 TexCoord1;
+uniform 	highp 	vec4 	TexCoord1_scaleoffset;
+attribute lowp vec4 Color0;
+uniform mediump vec2 uvOffset;
+uniform highp   mat4 WorldViewProjectionMatrix;
+#if defined(LIGHTMAP)
+	varying mediump vec2 vCoord1;
+#endif
+varying highp vec2 vCoord0;
+varying lowp vec4 vColor0;
+uniform 	highp	mat4	WorldViewTransposed;
+uniform 	highp	vec2 	FogStartEnd;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+void main()
+{
+	vCoord0 = TexCoord0 * TexCoord0_scaleoffset.xy + TexCoord0_scaleoffset.zw + uvOffset;
+	vColor0 = Color0;
+#if defined(LIGHTMAP)
+	vCoord1 = TexCoord1 * TexCoord1_scaleoffset.xy + TexCoord1_scaleoffset.zw;
+#endif
+	gl_Position			= WorldViewProjectionMatrix * Position;
+	FogFactor                       = (-dot(WorldViewTransposed[2], Position) - FogStartEnd.x) * FogStartEnd.y;
+}
+`;
+const NVGLASS_F = `
+precision mediump float;
+#ifdef TDKR_SPLIT_ALPHA
+uniform lowp	sampler2D DiffuseTextureSampler_alpha;
+#endif
+uniform lowp	sampler2D DiffuseTextureSampler;
+#if defined(TEX2)
+	uniform lowp	sampler2D Diffuse2TextureSampler;
+#endif
+#if defined(REFLECTION)
+uniform lowp	sampler2D ReflectionMapSampler;
+varying mediump   vec3	vViewDir;
+varying mediump   vec3	vNormal;
+#endif
+#if defined(LIGHTMAP)
+uniform lowp	sampler2D LightmapTextureSampler;
+#endif
+#if defined(DIFFUSE_MASK)
+uniform lowp	sampler2D DiffuseMaskSampler;
+#else
+uniform lowp float BlendFactor;
+#endif
+uniform lowp vec4 Ambient;
+varying mediump vec2 vCoord0;
+varying lowp vec4 vColor0;
+#if defined(LIGHTMAP)
+	varying mediump vec2 vCoord1;
+#endif
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+lowp vec4 ComputeFogFS(lowp vec4 col, lowp vec4 fogCol, lowp float fogF)
+{
+	lowp 	float 	GrayScale 	= dot(col.xyz, vec3(0.149, 0.293, 0.57));
+	lowp 	float 	fFactor		= fogF * (1.0 - GrayScale);
+	return vec4(mix(col.rgb, fogCol.rgb, fFactor * fogCol.a), col.a);
+}
+void main()
+{
+#if defined(TDKR_SPLIT_ALPHA) && defined(HAS_ALPHA)
+	lowp vec4 Color	= vec4(texture2D(DiffuseTextureSampler, vCoord0).rgb, texture2D(DiffuseTextureSampler_alpha, vCoord0).r);
+#else
+	lowp vec4 Color = texture2D(DiffuseTextureSampler, vCoord0);
+#endif
+#if !defined(TEX2)
+	Color = Color * vColor0;
+#endif
+#if defined(DIFFUSE_MASK)
+	lowp vec4 Mask  = texture2D(DiffuseMaskSampler, vCoord0);
+#endif
+	lowp vec4 Lighting = vec4(1.0);
+#if defined(LIGHTMAP)
+	lowp vec4 lmColor = texture2D(LightmapTextureSampler, vCoord1) * 2.0;
+	Lighting = lmColor;
+#endif
+	Color *= Lighting;
+#if defined(DIFFUSE_MASK)
+	gl_FragColor = vec4(Color.rgb, Mask.g * vColor0.a);
+#else
+	gl_FragColor = Color;
+#endif
+	Color							= ComputeFogFS(gl_FragColor, FogColor, clamp(FogFactor, 0.0, 1.0));
+	gl_FragColor					= Color;
+}
+`;
+const VCBLEND_V = `
+attribute highp	vec4 Position;
+attribute highp	vec3 Normal;
+attribute lowp	vec4 Color;
+attribute highp	vec2 Coord0;
+attribute highp	vec2 Coord1;
+uniform 	highp 	vec4 	Coord0_scaleoffset;
+uniform 	highp 	vec4 	Coord1_scaleoffset;
+uniform 	highp	mat4	WorldViewProjection;
+uniform     highp	vec4	LightMapAtlas;
+varying lowp    vec4 	vColor;
+varying mediump	vec2 	vCoord0;
+varying mediump	vec2 	vCoord1;
+uniform 	highp	mat4	WorldViewTransposed;
+uniform 	highp	vec2 	FogStartEnd;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+void main()
+{
+	vColor						= Color;
+	vCoord0 					= Coord0 * Coord0_scaleoffset.xy + Coord0_scaleoffset.zw;
+	vCoord1						= (Coord1 * Coord1_scaleoffset.xy + Coord1_scaleoffset.zw) * LightMapAtlas.xy + LightMapAtlas.zw;
+	gl_Position 				= WorldViewProjection * Position;
+	FogFactor                       = (-dot(WorldViewTransposed[2], Position) - FogStartEnd.x) * FogStartEnd.y;
+}
+`;
+const VCBLEND_F = `
+precision mediump float;
+uniform lowp	sampler2D LightMapSampler;
+uniform lowp	sampler2D Texture1;
+uniform lowp	sampler2D Texture2;
+varying lowp    vec4 	vColor;
+varying mediump	vec2 	vCoord0;
+varying mediump	vec2 	vCoord1;
+uniform 	lowp	vec4 	FogColor;
+varying 	lowp	float 	FogFactor;
+lowp vec4 ComputeFogFS(lowp vec4 col, lowp vec4 fogCol, lowp float fogF)
+{
+	lowp 	float 	GrayScale 	= dot(col.xyz, vec3(0.149, 0.293, 0.57));
+	lowp 	float 	fFactor		= fogF * (1.0 - GrayScale);
+	return vec4(mix(col.rgb, fogCol.rgb, fFactor * fogCol.a), col.a);
+}
+void main()
+{
+    lowp vec4 _LightMap	= texture2D(LightMapSampler, vCoord1, -1.0) * 2.0;
+	lowp vec4 _Texture1	= texture2D(Texture1, vCoord0, -1.0);
+	lowp vec4 _Texture2	= texture2D(Texture2, vCoord0, -1.0);
+	lowp float BlendFactor = vColor.a;
+	lowp vec4 Color 	= _LightMap * mix(_Texture1, _Texture2, BlendFactor) * vec4(vColor.rgb, 1.0);
+	Color							= ComputeFogFS(Color, FogColor, clamp(FogFactor, 0.0, 1.0));
+	gl_FragColor					= vec4(Color.rgb, 1.0);
+}
+`;
+
+/* ================= zone GL renderer (s49 T4a) ================= */
+const glz = document.createElement('canvas');
+glz.width = 1024; glz.height = 605;
+const G = glz.getContext('webgl', { preserveDrawingBuffer: true, antialias: false, depth: true });
+if (!G) throw new Error('no webgl');
+const QS = new URLSearchParams(location.search);
+const MIPVAR = QS.get("mip") || "0";
+window.__LODBIAS = QS.get("bias") === null ? "-1.0" : QS.get("bias");
+const NODEPTH = QS.get("nodepth") === "1";
+const UVABS = QS.get("uvabs") === "1";
+
+window.__GLERR = [];
+if (QS.get('noext') !== '1') G.getExtension('OES_element_index_uint');
+const PROBE = QS.get('probe') === '1';
+const SKIPMISS = QS.get('skipmiss') === '1';
+const FLAT = QS.get('flat') === '1';
+const ONLY_FX = QS.get('only');
+const FLAT_FS = `precision mediump float; void main(){ gl_FragColor = vec4(0.5,0.5,0.5,1.0); }`;
+const NOLM = QS.get('nolm') === '1';
+const LMONLY = QS.get('lmonly') === '1';
+const HP = QS.get('hp') === '1';
+const MATONLY = QS.get('mat') ? parseInt(QS.get('mat')) : null;
+const FLAT_VS = `attribute vec4 Position; uniform mat4 WVP; void main(){ gl_Position = WVP * Position; }`;
+function compileZ(type, src) {
+  if (src.indexOf("__LODBIAS__") >= 0) src = src.split("__LODBIAS__").join(window.__LODBIAS);
+  const s = G.createShader(type);
+  G.shaderSource(s, src);
+  G.compileShader(s);
+  if (!G.getShaderParameter(s, G.COMPILE_STATUS))
+    throw new Error('shader: ' + G.getShaderInfoLog(s).slice(0, 300));
+  return s;
+}
+const progZ = new Map();
+function getProgZ(key, vs, fs) {
+  if (progZ.has(key)) return progZ.get(key);
+  const p = G.createProgram();
+  G.attachShader(p, compileZ(G.VERTEX_SHADER, vs));
+  G.attachShader(p, compileZ(G.FRAGMENT_SHADER, fs));
+  G.linkProgram(p);
+  if (!G.getProgramParameter(p, G.LINK_STATUS))
+    throw new Error('link: ' + G.getProgramInfoLog(p));
+  const o = { p, attr: {}, uni: {} };
+  const na = G.getProgramParameter(p, G.ACTIVE_ATTRIBUTES);
+  for (let i = 0; i < na; i++) {
+    const inf = G.getActiveAttrib(p, i);
+    o.attr[inf.name] = G.getAttribLocation(p, inf.name);
+  }
+  const nu = G.getProgramParameter(p, G.ACTIVE_UNIFORMS);
+  for (let i = 0; i < nu; i++) {
+    const inf = G.getActiveUniform(p, i);
+    o.uni[inf.name.replace('[0]', '')] = G.getUniformLocation(p, inf.name);
+  }
+  progZ.set(key, o);
+  return o;
+}
+const texZ = new Map();
+const texZstats = { decoded: 0 };
+function texZget(name, wantAlpha) {
+  const key = name + (wantAlpha ? '|a' : '');
+  if (texZ.has(key)) return texZ.get(key);
+  const t = getTex(texGla, name, wantAlpha);
+  if (!t) { texZ.set(key, null);
+    window.__TEXMISS = window.__TEXMISS || [];
+    window.__TEXMISS.push(name);
+    return null; }
+  const tx = G.createTexture();
+  G.bindTexture(G.TEXTURE_2D, tx);
+  if (MIPVAR !== "0") {
+    const tu2 = texMember(texGla, name);
+    const parts2 = unwrapSplitParts(tu2);
+    const mm = decodePvrMips(parts2['rgb.pvr'] || parts2['rgb']);
+    for (let i = 0; i < mm.levels.length; i++) {
+      const L = mm.levels[i];
+      G.texImage2D(G.TEXTURE_2D, i, G.RGBA, L.w, L.h, 0, G.RGBA, G.UNSIGNED_BYTE,
+                   new Uint8Array(L.rgba.buffer, L.rgba.byteOffset, L.rgba.byteLength));
+    }
+    const MINF = { nml: G.NEAREST_MIPMAP_LINEAR, lml: G.LINEAR_MIPMAP_LINEAR,
+                   lmn: G.LINEAR_MIPMAP_NEAREST }[MIPVAR] || G.NEAREST_MIPMAP_LINEAR;
+    G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, MINF);
+    G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.LINEAR);
+  } else {
+    G.texImage2D(G.TEXTURE_2D, 0, G.RGBA, t.w, t.h, 0, G.RGBA, G.UNSIGNED_BYTE,
+                 new Uint8Array(t.data.buffer, t.data.byteOffset, t.data.byteLength));
+    G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, G.NEAREST);
+    G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.NEAREST);
+  }
+  G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_S, G.REPEAT);
+  G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_T, G.REPEAT);
+  const o = { tx, alpha: t.alpha, w: t.w, h: t.h };
+  texZ.set(key, o);
+  texZstats.decoded++;
+  return o;
+}
+const SHADERS_Z = {
+  LightMapDC: [LIGHTMAPDC_V, LIGHTMAPDC_F],
+  AlphaMasking: [ALPHAMASKING_V, ALPHAMASKING_F],
+  SimpleAdditive: [NVGLASS_V, NVGLASS_F],
+  StandardDiffuseDC: [NVGLASS_V, NVGLASS_F],
+  other: [NVGLASS_V, NVGLASS_F],
+};
+const DEFS_Z = {
+  LightMapDC: '',
+  AlphaMasking: '#define TDKR_SPLIT_ALPHA\n',
+  SimpleAdditive: '',
+  StandardDiffuseDC: '',
+  other: '',
+};
+// SimpleAdditive/StandardDiffuseDC/other need vColor0 = white (vColor removed from the
+// engine batching path); NV_Glass VS without DIFFUSE_MASK outputs Color*vColor0 with
+// BlendFactor path — supply Color0 attribute = 255 and no mask/reflection (matches the
+// s48 reference's diffuse-only deviation).
+
+function drawZoneBatches(batches, W, H) {
+  G.viewport(0, 0, W, H);
+  G.clearColor(0, 0, 0, 0);
+  G.clear(G.COLOR_BUFFER_BIT | G.DEPTH_BUFFER_BIT);
+  if (!NODEPTH) G.enable(G.DEPTH_TEST);
+  G.depthFunc(G.LEQUAL);
+  G.disable(G.CULL_FACE);
+  let tris = 0, draws = 0;
+  for (const b of batches) {
+    if (ONLY_FX && b.fx !== ONLY_FX) continue;
+    const [vsrc, fsrc0] = SHADERS_Z[b.fx] || SHADERS_Z.other;
+    let fsrc = fsrc0, modeKey = '';
+    if (FLAT) {
+      modeKey = '|flat';
+      fsrc = fsrc0.replace(/void main\(\)/g, 'void mainOrig()').replace(/\s*discard;/g, ' ;') +
+        '\nvoid main(){ mainOrig(); gl_FragColor = vec4(0.5,0.5,0.5,1.0); }\n';
+    }
+    if (MATONLY !== null && b.mid !== MATONLY) continue;
+    if (QS.get('arg2') === '1') { modeKey += '|arg2';
+      fsrc = fsrc.split('texture2D(DiffuseMap, vCoord0, LOD_BIAS)').join('texture2D(DiffuseMap, vCoord0)'); }
+    if (QS.get('shdbg') === '1') { modeKey += '|shdbg';
+      fsrc = fsrc.replace(/void main\(\)[\s\S]*$/, 'void main() { gl_FragColor = vec4(vCoord0, vCoord1); }'); }
+    if (NOLM) { modeKey += '|nolm'; const __bl = fsrc.length; fsrc = fsrc.replace(/texture2D\s*\(\s*LightMap\s*,[^)]*\)\s*\*\s*2\.0/g, 'vec4(1.0)'); window.__NOLM_OK = (fsrc.length !== __bl); }
+    if (LMONLY) { modeKey += '|lmonly'; fsrc = fsrc.split('texture2D(DiffuseMap, vCoord0, LOD_BIAS)').join('vec4(1.0)'); }
+    if (HP) { modeKey += '|hp';
+      fsrc = fsrc.replace(/varying\s+mediump\s+vec2\s+vCoord0;/g, 'varying highp vec2 vCoord0;');
+      fsrc = fsrc.replace(/varying\s+mediump\s+vec2\s+vCoord1;/g, 'varying highp vec2 vCoord1;'); }
+    const P = getProgZ(b.fx + '|' + DEFS_Z[b.fx] + modeKey, DEFS_Z[b.fx] + vsrc, DEFS_Z[b.fx] + fsrc);
+    G.useProgram(P.p);
+    if (P.uni.WorldViewProjection) G.uniformMatrix4fv(P.uni.WorldViewProjection, false, b.wvp);
+    if (P.uni.WorldViewProjectionMatrix) G.uniformMatrix4fv(P.uni.WorldViewProjectionMatrix, false, b.wvp);
+    const so = [1, 1, 0, 0];
+    for (const nm of ['Coord0_scaleoffset', 'Coord1_scaleoffset', 'TexCoord0_scaleoffset',
+                      'TexCoord1_scaleoffset'])
+      if (P.uni[nm]) G.uniform4fv(P.uni[nm], so);
+    if (P.uni.LightMapAtlas) G.uniform4fv(P.uni.LightMapAtlas, [1, 1, 0, 0]);
+    if (P.uni.Overbright) G.uniform1f(P.uni.Overbright, 1.0);
+    if (P.uni.uvOffset) G.uniform2f(P.uni.uvOffset, 0, 0);
+    if (P.uni.Ambient) G.uniform4f(P.uni.Ambient, 0, 0, 0, 1);
+    if (P.uni.FogColor) G.uniform4f(P.uni.FogColor, 64/255, 102/255, 119/255, 0);
+    if (P.uni.FogStartEnd) G.uniform2f(P.uni.FogStartEnd, 0, 1/140);
+    if (P.uni.WorldViewTransposed) G.uniformMatrix4fv(P.uni.WorldViewTransposed, false,
+      new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]));
+    function bindA(name, buf, size) {
+      if (P.attr[name] === undefined || P.attr[name] < 0) return;
+      G.bindBuffer(G.ARRAY_BUFFER, buf);
+      G.enableVertexAttribArray(P.attr[name]);
+      G.vertexAttribPointer(P.attr[name], size, G.FLOAT, false, 0, 0);
+    }
+    if (QS.get('attrdbg') === '1' && b.mid === 73 && !window.__ATTR) {
+      window.__ATTR = { Coord0: P.attr.Coord0, Coord1: P.attr.Coord1, Position: P.attr.Position,
+                        Normal: P.attr.Normal, Color: P.attr.Color,
+                        hasC0so: !!P.uni.Coord0_scaleoffset, hasWVP: !!(P.uni.WorldViewProjection || P.uni.WorldViewProjectionMatrix),
+                        fx: b.fx, nidx: b.nidx, glerr_pre: G.getError() };
+    }
+    bindA('Position', b.posBuf, 4);
+    bindA('Normal', b.posBuf, 4);
+    bindA('Coord0', b.uv0Buf, 2);
+    bindA('TexCoord0', b.uv0Buf, 2);
+    if (b.uv1Buf) { bindA('Coord1', b.uv1Buf, 2); bindA('TexCoord1', b.uv1Buf, 2); }
+    if (b.c0Buf) { bindA('Color', b.c0Buf, 4); bindA('Color0', b.c0Buf, 4); }
+    let unit = 0;
+    const bn = b.bind;
+    const dTex = texZget(bn[0], false);
+    if (SKIPMISS && !dTex) { if (PROBE) window.__GLERR.push(['skipmiss:' + b.fx, b.nidx, 0]); continue; }
+    if (dTex && P.uni.DiffuseMap !== undefined && P.uni.DiffuseMap) {
+      G.activeTexture(G.TEXTURE0); G.bindTexture(G.TEXTURE_2D, (QS.get('grad') === '1' && b.mid === 73 && window.__GRAD73) ? window.__GRAD73 : dTex.tx);
+      G.uniform1i(P.uni.DiffuseMap, 0); unit = 1;
+    } else if (dTex && P.uni.DiffuseTextureSampler) {
+      G.activeTexture(G.TEXTURE0); G.bindTexture(G.TEXTURE_2D, dTex.tx);
+      G.uniform1i(P.uni.DiffuseTextureSampler, 0); unit = 1;
+    }
+    if ((b.fx === 'LightMapDC' || b.fx === 'AlphaMasking') && bn[1]) {
+      const lm = texZget(bn[1], false);
+      if (lm && P.uni.LightMap) { G.activeTexture(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lm.tx); G.uniform1i(P.uni.LightMap, 1); }
+      else if (lm && P.uni.LightmapTextureSampler) { G.activeTexture(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lm.tx); G.uniform1i(P.uni.LightmapTextureSampler, 1); }
+    }
+    if (b.fx === 'AlphaMasking' && dTex && dTex.alpha && P.uni.DiffuseMap_alpha) {
+      const n = dTex.alpha.w * dTex.alpha.h;
+      const arr = new Uint8Array(n * 4);
+      for (let i = 0; i < n; i++) {
+        const v = dTex.alpha.data[i * 4];
+        arr[i*4] = v; arr[i*4+1] = v; arr[i*4+2] = v; arr[i*4+3] = 255;
+      }
+      const at = G.createTexture();
+      G.bindTexture(G.TEXTURE_2D, at);
+      G.texImage2D(G.TEXTURE_2D, 0, G.RGBA, dTex.alpha.w, dTex.alpha.h, 0, G.RGBA, G.UNSIGNED_BYTE, arr);
+      G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_S, G.REPEAT);
+      G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_T, G.REPEAT);
+      G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, G.NEAREST);
+      G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.NEAREST);
+      G.activeTexture(G.TEXTURE2); G.bindTexture(G.TEXTURE_2D, at);
+      G.uniform1i(P.uni.DiffuseMap_alpha, 2);
+    }
+    if (!b.c0Buf && (P.attr.Color || P.attr.Color0)) {
+      // white vertex color for effects that multiply vColor (s48 diffuse-only deviation)
+      G.disableVertexAttribArray(P.attr.Color !== undefined && P.attr.Color >= 0 ? P.attr.Color : P.attr.Color0);
+      const loc = P.attr.Color >= 0 ? P.attr.Color : P.attr.Color0;
+      G.vertexAttrib4f(loc, 1, 1, 1, 1);
+    }
+    G.bindBuffer(G.ELEMENT_ARRAY_BUFFER, b.idxBuf);
+    G.drawElements(G.TRIANGLES, b.nidx, b.use32 ? G.UNSIGNED_INT : G.UNSIGNED_SHORT, 0);
+    if (PROBE) { const e = G.getError(); if (e) window.__GLERR.push([b.fx, b.nidx, e]); }
+    tris += b.nidx / 3; draws++;
+  }
+  return { tris, draws };
+}
+
+
+/* ================= main (s49 T4a) ================= */
+const heapMB = function () {
+  if (performance.memory) return Math.round(performance.memory.usedJSHeapSize / 1048576);
+  return -1;
+};
+
+async function corrVsRef(buf) {
+  const RW = glz.width, RH = glz.height;
+  const REFPNG = QS.get('ref') || 's48_ref_zone.png';
+  const resp = await fetch('./' + REFPNG);
+  const bmp = await createImageBitmap(await resp.blob());
+  const cc = document.createElement('canvas');
+  cc.width = RW; cc.height = RH;
+  const cx2 = cc.getContext('2d', { willReadFrequently: true });
+  cx2.drawImage(bmp, 0, 0);
+  const ref = cx2.getImageData(0, 0, RW, RH).data;
+  let sa = 0, sb = 0, saa = 0, sbb = 0, sab = 0;
+  const n = RW * RH;
+  for (let i = 0; i < n; i++) {
+    const j = i * 4;
+    const a = (buf[j] + buf[j + 1] + buf[j + 2]) / 3;
+    const bb2 = (ref[i * 4] + ref[i * 4 + 1] + ref[i * 4 + 2]) / 3;
+    sa += a; sb += bb2; saa += a * a; sbb += bb2 * bb2; sab += a * bb2;
+  }
+  const covv = sab / n - (sa / n) * (sb / n);
+  const va = saa / n - (sa / n) ** 2, vb2 = sbb / n - (sb / n) ** 2;
+  const corr = covv / Math.sqrt(va * vb2);
+  window.__GATE.corr = corr;
+  window.__GATE.js_mean = sa / n;
+  window.__GATE.ref_mean = sb / n;
+  window.__GLDUMP = () => { const c = document.createElement('canvas');
+    c.width = RW; c.height = RH;
+    const cx3 = c.getContext('2d');
+    const flipped = new Uint8ClampedArray(RW * RH * 4);
+    for (let y = 0; y < RH; y++)
+      flipped.set(buf.subarray(y * RW * 4, (y + 1) * RW * 4), (RH - 1 - y) * RW * 4);
+    cx3.putImageData(new ImageData(flipped, RW, RH), 0, 0);
+    return c.toDataURL('image/png'); };
+  log('corr vs ' + REFPNG + ': ' + corr.toFixed(4) + '  js_mean ' + (sa / n).toFixed(2) + ' ref_mean ' + (sb / n).toFixed(2));
+}
+
+function runQuad() {
+  try {
+    const tqvs = 'attribute vec2 p; varying vec2 t; void main(){ t = p*0.5+0.5; gl_Position = vec4(p,0.0,1.0); }';
+    const tqfs = 'precision mediump float; uniform sampler2D s; varying vec2 t; void main(){ gl_FragColor = texture2D(s, t); }';
+    const vs2 = G.createShader(G.VERTEX_SHADER); G.shaderSource(vs2, tqvs); G.compileShader(vs2);
+    const fs2 = G.createShader(G.FRAGMENT_SHADER); G.shaderSource(fs2, tqfs); G.compileShader(fs2);
+    const pr2 = G.createProgram(); G.attachShader(pr2, vs2); G.attachShader(pr2, fs2); G.linkProgram(pr2);
+    G.useProgram(pr2);
+    const qb = G.createBuffer(); G.bindBuffer(G.ARRAY_BUFFER, qb);
+    G.bufferData(G.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,-1, 1,1, -1,1]), G.STATIC_DRAW);
+    const lp = G.getAttribLocation(pr2, 'p');
+    G.enableVertexAttribArray(lp); G.vertexAttribPointer(lp, 2, G.FLOAT, false, 0, 0);
+    const texq = QS.get('texname') ? texZget(QS.get('texname'), false) : texZget('gothamcity_roads_details.tga', false);
+    G.activeTexture(G.TEXTURE0); G.bindTexture(G.TEXTURE_2D, texq.tx);
+    G.uniform1i(G.getUniformLocation(pr2, 's'), 0);
+    G.disable(G.DEPTH_TEST);
+    G.viewport(0, 0, glz.width, glz.height);
+    G.drawArrays(G.TRIANGLES, 0, 6);
+    const qbuf = new Uint8Array(glz.width * glz.height * 4);
+    G.readPixels(0, 0, glz.width, glz.height, G.RGBA, G.UNSIGNED_BYTE, qbuf);
+    let sr = 0, sg = 0, sb2 = 0, mx = 0;
+    for (let i = 0; i < qbuf.length; i += 4) { sr += qbuf[i]; sg += qbuf[i+1]; sb2 += qbuf[i+2]; if (qbuf[i] > mx) mx = qbuf[i]; }
+    const n2 = glz.width * glz.height;
+    window.__QUAD = { mean: [Math.round(sr/n2*10)/10, Math.round(sg/n2*10)/10, Math.round(sb2/n2*10)/10],
+                      maxr: mx, texw: texq.w, texh: texq.h, glerr: G.getError() };
+  } catch (e) { window.__QUAD = { error: String(e) }; }
+}
+
+document.querySelector('#f').addEventListener('change', async (ev) => {
+  try {
+    const t0 = performance.now();
+    const needed = await (async () => {
+      const zipBuf = new Uint8Array(await ev.target.files[0].arrayBuffer());
+      const zmembers = zipMembers(zipBuf);
+      const gla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla'));
+      const gcityZip = glaMember(gla, 'GothamCity.zip');
+      const gmembers = zipMembers(gcityZip);
+      const out = {
+        lt: await zipRead2(gcityZip, gmembers.get('lod_table.bin')),
+        ldd: await zipRead2(gcityZip, gmembers.get('lod_data.bin')),
+        bi8: await zipRead2(gcityZip, gmembers.get('batch_info.bin')),
+        mb: await zipRead2(gcityZip, gmembers.get('GothamCity_materials.bdae')),
+        texGla: await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla')),
+      };
+      return out;   // zipBuf/gla/gcityZip go out of scope here
+    })();
+    const lt = needed.lt, ldd = needed.ldd, bi8 = needed.bi8, mb = needed.mb;
+    const le = await zipRead2(mb, zipMembers(mb).get('little_endian_not_quantized.bdae'));
+    const texGlaBuf = needed.texGla;
+    window.texGla = texGlaBuf;
+    const { bind, fx } = parseCompiledTable(le);
+    const t_load = performance.now() - t0;
+    log('load ' + t_load.toFixed(0) + ' ms heap ' + heapMB() + ' MB');
+
+    const W = 1024, H = 605;
+    const cnt = u32le(lt, 0);
+    const pairs = [];
+    for (let k = 0; k < cnt; k++) pairs.push([u32le(lt, 4 + 8*k), u32le(lt, 8 + 8*k)]);
+    const fbuf = new DataView(ldd.buffer, ldd.byteOffset, ldd.byteLength);
+    // zone AABB (x, z; y = height)
+    let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+    const segInfo = [];
+    for (let k = 0; k < cnt; k++) {
+      const off2 = pairs[k][0];
+      const mid = u32le(ldd, off2 + 40);
+      const data_off = u32le(ldd, off2 + 68), vb = u32le(ldd, off2 + 76), ib = u32le(ldd, off2 + 80);
+      const ds = declOf(bi8, mid);
+      const stride = ds[ds.length-1].end;
+      const nv = (vb/stride)|0;
+      if (nv <= 0 || vb % stride !== 0 || ib < 6) continue;
+      segInfo.push({ k, mid, data_off, vb, ib, nv, stride, ds });
+      const s0 = fbuf.getFloat32(data_off + 4, true), z0v = fbuf.getFloat32(data_off + 8, true);
+      // full-scan verts is 1.2M gets; sample the first+last verts for the AABB (the
+      // s48 reference used full scan; AABB from sampled verts may differ by a margin)
+      const s1 = fbuf.getFloat32(data_off + 4 + (nv-1)*stride, true);
+      const z1v = fbuf.getFloat32(data_off + 8 + (nv-1)*stride, true);
+      x0 = Math.min(x0, s0, s1); x1 = Math.max(x1, s0, s1);
+      z0 = Math.min(z0, z0v, z1v); z1 = Math.max(z1, z0v, z1v);
+    }
+    log('AABB x[' + x0.toFixed(0) + ' ' + x1.toFixed(0) + '] z[' + z0.toFixed(0) + ' ' + z1.toFixed(0) + ']');
+    // exact AABB: full scan (fast typed loop)
+    x0 = 1e9; x1 = -1e9; z0 = 1e9; z1 = -1e9;
+    for (const s of segInfo) {
+      for (let v = 0; v < s.nv; v++) {
+        const o = s.data_off + 4 + v*s.stride;
+        const x = fbuf.getFloat32(o, true), z = fbuf.getFloat32(o + 4, true);
+        if (x < x0) x0 = x; if (x > x1) x1 = x;
+        if (z < z0) z0 = z; if (z > z1) z1 = z;
+      }
+    }
+    const BBP = QS.get('bb');
+    if (BBP) { const bv = BBP.split(',').map(Number); x0 = bv[0]; z0 = bv[1]; x1 = bv[2]; z1 = bv[3]; }
+    const scale = Math.min(W/(x1-x0), H/(z1-z0));
+    const xm = (x0+x1)/2, zm = (z0+z1)/2;
+    log('AABB full x[' + x0.toFixed(1) + ' ' + x1.toFixed(1) + '] z[' + z0.toFixed(1) + ' ' +
+        z1.toFixed(1) + '] scale ' + scale.toFixed(4));
+
+    // ---- per-material batched geometry (s49 T4a core change vs s48) ----
+    const t_b0 = performance.now();
+    const byMat = new Map();
+    for (const s of segInfo) {
+      if (!byMat.has(s.mid)) byMat.set(s.mid, []);
+      byMat.get(s.mid).push(s);
+    }
+    const batches = [];
+    // WVP: pixel-space top-down ortho, depth from height
+    // z' = 1 - h/200 : higher height = SMALLER clip z = nearer (GL near = -1)
+    const wvp = new Float32Array([
+      2/W, 0, 0, 0,
+      0, 2/H, 0, 0,
+      0, 0, -2/350, 0,
+      -1, -1, 150/350, 1,
+    ]);
+    for (const [mid, segs] of byMat) {
+      if (!segs[0].ds.find(d => d.attr === 1)) continue;   // no TC0 -> not rendered (matches s48 ref)
+      let nvT = 0, niT = 0;
+      for (const s of segs) { nvT += s.nv; niT += (s.ib/2)|0; }
+      const pos = new Float32Array(nvT*4);
+      const uv0 = new Float32Array(nvT*2);
+      const d1 = segs[0].ds.find(d => d.attr === 2);
+      const uv1 = d1 ? new Float32Array(nvT*2) : null;
+      const d17 = segs[0].ds.find(d => d.attr === 17);
+      const c0 = d17 ? new Float32Array(nvT*4) : null;
+      const use32 = nvT > 65535;
+      const idx = use32 ? new Uint32Array(niT) : new Uint16Array(niT);
+      let vo = 0, io = 0;
+      for (const s of segs) {
+        const dmap = {}; for (const d of s.ds) dmap[d.attr] = d;
+        const d0 = dmap[1];
+        for (let v = 0; v < s.nv; v++) {
+          const o = s.data_off + 4 + v*s.stride;
+          const x = fbuf.getFloat32(o, true), z = fbuf.getFloat32(o + 4, true);
+          const h = fbuf.getFloat32(o + 8, true);
+          const o4 = (vo+v)*4;
+          pos[o4] = (x-xm)*scale + W/2;
+          pos[o4+1] = (zm-z)*scale + H/2;
+          pos[o4+2] = h;
+          pos[o4+3] = 1;
+          uv0[(vo+v)*2] = UVABS ? 0.5 : (fbuf.getInt16(o + d0.start, true)/32767*0.5 + 0.5);
+          uv0[(vo+v)*2+1] = UVABS ? 0.5 : 1.0 - (fbuf.getInt16(o + d0.start + 2, true)/32767*0.5 + 0.5);
+          if (uv1) {
+            uv1[(vo+v)*2] = fbuf.getInt16(o + d1.start, true)/32767*0.5 + 0.5;
+            uv1[(vo+v)*2+1] = 1.0 - (fbuf.getInt16(o + d1.start + 2, true)/32767*0.5 + 0.5);
+          }
+          if (c0) {
+            for (let c = 0; c < 4; c++) c0[(vo+v)*4+c] = ldd[o + d17.start + c]/255;
+          }
+        }
+        for (let t = 0; t + 2 < (s.ib/2)|0; t += 3) {
+          const a = u16le(ldd, s.data_off + 4 + s.vb + t*2);
+          const bb = u16le(ldd, s.data_off + 4 + s.vb + t*2 + 2);
+          const cc = u16le(ldd, s.data_off + 4 + s.vb + t*2 + 4);
+          if (a < s.nv && bb < s.nv && cc < s.nv) {
+            idx[io] = a+vo; idx[io+1] = bb+vo; idx[io+2] = cc+vo; io += 3;
+          }
+        }
+        vo += s.nv;
+      }
+      const mk = (arr) => { const b = G.createBuffer(); G.bindBuffer(G.ARRAY_BUFFER, b);
+        G.bufferData(G.ARRAY_BUFFER, arr, G.STATIC_DRAW); return b; };
+      const bi2 = G.createBuffer();
+      G.bindBuffer(G.ELEMENT_ARRAY_BUFFER, bi2);
+      G.bufferData(G.ELEMENT_ARRAY_BUFFER, idx, G.STATIC_DRAW);
+      const fxn = ['LightMapDC', 'AlphaMasking', 'SimpleAdditive', 'StandardDiffuseDC']
+        .includes(fx[mid]) ? fx[mid] : 'other';
+      let hsum = 0;
+      for (let i = 2; i < pos.length; i += 4) hsum += pos[i];
+      if (QS.get('grad') === '1' && mid === 73 && !window.__GRAD73) { const gw = 512, gh = 512; const garr = new Uint8Array(gw * gh * 4); for (let y = 0; y < gh; y++) for (let x = 0; x < gw; x++) { const o = (y * gw + x) * 4; garr[o] = Math.min(255, x * 2); garr[o + 1] = Math.min(255, y * 2); garr[o + 2] = 0; garr[o + 3] = 255; } const gt = G.createTexture(); G.bindTexture(G.TEXTURE_2D, gt); G.texImage2D(G.TEXTURE_2D, 0, G.RGBA, gw, gh, 0, G.RGBA, G.UNSIGNED_BYTE, garr); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_S, G.REPEAT); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_T, G.REPEAT); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, G.NEAREST); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.NEAREST); window.__GRAD73 = gt; }
+    if (mid === 73) { window.__UV73 = Array.from(uv0.slice(0, 48)); window.__POS73 = Array.from(pos.slice(0, 32)); window.__SEG73NV = segs.map(q => q.nv); }
+    if (mid === 73 && uv1 && !window.__UV1_73) { window.__UV1_73 = Array.from(uv1.slice(0, 48)); }
+    batches.push({ fx: fxn, mid, bind: bind[mid] || ['', ''],
+        posBuf: mk(pos), uv0Buf: mk(uv0), uv1Buf: uv1 ? mk(uv1) : null,
+        c0Buf: (c0 && fxn !== 'other') ? mk(c0) : null, idxBuf: bi2, nidx: io, use32, wvp,
+        hmean: hsum/(pos.length/4) });
+    }
+    const t_build = performance.now() - t_b0;
+    log('batch build ' + t_build.toFixed(0) + ' ms, ' + batches.length +
+        ' material batches, heap ' + heapMB() + ' MB');
+
+    if (QS.get('painter') === '1') {
+      // global painter order over (triangle mean height, seg, tri), flat color, depth OFF
+      const tP0 = performance.now();
+      let nvAll = 0, triAll = 0;
+      for (const s2 of segInfo) { nvAll += s2.nv; triAll += ((s2.ib / 2) / 3) | 0; }
+      const ppos = new Float32Array(nvAll * 4);
+      const keys = new Float64Array(triAll);
+      const tsi = new Int32Array(triAll);
+      const tti = new Int32Array(triAll);
+      let vbase = 0, tbase = 0;
+      const segIds = [];
+      for (let si2 = 0; si2 < segInfo.length; si2++) segIds.push(si2);
+      for (const s2 of segInfo) {
+        const si2 = segIds.shift();
+        for (let v = 0; v < s2.nv; v++) {
+          const o = s2.data_off + 4 + v * s2.stride;
+          const x = fbuf.getFloat32(o, true), zz = fbuf.getFloat32(o + 4, true);
+          const h = fbuf.getFloat32(o + 8, true);
+          const o4 = (vbase + v) * 4;
+          ppos[o4] = (x - xm) * scale + W / 2;
+          ppos[o4 + 1] = (zm - zz) * scale + H / 2;
+          ppos[o4 + 2] = h; ppos[o4 + 3] = 1;
+        }
+        const nidx2 = (s2.ib / 2) | 0;
+        for (let t = 0; t + 2 < nidx2; t += 3) {
+          const a = u16le(ldd, s2.data_off + 4 + s2.vb + t * 2);
+          const bb = u16le(ldd, s2.data_off + 4 + s2.vb + t * 2 + 2);
+          const cc = u16le(ldd, s2.data_off + 4 + s2.vb + t * 2 + 4);
+          if (a >= s2.nv || bb >= s2.nv || cc >= s2.nv) continue;
+          const hmean = (ppos[(vbase + a) * 4 + 2] + ppos[(vbase + bb) * 4 + 2] + ppos[(vbase + cc) * 4 + 2]) / 3;
+          keys[tbase] = hmean; tsi[tbase] = si2; tti[tbase] = t; tbase++;
+        }
+        s2.vbase = vbase; vbase += s2.nv;
+      }
+      const order2 = Array.from({ length: tbase }, (_, i) => i);
+      order2.sort((p, q) => keys[p] - keys[q] || tsi[p] - tsi[q] || tti[p] - tti[q]);
+      const pidx = new Uint32Array(tbase * 3);
+      for (let i = 0; i < tbase; i++) {
+        const gi = order2[i];
+        const s2 = segInfo[tsi[gi]];
+        const t = tti[gi];
+        pidx[i * 3] = s2.vbase + u16le(ldd, s2.data_off + 4 + s2.vb + t * 2);
+        pidx[i * 3 + 1] = s2.vbase + u16le(ldd, s2.data_off + 4 + s2.vb + t * 2 + 2);
+        pidx[i * 3 + 2] = s2.vbase + u16le(ldd, s2.data_off + 4 + s2.vb + t * 2 + 4);
+      }
+      const pb = G.createBuffer();
+      G.bindBuffer(G.ARRAY_BUFFER, pb);
+      G.bufferData(G.ARRAY_BUFFER, ppos, G.STATIC_DRAW);
+      const pib = G.createBuffer();
+      G.bindBuffer(G.ELEMENT_ARRAY_BUFFER, pib);
+      G.bufferData(G.ELEMENT_ARRAY_BUFFER, pidx, G.STATIC_DRAW);
+      G.viewport(0, 0, W, H);
+      G.clearColor(0, 0, 0, 0);
+      G.clear(G.COLOR_BUFFER_BIT);
+      G.disable(G.DEPTH_TEST);
+      const PP = getProgZ('flat|painter', FLAT_VS, FLAT_FS);
+      G.useProgram(PP.p);
+      G.uniformMatrix4fv(PP.uni.WVP, false, new Float32Array([2/W,0,0,0, 0,2/H,0,0, 0,0,-2/350,0, -1,-1,150/350,1]));
+      const aLoc = PP.attr.Position;
+      G.bindBuffer(G.ARRAY_BUFFER, pb);
+      G.enableVertexAttribArray(aLoc);
+      G.vertexAttribPointer(aLoc, 4, G.FLOAT, false, 0, 0);
+      G.bindBuffer(G.ELEMENT_ARRAY_BUFFER, pib);
+      G.drawElements(G.TRIANGLES, tbase * 3, G.UNSIGNED_INT, 0);
+      const perr = G.getError();
+      window.__GLERR.push(['painter', tbase, perr]);
+      const buf2 = new Uint8Array(W * H * 4);
+      G.readPixels(0, 0, W, H, G.RGBA, G.UNSIGNED_BYTE, buf2);
+      window.__GATE.first_image_ms = t_load + (performance.now() - tP0);
+      window.__GATE.painter = { tris: tbase, ms: Math.round(performance.now() - tP0) };
+      await corrVsRef(buf2);
+      window.__GATE.done = true;
+  if (QS.get("texquad") === "1") runQuad();
+      log('PAINTER done: ' + tbase + ' tris in ' + Math.round(performance.now() - tP0) + ' ms, glerr ' + perr);
+      return;
+    }
+    batches.sort((a, b) => a.hmean - b.hmean);   // painter-order semantics (s48 ref)
+    const t_r0 = performance.now();
+    const { tris, draws } = drawZoneBatches(batches, W, H);
+    const t_draw = performance.now() - t_r0;
+    const buf = new Uint8Array(W*H*4);
+    G.readPixels(0, 0, W, H, G.RGBA, G.UNSIGNED_BYTE, buf);
+    log('draw ' + t_draw.toFixed(0) + ' ms, ' + draws + ' draws, ' + tris.toFixed(0) +
+        ' tris, textures decoded ' + texZstats.decoded + ', heap ' + heapMB() + ' MB');
+    window.__GATE.first_image_ms = t_load + t_build + t_draw;
+    window.__GATE.heap_mb = heapMB();
+    window.__GATE.draws = draws;
+    window.__GATE.tris = tris;
+    window.__GATE.tex_decoded = texZstats.decoded;
+
+    await corrVsRef(buf);
+    window.__GATE.glerr = window.__GLERR;
+    window.__GATE.mode = { flat: FLAT, only: ONLY_FX, skipmiss: SKIPMISS,
+      ext: QS.get('noext') !== '1', painter: QS.get('painter') === '1' };
+    window.__GATE.done = true;
+  if (QS.get("texquad") === "1") runQuad();
+    log('DONE');
+  } catch (e) {
+    log('ERROR: ' + (e && e.stack || e));
+    window.__GATE.error = String(e && e.stack || e);
+    window.__GATE.done = true;
+  if (QS.get("texquad") === "1") runQuad();
+  }
+});
+</script>
+</body>
+</html>
