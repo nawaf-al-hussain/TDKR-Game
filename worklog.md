@@ -615,3 +615,21 @@ Stage Summary:
 - Commits main: 34cf925 (T1), d1faf21 (T2), c23e520 (T3), 9f656cc (T4), 34f29cb (receipt); branch s41-city-slice: 2158b8f (T1 page), bf76529 (T4 page).
 - Bundles: download/bundles_s49/{main_s49_inc.bundle 639276 B 9afa7596..., branch_s41_s49.bundle 40972 B ee23f402...}.
 - Nothing deployed; no token supplied; local-only.
+
+---
+Task ID: s49-T5
+Agent: main (Z.ai session 49 continuation)
+Task: T5 integration page (staged only) + T6 push/live/deliver
+
+Work Log:
+- Resumed S49 from prior-segment commits (T1-T4 already on main); read receipts, cleaned tree (edc06c7 leftover artifacts, .gitignore derived dumps)
+- T5: wrote playable/integration.html on gh-pages-staged-s44 = ONE user zip drives (1) city_zone2's engine-GLSL zone renderer adapted to a capsule-follow camera (world-space batches, camWVP ortho 240m window, per-material static GL texture prep), (2) walktest.js walker + buildSoupFromLvc digest gate + runRouteCheck (10 routes vs s44 harness), (3) s40 buildGLB Batman from user zip (readBdae/decodeAnims/RGB888 DataTexture) in a white-bg THREE viewport for silhouette
+- Gate runner s49_t5_gate.py (playwright + local server): PASS 8/8 — 0 console errors, nm self-check PASS, soup sha256 PASS, routes 10/10 agree (262 ms), Batman ok, silhouette 3041 px, walk frame-diff 420023/519264 vs idle 0, camera travel 5.6 m; load 10.2 s (895 MB zip read), zone 138 batches / 71 textures decoded (miss trunk.tga, LightMapSampler.tga — known T4a classes)
+- Fix during gate: dt clamp 0.05 -> 0.5 (swiftshader frame times 200-400 ms made sim 4x slow; camera travel 1.5 -> 5.6 m)
+- Negative control ?corrupt=1: navmesh bytes corrupted -> self-check FAIL -> clean gate abort, DETECTED
+- Commits: staged branch bc94daa (page), main 1db7c04 (gate receipts)
+
+Stage Summary:
+- T5 PASS (staged only, NOT deployed). Integration page demonstrates: engine shaders + engine bindings zone render, user-file walker with harness-verified physics, user-zip Batman, camera follow, full gate set with a detecting negative control
+- Heap note: zip-dominated peak (~905 MB in-browser during load) as in T4a; <400 MB steady state NOT certified
+- Carry-over: zone renderer fidelity gap (T4a corr 0.68) unresolved and inherited by the integration view; fog/post not yet composited into the zone path
