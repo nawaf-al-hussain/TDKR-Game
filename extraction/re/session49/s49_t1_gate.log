@@ -1,0 +1,19 @@
+server: True
+127.0.0.1 - - [22/Oct/2026 11:35:25] "GET /playable/city_slice9.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 11:35:25] "GET /playable/etc1_tdkr.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 11:35:28] "GET /playable/s49_ref_road276_lm2.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 11:35:28] "GET /playable/s49_ref_road276_cfog_25u.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 11:35:28] "GET /playable/s49_ref_glass7_lm.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 11:35:28] "GET /playable/s49_ref_vcblend_tex2.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 11:35:29] "GET /playable/s49_ref_stride28_lm2o.png HTTP/1.1" 200 -
+console errors: [] count 0
+page errors: []
+gate error: None
+{'tag': 'road276_lm2', 'corr': 0.9963614426999032, 'js_mean': 1.4332367346938781, 'ref_mean': 1.4164306122448918, 'py_mean': 32.83650588989258}
+{'tag': 'road276_lm2_cfog_25u', 'corr': 0.9967909301643095, 'js_mean': 1.737750340136047, 'ref_mean': 1.715460544217682, 'py_mean': 39.74803924560547}
+{'tag': 'glass7_lm', 'corr': 0.9009606172941205, 'js_mean': 13.059908163259662, 'ref_mean': 11.114504081633969, 'py_mean': 14.391644477844238}
+{'tag': 'glass7_nolm', 'corr': 0.28513200804882954, 'js_mean': 64.47207482992282, 'ref_mean': 11.114504081633969}
+{'tag': 'vcblend', 'corr': 0.9968982915561654, 'js_mean': 11.184955782313226, 'ref_mean': 11.024547619047421}
+{'tag': 'stride28_lm2o', 'corr': 0.9325307402029637, 'js_mean': 0.4270585034013603, 'ref_mean': 0.43144897959183715, 'py_mean': 111.42507934570312}
+CHECKS: {'road276_prefog_corr>=0.99': True, 'road276_fog_corr>=0.98': True, 'fog_raises_mean': True, 'glass_lm_profile_wins': True, 'glass_lm_corr>=0.88': True, 'stride28_decal_corr>=0.90': True, 'stride28_mean_within_10pct': True}
+GATE PASS -> /tmp/my-project/work/TDKR-Game/extraction/re/session49/s49_t1_gate.json

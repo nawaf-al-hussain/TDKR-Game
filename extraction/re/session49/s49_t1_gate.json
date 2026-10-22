@@ -1,0 +1,57 @@
+{
+ "gate_pass": true,
+ "checks": {
+  "road276_prefog_corr>=0.99": true,
+  "road276_fog_corr>=0.98": true,
+  "fog_raises_mean": true,
+  "glass_lm_profile_wins": true,
+  "glass_lm_corr>=0.88": true,
+  "stride28_decal_corr>=0.90": true,
+  "stride28_mean_within_10pct": true
+ },
+ "rows": [
+  {
+   "tag": "road276_lm2",
+   "corr": 0.9963614426999032,
+   "js_mean": 1.4332367346938781,
+   "ref_mean": 1.4164306122448918,
+   "py_mean": 32.83650588989258
+  },
+  {
+   "tag": "road276_lm2_cfog_25u",
+   "corr": 0.9967909301643095,
+   "js_mean": 1.737750340136047,
+   "ref_mean": 1.715460544217682,
+   "py_mean": 39.74803924560547
+  },
+  {
+   "tag": "glass7_lm",
+   "corr": 0.9009606172941205,
+   "js_mean": 13.059908163259662,
+   "ref_mean": 11.114504081633969,
+   "py_mean": 14.391644477844238
+  },
+  {
+   "tag": "glass7_nolm",
+   "corr": 0.28513200804882954,
+   "js_mean": 64.47207482992282,
+   "ref_mean": 11.114504081633969
+  },
+  {
+   "tag": "vcblend",
+   "corr": 0.9968982915561654,
+   "js_mean": 11.184955782313226,
+   "ref_mean": 11.024547619047421
+  },
+  {
+   "tag": "stride28_lm2o",
+   "corr": 0.9325307402029637,
+   "js_mean": 0.4270585034013603,
+   "ref_mean": 0.43144897959183715,
+   "py_mean": 111.42507934570312
+  }
+ ],
+ "console_errors": [],
+ "page_errors": [],
+ "gate_error": null
+}
