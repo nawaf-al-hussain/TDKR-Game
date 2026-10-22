@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR city slice 6 — engine lightmap/additive math (s48 T1 — branch-only, NOT deployed)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #cdd3e0; font: 13px/1.5 system-ui, sans-serif; }
+  #panel { position: fixed; left: 8px; top: 8px; z-index: 9; background: rgba(10,12,18,.85);
+           border: 1px solid #334; border-radius: 8px; padding: 10px 12px; max-width: 470px; }
+  #log { white-space: pre-wrap; max-height: 46vh; overflow: auto; }
+  #c { position: fixed; right: 8px; top: 8px; border: 1px solid #334; }
+  input[type=file] { color: #cdd3e0; }
+  b { color: #9fc3ff; }
+</style>
+<script src="./etc1_tdkr.js"></script>
+</head>
+<body>
+<div id="panel">
+  <b>s48 T1 engine-math gate</b> — LightMapDC: Color = Diffuse * (LM*2.0);
+  SimpleAdditive: Color = Diffuse * vColor (Color0, NO lightmap — the effect FS
+  never samples LightMap and its VS has no Coord1). User zip -> data gla ->
+  GothamCity.zip + materials.bdae source.dae table + textures gla.<br>
+  Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>:<br>
+  <input type="file" id="f">
+  <div id="log"></div>
+</div>
+<canvas id="c" width="700" height="700"></canvas>
+<script type="module">
+const log = (s) => { document.querySelector('#log').textContent += s + '\n'; };
+window.__GATE = { done: false };
+
+function u16le(u8, i) { return u8[i] | (u8[i + 1] << 8); }
+function u32le(u8, i) { return (u8[i] | (u8[i + 1] << 8) | (u8[i + 2] << 16) | (u8[i + 3] << 24)) >>> 0; }
+function u32be(u8, i) { return ((u8[i] << 24) | (u8[i + 1] << 16) | (u8[i + 2] << 8) | u8[i + 3]) >>> 0; }
+const LATIN = new TextDecoder('latin1');
+
+function zipMembers(buf) {
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--)
+    if (u32le(buf, i) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('no EOCD');
+  const n = u16le(buf, eocd + 10);
+  let p = u32le(buf, eocd + 16);
+  const members = new Map();
+  for (let k = 0; k < n; k++) {
+    if (u32le(buf, p) !== 0x02014b50) throw new Error('bad CD');
+    const method = u16le(buf, p + 10), csize = u32le(buf, p + 20);
+    const nlen = u16le(buf, p + 28), elen = u16le(buf, p + 30), clen = u32le(buf, p + 32);
+    const lho = u32le(buf, p + 42);
+    members.set(LATIN.decode(buf.subarray(p + 46, p + 46 + nlen)), { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return members;
+}
+async function zipRead2(buf, m) {
+  const lho = m.lho, nlen = u16le(buf, lho + 26), elen = u16le(buf, lho + 28);
+  const start = lho + 30 + nlen + elen;
+  const raw = buf.subarray(start, start + m.csize);
+  if (m.method === 0) return raw;
+  if (m.method === 8) {
+    const ds = new DecompressionStream('deflate-raw');
+    const stream = new Response(new Blob([raw])).body.pipeThrough(ds);
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  throw new Error('method ' + m.method);
+}
+function glaMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm === want) return g.subarray(o, o + s);
+  }
+  throw new Error('gla member not found: ' + want);
+}
+
+// ---- SPLIT-zip unwrap (rgb.pvr + alpha.pvr) ----
+function unwrapSplitParts(u8) {
+  if (!(u8[0] === 0x50 && u8[1] === 0x4b && u8[2] === 0x03 && u8[3] === 0x04)) return { rgb: u8 };
+  const out = {};
+  let pos = 0;
+  while (pos + 30 <= u8.length && u8[pos] === 0x50 && u8[pos + 1] === 0x4b &&
+         u8[pos + 2] === 0x03 && u8[pos + 3] === 0x04) {
+    const csz = u32le(u8, pos + 18);
+    const nlen = u16le(u8, pos + 26), elen = u16le(u8, pos + 28);
+    const nm = LATIN.decode(u8.subarray(pos + 30, pos + 30 + nlen));
+    const dstart = pos + 30 + nlen + elen;
+    const data = u8.subarray(dstart, dstart + csz);
+    if (nm.trim() !== 'SPLIT') out[nm] = data;
+    pos = dstart + csz;
+  }
+  if (!out['rgb.pvr']) throw new Error('split-zip: no rgb.pvr');
+  return out;
+}
+
+function decodePvr(u8) {
+  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+  const tag = dv.getUint32(0, true);
+  if (tag !== 0x34) throw new Error('bad TDKR tex tag ' + tag);
+  const h = dv.getUint32(4, true), w = dv.getUint32(8, true);
+  const magic = String.fromCharCode(u8[44], u8[45], u8[46], u8[47]);
+  if (magic !== 'PVR!') throw new Error('bad PVR tag ' + JSON.stringify(magic));
+  const bw = (w + 3) >> 2, bh = (h + 3) >> 2;
+  const base = u8.subarray(52, 52 + bw * bh * 8);
+  const rgba = window.ETC1_TDKR.decodeRGBA(base, w, h);
+  return { w, h, rgba };
+}
+
+function decodeTex(name) {
+  const parts = unwrapSplitParts(glaMember(texGla, name));
+  const rgb = decodePvr(parts['rgb.pvr'] || parts['rgb']);
+  let al = null;
+  if (parts['alpha.pvr']) {
+    const a = decodePvr(parts['alpha.pvr']);
+    al = { w: a.w, h: a.h, data: a.rgba };
+  }
+  return { w: rgb.w, h: rgb.h, data: rgb.rgba, alpha: al, split: !!parts['alpha.pvr'] };
+}
+
+// ---- source.dae binding table (JS parse, s47 T3 parity anchor) ----
+function parseDaeTable(x8) {
+  const txt = LATIN.decode(x8);
+  const doc = new DOMParser().parseFromString(txt, 'text/xml');
+  const NS = 'http://www.collada.org/2005/11/COLLADASchema';
+  const q = (el, tag) => el.getElementsByTagNameNS(NS, tag);
+  const imgs = {};
+  for (const im of q(doc, 'image')) {
+    const iid = im.getAttribute('id');
+    const init = im.getElementsByTagNameNS(NS, 'init_from')[0];
+    imgs[iid] = init ? init.textContent.trim() : '';
+  }
+  const rows = [];
+  for (const md of q(doc, 'material')) {
+    const inst = md.getElementsByTagNameNS(NS, 'instance_effect')[0];
+    const sam = {};
+    if (inst) {
+      const surf = {};
+      for (const sp of inst.getElementsByTagNameNS(NS, 'setparam')) {
+        const sf = sp.getElementsByTagNameNS(NS, 'init_from')[0];
+        if (sf && sf.textContent.trim()) {
+          const ref = sp.getAttribute('ref');
+          const iid = sf.textContent.trim();
+          surf[ref] = imgs[iid] !== undefined ? imgs[iid] : iid;
+        }
+      }
+      for (const sp of inst.getElementsByTagNameNS(NS, 'setparam')) {
+        const s2 = sp.getElementsByTagNameNS(NS, 'source')[0];
+        if (s2 && surf[s2.textContent.trim()] !== undefined) {
+          sam[sp.getAttribute('ref')] = surf[s2.textContent.trim()];
+        }
+      }
+    }
+    rows.push([md.getAttribute('id'), sam['DiffuseMap'] || '', sam['LightMap'] || '']);
+  }
+  return rows;
+}
+const DIGEST_EXPECTED = '4f6e2d070e7ea2201d9e81cd67502e6e8a27b4f3a2a7160ac28d7a7835fbb26c';
+async function sha(buf) {
+  return [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))]
+    .map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
+// ---- batch_info declarations (END-offset semantics, s47 T2) ----
+const VAVT = [1, 1, 2, 2, 4, 4, 4];
+function decodeDecls(bi8, count) {
+  const bstride = u32le(bi8, 0);
+  const decls = [];
+  for (let idx = 0; idx < count; idx++) {
+    const base = 4 + idx * bstride;
+    const N = bi8[base + 33];
+    const ds = [];
+    let start = 0;
+    for (let j = 0; j < N; j++) {
+      const d = base + 40 + j * 12;
+      const A = (bi8[d] << 8) | bi8[d + 1];
+      const B = (bi8[d + 2] << 8) | bi8[d + 3];
+      const C = (bi8[d + 4] << 8) | bi8[d + 5];
+      const st = (bi8[d + 6] << 8) | bi8[d + 7];
+      const off = (bi8[d + 8] << 8) | bi8[d + 9];
+      const size = B === 0 ? 3 : B * VAVT[C];
+      const end = off === 0 ? st : off;
+      ds.push({ attr: A, start, end, size });
+      start = end;
+    }
+    decls.push(ds);
+  }
+  return decls;
+}
+
+// engine effect per material id (from the compiled DB, s46 T1 walk)
+const EFFECT_OF = {
+  73: 'LightMapDC', 302: 'SimpleAdditive', 11: 'StandardDiffuseDC',
+  300: 'AlphaMasking',
+};
+const BLOCKS = [
+  { tag: 'road276', k: 695, mat: 73, mode: 'lm2' },
+  { tag: 'stride28', k: 1525, mat: 302, mode: 'additive' },
+  { tag: 'cls24nc', k: 100, mat: 11, mode: 'plain' },
+  { tag: 'cls2017', k: 28, mat: 300, mode: 'plain' },
+  { tag: 'road696', k: 696, mat: 73, mode: 'lm2' },
+];
+
+document.querySelector('#f').addEventListener('change', async (ev) => {
+  try {
+    const file = ev.target.files[0];
+    log('zip: ' + file.name + ' (' + file.size + ' B)');
+    const zipBuf = new Uint8Array(await file.arrayBuffer());
+    const zmembers = zipMembers(zipBuf);
+    const gla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla'));
+    const gcityZip = glaMember(gla, 'GothamCity.zip');
+    const gmembers = zipMembers(gcityZip);
+    const lt = await zipRead2(gcityZip, gmembers.get('lod_table.bin'));
+    const ldd = await zipRead2(gcityZip, gmembers.get('lod_data.bin'));
+    const bi8 = await zipRead2(gcityZip, gmembers.get('batch_info.bin'));
+    const mb = await zipRead2(gcityZip, gmembers.get('GothamCity_materials.bdae'));
+    const mbMembers = zipMembers(mb);
+    const dae8 = await zipRead2(mb, mbMembers.get('source.dae'));
+    const rows = parseDaeTable(dae8);
+    const digest = await sha(new TextEncoder().encode(JSON.stringify(rows.slice().sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0)))));
+    log('source.dae rows ' + rows.length + ' digest match: ' + (digest === DIGEST_EXPECTED));
+    window.__GATE.dae_digest_match = (digest === DIGEST_EXPECTED);
+
+    const texGlaBuf = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/textures/l_gothamcity_tex.gla'));
+    window.texGla = texGlaBuf;
+    const cnt = u32le(lt, 0);
+    const decls = decodeDecls(bi8, cnt);
+    const pairs = [];
+    for (let k = 0; k < cnt; k++) pairs.push([u32le(lt, 4 + 8 * k), u32le(lt, 8 + 8 * k)]);
+
+    const texCache = new Map();
+    function getTex(name) {
+      if (texCache.has(name)) return texCache.get(name);
+      const t = decodeTex(name);
+      texCache.set(name, t);
+      return t;
+    }
+
+    window.__GATE.blocks = [];
+    for (const cfg of BLOCKS) {
+      const off2 = pairs[cfg.k][0];
+      const data_off = u32le(ldd, off2 + 68), vb = u32le(ldd, off2 + 76), ib = u32le(ldd, off2 + 80);
+      const ds = decls[cfg.mat];
+      const dmap = {};
+      for (const d of ds) dmap[d.attr] = d;
+      const stride = ds[ds.length - 1].end;
+      const nv = (vb / stride) | 0;
+      const vstart = data_off + 4;
+      const raw = ldd.subarray(vstart, vstart + vb);
+      const fbuf = new DataView(raw.buffer, raw.byteOffset, raw.byteLength);
+      const pos = new Float32Array(nv * 3);
+      const uv0 = new Float32Array(nv * 2);
+      const uv1 = dmap[2] ? new Float32Array(nv * 2) : null;
+      const c0 = dmap[17] ? new Float32Array(nv * 4) : null;
+      let bminU = 1e9, bminV = 1e9, bmaxU = -1e9, bmaxV = -1e9;
+      for (let v = 0; v < nv; v++) {
+        const o = v * stride;
+        pos[v * 3] = fbuf.getFloat32(o, true);
+        pos[v * 3 + 1] = fbuf.getFloat32(o + 4, true);
+        pos[v * 3 + 2] = fbuf.getFloat32(o + 8, true);
+        const s0u = fbuf.getInt16(o + dmap[1].start, true) / 32767;
+        const s0v = fbuf.getInt16(o + dmap[1].start + 2, true) / 32767;
+        uv0[v * 2] = s0u * 0.5 + 0.5;
+        uv0[v * 2 + 1] = 1.0 - (s0v * 0.5 + 0.5);
+        if (uv1) {
+          const s1u = fbuf.getInt16(o + dmap[2].start, true) / 32767;
+          const s1v = fbuf.getInt16(o + dmap[2].start + 2, true) / 32767;
+          uv1[v * 2] = s1u * 0.5 + 0.5;
+          uv1[v * 2 + 1] = 1.0 - (s1v * 0.5 + 0.5);
+          const u01 = s1u * 0.5 + 0.5, v01 = s1v * 0.5 + 0.5;
+          bminU = Math.min(bminU, u01); bmaxU = Math.max(bmaxU, u01);
+          bminV = Math.min(bminV, v01); bmaxV = Math.max(bmaxV, v01);
+        }
+        if (c0) {
+          for (let c = 0; c < 4; c++) c0[v * 4 + c] = raw[o + dmap[17].start + c] / 255;
+        }
+      }
+      const idx = new Uint16Array(raw.buffer, raw.byteOffset + vb, (ib / 2) | 0);
+
+      const bind = rows[cfg.mat] || ['', '', ''];
+      const diffTex = getTex(bind[1]);
+      const lmTex = bind[2] ? getTex(bind[2]) : null;
+
+      let mn0 = 1e9, mx0 = -1e9, mn1 = 1e9, mx1 = -1e9;
+      for (let v = 0; v < nv; v++) {
+        mn0 = Math.min(mn0, pos[v * 3]); mx0 = Math.max(mx0, pos[v * 3]);
+        mn1 = Math.min(mn1, pos[v * 3 + 1]); mx1 = Math.max(mx1, pos[v * 3 + 1]);
+      }
+      const span = Math.max(mx0 - mn0, mx1 - mn1) * 1.04;
+      const cx = (mn0 + mx0) / 2, cy = (mn1 + mx1) / 2;
+      const W = 700, H = 700;
+      const px = new Float32Array(nv), py = new Float32Array(nv);
+      for (let v = 0; v < nv; v++) {
+        px[v] = (pos[v * 3] - cx) / span * W + W / 2;
+        py[v] = H / 2 - (pos[v * 3 + 1] - cy) / span * H;
+      }
+      const img = new Uint8ClampedArray(W * H * 4);
+      const tw = diffTex.w, th = diffTex.h, tdata = diffTex.data;
+      const lmW = lmTex ? lmTex.w : 0, lmH = lmTex ? lmTex.h : 0, lmData = lmTex ? lmTex.data : null;
+      const order = [];
+      for (let t = 0; t < idx.length; t += 3) order.push(t);
+      order.sort((a, b) => {
+        const za = (pos[idx[a] * 3 + 2] + pos[idx[a + 1] * 3 + 2] + pos[idx[a + 2] * 3 + 2]) / 3;
+        const zb = (pos[idx[b] * 3 + 2] + pos[idx[b + 1] * 3 + 2] + pos[idx[b + 2] * 3 + 2]) / 3;
+        return za - zb;
+      });
+      for (const t of order) {
+        const i0 = idx[t], i1 = idx[t + 1], i2 = idx[t + 2];
+        const x0 = px[i0], y0 = py[i0], x1 = px[i1], y1 = py[i1], x2 = px[i2], y2 = py[i2];
+        const xlo = Math.max(0, Math.floor(Math.min(x0, x1, x2)));
+        const xhi = Math.min(W - 1, Math.ceil(Math.max(x0, x1, x2)));
+        const ylo = Math.max(0, Math.floor(Math.min(y0, y1, y2)));
+        const yhi = Math.min(H - 1, Math.ceil(Math.max(y0, y1, y2)));
+        const d = (y1 - y2) * (x0 - x2) + (x2 - x1) * (y0 - y2);
+        if (Math.abs(d) < 1e-9) continue;
+        for (let yy = ylo; yy <= yhi; yy++) {
+          for (let xx = xlo; xx <= xhi; xx++) {
+            const gx = xx + 0.5, gy = yy + 0.5;
+            const w0 = ((y1 - y2) * (gx - x2) + (x2 - x1) * (gy - y2)) / d;
+            const w1 = ((y2 - y0) * (gx - x2) + (x0 - x2) * (gy - y2)) / d;
+            const w2 = 1 - w0 - w1;
+            if (w0 < -0.001 || w1 < -0.001 || w2 < -0.001) continue;
+            const uu = w0 * uv0[i0 * 2] + w1 * uv0[i1 * 2] + w2 * uv0[i2 * 2];
+            const vv = w0 * uv0[i0 * 2 + 1] + w1 * uv0[i1 * 2 + 1] + w2 * uv0[i2 * 2 + 1];
+            let tx = Math.floor(uu * tw) % tw; if (tx < 0) tx += tw;
+            let ty = Math.floor(vv * th) % th; if (ty < 0) ty += th;
+            const to = (ty * tw + tx) * 4;
+            let r = tdata[to], g = tdata[to + 1], b = tdata[to + 2];
+            if (cfg.mode === 'lm2' && lmData) {
+              const lu = w0 * uv1[i0 * 2] + w1 * uv1[i1 * 2] + w2 * uv1[i2 * 2];
+              const lv = w0 * uv1[i0 * 2 + 1] + w1 * uv1[i1 * 2 + 1] + w2 * uv1[i2 * 2 + 1];
+              let ltx = Math.floor(lu * lmW) % lmW; if (ltx < 0) ltx += lmW;
+              let lty = Math.floor(lv * lmH) % lmH; if (lty < 0) lty += lmH;
+              const lo = (lty * lmW + ltx) * 4;
+              r = r * (lmData[lo] / 255 * 2.0);
+              g = g * (lmData[lo + 1] / 255 * 2.0);
+              b = b * (lmData[lo + 2] / 255 * 2.0);
+            } else if (cfg.mode === 'additive' && c0) {
+              const cr = w0 * c0[i0 * 4] + w1 * c0[i1 * 4] + w2 * c0[i2 * 4];
+              const cg = w0 * c0[i0 * 4 + 1] + w1 * c0[i1 * 4 + 1] + w2 * c0[i2 * 4 + 1];
+              const cbb = w0 * c0[i0 * 4 + 2] + w1 * c0[i1 * 4 + 2] + w2 * c0[i2 * 4 + 2];
+              r = r * cr; g = g * cg; b = b * cbb;
+            }
+            const oo = (yy * W + xx) * 4;
+            img[oo] = r; img[oo + 1] = g; img[oo + 2] = b; img[oo + 3] = 255;
+          }
+        }
+      }
+      const corr = await corrVsRef(img, cfg.tag, cfg.mode);
+      const stat = { tag: cfg.tag, mat: cfg.mat, mode: cfg.mode, effect: EFFECT_OF[cfg.mat] || 'Plain', corr,
+                     diff: bind[1], lm: bind[2] || '' };
+      if (uv1) stat.tc1_bbox = [bminU, bminV, bmaxU, bmaxV,
+                                (bmaxU - bminU) * (bmaxV - bminV)];
+      if (c0) {
+        let s = 0; for (let v = 0; v < nv; v++) s += (c0[v * 4] + c0[v * 4 + 1] + c0[v * 4 + 2]) / 3;
+        stat.color0_mean = s / nv;
+      }
+      log(cfg.tag + ' [' + cfg.mode + ']: corr=' + corr.toFixed(4) +
+          (stat.tc1_bbox ? ' tc1_area=' + stat.tc1_bbox[4].toFixed(4) : ''));
+      window.__GATE.blocks.push(stat);
+    }
+    window.__GATE.done = true;
+    log('DONE');
+  } catch (e) {
+    log('ERROR: ' + (e && e.stack || e));
+    window.__GATE.error = String(e && e.stack || e);
+    window.__GATE.done = true;
+  }
+});
+
+async function corrVsRef(img, tag, mode) {
+  const resp = await fetch('./s48_ref_' + tag + '_' + (mode === 'plain' ? 'plain' : mode) + '.png');
+  if (!resp.ok) return -1;
+  const bmp = await createImageBitmap(await resp.blob());
+  const cc = document.createElement('canvas');
+  cc.width = 700; cc.height = 700;
+  const cx2 = cc.getContext('2d', { willReadFrequently: true });
+  cx2.drawImage(bmp, 0, 0);
+  const ref = cx2.getImageData(0, 0, 700, 700).data;
+  let sa = 0, sb = 0, saa = 0, sbb = 0, sab = 0;
+  const n = 700 * 700;
+  for (let i = 0; i < n; i++) {
+    const a = (img[i * 4] + img[i * 4 + 1] + img[i * 4 + 2]) / 3;
+    const b = (ref[i * 4] + ref[i * 4 + 1] + ref[i * 4 + 2]) / 3;
+    sa += a; sb += b; saa += a * a; sbb += b * b; sab += a * b;
+  }
+  const cov = sab / n - (sa / n) * (sb / n);
+  const va = saa / n - (sa / n) ** 2;
+  const vb = sbb / n - (sb / n) ** 2;
+  return cov / Math.sqrt(va * vb);
+}
+</script>
+</body>
+</html>
