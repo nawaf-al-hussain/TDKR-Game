@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TDKR compiled binding table in JS (s48 T3 — branch-only, NOT deployed)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #cdd3e0; font: 13px/1.5 system-ui, sans-serif; }
+  #panel { position: fixed; left: 8px; top: 8px; z-index: 9; background: rgba(10,12,18,.85);
+           border: 1px solid #334; border-radius: 8px; padding: 10px 12px; max-width: 500px; }
+  #log { white-space: pre-wrap; max-height: 60vh; overflow: auto; }
+  input[type=file] { color: #cdd3e0; }
+  b { color: #9fc3ff; }
+</style>
+</head>
+<body>
+<div id="panel">
+  <b>s48 T3</b> — parse the COMPILED scene-material instance table from
+  little_endian_not_quantized.bdae (307 x 36 B @0x5fea0; profile SNewParam
+  blocks hold u32 image indices; image table 176 x 12 B @0x22a9c; -1 = none)
+  and compare cost vs the 2.19 MB source.dae XML parse.<br>
+  Supply the release <b>TDKR_v1.1.6b_APK_OBB.zip</b>:<br>
+  <input type="file" id="f">
+  <div id="log"></div>
+</div>
+<script type="module">
+const log = (s) => { document.querySelector('#log').textContent += s + '\n'; };
+window.__GATE = { done: false };
+
+function u16le(u8, i) { return u8[i] | (u8[i + 1] << 8); }
+function u32le(u8, i) { return (u8[i] | (u8[i + 1] << 8) | (u8[i + 2] << 16) | (u8[i + 3] << 24)) >>> 0; }
+function u32be(u8, i) { return ((u8[i] << 24) | (u8[i + 1] << 16) | (u8[i + 2] << 8) | u8[i + 3]) >>> 0; }
+const LATIN = new TextDecoder('latin1');
+
+function zipMembers(buf) {
+  let eocd = -1;
+  for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--)
+    if (u32le(buf, i) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('no EOCD');
+  const n = u16le(buf, eocd + 10);
+  let p = u32le(buf, eocd + 16);
+  const members = new Map();
+  for (let k = 0; k < n; k++) {
+    if (u32le(buf, p) !== 0x02014b50) throw new Error('bad CD');
+    const method = u16le(buf, p + 10), csize = u32le(buf, p + 20);
+    const nlen = u16le(buf, p + 28), elen = u16le(buf, p + 30), clen = u32le(buf, p + 32);
+    const lho = u32le(buf, p + 42);
+    members.set(LATIN.decode(buf.subarray(p + 46, p + 46 + nlen)), { method, csize, lho });
+    p += 46 + nlen + elen + clen;
+  }
+  return members;
+}
+async function zipRead2(buf, m) {
+  const lho = m.lho, nlen = u16le(buf, lho + 26), elen = u16le(buf, lho + 28);
+  const start = lho + 30 + nlen + elen;
+  const raw = buf.subarray(start, start + m.csize);
+  if (m.method === 0) return raw;
+  if (m.method === 8) {
+    const ds = new DecompressionStream('deflate-raw');
+    const stream = new Response(new Blob([raw])).body.pipeThrough(ds);
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  throw new Error('method ' + m.method);
+}
+function glaMember(g, want) {
+  const idxSize = u32be(g, 4), n = u32be(g, 12);
+  const pool = g.subarray(16 + n * 16, idxSize);
+  for (let i = 0; i < n; i++) {
+    const o = u32be(g, 16 + i * 16), s = u32be(g, 16 + i * 16 + 4),
+          no = u32be(g, 16 + i * 16 + 8);
+    let e = pool.indexOf(0, no);
+    const nm = LATIN.decode(pool.subarray(no, e < 0 ? no + 96 : e));
+    if (nm === want) return g.subarray(o, o + s);
+  }
+  throw new Error('gla member not found: ' + want);
+}
+
+async function sha(buf) {
+  return [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))]
+    .map(x => x.toString(16).padStart(2, '0')).join('');
+}
+const DIGEST_COMPILED_EXPECTED = '1d0f1930cf10e5d37edccd911472bd8ed5e9660b01c586c7140281bc4cf4dedf';
+const DIGEST_DAE_EXPECTED = '4f6e2d070e7ea2201d9e81cd67502e6e8a27b4f3a2a7160ac28d7a7835fbb26c';
+
+function cstrAt(u8, off, maxn = 96) {
+  if (!(off > 0 && off < u8.length)) return null;
+  let e = off;
+  const lim = Math.min(u8.length, off + maxn);
+  while (e < lim && u8[e] !== 0) e++;
+  if (e === off || e === lim) return null;
+  const s = LATIN.decode(u8.subarray(off, e));
+  for (let i = 0; i < s.length; i++) {
+    const c = s.charCodeAt(i);
+    if (c < 32 || c > 126) return null;
+  }
+  return s;
+}
+
+// ---- COMPILED table parse (little_endian_not_quantized.bdae) ----
+function parseCompiledTable(le) {
+  const dv = new DataView(le.buffer, le.byteOffset, le.byteLength);
+  const IMG_BASE = 0x22a9c, IMG_N = 176;
+  const imgs = [];
+  for (let i = 0; i < IMG_N; i++) {
+    const a = IMG_BASE + i * 12;
+    imgs.push([dv.getUint32(a, true), dv.getUint32(a + 8, true)]);
+  }
+  const INST_BASE = 0x5fea0, INST_N = 307, REC = 36;
+  const rows = [];
+  for (let i = 0; i < INST_N; i++) {
+    const a = INST_BASE + i * REC;
+    const w = [];
+    for (let k = 0; k < 9; k++) w.push(dv.getUint32(a + k * 4, true));
+    const name = cstrAt(le, w[0]);
+    const effect = cstrAt(le, w[3]);
+    const npCount = w[4], profPtr = w[5], ident = w[6];
+    const sam = {};
+    for (let j = 0; j < npCount; j++) {
+      const pa = profPtr + j * 24;
+      const pw = [];
+      for (let k = 0; k < 6; k++) pw.push(dv.getUint32(pa + k * 4, true));
+      const pname = cstrAt(le, pw[0]);
+      if (pw[2] !== 13 || pw[3] !== 1) continue;
+      const v1 = pw[4];
+      if (dv.getUint32(v1, true) !== 1 || dv.getUint32(v1 + 4, true) !== v1 + 24) continue;
+      const idx = dv.getUint32(v1 + 24, true);
+      if (idx < IMG_N) {
+        sam[pname] = cstrAt(le, imgs[idx][1]) || '';
+      } else if (idx === 0xffffffff) {
+        sam[pname] = '';
+      }
+    }
+    rows.push({ i, name, effect, id: ident, npCount,
+                diff: sam['DiffuseMap'] || '', lm: sam['LightMap'] || '',
+                nSam: Object.keys(sam).length });
+  }
+  return rows;
+}
+
+// ---- source.dae parse (for cost comparison + authoring parity) ----
+function parseDaeTable(x8) {
+  const txt = LATIN.decode(x8);
+  const doc = new DOMParser().parseFromString(txt, 'text/xml');
+  const NS = 'http://www.collada.org/2005/11/COLLADASchema';
+  const q = (el, tag) => el.getElementsByTagNameNS(NS, tag);
+  const imgs = {};
+  for (const im of q(doc, 'image')) {
+    const iid = im.getAttribute('id');
+    const init = im.getElementsByTagNameNS(NS, 'init_from')[0];
+    imgs[iid] = init ? init.textContent.trim() : '';
+  }
+  const rows = [];
+  for (const md of q(doc, 'material')) {
+    const inst = md.getElementsByTagNameNS(NS, 'instance_effect')[0];
+    const sam = {};
+    if (inst) {
+      const surf = {};
+      for (const sp of inst.getElementsByTagNameNS(NS, 'setparam')) {
+        const sf = sp.getElementsByTagNameNS(NS, 'init_from')[0];
+        if (sf && sf.textContent.trim()) {
+          const ref = sp.getAttribute('ref');
+          const iid = sf.textContent.trim();
+          surf[ref] = imgs[iid] !== undefined ? imgs[iid] : iid;
+        }
+      }
+      for (const sp of inst.getElementsByTagNameNS(NS, 'setparam')) {
+        const s2 = sp.getElementsByTagNameNS(NS, 'source')[0];
+        if (s2 && surf[s2.textContent.trim()] !== undefined) {
+          sam[sp.getAttribute('ref')] = surf[s2.textContent.trim()];
+        }
+      }
+    }
+    rows.push([md.getAttribute('id'), sam['DiffuseMap'] || '', sam['LightMap'] || '']);
+  }
+  return rows;
+}
+async function canonicalDigest(triples) {
+  const sorted = triples.slice().sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0));
+  return sha(new TextEncoder().encode(JSON.stringify(sorted)));
+}
+
+document.querySelector('#f').addEventListener('change', async (ev) => {
+  try {
+    const file = ev.target.files[0];
+    log('zip: ' + file.name + ' (' + file.size + ' B)');
+    const zipBuf = new Uint8Array(await file.arrayBuffer());
+    const zmembers = zipMembers(zipBuf);
+    const gla = await zipRead2(zipBuf, zmembers.get('com.gameloft.android.AMAZ.GloftKRAS/files/data/l_gothamcity.gla'));
+    const gcityZip = glaMember(gla, 'GothamCity.zip');
+    const gmembers = zipMembers(gcityZip);
+    const mb = await zipRead2(gcityZip, gmembers.get('GothamCity_materials.bdae'));
+    const mbMembers = zipMembers(mb);
+    const le = await zipRead2(mb, mbMembers.get('little_endian_not_quantized.bdae'));
+    const dae8 = await zipRead2(mb, mbMembers.get('source.dae'));
+    log('bdae LE: ' + le.length + ' B; source.dae: ' + dae8.length + ' B');
+
+    const mem0 = performance.memory ? performance.memory.usedJSHeapSize : null;
+    // --- compiled parse (timed)
+    let t0 = performance.now();
+    const crows = parseCompiledTable(le);
+    const tCompiled = performance.now() - t0;
+    const mem1 = performance.memory ? performance.memory.usedJSHeapSize : null;
+    // --- XML parse (timed)
+    t0 = performance.now();
+    const arows = parseDaeTable(dae8);
+    const tXml = performance.now() - t0;
+    const mem2 = performance.memory ? performance.memory.usedJSHeapSize : null;
+
+    const cdigest = await canonicalDigest(crows.map(r => [r.name, r.diff, r.lm]));
+    const adigest = await canonicalDigest(arows);
+    log('compiled rows: ' + crows.length + ' parse ' + tCompiled.toFixed(2) + ' ms' +
+        (mem1 !== null ? ' heap +' + ((mem1 - mem0) / 1048576).toFixed(2) + ' MB' : ''));
+    log('compiled digest: ' + cdigest);
+    log('XML rows: ' + arows.length + ' parse ' + tXml.toFixed(2) + ' ms' +
+        (mem2 !== null ? ' heap +' + ((mem2 - mem1) / 1048576).toFixed(2) + ' MB' : ''));
+    log('XML digest: ' + adigest);
+
+    // in-page parity: compiled vs authoring (by name)
+    const byName = new Map(arows.map(r => [r[0], r]));
+    let nameMatch = 0, rowOk = 0;
+    const diffs = [];
+    for (const r of crows) {
+      const a = byName.get(r.name);
+      if (!a) { diffs.push({ name: r.name, issue: 'no authoring row' }); continue; }
+      nameMatch++;
+      if (a[1] === r.diff && a[2] === r.lm) rowOk++;
+      else diffs.push({ name: r.name, authoring: [a[1], a[2]], compiled: [r.diff, r.lm] });
+    }
+    const noScene = arows.filter(a => !crows.some(r => r.name === a[0])).map(a => a[0]);
+    log('name match ' + nameMatch + '/' + crows.length +
+        '; row agreement ' + rowOk + '/' + crows.length +
+        '; authoring rows w/o scene entry: ' + noScene.length);
+    log('speedup: ' + (tXml / tCompiled).toFixed(1) + 'x');
+
+    window.__GATE = {
+      done: true,
+      n_compiled: crows.length, n_xml: arows.length,
+      t_compiled_ms: tCompiled, t_xml_ms: tXml,
+      speedup: tXml / tCompiled,
+      mem_compiled_mb: mem1 !== null ? (mem1 - mem0) / 1048576 : null,
+      mem_xml_mb: mem2 !== null ? (mem2 - mem1) / 1048576 : null,
+      digest_compiled: cdigest, digest_xml: adigest,
+      digest_compiled_match: cdigest === DIGEST_COMPILED_EXPECTED,
+      digest_xml_match: adigest === DIGEST_DAE_EXPECTED,
+      name_match: nameMatch, row_ok: rowOk, diffs, no_scene_n: noScene.length,
+    };
+    log('DONE');
+  } catch (e) {
+    log('ERROR: ' + (e && e.stack || e));
+    window.__GATE = { done: true, error: String(e && e.stack || e) };
+  }
+});
+</script>
+</body>
+</html>
