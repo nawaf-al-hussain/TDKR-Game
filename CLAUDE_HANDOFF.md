@@ -767,3 +767,29 @@ s41-city-slice 7b0807e. Bundles: download/bundles_s54/.
   - memory <600 MB: bounded by swiftshader/Chromium-internal copies - 0.5 session to verify
     on real GPU only (floors now measured: 84.9 + 23.5 + soup)
   - real-GPU validation run: pending user paste-back (0.25 to analyze)
+
+### s55 (round 45) — deploy audit, glide 2nd signal, grapple data, memory, combat survey
+**T1**: live site healthy post-deploy (8 variants, 0 errors; live ?s5=1 gate reproduces
+soup 00ce7970/137893 + routes 10/10). Deployed tree = 194 files 113.82 MB, 99.54%
+game-derived (street GLBs 60.8 MB, tex 51.05 MB, patch.json 1.06 MB, lvc_gol_templates
+85 KB, batman.glb 299 KB) — removal is the user's call; per-page dependency map in
+s55_t1_asset_inventory.json. Title fix on branch s55-t1-title-fix @0cea8b8 (NOT deployed).
+Batman-from-zip: only playable/index.html consumes the static GLB (port buildGLB ~200
+lines, drop batman.glb); patch.json is consumed ONLY by playable/index.html.
+**T2**: glide floats PROVEN from RefreshForcesGlide: sink = f0+(f1-f0)*(2/pi)*|pitch_rad|,
+speed = f5+(f6-f5)*(2/pi)*|pitch_rad|+GetGliderGravityHelper(); f7/f8/f9 proximity blend;
+f10 initial pitch deg (hard default -30). s_glide* .bss family RESOLVED DEAD (zero
+readers AND writers; s54's "7-13 read sites" was a decoder artifact); k_glide* also
+code-dead. Staged-slice gaps: fwd 16 u/s should be 1-6 (3.5 @ -45deg), sink missing the
+(2/pi) factor — exact fix in s55_t2_note.md, NOT applied.
+**T3**: CComponentGrapplingGun::Load = 5xReadInt+28xReadFloat; gun is UPGRADE-map-driven
+(keys 3/4/5), no template payload; Glider int1 = GetGlide slot (byte-proof), int2 = 0
+(corrects s54's 600). Enemy_Grapnel_Target 0xaae6a: script-spawned (0 lvc instances,
+1 game_config ref); waypoint anchors stand.
+**T4**: poolchunk peak 555.9 MB by 2s-sampling (PROVISIONAL <600; fine harness 691),
+steady 205.6 MB, native residual ~261 MB swiftshader copies; first image <8s not met in
+poolchunk. **T5**: real-GPU check PENDING; llvmpipe/Xvfb second renderer negative.
+**T6**: combat survey done — minimal slice (Melee_Enemy_Merc + 4-8 clips + health) scoped
+1.5-2 sessions; full combat/AI 4-6 unchanged.
+Local refs after s55: main <T7-sha>, s55-t1-title-fix 0cea8b8, gh-pages-staged-s44 6145545,
+s41 7b0807e. Bundles: download/bundles_s55/.
