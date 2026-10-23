@@ -1,0 +1,279 @@
+{
+ "page": "integration_lazy.html",
+ "corrupt": false,
+ "no_errors": true,
+ "gate": {
+  "ready": true,
+  "done": true,
+  "heapSamples": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10
+  ],
+  "corruptControl": false,
+  "nmSelfCheck": true,
+  "soupDigestPass": true,
+  "soup": {
+   "nTri": 137893,
+   "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+  },
+  "routes": {
+   "run": 10,
+   "agree": 10,
+   "results": [
+    {
+     "route": 3,
+     "verdict": "stuck_wall",
+     "dist": 305.23,
+     "expected": "stuck_wall",
+     "expected_dist": 305.2,
+     "agree": true,
+     "dist_delta": 0.03,
+     "ms": 78
+    },
+    {
+     "route": 6,
+     "verdict": "fell",
+     "dist": 321,
+     "expected": "fell",
+     "expected_dist": 321,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 24
+    },
+    {
+     "route": 7,
+     "verdict": "fell",
+     "dist": 382.5,
+     "expected": "fell",
+     "expected_dist": 382.5,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 35
+    },
+    {
+     "route": 10,
+     "verdict": "stuck_wall",
+     "dist": 1076.038,
+     "expected": "stuck_wall",
+     "expected_dist": 1076,
+     "agree": true,
+     "dist_delta": 0.038,
+     "ms": 91
+    },
+    {
+     "route": 12,
+     "verdict": "ok",
+     "dist": 392,
+     "expected": "ok",
+     "expected_dist": 392,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 58
+    },
+    {
+     "route": 15,
+     "verdict": "stuck_wall",
+     "dist": 443.067,
+     "expected": "stuck_wall",
+     "expected_dist": 443.1,
+     "agree": true,
+     "dist_delta": 0.033,
+     "ms": 35
+    },
+    {
+     "route": 19,
+     "verdict": "ok",
+     "dist": 931,
+     "expected": "ok",
+     "expected_dist": 931,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 66
+    },
+    {
+     "route": 22,
+     "verdict": "fell",
+     "dist": 62.7,
+     "expected": "fell",
+     "expected_dist": 62.7,
+     "agree": true,
+     "dist_delta": 0,
+     "ms": 7
+    },
+    {
+     "route": 27,
+     "verdict": "stuck_wall",
+     "dist": 301.235,
+     "expected": "stuck_wall",
+     "expected_dist": 301.2,
+     "agree": true,
+     "dist_delta": 0.035,
+     "ms": 27
+    },
+    {
+     "route": 33,
+     "verdict": "stuck_wall",
+     "dist": 122.009,
+     "expected": "stuck_wall",
+     "expected_dist": 122,
+     "agree": true,
+     "dist_delta": 0.009,
+     "ms": 9
+    }
+   ]
+  },
+  "zone": {
+   "batches": 138,
+   "texDecoded": 71,
+   "texMiss": 2,
+   "buildMs": 2706
+  },
+  "batman": {
+   "ok": true,
+   "verts": 1449,
+   "clips": [
+    "_001_idle_stand",
+    "_007_walk",
+    "_008_run"
+   ]
+  },
+  "first_image_ms": 10026,
+  "draws": 138,
+  "tris": 368739,
+  "pixelStats": [
+   {
+    "mean": 16.238,
+    "std": 36.419
+   },
+   {
+    "mean": 15.95,
+    "std": 36.142
+   },
+   {
+    "mean": 15.778,
+    "std": 36.034
+   }
+  ],
+  "camera": {
+   "frameDiffWalk": [
+    403143,
+    522789
+   ],
+   "frameDiffIdle": 0,
+   "cameraTravelM": 5.5,
+   "silhouettePx": 3120
+  },
+  "silhouetteInRange": true,
+  "motionDetected": true,
+  "cameraFollowed": true,
+  "pass": true,
+  "consoleErrors": [],
+  "heap_mb": 10,
+  "heap_mb_peak": 10,
+  "wall_ms": 17485
+ },
+ "rss_peak_mb_browser_tree": 1500.1,
+ "rss_peak_mb_renderer": 725.1,
+ "rss_samples": 80,
+ "rss_timeline": [
+  0.0,
+  0.0,
+  324.4,
+  369.9,
+  498.7,
+  554.0,
+  624.0,
+  686.3,
+  727.7,
+  745.8,
+  765.9,
+  725.9,
+  757.8,
+  784.4,
+  803.6,
+  812.8,
+  807.1,
+  1.3,
+  817.7,
+  849.6,
+  1.4,
+  796.0,
+  855.5,
+  1.4,
+  916.0,
+  906.2,
+  969.1,
+  973.0,
+  913.3,
+  921.5,
+  1053.1,
+  1155.3,
+  1271.8,
+  1284.6,
+  1417.4,
+  1395.2,
+  1411.3,
+  1451.6,
+  2.0,
+  1441.0,
+  1481.0,
+  1494.3,
+  2.1,
+  1480.9,
+  1485.7,
+  2.1,
+  1491.5,
+  1491.0,
+  1491.2,
+  2.1,
+  1491.6,
+  1491.9,
+  2.1,
+  1492.7,
+  1495.0,
+  2.1,
+  1495.0,
+  1495.0,
+  2.1,
+  1495.2,
+  1497.4,
+  2.1,
+  1498.2,
+  1500.1,
+  2.1,
+  1500.1,
+  1452.1,
+  1.9,
+  1412.9,
+  1412.9,
+  1.9,
+  1413.0,
+  1413.0,
+  1.9,
+  1420.6,
+  1420.6,
+  1420.6,
+  1420.6,
+  0.0,
+  0.0
+ ],
+ "heap_peak_mb_poll": 9.5,
+ "heap_samples": 15,
+ "cdp_final": {
+  "JSHeapUsedSize_MB": 9.7,
+  "JSHeapTotalSize_MB": 18.2,
+  "Documents": 1,
+  "Frames": 1
+ },
+ "glerr": [],
+ "console_errors": [],
+ "page_errors": []
+}

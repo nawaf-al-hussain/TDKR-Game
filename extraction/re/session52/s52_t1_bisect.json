@@ -1,0 +1,229 @@
+{
+ "sign_convention": {
+  "covered": "mean RGB > 8",
+  "ratio": "GL/CPU covered-mean",
+  "diverge": "|ratio-1|>0.05 or corr<0.99",
+  "steps": "1 UV, 2 diffuse, 3 D*LM, 4 D*LM*2, 5 +fog(inert)"
+ },
+ "bisect_table": [
+  {
+   "gl_cov_pct": 10.804,
+   "cpu_cov_pct": 10.82,
+   "iou": 0.9986,
+   "shared": 66936,
+   "gl_mean": 141.04,
+   "cpu_mean": 140.77,
+   "ratio": 1.002,
+   "corr": 0.9464,
+   "step": 1,
+   "fix": 0
+  },
+  {
+   "gl_cov_pct": 9.153,
+   "cpu_cov_pct": 10.76,
+   "iou": 0.8425,
+   "shared": 56407,
+   "gl_mean": 43.14,
+   "cpu_mean": 121.78,
+   "ratio": 0.3542,
+   "corr": 0.004,
+   "step": 2,
+   "fix": 0
+  },
+  {
+   "gl_cov_pct": 2.261,
+   "cpu_cov_pct": 7.755,
+   "iou": 0.275,
+   "shared": 13384,
+   "gl_mean": 12.97,
+   "cpu_mean": 27.29,
+   "ratio": 0.4753,
+   "corr": 0.3891,
+   "step": 3,
+   "fix": 0
+  },
+  {
+   "gl_cov_pct": 5.136,
+   "cpu_cov_pct": 8.618,
+   "iou": 0.5728,
+   "shared": 31031,
+   "gl_mean": 18.04,
+   "cpu_mean": 45.5,
+   "ratio": 0.3965,
+   "corr": 0.4811,
+   "step": 4,
+   "fix": 0
+  },
+  {
+   "gl_cov_pct": 10.804,
+   "cpu_cov_pct": 10.82,
+   "iou": 0.9986,
+   "shared": 66936,
+   "gl_mean": 141.04,
+   "cpu_mean": 140.77,
+   "ratio": 1.002,
+   "corr": 0.9464,
+   "step": 1,
+   "fix": 1
+  },
+  {
+   "gl_cov_pct": 10.727,
+   "cpu_cov_pct": 10.76,
+   "iou": 0.9968,
+   "shared": 66451,
+   "gl_mean": 122.11,
+   "cpu_mean": 122.67,
+   "ratio": 0.9954,
+   "corr": 0.9721,
+   "step": 2,
+   "fix": 1
+  },
+  {
+   "gl_cov_pct": 7.859,
+   "cpu_cov_pct": 7.755,
+   "iou": 0.9623,
+   "shared": 47437,
+   "gl_mean": 21.9,
+   "cpu_mean": 21.49,
+   "ratio": 1.0192,
+   "corr": 0.9779,
+   "step": 3,
+   "fix": 1
+  },
+  {
+   "gl_cov_pct": 8.653,
+   "cpu_cov_pct": 8.618,
+   "iou": 0.9769,
+   "shared": 52872,
+   "gl_mean": 40.69,
+   "cpu_mean": 40.42,
+   "ratio": 1.0068,
+   "corr": 0.9757,
+   "step": 4,
+   "fix": 1
+  }
+ ],
+ "zone": [
+  {
+   "gl_cov_pct": 9.268,
+   "cpu_cov_pct": 10.816,
+   "iou": 0.8159,
+   "shared": 55906,
+   "gl_mean": 43.52,
+   "cpu_mean": 49.98,
+   "ratio": 0.8708,
+   "corr": 0.9285,
+   "fix": 0
+  },
+  {
+   "gl_cov_pct": 10.907,
+   "cpu_cov_pct": 10.816,
+   "iou": 0.9721,
+   "shared": 66339,
+   "gl_mean": 47.24,
+   "cpu_mean": 46.72,
+   "ratio": 1.0111,
+   "corr": 0.9923,
+   "fix": 1
+  }
+ ],
+ "gpucheck": null,
+ "mat73_audit": [
+  {
+   "mid": 73,
+   "bn0": "gothamcity_roads_details.tga",
+   "bn1": "BakeGroup_Island1_Roads0.tga",
+   "lmHit": false,
+   "dMiss": true,
+   "unit0": "gothamcity_roads_details.tga",
+   "unit1": "BakeGroup_Island1_Roads0.tga",
+   "CLOBBER": false
+  }
+ ],
+ "clobbered_mids": [],
+ "n_lmfx_batches": 1,
+ "targeted": {
+  "zoom73-fix0-audit": {
+   "qs": "?mat=73&bb=-448,-713,-248,-513&nodepth=1&upload=1&step=2&fix=0",
+   "gate": {
+    "corr": 0.018064078238127154,
+    "js_mean": 3.9562010373618492,
+    "ref_mean": 5.109806516873219,
+    "draws": 1,
+    "glerr": []
+   },
+   "pageerrs": [],
+   "mat73": [
+    {
+     "mid": 73,
+     "bn0": "gothamcity_roads_details.tga",
+     "bn1": "BakeGroup_Island1_Roads0.tga",
+     "lmHit": false,
+     "dMiss": true,
+     "unit0": "BakeGroup_Island1_Roads0.tga",
+     "unit1": null,
+     "CLOBBER": true
+    }
+   ],
+   "clobbered_mids": [
+    73
+   ],
+   "n_lmfx": 1
+  },
+  "zone-fix0-audit": {
+   "qs": "?upload=1&fix=0",
+   "gate": {
+    "corr": 0.9084653113534151,
+    "js_mean": 4.162258953167998,
+    "ref_mean": 5.109806516873219,
+    "draws": 138,
+    "glerr": []
+   },
+   "pageerrs": [],
+   "mat73": [
+    {
+     "mid": 73,
+     "bn0": "gothamcity_roads_details.tga",
+     "bn1": "BakeGroup_Island1_Roads0.tga",
+     "lmHit": false,
+     "dMiss": true,
+     "unit0": "BakeGroup_Island1_Roads0.tga",
+     "unit1": "BakeGroup_Island1_Roads0.tga",
+     "CLOBBER": true
+    }
+   ],
+   "clobbered_mids": [
+    73,
+    132,
+    29,
+    30
+   ],
+   "n_lmfx": 120
+  },
+  "gpucheck": {
+   "qs": "?mat=73&bb=-448,-713,-248,-513&nodepth=1&upload=1&step=4&fix=1&gpucheck=1",
+   "gate": {
+    "corr": -0.010121548243163098,
+    "js_mean": 3.551929988808566,
+    "ref_mean": 5.109806516873219,
+    "draws": 1,
+    "glerr": []
+   },
+   "pageerrs": [],
+   "mat73": [
+    {
+     "mid": 73,
+     "bn0": "gothamcity_roads_details.tga",
+     "bn1": "BakeGroup_Island1_Roads0.tga",
+     "lmHit": false,
+     "dMiss": true,
+     "unit0": "gothamcity_roads_details.tga",
+     "unit1": "BakeGroup_Island1_Roads0.tga",
+     "CLOBBER": false
+    }
+   ],
+   "clobbered_mids": [],
+   "n_lmfx": 1
+  }
+ }
+}

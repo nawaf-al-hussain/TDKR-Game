@@ -1,0 +1,40 @@
+{
+ "page": "integration_lazy.html",
+ "corrupt": true,
+ "no_errors": false,
+ "gate": {
+  "ready": true,
+  "done": true,
+  "heapSamples": [],
+  "corruptControl": true,
+  "nmSelfCheck": false,
+  "failReason": "nm_self_check_failed",
+  "consoleErrors": [],
+  "heap_mb": 10,
+  "heap_mb_peak": 10,
+  "wall_ms": 290
+ },
+ "rss_peak_mb_browser_tree": 510.7,
+ "rss_peak_mb_renderer": 161.9,
+ "rss_samples": 7,
+ "rss_timeline": [
+  0.0,
+  0.0,
+  293.5,
+  365.4,
+  494.3,
+  0.6,
+  510.7
+ ],
+ "heap_peak_mb_poll": 9.5,
+ "heap_samples": 1,
+ "cdp_final": {
+  "JSHeapUsedSize_MB": 4.8,
+  "JSHeapTotalSize_MB": 8.5,
+  "Documents": 1,
+  "Frames": 1
+ },
+ "glerr": [],
+ "console_errors": [],
+ "page_errors": []
+}

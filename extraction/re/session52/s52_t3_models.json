@@ -1,0 +1,236 @@
+{
+ "selection_criterion": "max held-out AUC(margin d/H) among calibrated models with containment z>0",
+ "n_pairs_total": 393,
+ "n_pairs_with_radius": 43,
+ "A_engine_exact": {
+  "full": {
+   "model": "HA",
+   "label": "A_engine_exact",
+   "n": 393,
+   "contain_real": 0.0967,
+   "contain_null": 0.0334,
+   "contain_null_std": 0.0077,
+   "contain_z": 8.18,
+   "margin_mean": 170.365,
+   "margin_null_mean": 250.297,
+   "margin_z": -11.93,
+   "auc_margin": 0.6098
+  },
+  "calibration_wrong": {
+   "wrong_auc": 0.4895,
+   "wrong_margin_z": 2.58,
+   "wrong_contain_z": -0.01
+  },
+  "folds": [
+   {
+    "model": "HA",
+    "label": "",
+    "n": 196,
+    "contain_real": 0.1122,
+    "contain_null": 0.0405,
+    "contain_null_std": 0.0117,
+    "contain_z": 6.16,
+    "margin_mean": 160.955,
+    "margin_null_mean": 240.227,
+    "margin_z": -7.53,
+    "auc_margin": 0.6157
+   },
+   {
+    "model": "HA",
+    "label": "",
+    "n": 197,
+    "contain_real": 0.0812,
+    "contain_null": 0.0277,
+    "contain_null_std": 0.011,
+    "contain_z": 4.87,
+    "margin_mean": 179.727,
+    "margin_null_mean": 258.598,
+    "margin_z": -8.04,
+    "auc_margin": 0.6016
+   }
+  ],
+  "on_radius_subset": {
+   "model": "HA",
+   "label": "subset_fair",
+   "n": 43,
+   "contain_real": 0.4419,
+   "contain_null": 0.2552,
+   "contain_null_std": 0.0388,
+   "contain_z": 4.81,
+   "margin_mean": 44.167,
+   "margin_null_mean": 50.019,
+   "margin_z": -0.75,
+   "auc_margin": 0.6055
+  }
+ },
+ "B_no_scale": {
+  "full": {
+   "model": "HB",
+   "label": "B_no_scale",
+   "n": 393,
+   "contain_real": 0.0254,
+   "contain_null": 0.0013,
+   "contain_null_std": 0.0017,
+   "contain_z": 13.8,
+   "margin_mean": 274.927,
+   "margin_null_mean": 418.846,
+   "margin_z": -14.12,
+   "auc_margin": 0.6766
+  },
+  "calibration_wrong": {
+   "wrong_auc": 0.4824,
+   "wrong_margin_z": 1.84,
+   "wrong_contain_z": -0.76
+  },
+  "folds": [
+   {
+    "model": "HB",
+    "label": "",
+    "n": 196,
+    "contain_real": 0.0357,
+    "contain_null": 0.0023,
+    "contain_null_std": 0.0034,
+    "contain_z": 9.96,
+    "margin_mean": 280.755,
+    "margin_null_mean": 440.585,
+    "margin_z": -10.71,
+    "auc_margin": 0.6953
+   },
+   {
+    "model": "HB",
+    "label": "",
+    "n": 197,
+    "contain_real": 0.0152,
+    "contain_null": 0.0011,
+    "contain_null_std": 0.0025,
+    "contain_z": 5.63,
+    "margin_mean": 269.129,
+    "margin_null_mean": 392.819,
+    "margin_z": -8.96,
+    "auc_margin": 0.6506
+   }
+  ],
+  "on_radius_subset": {
+   "model": "HB",
+   "label": "subset_fair",
+   "n": 43,
+   "contain_real": 0.0,
+   "contain_null": 0.0,
+   "contain_null_std": 0.0,
+   "contain_z": 0.0,
+   "margin_mean": 101.538,
+   "margin_null_mean": 188.148,
+   "margin_z": -3.83,
+   "auc_margin": 0.6397
+  }
+ },
+ "C_script_radius": {
+  "radius_subset": {
+   "model": "HC",
+   "label": "C_script_radius",
+   "n": 43,
+   "contain_real": 0.5116,
+   "contain_null": 0.4141,
+   "contain_null_std": 0.0321,
+   "contain_z": 3.04,
+   "margin_mean": 1.656,
+   "margin_null_mean": 4.885,
+   "margin_z": -3.08,
+   "auc_margin": 0.6013
+  },
+  "calibration_wrong": {
+   "wrong_auc": 0.4896,
+   "wrong_margin_z": 0.06,
+   "wrong_contain_z": 0.3
+  },
+  "folds": [
+   {
+    "model": "HC",
+    "label": "",
+    "n": 21,
+    "contain_real": 0.4762,
+    "contain_null": 0.3734,
+    "contain_null_std": 0.0599,
+    "contain_z": 1.72,
+    "margin_mean": 1.559,
+    "margin_null_mean": 4.155,
+    "margin_z": -2.38,
+    "auc_margin": 0.6199
+   },
+   {
+    "model": "HC",
+    "label": "",
+    "n": 22,
+    "contain_real": 0.5455,
+    "contain_null": 0.4462,
+    "contain_null_std": 0.0323,
+    "contain_z": 3.08,
+    "margin_mean": 1.748,
+    "margin_null_mean": 5.487,
+    "margin_z": -2.07,
+    "auc_margin": 0.5784
+   }
+  ]
+ },
+ "D_union": {
+  "full": {
+   "model": "HD",
+   "label": "D_union",
+   "n": 393,
+   "contain_real": 0.1196,
+   "contain_null": 0.0419,
+   "contain_null_std": 0.0086,
+   "contain_z": 9.03,
+   "margin_mean": 165.703,
+   "margin_null_mean": 242.587,
+   "margin_z": -11.68,
+   "auc_margin": 0.6046
+  },
+  "calibration_wrong": {
+   "wrong_auc": 0.4903,
+   "wrong_margin_z": 2.52,
+   "wrong_contain_z": -0.74
+  },
+  "folds": [
+   {
+    "model": "HD",
+    "label": "",
+    "n": 196,
+    "contain_real": 0.1327,
+    "contain_null": 0.0504,
+    "contain_null_std": 0.0131,
+    "contain_z": 6.28,
+    "margin_mean": 155.63,
+    "margin_null_mean": 233.832,
+    "margin_z": -7.49,
+    "auc_margin": 0.6112
+   },
+   {
+    "model": "HD",
+    "label": "",
+    "n": 197,
+    "contain_real": 0.1066,
+    "contain_null": 0.0371,
+    "contain_null_std": 0.0125,
+    "contain_z": 5.54,
+    "margin_mean": 175.725,
+    "margin_null_mean": 250.574,
+    "margin_z": -7.93,
+    "auc_margin": 0.5958
+   }
+  ],
+  "on_radius_subset": {
+   "model": "HD",
+   "label": "subset_fair",
+   "n": 43,
+   "contain_real": 0.6512,
+   "contain_null": 0.452,
+   "contain_null_std": 0.0403,
+   "contain_z": 4.94,
+   "margin_mean": 1.557,
+   "margin_null_mean": 3.485,
+   "margin_z": -3.92,
+   "auc_margin": 0.6114
+  }
+ }
+}
