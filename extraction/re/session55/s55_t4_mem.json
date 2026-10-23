@@ -1,0 +1,270 @@
+{
+ "empty_three": {
+  "samples": [
+   {
+    "t": 2.1,
+    "jsHeapMB": 1.0,
+    "jsHeapTotalMB": 2.0,
+    "rssMB": 84.8
+   },
+   {
+    "t": 6.1,
+    "jsHeapMB": 1.0,
+    "jsHeapTotalMB": 2.0,
+    "rssMB": 84.8
+   },
+   {
+    "t": 10.2,
+    "jsHeapMB": 1.0,
+    "jsHeapTotalMB": 2.0,
+    "rssMB": 84.8
+   },
+   {
+    "t": 14.3,
+    "jsHeapMB": 1.0,
+    "jsHeapTotalMB": 2.0,
+    "rssMB": 84.8
+   },
+   {
+    "t": 18.3,
+    "jsHeapMB": 1.0,
+    "jsHeapTotalMB": 2.0,
+    "rssMB": 84.8
+   },
+   {
+    "t": 22.4,
+    "jsHeapMB": 1.0,
+    "jsHeapTotalMB": 2.0,
+    "rssMB": 84.8
+   },
+   {
+    "t": 26.4,
+    "jsHeapMB": 1.0,
+    "jsHeapTotalMB": 2.0,
+    "rssMB": 84.8
+   },
+   {
+    "t": 30.5,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 34.6,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 38.6,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 42.7,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 46.7,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 50.8,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 54.9,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 58.9,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 63.0,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 87.9
+   },
+   {
+    "t": 67.0,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 88.1
+   },
+   {
+    "t": 71.1,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 88.1
+   },
+   {
+    "t": 75.2,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 88.1
+   },
+   {
+    "t": 79.2,
+    "jsHeapMB": 0.6,
+    "jsHeapTotalMB": 1.2,
+    "rssMB": 88.1
+   }
+  ],
+  "peak_rss": 88.1,
+  "peak_js": 1.0,
+  "native_residual": 87.1,
+  "gate": {
+   "soup": null,
+   "routes": null
+  }
+ },
+ "poolchunk": {
+  "samples": [
+   {
+    "t": 3.4,
+    "jsHeapMB": 207.8,
+    "jsHeapTotalMB": 246.9,
+    "rssMB": 448.6
+   },
+   {
+    "t": 7.5,
+    "jsHeapMB": 8.7,
+    "jsHeapTotalMB": 11.5,
+    "rssMB": 552.8
+   },
+   {
+    "t": 11.6,
+    "jsHeapMB": 25.2,
+    "jsHeapTotalMB": 34.7,
+    "rssMB": 504.8
+   },
+   {
+    "t": 15.8,
+    "jsHeapMB": 28.7,
+    "jsHeapTotalMB": 35.7,
+    "rssMB": 508.7
+   },
+   {
+    "t": 19.9,
+    "jsHeapMB": 30.0,
+    "jsHeapTotalMB": 37.0,
+    "rssMB": 513.8
+   },
+   {
+    "t": 24.0,
+    "jsHeapMB": 30.0,
+    "jsHeapTotalMB": 37.0,
+    "rssMB": 511.6
+   },
+   {
+    "t": 28.1,
+    "jsHeapMB": 30.0,
+    "jsHeapTotalMB": 37.0,
+    "rssMB": 511.6
+   },
+   {
+    "t": 32.1,
+    "jsHeapMB": 9.5,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 205.6
+   },
+   {
+    "t": 36.2,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 205.6
+   },
+   {
+    "t": 40.2,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 205.6
+   },
+   {
+    "t": 44.3,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 206.0
+   },
+   {
+    "t": 48.4,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 206.0
+   },
+   {
+    "t": 52.4,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 206.0
+   },
+   {
+    "t": 56.5,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 206.0
+   },
+   {
+    "t": 60.6,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 201.7
+   },
+   {
+    "t": 64.6,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 200.6
+   },
+   {
+    "t": 68.7,
+    "jsHeapMB": 9.6,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 200.7
+   },
+   {
+    "t": 72.7,
+    "jsHeapMB": 9.7,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 200.8
+   },
+   {
+    "t": 76.8,
+    "jsHeapMB": 9.7,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 200.9
+   },
+   {
+    "t": 80.9,
+    "jsHeapMB": 9.7,
+    "jsHeapTotalMB": 10.7,
+    "rssMB": 201.0
+   }
+  ],
+  "peak_rss": 555.9,
+  "peak_js": 207.8,
+  "native_residual": 348.1,
+  "gate": {
+   "soup": {
+    "nTri": 137893,
+    "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+   },
+   "routes": {
+    "run": 10,
+    "agree": 10
+   }
+  }
+ }
+}
