@@ -556,7 +556,16 @@ window.__TEXMISS = [];
 function texZget(name, wantAlpha) {
   const key = name + (wantAlpha ? '|a' : '');
   if (texZ.has(key)) return texZ.get(key);
-  const t = getTex(texGla, name, wantAlpha);
+  // s53 T4 ?poolchunk=1: texture already decoded AND uploaded by the chunked capture;
+  // only the GL handle (+alpha for AlphaMasking) is stored - no CPU bytes exist.
+  const pk = (preTex && preTex.get(name.toLowerCase())) || null;
+  if (pk && pk.uploaded) {
+    const o = { tx: pk.tx, alpha: pk.alpha, w: pk.w, h: pk.h, name: name };
+    texZ.set(key, o);
+    texZstats.decoded++;
+    return o;
+  }
+  const t = pk || getTex(texGla, name, wantAlpha);
   if (!t) { texZ.set(key, null);
     window.__TEXMISS.push(name);
     return null; }
@@ -772,7 +781,13 @@ let texGla = null;
 // s52 T4: range-captured texture pool + byte-capped LRU accounting
 let texPool = null;
 let lruBytes = 0;
-const LRU_BYTES = 64 * 1048576;
+// s53 T4 knobs: ?poolchunk=1 (chunked capture -> decode -> GL upload -> discard CPU; the ~100 MB
+// compressed pool and the 64 MB decoded LRU are never materialized), ?lrumb=N (LRU byte cap override)
+let preTex = null;
+const POOLCHUNK = QS2.get('poolchunk') === '1';
+const LRUMB = QS2.get('lrumb') ? parseInt(QS2.get('lrumb')) : null;
+let LRU_BYTES = 64 * 1048576;
+if (LRUMB) LRU_BYTES = LRUMB * 1048576;
 function buildBatches(lt, ldd, bi8, le) {
   const { bind, fx } = parseCompiledTable(le);
   const fbuf = new DataView(ldd.buffer, ldd.byteOffset, ldd.byteLength);
@@ -1428,14 +1443,57 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
         if (act) wantSet.add(act); else wantMiss.push(t);
       }
     }
-    const texRanges = []; const texNames = [];
-    for (const nm2 of wantSet) { const e2 = texIdx.get(nm2); texRanges.push({ o: e2.o, s: e2.s }); texNames.push(nm2); }
-    const texBytes = await streamInflateRanges(zfile, texM, texRanges);
-    texPool = new Map(); let poolB = 0;
-    for (let i = 0; i < texNames.length; i++) { texPool.set(texNames[i].toLowerCase(), texBytes[i]); poolB += texBytes[i].length; }
+    if (POOLCHUNK) {
+      // s53 T4: chunked capture -> decode -> one-shot pre-upload map; the ~100 MB compressed pool
+      // and the decoded LRU are never materialized. Alpha arrays are kept ONLY for the AlphaMasking
+      // diffuse names (the sole consumer, alphaTexOf at prepare time).
+      preTex = new Map();
+      const alphaNeed = new Set();
+      for (let i = 0; i < 307; i++) {
+        if (bindPre.fx[i] === 'AlphaMasking' && bindPre.bind[i] && bindPre.bind[i][0])
+          alphaNeed.add(bindPre.bind[i][0].toLowerCase());
+      }
+      const names = Array.from(wantSet); const CH = 28; let chB = 0;   // s53 T4: 28-member chunks (4 rounds) - fewer await round-trips, same peak profile
+      for (let i = 0; i < names.length; i += CH) {
+        const ch = names.slice(i, i + CH);
+        const rs = ch.map(n => { const e3 = texIdx.get(n); return { o: e3.o, s: e3.s }; });
+        const bs = await streamInflateRanges(zfile, texM, rs);
+        for (let j = 0; j < ch.length; j++) {
+          chB += bs[j] ? bs[j].length : 0;
+          try {
+            const parts = unwrapSplitParts(bs[j]);
+            const rgb = decodePvr(parts['rgb.pvr'] || parts['rgb']);
+            // s53 T4 fix: upload to GL INSIDE the chunk loop; only the GL handle (+alpha for
+            // AlphaMasking) survives. Decoded CPU bytes and compressed bytes are dropped here.
+            const tx = G.createTexture();
+            G.bindTexture(G.TEXTURE_2D, tx);
+            G.texImage2D(G.TEXTURE_2D, 0, G.RGBA, rgb.w, rgb.h, 0, G.RGBA, G.UNSIGNED_BYTE,
+                         new Uint8Array(rgb.rgba.buffer, rgb.rgba.byteOffset, rgb.rgba.byteLength));
+            G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_S, G.REPEAT);
+            G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_T, G.REPEAT);
+            G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, G.NEAREST);
+            G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.NEAREST);
+            const o = { tx, w: rgb.w, h: rgb.h, alpha: null, uploaded: true };
+            if (alphaNeed.has(ch[j].toLowerCase()) && parts['alpha.pvr']) {
+              const a = decodePvr(parts['alpha.pvr']);
+              o.alpha = { w: a.w, h: a.h, data: a.rgba };
+            }
+            preTex.set(ch[j].toLowerCase(), o);
+          } catch (e4) { /* leave absent -> texMiss (baseline decode-failure semantics) */ }
+        }
+      }
+      window.__TEXPOOL = { members: names.length, bytes: 0, chunkedInflatedMB: Math.round(chB / 1048576), mode: 'chunked', wantMiss: wantMiss.slice(0, 8) };
+      log('TEXPOOL: chunked preupload ' + names.length + ' members, ' + Math.round(chB / 1048576) + ' MB inflated in 8-member chunks (pool never held), alphaNeed ' + alphaNeed.size + ' (wantMiss ' + wantMiss.length + ')');
+    } else {
+      const texRanges = []; const texNames = [];
+      for (const nm2 of wantSet) { const e2 = texIdx.get(nm2); texRanges.push({ o: e2.o, s: e2.s }); texNames.push(nm2); }
+      const texBytes = await streamInflateRanges(zfile, texM, texRanges);
+      texPool = new Map(); let poolB = 0;
+      for (let i = 0; i < texNames.length; i++) { texPool.set(texNames[i].toLowerCase(), texBytes[i]); poolB += texBytes[i].length; }
+      window.__TEXPOOL = { members: texNames.length, bytes: poolB, wantMiss: wantMiss.slice(0, 8) };
+      log('TEXPOOL: ' + texNames.length + ' members, ' + Math.round(poolB / 1048576) + ' MB captured (wantMiss ' + wantMiss.length + ')');
+    }
     texIdx.clear(); lowMap.clear();
-    window.__TEXPOOL = { members: texNames.length, bytes: poolB, wantMiss: wantMiss.slice(0, 8) };
-    log('TEXPOOL: ' + texNames.length + ' members, ' + Math.round(poolB / 1048576) + ' MB captured (wantMiss ' + wantMiss.length + ')');
     // s52 T5: ColorCorrection LUT from the USER zip (commons_tex.gla member 000_default.tga, RGB565 512x16)
     if (LUTON) {
       try {
