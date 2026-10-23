@@ -706,7 +706,7 @@ function s5PickEdge() {
 }
 function s5SetClip(name) {
   if (!mixer) return;
-  for (const k of ['_001_idle_stand', '_007_walk', '_008_run', '_089_grapnel_pull', '_057_glide_idle']) {
+  for (const k of ['_001_idle_stand', '_007_walk', '_008_run', '_089_grapnel_pull', '_057_glide_idle', '_065_glide_idle_to_run']) {
     const a = actions[k];
     if (!a) continue;
     a.setEffectiveWeight(k === name ? 1 : 0);
@@ -783,7 +783,8 @@ function s5Tick(now) {
         S5.landed = true; S5.landMs = Math.round(now - S5.tGlide);
         S5.phase = 'done'; S5.done = true;
         if (batman) batman.rotation.z = 0;
-        s5SetClip('_008_run');
+        s5SetClip('_065_glide_idle_to_run');   // s54 T3: state table Grapnel_Horizontal_To_Glide_Idle -> _065 (667 ms), then run
+        setTimeout(function () { if (S5.phase === 'done') s5SetClip('_008_run'); }, 450);
         g.s5 = { enabled: true, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
                  glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs, traj: S5.traj };
         log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
@@ -1215,7 +1216,7 @@ const buildGLB = function buildGLB(skin, A, byNameC) {
     addAcc(offs.idx, idxB.byteLength, idxB.length, 5123, 'SCALAR');
     gltf.skins[0].inverseBindMatrices = addAcc(offs.ibm, ibmB.byteLength, 31, 5126, 'MAT4');
     const animBins = []; let ab = 0;
-    for (const nm of ['_001_idle_stand', '_007_walk', '_008_run', '_057_glide_idle', '_089_grapnel_pull', '_088_grapnel_shoot']) {   // s53 T5: + glide/grapnel clips (decode-verified in the s35 battery)
+    for (const nm of ['_001_idle_stand', '_007_walk', '_008_run', '_057_glide_idle', '_089_grapnel_pull', '_088_grapnel_shoot', '_065_glide_idle_to_run']) {   // s53 T5 + s54 T3: state-table clips (Glide_Idle, Grapnel pull, Grapnel_Horizontal_To_Glide_Idle -> _065 landing transition)
       const clip = byNameC[nm]; if (!clip) continue;
       const { chans } = TDKR.assembleClip(A, clip);
       const samplers = []; const chansG = [];
