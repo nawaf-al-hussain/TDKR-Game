@@ -628,12 +628,27 @@ const UA = { n: 0, mm: 0, noTex: 0, mmFirst: [], u0: null, u1: null };
 // ---- s53 T5: minimal glide + grapple slice (?s5=1) — data sources in extraction/re/session53/s53_t5_design.md
 // Engine anchors: PlayerComponent::EnterGlideFromGrapnel (state 7 guard), SetActorSpeedGlide,
 // clips _089_grapnel_pull / _057_glide_idle / _065_glide_idle_to_run (s35 battery idx 91/55/63).
-// Slice physics: forward 18 u/s (engine default unknown), gravity -25 u/s^2, bank 0.35 rad fixed.
+// s54 T1: parameters DECODED from the engine data (extraction/re/session54/):
+//  CComponentGlide (class 0x0110ce1f, Load = ReadInt + 21xReadFloat + ReadInt, ARM) template
+//  'Glider' (0x2674, gadget slot 0) gol.bin payload, consumed via CGadgetManager::GetGlide:
+//   f0=4 (min sink u/s), f1=16 (max sink u/s): sink = f0 + (f1-f0)*abs(pitch) (RefreshForcesGlide),
+//   f2=14, f3=4, f4=16 (speed family, consumers not pinned), f5=1, f6=6 (gravity-helper lerp),
+//   f7=0, f8=2 (ground-proximity blend target within f9=16 u), f10=-45 (initial glide pitch DEG,
+//   SetInitialGlideAngle; engine hard default -30; Glider_Plunge slot 1: -60),
+//   f11..f20 = -60,30,35,1.25,0.05,45,0.5,30,30,40 (pitch/roll/yaw clamp+rate family),
+//   int2=600 (both templates). Named statics (.data): k_glideWallEvadeDistance 6,
+//   k_glideWallEvadeMinDistance 1, k_glideWallEvadeMaxAngle 10, s_fallAheadOffset 0.4.
+// Legacy placeholders (?s5legacy=1): fwd 18, gravity -25, bank 0.35 rad fixed.
 const S5ON = QS2.get('s5') === '1';
+const S5LEG = QS2.get('s5legacy') === '1';
+const S5P = S5LEG
+  ? { fwd: 18.0, pitch0Deg: -30.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35, legacy: true }
+  : { fwd: 16.0, pitch0Deg: -45.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35, legacy: false };
 const S5 = { phase: 'off', t0: 0, tGlide: 0, from: null, tgt: null, dur: 1200, vz: 0,
              reached: false, reachDist: null, clipActive: false, landed: false,
              landMs: null, started: false, done: false, bank: 0.35,
-             fwdSpeed: 18.0, grav: -25.0 };
+             fwdSpeed: 16.0, pitch0Deg: -45.0, sinkMin: 4.0, sinkMax: 16.0,
+             legacy: false };
 function s5PickEdge() {
   // find the current cell: nearest cell center within 10 u (2D)
   let cu = -1, cd = 1e9;
@@ -647,7 +662,7 @@ function s5PickEdge() {
   // ("a grapple to a decoded edge" - real CNavMeshNova portals: shared 2-vertex cell edges)
   const seen = new Set([cu]);
   const ring = [cu];
-  let best = null, bestD = 1e9;
+  let best = null, bestD = 1e9, bestScore = -1e9;
   for (let depth = 0; depth < 10 && ring.length; depth++) {
     const nxt = [];
     for (const u of ring) {
@@ -661,9 +676,12 @@ function s5PickEdge() {
         const mx = (nmV[sh[0] * 3] + nmV[sh[1] * 3]) / 2, my = (nmV[sh[0] * 3 + 1] + nmV[sh[1] * 3 + 1]) / 2,
               mz = (nmV[sh[0] * 3 + 2] + nmV[sh[1] * 3 + 2]) / 2;
         const d = Math.hypot(mx - P.x, my - P.y);
-        if (d >= 14 && d <= 80 && Math.abs(mz - P.z) < 14 && d < bestD &&
+        if (d >= 14 && d <= 80 && Math.abs(mz - P.z) < 14 &&
             nm_ground(mx, my, mz + 2.6) > -1e8) {
-          bestD = d; best = [mx, my, mz];
+          // s54 T1: prefer an ELEVATED anchor (engine grapples UP to a ledge, glides down);
+          // score = height above the walker first, distance second
+          const score = (mz - P.z) * 10 - d;
+          if (best === null || score > bestScore) { bestScore = score; best = [mx, my, mz]; }
         }
       }
     }
@@ -707,7 +725,14 @@ function s5Tick(now) {
       S5.reachDist = Math.hypot(P.x - S5.tgt[0], P.y - S5.tgt[1]);
       S5.reached = S5.reachDist <= 2.5;
       S5.phase = 'glide'; S5.t0 = now; S5.tGlide = now;
-      S5.vz = 2.0;      // small rise on release
+      // s54 T1: the grapple ends AT the anchor (ledge) - stand on its surface, then glide
+      const gz0 = nm_ground(S5.tgt[0], S5.tgt[1], S5.tgt[2] + 2.6);
+      if (gz0 > -1e8) { P.z = gz0 + 0.9; }
+      S5.pitch = S5P.pitch0Deg * Math.PI / 180;   // engine initial glide pitch (f10, SetInitialGlideAngle)
+      S5.vz = S5P.legacy ? 2.0 : -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch));
+      // engine model (RefreshForcesGlide): descent rate = f0 + (f1-f0)*|pitch|, pitch = f10 = -45 deg
+      //   -> sink = 4 + 12*0.7854 = 13.4 u/s; forward 16 u/s (speed family) => 0.84 u alt / u dist
+      // legacy model: small rise then gravity -25 u/s^2
       s5SetClip('_057_glide_idle');
     }
   } else if (S5.phase === 'glide') {
@@ -715,27 +740,45 @@ function s5Tick(now) {
     S5.t0 = now;
     const dx = S5.tgt[0] - S5.from[0], dy = S5.tgt[1] - S5.from[1];
     const dl = Math.hypot(dx, dy) || 1;
-    const nx = P.x + dx / dl * S5.fwdSpeed * dt2, ny = P.y + dy / dl * S5.fwdSpeed * dt2;
-    S5.vz += S5.grav * dt2;
+    // s54 T1: engine k_glideWallEvade analogue - never step forward into void;
+    // hold position laterally and keep descending (nm corridor of the decoded region)
+    let gx = P.x + dx / dl * S5.fwdSpeed * dt2, gy = P.y + dy / dl * S5.fwdSpeed * dt2;
+    if (nm_ground(gx, gy, P.z + 2.6) <= -1e8) { gx = P.x; gy = P.y; }
+    if (S5P.legacy) { S5.vz += -25.0 * dt2; }
+    // engine path: constant-rate descent (recomputed each frame from the held pitch)
+    else { S5.vz = -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch)); }
     const nz = P.z + S5.vz * dt2;
-    const gz = nm_ground(nx, ny, nz + 2.6);
-    P.x = nx; P.y = ny; P.z = nz;
+    const gz = nm_ground(gx, gy, nz + 2.6);
+    P.x = gx; P.y = gy; P.z = nz;
+    // s54 T1: in-page trajectory record (alt-lost-per-metre comparison, gate-visible)
+    if (!S5.traj) S5.traj = [];
+    if (S5.traj.length === 0 || now - S5.traj[S5.traj.length - 1].t >= 200) {
+      S5.traj.push({ t: Math.round(now - S5.tGlide), x: +P.x.toFixed(2), y: +P.y.toFixed(2),
+                     z: +P.z.toFixed(2), vz: +S5.vz.toFixed(2), gz: (gz > -1e8) ? +gz.toFixed(2) : null });
+    }
+    window.__GATE.s5live = { phase: S5.phase, vz: +S5.vz.toFixed(2), z: +P.z.toFixed(2),
+                             gz: (gz > -1e8) ? +gz.toFixed(2) : null, ms: Math.round(now - S5.tGlide) };
     if (batman) { batman.rotation.y = Math.atan2(-dx, -dy) + Math.PI; batman.rotation.z = S5.bank; }
     const glA = actions['_057_glide_idle'];
     S5.clipActive = !!(glA && glA.getEffectiveWeight() > 0.5 && glA.time > 0.05);   // clip actually sampled
-    if (now - S5.tGlide > 400 && gz > -1e8 && nz - 0.9 <= gz + 0.05) {   // min glide airtime 400 ms
-      P.z = gz + 0.9; S5.landed = true; S5.landMs = Math.round(now - S5.tGlide);
-      S5.phase = 'done'; S5.done = true;
-      if (batman) batman.rotation.z = 0;
-      s5SetClip('_008_run');
-      g.s5 = { enabled: true, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
-               glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs };
-      log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
-      startWalkPhase();   // hand back to the standard gate walk phase
+    if (gz > -1e8 && nz - 0.9 <= gz + 0.05) {
+      // ground contact: clamp to the surface; finish the landing after the 400 ms
+      // min-airtime window so the glide clip is genuinely sampled (gate fidelity)
+      P.z = gz + 0.9;
+      if (now - S5.tGlide > 400) {
+        S5.landed = true; S5.landMs = Math.round(now - S5.tGlide);
+        S5.phase = 'done'; S5.done = true;
+        if (batman) batman.rotation.z = 0;
+        s5SetClip('_008_run');
+        g.s5 = { enabled: true, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
+                 glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs, traj: S5.traj };
+        log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
+        startWalkPhase();   // hand back to the standard gate walk phase
+      }
     }
     if (now - S5.tGlide > 6000 && !S5.landed) {   // safety: never stall the gate
       g.s5 = { enabled: true, targetReached: S5.reached, reachDist: S5.reachDist,
-               glideClipActive: S5.clipActive, landed: false, error: 'glide timeout' };
+               glideClipActive: S5.clipActive, landed: false, error: 'glide timeout', traj: S5.traj };
       S5.phase = 'done'; S5.done = true;
       startWalkPhase();
     }
