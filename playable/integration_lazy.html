@@ -608,6 +608,14 @@ const DEFS_Z = {
   other: '',
 };
 const IDENT4 = new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]);
+// ---- s52 T5: engine fog + ColorCorrection LUT in the zone path (off by default; gate digests unchanged) ----
+const QS2 = new URLSearchParams(location.search);
+const FOGENG = QS2.get('fog') === '1';   // ComputeFogFS with shipped values: FogColor RGBA(64,102,119,160), start 0, end 140, y = 1/(start-end)
+const LUTON = QS2.get('lut') === '1';    // ColorCorrection 000_default.tga (RGB565 512x16, commons_tex.gla) post pass
+const CAMH = 60.0;                        // top-down camera height anchor: view depth = CAMH - h
+const FOG_WVT = (() => { const a = new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]);
+  a[8] = 0; a[9] = 0; a[10] = -1; a[11] = CAMH; return a; })();  // col2 -> dot = CAMH - h
+let lutTex = null, lutFBO = null, lutSceneTex = null, lutPost = null;
 
 /* follow camera: top-down ortho centered on the capsule, height = depth.
  * Same math family as city_zone2 (pixel-space ortho; s50 T1: depth window [-100,+250], clip_z = -2h/350 + 150/350 — the old 1-h/200 clipped all h<0 water/shore). */
@@ -622,8 +630,10 @@ function camWVP(cx, cz) {
 }
 
 function drawZone(batches, wvp) {
+  const usePost = LUTON && lutTex;   // s52 T5: scene -> FBO -> LUT quad -> screen
   G.viewport(0, 0, W, H);
   G.clearColor(0, 0, 0, 0);
+  if (usePost) { ensureLutPost(); G.bindFramebuffer(G.FRAMEBUFFER, lutFBO); }
   G.clear(G.COLOR_BUFFER_BIT | G.DEPTH_BUFFER_BIT);
   G.enable(G.DEPTH_TEST);
   G.depthFunc(G.LEQUAL);
@@ -643,9 +653,9 @@ function drawZone(batches, wvp) {
     if (P.uni.Overbright) G.uniform1f(P.uni.Overbright, 1.0);
     if (P.uni.uvOffset) G.uniform2f(P.uni.uvOffset, 0, 0);
     if (P.uni.Ambient) G.uniform4f(P.uni.Ambient, 0, 0, 0, 1);
-    if (P.uni.FogColor) G.uniform4f(P.uni.FogColor, 64/255, 102/255, 119/255, 0);
-    if (P.uni.FogStartEnd) G.uniform2f(P.uni.FogStartEnd, 0, 1/140);
-    if (P.uni.WorldViewTransposed) G.uniformMatrix4fv(P.uni.WorldViewTransposed, false, IDENT4);
+    if (P.uni.FogColor) { if (FOGENG) G.uniform4f(P.uni.FogColor, 64/255, 102/255, 119/255, 160/255); else G.uniform4f(P.uni.FogColor, 64/255, 102/255, 119/255, 0); }
+    if (P.uni.FogStartEnd) G.uniform2f(P.uni.FogStartEnd, 0, FOGENG ? -1/140 : 1/140);
+    if (P.uni.WorldViewTransposed) G.uniformMatrix4fv(P.uni.WorldViewTransposed, false, FOGENG ? FOG_WVT : IDENT4);
     function bindA(name, buf, size) {
       if (P.attr[name] === undefined || P.attr[name] < 0) return;
       G.bindBuffer(G.ARRAY_BUFFER, buf);
@@ -685,7 +695,50 @@ function drawZone(batches, wvp) {
     G.drawElements(G.TRIANGLES, b.nidx, b.use32 ? G.UNSIGNED_INT : G.UNSIGNED_SHORT, 0);
     tris += b.nidx / 3; draws++;
   }
-  return { tris, draws };
+  if (usePost) { G.bindFramebuffer(G.FRAMEBUFFER, null); lutDrawPass(); }
+  return { tris, draws, lut: usePost };
+}
+
+// s52 T5: ColorCorrection post pass (viewer parity). The scene renders INTO lutFBO (RGBA texture
+// + DEPTH_COMPONENT16 renderbuffer), then a fullscreen quad applies the engine CCFS LUT mapping
+// (u = r*cell*0.9375 + 0.03125*cell + floor(b*31.9999)*cell, v = g) to the default framebuffer.
+function ensureLutPost() {
+  if (lutPost) return;
+  const vs = 'attribute vec2 p; varying vec2 t; void main(){ t = p*0.5+0.5; gl_Position = vec4(p,0.0,1.0); }';
+  const fs = 'precision mediump float; uniform sampler2D sc; uniform sampler2D lut; varying vec2 t;\n' +
+    'void main(){ vec4 c = texture2D(sc, t); float cell = 1.0/32.0;\n' +
+    ' float u = c.r * cell * 0.9375 + 0.03125 * cell + floor(c.b * 31.9999) * cell; float v = c.g;\n' +
+    ' gl_FragColor = vec4(texture2D(lut, vec2(u, v)).rgb, c.a); }';
+  const mk = (ty, src) => { const s = G.createShader(ty); G.shaderSource(s, src); G.compileShader(s);
+    if (!G.getShaderParameter(s, G.COMPILE_STATUS)) throw new Error('lutpost: ' + G.getShaderInfoLog(s)); return s; };
+  const pr = G.createProgram(); G.attachShader(pr, mk(G.VERTEX_SHADER, vs)); G.attachShader(pr, mk(G.FRAGMENT_SHADER, fs));
+  G.linkProgram(pr);
+  const qb = G.createBuffer(); G.bindBuffer(G.ARRAY_BUFFER, qb);
+  G.bufferData(G.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,-1, 1,1, -1,1]), G.STATIC_DRAW);
+  lutPost = { pr, qb, loc_p: G.getAttribLocation(pr, 'p'), loc_sc: G.getUniformLocation(pr, 'sc'), loc_lut: G.getUniformLocation(pr, 'lut') };
+  lutSceneTex = G.createTexture(); G.bindTexture(G.TEXTURE_2D, lutSceneTex);
+  G.texImage2D(G.TEXTURE_2D, 0, G.RGBA, W, H, 0, G.RGBA, G.UNSIGNED_BYTE, null);
+  G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, G.NEAREST); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.NEAREST);
+  G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_S, G.CLAMP_TO_EDGE); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_T, G.CLAMP_TO_EDGE);
+  const rb = G.createRenderbuffer(); G.bindRenderbuffer(G.RENDERBUFFER, rb);
+  G.renderbufferStorage(G.RENDERBUFFER, G.DEPTH_COMPONENT16, W, H);
+  lutFBO = G.createFramebuffer(); G.bindFramebuffer(G.FRAMEBUFFER, lutFBO);
+  G.framebufferTexture2D(G.FRAMEBUFFER, G.COLOR_ATTACHMENT0, G.TEXTURE_2D, lutSceneTex, 0);
+  G.framebufferRenderbuffer(G.FRAMEBUFFER, G.DEPTH_ATTACHMENT, G.RENDERBUFFER, rb);
+  G.bindFramebuffer(G.FRAMEBUFFER, null);
+}
+function lutDrawPass() {
+  G.disable(G.DEPTH_TEST);
+  G.useProgram(lutPost.pr);
+  G.bindBuffer(G.ARRAY_BUFFER, lutPost.qb);
+  G.enableVertexAttribArray(lutPost.loc_p);
+  G.vertexAttribPointer(lutPost.loc_p, 2, G.FLOAT, false, 0, 0);
+  G.activeTexture(G.TEXTURE0); G.bindTexture(G.TEXTURE_2D, lutSceneTex); G.uniform1i(lutPost.loc_sc, 0);
+  G.activeTexture(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lutTex); G.uniform1i(lutPost.loc_lut, 1);
+  G.viewport(0, 0, W, H);
+  G.drawArrays(G.TRIANGLES, 0, 6);
+  G.enable(G.DEPTH_TEST);
+  G.activeTexture(G.TEXTURE0);
 }
 
 /* prepare static GL state per material batch (textures decoded ONCE, not per frame) */
@@ -1365,6 +1418,34 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
     texIdx.clear(); lowMap.clear();
     window.__TEXPOOL = { members: texNames.length, bytes: poolB, wantMiss: wantMiss.slice(0, 8) };
     log('TEXPOOL: ' + texNames.length + ' members, ' + Math.round(poolB / 1048576) + ' MB captured (wantMiss ' + wantMiss.length + ')');
+    // s52 T5: ColorCorrection LUT from the USER zip (commons_tex.gla member 000_default.tga, RGB565 512x16)
+    if (LUTON) {
+      try {
+        const cm = zmembersGet(findM(/textures\/commons_tex\.gla$/i));
+        const cidx = await glaIndexLazy(zfile, cm);
+        const ce = cidx.get('000_default.tga');
+        if (!ce) throw new Error('000_default.tga not in commons_tex.gla');
+        const cb = (await streamInflateRanges(zfile, cm, [{ o: ce.o, s: ce.s }]))[0];
+        cidx.clear();
+        const px = new Uint16Array(cb.buffer, cb.byteOffset + 52, 512 * 16);
+        const rgb = new Uint8Array(512 * 16 * 4);
+        for (let i = 0; i < 512 * 16; i++) {
+          const p = px[i];
+          rgb[i * 4] = Math.round(((p >> 11) & 0x1f) * 255 / 31);
+          rgb[i * 4 + 1] = Math.round(((p >> 5) & 0x3f) * 255 / 63);
+          rgb[i * 4 + 2] = Math.round((p & 0x1f) * 255 / 31);
+          rgb[i * 4 + 3] = 255;
+        }
+        lutTex = G.createTexture(); G.bindTexture(G.TEXTURE_2D, lutTex);
+        G.texImage2D(G.TEXTURE_2D, 0, G.RGBA, 512, 16, 0, G.RGBA, G.UNSIGNED_BYTE, rgb);
+        G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, G.LINEAR);
+        G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.LINEAR);
+        G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_S, G.CLAMP_TO_EDGE);
+        G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_T, G.CLAMP_TO_EDGE);
+        window.__LUT_OK = true;
+        log('LUT 000_default loaded 512x16 RGB565 (s49 CCFS mapping)');
+      } catch (eL) { log('LUT load failed: ' + eL); }
+    }
     const tB = performance.now();
     batches = buildBatches(lt, ldd, bi8, le);
     const tZone = performance.now() - tB;
