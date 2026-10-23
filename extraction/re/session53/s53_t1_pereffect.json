@@ -1,0 +1,72 @@
+{
+ "sign_convention": {
+  "corr": "Pearson r per-pixel mean RGB, label AND both-covered",
+  "ratio": "GL/CPU covered-mean within the label",
+  "calibration": "wronglm dump must lower corr for LightMapDC labels; small families may be n-limited"
+ },
+ "overlap_px": 3403,
+ "per_effect": {
+  "AlphaMasking": {
+   "label_px": 92,
+   "n": 29,
+   "gl_mean": 126.62,
+   "cpu_mean": 117.7,
+   "ratio": 1.0758,
+   "corr": 0.8256,
+   "wronglm_corr": 0.6941,
+   "wronglm_ratio": 1.0002,
+   "valdiff_px": 3
+  },
+  "StandardDiffuseDC": {
+   "label_px": 135,
+   "n": 76,
+   "gl_mean": 75.67,
+   "cpu_mean": 77.65,
+   "ratio": 0.9745,
+   "corr": 0.9079,
+   "wronglm_corr": 0.8724,
+   "wronglm_ratio": 0.9544,
+   "valdiff_px": 2
+  },
+  "SimpleAdditive": {
+   "label_px": 529,
+   "n": 131,
+   "gl_mean": 62.32,
+   "cpu_mean": 61.42,
+   "ratio": 1.0146,
+   "corr": 0.9967,
+   "wronglm_corr": 0.6327,
+   "wronglm_ratio": 0.8845,
+   "valdiff_px": 1
+  },
+  "other": {
+   "label_px": 10445,
+   "n": 8294,
+   "gl_mean": 112.25,
+   "cpu_mean": 111.85,
+   "ratio": 1.0036,
+   "corr": 0.9893,
+   "wronglm_corr": 0.8687,
+   "wronglm_ratio": 0.9881,
+   "valdiff_px": 55
+  },
+  "LightMapDC": {
+   "label_px": 99410,
+   "n": 57809,
+   "gl_mean": 37.81,
+   "cpu_mean": 37.27,
+   "ratio": 1.0144,
+   "corr": 0.9877,
+   "wronglm_corr": 0.2063,
+   "wronglm_ratio": 0.9525,
+   "valdiff_px": 125
+  }
+ },
+ "totals": {
+  "shared_px": 66339,
+  "iou": 0.9721,
+  "corr_shared": 0.9923,
+  "covdiff_px": 1901,
+  "valdiff_px": 186
+ }
+}
