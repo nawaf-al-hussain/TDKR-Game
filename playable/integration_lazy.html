@@ -650,6 +650,20 @@ const S5 = { phase: 'off', t0: 0, tGlide: 0, from: null, tgt: null, dur: 1200, v
              fwdSpeed: 16.0, pitch0Deg: -45.0, sinkMin: 4.0, sinkMax: 16.0,
              legacy: false };
 function s5PickEdge() {
+  // s54 T2: prefer REAL CWayPointObject anchors (decoded from YOUR lvc);
+  // the portal-edge BFS below stays as fallback when no waypoint qualifies.
+  const WPS = window.__S5WPS;
+  if (WPS && WPS.length) {
+    let bw = null, bwScore = -1e9;
+    for (const w of WPS) {
+      const d = Math.hypot(w.x - P.x, w.y - P.y);
+      if (d < 14 || d > 80 || Math.abs(w.z - P.z) >= 14) continue;
+      if (nm_ground(w.x, w.y, w.z + 2.6) <= -1e8) continue;   // slice keeps walkable-only targets
+      const score = (w.z - P.z) * 10 - d;                      // elevated anchor first (engine ledge grapple)
+      if (score > bwScore) { bwScore = score; bw = [w.x, w.y, w.z]; }
+    }
+    if (bw) return bw;
+  }
   // find the current cell: nearest cell center within 10 u (2D)
   let cu = -1, cd = 1e9;
   for (let i = 0; i < nmCent.length / 3; i++) {
@@ -1571,6 +1585,31 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
         Math.round(routes.results.reduce((a, r) => a + r.ms, 0)) + ' ms)');
     for (const r of routes.results) log('  route ' + r.route + ': ' + r.verdict + ' d=' + r.dist +
         ' (expected ' + r.expected + ' ' + r.expected_dist + ') ' + (r.agree ? 'OK' : 'MISMATCH'));
+
+    /* ---- s54 T2: REAL grapple-target anchors (CWayPointObject records) ----
+     * Session 53 established the engine's grapple targets are object-anchor
+     * virtuals (CWayPointObject::GetGrapnelTargetPosition @0x2a9024), NOT
+     * navmesh edge flags. Decode the waypoint records (engine cases 0x798f /
+     * 0x2666 / 0x4741) from YOUR lvc and offer them to the ?s5=1 slice. */
+    if (S5ON) {
+      try {
+        const plv2 = (typeof parseLvc !== 'undefined') ? parseLvc
+                   : (typeof TDKRLvc !== 'undefined' ? TDKRLvc.parseLvc : null);
+        const res2 = plv2(lvcBytes, table, gol, {});
+        const dv2 = new DataView(lvcBytes.buffer, lvcBytes.byteOffset, lvcBytes.byteLength);
+        const wps = [];
+        for (const r of res2.records) {
+          if (r.tid === 0x798f || r.tid === 0x2666 || r.tid === 0x4741) {
+            const p = r.start + 4;   // tid | i oid | c flag | 3f pos (BE)
+            wps.push({ oid: dv2.getInt32(p, false), flag: lvcBytes[p + 4],
+                       x: dv2.getFloat32(p + 5, false), y: dv2.getFloat32(p + 9, false),
+                       z: dv2.getFloat32(p + 13, false) });
+          }
+        }
+        window.__S5WPS = wps;
+        log('S5 grapple anchors: ' + wps.length + ' CWayPointObject records decoded (s54 T2)');
+      } catch (e2) { log('S5 waypoint decode failed: ' + e2.message); }
+    }
 
     /* ---- (1) zone data + batches (city_zone2 path) ---- */
     const glaM = zmembersGet(findM(/data\/l_gothamcity\.gla$/i));
