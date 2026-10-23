@@ -745,3 +745,23 @@ Stage Summary:
 - Verdicts: T1 PASS-with-correction (decode complete, named, validated, applied, gated), T2 PASS (census + real anchors in slice), T3 PASS (table-driven clips, gated), T4 PARTIAL (10-12x n boost + calibrations; literal thousands unreachable in top-down), T5 PARTIAL (floor measured, <600 not reached), T6 PASS (no work), T7 PASS (live verified, plans written), T8 done
 - Glide/grapple now run on DECODED engine parameters; the s53 committed-page slice bug found and fixed
 - Local: main dfcd2eb, staged-s44 6145545; bundles download/bundles_s54/; no push (no token)
+
+---
+Task ID: s54-deploy
+Agent: main (Z.ai session 54 continuation — deploy round)
+Task: execute the T7 deploy plan on user instruction "deploy" (plan: extraction/re/session54/s54_t7_note.md).
+
+Work Log:
+- STATE: s54 T1-T8 all committed locally (main 328f864, ahead 21); token present at .gh_token (fine-grained, never echoed); remote confirmed unchanged (main 3d5c5c5, gh-pages 16a22ce LIVE).
+- Pre-deploy verification: deploy delta = EXACTLY 4 files (M playable/batman.glb 299388 B, M playable/index.html, A playable/integration.html, A playable/integration_lazy.html), root viewer untouched; merge-base == live HEAD -> pure fast-forward; no blob >5MB in any push range; s54_t1_gate.json re-read (s5_decoded / s5_legacy / default all PASS, soup 00ce7970.../137893, routes 10/10, 0 errors); s5 flag default-off confirmed in page source (S5ON = QS2.get('s5')==='1').
+- Fresh local smoke (staged tree via git archive, playwright headless): 6 pages (root, walktest, playable_index, integration, integration_lazy, integration_lazy?s5=1 with the real 895 MB zip) — 0 console errors, 0 failed requests; s5 run reproduced the gate: soupDigestPass, nmSelfCheck, soup 00ce7970.../137893, routes 10/10 (s54_deploy_smoke_local.json).
+- DEPLOY (scripts/s54_deploy.sh, single push invocation via askpass): all 4 asserts green; pushed main 3d5c5c5->328f864, s41-city-slice 7a9d3a7->7b0807e, gh-pages-staged-s44 03d6136->6145545, and DEPLOYED gh-pages 16a22ce->6145545. Rollback = force-push 16a22ce (static tree, exact).
+- Live verify (s54_deploy_live_verify.py): GitHub Pages rebuilt; all 9 probed URLs 200 and byte-identical to the staged tree (index.html, app.js, style.css, skybox.jpg, playable/index.html, batman.glb 299388 B, integration.html, integration_lazy.html, walktest.html); headless loads of live root viewer (?userfiles=1, 73 reqs) + integration_lazy + integration: 0 console errors, 0 failed requests, file prompts present (s54_deploy_live.json).
+- Bundles verified: bundles_s54/main_s54_inc.bundle (fe4b9cf..328f864, 102863 B, d9baf844...) + branch_staged_s54_inc.bundle (aa0296f..6145545, 6830 B, fc065a73...), git bundle verify PASS.
+- Housekeeping: restored accidental local truncation of worklog.md (s52/s53 sections clobbered in the working tree; HEAD content intact); restored mode-only flips on s49/s51/s53 artifacts + RSS re-run residue in s53_t4_mem.json.
+
+Stage Summary:
+- DEPLOYED: gh-pages = 6145545 (s52 lazy texture pool + fog/LUT flags, s53 glide/grapple slice, s54 decoded glide params + waypoint anchors + state-table clips; all non-default flags off; default-mode digests identical to the pre-deploy site).
+- Remote: main 328f864, gh-pages 6145545 (LIVE), gh-pages-staged-s44 6145545, s41-city-slice 7b0807e.
+- Known cosmetic follow-up (NOT hot-fixed to keep deployed sha == gated sha): integration pages' <title> still reads "s49 T5 — staged, NOT deployed"; the root viewer fog diff (s50_t6_viewer_fog.diff) also remains unapplied.
+- Real-GPU check still PENDING user (city_bisect2.html ?gpucheck=1, one URL + one zip + paste back).

@@ -1,0 +1,101 @@
+{
+ "http": {
+  "index.html": {
+   "status": 200,
+   "bytes": 4491,
+   "sha256_16": "eb3bed89554b3ff6",
+   "identical_to_staged": true
+  },
+  "app.js": {
+   "status": 200,
+   "bytes": 36642,
+   "sha256_16": "a02b4a420a63372b",
+   "identical_to_staged": true
+  },
+  "style.css": {
+   "status": 200,
+   "bytes": 5865,
+   "sha256_16": "7b4382fc8069ecc7",
+   "identical_to_staged": true
+  },
+  "skybox.jpg": {
+   "status": 200,
+   "bytes": 34039,
+   "sha256_16": "1361d3761b260470",
+   "identical_to_staged": true
+  },
+  "playable/index.html": {
+   "status": 200,
+   "bytes": 16372,
+   "sha256_16": "aed30453c9ec80a0",
+   "identical_to_staged": true
+  },
+  "playable/batman.glb": {
+   "status": 200,
+   "bytes": 299388,
+   "sha256_16": "42c72cfe77289951",
+   "identical_to_staged": true
+  },
+  "playable/integration.html": {
+   "status": 200,
+   "bytes": 62891,
+   "sha256_16": "8881cfb5551119f8",
+   "identical_to_staged": true
+  },
+  "playable/integration_lazy.html": {
+   "status": 200,
+   "bytes": 90706,
+   "sha256_16": "7118b0d811107b99",
+   "identical_to_staged": true
+  },
+  "playable/walktest.html": {
+   "status": 200,
+   "bytes": 1293,
+   "sha256_16": "41f9b2bdc8cf1314",
+   "identical_to_staged": true
+  }
+ },
+ "browser": {
+  "root_viewer": {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/?userfiles=1",
+   "elapsed_s": 8.4,
+   "requests": 73,
+   "console_errors": [],
+   "page_errors": [],
+   "failed_requests": [],
+   "state": {
+    "title": "Gotham City \u2014 TDKR (2012) viewer",
+    "hasFilePrompt": false,
+    "s5": "n/a"
+   }
+  },
+  "integration_lazy": {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/integration_lazy.html",
+   "elapsed_s": 7.2,
+   "requests": 9,
+   "console_errors": [],
+   "page_errors": [],
+   "failed_requests": [],
+   "state": {
+    "title": "TDKR integration (s49 T5 \u2014 staged, NOT deployed)",
+    "hasFilePrompt": true,
+    "s5": "n/a"
+   }
+  },
+  "integration": {
+   "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/integration.html",
+   "elapsed_s": 6.8,
+   "requests": 9,
+   "console_errors": [],
+   "page_errors": [],
+   "failed_requests": [],
+   "state": {
+    "title": "TDKR integration (s49 T5 \u2014 staged, NOT deployed)",
+    "hasFilePrompt": true,
+    "s5": "n/a"
+   }
+  }
+ },
+ "batman_size_ok": true,
+ "all_http_ok": true
+}
