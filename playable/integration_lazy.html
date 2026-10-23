@@ -568,7 +568,7 @@ function texZget(name, wantAlpha) {
   G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_T, G.REPEAT);
   G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, G.NEAREST);
   G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.NEAREST);
-  const o = { tx, alpha: t.alpha, w: t.w, h: t.h };
+  const o = { tx, alpha: t.alpha, w: t.w, h: t.h, name: name };  // s53 T1: name for the unit audit
   texZ.set(key, o);
   texZstats.decoded++;
   return o;
@@ -613,6 +613,9 @@ const QS2 = new URLSearchParams(location.search);
 const FOGENG = QS2.get('fog') === '1';   // ComputeFogFS with shipped values: FogColor RGBA(64,102,119,160), start 0, end 140, y = 1/(start-end)
 const LUTON = QS2.get('lut') === '1';    // ColorCorrection 000_default.tga (RGB565 512x16, commons_tex.gla) post pass
 const CAMH = 60.0;                        // top-down camera height anchor: view depth = CAMH - h
+// s53 T1: draw-time texture-unit audit (?unitaudit=1) — asserts unit0 == diffuse, unit1 == lightmap on EVERY zone draw
+const UAUD = QS2.get('unitaudit') === '1';
+const UA = { n: 0, mm: 0, noTex: 0, mmFirst: [], u0: null, u1: null };
 const FOG_WVT = (() => { const a = new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]);
   a[8] = 0; a[9] = 0; a[10] = -1; a[11] = CAMH; return a; })();  // col2 -> dot = CAMH - h
 let lutTex = null, lutFBO = null, lutSceneTex = null, lutPost = null;
@@ -669,16 +672,31 @@ function drawZone(batches, wvp) {
     if (b.uv1Buf) { bindA('Coord1', b.uv1Buf, 2); bindA('TexCoord1', b.uv1Buf, 2); }
     if (b.c0Buf) { bindA('Color', b.c0Buf, 4); bindA('Color0', b.c0Buf, 4); }
     let unit = 0;
+    if (UAUD) { UA.n++; UA.u0 = null; UA.u1 = null; }   // s53 T1 per-draw unit audit
     if (b.dTex && P.uni.DiffuseMap !== undefined && P.uni.DiffuseMap) {
       G.activeTexture(G.TEXTURE0); G.bindTexture(G.TEXTURE_2D, b.dTex.tx);
+      if (UAUD) UA.u0 = b.dTex.name || null;
       G.uniform1i(P.uni.DiffuseMap, 0); unit = 1;
     } else if (b.dTex && P.uni.DiffuseTextureSampler) {
       G.activeTexture(G.TEXTURE0); G.bindTexture(G.TEXTURE_2D, b.dTex.tx);
+      if (UAUD) UA.u0 = b.dTex.name || null;
       G.uniform1i(P.uni.DiffuseTextureSampler, 0); unit = 1;
     }
     if ((b.fx === 'LightMapDC' || b.fx === 'AlphaMasking') && b.lmTex) {
       if (P.uni.LightMap) { G.activeTexture(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, b.lmTex.tx); G.uniform1i(P.uni.LightMap, 1); }
       else if (P.uni.LightmapTextureSampler) { G.activeTexture(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, b.lmTex.tx); G.uniform1i(P.uni.LightmapTextureSampler, 1); }
+      if (UAUD) UA.u1 = b.lmTex.name || null;
+    }
+    if (UAUD) {   // s53 T1: assert unit0 == the batch's diffuse, unit1 == its lightmap
+      const exp0 = b.dTex ? (b.dTex.name || null) : null;
+      const isLMA = (b.fx === 'LightMapDC' || b.fx === 'AlphaMasking');
+      const exp1 = (isLMA && b.lmTex) ? (b.lmTex.name || null) : null;
+      if (exp0 === null) { UA.noTex++; }
+      else {
+        if (UA.u0 !== exp0) { UA.mm++; if (UA.mmFirst.length < 8) UA.mmFirst.push({ mid: b.mid, fx: b.fx, exp0: exp0, u0: UA.u0, exp1: exp1, u1: UA.u1 }); }
+        if (exp1 !== null && UA.u1 !== exp1) { UA.mm++; if (UA.mmFirst.length < 8) UA.mmFirst.push({ mid: b.mid, fx: b.fx, exp0: exp0, u0: UA.u0, exp1: exp1, u1: UA.u1 }); }
+      }
+      window.__GATE.unit_audit = { draws: UA.n, mismatches: UA.mm, noTex: UA.noTex, first: UA.mmFirst };
     }
     if (b.fx === 'AlphaMasking' && b.alphaTx && P.uni.DiffuseMap_alpha) {
       G.activeTexture(G.TEXTURE2); G.bindTexture(G.TEXTURE_2D, b.alphaTx);
