@@ -1,0 +1,15 @@
+GOT slots holding s_glide* addresses:
+   0xc080c8 -> 0xc17d5c s_glidePitchMin
+   0xc080cc -> 0xc17d60 s_glidePitchMax
+   0xc080d0 -> 0xc17d64 s_glideRollMax
+   0xc080d4 -> 0xc17d68 s_glideDeltaYawMax
+   0xc080d8 -> 0xc17d6c s_glideYawCoef
+   0xc080dc -> 0xc17d70 s_glidePitchCoef
+   0xc080e0 -> 0xc17d74 s_glideRollCoef
+   0xc080e4 -> 0xc17d78 s_glidePitchAutoLevelingCoef
+   0xc080e8 -> 0xc17d7c s_glideRollAutoLevelingCoef
+   0xc080ec -> 0xc17d80 s_glideDeadAngle
+k_glide* GOT slots: {}
+
+chain sites (s_glide*/k_glide*): 0
+reads=0 writes=0

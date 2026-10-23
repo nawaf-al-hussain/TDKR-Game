@@ -1,0 +1,10 @@
+--- (1) real ldr-literal referencing REAL GOT (0xc070c8..) ---
+sites: 0
+reads=0 writes=0
+
+--- (2) 0xd0d668 16-byte-stride pointer table ---
+Traceback (most recent call last):
+  File "/tmp/my-project/work/TDKR-Game/extraction/re/session55/s55_t2_writer_final2.py", line 110, in <module>
+    words = [struct.unpack_from('<I', data, v2o(ea + 4 * j))[0] for j in range(4)]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object cannot be interpreted as an integer

@@ -1,0 +1,49 @@
+--- (1) got/data.rel.ro entries holding pointers into [0xc17000,0xc18200) ---
+got entries in window: 75
+   got 0xc07f14 -> 0xc17ab0 g_sceneManager 
+   got 0xc07f20 -> 0xc1722c _ZN13CZonesManager9SingletonE 
+   got 0xc07f28 -> 0xc174bc _ZN15VoxSoundManager10s_instanceE 
+   got 0xc07f2c -> 0xc1721c _ZN10CCameraMgr9SingletonE 
+   got 0xc07f38 -> 0xc17230 _ZN13CZonesManager21s_portalVisibilityMgrE 
+   got 0xc07f3c -> 0xc17590 _ZN15CEffectsManager9SingletonE 
+   got 0xc07f40 -> 0xc17574 g_EffectEntries 
+   got 0xc07f44 -> 0xc17d9c _ZN6CLevel16s_prevGadgetZoomE 
+   got 0xc07f4c -> 0xc1755e _ZN13CGameSettings16s_wideResolutionE 
+   got 0xc07f50 -> 0xc17d27 _ZN6CLevel25s_showLuaGlobalVarsErrorsE 
+   got 0xc07f58 -> 0xc17204 _ZN16CMonorailManager9SingletonE 
+   got 0xc07f6c -> 0xc17594 _ZN11CGameObject24s_pCurrentQuestComponentE 
+   got 0xc07f7c -> 0xc17d1a _ZN6CLevel19s_bOverrideCarColorE 
+   got 0xc07f80 -> 0xc17d1c _ZN6CLevel15s_bOverrideCarGE 
+   got 0xc07f84 -> 0xc17d20 _ZN6CLevel15s_bOverrideCarBE 
+   got 0xc07f8c -> 0xc17d28 _ZN6CLevel15s_nNavmeshDebugE 
+   got 0xc07f90 -> 0xc17220 _ZN5CZone16m_navmeshPortalsE 
+   got 0xc07f94 -> 0xc17130 _ZN14CPlayerControl5m_idxE 
+   got 0xc07fa0 -> 0xc170dc _ZNSbItSt11char_traitsItESaItEE4_Rep20_S_empty_rep_storageE 
+   got 0xc07fd0 -> 0xc17d94 _ZN6CLevel14s_batpodSoundsE 
+   got 0xc07fd4 -> 0xc17d98 _ZN6CLevel14s_thebatSoundsE 
+   got 0xc07fd8 -> 0xc17558 _ZN13CGameSettings9SingletonE 
+   got 0xc07fe8 -> 0xc17d2c _ZN6CLevel18s_floatingJoystickE 
+   got 0xc07fec -> 0xc17d30 _ZN6CLevel36s_joystickIntensityMoveForwardLevel1E 
+   got 0xc07ff0 -> 0xc17d34 _ZN6CLevel36s_joystickIntensityMoveForwardLevel2E 
+   got 0xc07ff4 -> 0xc17d38 _ZN6CLevel19s_joystickDeadAngleE 
+   got 0xc07ff8 -> 0xc17d3c _ZN6CLevel17s_leftAngleCenterE 
+   got 0xc07ffc -> 0xc17d40 _ZN6CLevel18s_rightAngleCenterE 
+   got 0xc08000 -> 0xc17d44 _ZN6CLevel22s_angleAroundLeftRightE 
+   got 0xc08004 -> 0xc17d48 _ZN6CLevel25s_angleAroungLeftRightMaxE 
+   got 0xc08008 -> 0xc17d4c _ZN6CLevel26s_deadAngleCalculationModeE 
+   got 0xc0800c -> 0xc17d50 _ZN6CLevel30s_joystickInterpolateTurnAngleE 
+   got 0xc08010 -> 0xc17d54 _ZN6CLevel35s_joystickInterpolateTurnAngleSpeedE 
+   got 0xc08014 -> 0xc17d58 _ZN6CLevel31s_strafeCameraRotateSensitivityE 
+   got 0xc08018 -> 0xc17c88 _ZN7CButton6m_bQteE 
+   got 0xc08044 -> 0xc174a0 _ZNSbIwSt11char_traitsIwEN6glitch4core10SAllocatorIwLNS1_6memory13E_MEMORY_HINTE0EEEE4_Rep20_S_empty_rep_storageE 
+   got 0xc08048 -> 0xc17d0f _ZN6CLevel23s_bOcclusionCullingNodeE 
+   got 0xc0804c -> 0xc17d10 _ZN6CLevel16s_bDrawOccludersE 
+   got 0xc08098 -> 0xc17c44 __FONT_TOTAL_CHARS 
+   got 0xc0809c -> 0xc17c40 __CHARACTERS_MAP 
+   got 0xc080a0 -> 0xc17ce3 _ZN6CLevel26s_bDebugViewAlwaysDistanceE 
+   got 0xc080ac -> 0xc17cd7 _ZN6CLevel16s_bForceBatSonarE 
+   got 0xc080c4 -> 0xc17c64 _ZN5MPool9s_pool256E 
+   got 0xc080c8 -> 0xc17d5c _ZN6CLevel15s_glidePitchMinE s_glidePitchMin
+   got 0xc080cc -> 0xc17d60 _ZN6CLevel15s_glidePitchMaxE s_glidePitchMax
+   got 0xc080d0 -> 0xc17d64 _ZN6CLevel14s_glideRollMaxE s_glideRollMax
+   got 0xc080d4 -> 0xc17d68 _ZN6CLevel18s_glideDeltaYawMaxE s_glideDeltaYawMax

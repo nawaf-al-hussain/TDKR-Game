@@ -1,0 +1,44 @@
+--- STEP 1: whole-file words equal to a target or a GOT slot ---
+words == .bss target addr: 20
+   file@0xc070c8 va=0xc070c8 -> s_glidePitchMin
+   file@0xc070cc va=0xc070cc -> s_glidePitchMax
+   file@0xc070d0 va=0xc070d0 -> s_glideRollMax
+   file@0xc070d4 va=0xc070d4 -> s_glideDeltaYawMax
+   file@0xc070d8 va=0xc070d8 -> s_glideYawCoef
+   file@0xc070dc va=0xc070dc -> s_glidePitchCoef
+   file@0xc070e0 va=0xc070e0 -> s_glideRollCoef
+   file@0xc070e4 va=0xc070e4 -> s_glidePitchAutoLevelingCoef
+   file@0xc070e8 va=0xc070e8 -> s_glideRollAutoLevelingCoef
+   file@0xc070ec va=0xc070ec -> s_glideDeadAngle
+   file@0xd0d668 va=0xd0d668 -> s_glidePitchMin
+   file@0xd0d678 va=0xd0d678 -> s_glidePitchMax
+   file@0xd0d688 va=0xd0d688 -> s_glideRollMax
+   file@0xd0d698 va=0xd0d698 -> s_glideDeltaYawMax
+   file@0xd0d6a8 va=0xd0d6a8 -> s_glideYawCoef
+   file@0xd0d6b8 va=0xd0d6b8 -> s_glidePitchCoef
+   file@0xd0d6c8 va=0xd0d6c8 -> s_glideRollCoef
+   file@0xd0d6d8 va=0xd0d6d8 -> s_glidePitchAutoLevelingCoef
+   file@0xd0d6e8 va=0xd0d6e8 -> s_glideRollAutoLevelingCoef
+   file@0xd0d6f8 va=0xd0d6f8 -> s_glideDeadAngle
+words == GOT slot addr: 10
+   file@0x9c72c va=0x9c72c -> GOT[s_glidePitchMin]
+   file@0x9c734 va=0x9c734 -> GOT[s_glidePitchMax]
+   file@0x9c73c va=0x9c73c -> GOT[s_glideRollMax]
+   file@0x9c744 va=0x9c744 -> GOT[s_glideDeltaYawMax]
+   file@0x9c74c va=0x9c74c -> GOT[s_glideYawCoef]
+   file@0x9c754 va=0x9c754 -> GOT[s_glidePitchCoef]
+   file@0x9c75c va=0x9c75c -> GOT[s_glideRollCoef]
+   file@0x9c764 va=0x9c764 -> GOT[s_glidePitchAutoLevelingCoef]
+   file@0x9c76c va=0x9c76c -> GOT[s_glideRollAutoLevelingCoef]
+   file@0x9c774 va=0x9c774 -> GOT[s_glideDeadAngle]
+
+--- STEP 2: real ldr-literal in .text referencing GOT slots ---
+real ldr-literal sites hitting a GOT slot: 0
+
+--- STEP 2b: dataflow after each site (read vs write) ---
+reads=0 writes=0
+
+--- STEP 3: verdict ---
+NO code in .text references the s_glide* GOT slots or addresses at all.
+The ten CLevel::s_glide* floats are DEAD .bss: loaded zero, never written,
+never read by any retained function => values are 0.0 by definition.

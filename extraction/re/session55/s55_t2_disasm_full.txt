@@ -1,0 +1,1113 @@
+#################### PART A: glide function disassembly with component-float mapping ####################
+
+=== StartGlide (0x380590..0x3809c0) ===
+00380590 push     {r4, r5, r6, r7, r8, sb, sl, lr}  
+00380594 mov      r8, r2                            
+00380598 ldr      r6, [r0, #0x14]                    (COMP f3)
+0038059c mov      r4, r0                            
+003805a0 ldr      r3, [r0, #4]                      
+003805a4 sub      sp, sp, #0x10                     
+003805a8 ldrb     sl, [r0, #0x19c]                  
+003805ac sub      r2, r6, #7                        
+003805b0 rsbs     r6, r2, #0                        
+003805b4 mov      r7, r1                            
+003805b8 ldr      r0, [r3, #0xb0]                   
+003805bc adc      r6, r6, r2                        
+003805c0 cmp      sl, #0                            
+003805c4 eorne    sl, r6, #1                        
+003805c8 cmp      r0, #0                            
+003805cc moveq    r5, r0                            
+003805d0 beq      #0x3805e0                         
+003805d4 bl       #0x267284                            ; -> _ZN15PlayerComponent17IsInQteNavigationEv
+003805d8 adds     r5, r0, #0                        
+003805dc movne    r5, #1                            
+003805e0 cmp      r7, #0                            
+003805e4 bne      #0x3805f0                         
+003805e8 cmp      sl, #0                            
+003805ec beq      #0x3805f8                         
+003805f0 cmp      r5, #0                            
+003805f4 beq      #0x380600                         
+003805f8 add      sp, sp, #0x10                     
+003805fc pop      {r4, r5, r6, r7, r8, sb, sl, pc}  
+00380600 ldr      r7, [pc, #0x1ac]                     ; =0x887a14
+00380604 mov      r1, r5                            
+00380608 ldr      r7, [pc, r7]                      
+0038060c ldr      r0, [r7]                          
+00380610 bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+00380614 ldr      r3, [r4]                          
+00380618 mov      r1, #7                            
+0038061c ldr      r3, [r3, #0x34]                    (COMP f11)
+00380620 mov      sl, r0                            
+00380624 mov      r0, r4                            
+00380628 blx      r3                                
+0038062c cmp      r8, #0                            
+00380630 bne      #0x380758                         
+00380634 mov      r5, #0                            
+00380638 str      r5, [r4, #0x51c]                  
+0038063c bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+00380640 mov      sb, #0                            
+00380644 bl       #0x482660                            ; -> _ZN6CLevel10ExitKombatEv
+00380648 ldr      r0, [r4, #4]                      
+0038064c add      r2, r4, #0x520                    
+00380650 strb     r5, [r4, #0x539]                  
+00380654 strb     r5, [r4, #0x538]                  
+00380658 mov      r5, #1                            
+0038065c ldr      r3, [r0]                          
+00380660 str      sb, [r2, #0xc]                     (COMP f1)
+00380664 ldr      r3, [r3, #0x18]                    (COMP f4)
+00380668 blx      r3                                
+0038066c ldr      ip, [sl, #0xc]                     (COMP f1)
+00380670 add      r2, r4, #0x540                    
+00380674 add      r3, r4, #0x550                    
+00380678 add      r1, r4, #0x530                    
+0038067c ldr      lr, [r0]                          
+00380680 str      lr, [r4, #0x178]                  
+00380684 ldr      lr, [r0, #4]                      
+00380688 str      lr, [r4, #0x17c]                  
+0038068c ldr      lr, [r0, #8]                      
+00380690 strb     r5, [r4, #0x548]                  
+00380694 ldr      r0, [r7]                          
+00380698 str      lr, [r4, #0x180]                  
+0038069c str      sb, [r2, #4]                      
+003806a0 str      sb, [r2]                          
+003806a4 str      sb, [r2, #0xc]                     (COMP f1)
+003806a8 str      ip, [r1, #0xc]                     (COMP f1)
+003806ac str      sb, [r3]                          
+003806b0 ldr      r1, [r4, #0x51c]                  
+003806b4 bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+003806b8 ldr      r3, [r4, #0x4fc]                  
+003806bc cmp      r3, r5                            
+003806c0 strbne   r5, [r4, #0x548]                  
+003806c4 addeq    r2, r4, #0x550                    
+003806c8 addne    r3, r4, #0x550                    
+003806cc movne    r2, #0                            
+003806d0 add      r5, r4, #0x520                    
+003806d4 ldreq    r1, [r0, #0x30]                    (COMP f10)
+003806d8 movtne   r2, #0xc1f0                       
+003806dc strbeq   r3, [r4, #0x548]                  
+003806e0 mov      r0, #0                            
+003806e4 strne    r2, [r3, #8]                      
+003806e8 add      r3, r4, #0x510                    
+003806ec streq    r1, [r2, #8]                      
+003806f0 add      r1, r4, #0x500                    
+003806f4 cmp      r6, #0                            
+003806f8 mov      r2, #0                            
+003806fc strb     r0, [r4, #0x518]                  
+00380700 str      r2, [r1, #0xc]                     (COMP f1)
+00380704 str      r2, [r3]                          
+00380708 str      r2, [r3, #4]                      
+0038070c mov      r3, #0                            
+00380710 str      r0, [r4, #0x40]                    (COMP f14)
+00380714 movt     r3, #0xbf80                       
+00380718 str      r3, [r5]                          
+0038071c bne      #0x38074c                         
+00380720 cmp      r8, r0                            
+00380724 bne      #0x38074c                         
+00380728 str      r8, [r4, #0x4f8]                  
+0038072c ldr      r0, [r7]                          
+00380730 ldr      r1, [r4, #0x51c]                  
+00380734 bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+00380738 ldr      r3, [r0, #0x5c]                   
+0038073c vmov     s14, r3                           
+00380740 vcvt.f32.s32 s15, s14                          
+00380744 vstr     s15, [r5]                         
+00380748 b        #0x3805f8                         
+0038074c mov      r3, #1                            
+00380750 str      r3, [r4, #0x4f8]                  
+00380754 b        #0x3805f8                         
+00380758 ldr      r0, [r4, #0x2cc]                  
+0038075c mov      r1, #0x200000                     
+00380760 mov      r2, r5                            
+00380764 bl       #0x29ac38                            ; -> _ZN18CStateSetComponent13IsInStateTypeEib
+00380768 cmp      r0, #0                            
+0038076c bne      #0x380634                         
+00380770 ldr      r1, [pc, #0x40]                      ; =0x7be5e8 (COMP f14)
+00380774 mov      r2, #1                            
+00380778 ldr      r0, [r4, #0x2cc]                  
+0038077c mov      r3, #0                            
+00380780 add      r1, pc, r1                        
+00380784 mov      ip, #0x12c                        
+00380788 str      r5, [sp, #8]                      
+0038078c str      ip, [sp]                          
+00380790 str      ip, [sp, #4]                      
+00380794 bl       #0x29be40                            ; -> _ZN18CStateSetComponent22SetStateWithTransitionEPKcsfiiP17CContainerTrigger
+00380798 mov      r0, r4                            
+0038079c mov      r1, #2                            
+003807a0 bl       #0x3a39f8                            ; -> _ZN19CActorBaseComponent15OnPutBackWeaponEib.constprop.2985
+003807a4 ldr      r0, [pc, #0x10]                      ; =0x896d0c (COMP f2)
+003807a8 ldr      r0, [pc, r0]                      
+003807ac bl       #0x3ae4c0                            ; -> _ZN15VoxSoundManager13SetSoundStateEPKcS1_.constprop.3184
+003807b0 b        #0x380634                         
+003807b4 addeq    r7, r8, r4, lsl sl                
+003807b8 rsbseq   lr, fp, r8, ror #11               
+003807bc addeq    r6, sb, ip, lsl #26               
+003807c0 ldr      r3, [r0]                          
+003807c4 mov      r1, #8                            
+003807c8 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+003807cc sub      sp, sp, #0x24                     
+003807d0 ldr      r3, [r3, #0x34]                    (COMP f11)
+003807d4 mov      r4, r0                            
+003807d8 add      r7, r0, #0x540                    
+003807dc blx      r3                                
+003807e0 ldr      r1, [pc, #0x114]                     ; =0x7be574
+003807e4 mov      r5, #0                            
+003807e8 mov      r6, #0                            
+003807ec ldr      r0, [r4, #0x2cc]                  
+003807f0 mov      r3, r5                            
+003807f4 add      r1, pc, r1                        
+003807f8 mov      r2, r6                            
+003807fc mvn      ip, #0                            
+00380800 str      r6, [sp, #8]                      
+00380804 add      sb, r4, #0x530                    
+00380808 str      ip, [sp]                          
+0038080c add      r8, r4, #0x550                    
+00380810 str      ip, [sp, #4]                      
+00380814 bl       #0x29be40                            ; -> _ZN18CStateSetComponent22SetStateWithTransitionEPKcsfiiP17CContainerTrigger
+00380818 bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+0038081c add      sl, r7, #0xc                      
+00380820 bl       #0x482660                            ; -> _ZN6CLevel10ExitKombatEv
+00380824 ldr      r0, [r4, #4]                      
+00380828 add      r2, r4, #0x520                    
+0038082c strb     r6, [r4, #0x539]                  
+00380830 strb     r6, [r4, #0x538]                  
+00380834 ldr      r3, [r0]                          
+00380838 str      r5, [r2, #0xc]                     (COMP f1)
+0038083c ldr      r3, [r3, #0x18]                    (COMP f4)
+00380840 blx      r3                                
+00380844 ldr      r2, [r4, #4]                      
+00380848 add      lr, r4, #0x510                    
+0038084c add      r3, r4, #0x500                    
+00380850 add      r1, sp, #0x20                     
+00380854 ldr      ip, [r0]                          
+00380858 str      ip, [r4, #0x178]                  
+0038085c mov      ip, #1                            
+00380860 ldr      fp, [r0, #4]                      
+00380864 str      fp, [r4, #0x17c]                  
+00380868 ldr      r0, [r0, #8]                      
+0038086c strb     ip, [r4, #0x548]                  
+00380870 strb     r6, [r4, #0x518]                  
+00380874 str      r0, [r4, #0x180]                  
+00380878 add      r0, r4, #0x550                    
+0038087c str      r5, [sb, #0xc]                     (COMP f1)
+00380880 add      sb, sb, #0xc                      
+00380884 str      r5, [r0]                          
+00380888 ldr      r0, [r2]                          
+0038088c str      r5, [r7, #4]                      
+00380890 str      r5, [r7, #0xc]                     (COMP f1)
+00380894 str      r5, [r8, #8]                      
+00380898 add      r8, r4, #0x520                    
+0038089c str      r5, [r7]                          
+003808a0 str      r5, [r3, #0xc]                     (COMP f1)
+003808a4 str      r5, [lr]                          
+003808a8 ldr      r3, [r0, #0x2c]                    (COMP f9)
+003808ac mov      r0, r2                            
+003808b0 str      r5, [lr, #4]                      
+003808b4 ldr      lr, [r2, #0x1c]                    (COMP f5)
+003808b8 ldr      r2, [r2, #0x20]                    (COMP f6)
+003808bc str      r5, [r1, #-0xc]!                  
+003808c0 mov      r5, #0                            
+003808c4 str      r6, [r4, #0x40]                    (COMP f14)
+003808c8 movt     r5, #0xbf80                       
+003808cc str      ip, [r4, #0x4f8]                  
+003808d0 str      r5, [r8]                          
+003808d4 str      lr, [sp, #0x18]                    (COMP f4)
+003808d8 str      r2, [sp, #0x1c]                    (COMP f5)
+003808dc blx      r3                                
+003808e0 mov      r3, #0                            
+003808e4 strb     r6, [r4, #0x548]                  
+003808e8 movt     r3, #0xc1f0                       
+003808ec str      r3, [r7, #4]                      
+003808f0 add      r7, r7, #4                        
+003808f4 add      sp, sp, #0x24                     
+003808f8 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+003808fc rsbseq   lr, fp, r4, ror r5                
+00380900 push     {r4, lr}                          
+00380904 vpush    {d8, d9, d10}                     
+00380908 mov      r4, r0                            
+0038090c bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+00380910 ldrb     r0, [r0, #0xb10]                  
+00380914 cmp      r0, #0                            
+00380918 bne      #0x380924                         
+0038091c vpop     {d8, d9, d10}                     
+00380920 pop      {r4, pc}                          
+00380924 bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+00380928 add      r2, r0, #0xb10                    
+0038092c vldr     s21, [r2, #4]                     
+00380930 vmul.f32 s15, s21, s21                     
+00380934 add      r0, r0, #0xb10                    
+00380938 mov      r3, r2                            
+0038093c vldr     s20, [r3, #8]                     
+00380940 vldr     s14, [r0, #0xc]                    (COMP f1)
+00380944 add      r0, r0, #0xc                      
+00380948 vmla.f32 s15, s20, s20                     
+0038094c vmul.f32 s14, s14, s14                     
+00380950 vcmpe.f32 s14, s15                          
+00380954 vmrs     apsr_nzcv, fpscr                  
+00380958 movpl    r0, #1                            
+0038095c bpl      #0x38091c                         
+00380960 ldr      r3, [r4, #4]                      
+00380964 vldr     s12, [r3, #0x20]                   (COMP f6)
+00380968 vneg.f32 s12, s12                          
+0038096c vldr     d7, [pc, #0x44]                    (COMP f15)
+00380970 vcvt.f64.f32 d6, s12                           
+00380974 vmul.f64 d8, d6, d7                        
+00380978 vmov     r0, r1, d8                        
+0038097c bl       #0xa52e4                             ; -> $d
+00380980 vmov     d9, r0, r1                        
+00380984 vmov     r0, r1, d8                        
+00380988 bl       #0xa52cc                             ; -> $d
+0038098c vcvt.f32.f64 s18, d9                           
+00380990 vmov     d6, r0, r1                        
+00380994 vcvt.f32.f64 s15, d6                           
+00380998 vmul.f32 s15, s15, s20                     
+0038099c vnmls.f32 s15, s18, s21                     
+003809a0 vcmpe.f32 s15, #0                           
+003809a4 vmrs     apsr_nzcv, fpscr                  
+003809a8 movmi    r0, #2                            
+003809ac movpl    r0, #3                            
+003809b0 b        #0x38091c                         
+003809b4 nop                                        
+003809b8 subsge   sb, r2, #0xe40                    
+003809bc svclo    #0x91df46                         
+
+=== StartGlideFromGrapnel (0x380a0c..0x380cbc) ===
+00380a0c ldr      r3, [r0, #4]                      
+00380a10 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+00380a14 mov      r4, r0                            
+00380a18 ldr      r0, [r3, #0xb0]                   
+00380a1c sub      sp, sp, #0x1c                     
+00380a20 cmp      r0, #0                            
+00380a24 beq      #0x380a3c                         
+00380a28 bl       #0x267284                            ; -> _ZN15PlayerComponent17IsInQteNavigationEv
+00380a2c cmp      r0, #0                            
+00380a30 beq      #0x380a3c                         
+00380a34 add      sp, sp, #0x1c                     
+00380a38 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+00380a3c ldr      r3, [r4, #0x4a0]                  
+00380a40 cmp      r3, #3                            
+00380a44 bne      #0x380a34                         
+00380a48 ldr      r3, [r4, #0x418]                  
+00380a4c cmp      r3, #5                            
+00380a50 beq      #0x380a34                         
+00380a54 ldr      r3, [r4, #4]                      
+00380a58 ldr      r0, [r3, #0xb0]                   
+00380a5c cmp      r0, #0                            
+00380a60 beq      #0x380a70                         
+00380a64 bl       #0x267284                            ; -> _ZN15PlayerComponent17IsInQteNavigationEv
+00380a68 cmp      r0, #0                            
+00380a6c bne      #0x380c70                         
+00380a70 ldr      r5, [pc, #0x234]                     ; =0x8875a4
+00380a74 mov      r1, #0                            
+00380a78 ldr      r5, [pc, r5]                      
+00380a7c ldr      r0, [r5]                          
+00380a80 bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+00380a84 ldr      r3, [r4]                          
+00380a88 mov      r1, #7                            
+00380a8c ldr      r3, [r3, #0x34]                    (COMP f11)
+00380a90 mov      r6, r0                            
+00380a94 mov      r0, r4                            
+00380a98 blx      r3                                
+00380a9c ldr      r0, [r4, #0x2cc]                  
+00380aa0 mov      r1, #0x200000                     
+00380aa4 mov      r2, #0                            
+00380aa8 bl       #0x29ac38                            ; -> _ZN18CStateSetComponent13IsInStateTypeEib
+00380aac subs     lr, r0, #0                        
+00380ab0 bne      #0x380af0                         
+00380ab4 ldr      r1, [pc, #0x1f4]                     ; =0x7be2a4
+00380ab8 mov      r2, #1                            
+00380abc ldr      r0, [r4, #0x2cc]                  
+00380ac0 mov      r3, #0                            
+00380ac4 add      r1, pc, r1                        
+00380ac8 mov      ip, #0x12c                        
+00380acc str      ip, [sp]                          
+00380ad0 stmib    sp, {ip, lr}                      
+00380ad4 bl       #0x29be40                            ; -> _ZN18CStateSetComponent22SetStateWithTransitionEPKcsfiiP17CContainerTrigger
+00380ad8 mov      r0, r4                            
+00380adc mov      r1, #2                            
+00380ae0 bl       #0x3a39f8                            ; -> _ZN19CActorBaseComponent15OnPutBackWeaponEib.constprop.2985
+00380ae4 ldr      r0, [pc, #0x1c8]                     ; =0x8969cc
+00380ae8 ldr      r0, [pc, r0]                      
+00380aec bl       #0x3ae4c0                            ; -> _ZN15VoxSoundManager13SetSoundStateEPKcS1_.constprop.3184
+00380af0 mov      r8, #0                            
+00380af4 str      r8, [r4, #0x51c]                  
+00380af8 bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+00380afc mov      r7, #0                            
+00380b00 bl       #0x482660                            ; -> _ZN6CLevel10ExitKombatEv
+00380b04 ldr      r0, [r4, #4]                      
+00380b08 add      r2, r4, #0x520                    
+00380b0c strb     r8, [r4, #0x539]                  
+00380b10 strb     r8, [r4, #0x538]                  
+00380b14 add      sl, r4, #0x530                    
+00380b18 ldr      r3, [r0]                          
+00380b1c add      sb, r4, #0x540                    
+00380b20 str      r7, [r2, #0xc]                     (COMP f1)
+00380b24 add      sl, sl, #0xc                      
+00380b28 add      sb, sb, #4                        
+00380b2c add      r8, r4, #0x500                    
+00380b30 ldr      r3, [r3, #0x18]                    (COMP f4)
+00380b34 blx      r3                                
+00380b38 ldr      ip, [r6, #0xc]                     (COMP f1)
+00380b3c add      r3, r4, #0x540                    
+00380b40 ldr      r1, [r4, #0x51c]                  
+00380b44 add      r6, r4, #0x550                    
+00380b48 ldr      r2, [r0]                          
+00380b4c str      r2, [r4, #0x178]                  
+00380b50 ldr      r2, [r0, #4]                      
+00380b54 str      r2, [r4, #0x17c]                  
+00380b58 add      r2, r4, #0x550                    
+00380b5c ldr      r0, [r0, #8]                      
+00380b60 str      r0, [r4, #0x180]                  
+00380b64 mov      r0, #1                            
+00380b68 str      r7, [r3]                          
+00380b6c str      r7, [r3, #0xc]                     (COMP f1)
+00380b70 str      r7, [r2]                          
+00380b74 strb     r0, [r4, #0x548]                  
+00380b78 str      r7, [sb]                          
+00380b7c add      r7, r4, #0x510                    
+00380b80 str      ip, [sl]                          
+00380b84 ldr      r0, [r5]                          
+00380b88 bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+00380b8c ldr      r3, [r4, #0x4fc]                  
+00380b90 mov      r2, #0                            
+00380b94 mov      r1, #0                            
+00380b98 cmp      r3, #1                            
+00380b9c addeq    r6, r6, #8                        
+00380ba0 movne    r3, #0                            
+00380ba4 movtne   r3, #0xc1f0                       
+00380ba8 strne    r3, [r6, #8]                      
+00380bac addne    r6, r6, #8                        
+00380bb0 ldreq    r3, [r0, #0x30]                    (COMP f10)
+00380bb4 add      r0, r4, #0x520                    
+00380bb8 strb     r1, [r4, #0x518]                  
+00380bbc streq    r3, [r6]                          
+00380bc0 mov      r3, r7                            
+00380bc4 str      r2, [r8, #0xc]                     (COMP f1)
+00380bc8 add      r8, r8, #0xc                      
+00380bcc str      r2, [r7]                          
+00380bd0 str      r2, [r7, #4]                      
+00380bd4 add      r7, r7, #4                        
+00380bd8 mov      r2, #1                            
+00380bdc str      r1, [r4, #0x40]                    (COMP f14)
+00380be0 str      r2, [r4, #0x4f8]                  
+00380be4 mov      r2, #0                            
+00380be8 movt     r2, #0xbf80                       
+00380bec str      r2, [r0]                          
+00380bf0 ldr      r2, [r4, #4]                      
+00380bf4 mov      fp, #1                            
+00380bf8 ldr      r0, [r5]                          
+00380bfc mov      r1, #0                            
+00380c00 ldr      r2, [r2, #0x18]                    (COMP f4)
+00380c04 strb     fp, [r4, #0x548]                  
+00380c08 str      r2, [r6]                          
+00380c0c str      r3, [sp, #0x14]                    (COMP f3)
+00380c10 bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+00380c14 vldr     s14, [r6]                         
+00380c18 vadd.f32 s14, s14, s14                     
+00380c1c vldr     s15, [pc, #0x84]                  
+00380c20 ldr      ip, [r4, #4]                      
+00380c24 ldr      r3, [sp, #0x14]                    (COMP f3)
+00380c28 mov      r1, #0                            
+00380c2c ldr      r2, [ip]                          
+00380c30 ldr      r2, [r2, #0x58]                    (COMP f20)
+00380c34 vcmpe.f32 s14, s15                          
+00380c38 vmrs     apsr_nzcv, fpscr                  
+00380c3c vmovls.f32 s15, s14                          
+00380c40 ldr      r0, [r0, #0xc]                     (COMP f1)
+00380c44 vstr     s15, [sb]                         
+00380c48 str      r0, [sl]                          
+00380c4c mov      r0, ip                            
+00380c50 str      r1, [r8]                          
+00380c54 str      r1, [r3]                          
+00380c58 mov      r3, #0                            
+00380c5c movt     r3, #0x4120                       
+00380c60 str      r3, [r7]                          
+00380c64 strb     fp, [r4, #0x518]                  
+00380c68 blx      r2                                
+00380c6c b        #0x380a34                         
+00380c70 add      r7, r4, #0x510                    
+00380c74 ldr      r5, [pc, #0x3c]                      ; =0x887390 (COMP f13)
+00380c78 add      sl, r4, #0x530                    
+00380c7c add      sb, r4, #0x540                    
+00380c80 add      r6, r4, #0x550                    
+00380c84 add      r8, r4, #0x500                    
+00380c88 mov      r3, r7                            
+00380c8c ldr      r5, [pc, r5]                      
+00380c90 add      sl, sl, #0xc                      
+00380c94 add      sb, sb, #4                        
+00380c98 add      r6, r6, #8                        
+00380c9c add      r8, r8, #0xc                      
+00380ca0 add      r7, r7, #4                        
+00380ca4 b        #0x380bf0                         
+00380ca8 eorsmi   r0, r4, #0                        
+00380cac addeq    r7, r8, r4, lsr #11               
+00380cb0 rsbseq   lr, fp, r4, lsr #5                
+00380cb4 addeq    r6, sb, ip, asr #19               
+00380cb8 umulleq  r7, r8, r0, r3                    
+
+=== SetInitialGlideAngle (0x380e34..0x380e90) ===
+00380e34 ldr      r3, [pc, #0x50]                      ; =0x8871e0 (COMP f18)
+00380e38 push     {r4, lr}                          
+00380e3c ldr      r3, [pc, r3]                      
+00380e40 mov      r4, r0                            
+00380e44 ldr      r1, [r0, #0x51c]                  
+00380e48 ldr      r0, [r3]                          
+00380e4c bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+00380e50 ldr      r3, [r4, #0x4fc]                  
+00380e54 cmp      r3, #1                            
+00380e58 beq      #0x380e78                         
+00380e5c add      r3, r4, #0x550                    
+00380e60 mov      r2, #1                            
+00380e64 strb     r2, [r4, #0x548]                  
+00380e68 mov      r2, #0                            
+00380e6c movt     r2, #0xc1f0                       
+00380e70 str      r2, [r3, #8]                      
+00380e74 pop      {r4, pc}                          
+00380e78 ldr      r1, [r0, #0x30]                    (COMP f10)
+00380e7c add      r2, r4, #0x550                    
+00380e80 strb     r3, [r4, #0x548]                  
+00380e84 str      r1, [r2, #8]                      
+00380e88 pop      {r4, pc}                          
+00380e8c addeq    r7, r8, r0, ror #3                
+
+=== UpdateNavGlide (0x380e94..0x381348) ===
+00380e94 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+00380e98 vpush    {d8, d9, d10, d11, d12, d13}      
+00380e9c mov      r4, r0                            
+00380ea0 vmov     s22, r1                           
+00380ea4 sub      sp, sp, #0x17c                    
+00380ea8 mov      r1, r4                            
+00380eac add      r0, sp, #0x74                     
+00380eb0 ldr      r5, [pc, #0x4a8]                     ; =0x887bd8
+00380eb4 bl       #0x36f0ac                            ; -> _ZN19CActorBaseComponent16GetActorPositionEv
+00380eb8 ldr      ip, [sp, #0x74]                   
+00380ebc ldr      r3, [r4, #4]                      
+00380ec0 mov      r1, #0                            
+00380ec4 mov      r2, r1                            
+00380ec8 add      r0, sp, #0x128                    
+00380ecc str      ip, [sp, #0x80]                   
+00380ed0 add      r5, pc, r5                        
+00380ed4 ldr      ip, [sp, #0x78]                   
+00380ed8 ldr      r3, [r3, #0x20]                    (COMP f6)
+00380edc str      ip, [sp, #0x84]                   
+00380ee0 ldr      ip, [sp, #0x7c]                   
+00380ee4 str      ip, [sp, #0x88]                   
+00380ee8 bl       #0x2d5938                            ; -> _ZN6glitch4core10quaternion3setEfff
+00380eec add      r3, r4, #0x520                    
+00380ef0 vldr     s15, [r3]                         
+00380ef4 vcmpe.f32 s15, #0                           
+00380ef8 mov      r2, #0                            
+00380efc strb     r2, [r4, #0x19e]                  
+00380f00 vmrs     apsr_nzcv, fpscr                  
+00380f04 vsubge.f32 s15, s15, s22                     
+00380f08 vstrge   s15, [r3]                         
+00380f0c ldr      r3, [r4, #0x4f8]                  
+00380f10 cmp      r3, #0                            
+00380f14 beq      #0x381a60                         
+00380f18 cmp      r3, #1                            
+00380f1c beq      #0x381a84                         
+00380f20 cmp      r3, #2                            
+00380f24 beq      #0x381bc4                         
+00380f28 ldr      r3, [pc, #0x434]                     ; =0xfffff574
+00380f2c vldr     s23, [r4, #0x370]                 
+00380f30 ldr      r1, [r4, #0x51c]                  
+00380f34 vldr     s24, [r4, #0x374]                 
+00380f38 ldr      r3, [r5, r3]                      
+00380f3c ldr      r0, [r3]                          
+00380f40 bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+00380f44 ldr      r3, [r4, #0x2d0]                  
+00380f48 ldr      r3, [r3, #0x24]                    (COMP f7)
+00380f4c str      r3, [r4, #0x23c]                  
+00380f50 mov      r3, #0                            
+00380f54 str      r3, [sp, #0xb0]                   
+00380f58 str      r3, [sp, #0xb4]                   
+00380f5c mov      r3, #0x3f800000                   
+00380f60 str      r3, [sp, #0xb8]                   
+00380f64 mov      r7, r0                            
+00380f68 bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+00380f6c ldrb     r3, [r0, #0xb10]                  
+00380f70 cmp      r3, #0                            
+00380f74 bne      #0x3819d4                         
+00380f78 ldr      r2, [r4, #0x40]                    (COMP f14)
+00380f7c cmp      r2, r3                            
+00380f80 beq      #0x380fa0                         
+00380f84 cmp      r3, #2                            
+00380f88 str      r3, [r4, #0x40]                    (COMP f14)
+00380f8c beq      #0x3822c0                         
+00380f90 cmp      r3, #3                            
+00380f94 beq      #0x3823f8                         
+00380f98 cmp      r3, #1                            
+00380f9c beq      #0x382314                         
+00380fa0 ldr      sl, [r4, #0x4f8]                  
+00380fa4 cmp      sl, #0                            
+00380fa8 addeq    r6, sp, #0x80                     
+00380fac beq      #0x3815dc                         
+00380fb0 add      r1, r4, #0x224                    
+00380fb4 add      r2, sp, #0x128                    
+00380fb8 mov      r0, r4                            
+00380fbc bl       #0x3836b0                            ; -> _ZN19CActorBaseComponent18RefreshForcesGlideERN6glitch4core8vector3dIfEERNS1_10quaternionE
+00380fc0 vldr     s14, [r4, #0x224]                 
+00380fc4 vldr     s15, [r4, #0x228]                 
+00380fc8 vldr     s12, [sp, #0x80]                  
+00380fcc vldr     s13, [r4, #0x22c]                 
+00380fd0 vadd.f32 s12, s12, s14                     
+00380fd4 vstr     s14, [sp, #0xbc]                  
+00380fd8 vstr     s15, [sp, #0xc0]                  
+00380fdc vldr     s14, [sp, #0x84]                  
+00380fe0 add      r0, sp, #0xbc                     
+00380fe4 mov      r3, #0                            
+00380fe8 str      r3, [sp, #0xc4]                   
+00380fec vadd.f32 s15, s14, s15                     
+00380ff0 vldr     s14, [sp, #0x88]                  
+00380ff4 vstr     s12, [sp, #0x80]                  
+00380ff8 vadd.f32 s14, s14, s13                     
+00380ffc vstr     s15, [sp, #0x84]                  
+00381000 vstr     s14, [sp, #0x88]                  
+00381004 bl       #0x206ec0                            ; -> _ZN6glitch4core8vector3dIfE9normalizeEv
+00381008 ldr      r3, [r4, #0x114]                  
+0038100c ldr      r2, [pc, #0x354]                     ; =0x889ba4
+00381010 ldrb     r0, [r3, #0x14]                    (COMP f3)
+00381014 add      r2, pc, r2                        
+00381018 cmp      r0, #0                            
+0038101c ldr      r1, [r2]                          
+00381020 beq      #0x381044                         
+00381024 mov      r2, #0                            
+00381028 movw     r0, #0xffff                       
+0038102c str      r2, [r3, #8]                      
+00381030 str      r0, [r3, #0x10]                    (COMP f2)
+00381034 mvn      r0, #0                            
+00381038 str      r2, [r3]                          
+0038103c strh     r0, [r3, #0xc]                     (COMP f1)
+00381040 str      r2, [r3, #4]                      
+00381044 ldr      r2, [sp, #0x80]                   
+00381048 str      r1, [r3, #0x40]                    (COMP f14)
+0038104c str      r2, [r3, #0x24]                    (COMP f7)
+00381050 ldr      r2, [sp, #0x84]                   
+00381054 str      r2, [r3, #0x28]                    (COMP f8)
+00381058 ldr      r2, [sp, #0x88]                   
+0038105c str      r2, [r3, #0x2c]                    (COMP f9)
+00381060 mov      r2, #0                            
+00381064 movt     r2, #0x447a                       
+00381068 str      r2, [r3, #0x30]                    (COMP f10)
+0038106c ldr      r2, [sp, #0xbc]                   
+00381070 str      r2, [r3, #0x34]                    (COMP f11)
+00381074 ldr      r2, [sp, #0xc0]                   
+00381078 str      r2, [r3, #0x38]                    (COMP f12)
+0038107c ldr      r2, [sp, #0xc4]                   
+00381080 str      r2, [r3, #0x3c]                    (COMP f13)
+00381084 bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+00381088 ldr      r1, [r4, #0x114]                  
+0038108c ldr      r2, [r4, #0x118]                  
+00381090 mov      r3, #0                            
+00381094 ldr      r0, [r0, #0x128]                  
+00381098 bl       #0x13d29c                            ; -> _ZN12CollisionMgr20GetIntersectionPointEP16CollisionRequestP17CollisionResponseb
+0038109c cmp      r0, #0                            
+003810a0 movne    r6, #0                            
+003810a4 bne      #0x381da8                         
+003810a8 add      r3, r4, #0x540                    
+003810ac vldr     s15, [r3, #0xc]                    (COMP f1)
+003810b0 vcmp.f32 s15, #0                           
+003810b4 vmrs     apsr_nzcv, fpscr                  
+003810b8 beq      #0x3811d0                         
+003810bc vcmp.f32 s23, #0                           
+003810c0 vmrs     apsr_nzcv, fpscr                  
+003810c4 bne      #0x3811d0                         
+003810c8 vcmpe.f32 s15, #0                           
+003810cc ldr      r3, [r4, #4]                      
+003810d0 vldr     s15, [pc, #0x270]                 
+003810d4 vldr     s16, [r3, #0x20]                   (COMP f6)
+003810d8 mov      r2, #0x40                         
+003810dc mov      r1, #0                            
+003810e0 add      r0, sp, #0x138                    
+003810e4 vmrs     apsr_nzcv, fpscr                  
+003810e8 vsubgt.f32 s16, s16, s15                     
+003810ec vaddle.f32 s16, s16, s15                     
+003810f0 bl       #0xa4e88                             ; -> $d
+003810f4 vldr     s15, [pc, #0x250]                 
+003810f8 add      r0, sp, #0x138                    
+003810fc add      r1, sp, #0x110                    
+00381100 mov      r3, #0                            
+00381104 str      r3, [sp, #0x110]                  
+00381108 str      r3, [sp, #0x114]                  
+0038110c mov      r3, #0x3f800000                   
+00381110 str      r3, [sp, #0x138]                  
+00381114 str      r3, [sp, #0x14c]                  
+00381118 str      r3, [sp, #0x160]                  
+0038111c str      r3, [sp, #0x174]                  
+00381120 vmul.f32 s15, s16, s15                     
+00381124 vstr     s15, [sp, #0x118]                 
+00381128 bl       #0x3c5238                            ; -> _ZN6glitch4core8CMatrix4IfE18setRotationRadiansERKNS0_8vector3dIfEE
+0038112c ldr      r3, [r4, #0x114]                  
+00381130 ldr      lr, [sp, #0x148]                  
+00381134 ldr      ip, [sp, #0x14c]                  
+00381138 ldrb     r2, [r3, #0x14]                    (COMP f3)
+0038113c ldr      r0, [sp, #0x150]                  
+00381140 cmp      r2, #0                            
+00381144 beq      #0x381168                         
+00381148 mov      r2, #0                            
+0038114c movw     r1, #0xffff                       
+00381150 str      r2, [r3, #8]                      
+00381154 str      r1, [r3, #0x10]                    (COMP f2)
+00381158 mvn      r1, #0                            
+0038115c str      r2, [r3]                          
+00381160 strh     r1, [r3, #0xc]                     (COMP f1)
+00381164 str      r2, [r3, #4]                      
+00381168 ldr      r2, [pc, #0x1fc]                     ; =0x889a44
+0038116c mov      r1, #0                            
+00381170 str      lr, [r3, #0x34]                    (COMP f11)
+00381174 movt     r1, #0x447a                       
+00381178 add      r2, pc, r2                        
+0038117c vldr     s15, [r2]                         
+00381180 vadd.f32 s15, s15, s15                     
+00381184 ldr      r2, [sp, #0x80]                   
+00381188 str      r1, [r3, #0x30]                    (COMP f10)
+0038118c str      ip, [r3, #0x38]                    (COMP f12)
+00381190 str      r2, [r3, #0x24]                    (COMP f7)
+00381194 ldr      r2, [sp, #0x84]                   
+00381198 str      r0, [r3, #0x3c]                    (COMP f13)
+0038119c str      r2, [r3, #0x28]                    (COMP f8)
+003811a0 ldr      r2, [sp, #0x88]                   
+003811a4 vstr     s15, [r3, #0x40]                   (COMP f14)
+003811a8 str      r2, [r3, #0x2c]                    (COMP f9)
+003811ac bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+003811b0 ldr      r1, [r4, #0x114]                  
+003811b4 ldr      r2, [r4, #0x118]                  
+003811b8 mov      r3, #0                            
+003811bc ldr      r0, [r0, #0x128]                  
+003811c0 bl       #0x13d29c                            ; -> _ZN12CollisionMgr20GetIntersectionPointEP16CollisionRequestP17CollisionResponseb
+003811c4 cmp      r0, #0                            
+003811c8 movne    r6, #1                            
+003811cc bne      #0x381da8                         
+003811d0 add      r3, r4, #0x520                    
+003811d4 mov      r2, #0                            
+003811d8 str      r2, [r3, #0xc]                     (COMP f1)
+003811dc ldrb     sl, [r4, #0x538]                  
+003811e0 cmp      sl, #0                            
+003811e4 beq      #0x3813cc                         
+003811e8 vldr     s15, [r4, #0x224]                 
+003811ec vmul.f32 s13, s15, s15                     
+003811f0 vldr     s12, [r4, #0x228]                 
+003811f4 add      r3, r4, #0x520                    
+003811f8 ldr      r1, [r4, #4]                      
+003811fc vldr     s10, [r3, #4]                     
+00381200 vldr     s14, [r1, #0x20]                   (COMP f6)
+00381204 vldr     s15, [pc, #0x144]                 
+00381208 vmla.f32 s13, s12, s12                     
+0038120c vldr     s12, [pc, #0x140]                 
+00381210 vsqrt.f32 s13, s13                          
+00381214 vsub.f32 s14, s10, s14                     
+00381218 vmul.f32 s12, s22, s12                     
+0038121c vcmpe.f32 s14, s15                          
+00381220 vdiv.f32 s12, s13, s12                     
+00381224 vmrs     apsr_nzcv, fpscr                  
+00381228 ble      #0x381240                         
+0038122c vldr     s13, [pc, #0x124]                 
+00381230 vsub.f32 s14, s14, s13                     
+00381234 vcmpe.f32 s14, s15                          
+00381238 vmrs     apsr_nzcv, fpscr                  
+0038123c bgt      #0x381230                         
+00381240 vldr     s15, [pc, #0x114]                 
+00381244 vcmpe.f32 s14, s15                          
+00381248 vmrs     apsr_nzcv, fpscr                  
+0038124c bpl      #0x381264                         
+00381250 vldr     s13, [pc, #0x100]                 
+00381254 vadd.f32 s14, s14, s13                     
+00381258 vcmpe.f32 s14, s15                          
+0038125c vmrs     apsr_nzcv, fpscr                  
+00381260 bmi      #0x381254                         
+00381264 add      r3, r4, #0x530                    
+00381268 vldr     s15, [pc, #0xe4]                  
+0038126c vldr     s13, [r3, #4]                     
+00381270 vmul.f32 s13, s13, s15                     
+00381274 add      r3, r4, #0x530                    
+00381278 vldr     s15, [r3]                         
+0038127c ldr      r2, [pc, #0xec]                      ; =0x889938
+00381280 add      r3, r4, #0x520                    
+00381284 add      r3, r3, #8                        
+00381288 add      r2, pc, r2                        
+0038128c vldr     s11, [r2]                         
+00381290 vmul.f32 s13, s13, s22                     
+00381294 vmul.f32 s13, s13, s12                     
+00381298 vdiv.f32 s15, s13, s15                     
+0038129c vcmpe.f32 s15, s11                          
+003812a0 vstr     s15, [r3]                         
+003812a4 vmrs     apsr_nzcv, fpscr                  
+003812a8 vstrgt   s11, [r3]                         
+003812ac vmovgt.f32 s15, s11                          
+003812b0 bgt      #0x3812c8                         
+003812b4 vneg.f32 s13, s11                          
+003812b8 vcmpe.f32 s15, s13                          
+003812bc vmrs     apsr_nzcv, fpscr                  
+003812c0 vmovmi.f32 s15, s13                          
+003812c4 vstrmi   s13, [r3]                         
+003812c8 vldr     s27, [r1, #0x20]                   (COMP f6)
+003812cc vadd.f32 s27, s15, s27                     
+003812d0 vldr     s13, [pc, #0x78]                  
+003812d4 vsub.f32 s15, s27, s10                     
+003812d8 vcmpe.f32 s15, s13                          
+003812dc vmrs     apsr_nzcv, fpscr                  
+003812e0 ble      #0x3812f8                         
+003812e4 vldr     s12, [pc, #0x6c]                  
+003812e8 vsub.f32 s15, s15, s12                     
+003812ec vcmpe.f32 s15, s13                          
+003812f0 vmrs     apsr_nzcv, fpscr                  
+003812f4 bgt      #0x3812e8                         
+003812f8 vldr     s13, [pc, #0x5c]                  
+003812fc vcmpe.f32 s15, s13                          
+00381300 vmrs     apsr_nzcv, fpscr                  
+00381304 bpl      #0x38131c                         
+00381308 vldr     s12, [pc, #0x48]                   (COMP f16)
+0038130c vadd.f32 s15, s15, s12                     
+00381310 vcmpe.f32 s15, s13                          
+00381314 vmrs     apsr_nzcv, fpscr                  
+00381318 bmi      #0x38130c                         
+0038131c vabs.f32 s13, s15                          
+00381320 vcmpe.f32 s11, s13                          
+00381324 vmrs     apsr_nzcv, fpscr                  
+00381328 vcmpe.f32 s14, #0                           
+0038132c ble      #0x382d04                         
+00381330 vmrs     apsr_nzcv, fpscr                  
+00381334 blt      #0x382d0c                         
+00381338 vcmpe.f32 s15, #0                           
+0038133c vmrs     apsr_nzcv, fpscr                  
+00381340 ble      #0x382118                         
+00381344 b        #0x3813bc                         
+
+=== RefreshForcesGlide (0x3836b0..0x383a08) ===
+003836b0 ldr      r3, [pc, #0x348]                     ; =0x884960
+003836b4 push     {r4, r5, r6, r7, lr}              
+003836b8 vpush    {d8, d9, d10, d11}                
+003836bc ldr      r3, [pc, r3]                      
+003836c0 mov      r4, r0                            
+003836c4 sub      sp, sp, #0x44                     
+003836c8 mov      r5, r1                            
+003836cc ldr      r1, [r0, #0x51c]                  
+003836d0 ldr      r0, [r3]                          
+003836d4 add      r7, r4, #0x530                    
+003836d8 bl       #0x1866bc                            ; -> _ZN14CGadgetManager8GetGlideEi
+003836dc vldr     s13, [pc, #0x310]                 
+003836e0 ldr      r3, [r4, #4]                      
+003836e4 vldr     s11, [r3, #0x18]                   (COMP f4)
+003836e8 vmul.f32 s17, s11, s13                     
+003836ec vldr     s13, [pc, #0x304]                 
+003836f0 vldr     s18, [r4, #0x2a8]                 
+003836f4 add      r7, r7, #0xc                      
+003836f8 vabs.f32 s16, s17                          
+003836fc vcmpe.f32 s17, #0                           
+00383700 vmrs     apsr_nzcv, fpscr                  
+00383704 vldr     s15, [r0, #8]                     
+00383708 vldr     s14, [r0, #0xc]                    (COMP f1)
+0038370c vsub.f32 s12, s14, s15                     
+00383710 mov      r6, r0                            
+00383714 vmul.f32 s13, s12, s13                     
+00383718 vmov.f32 s10, s15                          
+0038371c vmla.f32 s10, s13, s16                     
+00383720 ble      #0x3839dc                         
+00383724 vldr     s14, [r7]                         
+00383728 vcmpe.f32 s15, s14                          
+0038372c vmrs     apsr_nzcv, fpscr                  
+00383730 vmlsmi.f32 s14, s10, s18                     
+00383734 vstrmi   s14, [r7]                         
+00383738 ldr      r3, [pc, #0x2c4]                     ; =0x884898
+0038373c vmov.f32 s19, #1.000000e+00                
+00383740 ldr      r3, [pc, r3]                      
+00383744 ldr      r0, [r3]                          
+00383748 bl       #0x1e1508                            ; -> _ZN15UpgradesManager22GetGliderGravityHelperEv
+0038374c vldr     s20, [r6, #0x1c]                   (COMP f5)
+00383750 vldr     s13, [r6, #0x20]                   (COMP f6)
+00383754 vldr     s14, [pc, #0x29c]                 
+00383758 ldr      r2, [r4, #4]                      
+0038375c vldr     s21, [r6, #0x24]                   (COMP f7)
+00383760 vldr     s15, [r6, #0x28]                   (COMP f8)
+00383764 vsub.f32 s13, s13, s20                     
+00383768 ldr      r3, [r2]                          
+0038376c ldr      r3, [r3, #0x18]                    (COMP f4)
+00383770 vmul.f32 s14, s13, s14                     
+00383774 vmla.f32 s20, s14, s16                     
+00383778 vmov     s12, r0                           
+0038377c mov      r0, r2                            
+00383780 vsub.f32 s16, s15, s21                     
+00383784 vadd.f32 s20, s20, s12                     
+00383788 blx      r3                                
+0038378c vldr     s15, [r4, #0x1a4]                 
+00383790 vldr     s13, [r4, #0x1a8]                 
+00383794 vldr     s14, [r4, #0x1ac]                 
+00383798 vldr     s12, [r6, #0x2c]                   (COMP f9)
+0038379c vldr     s22, [r7]                         
+003837a0 vldr     s9, [r0]                          
+003837a4 vsub.f32 s15, s9, s15                      
+003837a8 vldr     s10, [r0, #4]                     
+003837ac vldr     s11, [r0, #8]                     
+003837b0 vmov     r0, s17                           
+003837b4 vmul.f32 s15, s15, s15                     
+003837b8 vsub.f32 s13, s10, s13                     
+003837bc vmla.f32 s15, s13, s13                     
+003837c0 vsub.f32 s14, s11, s14                     
+003837c4 vmla.f32 s15, s14, s14                     
+003837c8 vsqrt.f32 s15, s15                          
+003837cc vdiv.f32 s15, s15, s12                     
+003837d0 vsub.f32 s15, s19, s15                     
+003837d4 vmla.f32 s21, s15, s16                     
+003837d8 bl       #0xa70f60                            ; -> cosf
+003837dc vmov     s23, r0                           
+003837e0 vmov     r0, s17                           
+003837e4 bl       #0xa711c0                            ; -> sinf
+003837e8 vldr     s15, [r6, #0x24]                   (COMP f7)
+003837ec vcmpe.f32 s21, s15                          
+003837f0 mov      r2, #0x40                         
+003837f4 mov      r1, #0                            
+003837f8 ldr      r3, [r4, #4]                      
+003837fc vldr     s16, [r3, #0x20]                   (COMP f6)
+00383800 vmrs     apsr_nzcv, fpscr                  
+00383804 vmovge.f32 s15, s21                          
+00383808 vmov     s13, r0                           
+0038380c vnmls.f32 s20, s13, s22                     
+00383810 mov      r0, sp                            
+00383814 vsub.f32 s21, s20, s15                     
+00383818 bl       #0xa4e88                             ; -> $d
+0038381c vldr     s15, [pc, #0x1d0]                 
+00383820 vstr     s19, [sp, #0x3c]                   (COMP f13)
+00383824 vmul.f32 s16, s16, s15                     
+00383828 vmov     r0, s16                           
+0038382c bl       #0xa70f60                            ; -> cosf
+00383830 vmov     s20, r0                           
+00383834 vmov     r0, s16                           
+00383838 bl       #0xa711c0                            ; -> sinf
+0038383c vmul.f32 s15, s22, s18                     
+00383840 ldrb     r2, [r4, #0x539]                  
+00383844 vstr     s20, [sp]                         
+00383848 add      r3, r4, #0x540                    
+0038384c vstr     s20, [sp, #0x14]                   (COMP f3)
+00383850 cmp      r2, #0                            
+00383854 vstr     s19, [sp, #0x28]                   (COMP f8)
+00383858 vmul.f32 s15, s15, s23                     
+0038385c vmul.f32 s13, s20, s15                     
+00383860 vmov     s10, r0                           
+00383864 str      r0, [sp, #4]                      
+00383868 vneg.f32 s14, s10                          
+0038386c vstr     s13, [r5, #4]                     
+00383870 vstr     s14, [sp, #0x10]                   (COMP f2)
+00383874 vmul.f32 s14, s14, s15                     
+00383878 vmul.f32 s15, s21, s18                     
+0038387c vstr     s14, [r5]                         
+00383880 vstr     s15, [r5, #8]                     
+00383884 bne      #0x383898                         
+00383888 vldr     s15, [r3]                         
+0038388c vcmpe.f32 s21, s15                          
+00383890 vmrs     apsr_nzcv, fpscr                  
+00383894 bmi      #0x383930                         
+00383898 vstr     s21, [r3]                         
+0038389c bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+003838a0 add      r2, r0, #0xb10                    
+003838a4 vldr     s16, [r2, #4]                     
+003838a8 vldr     s17, [r2, #8]                     
+003838ac vldr     s19, [r2, #0xc]                    (COMP f1)
+003838b0 bl       #0x478e24                            ; -> _ZN6CLevel8GetLevelEv
+003838b4 ldrb     r3, [r0, #0xb10]                  
+003838b8 cmp      r3, #0                            
+003838bc beq      #0x38394c                         
+003838c0 add      r2, r4, #0x500                    
+003838c4 vldr     s10, [r2, #0xc]                    (COMP f1)
+003838c8 vmla.f32 s10, s16, s18                     
+003838cc add      r1, r4, #0x510                    
+003838d0 mov      r3, #1                            
+003838d4 vstr     s10, [r2, #0xc]                    (COMP f1)
+003838d8 vldr     s11, [r1]                         
+003838dc vldr     s12, [r1, #4]                     
+003838e0 vmla.f32 s11, s17, s18                     
+003838e4 vmla.f32 s12, s19, s18                     
+003838e8 vstr     s11, [r1]                         
+003838ec vstr     s12, [r1, #4]                     
+003838f0 strb     r3, [r4, #0x518]                  
+003838f4 vldr     s13, [r5]                         
+003838f8 vldr     s14, [r5, #4]                     
+003838fc vldr     s15, [r5, #8]                     
+00383900 vmla.f32 s13, s10, s18                     
+00383904 vmla.f32 s14, s11, s18                     
+00383908 vstr     s13, [r5]                         
+0038390c vmla.f32 s15, s12, s18                     
+00383910 vstr     s14, [r5, #4]                     
+00383914 vstr     s15, [r5, #8]                     
+00383918 vstr     s13, [r4, #0x1d4]                 
+0038391c vstr     s14, [r4, #0x1d8]                 
+00383920 vstr     s15, [r4, #0x1dc]                 
+00383924 add      sp, sp, #0x44                     
+00383928 vpop     {d8, d9, d10, d11}                
+0038392c pop      {r4, r5, r6, r7, pc}              
+00383930 vcmpe.f32 s17, #0                           
+00383934 vmrs     apsr_nzcv, fpscr                  
+00383938 movgt    r1, r3                            
+0038393c strbgt   r2, [r4, #0x548]                  
+00383940 movgt    r2, #0                            
+00383944 strgt    r2, [r1, #4]                      
+00383948 b        #0x383898                         
+0038394c ldrb     r2, [r4, #0x518]                  
+00383950 cmp      r2, #0                            
+00383954 beq      #0x3839cc                         
+00383958 add      r1, r4, #0x500                    
+0038395c add      r0, r4, #0x510                    
+00383960 add      r1, r1, #0xc                      
+00383964 vldr     s12, [r1]                         
+00383968 vmul.f32 s15, s12, s12                     
+0038396c vldr     s13, [r0]                         
+00383970 add      r2, r0, #4                        
+00383974 vldr     s14, [r2]                         
+00383978 vmla.f32 s15, s13, s13                     
+0038397c vmla.f32 s15, s14, s14                     
+00383980 vsqrt.f32 s15, s15                          
+00383984 vcmpe.f32 s15, #0                           
+00383988 vmrs     apsr_nzcv, fpscr                  
+0038398c ble      #0x3839c8                         
+00383990 vmov.f32 s10, s15                          
+00383994 vldr     s11, [pc, #0x60]                  
+00383998 vmls.f32 s10, s18, s11                     
+0038399c vcmpe.f32 s10, #0                           
+003839a0 vmrs     apsr_nzcv, fpscr                  
+003839a4 bls      #0x3839c8                         
+003839a8 vdiv.f32 s15, s10, s15                     
+003839ac vmul.f32 s10, s15, s12                     
+003839b0 vmul.f32 s11, s15, s13                     
+003839b4 vstr     s10, [r1]                         
+003839b8 vmul.f32 s12, s15, s14                     
+003839bc vstr     s11, [r0]                         
+003839c0 vstr     s12, [r2]                         
+003839c4 b        #0x3838f4                         
+003839c8 strb     r3, [r4, #0x518]                  
+003839cc vldr     s13, [r5]                         
+003839d0 vldr     s14, [r5, #4]                     
+003839d4 vldr     s15, [r5, #8]                     
+003839d8 b        #0x383918                         
+003839dc vldr     s15, [r7]                         
+003839e0 vcmpe.f32 s14, s15                          
+003839e4 vmrs     apsr_nzcv, fpscr                  
+003839e8 vmlagt.f32 s15, s10, s18                     
+003839ec vstrgt   s15, [r7]                         
+003839f0 b        #0x383738                         
+003839f4 vstmialo lr, {s30, s31}                    
+003839f8 svclo    #0x22f983                         
+003839fc submi    r0, r8, #0                        
+00383a00 addeq    r4, r8, r0, ror #18               
+00383a04 umulleq  r4, r8, r8, r8                    
+
+=== RefreshForcesFallGrapnel (0x383a08..0x383ab0) ===
+00383a08 vldr     s13, [r0, #0x2a8]                 
+00383a0c vldr     s9, [r0, #0x1d4]                  
+00383a10 vldr     s10, [r0, #0x1d8]                 
+00383a14 vldr     s11, [r0, #0x1dc]                 
+00383a18 vldr     s12, [r1]                         
+00383a1c vldr     s14, [r1, #4]                     
+00383a20 vldr     s15, [r1, #8]                     
+00383a24 vmla.f32 s12, s9, s13                      
+00383a28 vmla.f32 s14, s10, s13                     
+00383a2c vstr     s12, [r1]                         
+00383a30 vmla.f32 s15, s11, s13                     
+00383a34 vstr     s14, [r1, #4]                     
+00383a38 vstr     s15, [r1, #8]                     
+00383a3c bx       lr                                
+00383a40 ldr      r0, [r0, #0x14]                    (COMP f3)
+00383a44 sub      r1, r0, #7                        
+00383a48 rsbs     r0, r1, #0                        
+00383a4c adc      r0, r0, r1                        
+00383a50 bx       lr                                
+00383a54 push     {r4, r5, r6, r7, r8, lr}          
+00383a58 vpush    {d8}                              
+00383a5c mov      r6, r1                            
+00383a60 vldr     s15, [sp, #0x24]                   (COMP f7)
+00383a64 ldr      r1, [r0, #0x114]                  
+00383a68 mov      r7, r3                            
+00383a6c mov      r4, r0                            
+00383a70 ldr      r5, [sp, #0x20]                    (COMP f6)
+00383a74 ldrb     r3, [r1, #0x14]                    (COMP f3)
+00383a78 cmp      r3, #0                            
+00383a7c beq      #0x383a98                         
+00383a80 mov      r3, #0                            
+00383a84 movw     r0, #0xffff                       
+00383a88 str      r3, [r1, #8]                      
+00383a8c str      r0, [r1, #0x10]                    (COMP f2)
+00383a90 str      r3, [r1]                          
+00383a94 str      r3, [r1, #4]                      
+00383a98 ldr      r3, [r4, #0x1c8]                  
+00383a9c vcmp.f32 s15, #0                           
+00383aa0 ldr      r0, [sp, #0x2c]                    (COMP f9)
+00383aa4 str      r3, [r1, #0x34]                    (COMP f11)
+00383aa8 ldr      r3, [r4, #0x1cc]                  
+00383aac vmrs     apsr_nzcv, fpscr                  
+
+# PART A2: component-float access summary
+  RefreshForcesFallGrapnel f2  w  n=1  e.g. str r0, [r1, #0x10]
+  RefreshForcesFallGrapnel f3  r  n=2  e.g. ldr r0, [r0, #0x14]
+  RefreshForcesFallGrapnel f6  r  n=1  e.g. ldr r5, [sp, #0x20]
+  RefreshForcesFallGrapnel f7  w  n=1  e.g. vldr s15, [sp, #0x24]
+  RefreshForcesFallGrapnel f9  r  n=1  e.g. ldr r0, [sp, #0x2c]
+  RefreshForcesFallGrapnel f11 w  n=1  e.g. str r3, [r1, #0x34]
+  RefreshForcesGlide       f1  w  n=4  e.g. vldr s14, [r0, #0xc]
+  RefreshForcesGlide       f2  w  n=1  e.g. vstr s14, [sp, #0x10]
+  RefreshForcesGlide       f3  w  n=1  e.g. vstr s20, [sp, #0x14]
+  RefreshForcesGlide       f4  rw  n=2  e.g. vldr s11, [r3, #0x18]
+  RefreshForcesGlide       f5  w  n=1  e.g. vldr s20, [r6, #0x1c]
+  RefreshForcesGlide       f6  w  n=2  e.g. vldr s13, [r6, #0x20]
+  RefreshForcesGlide       f7  w  n=2  e.g. vldr s21, [r6, #0x24]
+  RefreshForcesGlide       f8  w  n=2  e.g. vldr s15, [r6, #0x28]
+  RefreshForcesGlide       f9  w  n=1  e.g. vldr s12, [r6, #0x2c]
+  RefreshForcesGlide       f13 w  n=1  e.g. vstr s19, [sp, #0x3c]
+  SetInitialGlideAngle     f10 r  n=1  e.g. ldr r1, [r0, #0x30]
+  SetInitialGlideAngle     f18 r  n=1  e.g. ldr r3, [pc, #0x50]
+  StartGlide               f1  rw  n=10  e.g. str sb, [r2, #0xc]
+  StartGlide               f2  r  n=1  e.g. ldr r0, [pc, #0x10]
+  StartGlide               f3  r  n=1  e.g. ldr r6, [r0, #0x14]
+  StartGlide               f4  rw  n=3  e.g. ldr r3, [r3, #0x18]
+  StartGlide               f5  rw  n=2  e.g. ldr lr, [r2, #0x1c]
+  StartGlide               f6  rw  n=2  e.g. ldr r2, [r2, #0x20]
+  StartGlide               f9  r  n=1  e.g. ldr r3, [r0, #0x2c]
+  StartGlide               f10 r  n=1  e.g. ldreq r1, [r0, #0x30]
+  StartGlide               f11 r  n=2  e.g. ldr r3, [r3, #0x34]
+  StartGlide               f14 rw  n=3  e.g. str r0, [r4, #0x40]
+  StartGlide               f15 w  n=1  e.g. vldr d7, [pc, #0x44]
+  StartGlideFromGrapnel    f1  rw  n=5  e.g. str r7, [r2, #0xc]
+  StartGlideFromGrapnel    f3  rw  n=2  e.g. str r3, [sp, #0x14]
+  StartGlideFromGrapnel    f4  r  n=2  e.g. ldr r3, [r3, #0x18]
+  StartGlideFromGrapnel    f10 r  n=1  e.g. ldreq r3, [r0, #0x30]
+  StartGlideFromGrapnel    f11 r  n=1  e.g. ldr r3, [r3, #0x34]
+  StartGlideFromGrapnel    f13 r  n=1  e.g. ldr r5, [pc, #0x3c]
+  StartGlideFromGrapnel    f14 w  n=1  e.g. str r1, [r4, #0x40]
+  StartGlideFromGrapnel    f20 r  n=1  e.g. ldr r2, [r2, #0x58]
+  UpdateNavGlide           f1  w  n=4  e.g. strh r0, [r3, #0xc]
+  UpdateNavGlide           f2  w  n=2  e.g. str r0, [r3, #0x10]
+  UpdateNavGlide           f3  r  n=2  e.g. ldrb r0, [r3, #0x14]
+  UpdateNavGlide           f6  rw  n=4  e.g. ldr r3, [r3, #0x20]
+  UpdateNavGlide           f7  rw  n=3  e.g. ldr r3, [r3, #0x24]
+  UpdateNavGlide           f8  w  n=2  e.g. str r2, [r3, #0x28]
+  UpdateNavGlide           f9  w  n=2  e.g. str r2, [r3, #0x2c]
+  UpdateNavGlide           f10 w  n=2  e.g. str r2, [r3, #0x30]
+  UpdateNavGlide           f11 w  n=2  e.g. str r2, [r3, #0x34]
+  UpdateNavGlide           f12 w  n=2  e.g. str r2, [r3, #0x38]
+  UpdateNavGlide           f13 w  n=2  e.g. str r2, [r3, #0x3c]
+  UpdateNavGlide           f14 rw  n=4  e.g. ldr r2, [r4, #0x40]
+  UpdateNavGlide           f16 w  n=1  e.g. vldr s12, [pc, #0x48]
+
+#################### PART B: s_glide* store search ####################
+
+--- B1: literal-pool words equal to a target address ---
+  none
+
+--- B1b: literal-pool words equal to a GOT slot ---
+  literal @0x9c72c = GOT slot of s_glidePitchMin
+  literal @0x9c734 = GOT slot of s_glidePitchMax
+  literal @0x9c73c = GOT slot of s_glideRollMax
+  literal @0x9c744 = GOT slot of s_glideDeltaYawMax
+  literal @0x9c74c = GOT slot of s_glideYawCoef
+  literal @0x9c754 = GOT slot of s_glidePitchCoef
+  literal @0x9c75c = GOT slot of s_glideRollCoef
+  literal @0x9c764 = GOT slot of s_glidePitchAutoLevelingCoef
+  literal @0x9c76c = GOT slot of s_glideRollAutoLevelingCoef
+  literal @0x9c774 = GOT slot of s_glideDeadAngle
+
+--- B2: movw/movt pairs building an address in [0xc17d40,0xc17d9f] ---
+  none
+
+--- B3: GOT-slot pc-relative loads, read vs write classification ---
+  pc-rel GOT loads: 97
+  classified: 2 reads, 0 WRITES
+  NO writes through GOT pointers anywhere in .text
+
+--- B4: ldm/stm base registers built from the window ---
+  (B2 found no base in window => no ldm/stm can target it)

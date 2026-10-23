@@ -1,0 +1,24 @@
+window GOT slots: 44
+chains into CLevel-static window: 160
+   static 0xc17ab0 g_sceneManager                             chains=97
+   static 0xc17c40 __CHARACTERS_MAP                           chains=2
+   static 0xc17c44 __FONT_TOTAL_CHARS                         chains=2
+   static 0xc17c64 _ZN5MPool9s_pool256E                       chains=6
+   static 0xc17c88 _ZN7CButton6m_bQteE                        chains=4
+   static 0xc17ce3 _ZN6CLevel26s_bDebugViewAlwaysDistanceE    chains=1
+   static 0xc17d27 _ZN6CLevel25s_showLuaGlobalVarsErrorsE     chains=1
+   static 0xc17d28 _ZN6CLevel15s_nNavmeshDebugE               chains=3
+   static 0xc17d30 _ZN6CLevel36s_joystickIntensityMoveForwardLevel1E chains=1
+   static 0xc17d34 _ZN6CLevel36s_joystickIntensityMoveForwardLevel2E chains=2
+   static 0xc17d38 _ZN6CLevel19s_joystickDeadAngleE           chains=2
+   static 0xc17d4c _ZN6CLevel26s_deadAngleCalculationModeE    chains=2
+   static 0xc17d94 _ZN6CLevel14s_batpodSoundsE                chains=18
+   static 0xc17d98 _ZN6CLevel14s_thebatSoundsE                chains=18
+   static 0xc17d9c _ZN6CLevel16s_prevGadgetZoomE              chains=1
+
+classification (only str-with-offset landing on s_glide* shown in detail):
+total WRITES through window chains: 5
+
+VERDICT: s_glide* referenced only through GOT slots whose value is the static
+itself; classification above is exhaustive over both direct and neighbor-pointer
+paths (pool-absolute and movw/movt paths already shown zero).

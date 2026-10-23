@@ -1,0 +1,103 @@
+--- B2w: movw/movt building any base in [0xc16000,0xc19000] ---
+  hits: 0
+
+  stores through these bases:
+    none land on s_glide*
+
+--- B3w: GOT-site dataflow (97 sites) — reads vs writes + enclosing symbols ---
+  sites by enclosing symbol:
+      2  _ZN12CCallVehicle5ResetEv
+      2  _ZN6glitch5scene14IMeshSceneNodeD0Ev
+      2  _ZN6glitch5scene15CLightSceneNodeD1Ev
+      2  _ZN6glitch5scene15CLightSceneNodeD0Ev
+      1  _ZN3glf7Gamepad12PreSendEventERNS_9CoreEventE
+      1  _Z14PlayCameraAnimP9lua_State
+      1  _Z22StartSoundAtObjectNodeP9lua_State
+      1  _Z13PlayAnimationP9lua_State
+      1  _Z24ActorPlayWeaponAnimationP9lua_State
+      1  _Z22TestCameraFollowObjectP9lua_State
+      1  _Z22ObjectLinkToObjectNodeP9lua_State
+      1  _Z5EventP9lua_State
+      1  _ZN13CAIController12OnZoneUnloadEP5CZone
+      1  _ZN15CQuestComponent8DoActionEi
+      1  _ZN14HeliPatrolUnit18Object_SetPositionEP11CGameObjectN6glitch4core8vector3dIfEE
+      1  _ZN14JeepPatrolUnit18Object_SetPositionEP11CGameObjectN6glitch4core8vector3dIfEE
+      1  _ZN16StreetPatrolUnit18Object_SetPositionEP11CGameObjectN6glitch4core8vector3dIfEE
+      1  _ZN15CTrafficControl20Script_AddPedestrianEi
+      1  _ZN16WantedPatrolUnit18Object_SetPositionEP11CGameObjectN6glitch4core8vector3dIfEE
+      1  _ZN11ShopManager16ItemHasPromotionEjiP13PromotionInfo
+      1  _ZN10IAPManager9InitStoreEv.part.740
+      1  _ZN24CElectricTurretComponent6UpdateEf
+      1  _ZN28CSurveillanceCameraComponent8SetStateEi
+      1  _ZN10CInventory11FullLevelUpEv
+      1  _ZN22CTheBatHandleComponent13UpdatePhysicsEf
+      1  _ZN15CNpcAIComponent15CheckNextActionEv
+      1  _ZN15CNpcAIComponent8SetEnemyEb
+      1  _ZN15CNpcAIComponent12Decor_UpdateEv
+      1  _ZN15CNpcAIComponent13Stuck_OnEnterEv
+      1  _ZN15CNpcAIComponent15Stuck_TestEnterEv
+      1  _ZN15CNpcAIComponent14Attack_OnEnterEv
+      1  _ZN15CNpcAIComponent19Attack_UpdateRangedEf
+      1  _ZN15CNpcAIComponent13Nav_WP_OnNextEv
+      1  _ZN9AI_Target12MessageAlertEv
+      1  _ZN22AI_ShoutReinforcements6UpdateEfN15CNpcAIComponent7E_STATEENS0_7E_SCOPEENS0_8E_STANCEE
+      1  _ZN15CWayPointObject9DrawDebugEv
+      1  _ZN5CZone6CreateERK13CTemplateZone
+      1  _ZN13CZonesManager9FindActorEi
+      1  _ZN13CZonesManager22HandleZoneLoadRequestsEb
+      1  _ZN6glitch5scene10CBatchMeshIvNS0_31SSegmentExtraDataHandlingPolicyIvNS0_25SBatchMeshSegmentInternalEEEE17updateBoundingBoxEv
+      1  _ZN16VoxFileInterfaceD2Ev
+      1  _ZN16VoxFileInterfaceD0Ev
+      1  _ZN13VoxFileSystemC2Ev
+      1  _ZN15VoxSoundManager16PlayWithCooldownEPKciifRKN6glitch4core8vector3dIfEE
+      1  _ZN5CFont19GetCharacterFModuleEj
+      1  _ZN17CNovaSceneManager6updateEfb
+      1  _ZN9TiXmlBase7IsAlphaEh13TiXmlEncoding
+      1  _ZN9TiXmlBase10IsAlphaNumEh13TiXmlEncoding
+      1  _ZN23ObjManager_StaticEffect16computePoolSizesEv
+      1  _ZN13CMemoryStream10GetStringWEi
+      1  _ZN5spark16CEmitterInstance14renderInternalEPv
+      1  _ZN5spark19CParticlesBufferMgrD2Ev
+      1  _ZN5spark19CParticlesBufferMgr11FreeBuffersEv
+      1  _ZN15CEffectsManager11DeserializeEPKc
+      1  _ZN11CGameObject4KillESbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEEbPS_
+      1  _ZN19CActorBaseComponent16CanThrowBatarangEv
+      1  _ZNSbIwSt11char_traitsIwEN6glitch4core10SAllocatorIwLNS1_6memory13E_MEMORY_HINTE0EEEEC2EPKwRKS6_.isra.2197.constprop.2932
+      1  _ZNSbIwSt11char_traitsIwEN6glitch4core10SAllocatorIwLNS1_6memory13E_MEMORY_HINTE0EEEE7reserveEj
+      1  _ZN18CLevelStreaming_DB6UpdateEv
+      1  _ZN19cAchievementManager18IncrementStatisticESbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEE
+      1  _ZN11CHUDDisplay17StartPipeMinigameESbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEEiiiii
+      1  _ZN11CHUDDisplay14ResetAfterHackEv
+      1  _ZN19CPostProcessManager6UpdateEf
+      1  _ZN19CPostProcessManager20RecomputeCurrentHashEv
+      1  _ZN22CCoronasControllerNode9onAnimateEf.part.1773
+      1  _ZN11TrafficPoolI8CVehicleE12PopulatePoolEiRSt3mapIiSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS5_6memory13E_MEMORY_HINTE0EEEESt4lessIiESaISt4pairIKiSB_EEE
+      1  _ZN11TrafficPoolI11CPedestrianE12PopulatePoolEiRSt3mapIiSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS5_6memory13E_MEMORY_HINTE0EEEESt4lessIiESaISt4pairIKiSB_EEE
+      1  _ZN7gameswf14SpriteInstance7advanceEf
+      1  _ZN7gameswf9Character18transformByInverseERNS_5PointE
+      1  _ZN7gameswf13RenderHandler9flushListERNS_9BatchListE
+      1  _ZN7gameswf9Character18transformByInverseERNS_5PointE.constprop.456
+      1  _ZN6glitch5video11CNullDriverC2EPNS_7IDeviceE
+      1  _ZN6glitch3gui11CGUIListBox10removeItemEj
+      1  _ZNSbIwSt11char_traitsIwEN6glitch4core10SAllocatorIwLNS1_6memory13E_MEMORY_HINTE0EEEE4_Rep7_M_grabERKS6_SA_.isra.1696.part.1697
+      1  _ZNKSbIwSt11char_traitsIwEN6glitch4core10SAllocatorIwLNS1_6memory13E_MEMORY_HINTE0EEEE6substrEjj.constprop.2147
+      1  _ZN6glitch5video6detail19IMaterialParametersINS0_9CMaterialENS_24ISharedMemoryBlockHeaderIS3_EEE13dropParameterEt
+      1  _ZNSbIwSt11char_traitsIwEN6glitch4core10SAllocatorIwLNS1_6memory13E_MEMORY_HINTE0EEEE6appendEPKw
+      1  _ZN6glitch2io11CAttributes12setAttributeEPKcPvi
+      1  _ZN6glitch2io11CAttributes9addBinaryEPKcPvib
+      1  _ZN6glitch2io10CPakReader15scanLocalHeaderEv
+      1  _ZN6glitch2io16createIXMLReaderERKN5boost13intrusive_ptrINS0_9IReadFileEEE
+      1  _ZN6glitch2io16CStringAttribute10getStringWEv
+      1  _ZN6glitch2io17CTextureAttribute10getStringWEv
+      1  _ZNSbIwSt11char_traitsIwEN6glitch4core10SAllocatorIwLNS1_6memory13E_MEMORY_HINTE0EEEEC2ERKS7_
+      1  _ZNKSbIwSt11char_traitsIwEN6glitch4core10SAllocatorIwLNS1_6memory13E_MEMORY_HINTE0EEEE6substrEjj
+      1  _ZN6glitch5scene14CTextSceneNodeD1Ev
+      1  _ZN6glitch5scene14CTextSceneNodeD0Ev
+      1  _ZNSt5ctypeIcE13classic_tableEv
+      1  _ZNSt5ctypeIcEC2EPiPKcbj
+      1  _ZNSt5ctypeIcEC2EPKcbj
+  WRITES found: 0
+    none — no store anywhere in .text uses a GOT-derived s_glide* pointer
+
+--- REL: dynamic relocations for the GOT slots ---
+  (reloc rows shown: 0)

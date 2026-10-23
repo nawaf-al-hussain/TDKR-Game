@@ -1,0 +1,26 @@
+SEC .data.rel.ro.local addr=0x00bbf930 off=0x00bbe930 size=0xeb00 PROGBITS
+SEC .init_array        addr=0x00bce430 off=0x00bcd430 size=0xd8 INIT_ARRAY
+SEC .data.rel.ro       addr=0x00bce508 off=0x00bcd508 size=0x39554 PROGBITS
+SEC .got               addr=0x00c07b58 off=0x00c06b58 size=0x14a8 PROGBITS
+SEC .data              addr=0x00c09000 off=0x00c08000 size=0x9834 PROGBITS
+SEC .bss               addr=0x00c12838 off=0x00c11838 size=0x4e448 NOBITS
+SEC .comment           addr=0x00000000 off=0x00c11834 size=0x26 PROGBITS
+SEC .debug_frame       addr=0x00000000 off=0x00c1185c size=0x520 PROGBITS
+SEC .debug_line        addr=0x00000000 off=0x00c11d7c size=0x1b7c PROGBITS
+SEC .debug_info        addr=0x00000000 off=0x00c138f8 size=0x3f69 PROGBITS
+SEC .debug_abbrev      addr=0x00000000 off=0x00c17861 size=0xfed PROGBITS
+SEC .debug_aranges     addr=0x00000000 off=0x00c18850 size=0x2a0 PROGBITS
+SEC .debug_loc         addr=0x00000000 off=0x00c18af0 size=0x300a PROGBITS
+SEC .debug_pubnames    addr=0x00000000 off=0x00c1bafa size=0x463 PROGBITS
+SEC .debug_pubtypes    addr=0x00000000 off=0x00c1bf5d size=0xe91 PROGBITS
+SEC .debug_str         addr=0x00000000 off=0x00c1cdee size=0xe88 PROGBITS
+SEC .debug_ranges      addr=0x00000000 off=0x00c1dc76 size=0x398 PROGBITS
+SANITY k_glide*: 0 ldr-literal hits
+s_glide* direct (.bss addr in pool): 0 ldr-literal hits
+
+pool words == s_glide* addr anywhere in .text:
+Traceback (most recent call last):
+  File "/tmp/my-project/work/TDKR-Game/extraction/re/session55/s55_t2_writer_final3.py", line 94, in <module>
+    w = struct.unpack_from('<I', data, o)[0]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object cannot be interpreted as an integer
