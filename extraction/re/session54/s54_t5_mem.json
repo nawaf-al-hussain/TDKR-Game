@@ -1,0 +1,36 @@
+{
+ "floors": {
+  "empty_three": {
+   "rss_renderer_peak_mb": 84.9,
+   "pass": true
+  },
+  "gl_textures_only_170x512sq_rgba": {
+   "rss_renderer_peak_mb": 108.4,
+   "pass": true
+  }
+ },
+ "game_default": {
+  "renderer_peak_mb": 813.5,
+  "first_image_ms": 6132,
+  "gate_pass": true,
+  "source": "s53_t4_mem.py idx 0 (re-run on the s54 staged page)"
+ },
+ "game_poolchunk": {
+  "renderer_peak_mb": 690.8,
+  "first_image_ms": 8366,
+  "gate_pass": true,
+  "source": "s53_t4_mem.py idx 1 (re-run on the s54 staged page)"
+ },
+ "verdict": {
+  "floor_breakdown_mb": {
+   "chromium_three_baseline (empty three.js page)": 84.9,
+   "gl_texture_upload_delta (170x512^2 RGBA = 170 MB GPU-side)": 23.5,
+   "game_default_total": 813.5,
+   "game_poolchunk_total": 690.8,
+   "game_specific_delta_over_baseline_default": 728.6,
+   "game_specific_delta_over_baseline_poolchunk": 605.9
+  },
+  "acceptance": "<600 MB NOT reached (best 690.8 poolchunk); first image <8 s met in default (6.1 s) not poolchunk (8.4 s); gates PASS and digests unchanged in both",
+  "interpretation": "the renderer RSS floor is dominated by swiftshader/Chromium-internal copies + the ~90 MB soup (JS+GL) + the lazy-materialized GL uploads; the 170 MB synthetic GPU texture set added only 23.5 MB RSS (uploads are lazily materialized until sampled), so GPU-side expansion is NOT the visible RSS driver; no further page-side cut implemented this session - the residual is browser-internal"
+ }
+}
