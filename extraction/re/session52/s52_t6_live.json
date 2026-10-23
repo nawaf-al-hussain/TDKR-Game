@@ -1,0 +1,19 @@
+{
+ "viewer": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/index.html?userfiles=1",
+  "console_errors": [],
+  "n_requests": 142,
+  "has_gc_collision": false,
+  "glb_probe": "scene children 25",
+  "note": "21 glb 1446k tris; skyline 5 glb 58k; heroes 11 glb 17k"
+ },
+ "walktest": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/walktest.html",
+  "console_errors": [],
+  "n_requests": 6,
+  "note": "re-verified after one transient 404 (curl 200 on all four URLs)"
+ },
+ "deployed": "gh-pages 16a22ce",
+ "deployed_this_session": false,
+ "deploy_plan": "integration_lazy.html (+ optionally swap integration.html -> integration_lazy: digests identical); rollback = push 16a22ce to gh-pages (force); gates: default 8/8 identical digests + corrupt DETECTED + fog/LUT variant PASS"
+}
