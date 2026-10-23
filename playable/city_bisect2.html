@@ -525,6 +525,14 @@ const UVABS = QS.get("uvabs") === "1";
 const STEP = QS.get('step') ? parseInt(QS.get('step')) : null;   // 1 UV field, 2 diffuse, 3 D*LM, 4 D*LM*2, 5 +fog
 const FIX = QS.get('fix') === '1';                               // pre-resolve dTex+lmTex before any bind (unit-clobber fix)
 const TRK = QS.get('upload') === '1';                            // texture-unit tracking audit
+const WRONGLM = QS.get('wronglm') === '1';                       // s53 T1 calibration: bind a WRONG bake page as the lightmap (metric must move)
+// s53 T1 wrongLM map: deterministic page rotation A0->B0, B0->Roads0, Roads0->A0, anything else -> A0
+function wrongLm(nm) {
+  if (nm === 'BakeGroup_Island1_A0.tga') return 'BakeGroup_Island1_B0.tga';
+  if (nm === 'BakeGroup_Island1_B0.tga') return 'BakeGroup_Island1_Roads0.tga';
+  if (nm === 'BakeGroup_Island1_Roads0.tga') return 'BakeGroup_Island1_A0.tga';
+  return 'BakeGroup_Island1_A0.tga';
+}
 const TXNAMES = new Map();                                       // WebGLTexture -> texture member name
 const TR = { unit: 0, bound: [null, null], batches: [] };
 function actT(u) { G.activeTexture(u); if (TRK) TR.unit = (u === G.TEXTURE0) ? 0 : (u === G.TEXTURE1 ? 1 : 2); }
@@ -646,7 +654,7 @@ function drawZoneBatches(batches, W, H) {
   G.disable(G.CULL_FACE);
   let tris = 0, draws = 0;
   for (const b of batches) {
-    if (ONLY_FX && b.fx !== ONLY_FX) continue;
+    if (ONLY_FX && b.fx !== ONLY_FX && !(b.fxURL && b.fxURL.indexOf(ONLY_FX) >= 0)) continue;  // s53 T1: family OR raw effect-URL match
     const [vsrc, fsrc0] = SHADERS_Z[b.fx] || SHADERS_Z.other;
     let fsrc = fsrc0, modeKey = '';
     if (FLAT) {
@@ -711,12 +719,18 @@ function drawZoneBatches(batches, W, H) {
     let unit = 0;
     const bn = b.bind;
     const isLMfx = (b.fx === 'LightMapDC' || b.fx === 'AlphaMasking');
+    // s53 T1: WRONGLM substitutes the lightmap page AFTER audit bookkeeping (audit keeps the real bn1)
+    const lmNameReal = bn[1];
+    const lmName = (WRONGLM && isLMfx && lmNameReal) ? wrongLm(lmNameReal) : lmNameReal;
     // s52 T1 audit: cache state BEFORE any resolution (miss = will create+bind on current unit)
-    const dWasCached = texZ.has(bn[0] + ''), lWasCached = texZ.has(bn[1] + '');
+    const dWasCached = texZ.has(bn[0] + ''), lWasCached = texZ.has(lmName + '');
     const dTex = texZget(bn[0], false);
-    const lmPre = (FIX && isLMfx && bn[1]) ? texZget(bn[1], false) : null;
-    if (TRK && isLMfx) {
-      TR.batches.push({ mid: b.mid, bn0: bn[0], bn1: bn[1], lmHit: lWasCached, dMiss: !dWasCached });
+    const lmPre = (FIX && isLMfx && lmName) ? texZget(lmName, false) : null;
+    if (TRK) {
+      // s53 T1: audit EVERY draw (all effect families), not only LM ones
+      TR.batches.push({ mid: b.mid, fx: b.fx, bn0: bn[0], bn1: lmNameReal, lmUsed: lmName,
+                        lmHit: lWasCached, dMiss: !dWasCached,
+                        usamp: Object.keys(P.uni).filter(k => /Sampler|Map/i.test(k)) });
     }
     if (SKIPMISS && !dTex) { if (PROBE) window.__GLERR.push(['skipmiss:' + b.fx, b.nidx, 0]); continue; }
     if (dTex && P.uni.DiffuseMap !== undefined && P.uni.DiffuseMap) {
@@ -725,18 +739,30 @@ function drawZoneBatches(batches, W, H) {
       G.uniform1i(P.uni.DiffuseMap, 0); unit = 1;
     } else if (dTex && P.uni.DiffuseTextureSampler) {
       actT(G.TEXTURE0); G.bindTexture(G.TEXTURE_2D, dTex.tx);
+      if (TRK) { TR.bound[0] = TXNAMES.get(dTex.tx) || bn[0]; TR.bound[1] = null; }   // s53 T1: audit the non-DiffuseMap branch too
       G.uniform1i(P.uni.DiffuseTextureSampler, 0); unit = 1;
     }
-    if (!FIX && isLMfx && bn[1]) {
-      const lm = texZget(bn[1], false);
-      if (lm && P.uni.LightMap) { actT(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lm.tx); G.uniform1i(P.uni.LightMap, 1); if (TRK) TR.bound[1] = bn[1]; }
-      else if (lm && P.uni.LightmapTextureSampler) { actT(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lm.tx); G.uniform1i(P.uni.LightmapTextureSampler, 1); if (TRK) TR.bound[1] = bn[1]; }
+    let lmObj = null;   // s53 T1: the resolved lightmap object, if any (missing-page classification)
+    if (!FIX && isLMfx && lmName) {
+      const lm = texZget(lmName, false);
+      if (lm && P.uni.LightMap) { actT(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lm.tx); G.uniform1i(P.uni.LightMap, 1); if (TRK) TR.bound[1] = lmName; }
+      else if (lm && P.uni.LightmapTextureSampler) { actT(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lm.tx); G.uniform1i(P.uni.LightmapTextureSampler, 1); if (TRK) TR.bound[1] = lmName; }
+      if (lm) lmObj = lm;
     } else if (FIX && lmPre) {
-      if (P.uni.LightMap) { actT(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lmPre.tx); G.uniform1i(P.uni.LightMap, 1); if (TRK) TR.bound[1] = bn[1]; }
-      else if (P.uni.LightmapTextureSampler) { actT(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lmPre.tx); G.uniform1i(P.uni.LightmapTextureSampler, 1); if (TRK) TR.bound[1] = bn[1]; }
+      if (P.uni.LightMap) { actT(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lmPre.tx); G.uniform1i(P.uni.LightMap, 1); if (TRK) TR.bound[1] = lmName; }
+      else if (P.uni.LightmapTextureSampler) { actT(G.TEXTURE1); G.bindTexture(G.TEXTURE_2D, lmPre.tx); G.uniform1i(P.uni.LightmapTextureSampler, 1); if (TRK) TR.bound[1] = lmName; }
+      lmObj = lmPre;
     }
-    if (TRK && isLMfx) { const rec = TR.batches[TR.batches.length - 1]; rec.unit0 = TR.bound[0]; rec.unit1 = TR.bound[1];
-      rec.CLOBBER = (rec.unit0 === rec.bn1); }
+    if (TRK) { const rec = TR.batches[TR.batches.length - 1]; rec.unit0 = TR.bound[0]; rec.unit1 = TR.bound[1];
+      rec.CLOBBER = (rec.unit0 === rec.bn1);
+      // s53 T1 per-draw assertion: unit0 == the batch's diffuse; for LM effects unit1 == its lightmap.
+      // noTex: no resolvable diffuse. lmMissing: an LM page is DECLARED but does not exist in the
+      // texture gla (e.g. the DAE placeholder 'LightMapSampler.tga') - nothing to bind, assertion vacuous.
+      // Both are counted separately and excluded from the mismatch count (the s52 texMiss channel).
+      rec.noTex = (!bn[0] || !dTex) ? true : false;
+      rec.lmMissing = (isLMfx && rec.bn1 && !lmObj) ? true : false;
+      rec.MM = (!rec.noTex && !rec.lmMissing) &&
+               ((rec.unit0 !== rec.bn0) || (isLMfx && rec.bn1 && rec.unit1 !== rec.bn1)); }
     if (b.fx === 'AlphaMasking' && dTex && dTex.alpha && P.uni.DiffuseMap_alpha) {
       const n = dTex.alpha.w * dTex.alpha.h;
       const arr = new Uint8Array(n * 4);
@@ -778,27 +804,8 @@ const heapMB = function () {
 async function corrVsRef(buf) {
   const RW = glz.width, RH = glz.height;
   const REFPNG = QS.get('ref') || 's48_ref_zone.png';
-  const resp = await fetch('./' + REFPNG);
-  const bmp = await createImageBitmap(await resp.blob());
-  const cc = document.createElement('canvas');
-  cc.width = RW; cc.height = RH;
-  const cx2 = cc.getContext('2d', { willReadFrequently: true });
-  cx2.drawImage(bmp, 0, 0);
-  const ref = cx2.getImageData(0, 0, RW, RH).data;
-  let sa = 0, sb = 0, saa = 0, sbb = 0, sab = 0;
-  const n = RW * RH;
-  for (let i = 0; i < n; i++) {
-    const j = i * 4;
-    const a = (buf[j] + buf[j + 1] + buf[j + 2]) / 3;
-    const bb2 = (ref[i * 4] + ref[i * 4 + 1] + ref[i * 4 + 2]) / 3;
-    sa += a; sb += bb2; saa += a * a; sbb += bb2 * bb2; sab += a * bb2;
-  }
-  const covv = sab / n - (sa / n) * (sb / n);
-  const va = saa / n - (sa / n) ** 2, vb2 = sbb / n - (sb / n) ** 2;
-  const corr = covv / Math.sqrt(va * vb2);
-  window.__GATE.corr = corr;
-  window.__GATE.js_mean = sa / n;
-  window.__GATE.ref_mean = sb / n;
+  // s53 T1 robustness: the dump must survive a missing/unfetchable reference PNG
+  // (arbitrary static host) — define __GLDUMP BEFORE touching the reference.
   window.__GLDUMP = () => { const c = document.createElement('canvas');
     c.width = RW; c.height = RH;
     const cx3 = c.getContext('2d');
@@ -807,7 +814,33 @@ async function corrVsRef(buf) {
       flipped.set(buf.subarray(y * RW * 4, (y + 1) * RW * 4), (RH - 1 - y) * RW * 4);
     cx3.putImageData(new ImageData(flipped, RW, RH), 0, 0);
     return c.toDataURL('image/png'); };
-  log('corr vs ' + REFPNG + ': ' + corr.toFixed(4) + '  js_mean ' + (sa / n).toFixed(2) + ' ref_mean ' + (sb / n).toFixed(2));
+  try {
+    const resp = await fetch('./' + REFPNG);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const bmp = await createImageBitmap(await resp.blob());
+    const cc = document.createElement('canvas');
+    cc.width = RW; cc.height = RH;
+    const cx2 = cc.getContext('2d', { willReadFrequently: true });
+    cx2.drawImage(bmp, 0, 0);
+    const ref = cx2.getImageData(0, 0, RW, RH).data;
+    let sa = 0, sb = 0, saa = 0, sbb = 0, sab = 0;
+    const n = RW * RH;
+    for (let i = 0; i < n; i++) {
+      const j = i * 4;
+      const a = (buf[j] + buf[j + 1] + buf[j + 2]) / 3;
+      const bb2 = (ref[i * 4] + ref[i * 4 + 1] + ref[i * 4 + 2]) / 3;
+      sa += a; sb += bb2; saa += a * a; sbb += bb2 * bb2; sab += a * bb2;
+    }
+    const covv = sab / n - (sa / n) * (sb / n);
+    const va = saa / n - (sa / n) ** 2, vb2 = sbb / n - (sb / n) ** 2;
+    const corr = covv / Math.sqrt(va * vb2);
+    window.__GATE.corr = corr;
+    window.__GATE.js_mean = sa / n;
+    window.__GATE.ref_mean = sb / n;
+    log('corr vs ' + REFPNG + ': ' + corr.toFixed(4) + '  js_mean ' + (sa / n).toFixed(2) + ' ref_mean ' + (sb / n).toFixed(2));
+  } catch (e) {
+    log('corrVsRef: reference unavailable (' + e + ') — GL dump still produced; offline comparison only');
+  }
 }
 
 function runQuad() {
@@ -980,7 +1013,7 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
       if (QS.get('grad') === '1' && mid === 73 && !window.__GRAD73) { const gw = 512, gh = 512; const garr = new Uint8Array(gw * gh * 4); for (let y = 0; y < gh; y++) for (let x = 0; x < gw; x++) { const o = (y * gw + x) * 4; garr[o] = Math.min(255, x * 2); garr[o + 1] = Math.min(255, y * 2); garr[o + 2] = 0; garr[o + 3] = 255; } const gt = G.createTexture(); G.bindTexture(G.TEXTURE_2D, gt); G.texImage2D(G.TEXTURE_2D, 0, G.RGBA, gw, gh, 0, G.RGBA, G.UNSIGNED_BYTE, garr); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_S, G.REPEAT); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_WRAP_T, G.REPEAT); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MIN_FILTER, G.NEAREST); G.texParameteri(G.TEXTURE_2D, G.TEXTURE_MAG_FILTER, G.NEAREST); window.__GRAD73 = gt; }
     if (mid === 73) { window.__UV73 = Array.from(uv0.slice(0, 48)); window.__POS73 = Array.from(pos.slice(0, 32)); window.__SEG73NV = segs.map(q => q.nv); }
     if (mid === 73 && uv1 && !window.__UV1_73) { window.__UV1_73 = Array.from(uv1.slice(0, 48)); }
-    batches.push({ fx: fxn, mid, bind: bind[mid] || ['', ''],
+    batches.push({ fx: fxn, fxURL: fx[mid] || '', mid, bind: bind[mid] || ['', ''],
         posBuf: mk(pos), uv0Buf: mk(uv0), uv1Buf: uv1 ? mk(uv1) : null,
         c0Buf: (c0 && fxn !== 'other') ? mk(c0) : null, idxBuf: bi2, nidx: io, use32, wvp,
         hmean: hsum/(pos.length/4) });
@@ -1111,6 +1144,22 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
         block += 'clobbered_batches=' + interesting.filter(r => r.CLOBBER).map(r => r.mid).join(',') + '\n';
         block += 'pixelStore=' + JSON.stringify(window.__PIXSTORE || {}) + ' glerr=' + JSON.stringify(window.__GLERR) + '\n';
       }
+      // s53 T1: full-zone unit audit summary (every draw, all families) — emitted regardless of b73
+      try {
+        const au2 = window.__UPLOAD ? window.__UPLOAD() : TR;
+        const nMM = au2.batches.filter(r => r.MM).length;
+        const nNoTex = au2.batches.filter(r => r.noTex).length;
+        const nLmMiss = au2.batches.filter(r => r.lmMissing).length;
+        const nLM = au2.batches.filter(r => r.bn1).length;
+        block += 'unit_audit(s53): draws=' + au2.batches.length + ' lmfx=' + nLM +
+                 ' mismatches=' + nMM + ' noTex=' + nNoTex + ' lmMissing=' + nLmMiss +
+                 ' first_mm=' + JSON.stringify(au2.batches.filter(r => r.MM).slice(0, 5)) + '\n';
+      } catch (e2) { block += 'unit_audit error: ' + e2 + '\n'; }
+      try {
+        const dbg = G.getExtension('WEBGL_debug_renderer_info');
+        block += 'wronglm=' + WRONGLM + ' renderer=' +
+                 (dbg ? G.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : G.getParameter(G.RENDERER)) + '\n';
+      } catch (e3) { block += 'renderer probe error: ' + e3 + '\n'; }
       window.__GPUCHECK = block;
       log('GPU CHECK BLOCK:\n' + block);
     }
