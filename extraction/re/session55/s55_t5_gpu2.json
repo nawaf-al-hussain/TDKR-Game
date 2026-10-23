@@ -1,0 +1,17 @@
+{
+ "x11_swiftshader": {
+  "gpucheck": {
+   "__raw": "TDKR GPU CHECK v1 (paste this back)\nmode: step=null fix=false mip=0 bias=-1.0 nodepth=false ua=false\ncorr_vs_builtin_ref=0.9085 js_mean=4.162258953167998 ref_mean=5.109806516873219\ndiffuse=gothamcity_roads_details.tga tex_mean=[118.8,113.7,95.8]\nlightmap=BakeGroup_Island1_Roads0.tga tex_mean=[34.4,39.3,38.8]\nanalytic_expectation_texMeanXlmMeanX2=32.1 (rough; window texels differ from global mean)\n"
+  },
+  "page_errors": [],
+  "elapsed_s": 236,
+  "summary": {
+   "__raw": "TDKR GPU CHECK v1 (paste this back)\nmode: step=null fix=false mip=0 bias=-1.0 nodepth=false ua=false\ncorr_vs_builtin_ref=0.9085 js_mean=4.162258953167998 ref_mean=5.109806516873219\ndiffuse=gothamcity_roads_details.tga tex_mean=[118.8,113.7,95.8]\nlightmap=BakeGroup_Island1_Roads0.tga tex_mean=[34.4,39.3,38.8]\nanalytic_expectation_texMeanXlmMeanX2=32.1 (rough; window texels differ from global mean)\n"
+  }
+ },
+ "x11_gl": {
+  "gpucheck": null,
+  "page_errors": [],
+  "elapsed_s": 298
+ }
+}
