@@ -1,0 +1,42 @@
+{
+ "sign_convention": {
+  "diff": "|GL-CPU| mean-RGB bytes; covdiff = coverage differs; valdiff = both covered & diff>32"
+ },
+ "totals": {
+  "gl_cov_px": 67569,
+  "cpu_cov_px": 67010,
+  "shared_px": 66339,
+  "iou": 0.9721,
+  "covdiff_px": 1901,
+  "covdiff_gl_only": 1230,
+  "covdiff_cpu_only": 671,
+  "valdiff_px": 186,
+  "valbig_px": 96,
+  "corr_shared": 0.9923,
+  "gl_mean_shared": 47.24,
+  "cpu_mean_shared": 46.72,
+  "ratio_shared": 1.0111
+ },
+ "family_attribution": {
+  "uncovered_by_any_family_ref": 619520,
+  "multi_family_overlap": 0,
+  "exclusive": 0
+ },
+ "per_family": {
+  "LightMapDC": {
+   "px": 0
+  },
+  "AlphaMasking": {
+   "px": 0
+  },
+  "SimpleAdditive": {
+   "px": 0
+  },
+  "StandardDiffuseDC": {
+   "px": 0
+  },
+  "other": {
+   "px": 0
+  }
+ }
+}

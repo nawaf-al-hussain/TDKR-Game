@@ -671,3 +671,26 @@ LongDist at boot. Skyline placement still rests solely on 0x14051.
 (main()) and raycast_t3.py were committed with mangled syntax; their RESULT
 JSONs are intact and were re-validated this session (parser 503/503 vs
 harness). Use extraction/re/session23/ scripts instead.
+
+## RECORD CORRECTION (session 52/53, 2026-10-23) — the zone-renderer 0.99 target IS valid and MET
+
+The session-50 T1 redefinition ("corr>=0.99 vs the exact-float reference is UNATTAINABLE for any
+GPU-faithful renderer; the GL render is DEFINED as the engine-faithful reference") and the
+session-51 "swiftshader-suspect / regime-dependent draw artifact" statement are BOTH SUPERSEDED.
+
+Root cause found in session 52 (city_bisect2.html, commit 969bd3e): the diagnostic pages' draw
+loop had a texture-UNIT CLOBBER — texZget's cache-miss path binds on the CURRENT unit, so a
+lightmap resolving on a miss rebinds unit 0 (the diffuse) to the lightmap -> Color = LM^2 x 2
+(near-black). 4/120 zone LM batches were affected (mids 73, 132, 29, 30). The session-50
+"sub-pixel road-detail geometry" attribution and the session-51 minification-artifact story were
+observations of this defect, not engine/GPU properties.
+
+After the one-line fix (pre-resolve both textures before any bind): mat73 zoom step2 ratio
+0.9954 / step4 1.0068 vs an independent CPU per-pixel model; whole-zone corr 0.9285 -> 0.9923.
+The game pages (integration.html, integration_lazy.html) pre-resolve at batch-build time and were
+never affected; the live viewer uses THREE's internal unit management. Session 53 adds a
+draw-time unit audit on EVERY zone draw of all three pages (bisect + both game pages): 0
+mismatches expected and measured (extraction/re/session53/).
+
+Consequence for future work: treat corr>=0.99 vs the CPU per-pixel reference as the STANDING
+acceptance bar for the zone renderer; do not re-litigate the s50 "GL is the reference" clause.

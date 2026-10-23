@@ -1,0 +1,39 @@
+{
+ "page": "integration.html",
+ "console_errors": [],
+ "page_errors": [],
+ "elapsed_s": 15.4,
+ "gate_done": true,
+ "gate_error": null,
+ "unit_audit": {
+  "draws": 8556,
+  "mismatches": 0,
+  "noTex": 372,
+  "first": []
+ },
+ "gate_keys": [
+  "ready",
+  "done",
+  "corruptControl",
+  "nmSelfCheck",
+  "soupDigestPass",
+  "soup",
+  "routes",
+  "zone",
+  "batman",
+  "first_image_ms",
+  "unit_audit",
+  "draws",
+  "tris",
+  "pixelStats",
+  "camera",
+  "silhouetteInRange",
+  "motionDetected",
+  "cameraFollowed",
+  "pass",
+  "consoleErrors",
+  "heap_mb",
+  "heap_mb_peak",
+  "wall_ms"
+ ]
+}

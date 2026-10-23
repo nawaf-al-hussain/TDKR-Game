@@ -1,3 +1,13 @@
+> **EDITORIAL CORRECTION (2026-10-23, sessions 52-53):** the Conclusion below
+> ("environment-suspect (swiftshader)... needs one real-GPU run") is SUPERSEDED.
+> The mat73 residual was a texture-UNIT CLOBBER in the diagnostic pages' draw
+> loop (texZget cache-miss binds on the current unit; unit 0 held the diffuse).
+> Fixed in city_bisect2.html (s41 969bd3e); fix=1 ratios 0.9954 (step2) /
+> 1.0068 (step4) vs the CPU model; whole-zone corr 0.9285 -> 0.9923. The
+> engine-faithful renderer meets the 0.99 bar; no GPU adjudication is needed.
+> Session 53 ran the every-draw unit audit on all three pages: 0 mismatches.
+> Original text below is preserved unmodified for the record.
+
 # Session 51 — T1 close-out: the zone-render mat73 residual
 
 ## Verdict
