@@ -1,0 +1,1488 @@
+{
+ "deployed_commit": "61455457e8fcd8b579705ba61f0bd20003df3b2d",
+ "total_files": 194,
+ "total_bytes": 119352318,
+ "game_derived_bytes": 118806997,
+ "game_derived_pct": 99.54,
+ "summary_by_class": {
+  "converted game asset": [
+   173,
+   118806997
+  ],
+  "shipped code": [
+   16,
+   530365
+  ],
+  "worklog (site copy)": [
+   5,
+   14956
+  ]
+ },
+ "pages": {
+  "root_viewer": [
+   "index.html",
+   "app.js",
+   "style.css",
+   "skybox.jpg",
+   "models/manifest.json",
+   "models/tex/GC_VerticalFOG.png",
+   "models/tex/LUT_000_default.png",
+   "models/tex/LUT_023_lighting.png",
+   "models/batarang.glb",
+   "models/*.glb (manifest-listed)",
+   "models/tex/*.jpg (manifest-listed)"
+  ],
+  "playable/index.html": [
+   "playable/fengari-web.js",
+   "playable/tdkr_pipeline.js",
+   "playable/lvc.js",
+   "playable/walktest*.js",
+   "playable/patch.json",
+   "playable/lvc_gol_templates.json",
+   "playable/lvc_readseq_s30.json",
+   "playable/batman.glb",
+   "CDN three@0.160.0"
+  ],
+  "playable/integration.html": [
+   "playable/etc1_tdkr.js",
+   "playable/tdkr_pipeline.js",
+   "playable/lvc.js",
+   "playable/walktest*.js",
+   "playable/lvc_gol_templates.json",
+   "playable/lvc_readseq_s30.json",
+   "CDN three@0.160.0"
+  ],
+  "playable/integration_lazy.html": [
+   "same as integration.html"
+  ],
+  "playable/walktest.html": [
+   "playable/tdkr_pipeline.js",
+   "playable/lvc.js",
+   "playable/walktest*.js"
+  ]
+ },
+ "flagged": [
+  {
+   "path": "models/street_island1_04.glb",
+   "bytes": 5863260,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_05.glb",
+   "bytes": 5812476,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_10.glb",
+   "bytes": 5553496,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_02.glb",
+   "bytes": 4945364,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_07.glb",
+   "bytes": 4396948,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_07.glb",
+   "bytes": 4392572,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/fp_island2.glb",
+   "bytes": 3761992,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_01.glb",
+   "bytes": 3616032,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_08.glb",
+   "bytes": 3025280,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_04.glb",
+   "bytes": 2657048,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_08.glb",
+   "bytes": 2628948,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_05.glb",
+   "bytes": 2253476,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Rooftop_Alpha.jpg",
+   "bytes": 2175214,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Street_Alpha.jpg",
+   "bytes": 2124787,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_01.glb",
+   "bytes": 1866692,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_island1_LongDist.glb",
+   "bytes": 1744440,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_06.glb",
+   "bytes": 1475224,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_VRS_Reservoir.jpg",
+   "bytes": 1376437,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Island_2.jpg",
+   "bytes": 1343138,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Walls.jpg",
+   "bytes": 1255255,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_Dinner_objects.jpg",
+   "bytes": 1250232,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_CBCE_Atlas.jpg",
+   "bytes": 1194374,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/city_low.glb",
+   "bytes": 1172664,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Items.jpg",
+   "bytes": 1157101,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v2_Island_2.jpg",
+   "bytes": 1153942,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_details_01.jpg",
+   "bytes": 1124859,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_A0.jpg",
+   "bytes": 1114011,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_A0.jpg",
+   "bytes": 1102176,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_B0.jpg",
+   "bytes": 1097796,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_footprint_AB_atlas.jpg",
+   "bytes": 1075212,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/patch.json",
+   "bytes": 1057419,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP1.jpg",
+   "bytes": 1057356,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Park_atlas_props.jpg",
+   "bytes": 1049234,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v1_Island_1.jpg",
+   "bytes": 1046286,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Crossings_Island_2.jpg",
+   "bytes": 1044827,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Crossings_Island_1.jpg",
+   "bytes": 1044727,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v2_Island_1.jpg",
+   "bytes": 1041461,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Rooftop.jpg",
+   "bytes": 995575,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/district_00.glb",
+   "bytes": 985064,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_03.glb",
+   "bytes": 981972,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_01.jpg",
+   "bytes": 973603,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_GA_TH.jpg",
+   "bytes": 943514,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_Landmarks0.jpg",
+   "bytes": 935132,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_11.glb",
+   "bytes": 924228,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP2.jpg",
+   "bytes": 905597,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_02.jpg",
+   "bytes": 900240,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_Roads0.jpg",
+   "bytes": 894504,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/HC_Prop_BillboardRoof_Industrial_01.jpg",
+   "bytes": 856492,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Island2_LongDist_low.jpg",
+   "bytes": 844468,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/HC_Prop_BillboardRoof_01.jpg",
+   "bytes": 833889,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_Landmarks0.jpg",
+   "bytes": 833197,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_AWT.jpg",
+   "bytes": 833036,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Island1_LongDist_Low.jpg",
+   "bytes": 816840,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_B0.jpg",
+   "bytes": 816267,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP3.jpg",
+   "bytes": 815787,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP3.jpg",
+   "bytes": 805639,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP1.jpg",
+   "bytes": 805446,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_Roads.jpg",
+   "bytes": 780804,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_STD_stuff_TH.jpg",
+   "bytes": 777449,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_Roads0.jpg",
+   "bytes": 735143,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_09.glb",
+   "bytes": 725716,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP2.jpg",
+   "bytes": 704091,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_Roads.jpg",
+   "bytes": 665364,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_LongDist_Island1_Roads.glb",
+   "bytes": 654040,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Street.jpg",
+   "bytes": 646230,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP1.glb",
+   "bytes": 580592,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP3.glb",
+   "bytes": 573696,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_03.glb",
+   "bytes": 495700,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_06.glb",
+   "bytes": 470700,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings_2.jpg",
+   "bytes": 443043,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings.jpg",
+   "bytes": 427260,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP2.glb",
+   "bytes": 411112,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Park_atlas_tiles.jpg",
+   "bytes": 409442,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings_3.jpg",
+   "bytes": 382901,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_footprint_Vpow_furnal.jpg",
+   "bytes": 311218,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_SXC_Atlas.jpg",
+   "bytes": 309530,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/batman.glb",
+   "bytes": 299388,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_IC.jpg",
+   "bytes": 295944,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_02.glb",
+   "bytes": 289748,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/bridge_1.jpg",
+   "bytes": 282568,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_GC_stuff_T.jpg",
+   "bytes": 242555,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_VerticalFOG.png",
+   "bytes": 232230,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_LB_Cinema.jpg",
+   "bytes": 230833,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_GB_Tex01_TH.jpg",
+   "bytes": 227726,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/bridge_tile.jpg",
+   "bytes": 221431,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Monorail_Island2_LongDist.glb",
+   "bytes": 218672,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_LPOL_PropsAtlas.jpg",
+   "bytes": 218562,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/trunk.jpg",
+   "bytes": 217568,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_SXC_Atlas2.jpg",
+   "bytes": 213021,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Bigbridge_LongDist.glb",
+   "bytes": 202772,
+   "class": "converted game asset"
+  }
+ ],
+ "inventory": [
+  {
+   "path": "models/street_island1_04.glb",
+   "bytes": 5863260,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_05.glb",
+   "bytes": 5812476,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_10.glb",
+   "bytes": 5553496,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_02.glb",
+   "bytes": 4945364,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_07.glb",
+   "bytes": 4396948,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_07.glb",
+   "bytes": 4392572,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/fp_island2.glb",
+   "bytes": 3761992,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_01.glb",
+   "bytes": 3616032,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_08.glb",
+   "bytes": 3025280,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_04.glb",
+   "bytes": 2657048,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_08.glb",
+   "bytes": 2628948,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_05.glb",
+   "bytes": 2253476,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Rooftop_Alpha.jpg",
+   "bytes": 2175214,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Street_Alpha.jpg",
+   "bytes": 2124787,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_01.glb",
+   "bytes": 1866692,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_island1_LongDist.glb",
+   "bytes": 1744440,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_06.glb",
+   "bytes": 1475224,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_VRS_Reservoir.jpg",
+   "bytes": 1376437,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Island_2.jpg",
+   "bytes": 1343138,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Walls.jpg",
+   "bytes": 1255255,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_Dinner_objects.jpg",
+   "bytes": 1250232,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_CBCE_Atlas.jpg",
+   "bytes": 1194374,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/city_low.glb",
+   "bytes": 1172664,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Items.jpg",
+   "bytes": 1157101,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v2_Island_2.jpg",
+   "bytes": 1153942,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_details_01.jpg",
+   "bytes": 1124859,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_A0.jpg",
+   "bytes": 1114011,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_A0.jpg",
+   "bytes": 1102176,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_B0.jpg",
+   "bytes": 1097796,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_footprint_AB_atlas.jpg",
+   "bytes": 1075212,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/patch.json",
+   "bytes": 1057419,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP1.jpg",
+   "bytes": 1057356,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Park_atlas_props.jpg",
+   "bytes": 1049234,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v1_Island_1.jpg",
+   "bytes": 1046286,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Crossings_Island_2.jpg",
+   "bytes": 1044827,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_Crossings_Island_1.jpg",
+   "bytes": 1044727,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_Road_v2_Island_1.jpg",
+   "bytes": 1041461,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Rooftop.jpg",
+   "bytes": 995575,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/district_00.glb",
+   "bytes": 985064,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_03.glb",
+   "bytes": 981972,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_01.jpg",
+   "bytes": 973603,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_GA_TH.jpg",
+   "bytes": 943514,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_Landmarks0.jpg",
+   "bytes": 935132,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_11.glb",
+   "bytes": 924228,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP2.jpg",
+   "bytes": 905597,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_02.jpg",
+   "bytes": 900240,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island1_Roads0.jpg",
+   "bytes": 894504,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/HC_Prop_BillboardRoof_Industrial_01.jpg",
+   "bytes": 856492,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Island2_LongDist_low.jpg",
+   "bytes": 844468,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/HC_Prop_BillboardRoof_01.jpg",
+   "bytes": 833889,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_Landmarks0.jpg",
+   "bytes": 833197,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_AWT.jpg",
+   "bytes": 833036,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Island1_LongDist_Low.jpg",
+   "bytes": 816840,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_B0.jpg",
+   "bytes": 816267,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP3.jpg",
+   "bytes": 815787,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_FP3.jpg",
+   "bytes": 805639,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP1.jpg",
+   "bytes": 805446,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island1_Roads.jpg",
+   "bytes": 780804,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_STD_stuff_TH.jpg",
+   "bytes": 777449,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/BakeGroup_Island2_Roads0.jpg",
+   "bytes": 735143,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_09.glb",
+   "bytes": 725716,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_FP2.jpg",
+   "bytes": 704091,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_LongDist_Island2_Roads.jpg",
+   "bytes": 665364,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_LongDist_Island1_Roads.glb",
+   "bytes": 654040,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Props_Street.jpg",
+   "bytes": 646230,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP1.glb",
+   "bytes": 580592,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP3.glb",
+   "bytes": 573696,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_03.glb",
+   "bytes": 495700,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_06.glb",
+   "bytes": 470700,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings_2.jpg",
+   "bytes": 443043,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings.jpg",
+   "bytes": 427260,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_LongDist_Island1_FP2.glb",
+   "bytes": 411112,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Park_atlas_tiles.jpg",
+   "bytes": 409442,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Buildings_3.jpg",
+   "bytes": 382901,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_footprint_Vpow_furnal.jpg",
+   "bytes": 311218,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_SXC_Atlas.jpg",
+   "bytes": 309530,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/batman.glb",
+   "bytes": 299388,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_IC.jpg",
+   "bytes": 295944,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_02.glb",
+   "bytes": 289748,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/bridge_1.jpg",
+   "bytes": 282568,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_GC_stuff_T.jpg",
+   "bytes": 242555,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_VerticalFOG.png",
+   "bytes": 232230,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_LB_Cinema.jpg",
+   "bytes": 230833,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_GB_Tex01_TH.jpg",
+   "bytes": 227726,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/bridge_tile.jpg",
+   "bytes": 221431,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/fengari-web.js",
+   "bytes": 219632,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/GC_Monorail_Island2_LongDist.glb",
+   "bytes": 218672,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_LPOL_PropsAtlas.jpg",
+   "bytes": 218562,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/trunk.jpg",
+   "bytes": 217568,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_SXC_Atlas2.jpg",
+   "bytes": 213021,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Bigbridge_LongDist.glb",
+   "bytes": 202772,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Statues_Atlas.jpg",
+   "bytes": 193649,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Broken_BigBridge_LongDist.glb",
+   "bytes": 192112,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_Props_Monorail.jpg",
+   "bytes": 183196,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_Props_Railroad.jpg",
+   "bytes": 171394,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_STD_alpha_T.jpg",
+   "bytes": 161982,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island1_00.glb",
+   "bytes": 153284,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/City_BKG.jpg",
+   "bytes": 148273,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Floor.jpg",
+   "bytes": 128843,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Monorail_Island1_LongDist.glb",
+   "bytes": 127340,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Park_grass.jpg",
+   "bytes": 126158,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_01_Roof_01.jpg",
+   "bytes": 120561,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_T_Concrete_02.jpg",
+   "bytes": 118507,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/FX_Coronas.jpg",
+   "bytes": 113769,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_footprint_awt_marble.jpg",
+   "bytes": 108025,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Park_dirt.jpg",
+   "bytes": 107747,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_footprint_AA_ground.jpg",
+   "bytes": 107072,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/street_island2_00.glb",
+   "bytes": 106032,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_T_Concrete_01.jpg",
+   "bytes": 105439,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Truck_01.jpg",
+   "bytes": 104528,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_IndustrialProps.jpg",
+   "bytes": 104200,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_SXC_ground_tile.jpg",
+   "bytes": 101465,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Bigbridge_1_islands_LongDist.glb",
+   "bytes": 99896,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_SXC_Rooftop_ground.jpg",
+   "bytes": 99855,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_wall_06.jpg",
+   "bytes": 99590,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_bridge2.jpg",
+   "bytes": 97813,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Bigbridge_3_LongDist.glb",
+   "bytes": 97780,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Floor_2.jpg",
+   "bytes": 97287,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_LPOL_ConcreteTile.jpg",
+   "bytes": 95947,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_SXC_hedge.jpg",
+   "bytes": 94934,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_roof_01.jpg",
+   "bytes": 94069,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_04_Windows_05_v.jpg",
+   "bytes": 91357,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/integration_lazy.html",
+   "bytes": 90706,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Rooftop_ground.jpg",
+   "bytes": 90464,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_GC_floor_T.jpg",
+   "bytes": 88189,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/gothamcity_roads_details.jpg",
+   "bytes": 86962,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/lvc_gol_templates.json",
+   "bytes": 85029,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Bigbridge_2_islands_LongDist.glb",
+   "bytes": 83068,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_GA_T_02.jpg",
+   "bytes": 81728,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Glass_Building.jpg",
+   "bytes": 75828,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_DMUS_wall.jpg",
+   "bytes": 75158,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/water.jpg",
+   "bytes": 74298,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_footprint_aa_concrete.jpg",
+   "bytes": 73983,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_02_Shop.jpg",
+   "bytes": 73519,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Windows2_v.jpg",
+   "bytes": 72722,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_01_Door_01.jpg",
+   "bytes": 72358,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Windows_v.jpg",
+   "bytes": 71864,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_CC_windows02.jpg",
+   "bytes": 71513,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_SXC_Brick_02.jpg",
+   "bytes": 68229,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_wall_04.jpg",
+   "bytes": 65940,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Brick.jpg",
+   "bytes": 65048,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Cath_of_learning_Wall.jpg",
+   "bytes": 63078,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/integration.html",
+   "bytes": 62891,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/manifest.json",
+   "bytes": 62718,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_04_Wall_02.jpg",
+   "bytes": 62178,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_T_Windows_03.jpg",
+   "bytes": 59038,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Park_statue.jpg",
+   "bytes": 57778,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/batarang.glb",
+   "bytes": 56744,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_Props_Excavator.jpg",
+   "bytes": 47728,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_03_roof_02.jpg",
+   "bytes": 44114,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_STD_Net_T.jpg",
+   "bytes": 43150,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Railway_Island2_LongDist.glb",
+   "bytes": 42800,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Bigbridge.glb",
+   "bytes": 41728,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_refl_exterior.jpg",
+   "bytes": 38454,
+   "class": "converted game asset"
+  },
+  {
+   "path": "app.js",
+   "bytes": 36642,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/tex/GC_Shop_Reflections.jpg",
+   "bytes": 35284,
+   "class": "converted game asset"
+  },
+  {
+   "path": "skybox.jpg",
+   "bytes": 34039,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_DMUS_table.jpg",
+   "bytes": 32188,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_Props_Locomotive.jpg",
+   "bytes": 30348,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Diner_Floor.jpg",
+   "bytes": 28796,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GothamCity_asphalt_tile.jpg",
+   "bytes": 26888,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_VD_Fence.jpg",
+   "bytes": 25340,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/pipeline.html",
+   "bytes": 23809,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_02_Refl.jpg",
+   "bytes": 23463,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Broken_BigBridge.glb",
+   "bytes": 23428,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/walktest.js",
+   "bytes": 21175,
+   "class": "shipped code"
+  },
+  {
+   "path": "playable/tdkr_pipeline.js",
+   "bytes": 19420,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_01_Windows_04.jpg",
+   "bytes": 19418,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Residential_BD_04_Roof_02.jpg",
+   "bytes": 18855,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/GC_Small_Bridge_Island2_LongDist.glb",
+   "bytes": 18540,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Z1_Shops_01_Refl.jpg",
+   "bytes": 17570,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_Footprint_AWT_rfl.jpg",
+   "bytes": 16606,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/index.html",
+   "bytes": 16372,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/tex/GC_T_Windows_03_Refl.jpg",
+   "bytes": 16265,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/lvc_readseq_s30.json",
+   "bytes": 15475,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/walktest_run.js",
+   "bytes": 14134,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/tex/GothamCity_sand_tile.jpg",
+   "bytes": 11771,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/GC_footprint_GC_ceiling_T.jpg",
+   "bytes": 9586,
+   "class": "converted game asset"
+  },
+  {
+   "path": "playable/lvc.js",
+   "bytes": 7908,
+   "class": "shipped code"
+  },
+  {
+   "path": "style.css",
+   "bytes": 5865,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/tex/GC_Truck_wheels_01.jpg",
+   "bytes": 5605,
+   "class": "converted game asset"
+  },
+  {
+   "path": "index.html",
+   "bytes": 4491,
+   "class": "shipped code"
+  },
+  {
+   "path": "playable/etc1_tdkr.js",
+   "bytes": 4021,
+   "class": "shipped code"
+  },
+  {
+   "path": "worklog_session8.md",
+   "bytes": 3875,
+   "class": "worklog (site copy)"
+  },
+  {
+   "path": "worklog_session6.md",
+   "bytes": 3540,
+   "class": "worklog (site copy)"
+  },
+  {
+   "path": "worklog_session9.md",
+   "bytes": 2785,
+   "class": "worklog (site copy)"
+  },
+  {
+   "path": "worklog_session7.md",
+   "bytes": 2405,
+   "class": "worklog (site copy)"
+  },
+  {
+   "path": "worklog_session10.md",
+   "bytes": 2351,
+   "class": "worklog (site copy)"
+  },
+  {
+   "path": "playable/walktest_routes.js",
+   "bytes": 2006,
+   "class": "shipped code"
+  },
+  {
+   "path": "playable/walktest.html",
+   "bytes": 1293,
+   "class": "shipped code"
+  },
+  {
+   "path": "models/tex/LightMapSampler.jpg",
+   "bytes": 289,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/LUT_000_default.png",
+   "bytes": 227,
+   "class": "converted game asset"
+  },
+  {
+   "path": "models/tex/LUT_023_lighting.png",
+   "bytes": 209,
+   "class": "converted game asset"
+  },
+  {
+   "path": ".nojekyll",
+   "bytes": 0,
+   "class": "shipped code"
+  }
+ ]
+}

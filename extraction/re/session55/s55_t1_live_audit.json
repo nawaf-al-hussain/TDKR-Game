@@ -1,0 +1,1851 @@
+{
+ "root_viewer": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/",
+  "elapsed_s": 16.5,
+  "console_errors": [],
+  "page_errors": [],
+  "n_requests": 96,
+  "non2xx": [],
+  "state": {
+   "title": "Gotham City \u2014 TDKR (2012) viewer",
+   "filePrompt": false,
+   "gateSoup": null,
+   "routes": null,
+   "s5": null,
+   "children": null
+  },
+  "reqs": [
+   {
+    "url": "",
+    "status": 200,
+    "b": 4491
+   },
+   {
+    "url": "app.js",
+    "status": 200,
+    "b": 36642
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js",
+    "status": 200,
+    "b": 4651
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/RenderPass.js",
+    "status": 200,
+    "b": 1915
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js",
+    "status": 200,
+    "b": 29868
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/ShaderPass.js",
+    "status": 200,
+    "b": 1576
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+    "status": 200,
+    "b": 108522
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/shaders/CopyShader.js",
+    "status": 200,
+    "b": 571
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/MaskPass.js",
+    "status": 200,
+    "b": 2231
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/Pass.js",
+    "status": 200,
+    "b": 1706
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "status": 200,
+    "b": 31906
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "status": 200,
+    "b": 1272972
+   },
+   {
+    "url": "models/tex/LUT_000_default.png",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "skybox.jpg",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/LUT_023_lighting.png",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_VerticalFOG.png",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/manifest.json?v=v21",
+    "status": 200,
+    "b": 62718
+   },
+   {
+    "url": "models/tex/GC_Footprint_STD_alpha_T.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/bridge_tile.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/bridge_1.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/BakeGroup_Island1_A0.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/FX_Coronas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_T_Concrete_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/BakeGroup_Island1_Roads0.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Props_Rooftop.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_CBCE_Atlas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Walls.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_Rooftop_ground.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_02_Shop.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_Dinner_objects.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_Props_Railroad.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_IC.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/LightMapSampler.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Props_Street.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Props_Rooftop_Alpha.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_01_Windows_04.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Shops_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_Props_Monorail.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/HC_Prop_BillboardRoof_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_01_Door_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_03_roof_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/gothamcity_roads_details.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/trunk.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GothamCity_Road_Crossings_Island_1.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_01_Roof_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Props_Street_Alpha.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Shops_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_VD_Items.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_03_details_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Wall.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Park_atlas_tiles.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Brick.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_DMUS_wall.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_T_Concrete_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_GA_T_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_footprint_aa_concrete.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_footprint_AA_ground.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_GA_TH.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Truck_wheels_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Truck_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_03_roof_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Park_statue.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Glass_Building.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Park_atlas_props.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_04_Windows_05_v.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Windows_v.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_03_wall_04.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/BakeGroup_Island1_Landmarks0.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Statues_Atlas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/BakeGroup_Island1_B0.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Rooftop_ground.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_04_Roof_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_04_Wall_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_hedge.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_LB_Cinema.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_VD_Floor.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_Atlas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Windows2_v.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_Atlas2.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GothamCity_bridge2.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_Brick_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_CC_windows02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_AWT.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_footprint_awt_marble.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_Props_Excavator.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_footprint_AB_atlas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/street_island1_00.glb?v=v21",
+    "status": 200,
+    "b": 153284
+   },
+   {
+    "url": "models/street_island1_01.glb?v=v21",
+    "status": 200,
+    "b": 3616032
+   },
+   {
+    "url": "models/street_island1_02.glb?v=v21",
+    "status": 200,
+    "b": 4945364
+   },
+   {
+    "url": "models/street_island1_03.glb?v=v21",
+    "status": 200,
+    "b": 981972
+   },
+   {
+    "url": "models/street_island1_04.glb?v=v21",
+    "status": 200,
+    "b": 5863260
+   },
+   {
+    "url": "models/street_island1_05.glb?v=v21",
+    "status": 200,
+    "b": 5812476
+   },
+   {
+    "url": "models/street_island1_06.glb?v=v21",
+    "status": 200,
+    "b": 470700
+   },
+   {
+    "url": "models/street_island1_07.glb?v=v21",
+    "status": 200,
+    "b": 4392572
+   },
+   {
+    "url": "models/tex/GC_Footprint_VD_Floor_2.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_VD_Buildings_2.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   }
+  ]
+ },
+ "root_viewer_userfiles": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/?userfiles=1",
+  "elapsed_s": 11.6,
+  "console_errors": [],
+  "page_errors": [],
+  "n_requests": 92,
+  "non2xx": [],
+  "state": {
+   "title": "Gotham City \u2014 TDKR (2012) viewer",
+   "filePrompt": false,
+   "gateSoup": null,
+   "routes": null,
+   "s5": null,
+   "children": null
+  },
+  "reqs": [
+   {
+    "url": "?userfiles=1",
+    "status": 200,
+    "b": 4491
+   },
+   {
+    "url": "app.js",
+    "status": 200,
+    "b": 36642
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/ShaderPass.js",
+    "status": 200,
+    "b": 1576
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js",
+    "status": 200,
+    "b": 4651
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/RenderPass.js",
+    "status": 200,
+    "b": 1915
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+    "status": 200,
+    "b": 108522
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js",
+    "status": 200,
+    "b": 29868
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/shaders/CopyShader.js",
+    "status": 200,
+    "b": 571
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/Pass.js",
+    "status": 200,
+    "b": 1706
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "status": 200,
+    "b": 31906
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/MaskPass.js",
+    "status": 200,
+    "b": 2231
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "status": 200,
+    "b": 1272972
+   },
+   {
+    "url": "models/tex/LUT_023_lighting.png",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/LUT_000_default.png",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "skybox.jpg",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_VerticalFOG.png",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/manifest.json?v=v21",
+    "status": 200,
+    "b": 62718
+   },
+   {
+    "url": "models/street_island1_00.glb?v=v21",
+    "status": 200,
+    "b": 153284
+   },
+   {
+    "url": "models/tex/bridge_1.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/BakeGroup_Island1_A0.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_STD_alpha_T.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/bridge_tile.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/FX_Coronas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_Rooftop_ground.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_01_Door_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_Dinner_objects.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Props_Rooftop.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Walls.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/HC_Prop_BillboardRoof_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Props_Street.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_T_Concrete_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_01_Roof_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_VD_Items.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/BakeGroup_Island1_Roads0.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/gothamcity_roads_details.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_CBCE_Atlas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_02_Shop.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/trunk.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_03_details_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/LightMapSampler.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_Props_Railroad.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_03_roof_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Shops_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Props_Rooftop_Alpha.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_Props_Monorail.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_01_Windows_04.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_IC.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GothamCity_Road_Crossings_Island_1.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Props_Street_Alpha.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Z1_Shops_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Park_atlas_tiles.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_DMUS_wall.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Wall.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_GA_T_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_footprint_AA_ground.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_T_Concrete_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Brick.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_GA_TH.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_footprint_aa_concrete.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/BakeGroup_Island1_Landmarks0.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Truck_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Truck_wheels_01.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Park_statue.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Park_atlas_props.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_03_roof_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Glass_Building.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_04_Windows_05_v.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Windows_v.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_03_wall_04.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Rooftop_ground.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_hedge.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Statues_Atlas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/BakeGroup_Island1_B0.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_04_Wall_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_BD_04_Roof_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_VD_Floor.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_LB_Cinema.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Cath_of_learning_Windows2_v.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_Atlas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/street_island1_01.glb?v=v21",
+    "status": 200,
+    "b": 3616032
+   },
+   {
+    "url": "models/street_island1_02.glb?v=v21",
+    "status": 200,
+    "b": 4945364
+   },
+   {
+    "url": "models/tex/GothamCity_bridge2.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_footprint_awt_marble.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_AWT.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Residential_Props_Excavator.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_Footprint_CC_windows02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_footprint_AB_atlas.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_Brick_02.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/tex/GC_SXC_Atlas2.jpg?v=v21",
+    "status": 200,
+    "b": -1
+   },
+   {
+    "url": "models/street_island1_03.glb?v=v21",
+    "status": 200,
+    "b": 981972
+   },
+   {
+    "url": "models/street_island1_04.glb?v=v21",
+    "status": 200,
+    "b": 5863260
+   },
+   {
+    "url": "models/street_island1_05.glb?v=v21",
+    "status": 200,
+    "b": 5812476
+   }
+  ]
+ },
+ "walktest": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/walktest.html",
+  "elapsed_s": 6.7,
+  "console_errors": [],
+  "page_errors": [],
+  "n_requests": 6,
+  "non2xx": [],
+  "state": {
+   "title": "TDKR walktest \u2014 navmesh walker (s45 T2: soup from user files)",
+   "filePrompt": true,
+   "gateSoup": null,
+   "routes": null,
+   "s5": null,
+   "children": null
+  },
+  "reqs": [
+   {
+    "url": "playable/walktest.html",
+    "status": 200,
+    "b": 1293
+   },
+   {
+    "url": "playable/tdkr_pipeline.js",
+    "status": 200,
+    "b": 19420
+   },
+   {
+    "url": "playable/lvc.js",
+    "status": 200,
+    "b": 7908
+   },
+   {
+    "url": "playable/walktest.js",
+    "status": 200,
+    "b": 21175
+   },
+   {
+    "url": "playable/walktest_run.js",
+    "status": 200,
+    "b": 14134
+   },
+   {
+    "url": "playable/walktest_routes.js",
+    "status": 200,
+    "b": 2006
+   }
+  ]
+ },
+ "playable_index": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/index.html",
+  "elapsed_s": 9.1,
+  "console_errors": [],
+  "page_errors": [],
+  "n_requests": 10,
+  "non2xx": [],
+  "state": {
+   "title": "TDKR first playable \u2014 walk as Batman (r25 T6)",
+   "filePrompt": false,
+   "gateSoup": null,
+   "routes": null,
+   "s5": null,
+   "children": null
+  },
+  "reqs": [
+   {
+    "url": "playable/index.html",
+    "status": 200,
+    "b": 16372
+   },
+   {
+    "url": "playable/walktest.js",
+    "status": 200,
+    "b": 21175
+   },
+   {
+    "url": "playable/tdkr_pipeline.js",
+    "status": 200,
+    "b": 19420
+   },
+   {
+    "url": "playable/lvc.js",
+    "status": 200,
+    "b": 7908
+   },
+   {
+    "url": "playable/fengari-web.js",
+    "status": 200,
+    "b": 219632
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+    "status": 200,
+    "b": 108522
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "status": 200,
+    "b": 1272972
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "status": 200,
+    "b": 31906
+   },
+   {
+    "url": "playable/patch.json",
+    "status": 200,
+    "b": 1057419
+   },
+   {
+    "url": "playable/batman.glb",
+    "status": 200,
+    "b": 299388
+   }
+  ]
+ },
+ "integration": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/integration.html",
+  "elapsed_s": 9.0,
+  "console_errors": [],
+  "page_errors": [],
+  "n_requests": 9,
+  "non2xx": [],
+  "state": {
+   "title": "TDKR integration (s49 T5 \u2014 staged, NOT deployed)",
+   "filePrompt": true,
+   "gateSoup": null,
+   "routes": null,
+   "s5": null,
+   "children": null
+  },
+  "reqs": [
+   {
+    "url": "playable/integration.html",
+    "status": 200,
+    "b": 62891
+   },
+   {
+    "url": "playable/lvc.js",
+    "status": 200,
+    "b": 7908
+   },
+   {
+    "url": "playable/tdkr_pipeline.js",
+    "status": 200,
+    "b": 19420
+   },
+   {
+    "url": "playable/walktest.js",
+    "status": 200,
+    "b": 21175
+   },
+   {
+    "url": "playable/walktest_routes.js",
+    "status": 200,
+    "b": 2006
+   },
+   {
+    "url": "playable/etc1_tdkr.js",
+    "status": 200,
+    "b": 4021
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+    "status": 200,
+    "b": 108522
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "status": 200,
+    "b": 1272972
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "status": 200,
+    "b": 31906
+   }
+  ]
+ },
+ "integration_s5": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/integration.html?s5=1",
+  "elapsed_s": 7.3,
+  "console_errors": [],
+  "page_errors": [],
+  "n_requests": 9,
+  "non2xx": [],
+  "state": {
+   "title": "TDKR integration (s49 T5 \u2014 staged, NOT deployed)",
+   "filePrompt": true,
+   "gateSoup": null,
+   "routes": null,
+   "s5": null,
+   "children": null
+  },
+  "reqs": [
+   {
+    "url": "playable/integration.html?s5=1",
+    "status": 200,
+    "b": 62891
+   },
+   {
+    "url": "playable/tdkr_pipeline.js",
+    "status": 200,
+    "b": 19420
+   },
+   {
+    "url": "playable/walktest_routes.js",
+    "status": 200,
+    "b": 2006
+   },
+   {
+    "url": "playable/lvc.js",
+    "status": 200,
+    "b": 7908
+   },
+   {
+    "url": "playable/walktest.js",
+    "status": 200,
+    "b": 21175
+   },
+   {
+    "url": "playable/etc1_tdkr.js",
+    "status": 200,
+    "b": 4021
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+    "status": 200,
+    "b": 108522
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "status": 200,
+    "b": 1272972
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "status": 200,
+    "b": 31906
+   }
+  ]
+ },
+ "integration_lazy": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/integration_lazy.html",
+  "elapsed_s": 9.1,
+  "console_errors": [],
+  "page_errors": [],
+  "n_requests": 9,
+  "non2xx": [],
+  "state": {
+   "title": "TDKR integration (s49 T5 \u2014 staged, NOT deployed)",
+   "filePrompt": true,
+   "gateSoup": null,
+   "routes": null,
+   "s5": null,
+   "children": null
+  },
+  "reqs": [
+   {
+    "url": "playable/integration_lazy.html",
+    "status": 200,
+    "b": 90706
+   },
+   {
+    "url": "playable/etc1_tdkr.js",
+    "status": 200,
+    "b": 4021
+   },
+   {
+    "url": "playable/walktest_routes.js",
+    "status": 200,
+    "b": 2006
+   },
+   {
+    "url": "playable/walktest.js",
+    "status": 200,
+    "b": 21175
+   },
+   {
+    "url": "playable/lvc.js",
+    "status": 200,
+    "b": 7908
+   },
+   {
+    "url": "playable/tdkr_pipeline.js",
+    "status": 200,
+    "b": 19420
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+    "status": 200,
+    "b": 108522
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "status": 200,
+    "b": 1272972
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "status": 200,
+    "b": 31906
+   }
+  ]
+ },
+ "integration_lazy_s5_zip": {
+  "url": "https://nawaf-al-hussain.github.io/TDKR-Game/playable/integration_lazy.html?s5=1",
+  "elapsed_s": 27.0,
+  "console_errors": [],
+  "page_errors": [],
+  "n_requests": 11,
+  "non2xx": [],
+  "state": {
+   "title": "TDKR integration (s49 T5 \u2014 staged, NOT deployed)",
+   "filePrompt": true,
+   "gateSoup": {
+    "nTri": 137893,
+    "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+   },
+   "routes": {
+    "run": 10,
+    "agree": 10
+   },
+   "s5": {
+    "enabled": true,
+    "targetReached": true,
+    "reachDist": 0,
+    "glideClipActive": true,
+    "landed": true,
+    "landMs": 1000,
+    "traj": [
+     {
+      "t": 17,
+      "x": -439.73,
+      "y": -705.27,
+      "z": 9.05,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 33,
+      "x": -439.64,
+      "y": -705.02,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": 0.09
+     },
+     {
+      "t": 50,
+      "x": -439.55,
+      "y": -704.76,
+      "z": 8.76,
+      "vz": -13.42,
+      "gz": 0.08
+     },
+     {
+      "t": 67,
+      "x": -439.46,
+      "y": -704.51,
+      "z": 8.54,
+      "vz": -13.42,
+      "gz": 0.08
+     },
+     {
+      "t": 83,
+      "x": -439.37,
+      "y": -704.26,
+      "z": 8.31,
+      "vz": -13.42,
+      "gz": 0.07
+     },
+     {
+      "t": 100,
+      "x": -439.28,
+      "y": -704.01,
+      "z": 8.09,
+      "vz": -13.42,
+      "gz": 0.07
+     },
+     {
+      "t": 117,
+      "x": -439.19,
+      "y": -703.76,
+      "z": 7.87,
+      "vz": -13.42,
+      "gz": 8.91
+     },
+     {
+      "t": 133,
+      "x": -439.1,
+      "y": -703.51,
+      "z": 9.58,
+      "vz": -13.42,
+      "gz": 8.91
+     },
+     {
+      "t": 150,
+      "x": -439.01,
+      "y": -703.26,
+      "z": 9.58,
+      "vz": -13.42,
+      "gz": 8.91
+     },
+     {
+      "t": 167,
+      "x": -438.92,
+      "y": -703.01,
+      "z": 9.58,
+      "vz": -13.42,
+      "gz": 0.05
+     },
+     {
+      "t": 183,
+      "x": -438.83,
+      "y": -702.76,
+      "z": 9.36,
+      "vz": -13.42,
+      "gz": 0.04
+     },
+     {
+      "t": 200,
+      "x": -438.74,
+      "y": -702.51,
+      "z": 9.13,
+      "vz": -13.42,
+      "gz": 0.04
+     },
+     {
+      "t": 217,
+      "x": -438.65,
+      "y": -702.26,
+      "z": 8.91,
+      "vz": -13.42,
+      "gz": 0.03
+     },
+     {
+      "t": 233,
+      "x": -438.56,
+      "y": -702.01,
+      "z": 8.69,
+      "vz": -13.42,
+      "gz": 0.03
+     },
+     {
+      "t": 250,
+      "x": -438.47,
+      "y": -701.75,
+      "z": 8.46,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 267,
+      "x": -438.38,
+      "y": -701.5,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 283,
+      "x": -438.29,
+      "y": -701.25,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 300,
+      "x": -438.2,
+      "y": -701,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 317,
+      "x": -438.11,
+      "y": -700.75,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 333,
+      "x": -438.02,
+      "y": -700.5,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 350,
+      "x": -437.93,
+      "y": -700.25,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 367,
+      "x": -437.84,
+      "y": -700,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": 8.31
+     },
+     {
+      "t": 383,
+      "x": -437.75,
+      "y": -699.75,
+      "z": 8.98,
+      "vz": -13.42,
+      "gz": -0.02
+     },
+     {
+      "t": 400,
+      "x": -437.66,
+      "y": -699.5,
+      "z": 8.76,
+      "vz": -13.42,
+      "gz": -0.03
+     },
+     {
+      "t": 417,
+      "x": -437.56,
+      "y": -699.25,
+      "z": 8.53,
+      "vz": -13.42,
+      "gz": -0.03
+     },
+     {
+      "t": 433,
+      "x": -437.47,
+      "y": -699,
+      "z": 8.31,
+      "vz": -13.42,
+      "gz": -0.04
+     },
+     {
+      "t": 450,
+      "x": -437.38,
+      "y": -698.74,
+      "z": 8.09,
+      "vz": -13.42,
+      "gz": -0.04
+     },
+     {
+      "t": 467,
+      "x": -437.29,
+      "y": -698.49,
+      "z": 7.86,
+      "vz": -13.42,
+      "gz": -0.05
+     },
+     {
+      "t": 483,
+      "x": -437.2,
+      "y": -698.24,
+      "z": 7.64,
+      "vz": -13.42,
+      "gz": -0.05
+     },
+     {
+      "t": 500,
+      "x": -437.11,
+      "y": -697.99,
+      "z": 7.42,
+      "vz": -13.42,
+      "gz": -0.06
+     },
+     {
+      "t": 517,
+      "x": -437.02,
+      "y": -697.74,
+      "z": 7.19,
+      "vz": -13.42,
+      "gz": -0.06
+     },
+     {
+      "t": 533,
+      "x": -436.93,
+      "y": -697.49,
+      "z": 6.97,
+      "vz": -13.42,
+      "gz": -0.07
+     },
+     {
+      "t": 550,
+      "x": -436.84,
+      "y": -697.24,
+      "z": 6.74,
+      "vz": -13.42,
+      "gz": -0.07
+     },
+     {
+      "t": 567,
+      "x": -436.75,
+      "y": -696.99,
+      "z": 6.52,
+      "vz": -13.42,
+      "gz": -0.08
+     },
+     {
+      "t": 583,
+      "x": -436.66,
+      "y": -696.74,
+      "z": 6.3,
+      "vz": -13.42,
+      "gz": -0.08
+     },
+     {
+      "t": 600,
+      "x": -436.57,
+      "y": -696.49,
+      "z": 6.07,
+      "vz": -13.42,
+      "gz": -0.09
+     },
+     {
+      "t": 617,
+      "x": -436.48,
+      "y": -696.24,
+      "z": 5.85,
+      "vz": -13.42,
+      "gz": -0.08
+     },
+     {
+      "t": 633,
+      "x": -436.39,
+      "y": -695.98,
+      "z": 5.63,
+      "vz": -13.42,
+      "gz": -0.08
+     },
+     {
+      "t": 650,
+      "x": -436.3,
+      "y": -695.73,
+      "z": 5.4,
+      "vz": -13.42,
+      "gz": -0.09
+     },
+     {
+      "t": 667,
+      "x": -436.21,
+      "y": -695.48,
+      "z": 5.18,
+      "vz": -13.42,
+      "gz": -0.09
+     },
+     {
+      "t": 683,
+      "x": -436.12,
+      "y": -695.23,
+      "z": 4.96,
+      "vz": -13.42,
+      "gz": -0.09
+     },
+     {
+      "t": 700,
+      "x": -436.03,
+      "y": -694.98,
+      "z": 4.73,
+      "vz": -13.42,
+      "gz": -0.09
+     },
+     {
+      "t": 717,
+      "x": -435.94,
+      "y": -694.73,
+      "z": 4.51,
+      "vz": -13.42,
+      "gz": -0.09
+     },
+     {
+      "t": 733,
+      "x": -435.85,
+      "y": -694.48,
+      "z": 4.28,
+      "vz": -13.42,
+      "gz": -0.09
+     },
+     {
+      "t": 750,
+      "x": -435.76,
+      "y": -694.23,
+      "z": 4.06,
+      "vz": -13.42,
+      "gz": -0.09
+     },
+     {
+      "t": 767,
+      "x": -435.67,
+      "y": -693.98,
+      "z": 3.84,
+      "vz": -13.42,
+      "gz": -0.08
+     },
+     {
+      "t": 783,
+      "x": -435.58,
+      "y": -693.73,
+      "z": 3.61,
+      "vz": -13.42,
+      "gz": -0.08
+     },
+     {
+      "t": 800,
+      "x": -435.49,
+      "y": -693.48,
+      "z": 3.39,
+      "vz": -13.42,
+      "gz": -0.08
+     },
+     {
+      "t": 817,
+      "x": -435.4,
+      "y": -693.22,
+      "z": 3.16,
+      "vz": -13.42,
+      "gz": -0.08
+     },
+     {
+      "t": 833,
+      "x": -435.31,
+      "y": -692.97,
+      "z": 2.94,
+      "vz": -13.42,
+      "gz": -0.07
+     },
+     {
+      "t": 850,
+      "x": -435.21,
+      "y": -692.72,
+      "z": 2.72,
+      "vz": -13.42,
+      "gz": -0.07
+     },
+     {
+      "t": 867,
+      "x": -435.12,
+      "y": -692.47,
+      "z": 2.49,
+      "vz": -13.42,
+      "gz": -0.07
+     },
+     {
+      "t": 883,
+      "x": -435.03,
+      "y": -692.22,
+      "z": 2.27,
+      "vz": -13.42,
+      "gz": -0.07
+     },
+     {
+      "t": 900,
+      "x": -434.94,
+      "y": -691.97,
+      "z": 2.05,
+      "vz": -13.42,
+      "gz": -0.07
+     },
+     {
+      "t": 917,
+      "x": -434.85,
+      "y": -691.72,
+      "z": 1.82,
+      "vz": -13.42,
+      "gz": -0.06
+     },
+     {
+      "t": 933,
+      "x": -434.76,
+      "y": -691.47,
+      "z": 1.6,
+      "vz": -13.42,
+      "gz": -0.06
+     },
+     {
+      "t": 950,
+      "x": -434.67,
+      "y": -691.22,
+      "z": 1.37,
+      "vz": -13.42,
+      "gz": -0.06
+     },
+     {
+      "t": 967,
+      "x": -434.58,
+      "y": -690.97,
+      "z": 1.15,
+      "vz": -13.42,
+      "gz": -0.06
+     },
+     {
+      "t": 983,
+      "x": -434.49,
+      "y": -690.72,
+      "z": 0.93,
+      "vz": -13.42,
+      "gz": -0.05
+     },
+     {
+      "t": 1000,
+      "x": -434.4,
+      "y": -690.47,
+      "z": 0.7,
+      "vz": -13.42,
+      "gz": -0.05
+     }
+    ]
+   },
+   "children": null
+  },
+  "reqs": [
+   {
+    "url": "playable/integration_lazy.html?s5=1",
+    "status": 200,
+    "b": 90706
+   },
+   {
+    "url": "playable/etc1_tdkr.js",
+    "status": 200,
+    "b": 4021
+   },
+   {
+    "url": "playable/walktest_routes.js",
+    "status": 200,
+    "b": 2006
+   },
+   {
+    "url": "playable/tdkr_pipeline.js",
+    "status": 200,
+    "b": 19420
+   },
+   {
+    "url": "playable/lvc.js",
+    "status": 200,
+    "b": 7908
+   },
+   {
+    "url": "playable/walktest.js",
+    "status": 200,
+    "b": 21175
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+    "status": 200,
+    "b": 108522
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "status": 200,
+    "b": 31906
+   },
+   {
+    "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "status": 200,
+    "b": 1272972
+   },
+   {
+    "url": "playable/lvc_gol_templates.json",
+    "status": 200,
+    "b": 85029
+   },
+   {
+    "url": "playable/lvc_readseq_s30.json",
+    "status": 200,
+    "b": 15475
+   }
+  ]
+ }
+}
