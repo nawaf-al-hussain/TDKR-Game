@@ -749,3 +749,21 @@ working during the T4 renders).
 
 Local refs after s54: main dfcd2eb (s51-s54 unpushed), gh-pages-staged-s44 6145545,
 s41-city-slice 7b0807e. Bundles: download/bundles_s54/.
+
+### s54 remaining-work estimate update (sized)
+- IN: walkable world, character renderer + animation, Lua shim, browser asset pipeline,
+  user-file material binding, descriptor decoding, engine shader + fog chain, zone renderer
+  (corr 0.9923 standing), glide + grapple as gated slices with DECODED engine parameters
+  (component floats + waypoint anchors + state-table clips).
+- NOT in (sized, unchanged where still true):
+  - combat/AI/mission flow: 4-6 sessions (unchanged)
+  - audio: 1-2 (unchanged); UI: 1-2 (unchanged); cloth cape: 1 (unchanged)
+  - cross-region navigation: 1-2 (unchanged); city-scale lit rendering from user files: 1-2
+  - glide/grapple FULL behavior (pitch/roll stick dynamics, rope render, QTE timing,
+    dive/roll landing variants): +0.5-1 session (was 1-1.5; the 21-float decode + anchors
+    + clips landed this session)
+  - CLevel::s_glide* .bss static values (pitch/roll/yaw clamp+rate family): 0.25-0.5
+    (find the writers; the GOT-indirect read sites are catalogued in session54)
+  - memory <600 MB: bounded by swiftshader/Chromium-internal copies - 0.5 session to verify
+    on real GPU only (floors now measured: 84.9 + 23.5 + soup)
+  - real-GPU validation run: pending user paste-back (0.25 to analyze)
