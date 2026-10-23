@@ -694,3 +694,58 @@ mismatches expected and measured (extraction/re/session53/).
 
 Consequence for future work: treat corr>=0.99 vs the CPU per-pixel reference as the STANDING
 acceptance bar for the zone renderer; do not re-litigate the s50 "GL is the reference" clause.
+
+## SESSION 54 (round 44, 2026-10-23) — glide/grapple parameters DECODED; state/clip table applied; per-effect corr boosted
+
+**T1 glide parameters**: s53's "CComponentGlide::Load = 2x ReadInt + 41x ReadFloat" was a
+Thumb-mode junk disasm (the s48 warning applied). ARM truth @0x3c0938: Load = ReadInt +
+21xReadFloat + ReadInt; object 0x60 B = [vptr@0][int1@4][f0..f20 @8..0x58][int2@5c].
+Class id 0x0110ce1f (GenerateComponentTemplate case @0x36b0e0; vptr = _ZTV15CComponentGlide
+@0xbd8990 + 8; 66+ factory ids - the full sweep found 158 pc-rel case sites; s25's 49-case
+extraction was partial). The component is LIVE (not vestigial): CGameObjectManager::Reload ->
+CGadgetManager::AddObject resolves it from templates 'Glider' 0x2674 (slot int1=0) and
+'Glider_Plunge' 0x4c741 (slot 1); CGadgetManager::GetGlide(0/1) returns it;
+RefreshForcesGlide (sink = f0 + (f1-f0)*|pitch| = 4 + 12*|pitch| u/s), UpdateNavGlide and
+SetInitialGlideAngle (f10 = initial pitch DEG; engine hard default -30) consume its fields.
+NO Glider instances exist in any of the 12 lvc files - the parameters come from the gol.bin
+template payloads (flag-0 components DO get template-payload defaults at Reload; the s24
+parser's "template data skipped" note was the missing piece). Decoded: Glider f0..f20 =
+4,16,14,4,16,1,6,0,2,16,-45,-60,30,35,1.25,0.05,45,0.5,30,30,40, int2=600; Glider_Plunge
+f10..f20 = -60,-80,-30,40,6,0.1,35,6,30,100,15. Validation: 10/21 floats byte-identical
+across the two independent templates; consumer field offsets match the layout exactly.
+Named statics (.data): k_glideWallEvadeDistance 6, MinDistance 1, MaxAngle 10,
+s_fallAheadOffset 0.4. OPEN: the .bss CLevel::s_glidePitchMin..s_glideDeadAngle family
+(GOT-indirect, 7-13 read sites each) - their writers were not located; values not extracted.
+Staged slice (?s5=1) now: fwd 16, sink 4+12*|pitch| u/s, pitch0 -45 deg, wall-evade
+analogue, ledge-stand at grapple end; placeholders behind ?s5legacy=1.
+
+**T2 grapple targets**: waypoint census (CWayPointObject records, engine cases 0x798f/
+0x2666/0x4741): GothamCity 8,428 / Island2 4,048 / Police_Station 315 / Military 227 /
+StockExchange 219 / Underground 198 / ThePit 142 / Stadion 49 / BatCave 31. Flag byte
+uniform (1) - no per-record grapple discriminator (runtime selection via the
+GetGrapnelTargetPosition virtual + range/LOS filters). 25.5% of sampled waypoints within
+2 m of walkable nm ground vs 2.0% uniform null. The slice now pulls to REAL waypoint
+anchors decoded from the user's lvc (elevated-first scoring), portal-edge BFS fallback.
+
+**T3 clips**: landing transition now _065_glide_idle_to_run (table state
+Grapnel_Horizontal_To_Glide_Idle) before _008_run; GLB whitelist 7 clips; pull stays
+_089_grapnel_pull; 12 glide-family + 4 grapple-family clips tabled, ~88/104 have no
+state-table row (bdae anim_pack node bindings remain the standing gap).
+
+**T4 per-effect corr (boosted)**: label-mask method (geometry mask, value-free - both
+families render near-black; a mean>8 filter caps them). StandardDiffuseDC n 76 -> 777,
+corr 0.9079 -> 0.9764, ratio 1.0161, IoU 0.9873 (alignment control); AlphaMasking
+n 29 -> 342 comparable (1,793 geometry px), corr 0.8256 -> 0.9999, ratio 1.002; wronglm
+positive control 0.9999 -> 0.7768. VERDICT PARTIAL vs the literal "thousands" criterion
+(zone geometry caps: SD = dark water plane + sparse props, AM = vertical fences top-down).
+
+**T5 memory floor**: empty three.js 84.9 MB; +170x512^2 RGBA GPU set only +23.5 MB (uploads
+lazily materialized); game default 813.5 MB peak / 6.1 s; poolchunk 690.8 MB / 8.4 s;
+gates PASS, digests unchanged. <600 NOT reached; residual = browser-internal copies + soup.
+
+**T7**: live verified (viewer 94 reqs/0 failed/0 errs; walktest 6/0); NOTHING deployed;
+deploy plan for staged-s44 @ 6145545 written; real-GPU check still PENDING (page verified
+working during the T4 renders).
+
+Local refs after s54: main dfcd2eb (s51-s54 unpushed), gh-pages-staged-s44 6145545,
+s41-city-slice 7b0807e. Bundles: download/bundles_s54/.
