@@ -1,0 +1,305 @@
+{
+ "s5": {
+  "name": "s5",
+  "qs": "?s5=1",
+  "console_errors": [],
+  "page_errors": [],
+  "elapsed_s": 16.1,
+  "gate": {
+   "done": true,
+   "pass": true,
+   "soup": {
+    "nTri": 137893,
+    "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+   },
+   "soupDigestPass": true,
+   "routes": {
+    "run": 10,
+    "agree": 10,
+    "results": [
+     {
+      "route": 3,
+      "verdict": "stuck_wall",
+      "dist": 305.23,
+      "expected": "stuck_wall",
+      "expected_dist": 305.2,
+      "agree": true,
+      "dist_delta": 0.03,
+      "ms": 29
+     },
+     {
+      "route": 6,
+      "verdict": "fell",
+      "dist": 321,
+      "expected": "fell",
+      "expected_dist": 321,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 16
+     },
+     {
+      "route": 7,
+      "verdict": "fell",
+      "dist": 382.5,
+      "expected": "fell",
+      "expected_dist": 382.5,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 31
+     },
+     {
+      "route": 10,
+      "verdict": "stuck_wall",
+      "dist": 1076.038,
+      "expected": "stuck_wall",
+      "expected_dist": 1076,
+      "agree": true,
+      "dist_delta": 0.038,
+      "ms": 52
+     },
+     {
+      "route": 12,
+      "verdict": "ok",
+      "dist": 392,
+      "expected": "ok",
+      "expected_dist": 392,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 15,
+      "verdict": "stuck_wall",
+      "dist": 443.067,
+      "expected": "stuck_wall",
+      "expected_dist": 443.1,
+      "agree": true,
+      "dist_delta": 0.033,
+      "ms": 29
+     },
+     {
+      "route": 19,
+      "verdict": "ok",
+      "dist": 931,
+      "expected": "ok",
+      "expected_dist": 931,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 42
+     },
+     {
+      "route": 22,
+      "verdict": "fell",
+      "dist": 62.7,
+      "expected": "fell",
+      "expected_dist": 62.7,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 3
+     },
+     {
+      "route": 27,
+      "verdict": "stuck_wall",
+      "dist": 301.235,
+      "expected": "stuck_wall",
+      "expected_dist": 301.2,
+      "agree": true,
+      "dist_delta": 0.035,
+      "ms": 27
+     },
+     {
+      "route": 33,
+      "verdict": "stuck_wall",
+      "dist": 122.009,
+      "expected": "stuck_wall",
+      "expected_dist": 122,
+      "agree": true,
+      "dist_delta": 0.009,
+      "ms": 6
+     }
+    ]
+   },
+   "zone": {
+    "batches": 138,
+    "texDecoded": 71,
+    "texMiss": 2,
+    "buildMs": 1582
+   },
+   "batman": {
+    "ok": true,
+    "verts": 1449,
+    "clips": [
+     "_001_idle_stand",
+     "_007_walk",
+     "_008_run",
+     "_057_glide_idle",
+     "_089_grapnel_pull",
+     "_088_grapnel_shoot"
+    ]
+   },
+   "first_image_ms": 6200,
+   "silhouetteInRange": true,
+   "motionDetected": true,
+   "cameraFollowed": true,
+   "nmSelfCheck": true,
+   "corruptControl": false,
+   "s5": {
+    "enabled": true,
+    "targetReached": true,
+    "reachDist": 0,
+    "glideClipActive": true,
+    "landed": true,
+    "landMs": 417
+   },
+   "error": null
+  }
+ },
+ "default": {
+  "name": "default",
+  "qs": "",
+  "console_errors": [],
+  "page_errors": [],
+  "elapsed_s": 14.1,
+  "gate": {
+   "done": true,
+   "pass": true,
+   "soup": {
+    "nTri": 137893,
+    "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+   },
+   "soupDigestPass": true,
+   "routes": {
+    "run": 10,
+    "agree": 10,
+    "results": [
+     {
+      "route": 3,
+      "verdict": "stuck_wall",
+      "dist": 305.23,
+      "expected": "stuck_wall",
+      "expected_dist": 305.2,
+      "agree": true,
+      "dist_delta": 0.03,
+      "ms": 39
+     },
+     {
+      "route": 6,
+      "verdict": "fell",
+      "dist": 321,
+      "expected": "fell",
+      "expected_dist": 321,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 16
+     },
+     {
+      "route": 7,
+      "verdict": "fell",
+      "dist": 382.5,
+      "expected": "fell",
+      "expected_dist": 382.5,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 28
+     },
+     {
+      "route": 10,
+      "verdict": "stuck_wall",
+      "dist": 1076.038,
+      "expected": "stuck_wall",
+      "expected_dist": 1076,
+      "agree": true,
+      "dist_delta": 0.038,
+      "ms": 53
+     },
+     {
+      "route": 12,
+      "verdict": "ok",
+      "dist": 392,
+      "expected": "ok",
+      "expected_dist": 392,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 15,
+      "verdict": "stuck_wall",
+      "dist": 443.067,
+      "expected": "stuck_wall",
+      "expected_dist": 443.1,
+      "agree": true,
+      "dist_delta": 0.033,
+      "ms": 30
+     },
+     {
+      "route": 19,
+      "verdict": "ok",
+      "dist": 931,
+      "expected": "ok",
+      "expected_dist": 931,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 43
+     },
+     {
+      "route": 22,
+      "verdict": "fell",
+      "dist": 62.7,
+      "expected": "fell",
+      "expected_dist": 62.7,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 2
+     },
+     {
+      "route": 27,
+      "verdict": "stuck_wall",
+      "dist": 301.235,
+      "expected": "stuck_wall",
+      "expected_dist": 301.2,
+      "agree": true,
+      "dist_delta": 0.035,
+      "ms": 27
+     },
+     {
+      "route": 33,
+      "verdict": "stuck_wall",
+      "dist": 122.009,
+      "expected": "stuck_wall",
+      "expected_dist": 122,
+      "agree": true,
+      "dist_delta": 0.009,
+      "ms": 7
+     }
+    ]
+   },
+   "zone": {
+    "batches": 138,
+    "texDecoded": 71,
+    "texMiss": 2,
+    "buildMs": 1503
+   },
+   "batman": {
+    "ok": true,
+    "verts": 1449,
+    "clips": [
+     "_001_idle_stand",
+     "_007_walk",
+     "_008_run",
+     "_057_glide_idle",
+     "_089_grapnel_pull",
+     "_088_grapnel_shoot"
+    ]
+   },
+   "first_image_ms": 6278,
+   "silhouetteInRange": true,
+   "motionDetected": true,
+   "cameraFollowed": true,
+   "nmSelfCheck": true,
+   "corruptControl": false,
+   "s5": null,
+   "error": null
+  }
+ }
+}
