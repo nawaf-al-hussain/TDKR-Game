@@ -1,0 +1,243 @@
+=== (1) CComponentGrapplingGun::Load @0x3bb510 ===
+003bb510 push     {r3, r4, r5, lr}                 
+003bb514 mov      r4, r0                           
+003bb518 mov      r0, r1                           
+003bb51c mov      r5, r1                           
+003bb520 bl       #0x339914                        -> _ZN13CMemoryStream7ReadIntEv
+003bb524 str      r0, [r4, #4]                     
+003bb528 mov      r0, r5                           
+003bb52c bl       #0x339914                        -> _ZN13CMemoryStream7ReadIntEv
+003bb530 str      r0, [r4, #8]                     
+003bb534 mov      r0, r5                           
+003bb538 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb53c str      r0, [r4, #0xc]                   
+003bb540 mov      r0, r5                           
+003bb544 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb548 str      r0, [r4, #0x10]                  
+003bb54c mov      r0, r5                           
+003bb550 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb554 str      r0, [r4, #0x14]                  
+003bb558 mov      r0, r5                           
+003bb55c bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb560 str      r0, [r4, #0x18]                  
+003bb564 mov      r0, r5                           
+003bb568 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb56c str      r0, [r4, #0x1c]                  
+003bb570 mov      r0, r5                           
+003bb574 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb578 str      r0, [r4, #0x20]                  
+003bb57c mov      r0, r5                           
+003bb580 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb584 str      r0, [r4, #0x24]                  
+003bb588 mov      r0, r5                           
+003bb58c bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb590 str      r0, [r4, #0x28]                  
+003bb594 mov      r0, r5                           
+003bb598 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb59c str      r0, [r4, #0x2c]                  
+003bb5a0 mov      r0, r5                           
+003bb5a4 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb5a8 str      r0, [r4, #0x30]                  
+003bb5ac mov      r0, r5                           
+003bb5b0 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb5b4 str      r0, [r4, #0x34]                  
+003bb5b8 mov      r0, r5                           
+003bb5bc bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb5c0 str      r0, [r4, #0x38]                  
+003bb5c4 mov      r0, r5                           
+003bb5c8 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb5cc str      r0, [r4, #0x3c]                  
+003bb5d0 mov      r0, r5                           
+003bb5d4 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb5d8 str      r0, [r4, #0x40]                  
+003bb5dc mov      r0, r5                           
+003bb5e0 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb5e4 str      r0, [r4, #0x44]                  
+003bb5e8 mov      r0, r5                           
+003bb5ec bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb5f0 str      r0, [r4, #0x48]                  
+003bb5f4 mov      r0, r5                           
+003bb5f8 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb5fc str      r0, [r4, #0x4c]                  
+003bb600 mov      r0, r5                           
+003bb604 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb608 str      r0, [r4, #0x50]                  
+003bb60c mov      r0, r5                           
+003bb610 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb614 str      r0, [r4, #0x54]                  
+003bb618 mov      r0, r5                           
+003bb61c bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb620 str      r0, [r4, #0x58]                  
+003bb624 mov      r0, r5                           
+003bb628 bl       #0x339914                        -> _ZN13CMemoryStream7ReadIntEv
+003bb62c str      r0, [r4, #0x5c]                  
+003bb630 mov      r0, r5                           
+003bb634 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb638 str      r0, [r4, #0x60]                  
+003bb63c mov      r0, r5                           
+003bb640 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb644 str      r0, [r4, #0x64]                  
+003bb648 mov      r0, r5                           
+003bb64c bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb650 str      r0, [r4, #0x68]                  
+003bb654 mov      r0, r5                           
+003bb658 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb65c str      r0, [r4, #0x6c]                  
+003bb660 mov      r0, r5                           
+003bb664 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb668 str      r0, [r4, #0x70]                  
+003bb66c mov      r0, r5                           
+003bb670 bl       #0x339914                        -> _ZN13CMemoryStream7ReadIntEv
+003bb674 str      r0, [r4, #0x74]                  
+003bb678 mov      r0, r5                           
+003bb67c bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb680 str      r0, [r4, #0x78]                  
+003bb684 mov      r0, r5                           
+003bb688 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb68c str      r0, [r4, #0x7c]                  
+003bb690 mov      r0, r5                           
+003bb694 bl       #0x339b94                        -> _ZN13CMemoryStream9ReadFloatEv
+003bb698 str      r0, [r4, #0x80]                  
+003bb69c mov      r0, r5                           
+003bb6a0 bl       #0x339914                        -> _ZN13CMemoryStream7ReadIntEv
+003bb6a4 str      r0, [r4, #0x84]                  
+003bb6a8 pop      {r3, r4, r5, pc}                 
+
+call census: {'-> _ZN13CMemoryStream7ReadIntEv': 5, '-> _ZN13CMemoryStream9ReadFloatEv': 28}
+
+=== (2) Glider template payload re-parse ===
+nrec=653 nstr=5799
+{
+ "0xaae6a": {
+  "name": "?",
+  "m": 0,
+  "comps": [
+   [
+    "0xb95441a1",
+    5888
+   ]
+  ],
+  "payload_len": 2573,
+  "payload_hex_head": "010000000e00000aba240000000000000000000001000000000000000000000000000000000000003f8000003f8000003f800000000000000000000041a00000",
+  "payload_f32": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   NaN,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   -0.0
+  ]
+ },
+ "0x2674": {
+  "name": "?",
+  "m": 0,
+  "comps": [
+   [
+    "0x10dd583",
+    56832
+   ],
+   [
+    "0x110ce",
+    7936
+   ]
+  ],
+  "payload_len": 102,
+  "payload_hex_head": "000100000000000000000000000040800000418000004160000040800000418000003f80000040c00000000000004000000041800000c2340000c270000041f0",
+  "payload_f32": [
+   0.0,
+   0.0,
+   0.0,
+   -0.0,
+   -0.0,
+   5.562846259728037e+19,
+   -0.0,
+   -0.0,
+   -0.0,
+   -3.0,
+   0.0,
+   0.0,
+   -0.0,
+   0.0,
+   4.8032073524272755e+29,
+   -2.389224275820784e+29,
+   0.0,
+   -0.0,
+   49545216.0,
+   0.0,
+   0.0,
+   -2.389224275820784e+29,
+   -2.389224275820784e+29,
+   0.0,
+   0.0
+  ]
+ },
+ "0x4c741": {
+  "name": "?",
+  "m": 0,
+  "comps": [
+   [
+    "0x20dd583",
+    56832
+   ],
+   [
+    "0x110ce",
+    7936
+   ]
+  ],
+  "payload_len": 102,
+  "payload_hex_head": "000100000000000000000000000140800000418000004160000040800000418000003f80000040c00000000000004000000041800000c2700000c2a00000c1f0",
+  "payload_f32": [
+   0.0,
+   0.0,
+   0.0,
+   -0.0,
+   -0.0,
+   5.562846259728037e+19,
+   -0.0,
+   -0.0,
+   -0.0,
+   -3.0,
+   0.0,
+   0.0,
+   -0.0,
+   4.8032073524272755e+29,
+   -0.0,
+   -4.778448551641568e+29,
+   0.0,
+   -3.0,
+   -49545216.0,
+   0.0,
+   -3.0,
+   -2.389224275820784e+29,
+   -198656.0,
+   2.389224275820784e+29,
+   0.0
+  ]
+ }
+}

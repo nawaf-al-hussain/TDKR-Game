@@ -1,0 +1,73 @@
+{
+ "BatCave.lvc": {
+  "records": 88,
+  "spawns": 5,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "GothamCity.lvc": {
+  "records": 14917,
+  "spawns": 225,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "GothamCity_Island2.lvc": {
+  "records": 8214,
+  "spawns": 92,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "Military.lvc": {
+  "records": 702,
+  "spawns": 22,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "Police_Station.lvc": {
+  "records": 538,
+  "spawns": 13,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "Stadion.lvc": {
+  "records": 272,
+  "spawns": 13,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "StockExchange.lvc": {
+  "records": 415,
+  "spawns": 7,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "Test.lvc": {
+  "error": "unpack_from requires a buffer of at least 4 bytes for unpacking 4 bytes at offse"
+ },
+ "ThePit.lvc": {
+  "records": 598,
+  "spawns": 21,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "Underground.lvc": {
+  "records": 687,
+  "spawns": 23,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "l_menu.lvc": {
+  "records": 30,
+  "spawns": 3,
+  "enemy_grapnel_target": 0,
+  "complete_frame": true
+ },
+ "shop.lvc": {
+  "records": 112,
+  "spawns": 0,
+  "enemy_grapnel_target": 0,
+  "complete_frame": false
+ }
+}
+
+spawn objId histogram (top 15):
