@@ -625,6 +625,122 @@ const CAMH = 60.0;                        // top-down camera height anchor: view
 // s53 T1: draw-time texture-unit audit (?unitaudit=1) — asserts unit0 == diffuse, unit1 == lightmap on EVERY zone draw
 const UAUD = QS2.get('unitaudit') === '1';
 const UA = { n: 0, mm: 0, noTex: 0, mmFirst: [], u0: null, u1: null };
+// ---- s53 T5: minimal glide + grapple slice (?s5=1) — data sources in extraction/re/session53/s53_t5_design.md
+// Engine anchors: PlayerComponent::EnterGlideFromGrapnel (state 7 guard), SetActorSpeedGlide,
+// clips _089_grapnel_pull / _057_glide_idle / _065_glide_idle_to_run (s35 battery idx 91/55/63).
+// Slice physics: forward 18 u/s (engine default unknown), gravity -25 u/s^2, bank 0.35 rad fixed.
+const S5ON = QS2.get('s5') === '1';
+const S5 = { phase: 'off', t0: 0, tGlide: 0, from: null, tgt: null, dur: 1200, vz: 0,
+             reached: false, reachDist: null, clipActive: false, landed: false,
+             landMs: null, started: false, done: false, bank: 0.35,
+             fwdSpeed: 18.0, grav: -25.0 };
+function s5PickEdge() {
+  // find the current cell: nearest cell center within 10 u (2D)
+  let cu = -1, cd = 1e9;
+  for (let i = 0; i < nmCent.length / 3; i++) {
+    const dx = nmCent[i * 3] - P.x, dy = nmCent[i * 3 + 1] - P.y;
+    const d2 = dx * dx + dy * dy;
+    if (d2 < cd) { cd = d2; cu = i; }
+  }
+  if (cu < 0 || cd > 100) return null;
+  // BFS out to ~80 u: every visited (cell, neighbor) portal edge midpoint is a candidate
+  // ("a grapple to a decoded edge" - real CNavMeshNova portals: shared 2-vertex cell edges)
+  const seen = new Set([cu]);
+  const ring = [cu];
+  let best = null, bestD = 1e9;
+  for (let depth = 0; depth < 10 && ring.length; depth++) {
+    const nxt = [];
+    for (const u of ring) {
+      for (let ni = NBS_OFF[u]; ni < NBS_OFF[u + 1]; ni++) {
+        const v = NBS_ARR[ni];
+        if (!seen.has(v)) { seen.add(v); nxt.push(v); }
+        const a = [nmCells[u * 7], nmCells[u * 7 + 1], nmCells[u * 7 + 2]];
+        const b = [nmCells[v * 7], nmCells[v * 7 + 1], nmCells[v * 7 + 2]];
+        const sh = a.filter(x => b.indexOf(x) >= 0);
+        if (sh.length !== 2) continue;
+        const mx = (nmV[sh[0] * 3] + nmV[sh[1] * 3]) / 2, my = (nmV[sh[0] * 3 + 1] + nmV[sh[1] * 3 + 1]) / 2,
+              mz = (nmV[sh[0] * 3 + 2] + nmV[sh[1] * 3 + 2]) / 2;
+        const d = Math.hypot(mx - P.x, my - P.y);
+        if (d >= 14 && d <= 80 && Math.abs(mz - P.z) < 14 && d < bestD &&
+            nm_ground(mx, my, mz + 2.6) > -1e8) {
+          bestD = d; best = [mx, my, mz];
+        }
+      }
+    }
+    ring.length = 0; for (const w of nxt) ring.push(w);
+    if (best && depth >= 2) break;   // near candidates first
+  }
+  return best;
+}
+function s5SetClip(name) {
+  if (!mixer) return;
+  for (const k of ['_001_idle_stand', '_007_walk', '_008_run', '_089_grapnel_pull', '_057_glide_idle']) {
+    const a = actions[k];
+    if (!a) continue;
+    a.setEffectiveWeight(k === name ? 1 : 0);
+    if (k === name) { a.reset(); a.play(); }
+  }
+}
+function s5Begin() {
+  S5.started = true;
+  const tgt = s5PickEdge();
+  if (!tgt) { S5.phase = 'done'; S5.done = true;
+    window.__GATE.s5 = { enabled: true, error: 'no edge in range' };
+    startWalkPhase(); return; }
+  S5.from = [P.x, P.y, P.z];
+  S5.tgt = tgt; S5.t0 = performance.now();
+  S5.phase = 'grapnel';
+  s5SetClip('_089_grapnel_pull');
+  log('S5 grapple: portal-edge midpoint ' + tgt.map(v => v.toFixed(1)).join(',') +
+      ' dist ' + Math.hypot(tgt[0] - P.x, tgt[1] - P.y).toFixed(1) + ' u');
+}
+function s5Tick(now) {
+  const g = window.__GATE;
+  if (S5.phase === 'grapnel') {
+    const t = Math.min(1, (now - S5.t0) / S5.dur);
+    const e = t * t;   // ease-in pull (rope-constrained lerp)
+    P.x = S5.from[0] + (S5.tgt[0] - S5.from[0]) * e;
+    P.y = S5.from[1] + (S5.tgt[1] - S5.from[1]) * e;
+    P.z = S5.from[2] + (S5.tgt[2] - S5.from[2]) * e + 1.2 * Math.sin(Math.PI * e);
+    if (batman) batman.rotation.y = Math.atan2(-(S5.tgt[0] - S5.from[0]), -(S5.tgt[1] - S5.from[1])) + Math.PI;
+    if (t >= 1) {
+      S5.reachDist = Math.hypot(P.x - S5.tgt[0], P.y - S5.tgt[1]);
+      S5.reached = S5.reachDist <= 2.5;
+      S5.phase = 'glide'; S5.t0 = now; S5.tGlide = now;
+      S5.vz = 2.0;      // small rise on release
+      s5SetClip('_057_glide_idle');
+    }
+  } else if (S5.phase === 'glide') {
+    const dt2 = Math.min(0.1, (now - S5.t0) / 1000) || 0.016;
+    S5.t0 = now;
+    const dx = S5.tgt[0] - S5.from[0], dy = S5.tgt[1] - S5.from[1];
+    const dl = Math.hypot(dx, dy) || 1;
+    const nx = P.x + dx / dl * S5.fwdSpeed * dt2, ny = P.y + dy / dl * S5.fwdSpeed * dt2;
+    S5.vz += S5.grav * dt2;
+    const nz = P.z + S5.vz * dt2;
+    const gz = nm_ground(nx, ny, nz + 2.6);
+    P.x = nx; P.y = ny; P.z = nz;
+    if (batman) { batman.rotation.y = Math.atan2(-dx, -dy) + Math.PI; batman.rotation.z = S5.bank; }
+    const glA = actions['_057_glide_idle'];
+    S5.clipActive = !!(glA && glA.getEffectiveWeight() > 0.5 && glA.time > 0.05);   // clip actually sampled
+    if (now - S5.tGlide > 400 && gz > -1e8 && nz - 0.9 <= gz + 0.05) {   // min glide airtime 400 ms
+      P.z = gz + 0.9; S5.landed = true; S5.landMs = Math.round(now - S5.tGlide);
+      S5.phase = 'done'; S5.done = true;
+      if (batman) batman.rotation.z = 0;
+      s5SetClip('_008_run');
+      g.s5 = { enabled: true, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
+               glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs };
+      log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
+      startWalkPhase();   // hand back to the standard gate walk phase
+    }
+    if (now - S5.tGlide > 6000 && !S5.landed) {   // safety: never stall the gate
+      g.s5 = { enabled: true, targetReached: S5.reached, reachDist: S5.reachDist,
+               glideClipActive: S5.clipActive, landed: false, error: 'glide timeout' };
+      S5.phase = 'done'; S5.done = true;
+      startWalkPhase();
+    }
+  }
+}
 const FOG_WVT = (() => { const a = new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]);
   a[8] = 0; a[9] = 0; a[10] = -1; a[11] = CAMH; return a; })();  // col2 -> dot = CAMH - h
 let lutTex = null, lutFBO = null, lutSceneTex = null, lutPost = null;
@@ -1042,7 +1158,7 @@ const buildGLB = function buildGLB(skin, A, byNameC) {
     addAcc(offs.idx, idxB.byteLength, idxB.length, 5123, 'SCALAR');
     gltf.skins[0].inverseBindMatrices = addAcc(offs.ibm, ibmB.byteLength, 31, 5126, 'MAT4');
     const animBins = []; let ab = 0;
-    for (const nm of ['_001_idle_stand', '_007_walk', '_008_run']) {
+    for (const nm of ['_001_idle_stand', '_007_walk', '_008_run', '_057_glide_idle', '_089_grapnel_pull', '_088_grapnel_shoot']) {   // s53 T5: + glide/grapnel clips (decode-verified in the s35 battery)
       const clip = byNameC[nm]; if (!clip) continue;
       const { chans } = TDKR.assembleClip(A, clip);
       const samplers = []; const chansG = [];
@@ -1574,6 +1690,8 @@ function tick(now) {
     return;
   }
   if (SAMP.idleDone && !SAMP.walkStarted) {
+    if (S5ON && !S5.started) s5Begin();
+    if (S5ON && !S5.done) { s5Tick(now); if (batman && mixer) { mixer.update(dt); bRenderer.render(bScene, bCam); } return; }
     SAMP.walkStarted = true;
     startWalkPhase();
   }
