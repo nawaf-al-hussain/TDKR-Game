@@ -102,6 +102,7 @@ function glaMember(g, want) {
   throw new Error('gla member not found: ' + want);
 }
 function texMember(g, want) {
+  if (!g) return null;
   const idxSize = u32be(g, 4), n = u32be(g, 12);
   const pool = g.subarray(16 + n * 16, idxSize);
   const wantL = want.toLowerCase();
@@ -222,7 +223,9 @@ function getTex(texGla, name, wantAlpha) {
   }
   texStats.miss++;
   let t = null;
-  const tu = texMember(texGla, name);
+  // s52 T4: prefer the range-captured pool (l_gothamcity_tex.gla is never materialized whole)
+  let tu = (typeof texPool !== 'undefined' && texPool) ? texPool.get(name.toLowerCase()) : null;
+  if (!tu) tu = texMember(texGla, name);
   if (tu) {
     try {
       const parts = unwrapSplitParts(tu);
@@ -235,9 +238,14 @@ function getTex(texGla, name, wantAlpha) {
       t = { w: rgb.w, h: rgb.h, data: rgb.rgba, alpha: al };
     } catch (e) { t = null; }
   }
+  if (t) t.bytes = t.w * t.h * 4 + (t.alpha ? t.alpha.w * t.alpha.h : 0);
   texLRU.set(key, t);
-  if (texLRU.size > LRU_CAP) {
+  lruBytes += t ? t.bytes : 0;
+  // s52 T4: byte cap in addition to the entry cap
+  while (texLRU.size > 1 && (texLRU.size > LRU_CAP || lruBytes > LRU_BYTES)) {
     const old = texLRU.keys().next().value;
+    const ov = texLRU.get(old);
+    lruBytes -= (ov && ov.bytes) ? ov.bytes : 0;
     texLRU.delete(old);
     texStats.evict++;
   }
@@ -690,6 +698,10 @@ function prepareBatch(b) {
 
 /* batch builder — WORLD-space positions (camera transform lives in the WVP matrix) */
 let texGla = null;
+// s52 T4: range-captured texture pool + byte-capped LRU accounting
+let texPool = null;
+let lruBytes = 0;
+const LRU_BYTES = 64 * 1048576;
 function buildBatches(lt, ldd, bi8, le) {
   const { bind, fx } = parseCompiledTable(le);
   const fbuf = new DataView(ldd.buffer, ldd.byteOffset, ldd.byteLength);
@@ -1075,7 +1087,7 @@ async function glaIndexLazy(file, m) {
     if (e < 0) e = no + 96;
     ents.set(LATIN.decode(pool.subarray(no, e)), { o, s });
   }
-  window.__GLAIDX = { n, idxSize, headLen: head.length, sample: [...ents.entries()].slice(0, 5).map(e => e[0]), has: ents.has('GothamCity.zip'), entsN: ents.size };
+  window.__GLAIDX = window.__GLAIDX || { n, idxSize, headLen: head.length, sample: [...ents.entries()].slice(0, 5).map(e => e[0]), has: ents.has('GothamCity.zip'), entsN: ents.size };
   return ents;
 }
 async function glaSliceLazy(file, m, want) {
@@ -1097,8 +1109,14 @@ async function glaSliceLazy(file, m, want) {
 async function loadBatman(zipBuf, findM) {
   const aMem = await glaSliceLazy(zipBuf, zmembersGet(findM(/data\/actors\.gla$/i)),
     new Set(['batman.bdae', 'batman_anims.bdae']));
-  let actorsTex = await zipReadLazy(zipBuf, zmembersGet(findM(/textures\/actors_tex\.gla$/i)));
-  const gt = TDKR.parseGla(actorsTex);
+  // s52 T4: actors_tex.gla by index + single-member range (30.7 MB container never materialized)
+  const atM = zmembersGet(findM(/textures\/actors_tex\.gla$/i));
+  const atIdx = await glaIndexLazy(zipBuf, atM);
+  const atWant = 'chara_Batman_DIFFUSE.tga';
+  const atEnt = atIdx.get(atWant);
+  let atBytes = atEnt ? (await streamInflateRanges(zipBuf, atM, [{ o: atEnt.o, s: atEnt.s }]))[0] : null;
+  atIdx.clear();
+  const gt = { ents: atBytes ? { [atWant]: { off: 0, size: atBytes.length } } : {} };
   log('LZ batman.bdae bytes=' + (aMem['batman.bdae'] ? aMem['batman.bdae'].length : -1) +
        ' anims=' + (aMem['batman_anims.bdae'] ? aMem['batman_anims.bdae'].length : -1) +
        ' texEnts=' + Object.keys(gt.ents || {}).length);
@@ -1107,8 +1125,8 @@ async function loadBatman(zipBuf, findM) {
   log('batman.bdae: ' + skin.verts.length / 3 + ' verts, ' + skin.idx.length + ' idx; anims: ' + A.clips.length + ' clips');
   const texE = gt.ents['chara_Batman_DIFFUSE.tga'];
   let texture = null;
-  if (texE) {
-    const td = actorsTex.subarray(texE.off, texE.off + texE.size);
+  if (texE && atBytes) {
+    const td = atBytes;
     const th = td[4] | (td[5] << 8) | (td[6] << 16) | (td[7] << 24);
     const tw = td[8] | (td[9] << 8) | (td[10] << 16) | (td[11] << 24);
     const px = td.subarray(52, 52 + tw * th * 3);
@@ -1120,7 +1138,7 @@ async function loadBatman(zipBuf, findM) {
     texture.colorSpace = THREE.SRGBColorSpace; texture.needsUpdate = true; texture.flipY = false;
     log('chara_Batman_DIFFUSE: ' + tw + 'x' + th + ' RGB888 (s42 T1: R8G8B8 byte0=R) decoded');
   }
-  actorsTex = null; gt.ents = null;
+  atBytes = null; gt.ents = null;
   const byNameC = Object.fromEntries(A.clips.map(c => [c.name, c]));
   const glbBytes = buildGLB(skin, A, byNameC);
   const g = await new Promise((res, rej) => new GLTFLoader().parse(glbBytes.buffer, '', res, rej));
@@ -1322,8 +1340,31 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
     let ldd = await gget('lod_data.bin');
     let bi8 = await gget('batch_info.bin');
     let mb = await gget('GothamCity_materials.bdae');
-    texGla = await zipReadLazy(zfile, zmembersGet(findM(/textures\/l_gothamcity_tex\.gla$/i)));
+    // s52 T4: detach the method-0 views and release the 41 MB zip shell BEFORE the long build
+    ldd = new Uint8Array(ldd); lt = new Uint8Array(lt); bi8 = new Uint8Array(bi8); mb = new Uint8Array(mb);
+    gcityZip = null; gmembers.clear();
     let le = await zipRead2(mb, zipMembers(mb).get('little_endian_not_quantized.bdae'));
+    // s52 T4: l_gothamcity_tex.gla (199 MB) NEVER materialized: index + per-member ranges
+    const bindPre = parseCompiledTable(le);
+    const texM = zmembersGet(findM(/textures\/l_gothamcity_tex\.gla$/i));
+    const texIdx = await glaIndexLazy(zfile, texM);
+    const lowMap = new Map(); for (const nm2 of texIdx.keys()) lowMap.set(nm2.toLowerCase(), nm2);
+    const wantSet = new Set(); let wantMiss = [];
+    for (let i = 0; i < 307; i++) {
+      for (const t of bindPre.bind[i]) {
+        if (!t) continue;
+        const act = lowMap.get(t.toLowerCase());
+        if (act) wantSet.add(act); else wantMiss.push(t);
+      }
+    }
+    const texRanges = []; const texNames = [];
+    for (const nm2 of wantSet) { const e2 = texIdx.get(nm2); texRanges.push({ o: e2.o, s: e2.s }); texNames.push(nm2); }
+    const texBytes = await streamInflateRanges(zfile, texM, texRanges);
+    texPool = new Map(); let poolB = 0;
+    for (let i = 0; i < texNames.length; i++) { texPool.set(texNames[i].toLowerCase(), texBytes[i]); poolB += texBytes[i].length; }
+    texIdx.clear(); lowMap.clear();
+    window.__TEXPOOL = { members: texNames.length, bytes: poolB, wantMiss: wantMiss.slice(0, 8) };
+    log('TEXPOOL: ' + texNames.length + ' members, ' + Math.round(poolB / 1048576) + ' MB captured (wantMiss ' + wantMiss.length + ')');
     const tB = performance.now();
     batches = buildBatches(lt, ldd, bi8, le);
     const tZone = performance.now() - tB;
