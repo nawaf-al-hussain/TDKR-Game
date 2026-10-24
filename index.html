@@ -22,6 +22,7 @@ gh-pages 6145545 keeps them). Rollback = redeploy 6145545. -->
 <script src="./playable/etc1_tdkr.js"></script>
 <script src="./playable/tdkr_pipeline.js"></script>
 <script src="./playable/lvc.js"></script>
+<script src="./playable/gol_parse.js"></script>
 <script src="./playable/walktest.js"></script>
 <script src="./playable/walktest_routes.js"></script>
 <script type="importmap">
@@ -1673,6 +1674,48 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
         Math.round(routes.results.reduce((a, r) => a + r.ms, 0)) + ' ms)');
     for (const r of routes.results) log('  route ' + r.route + ': ' + r.verdict + ' d=' + r.dist +
         ' (expected ' + r.expected + ' ' + r.expected_dist + ') ' + (r.agree ? 'OK' : 'MISMATCH'));
+
+    /* ---- s58 T5: trigger + enemy templates STRAIGHT FROM THE USER'S ZIP (gol.bin) ----
+     * game_config.gla member gol.bin (1,270,660 B) parsed in-browser by gol_parse.js
+     * (s57 parity: digest 5edaa148..., closed=77 on the s57 sequences). Gate reports:
+     * nrec/digest, trigger-template census, Health+Awareness carrier census, and the
+     * Melee_Enemy_Merc values decoded at the s56-walk-proven payload offsets. */
+    try {
+      const golBytes = TDKR.glaSlice(gc, new Set(['gol.bin']))['gol.bin'];
+      if (!golBytes) throw new Error('gol.bin not found in game_config.gla');
+      const gr = parseGol(golBytes, table.components);
+      const genc = new TextEncoder().encode(gr.lines.join('\n'));
+      const gdig = await crypto.subtle.digest('SHA-256', genc);
+      const gsha = [...new Uint8Array(gdig)].map(b => b.toString(16).padStart(2, '0')).join('');
+      const GOL_SHA = '5edaa1485e6ca6abcab8c1e74fa7c9187530d65a351d717e8b0465df129bfd47';
+      const trig = gr.templates.filter(t => /trigger/i.test(t.name));
+      const carriers = gr.templates.filter(t => t.comps.some(c => c.id === 0x0ddcd6c4) &&
+                                                t.comps.some(c => c.id === 0x6754056b));
+      let mercVals = null;
+      const merc = gr.templates.find(t => t.oid === 0x000c351d);
+      if (merc) {
+        const md = golBytes, mp = merc.payloadStart;
+        const f32at = (o) => new Float32Array(new Uint8Array([md[o+3], md[o+2], md[o+1], md[o]]).buffer)[0];  // BE
+        const health = f32at(mp + 121);
+        const aware0 = f32at(mp + 154), aware1 = f32at(mp + 158), fov = f32at(mp + 154 + 4 * 13);
+        mercVals = { health: +health.toFixed(1), aware0: +aware0.toFixed(1), aware1: +aware1.toFixed(1), fov: +fov.toFixed(1) };
+      }
+      const golPass = (gr.nrec === 653) && (gsha === GOL_SHA) && (gr.closed === 77) &&
+                      !!mercVals && mercVals.health === 120 && mercVals.aware0 === 11 &&
+                      mercVals.aware1 === 17 && mercVals.fov === 160;
+      window.__GATE.golzip = { ok: golPass, nrec: gr.nrec, closed: gr.closed, digest: gsha,
+                               expectedDigest: GOL_SHA, triggers: trig.length,
+                               triggerNames: trig.slice(0, 6).map(t => t.name),
+                               carriers: carriers.length, merc: mercVals };
+      log('gol.bin from YOUR zip: ' + gr.nrec + ' templates, digest ' + (gsha === GOL_SHA ? 'PASS' : 'FAIL') +
+          ', triggers ' + trig.length + ', carriers ' + carriers.length +
+          (mercVals ? ', Merc health=' + mercVals.health + ' aware=' + mercVals.aware0 + '/' + mercVals.aware1 +
+           ' fov=' + mercVals.fov : ', Merc NOT FOUND'));
+      if (!golPass) log('GOL GATE FAIL (see __GATE.golzip)');
+    } catch (eGol) {
+      window.__GATE.golzip = { ok: false, error: String(eGol && eGol.message || eGol) };
+      log('GOL ERROR: ' + (eGol && eGol.message || String(eGol)));
+    }
 
     /* ---- s54 T2: REAL grapple-target anchors (CWayPointObject records) ----
      * Session 53 established the engine's grapple targets are object-anchor
