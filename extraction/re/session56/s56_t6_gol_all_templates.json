@@ -1,0 +1,16404 @@
+[
+{
+"oid": "0x000c0e3a",
+"name": " GC_StockExchange_Props_BIGLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00002649",
+"name": "AIController",
+"comps": [
+[
+"0x454206a4",
+1
+],
+[
+"0x7f305b9b",
+1
+],
+[
+"0x36f1fe78",
+1
+]
+],
+"payload_len": 270
+},
+{
+"oid": "0x0004c727",
+"name": "AlarmPost",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x34747ebe",
+1
+]
+],
+"payload_len": 105
+},
+{
+"oid": "0x00007929",
+"name": "Alternate_Idle_Anims",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 14057
+},
+{
+"oid": "0x0000264a",
+"name": "AnimatedObject",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+]
+],
+"payload_len": 77
+},
+{
+"oid": "0x000c350c",
+"name": "AnimatedObjectLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x4ab8a7cd",
+0
+]
+],
+"payload_len": 100
+},
+{
+"oid": "0x00018799",
+"name": "AnimatedObjectWithCollision_BEAST",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+0
+]
+],
+"payload_len": 145
+},
+{
+"oid": "0x0001879a",
+"name": "AnimatedObject_BEAST",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+0
+]
+],
+"payload_len": 129
+},
+{
+"oid": "0x00002694",
+"name": "Area",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cbfd885",
+0
+]
+],
+"payload_len": 69
+},
+{
+"oid": "0x0004c6f6",
+"name": "Assault_Rifle_01",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 122
+},
+{
+"oid": "0x0001869f",
+"name": "BakeGroup",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x1b2aa571",
+0
+]
+],
+"payload_len": 60
+},
+{
+"oid": "0x0004c73a",
+"name": "Bane",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 420
+},
+{
+"oid": "0x000dbbb3",
+"name": "Bane_Attack",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 3793
+},
+{
+"oid": "0x000dbbb9",
+"name": "Bane_Movement",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1360
+},
+{
+"oid": "0x0004c731",
+"name": "Bane_SUV",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+0
+],
+[
+"0x4de3f7c4",
+0
+],
+[
+"0x675d6313",
+0
+]
+],
+"payload_len": 553
+},
+{
+"oid": "0x000c0e55",
+"name": "Bane_Suv_Doors",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+0
+]
+],
+"payload_len": 77
+},
+{
+"oid": "0x000c0e54",
+"name": "Bane_Suv_No_Doors",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+0
+],
+[
+"0x4de3f7c4",
+0
+],
+[
+"0x675d6313",
+0
+]
+],
+"payload_len": 553
+},
+{
+"oid": "0x000dbbaf",
+"name": "Bane_Van_States",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1490
+},
+{
+"oid": "0x0004c761",
+"name": "Barricade",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+]
+],
+"payload_len": 77
+},
+{
+"oid": "0x0004c763",
+"name": "Barricade_Collision_End",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x2c9a0e3f",
+1
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x0004c762",
+"name": "Barricade_Collision_Start",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x2c9a0e3f",
+1
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x0000c38e",
+"name": "BatPod",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x54989cb1",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x30e3ad7c",
+1
+],
+[
+"0x0d1839c4",
+1
+]
+],
+"payload_len": 606
+},
+{
+"oid": "0x00004e27",
+"name": "Batarang",
+"comps": [
+[
+"0x0116a6fa",
+0
+],
+[
+"0x0dd583de",
+0
+],
+[
+"0x0f992a02",
+0
+]
+],
+"payload_len": 170
+},
+{
+"oid": "0x00004e31",
+"name": "BatarangEMP",
+"comps": [
+[
+"0x0116a6fa",
+0
+],
+[
+"0x0dd583de",
+0
+],
+[
+"0x0f992a02",
+0
+]
+],
+"payload_len": 170
+},
+{
+"oid": "0x00004e32",
+"name": "BatarangFlash",
+"comps": [
+[
+"0x0116a6fa",
+0
+],
+[
+"0x0dd583de",
+0
+],
+[
+"0x0f992a02",
+0
+]
+],
+"payload_len": 170
+},
+{
+"oid": "0x00004e33",
+"name": "BatarangGas",
+"comps": [
+[
+"0x0116a6fa",
+0
+],
+[
+"0x0dd583de",
+0
+],
+[
+"0x0f992a02",
+0
+]
+],
+"payload_len": 170
+},
+{
+"oid": "0x00004e2d",
+"name": "BatarangStone",
+"comps": [
+[
+"0x0116a6fa",
+0
+],
+[
+"0x0dd583de",
+0
+],
+[
+"0x0f992a02",
+0
+]
+],
+"payload_len": 170
+},
+{
+"oid": "0x00004e37",
+"name": "BatarangZoom",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x6a204677",
+0
+]
+],
+"payload_len": 29
+},
+{
+"oid": "0x00004e26",
+"name": "Batarang_01",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 159
+},
+{
+"oid": "0x00004747",
+"name": "Batarang_02",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 159
+},
+{
+"oid": "0x00004e2e",
+"name": "Batarang_EMP",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 159
+},
+{
+"oid": "0x00004e2f",
+"name": "Batarang_Flash",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x4ab8a7cd",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 242
+},
+{
+"oid": "0x00004e30",
+"name": "Batarang_Gas",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 159
+},
+{
+"oid": "0x00004746",
+"name": "Batarang_Left_01",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 159
+},
+{
+"oid": "0x00004748",
+"name": "Batarang_Left_02",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 159
+},
+{
+"oid": "0x00004e2a",
+"name": "Batarang_Stone",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 159
+},
+{
+"oid": "0x00004e34",
+"name": "Batarang_Zoom",
+"comps": [
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 77
+},
+{
+"oid": "0x0004c6f1",
+"name": "Batman",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+1
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x0116a6fa",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x7538c652",
+1
+],
+[
+"0x339bfc0c",
+0
+],
+[
+"0x11ff6781",
+0
+],
+[
+"0x68a62e65",
+0
+],
+[
+"0x69f956fc",
+1
+],
+[
+"0x3b912a30",
+0
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 1501
+},
+{
+"oid": "0x0004c6f2",
+"name": "Batman_01_Movement",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 20701
+},
+{
+"oid": "0x0004c6f3",
+"name": "Batman_02_Flying",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 9419
+},
+{
+"oid": "0x0004c6f4",
+"name": "Batman_03_Grapnel",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 10264
+},
+{
+"oid": "0x0004c6f5",
+"name": "Batman_04_Combat",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 8935
+},
+{
+"oid": "0x0004c716",
+"name": "Batman_05_Batarang",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1675
+},
+{
+"oid": "0x0004c717",
+"name": "Batman_06_Gargoyle",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 5392
+},
+{
+"oid": "0x000aae69",
+"name": "Batman_07_Hurt",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 6685
+},
+{
+"oid": "0x000c0e47",
+"name": "Batman_08_Takedown",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 6716
+},
+{
+"oid": "0x000c0e4c",
+"name": "Batman_09_Social",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1436
+},
+{
+"oid": "0x000c350b",
+"name": "Batman_10_Vehicle",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 4070
+},
+{
+"oid": "0x000dbbab",
+"name": "Batman_11_BruceWayne",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 703
+},
+{
+"oid": "0x000dbbb5",
+"name": "Batman_12_Disarm",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 828
+},
+{
+"oid": "0x000dbba7",
+"name": "Batman_30_Combat_Strike1",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 2257
+},
+{
+"oid": "0x000dbba8",
+"name": "Batman_31_Combat_Strike2",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 3765
+},
+{
+"oid": "0x000dbba9",
+"name": "Batman_32_Combat_Strike3",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 2941
+},
+{
+"oid": "0x000dbbaa",
+"name": "Batman_33_Combat_HeavyStrike",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 5343
+},
+{
+"oid": "0x000dbbad",
+"name": "Batman_39_Combat_CounterStrike",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 9840
+},
+{
+"oid": "0x000dbbb2",
+"name": "Batman_Talk_Headset",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1131
+},
+{
+"oid": "0x00009c42",
+"name": "BatpodWeapon",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 118
+},
+{
+"oid": "0x000c3511",
+"name": "Bazooka_Enemy",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 539
+},
+{
+"oid": "0x000026e2",
+"name": "Beam",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 7788
+},
+{
+"oid": "0x000187d4",
+"name": "BigFire_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+0
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187d3",
+"name": "BigFire_Smart",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x4ab8a7cd",
+0
+],
+[
+"0x2ca13c06",
+1
+]
+],
+"payload_len": 130
+},
+{
+"oid": "0x000927c6",
+"name": "Blake",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 437
+},
+{
+"oid": "0x000026f1",
+"name": "Block_MC",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1210
+},
+{
+"oid": "0x00002b53",
+"name": "Block_MC_V2",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1100
+},
+{
+"oid": "0x000026f2",
+"name": "Block_NPC",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 915
+},
+{
+"oid": "0x00002b54",
+"name": "Block_NPC_V2",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 877
+},
+{
+"oid": "0x00004754",
+"name": "BlueprinstDistrict1_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x00004755",
+"name": "BlueprinstDistrict2_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x00004756",
+"name": "BlueprinstDistrict3_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x0004c72a",
+"name": "Bomb_Barrels",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x34747ebe",
+0
+]
+],
+"payload_len": 121
+},
+{
+"oid": "0x0000264b",
+"name": "BoxTrigger",
+"comps": [
+[
+"0x37f7a8ae",
+0
+],
+[
+"0x729ec572",
+0
+]
+],
+"payload_len": 114
+},
+{
+"oid": "0x000026eb",
+"name": "Box_Interaction",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1196
+},
+{
+"oid": "0x0004c768",
+"name": "Briefcase",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 123
+},
+{
+"oid": "0x000c0e53",
+"name": "C4_Explosive",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 104
+},
+{
+"oid": "0x00002668",
+"name": "CameraDummy",
+"comps": [
+[
+"0x0014ca79",
+1
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x0004c73f",
+"name": "Camera_10_Grapnel_Horizontal",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c742",
+"name": "Camera_11_Plunge",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c743",
+"name": "Camera_12_Bruce",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x000088b9",
+"name": "Camera_13_Batarang",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c748",
+"name": "Camera_14_Closeup",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c74c",
+"name": "Camera_15_GlideInit",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x00009c41",
+"name": "Camera_16_Batpod",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x00009c45",
+"name": "Camera_17_TheBat",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x00004e35",
+"name": "Camera_18_Helicopter",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x000088bb",
+"name": "Camera_1_Generic",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0000267b",
+"name": "Camera_2_Glide",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x00004e21",
+"name": "Camera_3_Generic_No_Collisions",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c719",
+"name": "Camera_4_Gargoyle",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c721",
+"name": "Camera_5_Grapnel",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c722",
+"name": "Camera_6_Grapnel_Horizontal",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c735",
+"name": "Camera_7_Idle",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x0004c73b",
+"name": "Camera_8_Combat",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x000dbba1",
+"name": "Camera_9_Menu",
+"comps": [
+[
+"0x7d561d33",
+1
+]
+],
+"payload_len": 79
+},
+{
+"oid": "0x000088ba",
+"name": "Camera_Combat",
+"comps": [
+[
+"0x4a04f065",
+1
+]
+],
+"payload_len": 97
+},
+{
+"oid": "0x00002cef",
+"name": "Camera_Last_Empty",
+"comps": [],
+"payload_len": 0
+},
+{
+"oid": "0x00004e24",
+"name": "Car_Sedan_Minigame",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 517
+},
+{
+"oid": "0x000c3507",
+"name": "Cars_Stateset",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1322
+},
+{
+"oid": "0x0000474c",
+"name": "CharacterLevelUps",
+"comps": [
+[
+"0x1d50aa73",
+0
+]
+],
+"payload_len": 8
+},
+{
+"oid": "0x00002b0d",
+"name": "Checkpoint_Blank",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00013881",
+"name": "Checkpoint_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00061a81",
+"name": "Checkpoint_Red",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0004c73e",
+"name": "Checkpoint_Vigilante",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0000002b",
+"name": "CinematicObject",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x17ac851f",
+0
+]
+],
+"payload_len": 107
+},
+{
+"oid": "0x0000268a",
+"name": "Collectibles_Blueprints",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+]
+],
+"payload_len": 131
+},
+{
+"oid": "0x00061a83",
+"name": "Collectibles_Graffiti",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+]
+],
+"payload_len": 131
+},
+{
+"oid": "0x00061a85",
+"name": "Collectibles_PoliceFile",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+]
+],
+"payload_len": 131
+},
+{
+"oid": "0x0000264d",
+"name": "CollisionBoxMulti",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x7f88e44e",
+0
+],
+[
+"0x2c9a0e3f",
+1
+]
+],
+"payload_len": 100
+},
+{
+"oid": "0x0000264e",
+"name": "CollisionMesh",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x2c9a0e3f",
+1
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x0000264f",
+"name": "CollisionPlaneMulti",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x3164ae79",
+0
+],
+[
+"0x2c9a0e3f",
+1
+]
+],
+"payload_len": 76
+},
+{
+"oid": "0x00004745",
+"name": "CombatBatarang",
+"comps": [
+[
+"0x0116a6fa",
+0
+],
+[
+"0x0dd583de",
+0
+],
+[
+"0x0f992a02",
+0
+]
+],
+"payload_len": 170
+},
+{
+"oid": "0x000026ec",
+"name": "Combo_1",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 9585
+},
+{
+"oid": "0x0001879c",
+"name": "Construction_Truck",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000026ee",
+"name": "Counterattacks",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1880
+},
+{
+"oid": "0x000c351a",
+"name": "Coupe",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 513
+},
+{
+"oid": "0x000dbba6",
+"name": "Couple_Anims",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1220
+},
+{
+"oid": "0x000927c3",
+"name": "Crane",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 420
+},
+{
+"oid": "0x00007981",
+"name": "Critter_Horse_Anims",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 4524
+},
+{
+"oid": "0x0004c74b",
+"name": "Crowbar",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 101
+},
+{
+"oid": "0x0004c749",
+"name": "Crowbar_Enemy",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 486
+},
+{
+"oid": "0x000026f8",
+"name": "Crowd_Interaction",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 4431
+},
+{
+"oid": "0x00002651",
+"name": "CylinderTrigger",
+"comps": [
+[
+"0x37f7a8ae",
+0
+],
+[
+"0x749126c3",
+0
+]
+],
+"payload_len": 99
+},
+{
+"oid": "0x000c3505",
+"name": "Decor_Car_Driving",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 472
+},
+{
+"oid": "0x000c3506",
+"name": "Decor_Generic",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 846
+},
+{
+"oid": "0x0004c734",
+"name": "Decor_Generic_Female",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 846
+},
+{
+"oid": "0x000c0dfa",
+"name": "Decor_Prisoners",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 846
+},
+{
+"oid": "0x000dbba2",
+"name": "Decor_Social",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 15098
+},
+{
+"oid": "0x0004c73c",
+"name": "Decor_Social_Ranged",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1220
+},
+{
+"oid": "0x0000798d",
+"name": "Deflect_Minigame",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1830
+},
+{
+"oid": "0x00004e28",
+"name": "DestroyableObject",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x068d1134",
+0
+],
+[
+"0x377ea715",
+0
+]
+],
+"payload_len": 162
+},
+{
+"oid": "0x000dbba3",
+"name": "Destroyable_Car",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 362
+},
+{
+"oid": "0x000927c1",
+"name": "Destroyable_Neon",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x068d1134",
+0
+],
+[
+"0x377ea715",
+0
+],
+[
+"0x4ab8a7cd",
+0
+]
+],
+"payload_len": 245
+},
+{
+"oid": "0x0004c73d",
+"name": "Destroyable_SUV",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+]
+],
+"payload_len": 397
+},
+{
+"oid": "0x00002696",
+"name": "Directional",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x1721f5ba",
+0
+]
+],
+"payload_len": 73
+},
+{
+"oid": "0x00004749",
+"name": "District",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x20af73b7",
+1
+],
+[
+"0x1963f0c0",
+0
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0000474a",
+"name": "DistrictZone",
+"comps": [
+[
+"0x37f7a8ae",
+0
+],
+[
+"0x729ec572",
+0
+]
+],
+"payload_len": 114
+},
+{
+"oid": "0x00061a82",
+"name": "Door_AlarmPost",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x00154bb0",
+0
+]
+],
+"payload_len": 89
+},
+{
+"oid": "0x00002652",
+"name": "Effect",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x2ca13c06",
+0
+]
+],
+"payload_len": 67
+},
+{
+"oid": "0x000163a6",
+"name": "EffectLODs",
+"comps": [
+[
+"0x73f0fe09",
+1
+]
+],
+"payload_len": 404
+},
+{
+"oid": "0x0004c752",
+"name": "ElectricTurret",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x068d1134",
+0
+],
+[
+"0x377ea715",
+0
+],
+[
+"0x0e31d4a0",
+0
+],
+[
+"0x0e286154",
+0
+]
+],
+"payload_len": 327
+},
+{
+"oid": "0x0007a129",
+"name": "Enemy_Attack_Ranged",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 516
+},
+{
+"oid": "0x0004c757",
+"name": "Enemy_Bazooka_Attack",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 585
+},
+{
+"oid": "0x000c3508",
+"name": "Enemy_Cover_Shooting",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 3413
+},
+{
+"oid": "0x000dbbb0",
+"name": "Enemy_Follow",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1285
+},
+{
+"oid": "0x000aae6a",
+"name": "Enemy_Grapnel_Target",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 2572
+},
+{
+"oid": "0x000dbbb7",
+"name": "Enemy_Hurt_Grapnel",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 515
+},
+{
+"oid": "0x0007a12a",
+"name": "Enemy_Melee_Attack",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 10756
+},
+{
+"oid": "0x000dbbb1",
+"name": "Enemy_Melee_Block",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1704
+},
+{
+"oid": "0x000dbbb4",
+"name": "Enemy_Melee_Dodge",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 340
+},
+{
+"oid": "0x000c0df9",
+"name": "Enemy_Melee_Hurt",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 13113
+},
+{
+"oid": "0x0007a128",
+"name": "Enemy_Melee_Movement",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 2191
+},
+{
+"oid": "0x000dbbb6",
+"name": "Enemy_Ranged_Disarm",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 866
+},
+{
+"oid": "0x0004c72b",
+"name": "Enemy_Ranged_Hurt",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 9026
+},
+{
+"oid": "0x0004c71b",
+"name": "Enemy_SMG_Attack",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 2104
+},
+{
+"oid": "0x0004c71c",
+"name": "Enemy_SMG_Movement",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1321
+},
+{
+"oid": "0x000c0e48",
+"name": "Enemy_Silent_Takedown_Victim",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 493
+},
+{
+"oid": "0x0004c744",
+"name": "Enemy_Sniper_Attack",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1278
+},
+{
+"oid": "0x0019f0a4",
+"name": "Enemy_Strafe",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 472
+},
+{
+"oid": "0x0000c38f",
+"name": "Enemy_Turn",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1704
+},
+{
+"oid": "0x000088b8",
+"name": "ExhaustFan",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x65da04ed",
+0
+]
+],
+"payload_len": 117
+},
+{
+"oid": "0x000187cd",
+"name": "ExhaustFan_BEAST",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+],
+[
+"0x65da04ed",
+0
+]
+],
+"payload_len": 169
+},
+{
+"oid": "0x00016f35",
+"name": "FakeSoundEmitter",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x729ec572",
+0
+]
+],
+"payload_len": 124
+},
+{
+"oid": "0x0004c75b",
+"name": "Female_Decor_Prisoners",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 846
+},
+{
+"oid": "0x0004c75c",
+"name": "Female_Decor_Social",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 10658
+},
+{
+"oid": "0x000dbba4",
+"name": "Female_Melee_Attack",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 408
+},
+{
+"oid": "0x0004c75a",
+"name": "Female_Movement",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 826
+},
+{
+"oid": "0x00004740",
+"name": "Fist_01",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 126
+},
+{
+"oid": "0x00004e36",
+"name": "Fist_Npc",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 126
+},
+{
+"oid": "0x000187e8",
+"name": "GC_AB_Spot",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x00018826",
+"name": "GC_Bull_Spot",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x000c0e4e",
+"name": "GC_Decor_Props_Garbagecan_Round_Onfire",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2ef26c52",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 140
+},
+{
+"oid": "0x00018832",
+"name": "GC_FX_AWT_Ground_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018774",
+"name": "GC_FX_Corona_v01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00018775",
+"name": "GC_FX_Corona_v02",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00018776",
+"name": "GC_FX_Corona_v03",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00018777",
+"name": "GC_FX_Corona_v04",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00018778",
+"name": "GC_FX_Corona_v05",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00018798",
+"name": "GC_FX_Diner_Blue_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018797",
+"name": "GC_FX_Diner_Red_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187cf",
+"name": "GC_FX_GreenLight_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x000187d0",
+"name": "GC_FX_GreenLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187d2",
+"name": "GC_FX_IndCold_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187d1",
+"name": "GC_FX_IndWarm_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187bb",
+"name": "GC_FX_RailroadLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018717",
+"name": "GC_FX_RedLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00018718",
+"name": "GC_FX_RedLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018768",
+"name": "GC_FX_RedLight_Omni_Small",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018769",
+"name": "GC_FX_RedLight_Small",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00018783",
+"name": "GC_FX_RooftopLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001879f",
+"name": "GC_FX_SE_Blue_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187a0",
+"name": "GC_FX_SE_Red_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018831",
+"name": "GC_FX_STD_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001877b",
+"name": "GC_FX_Skydome_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187b9",
+"name": "GC_FX_YellowLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x000187ba",
+"name": "GC_FX_YellowLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187ca",
+"name": "GC_Footprint_AWT_Balcony",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x000187bf",
+"name": "GC_ParkLight_Cold_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187bd",
+"name": "GC_ParkLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187be",
+"name": "GC_ParkLight_Warm_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187c5",
+"name": "GC_ParkLight_Warm_Omni_SMALL",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187c3",
+"name": "GC_Prop_Logo_BuildingLogoText_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187c2",
+"name": "GC_Prop_Logo_BuildingLogo_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187c0",
+"name": "GC_Prop_ParkLightpole",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x000187c1",
+"name": "GC_Prop_Park_Spot_Blue",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x000900bf",
+"name": "GC_Prop_Plant_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c0",
+"name": "GC_Prop_Plant_02",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c1",
+"name": "GC_Prop_Plant_03",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c2",
+"name": "GC_Prop_Plant_04",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c3",
+"name": "GC_Prop_Plant_05",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c4",
+"name": "GC_Prop_Plant_06",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018809",
+"name": "GC_Prop_Plant_Industrial_01_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001880a",
+"name": "GC_Prop_Plant_Industrial_02_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001880b",
+"name": "GC_Prop_Plant_Industrial_03_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001880c",
+"name": "GC_Prop_Plant_Industrial_04_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001880d",
+"name": "GC_Prop_Plant_Industrial_05_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001880e",
+"name": "GC_Prop_Plant_Industrial_06_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c5",
+"name": "GC_Prop_Tree_01_L",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c6",
+"name": "GC_Prop_Tree_01_M",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c7",
+"name": "GC_Prop_Tree_01_S",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c8",
+"name": "GC_Prop_Tree_02_L",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900c9",
+"name": "GC_Prop_Tree_02_M",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900ca",
+"name": "GC_Prop_Tree_02_S",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900cb",
+"name": "GC_Prop_Tree_03_L",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900cc",
+"name": "GC_Prop_Tree_03_M",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000900cd",
+"name": "GC_Prop_Tree_03_S",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a1",
+"name": "GC_Prop_Tree_04_L",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a2",
+"name": "GC_Prop_Tree_04_M",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a3",
+"name": "GC_Prop_Tree_04_S",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a4",
+"name": "GC_Prop_Tree_05_L",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a5",
+"name": "GC_Prop_Tree_05_M",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a6",
+"name": "GC_Prop_Tree_05_S",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a7",
+"name": "GC_Prop_Tree_05_XL",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a8",
+"name": "GC_Prop_Tree_06_L",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187a9",
+"name": "GC_Prop_Tree_06_M",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187aa",
+"name": "GC_Prop_Tree_06_S",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ab",
+"name": "GC_Prop_Tree_07_L",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ac",
+"name": "GC_Prop_Tree_07_M",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ad",
+"name": "GC_Prop_Tree_07_S",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001880f",
+"name": "GC_Prop_Tree_Industrial_01_L_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018810",
+"name": "GC_Prop_Tree_Industrial_01_M_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018811",
+"name": "GC_Prop_Tree_Industrial_01_S_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018812",
+"name": "GC_Prop_Tree_Industrial_02_L_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018813",
+"name": "GC_Prop_Tree_Industrial_02_M_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018814",
+"name": "GC_Prop_Tree_Industrial_02_S_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018815",
+"name": "GC_Prop_Tree_Industrial_03_L_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018816",
+"name": "GC_Prop_Tree_Industrial_03_M_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018817",
+"name": "GC_Prop_Tree_Industrial_03_S_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018818",
+"name": "GC_Prop_Tree_Industrial_04_L_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018819",
+"name": "GC_Prop_Tree_Industrial_04_M_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001881a",
+"name": "GC_Prop_Tree_Industrial_04_S_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001881b",
+"name": "GC_Prop_Tree_Industrial_05_L_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001881c",
+"name": "GC_Prop_Tree_Industrial_05_M_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001881d",
+"name": "GC_Prop_Tree_Industrial_05_S_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001881e",
+"name": "GC_Prop_Tree_Industrial_05_XL_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001881f",
+"name": "GC_Prop_Tree_Industrial_06_L_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018820",
+"name": "GC_Prop_Tree_Industrial_06_M_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018821",
+"name": "GC_Prop_Tree_Industrial_06_S_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018822",
+"name": "GC_Prop_Tree_Industrial_07_L_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018823",
+"name": "GC_Prop_Tree_Industrial_07_M_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018824",
+"name": "GC_Prop_Tree_Industrial_07_S_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018729",
+"name": "GC_Prop_VNeonSign_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x00018766",
+"name": "GC_Prop_VNeonSign_01_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001872a",
+"name": "GC_Prop_VNeonSign_02",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187b0",
+"name": "GC_Prop_VNeonSign_02_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x00018767",
+"name": "GC_Prop_VNeonSign_02_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187d5",
+"name": "GC_Prop_VNeonSign_02_blue",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187d7",
+"name": "GC_Prop_VNeonSign_02_blue_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x000187d8",
+"name": "GC_Prop_VNeonSign_02_blue_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001872b",
+"name": "GC_Prop_VNeonSign_03",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x0001879e",
+"name": "GC_Prop_VNeonSign_03_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x0001876a",
+"name": "GC_Prop_VNeonSign_03_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001872c",
+"name": "GC_Prop_VNeonSign_04",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187b1",
+"name": "GC_Prop_VNeonSign_04_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x0001876b",
+"name": "GC_Prop_VNeonSign_04_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001872d",
+"name": "GC_Prop_VNeonSign_05",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187b2",
+"name": "GC_Prop_VNeonSign_05_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x0001876c",
+"name": "GC_Prop_VNeonSign_05_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001872e",
+"name": "GC_Prop_VNeonSign_06",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187b3",
+"name": "GC_Prop_VNeonSign_06_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x0001876d",
+"name": "GC_Prop_VNeonSign_06_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187ae",
+"name": "GC_Prop_VNeonSign_07",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187b4",
+"name": "GC_Prop_VNeonSign_07_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x000187b7",
+"name": "GC_Prop_VNeonSign_07_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187b5",
+"name": "GC_Prop_VNeonSign_08",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187b6",
+"name": "GC_Prop_VNeonSign_08_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x000187b8",
+"name": "GC_Prop_VNeonSign_08_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187d9",
+"name": "GC_Prop_VNeonSign_09",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187da",
+"name": "GC_Prop_VNeonSign_09_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x000187db",
+"name": "GC_Prop_VNeonSign_09_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187dc",
+"name": "GC_Prop_VNeonSign_10",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187dd",
+"name": "GC_Prop_VNeonSign_10_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x000187e0",
+"name": "GC_Prop_VNeonSign_10_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187de",
+"name": "GC_Prop_VNeonSign_11",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187df",
+"name": "GC_Prop_VNeonSign_11_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x000187e1",
+"name": "GC_Prop_VNeonSign_11_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187e2",
+"name": "GC_Prop_VNeonSign_12",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 88
+},
+{
+"oid": "0x000187e3",
+"name": "GC_Prop_VNeonSign_12_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x000187e4",
+"name": "GC_Prop_VNeonSign_12_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000c3503",
+"name": "GC_Props_Monorail",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187c7",
+"name": "GC_Props_UnderConstructionArea",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+0
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000186e6",
+"name": "GC_Res_Prop_Streetlight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x000186e8",
+"name": "GC_Res_Prop_Streetlight_Corona",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0001877c",
+"name": "GC_Res_Prop_Streetlight_Corona_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 360
+},
+{
+"oid": "0x000c0e56",
+"name": "GC_Res_Prop_Streetlight_Corona_Military",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x000c0e57",
+"name": "GC_Res_Prop_Streetlight_Corona_Military_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 360
+},
+{
+"oid": "0x00018731",
+"name": "GC_Res_Prop_Streetlight_Corona_v2",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0001877d",
+"name": "GC_Res_Prop_Streetlight_Corona_v2_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 360
+},
+{
+"oid": "0x00018732",
+"name": "GC_Res_Prop_Streetlight_Corona_v3",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0001877e",
+"name": "GC_Res_Prop_Streetlight_Corona_v3_Animated",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 360
+},
+{
+"oid": "0x000186f5",
+"name": "GC_Res_Prop_Streetlight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018788",
+"name": "GC_Res_Prop_Streetlight_Spot_Blue",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x00018789",
+"name": "GC_Res_Prop_Streetlight_Spot_Red",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x00018787",
+"name": "GC_Res_Prop_Streetlight_Spot_Yellow",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x0001877f",
+"name": "GC_Res_Prop_Streetlight_Spotlight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x00018762",
+"name": "GC_Residential_BD_01_Shop_Omni_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018764",
+"name": "GC_Residential_BD_04_Shop_Omni_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0000465a",
+"name": "GC_Residential_Props_Crate",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0000465b",
+"name": "GC_Residential_Props_Crate2",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0000465c",
+"name": "GC_Residential_Props_Crate3",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00004660",
+"name": "GC_Residential_Props_Excavator",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001871b",
+"name": "GC_Residential_Props_Gotham_Beam",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+0
+]
+],
+"payload_len": 77
+},
+{
+"oid": "0x0001871a",
+"name": "GC_Residential_Props_Gotham_Spotlight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 165
+},
+{
+"oid": "0x00004663",
+"name": "GC_Residential_Props_Light_Pillar",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x00004664",
+"name": "GC_Residential_Props_Light_Pillar2",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x00018786",
+"name": "GC_Residential_Props_Light_Pillar3",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x00004666",
+"name": "GC_Residential_Props_NewsPaperBox",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00004668",
+"name": "GC_Residential_Props_NewsPaperBox2",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00004667",
+"name": "GC_Residential_Props_NewsPaperBox_FlowerPot",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000046bd",
+"name": "GC_Residential_Props_Pipe_Corner",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000046c1",
+"name": "GC_Residential_Props_Pipe_Small",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0000466c",
+"name": "GC_Residential_Props_RoadBlock",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0000466d",
+"name": "GC_Residential_Props_RoadBlock_Cone",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00004665",
+"name": "GC_Residential_Props_lighting_column",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x0001875b",
+"name": "GC_Residential_Shop_CStore_Omni_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001875d",
+"name": "GC_Residential_Shop_Cinema_Omni_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001871c",
+"name": "GC_Residential_Shop_Drugs_NeonSign",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 296
+},
+{
+"oid": "0x0001871d",
+"name": "GC_Residential_Shop_Drugs_NeonSign_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001875f",
+"name": "GC_Residential_Shop_FastFood_Omni_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0001872f",
+"name": "GC_Residential_Shop_Omni_Boost",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018794",
+"name": "GC_Residential_Shop_Pharmacy_Omni_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018761",
+"name": "GC_Residential_Shop_Restaurant_Omni_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00030db1",
+"name": "GC_SE_FireLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 216
+},
+{
+"oid": "0x000dbbae",
+"name": "GC_SE_Fireplace",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 216
+},
+{
+"oid": "0x000187c9",
+"name": "GC_SE_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00030db0",
+"name": "GC_SE_PoliceSiren",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+1
+]
+],
+"payload_len": 216
+},
+{
+"oid": "0x000187c8",
+"name": "GC_SE_SmallLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187c4",
+"name": "GC_SE_Spot",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x000c0e33",
+"name": "GC_StockExchange_Main_Entrance_Room",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x000aae63",
+"name": "GC_StockExchange_Props_LightMedium_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000aae61",
+"name": "GC_StockExchange_Props_Light_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000aae64",
+"name": "GC_StockExchange_Props_LowerwallLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000c0e34",
+"name": "GC_StockExchange_Props_MaintenanceLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000aae62",
+"name": "GC_StockExchange_Props_WeakLight_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000aae66",
+"name": "GC_StockExchange_Props_WeakLight_Red_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187e9",
+"name": "GC_VPOW_Spot",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x00018827",
+"name": "GC_WT_Garage_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187cb",
+"name": "GC_WT_SmallLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000187c6",
+"name": "GC_WT_Spot",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x4cc07242",
+1
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x000187ce",
+"name": "GC_WT_VerySmallLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0000266d",
+"name": "Gargoyle",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x010fcfd6",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 124
+},
+{
+"oid": "0x0004c726",
+"name": "Generic_Car",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 505
+},
+{
+"oid": "0x00007990",
+"name": "Glide",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 186
+},
+{
+"oid": "0x00002674",
+"name": "Glider",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x0110ce1f",
+0
+]
+],
+"payload_len": 101
+},
+{
+"oid": "0x0004c741",
+"name": "Glider_Plunge",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x0110ce1f",
+0
+]
+],
+"payload_len": 101
+},
+{
+"oid": "0x00002669",
+"name": "GlobalIllumination",
+"comps": [
+[
+"0x279c68f5",
+0
+],
+[
+"0x20af73b7",
+1
+]
+],
+"payload_len": 95
+},
+{
+"oid": "0x0000474e",
+"name": "GraffitiDistrict1_Map",
+"comps": [],
+"payload_len": 0
+},
+{
+"oid": "0x0000474f",
+"name": "GraffitiDistrict2_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x00004750",
+"name": "GraffitiDistrict3_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x0004c71d",
+"name": "Grapnel_Gun",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 97
+},
+{
+"oid": "0x00002673",
+"name": "GrapplingGun",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x2cf1c31c",
+0
+]
+],
+"payload_len": 141
+},
+{
+"oid": "0x0004c71f",
+"name": "GrapplingGun_Combat",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x2cf1c31c",
+0
+]
+],
+"payload_len": 141
+},
+{
+"oid": "0x0004c71e",
+"name": "GrapplingGun_Flying",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x2cf1c31c",
+0
+]
+],
+"payload_len": 141
+},
+{
+"oid": "0x0004c720",
+"name": "GrapplingGun_Gargoyle",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x2cf1c31c",
+0
+]
+],
+"payload_len": 141
+},
+{
+"oid": "0x00014ff1",
+"name": "GrapplingGun_MiniGame",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x2cf1c31c",
+0
+]
+],
+"payload_len": 141
+},
+{
+"oid": "0x00004e22",
+"name": "GrapplingGun_Vehicle",
+"comps": [
+[
+"0x0dd583de",
+0
+],
+[
+"0x2cf1c31c",
+0
+]
+],
+"payload_len": 141
+},
+{
+"oid": "0x0000266f",
+"name": "Grenade",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0e31d4a0",
+0
+],
+[
+"0x3438ab08",
+1
+]
+],
+"payload_len": 199
+},
+{
+"oid": "0x00002648",
+"name": "GroupObjects",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x2ad2a046",
+0
+]
+],
+"payload_len": 46
+},
+{
+"oid": "0x000186f7",
+"name": "HC_Prop_BillboardRoof_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000186f8",
+"name": "HC_Prop_BillboardRoof_02",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018702",
+"name": "HC_Prop_BillboardRoof_03",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000186fe",
+"name": "HC_Prop_BillboardRoof_04",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018703",
+"name": "HC_Prop_BillboardRoof_05",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000186ff",
+"name": "HC_Prop_BillboardRoof_06",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018704",
+"name": "HC_Prop_BillboardRoof_07",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018700",
+"name": "HC_Prop_BillboardRoof_08",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018705",
+"name": "HC_Prop_BillboardRoof_09",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018701",
+"name": "HC_Prop_BillboardRoof_10",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018706",
+"name": "HC_Prop_BillboardRoof_11",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018707",
+"name": "HC_Prop_BillboardRoof_13",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ea",
+"name": "HC_Prop_BillboardRoof_Industrial_01_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187eb",
+"name": "HC_Prop_BillboardRoof_Industrial_02_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ec",
+"name": "HC_Prop_BillboardRoof_Industrial_03_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ed",
+"name": "HC_Prop_BillboardRoof_Industrial_04_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ee",
+"name": "HC_Prop_BillboardRoof_Industrial_05_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ef",
+"name": "HC_Prop_BillboardRoof_Industrial_06_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f0",
+"name": "HC_Prop_BillboardRoof_Industrial_07_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f1",
+"name": "HC_Prop_BillboardRoof_Industrial_08_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f2",
+"name": "HC_Prop_BillboardRoof_Industrial_09_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f3",
+"name": "HC_Prop_BillboardRoof_Industrial_10_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f4",
+"name": "HC_Prop_BillboardRoof_Industrial_11_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f5",
+"name": "HC_Prop_BillboardRoof_Industrial_13_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001870b",
+"name": "HC_Prop_BillboardWallSmall_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001870c",
+"name": "HC_Prop_BillboardWallSmall_02",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001870d",
+"name": "HC_Prop_BillboardWallSmall_03",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001870e",
+"name": "HC_Prop_BillboardWallSmall_04",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001870f",
+"name": "HC_Prop_BillboardWallSmall_05",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f6",
+"name": "HC_Prop_BillboardWallSmall_Industrial_01_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f7",
+"name": "HC_Prop_BillboardWallSmall_Industrial_02_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f8",
+"name": "HC_Prop_BillboardWallSmall_Industrial_03_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187f9",
+"name": "HC_Prop_BillboardWallSmall_Industrial_04_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187fa",
+"name": "HC_Prop_BillboardWallSmall_Industrial_05_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018710",
+"name": "HC_Prop_BillboardWallTall_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018711",
+"name": "HC_Prop_BillboardWallTall_02",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018712",
+"name": "HC_Prop_BillboardWallTall_03",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018713",
+"name": "HC_Prop_BillboardWallTall_04",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018714",
+"name": "HC_Prop_BillboardWallTall_05",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018715",
+"name": "HC_Prop_BillboardWallTall_06",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018716",
+"name": "HC_Prop_BillboardWallTall_07",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187fb",
+"name": "HC_Prop_BillboardWallTall_Industrial_01_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187fc",
+"name": "HC_Prop_BillboardWallTall_Industrial_02_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187fd",
+"name": "HC_Prop_BillboardWallTall_Industrial_03_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187fe",
+"name": "HC_Prop_BillboardWallTall_Industrial_04_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187ff",
+"name": "HC_Prop_BillboardWallTall_Industrial_05_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018800",
+"name": "HC_Prop_BillboardWallTall_Industrial_06_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018801",
+"name": "HC_Prop_BillboardWallTall_Industrial_07_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0007a12b",
+"name": "HC_Prop_BillboardWall_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0007a12c",
+"name": "HC_Prop_BillboardWall_02",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0007a12d",
+"name": "HC_Prop_BillboardWall_03",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0007a12e",
+"name": "HC_Prop_BillboardWall_04",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001870a",
+"name": "HC_Prop_BillboardWall_05",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018709",
+"name": "HC_Prop_BillboardWall_06",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018708",
+"name": "HC_Prop_BillboardWall_07",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018802",
+"name": "HC_Prop_BillboardWall_Industrial_01_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018803",
+"name": "HC_Prop_BillboardWall_Industrial_02_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018804",
+"name": "HC_Prop_BillboardWall_Industrial_03_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018805",
+"name": "HC_Prop_BillboardWall_Industrial_04_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018806",
+"name": "HC_Prop_BillboardWall_Industrial_05_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018807",
+"name": "HC_Prop_BillboardWall_Industrial_06_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018808",
+"name": "HC_Prop_BillboardWall_Industrial_07_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000187af",
+"name": "HC_Prop_Busstop_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+0
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018726",
+"name": "HC_Prop_Busstop_Ad",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001871e",
+"name": "HC_Prop_Busstop_Ad_01",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018829",
+"name": "HC_Prop_Busstop_Ad_01_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018720",
+"name": "HC_Prop_Busstop_Ad_02",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001882a",
+"name": "HC_Prop_Busstop_Ad_02_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018721",
+"name": "HC_Prop_Busstop_Ad_03",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001882b",
+"name": "HC_Prop_Busstop_Ad_03_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018722",
+"name": "HC_Prop_Busstop_Ad_04",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001882c",
+"name": "HC_Prop_Busstop_Ad_04_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018723",
+"name": "HC_Prop_Busstop_Ad_05",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001882d",
+"name": "HC_Prop_Busstop_Ad_05_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018724",
+"name": "HC_Prop_Busstop_Ad_06",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001882e",
+"name": "HC_Prop_Busstop_Ad_06_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018725",
+"name": "HC_Prop_Busstop_Ad_07",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001882f",
+"name": "HC_Prop_Busstop_Ad_07_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018828",
+"name": "HC_Prop_Busstop_Ad_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x0001871f",
+"name": "HC_Prop_Busstop_Ad_Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00018830",
+"name": "HC_Prop_Busstop_Ad_Omni_Industrial",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x000c3516",
+"name": "Hatch",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 513
+},
+{
+"oid": "0x00007928",
+"name": "Heavy_NPC_Attacks",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1022
+},
+{
+"oid": "0x0004c724",
+"name": "Helicopter",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+1
+],
+[
+"0x68a62e65",
+0
+],
+[
+"0x34747ebe",
+1
+],
+[
+"0x786f6ecb",
+0
+]
+],
+"payload_len": 3092
+},
+{
+"oid": "0x00011171",
+"name": "HelicopterWeapon",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 122
+},
+{
+"oid": "0x000c351e",
+"name": "Helicopter_Bane",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+1
+],
+[
+"0x68a62e65",
+0
+],
+[
+"0x34747ebe",
+1
+],
+[
+"0x786f6ecb",
+0
+]
+],
+"payload_len": 3092
+},
+{
+"oid": "0x00014ff3",
+"name": "Hotspot",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x1402fd4b",
+0
+],
+[
+"0x749126c3",
+0
+]
+],
+"payload_len": 105
+},
+{
+"oid": "0x000026ed",
+"name": "Hurt_Death_Anims",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 4747
+},
+{
+"oid": "0x0000270f",
+"name": "Hurt_Death_Anims_For_Ranged",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 3250
+},
+{
+"oid": "0x0000797f",
+"name": "Hurt_Death_Anims_For_Zombie",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 2801
+},
+{
+"oid": "0x000026f7",
+"name": "Hurt_MC",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 3910
+},
+{
+"oid": "0x000900cf",
+"name": "Interactive_Animated_Object",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 123
+},
+{
+"oid": "0x0004c729",
+"name": "Interactive_Object",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x00002689",
+"name": "Inventory_Coins",
+"comps": [],
+"payload_len": 0
+},
+{
+"oid": "0x00001011",
+"name": "IrradianceVolume",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x7c2f7284",
+0
+]
+],
+"payload_len": 66
+},
+{
+"oid": "0x000900ce",
+"name": "Knife",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 101
+},
+{
+"oid": "0x000c3512",
+"name": "Knife_Enemy",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 502
+},
+{
+"oid": "0x000c3520",
+"name": "Knife_Enemy_Prisoner",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 518
+},
+{
+"oid": "0x000900d0",
+"name": "LeadMerc",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 496
+},
+{
+"oid": "0x00002657",
+"name": "LevelProperties",
+"comps": [
+[
+"0x409a2d0e",
+0
+],
+[
+"0x29e7750d",
+0
+],
+[
+"0x279c68f5",
+0
+]
+],
+"payload_len": 309
+},
+{
+"oid": "0x000c351c",
+"name": "Limousine",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 505
+},
+{
+"oid": "0x00014ff5",
+"name": "LotteryBox",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x34747ebe",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 127
+},
+{
+"oid": "0x00007980",
+"name": "MC_On_Horse",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 6946
+},
+{
+"oid": "0x00007984",
+"name": "MC_On_Horse_Pistol",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 5214
+},
+{
+"oid": "0x0000c37c",
+"name": "MagnetHuman",
+"comps": [
+[
+"0x3ebf0875",
+0
+]
+],
+"payload_len": 29
+},
+{
+"oid": "0x0000c37b",
+"name": "MagnetVehicle",
+"comps": [
+[
+"0x3ebf0875",
+0
+]
+],
+"payload_len": 29
+},
+{
+"oid": "0x0000474d",
+"name": "MainStory",
+"comps": [
+[
+"0x5863bd59",
+1
+]
+],
+"payload_len": 928
+},
+{
+"oid": "0x0004c746",
+"name": "Male_Civilian_Movement",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 795
+},
+{
+"oid": "0x000c351d",
+"name": "Melee_Enemy_Merc",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0113317a",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+0
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 683
+},
+{
+"oid": "0x000c3521",
+"name": "Melee_Enemy_Pit",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0113317a",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+0
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 539
+},
+{
+"oid": "0x0000ea61",
+"name": "Melee_Enemy_Stadium",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0113317a",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+0
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 523
+},
+{
+"oid": "0x0004c71a",
+"name": "Melee_Enemy_Test",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0113317a",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+0
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 539
+},
+{
+"oid": "0x00000bba",
+"name": "MetaZone",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x39e32181",
+0
+],
+[
+"0x20af73b7",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0004c769",
+"name": "Military_Heli",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+1
+],
+[
+"0x68a62e65",
+0
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x786f6ecb",
+0
+]
+],
+"payload_len": 3105
+},
+{
+"oid": "0x0004c75f",
+"name": "Military_Jeep",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 505
+},
+{
+"oid": "0x000dbbba",
+"name": "Military_Laser",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 93
+},
+{
+"oid": "0x000c3513",
+"name": "Military_Officer",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 453
+},
+{
+"oid": "0x00007992",
+"name": "Military_Truck",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 505
+},
+{
+"oid": "0x0000c390",
+"name": "Mine_Blue",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0000c391",
+"name": "Mine_Red",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00014ff2",
+"name": "MiniGameAnimatedObject",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4891830c",
+0
+]
+],
+"payload_len": 149
+},
+{
+"oid": "0x000927c5",
+"name": "Miranda",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 420
+},
+{
+"oid": "0x0004c755",
+"name": "Monorail_Back",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+]
+],
+"payload_len": 1167
+},
+{
+"oid": "0x0004c753",
+"name": "Monorail_Car",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+]
+],
+"payload_len": 1167
+},
+{
+"oid": "0x0004c754",
+"name": "Monorail_Front",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+]
+],
+"payload_len": 1167
+},
+{
+"oid": "0x000026f0",
+"name": "Musket_NPC",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1387
+},
+{
+"oid": "0x00009c43",
+"name": "MuzzleBatpod",
+"comps": [
+[
+"0x519ad19b",
+0
+]
+],
+"payload_len": 61
+},
+{
+"oid": "0x00004e25",
+"name": "MuzzleEmpty",
+"comps": [
+[
+"0x519ad19b",
+0
+]
+],
+"payload_len": 49
+},
+{
+"oid": "0x00001194",
+"name": "MuzzleGeneric",
+"comps": [
+[
+"0x519ad19b",
+0
+]
+],
+"payload_len": 49
+},
+{
+"oid": "0x0004c72d",
+"name": "MuzzlePunch",
+"comps": [
+[
+"0x519ad19b",
+0
+]
+],
+"payload_len": 49
+},
+{
+"oid": "0x00001195",
+"name": "MuzzleTurret",
+"comps": [
+[
+"0x519ad19b",
+0
+]
+],
+"payload_len": 53
+},
+{
+"oid": "0x00002658",
+"name": "NPC",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+0
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x650bb301",
+0
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 404
+},
+{
+"oid": "0x00007919",
+"name": "NPC_Combat",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 4758
+},
+{
+"oid": "0x0004c75d",
+"name": "NPC_Female",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+0
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x650bb301",
+0
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 404
+},
+{
+"oid": "0x00002659",
+"name": "NavMesh",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x46b0c1c3",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x0000267d",
+"name": "NavMeshAuto",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x2e23cdd8",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x0000267c",
+"name": "NavMeshSeedPoint",
+"comps": [],
+"payload_len": 16
+},
+{
+"oid": "0x00016f32",
+"name": "NewShopCategory",
+"comps": [
+[
+"0x292930b0",
+0
+]
+],
+"payload_len": 12
+},
+{
+"oid": "0x00016f33",
+"name": "NewShopItem",
+"comps": [
+[
+"0x44c835d1",
+0
+]
+],
+"payload_len": 28
+},
+{
+"oid": "0x00016f31",
+"name": "NewShopItemProperty",
+"comps": [
+[
+"0x4ca5f00e",
+0
+]
+],
+"payload_len": 40
+},
+{
+"oid": "0x0004c6f9",
+"name": "ObjectiveAlfred",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c6fe",
+"name": "ObjectiveAreaAttacked",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c705",
+"name": "ObjectiveAreaFree",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c706",
+"name": "ObjectiveAreaOccupied",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c712",
+"name": "ObjectiveBat",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c713",
+"name": "ObjectiveBatcave",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c711",
+"name": "ObjectiveBatpod",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c710",
+"name": "ObjectiveBoss",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c70c",
+"name": "ObjectiveCounterattack",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c708",
+"name": "ObjectiveCustomWaypoint",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c6f8",
+"name": "ObjectiveDisabled",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c6f7",
+"name": "ObjectiveEnabled",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c70d",
+"name": "ObjectiveFriend",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c6fc",
+"name": "ObjectiveGordon",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c70a",
+"name": "ObjectiveKill",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c6fa",
+"name": "ObjectiveLucius",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c707",
+"name": "ObjectiveMCIcon",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c70e",
+"name": "ObjectiveMeleeEnemy",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c70f",
+"name": "ObjectiveRangedEnemy",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c6fd",
+"name": "ObjectiveSelina",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c6fb",
+"name": "ObjectiveTalia",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c709",
+"name": "ObjectiveTalk",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c714",
+"name": "ObjectiveThumbler",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x0004c70b",
+"name": "ObjectiveUse",
+"comps": [
+[
+"0x43c8a8d1",
+0
+]
+],
+"payload_len": 16
+},
+{
+"oid": "0x00002653",
+"name": "Occluder",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+]
+],
+"payload_len": 56
+},
+{
+"oid": "0x00002695",
+"name": "Omni",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+0
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0000c37a",
+"name": "ParkingHuman",
+"comps": [
+[
+"0x30951655",
+0
+]
+],
+"payload_len": 42
+},
+{
+"oid": "0x0000c379",
+"name": "ParkingVehicle",
+"comps": [
+[
+"0x30951655",
+0
+]
+],
+"payload_len": 42
+},
+{
+"oid": "0x00018825",
+"name": "Parking_Omni_Interior",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc04ddb",
+1
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x0004c760",
+"name": "PickUpTruck",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 509
+},
+{
+"oid": "0x0004c764",
+"name": "PickUp_Batarang",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 149
+},
+{
+"oid": "0x0004c765",
+"name": "PickUp_EMP_Batarang",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 149
+},
+{
+"oid": "0x0004c767",
+"name": "PickUp_Flash_Grenades",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 149
+},
+{
+"oid": "0x0004c766",
+"name": "PickUp_Smoke_Grenades",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 149
+},
+{
+"oid": "0x00002672",
+"name": "Pistol_01",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 97
+},
+{
+"oid": "0x0004c76b",
+"name": "Pit_Prisoner",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+0
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x650bb301",
+0
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 464
+},
+{
+"oid": "0x000026e9",
+"name": "Plunge_Takedown_Attacker",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1117
+},
+{
+"oid": "0x000026ea",
+"name": "Plunge_Takedown_Victim",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 564
+},
+{
+"oid": "0x0000265e",
+"name": "PointLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x0112e126",
+0
+],
+[
+"0x20af73b7",
+1
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x00004751",
+"name": "PoliceFilesDistrict1_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x00004752",
+"name": "PoliceFilesDistrict2_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x00004753",
+"name": "PoliceFilesDistrict3_Map",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x0000c38d",
+"name": "PoliceFlasher",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+]
+],
+"payload_len": 33
+},
+{
+"oid": "0x0004c72e",
+"name": "Police_Car",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+1
+],
+[
+"0x4ab8a7cd",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 638
+},
+{
+"oid": "0x0004c725",
+"name": "Police_Officer",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 453
+},
+{
+"oid": "0x0004c758",
+"name": "Police_Officer_Melee",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+0
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 483
+},
+{
+"oid": "0x00016f36",
+"name": "Police_Station_Spotlight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x2c9a0e3f",
+1
+]
+],
+"payload_len": 113
+},
+{
+"oid": "0x000927c2",
+"name": "Police_Station_Water_Spotlight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x2c9a0e3f",
+1
+]
+],
+"payload_len": 113
+},
+{
+"oid": "0x0000265f",
+"name": "Portal",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x0c69a6a7",
+0
+],
+[
+"0x2ad64f3d",
+0
+]
+],
+"payload_len": 76
+},
+{
+"oid": "0x00016378",
+"name": "PunchEffect",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+]
+],
+"payload_len": 77
+},
+{
+"oid": "0x00002ee3",
+"name": "Quest",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x55a6393b",
+0
+]
+],
+"payload_len": 87
+},
+{
+"oid": "0x00004758",
+"name": "RainDropSplash",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+]
+],
+"payload_len": 77
+},
+{
+"oid": "0x00004757",
+"name": "Ranged_Disarm_Dummy",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0e1f5b6f",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 529
+},
+{
+"oid": "0x000026f5",
+"name": "Ranged_Enemy_Test",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x406510ec",
+0
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+1
+]
+],
+"payload_len": 603
+},
+{
+"oid": "0x0000798e",
+"name": "Reverence",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1880
+},
+{
+"oid": "0x0019f0a2",
+"name": "RewardHigh",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+]
+],
+"payload_len": 131
+},
+{
+"oid": "0x0019f0a1",
+"name": "RewardMedium",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+]
+],
+"payload_len": 131
+},
+{
+"oid": "0x0000474b",
+"name": "RewardSmall",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0651bdaa",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x28091330",
+1
+]
+],
+"payload_len": 131
+},
+{
+"oid": "0x0000798f",
+"name": "RoadmapWaypoint",
+"comps": [
+[
+"0x5e46be31",
+0
+],
+[
+"0x3755b69f",
+0
+],
+[
+"0x749126c3",
+0
+]
+],
+"payload_len": 124
+},
+{
+"oid": "0x00004e2b",
+"name": "Rocket",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x35c5e0a0",
+0
+]
+],
+"payload_len": 101
+},
+{
+"oid": "0x00004e2c",
+"name": "RocketLauncher",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 122
+},
+{
+"oid": "0x000c3518",
+"name": "SUV",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 513
+},
+{
+"oid": "0x000c3514",
+"name": "Security_Officer",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 453
+},
+{
+"oid": "0x000c3519",
+"name": "Sedan",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 517
+},
+{
+"oid": "0x000026e5",
+"name": "Shooting",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 7097
+},
+{
+"oid": "0x000026e8",
+"name": "Silent_Takedown_Attacker",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 2495
+},
+{
+"oid": "0x000026e6",
+"name": "Silent_Takedown_Victim",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1565
+},
+{
+"oid": "0x00004744",
+"name": "SituationSpawnpoint",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 44
+},
+{
+"oid": "0x00002661",
+"name": "SkyBox",
+"comps": [
+[
+"0x2cf34785",
+0
+]
+],
+"payload_len": 13
+},
+{
+"oid": "0x00002664",
+"name": "SkyBoxEditor",
+"comps": [],
+"payload_len": 4
+},
+{
+"oid": "0x00018781",
+"name": "SkyLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x69540db7",
+0
+]
+],
+"payload_len": 86
+},
+{
+"oid": "0x00016379",
+"name": "SmartLight",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4ab8a7cd",
+0
+]
+],
+"payload_len": 115
+},
+{
+"oid": "0x000187cc",
+"name": "Smart_Alarm",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x4ab8a7cd",
+0
+]
+],
+"payload_len": 107
+},
+{
+"oid": "0x000dbbac",
+"name": "Smart_Fire_Small",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x4ab8a7cd",
+0
+],
+[
+"0x2ca13c06",
+1
+]
+],
+"payload_len": 130
+},
+{
+"oid": "0x0004c745",
+"name": "Sniper",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0e1f5b6f",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x40c6b80a",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 524
+},
+{
+"oid": "0x00013882",
+"name": "Sniper_Rifle_01",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 122
+},
+{
+"oid": "0x00002662",
+"name": "Spawnpoint",
+"comps": [
+[
+"0x0014ca79",
+0
+]
+],
+"payload_len": 59
+},
+{
+"oid": "0x00002697",
+"name": "Spot",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x4cc07242",
+0
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x0004c76a",
+"name": "StashedReleased",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 102
+},
+{
+"oid": "0x000dbba5",
+"name": "StateSet",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 32
+},
+{
+"oid": "0x0019f0a3",
+"name": "StateSet1",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 32
+},
+{
+"oid": "0x000026ae",
+"name": "StateSetHorse",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+]
+],
+"payload_len": 1997
+},
+{
+"oid": "0x00007986",
+"name": "StateSetHorse_Pistol",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 2782
+},
+{
+"oid": "0x000026b0",
+"name": "StateSetSocial",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+]
+],
+"payload_len": 22826
+},
+{
+"oid": "0x00004e29",
+"name": "StateSet_Turret",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1576
+},
+{
+"oid": "0x00002663",
+"name": "StaticObject",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x00014051",
+"name": "StaticObjectLPLD",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x000c350d",
+"name": "StaticObjectNoStreaming",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0000266e",
+"name": "StaticObjectWithCollision",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+]
+],
+"payload_len": 68
+},
+{
+"oid": "0x00002ee2",
+"name": "StaticObjectWithCollisionAndChildren",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+1
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x000c350e",
+"name": "StaticObjectWithCollisionNoStreaming_BEAST",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+0
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018785",
+"name": "StaticObjectWithCollision_BEAST",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+0
+]
+],
+"payload_len": 120
+},
+{
+"oid": "0x00018784",
+"name": "StaticObject_BEAST",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x365cfd67",
+0
+],
+[
+"0x59a8390c",
+0
+]
+],
+"payload_len": 104
+},
+{
+"oid": "0x00014050",
+"name": "StaticReflection",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x000187e5",
+"name": "Steam",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x2ca13c06",
+1
+]
+],
+"payload_len": 67
+},
+{
+"oid": "0x000187e6",
+"name": "Steam_Ground",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x2ca13c06",
+1
+]
+],
+"payload_len": 67
+},
+{
+"oid": "0x000187e7",
+"name": "Steam_JustGround",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x2ca13c06",
+1
+]
+],
+"payload_len": 67
+},
+{
+"oid": "0x0000792b",
+"name": "Steam_Vent",
+"comps": [
+[
+"0x5441a117",
+1
+]
+],
+"payload_len": 1468
+},
+{
+"oid": "0x0004c72f",
+"name": "Subway_Car",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+]
+],
+"payload_len": 1167
+},
+{
+"oid": "0x0000002c",
+"name": "SurveillanceCamera",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x068d1134",
+0
+],
+[
+"0x377ea715",
+0
+],
+[
+"0x62353c58",
+0
+]
+],
+"payload_len": 181
+},
+{
+"oid": "0x000c3515",
+"name": "SwatVan",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 505
+},
+{
+"oid": "0x00002671",
+"name": "Sword",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+]
+],
+"payload_len": 134
+},
+{
+"oid": "0x000c3517",
+"name": "Taxi",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 505
+},
+{
+"oid": "0x0004c6f0",
+"name": "Test_Object",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+0
+],
+[
+"0x34747ebe",
+0
+]
+],
+"payload_len": 35534
+},
+{
+"oid": "0x00009c44",
+"name": "TheBatDrive",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x30e3ad7c",
+1
+],
+[
+"0x222500f6",
+1
+]
+],
+"payload_len": 654
+},
+{
+"oid": "0x00007993",
+"name": "TheBatFlares",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+]
+],
+"payload_len": 105
+},
+{
+"oid": "0x00009c46",
+"name": "TheBatWeapon",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+]
+],
+"payload_len": 118
+},
+{
+"oid": "0x00016f34",
+"name": "ThePit_Fan",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+1
+],
+[
+"0x0f5f8cfd",
+1
+]
+],
+"payload_len": 97
+},
+{
+"oid": "0x0000c353",
+"name": "TrafficCrossroad",
+"comps": [
+[
+"0x5941c179",
+0
+],
+[
+"0x749126c3",
+0
+]
+],
+"payload_len": 98
+},
+{
+"oid": "0x0000c351",
+"name": "TrafficRoad",
+"comps": [
+[
+"0x0c7d8baf",
+0
+],
+[
+"0x749126c3",
+0
+]
+],
+"payload_len": 95
+},
+{
+"oid": "0x0000c352",
+"name": "TrafficSemaphore",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x3198c7c5",
+0
+]
+],
+"payload_len": 81
+},
+{
+"oid": "0x000c350f",
+"name": "TrafficSemaphoreBody",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x000aae65",
+"name": "TrafficSemaphoreNoIllumination",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x3198c7c5",
+0
+]
+],
+"payload_len": 81
+},
+{
+"oid": "0x000c3510",
+"name": "TrafficSemaphoreNoIlluminationBody",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+]
+],
+"payload_len": 52
+},
+{
+"oid": "0x0000c355",
+"name": "TrafficSetting",
+"comps": [
+[
+"0x3189e053",
+0
+]
+],
+"payload_len": 53
+},
+{
+"oid": "0x0000c356",
+"name": "TrafficSpawner",
+"comps": [
+[
+"0x31c00731",
+0
+]
+],
+"payload_len": 37
+},
+{
+"oid": "0x0004c740",
+"name": "Tumbler",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x238767e3",
+0
+]
+],
+"payload_len": 409
+},
+{
+"oid": "0x000927c4",
+"name": "Turhan",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+1
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+1
+],
+[
+"0x0113f791",
+0
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x3e2bb040",
+1
+],
+[
+"0x592ce07c",
+0
+]
+],
+"payload_len": 420
+},
+{
+"oid": "0x0004c732",
+"name": "Umbrella",
+"comps": [
+[
+"0x00152b87",
+0
+],
+[
+"0x33702f4a",
+0
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x0e31d4a0",
+1
+],
+[
+"0x0116a6fa",
+1
+],
+[
+"0x1791e34f",
+0
+]
+],
+"payload_len": 183
+},
+{
+"oid": "0x0004c747",
+"name": "Underground_Light",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2ef26c52",
+0
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x4ab8a7cd",
+0
+]
+],
+"payload_len": 216
+},
+{
+"oid": "0x000c351b",
+"name": "Van",
+"comps": [
+[
+"0x5441a117",
+1
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+1
+],
+[
+"0x2db081e2",
+1
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x0ddcd6c4",
+0
+],
+[
+"0x0dfe2718",
+0
+],
+[
+"0x6754056b",
+0
+],
+[
+"0x0113f791",
+1
+],
+[
+"0x3ef5108d",
+1
+],
+[
+"0x44c6e9e5",
+1
+],
+[
+"0x54989cb1",
+0
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x34747ebe",
+0
+],
+[
+"0x2b9b5fed",
+1
+],
+[
+"0x378ab920",
+1
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x4de3f7c4",
+1
+]
+],
+"payload_len": 509
+},
+{
+"oid": "0x0000c365",
+"name": "VehicleCarSUV",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 313
+},
+{
+"oid": "0x0000c366",
+"name": "VehicleCarTaxi",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 305
+},
+{
+"oid": "0x000c350a",
+"name": "VehicleCoupe",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 313
+},
+{
+"oid": "0x0000c367",
+"name": "VehicleHatch",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 313
+},
+{
+"oid": "0x0000c36f",
+"name": "VehiclePolice",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x4ab8a7cd",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 432
+},
+{
+"oid": "0x0000c370",
+"name": "VehicleSWAT",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 305
+},
+{
+"oid": "0x000c3509",
+"name": "VehicleSedan",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 317
+},
+{
+"oid": "0x0000c35c",
+"name": "VehicleTruck",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 309
+},
+{
+"oid": "0x0000c35b",
+"name": "VehicleVan",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x67c82e62",
+1
+],
+[
+"0x68a62e65",
+1
+],
+[
+"0x37883208",
+0
+],
+[
+"0x2b9b5fed",
+0
+],
+[
+"0x378ab920",
+0
+],
+[
+"0x1791e34f",
+1
+],
+[
+"0x378ded9b",
+0
+],
+[
+"0x216bb1eb",
+0
+],
+[
+"0x4de3f7c4",
+0
+]
+],
+"payload_len": 309
+},
+{
+"oid": "0x00002666",
+"name": "Waypoint",
+"comps": [
+[
+"0x5e46be31",
+0
+],
+[
+"0x2c9a0e3f",
+1
+],
+[
+"0x26a331e5",
+0
+]
+],
+"payload_len": 67
+},
+{
+"oid": "0x00004741",
+"name": "WaypointSpline",
+"comps": [
+[
+"0x5e46be31",
+0
+],
+[
+"0x2c9a0e3f",
+1
+],
+[
+"0x26a331e5",
+0
+]
+],
+"payload_len": 67
+},
+{
+"oid": "0x0004c728",
+"name": "WeaponCache",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x34747ebe",
+1
+]
+],
+"payload_len": 121
+},
+{
+"oid": "0x000c0e52",
+"name": "WeaponCache_DECOR",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x0f5f8cfd",
+0
+],
+[
+"0x2db081e2",
+0
+],
+[
+"0x0651bdaa",
+1
+],
+[
+"0x00154bb0",
+0
+],
+[
+"0x34747ebe",
+0
+]
+],
+"payload_len": 121
+},
+{
+"oid": "0x00002693",
+"name": "Window",
+"comps": [
+[
+"0x0014ca79",
+0
+],
+[
+"0x00152b87",
+1
+],
+[
+"0x2b1efd04",
+0
+]
+],
+"payload_len": 94
+},
+{
+"oid": "0x000dbbb8",
+"name": "WorldBox",
+"comps": [
+[
+"0x2888019a",
+0
+],
+[
+"0x729ec572",
+0
+]
+],
+"payload_len": 92
+},
+{
+"oid": "0x00002667",
+"name": "Zone",
+"comps": [
+[
+"0x352b0a2e",
+0
+],
+[
+"0x0014ca79",
+0
+],
+[
+"0x20af73b7",
+1
+]
+],
+"payload_len": 782056
+}
+]

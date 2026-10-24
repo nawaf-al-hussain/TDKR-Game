@@ -1,0 +1,21 @@
+{
+ "fingerprints": {
+  "CComponentHealth": {
+   "ReadFloat": 1,
+   "ReadChar": 1,
+   "ReadInt": 2
+  },
+  "CComponentMotion": {},
+  "CComponentAwareness": {
+   "ReadFloat": 16
+  }
+ },
+ "matches": {
+  "CComponentHealth": [
+   "0x0ddcd6c4"
+  ],
+  "CComponentAwareness": [
+   "0x6754056b"
+  ]
+ }
+}

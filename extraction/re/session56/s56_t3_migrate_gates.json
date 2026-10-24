@@ -1,0 +1,171 @@
+{
+ "root_prototype": {
+  "name": "root_prototype",
+  "path": "/",
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [],
+  "elapsed_s": 14.0,
+  "gate": {
+   "done": true,
+   "pass": true,
+   "soup": {
+    "nTri": 137893,
+    "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+   },
+   "routes": {
+    "run": 10,
+    "agree": 10,
+    "results": [
+     {
+      "route": 3,
+      "verdict": "stuck_wall",
+      "dist": 305.23,
+      "expected": "stuck_wall",
+      "expected_dist": 305.2,
+      "agree": true,
+      "dist_delta": 0.03,
+      "ms": 33
+     },
+     {
+      "route": 6,
+      "verdict": "fell",
+      "dist": 321,
+      "expected": "fell",
+      "expected_dist": 321,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 16
+     },
+     {
+      "route": 7,
+      "verdict": "fell",
+      "dist": 382.5,
+      "expected": "fell",
+      "expected_dist": 382.5,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 10,
+      "verdict": "stuck_wall",
+      "dist": 1076.038,
+      "expected": "stuck_wall",
+      "expected_dist": 1076,
+      "agree": true,
+      "dist_delta": 0.038,
+      "ms": 54
+     },
+     {
+      "route": 12,
+      "verdict": "ok",
+      "dist": 392,
+      "expected": "ok",
+      "expected_dist": 392,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 15,
+      "verdict": "stuck_wall",
+      "dist": 443.067,
+      "expected": "stuck_wall",
+      "expected_dist": 443.1,
+      "agree": true,
+      "dist_delta": 0.033,
+      "ms": 30
+     },
+     {
+      "route": 19,
+      "verdict": "ok",
+      "dist": 931,
+      "expected": "ok",
+      "expected_dist": 931,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 43
+     },
+     {
+      "route": 22,
+      "verdict": "fell",
+      "dist": 62.7,
+      "expected": "fell",
+      "expected_dist": 62.7,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 3
+     },
+     {
+      "route": 27,
+      "verdict": "stuck_wall",
+      "dist": 301.235,
+      "expected": "stuck_wall",
+      "expected_dist": 301.2,
+      "agree": true,
+      "dist_delta": 0.035,
+      "ms": 27
+     },
+     {
+      "route": 33,
+      "verdict": "stuck_wall",
+      "dist": 122.009,
+      "expected": "stuck_wall",
+      "expected_dist": 122,
+      "agree": true,
+      "dist_delta": 0.009,
+      "ms": 6
+     }
+    ]
+   },
+   "zone": {
+    "batches": 138,
+    "texDecoded": 71,
+    "texMiss": 2,
+    "buildMs": 1471
+   },
+   "batman": {
+    "ok": true,
+    "verts": 1449,
+    "clips": [
+     "_001_idle_stand",
+     "_007_walk",
+     "_008_run",
+     "_057_glide_idle",
+     "_089_grapnel_pull",
+     "_088_grapnel_shoot",
+     "_065_glide_idle_to_run"
+    ]
+   },
+   "first_image_ms": 6207,
+   "error": null
+  }
+ },
+ "playable_index": {
+  "name": "playable_index",
+  "path": "/playable/index.html",
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [
+   "",
+   "",
+   "pick the release zip (TDKR_v1.1.6b_APK_OBB.zip): Batman (zip-built GLB) + navmesh+soup grounding",
+   "batman.bdae: 1449 verts; anims: 921 clips",
+   "chara_Batman_DIFFUSE: 1024x1024 RGB888 (s42 T1: R8G8B8 byte0=R)",
+   "batman.glb (zip-built 268528 B): _001_idle_stand 5.00s, _007_walk 1.07s, _008_run 0.67s, _057_glide_idle 2.17s, _089_grapnel_pull 1.90s, _088_grapnel_shoot 0.43s, _065_glide_idle_to_run 0.67s",
+   "WALKER ACTIVE: navmesh 30824v/31647c, soup 137893 tris (sha-verified) \u2014 capsule now walks the navmesh"
+  ],
+  "elapsed_s": 420.9,
+  "gate": {
+   "done": null,
+   "pass": null,
+   "soup": null,
+   "routes": null,
+   "zone": null,
+   "batman": null,
+   "first_image_ms": null,
+   "error": null
+  }
+ }
+}
