@@ -252,10 +252,10 @@ function attachBatman(g, glbLen) {
     log('FROZEN pose idle@' + t + 's for gate');
   }
 }
-function buildBatmanFromZip(file, dir, names) {
+async function buildBatmanFromZip(file, dir, names) {
   const aPath = names.find(n => /data\/actors\.gla$/i.test(n));
   if (!aPath) throw new Error('actors.gla not found in the zip');
-  const aBytes = TDKR.zipReadLazy(file, aPath, dir);
+  const aBytes = await TDKR.zipReadLazy(file, aPath, dir);   // s56 T3 fix: await (was a bare promise -> glaSlice got garbage)
   const aMem = TDKR.glaSlice(aBytes, new Set(['batman.bdae', 'batman_anims.bdae']));
   const skin = TDKR.readBdae(aMem['batman.bdae']);
   const A = TDKR.decodeAnims(aMem['batman_anims.bdae']);
@@ -263,7 +263,7 @@ function buildBatmanFromZip(file, dir, names) {
   let texture = null;
   const atPath = names.find(n => /textures\/actors_tex\.gla$/i.test(n));
   if (atPath) {
-    const atBytes = TDKR.zipReadLazy(file, atPath, dir);
+    const atBytes = await TDKR.zipReadLazy(file, atPath, dir);
     const atMem = TDKR.glaSlice(atBytes, new Set(['chara_Batman_DIFFUSE.tga']));
     const td = atMem['chara_Batman_DIFFUSE.tga'];
     if (td) {
