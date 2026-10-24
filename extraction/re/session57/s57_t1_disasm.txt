@@ -1,0 +1,819 @@
+=== RefreshForcesGlide (0x3836b0..0x383a08) ===
+003836b0 ldr      r3, [pc, #0x348]
+003836b4 push     {r4, r5, r6, r7, lr}
+003836b8 vpush    {d8, d9, d10, d11}
+003836bc ldr      r3, [pc, r3]
+003836c0 mov      r4, r0
+003836c4 sub      sp, sp, #0x44
+003836c8 mov      r5, r1
+003836cc ldr      r1, [r0, #0x51c]   ; drift/slot [actor+0x51c]
+003836d0 ldr      r0, [r3]
+003836d4 add      r7, r4, #0x530
+003836d8 bl       #0x1866bc   ; -> _ZN14CGadgetManager8GetGlideEi+0x0
+003836dc vldr     s13, [pc, #0x310]
+003836e0 ldr      r3, [r4, #4]
+003836e4 vldr     s11, [r3, #0x18]
+003836e8 vmul.f32 s17, s11, s13
+003836ec vldr     s13, [pc, #0x304]
+003836f0 vldr     s18, [r4, #0x2a8]
+003836f4 add      r7, r7, #0xc
+003836f8 vabs.f32 s16, s17
+003836fc vcmpe.f32 s17, #0
+00383700 vmrs     apsr_nzcv, fpscr
+00383704 vldr     s15, [r0, #8]
+00383708 vldr     s14, [r0, #0xc]
+0038370c vsub.f32 s12, s14, s15
+00383710 mov      r6, r0
+00383714 vmul.f32 s13, s12, s13
+00383718 vmov.f32 s10, s15
+0038371c vmla.f32 s10, s13, s16
+00383720 ble      #0x3839dc
+00383724 vldr     s14, [r7]
+00383728 vcmpe.f32 s15, s14
+0038372c vmrs     apsr_nzcv, fpscr
+00383730 vmlsmi.f32 s14, s10, s18
+00383734 vstrmi   s14, [r7]
+00383738 ldr      r3, [pc, #0x2c4]
+0038373c vmov.f32 s19, #1.000000e+00
+00383740 ldr      r3, [pc, r3]
+00383744 ldr      r0, [r3]
+00383748 bl       #0x1e1508   ; -> _ZN15UpgradesManager22GetGliderGravityHelperEv+0x0
+0038374c vldr     s20, [r6, #0x1c]
+00383750 vldr     s13, [r6, #0x20]
+00383754 vldr     s14, [pc, #0x29c]
+00383758 ldr      r2, [r4, #4]
+0038375c vldr     s21, [r6, #0x24]
+00383760 vldr     s15, [r6, #0x28]
+00383764 vsub.f32 s13, s13, s20
+00383768 ldr      r3, [r2]
+0038376c ldr      r3, [r3, #0x18]   ; COMP f4
+00383770 vmul.f32 s14, s13, s14
+00383774 vmla.f32 s20, s14, s16
+00383778 vmov     s12, r0
+0038377c mov      r0, r2
+00383780 vsub.f32 s16, s15, s21
+00383784 vadd.f32 s20, s20, s12
+00383788 blx      r3
+0038378c vldr     s15, [r4, #0x1a4]
+00383790 vldr     s13, [r4, #0x1a8]
+00383794 vldr     s14, [r4, #0x1ac]
+00383798 vldr     s12, [r6, #0x2c]
+0038379c vldr     s22, [r7]
+003837a0 vldr     s9, [r0]
+003837a4 vsub.f32 s15, s9, s15
+003837a8 vldr     s10, [r0, #4]
+003837ac vldr     s11, [r0, #8]
+003837b0 vmov     r0, s17
+003837b4 vmul.f32 s15, s15, s15
+003837b8 vsub.f32 s13, s10, s13
+003837bc vmla.f32 s15, s13, s13
+003837c0 vsub.f32 s14, s11, s14
+003837c4 vmla.f32 s15, s14, s14
+003837c8 vsqrt.f32 s15, s15
+003837cc vdiv.f32 s15, s15, s12
+003837d0 vsub.f32 s15, s19, s15
+003837d4 vmla.f32 s21, s15, s16
+003837d8 bl       #0xa70f60   ; -> cosf+0x0
+003837dc vmov     s23, r0
+003837e0 vmov     r0, s17
+003837e4 bl       #0xa711c0   ; -> sinf+0x0
+003837e8 vldr     s15, [r6, #0x24]
+003837ec vcmpe.f32 s21, s15
+003837f0 mov      r2, #0x40
+003837f4 mov      r1, #0
+003837f8 ldr      r3, [r4, #4]
+003837fc vldr     s16, [r3, #0x20]
+00383800 vmrs     apsr_nzcv, fpscr
+00383804 vmovge.f32 s15, s21
+00383808 vmov     s13, r0
+0038380c vnmls.f32 s20, s13, s22
+00383810 mov      r0, sp
+00383814 vsub.f32 s21, s20, s15
+00383818 bl       #0xa4e88   ; -> $d+0xa4994
+0038381c vldr     s15, [pc, #0x1d0]
+00383820 vstr     s19, [sp, #0x3c]
+00383824 vmul.f32 s16, s16, s15
+00383828 vmov     r0, s16
+0038382c bl       #0xa70f60   ; -> cosf+0x0
+00383830 vmov     s20, r0
+00383834 vmov     r0, s16
+00383838 bl       #0xa711c0   ; -> sinf+0x0
+0038383c vmul.f32 s15, s22, s18
+00383840 ldrb     r2, [r4, #0x539]   ; glidestate [actor+0x539]
+00383844 vstr     s20, [sp]
+00383848 add      r3, r4, #0x540
+0038384c vstr     s20, [sp, #0x14]
+00383850 cmp      r2, #0
+00383854 vstr     s19, [sp, #0x28]
+00383858 vmul.f32 s15, s15, s23
+0038385c vmul.f32 s13, s20, s15
+00383860 vmov     s10, r0
+00383864 str      r0, [sp, #4]
+00383868 vneg.f32 s14, s10
+0038386c vstr     s13, [r5, #4]
+00383870 vstr     s14, [sp, #0x10]
+00383874 vmul.f32 s14, s14, s15
+00383878 vmul.f32 s15, s21, s18
+0038387c vstr     s14, [r5]
+00383880 vstr     s15, [r5, #8]
+00383884 bne      #0x383898
+00383888 vldr     s15, [r3]
+0038388c vcmpe.f32 s21, s15
+00383890 vmrs     apsr_nzcv, fpscr
+00383894 bmi      #0x383930
+00383898 vstr     s21, [r3]
+0038389c bl       #0x478e24   ; -> _ZN6CLevel8GetLevelEv+0x0
+003838a0 add      r2, r0, #0xb10
+003838a4 vldr     s16, [r2, #4]
+003838a8 vldr     s17, [r2, #8]
+003838ac vldr     s19, [r2, #0xc]
+003838b0 bl       #0x478e24   ; -> _ZN6CLevel8GetLevelEv+0x0
+003838b4 ldrb     r3, [r0, #0xb10]
+003838b8 cmp      r3, #0
+003838bc beq      #0x38394c
+003838c0 add      r2, r4, #0x500
+003838c4 vldr     s10, [r2, #0xc]
+003838c8 vmla.f32 s10, s16, s18
+003838cc add      r1, r4, #0x510
+003838d0 mov      r3, #1
+003838d4 vstr     s10, [r2, #0xc]
+003838d8 vldr     s11, [r1]
+003838dc vldr     s12, [r1, #4]
+003838e0 vmla.f32 s11, s17, s18
+003838e4 vmla.f32 s12, s19, s18
+003838e8 vstr     s11, [r1]
+003838ec vstr     s12, [r1, #4]
+003838f0 strb     r3, [r4, #0x518]   ; drift/slot [actor+0x518]
+003838f4 vldr     s13, [r5]
+003838f8 vldr     s14, [r5, #4]
+003838fc vldr     s15, [r5, #8]
+00383900 vmla.f32 s13, s10, s18
+00383904 vmla.f32 s14, s11, s18
+00383908 vstr     s13, [r5]
+0038390c vmla.f32 s15, s12, s18
+00383910 vstr     s14, [r5, #4]
+00383914 vstr     s15, [r5, #8]
+00383918 vstr     s13, [r4, #0x1d4]
+0038391c vstr     s14, [r4, #0x1d8]
+00383920 vstr     s15, [r4, #0x1dc]
+00383924 add      sp, sp, #0x44
+00383928 vpop     {d8, d9, d10, d11}
+0038392c pop      {r4, r5, r6, r7, pc}
+00383930 vcmpe.f32 s17, #0
+00383934 vmrs     apsr_nzcv, fpscr
+00383938 movgt    r1, r3
+0038393c strbgt   r2, [r4, #0x548]   ; glidestate [actor+0x548]
+00383940 movgt    r2, #0
+00383944 strgt    r2, [r1, #4]
+00383948 b        #0x383898
+0038394c ldrb     r2, [r4, #0x518]   ; drift/slot [actor+0x518]
+00383950 cmp      r2, #0
+00383954 beq      #0x3839cc
+00383958 add      r1, r4, #0x500
+0038395c add      r0, r4, #0x510
+00383960 add      r1, r1, #0xc
+00383964 vldr     s12, [r1]
+00383968 vmul.f32 s15, s12, s12
+0038396c vldr     s13, [r0]
+00383970 add      r2, r0, #4
+00383974 vldr     s14, [r2]
+00383978 vmla.f32 s15, s13, s13
+0038397c vmla.f32 s15, s14, s14
+00383980 vsqrt.f32 s15, s15
+00383984 vcmpe.f32 s15, #0
+00383988 vmrs     apsr_nzcv, fpscr
+0038398c ble      #0x3839c8
+00383990 vmov.f32 s10, s15
+00383994 vldr     s11, [pc, #0x60]
+00383998 vmls.f32 s10, s18, s11
+0038399c vcmpe.f32 s10, #0
+003839a0 vmrs     apsr_nzcv, fpscr
+003839a4 bls      #0x3839c8
+003839a8 vdiv.f32 s15, s10, s15
+003839ac vmul.f32 s10, s15, s12
+003839b0 vmul.f32 s11, s15, s13
+003839b4 vstr     s10, [r1]
+003839b8 vmul.f32 s12, s15, s14
+003839bc vstr     s11, [r0]
+003839c0 vstr     s12, [r2]
+003839c4 b        #0x3838f4
+003839c8 strb     r3, [r4, #0x518]   ; drift/slot [actor+0x518]
+003839cc vldr     s13, [r5]
+003839d0 vldr     s14, [r5, #4]
+003839d4 vldr     s15, [r5, #8]
+003839d8 b        #0x383918
+003839dc vldr     s15, [r7]
+003839e0 vcmpe.f32 s14, s15
+003839e4 vmrs     apsr_nzcv, fpscr
+003839e8 vmlagt.f32 s15, s10, s18
+003839ec vstrgt   s15, [r7]
+003839f0 b        #0x383738
+003839f4 vstmialo lr, {s30, s31}
+003839f8 svclo    #0x22f983
+003839fc submi    r0, r8, #0
+00383a00 addeq    r4, r8, r0, ror #18
+00383a04 umulleq  r4, r8, r8, r8
+
+=== SetActorSpeedGlide(lua_State*) (0x15f524..0x15f584) ===
+0015f524 push     {r3, r4, r5, lr}
+0015f528 mov      r1, #1
+0015f52c mov      r5, r0
+0015f530 bl       #0xa49664   ; -> lua_tointeger+0x0
+0015f534 mov      r1, #2
+0015f538 mov      r4, r0
+0015f53c mov      r0, r5
+0015f540 bl       #0xa4960c   ; -> lua_tonumber+0x0
+0015f544 ldr      r3, [pc, #0x34]   ; COMP f11
+0015f548 mov      r1, r4
+0015f54c ldr      r3, [pc, r3]
+0015f550 mov      r5, r0
+0015f554 ldr      r0, [r3]
+0015f558 bl       #0x2bf378   ; -> _ZN13CZonesManager9FindActorEi+0x0
+0015f55c cmp      r0, #0
+0015f560 beq      #0x15f578
+0015f564 ldr      r0, [r0, #0xb8]
+0015f568 cmp      r0, #0
+0015f56c beq      #0x15f578
+0015f570 mov      r1, r5
+0015f574 bl       #0x38a120   ; -> _ZN19CActorBaseComponent13SetGlideSpeedEf+0x0
+0015f578 mov      r0, #0
+0015f57c pop      {r3, r4, r5, pc}
+0015f580 adceq    r8, sl, ip, asr #19
+
+=== UpgradesManager::GetGliderGravityHelper() (0x1e1508..0x1e1530) ===
+001e1508 str      lr, [sp, #-4]!
+001e150c sub      sp, sp, #0xc
+001e1510 add      r1, sp, #8
+001e1514 mov      r3, #0x1f
+001e1518 add      r0, r0, #4
+001e151c str      r3, [r1, #-4]!
+001e1520 bl       #0x209dbc   ; -> _ZNSt3mapIi8SUpgradeSt4lessIiESaISt4pairIKiS0_EEEixERS4_+0x0
+001e1524 ldr      r0, [r0, #0xc]   ; COMP f1
+001e1528 add      sp, sp, #0xc
+001e152c ldm      sp!, {pc}
+
+=== CActorBaseComponent::StartGlide(bool,bool) (0x380590..0x3807c0) ===
+00380590 push     {r4, r5, r6, r7, r8, sb, sl, lr}
+00380594 mov      r8, r2
+00380598 ldr      r6, [r0, #0x14]   ; COMP f3
+0038059c mov      r4, r0
+003805a0 ldr      r3, [r0, #4]
+003805a4 sub      sp, sp, #0x10
+003805a8 ldrb     sl, [r0, #0x19c]
+003805ac sub      r2, r6, #7
+003805b0 rsbs     r6, r2, #0
+003805b4 mov      r7, r1
+003805b8 ldr      r0, [r3, #0xb0]
+003805bc adc      r6, r6, r2
+003805c0 cmp      sl, #0
+003805c4 eorne    sl, r6, #1
+003805c8 cmp      r0, #0
+003805cc moveq    r5, r0
+003805d0 beq      #0x3805e0
+003805d4 bl       #0x267284   ; -> _ZN15PlayerComponent17IsInQteNavigationEv+0x0
+003805d8 adds     r5, r0, #0
+003805dc movne    r5, #1
+003805e0 cmp      r7, #0
+003805e4 bne      #0x3805f0
+003805e8 cmp      sl, #0
+003805ec beq      #0x3805f8
+003805f0 cmp      r5, #0
+003805f4 beq      #0x380600
+003805f8 add      sp, sp, #0x10
+003805fc pop      {r4, r5, r6, r7, r8, sb, sl, pc}
+00380600 ldr      r7, [pc, #0x1ac]   ; pos[8]
+00380604 mov      r1, r5
+00380608 ldr      r7, [pc, r7]
+0038060c ldr      r0, [r7]
+00380610 bl       #0x1866bc   ; -> _ZN14CGadgetManager8GetGlideEi+0x0
+00380614 ldr      r3, [r4]
+00380618 mov      r1, #7
+0038061c ldr      r3, [r3, #0x34]   ; COMP f11
+00380620 mov      sl, r0
+00380624 mov      r0, r4
+00380628 blx      r3
+0038062c cmp      r8, #0
+00380630 bne      #0x380758
+00380634 mov      r5, #0
+00380638 str      r5, [r4, #0x51c]   ; drift/slot [actor+0x51c]
+0038063c bl       #0x478e24   ; -> _ZN6CLevel8GetLevelEv+0x0
+00380640 mov      sb, #0
+00380644 bl       #0x482660   ; -> _ZN6CLevel10ExitKombatEv+0x0
+00380648 ldr      r0, [r4, #4]
+0038064c add      r2, r4, #0x520
+00380650 strb     r5, [r4, #0x539]   ; glidestate [actor+0x539]
+00380654 strb     r5, [r4, #0x538]   ; glidestate [actor+0x538]
+00380658 mov      r5, #1
+0038065c ldr      r3, [r0]
+00380660 str      sb, [r2, #0xc]   ; COMP f1
+00380664 ldr      r3, [r3, #0x18]   ; COMP f4
+00380668 blx      r3
+0038066c ldr      ip, [sl, #0xc]   ; COMP f1
+00380670 add      r2, r4, #0x540
+00380674 add      r3, r4, #0x550
+00380678 add      r1, r4, #0x530
+0038067c ldr      lr, [r0]
+00380680 str      lr, [r4, #0x178]
+00380684 ldr      lr, [r0, #4]
+00380688 str      lr, [r4, #0x17c]
+0038068c ldr      lr, [r0, #8]   ; COMP f0
+00380690 strb     r5, [r4, #0x548]   ; glidestate [actor+0x548]
+00380694 ldr      r0, [r7]
+00380698 str      lr, [r4, #0x180]
+0038069c str      sb, [r2, #4]
+003806a0 str      sb, [r2]
+003806a4 str      sb, [r2, #0xc]   ; COMP f1
+003806a8 str      ip, [r1, #0xc]   ; COMP f1
+003806ac str      sb, [r3]
+003806b0 ldr      r1, [r4, #0x51c]   ; drift/slot [actor+0x51c]
+003806b4 bl       #0x1866bc   ; -> _ZN14CGadgetManager8GetGlideEi+0x0
+003806b8 ldr      r3, [r4, #0x4fc]
+003806bc cmp      r3, r5
+003806c0 strbne   r5, [r4, #0x548]   ; glidestate [actor+0x548]
+003806c4 addeq    r2, r4, #0x550
+003806c8 addne    r3, r4, #0x550
+003806cc movne    r2, #0
+003806d0 add      r5, r4, #0x520
+003806d4 ldreq    r1, [r0, #0x30]   ; COMP f10
+003806d8 movtne   r2, #0xc1f0
+003806dc strbeq   r3, [r4, #0x548]   ; glidestate [actor+0x548]
+003806e0 mov      r0, #0
+003806e4 strne    r2, [r3, #8]   ; COMP f0
+003806e8 add      r3, r4, #0x510
+003806ec streq    r1, [r2, #8]   ; COMP f0
+003806f0 add      r1, r4, #0x500
+003806f4 cmp      r6, #0
+003806f8 mov      r2, #0
+003806fc strb     r0, [r4, #0x518]   ; drift/slot [actor+0x518]
+00380700 str      r2, [r1, #0xc]   ; COMP f1
+00380704 str      r2, [r3]
+00380708 str      r2, [r3, #4]
+0038070c mov      r3, #0
+00380710 str      r0, [r4, #0x40]   ; COMP f14
+00380714 movt     r3, #0xbf80
+00380718 str      r3, [r5]
+0038071c bne      #0x38074c
+00380720 cmp      r8, r0
+00380724 bne      #0x38074c
+00380728 str      r8, [r4, #0x4f8]
+0038072c ldr      r0, [r7]
+00380730 ldr      r1, [r4, #0x51c]   ; drift/slot [actor+0x51c]
+00380734 bl       #0x1866bc   ; -> _ZN14CGadgetManager8GetGlideEi+0x0
+00380738 ldr      r3, [r0, #0x5c]
+0038073c vmov     s14, r3
+00380740 vcvt.f32.s32 s15, s14
+00380744 vstr     s15, [r5]
+00380748 b        #0x3805f8
+0038074c mov      r3, #1
+00380750 str      r3, [r4, #0x4f8]
+00380754 b        #0x3805f8
+00380758 ldr      r0, [r4, #0x2cc]
+0038075c mov      r1, #0x200000
+00380760 mov      r2, r5
+00380764 bl       #0x29ac38   ; -> _ZN18CStateSetComponent13IsInStateTypeEib+0x0
+00380768 cmp      r0, #0
+0038076c bne      #0x380634
+00380770 ldr      r1, [pc, #0x40]   ; COMP f14
+00380774 mov      r2, #1
+00380778 ldr      r0, [r4, #0x2cc]
+0038077c mov      r3, #0
+00380780 add      r1, pc, r1
+00380784 mov      ip, #0x12c
+00380788 str      r5, [sp, #8]   ; COMP f0
+0038078c str      ip, [sp]
+00380790 str      ip, [sp, #4]
+00380794 bl       #0x29be40   ; -> _ZN18CStateSetComponent22SetStateWithTransitionEPKcsfiiP17CContainerTrigger+0x0
+00380798 mov      r0, r4
+0038079c mov      r1, #2
+003807a0 bl       #0x3a39f8   ; -> _ZN19CActorBaseComponent15OnPutBackWeaponEib.constprop.2985+0x0
+003807a4 ldr      r0, [pc, #0x10]   ; COMP f2
+003807a8 ldr      r0, [pc, r0]
+003807ac bl       #0x3ae4c0   ; -> _ZN15VoxSoundManager13SetSoundStateEPKcS1_.constprop.3184+0x0
+003807b0 b        #0x380634
+003807b4 addeq    r7, r8, r4, lsl sl
+003807b8 rsbseq   lr, fp, r8, ror #11
+003807bc addeq    r6, sb, ip, lsl #26
+
+=== CActorBaseComponent::StartGlideFromGrapnel() (0x380a0c..0x380cbc) ===
+00380a0c ldr      r3, [r0, #4]
+00380a10 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+00380a14 mov      r4, r0
+00380a18 ldr      r0, [r3, #0xb0]
+00380a1c sub      sp, sp, #0x1c
+00380a20 cmp      r0, #0
+00380a24 beq      #0x380a3c
+00380a28 bl       #0x267284   ; -> _ZN15PlayerComponent17IsInQteNavigationEv+0x0
+00380a2c cmp      r0, #0
+00380a30 beq      #0x380a3c
+00380a34 add      sp, sp, #0x1c
+00380a38 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+00380a3c ldr      r3, [r4, #0x4a0]
+00380a40 cmp      r3, #3
+00380a44 bne      #0x380a34
+00380a48 ldr      r3, [r4, #0x418]
+00380a4c cmp      r3, #5
+00380a50 beq      #0x380a34
+00380a54 ldr      r3, [r4, #4]
+00380a58 ldr      r0, [r3, #0xb0]
+00380a5c cmp      r0, #0
+00380a60 beq      #0x380a70
+00380a64 bl       #0x267284   ; -> _ZN15PlayerComponent17IsInQteNavigationEv+0x0
+00380a68 cmp      r0, #0
+00380a6c bne      #0x380c70
+00380a70 ldr      r5, [pc, #0x234]
+00380a74 mov      r1, #0
+00380a78 ldr      r5, [pc, r5]
+00380a7c ldr      r0, [r5]
+00380a80 bl       #0x1866bc   ; -> _ZN14CGadgetManager8GetGlideEi+0x0
+00380a84 ldr      r3, [r4]
+00380a88 mov      r1, #7
+00380a8c ldr      r3, [r3, #0x34]   ; COMP f11
+00380a90 mov      r6, r0
+00380a94 mov      r0, r4
+00380a98 blx      r3
+00380a9c ldr      r0, [r4, #0x2cc]
+00380aa0 mov      r1, #0x200000
+00380aa4 mov      r2, #0
+00380aa8 bl       #0x29ac38   ; -> _ZN18CStateSetComponent13IsInStateTypeEib+0x0
+00380aac subs     lr, r0, #0
+00380ab0 bne      #0x380af0
+00380ab4 ldr      r1, [pc, #0x1f4]
+00380ab8 mov      r2, #1
+00380abc ldr      r0, [r4, #0x2cc]
+00380ac0 mov      r3, #0
+00380ac4 add      r1, pc, r1
+00380ac8 mov      ip, #0x12c
+00380acc str      ip, [sp]
+00380ad0 stmib    sp, {ip, lr}
+00380ad4 bl       #0x29be40   ; -> _ZN18CStateSetComponent22SetStateWithTransitionEPKcsfiiP17CContainerTrigger+0x0
+00380ad8 mov      r0, r4
+00380adc mov      r1, #2
+00380ae0 bl       #0x3a39f8   ; -> _ZN19CActorBaseComponent15OnPutBackWeaponEib.constprop.2985+0x0
+00380ae4 ldr      r0, [pc, #0x1c8]
+00380ae8 ldr      r0, [pc, r0]
+00380aec bl       #0x3ae4c0   ; -> _ZN15VoxSoundManager13SetSoundStateEPKcS1_.constprop.3184+0x0
+00380af0 mov      r8, #0
+00380af4 str      r8, [r4, #0x51c]   ; drift/slot [actor+0x51c]
+00380af8 bl       #0x478e24   ; -> _ZN6CLevel8GetLevelEv+0x0
+00380afc mov      r7, #0
+00380b00 bl       #0x482660   ; -> _ZN6CLevel10ExitKombatEv+0x0
+00380b04 ldr      r0, [r4, #4]
+00380b08 add      r2, r4, #0x520
+00380b0c strb     r8, [r4, #0x539]   ; glidestate [actor+0x539]
+00380b10 strb     r8, [r4, #0x538]   ; glidestate [actor+0x538]
+00380b14 add      sl, r4, #0x530
+00380b18 ldr      r3, [r0]
+00380b1c add      sb, r4, #0x540
+00380b20 str      r7, [r2, #0xc]   ; COMP f1
+00380b24 add      sl, sl, #0xc
+00380b28 add      sb, sb, #4
+00380b2c add      r8, r4, #0x500
+00380b30 ldr      r3, [r3, #0x18]   ; COMP f4
+00380b34 blx      r3
+00380b38 ldr      ip, [r6, #0xc]   ; COMP f1
+00380b3c add      r3, r4, #0x540
+00380b40 ldr      r1, [r4, #0x51c]   ; drift/slot [actor+0x51c]
+00380b44 add      r6, r4, #0x550
+00380b48 ldr      r2, [r0]
+00380b4c str      r2, [r4, #0x178]
+00380b50 ldr      r2, [r0, #4]
+00380b54 str      r2, [r4, #0x17c]
+00380b58 add      r2, r4, #0x550
+00380b5c ldr      r0, [r0, #8]   ; COMP f0
+00380b60 str      r0, [r4, #0x180]
+00380b64 mov      r0, #1
+00380b68 str      r7, [r3]
+00380b6c str      r7, [r3, #0xc]   ; COMP f1
+00380b70 str      r7, [r2]
+00380b74 strb     r0, [r4, #0x548]   ; glidestate [actor+0x548]
+00380b78 str      r7, [sb]
+00380b7c add      r7, r4, #0x510
+00380b80 str      ip, [sl]
+00380b84 ldr      r0, [r5]
+00380b88 bl       #0x1866bc   ; -> _ZN14CGadgetManager8GetGlideEi+0x0
+00380b8c ldr      r3, [r4, #0x4fc]
+00380b90 mov      r2, #0
+00380b94 mov      r1, #0
+00380b98 cmp      r3, #1
+00380b9c addeq    r6, r6, #8
+00380ba0 movne    r3, #0
+00380ba4 movtne   r3, #0xc1f0
+00380ba8 strne    r3, [r6, #8]   ; COMP f0
+00380bac addne    r6, r6, #8
+00380bb0 ldreq    r3, [r0, #0x30]   ; COMP f10
+00380bb4 add      r0, r4, #0x520
+00380bb8 strb     r1, [r4, #0x518]   ; drift/slot [actor+0x518]
+00380bbc streq    r3, [r6]
+00380bc0 mov      r3, r7
+00380bc4 str      r2, [r8, #0xc]   ; COMP f1
+00380bc8 add      r8, r8, #0xc
+00380bcc str      r2, [r7]
+00380bd0 str      r2, [r7, #4]
+00380bd4 add      r7, r7, #4
+00380bd8 mov      r2, #1
+00380bdc str      r1, [r4, #0x40]   ; COMP f14
+00380be0 str      r2, [r4, #0x4f8]
+00380be4 mov      r2, #0
+00380be8 movt     r2, #0xbf80
+00380bec str      r2, [r0]
+00380bf0 ldr      r2, [r4, #4]
+00380bf4 mov      fp, #1
+00380bf8 ldr      r0, [r5]
+00380bfc mov      r1, #0
+00380c00 ldr      r2, [r2, #0x18]   ; COMP f4
+00380c04 strb     fp, [r4, #0x548]   ; glidestate [actor+0x548]
+00380c08 str      r2, [r6]
+00380c0c str      r3, [sp, #0x14]   ; COMP f3
+00380c10 bl       #0x1866bc   ; -> _ZN14CGadgetManager8GetGlideEi+0x0
+00380c14 vldr     s14, [r6]
+00380c18 vadd.f32 s14, s14, s14
+00380c1c vldr     s15, [pc, #0x84]
+00380c20 ldr      ip, [r4, #4]
+00380c24 ldr      r3, [sp, #0x14]   ; COMP f3
+00380c28 mov      r1, #0
+00380c2c ldr      r2, [ip]
+00380c30 ldr      r2, [r2, #0x58]   ; COMP f20
+00380c34 vcmpe.f32 s14, s15
+00380c38 vmrs     apsr_nzcv, fpscr
+00380c3c vmovls.f32 s15, s14
+00380c40 ldr      r0, [r0, #0xc]   ; COMP f1
+00380c44 vstr     s15, [sb]
+00380c48 str      r0, [sl]
+00380c4c mov      r0, ip
+00380c50 str      r1, [r8]
+00380c54 str      r1, [r3]
+00380c58 mov      r3, #0
+00380c5c movt     r3, #0x4120
+00380c60 str      r3, [r7]
+00380c64 strb     fp, [r4, #0x518]   ; drift/slot [actor+0x518]
+00380c68 blx      r2
+00380c6c b        #0x380a34
+00380c70 add      r7, r4, #0x510
+00380c74 ldr      r5, [pc, #0x3c]   ; COMP f13
+00380c78 add      sl, r4, #0x530
+00380c7c add      sb, r4, #0x540
+00380c80 add      r6, r4, #0x550
+00380c84 add      r8, r4, #0x500
+00380c88 mov      r3, r7
+00380c8c ldr      r5, [pc, r5]
+00380c90 add      sl, sl, #0xc
+00380c94 add      sb, sb, #4
+00380c98 add      r6, r6, #8
+00380c9c add      r8, r8, #0xc
+00380ca0 add      r7, r7, #4
+00380ca4 b        #0x380bf0
+00380ca8 eorsmi   r0, r4, #0
+00380cac addeq    r7, r8, r4, lsr #11
+00380cb0 rsbseq   lr, fp, r4, lsr #5
+00380cb4 addeq    r6, sb, ip, asr #19
+00380cb8 umulleq  r7, r8, r0, r3
+
+=== CActorBaseComponent::SetInitialGlideAngle() (0x380e34..0x380e90) ===
+00380e34 ldr      r3, [pc, #0x50]   ; COMP f18
+00380e38 push     {r4, lr}
+00380e3c ldr      r3, [pc, r3]
+00380e40 mov      r4, r0
+00380e44 ldr      r1, [r0, #0x51c]   ; drift/slot [actor+0x51c]
+00380e48 ldr      r0, [r3]
+00380e4c bl       #0x1866bc   ; -> _ZN14CGadgetManager8GetGlideEi+0x0
+00380e50 ldr      r3, [r4, #0x4fc]
+00380e54 cmp      r3, #1
+00380e58 beq      #0x380e78
+00380e5c add      r3, r4, #0x550
+00380e60 mov      r2, #1
+00380e64 strb     r2, [r4, #0x548]   ; glidestate [actor+0x548]
+00380e68 mov      r2, #0
+00380e6c movt     r2, #0xc1f0
+00380e70 str      r2, [r3, #8]   ; COMP f0
+00380e74 pop      {r4, pc}
+00380e78 ldr      r1, [r0, #0x30]   ; COMP f10
+00380e7c add      r2, r4, #0x550
+00380e80 strb     r3, [r4, #0x548]   ; glidestate [actor+0x548]
+00380e84 str      r1, [r2, #8]   ; COMP f0
+00380e88 pop      {r4, pc}
+00380e8c addeq    r7, r8, r0, ror #3
+
+=== CENSUS: [actor+0x53c] and neighbors, whole .text ===
+000e3978  $a+0x4a0                  [('acc-4', 'READ')]
+000f73d8  _ZN3vox17VoxEngineInternalC2Ev+0x0  [('flag544', 'READ')]
+00147a28  _ZN17CLuaScriptManager29RegisterScriptGlobalVariablesEv+0xc78  [('ACC', 'READ')]
+0017097c  $a+0x68                   [('acc-4', 'READ')]
+00170980  $a+0x6c                   [('acc-4', 'READ')]
+00170994  $a+0x80                   [('flag548', 'READ')]
+00170998  $a+0x84                   [('flag548', 'READ')]
+00171a28  $a+0x1114                 [('prevvz', 'READ')]
+00171a2c  $a+0x1118                 [('prevvz', 'READ')]
+0017c128  _ZN13CAIController11Script_InitEv+0x684  [('acc-4', 'READ')]
+001cb470  _ZN14CVehicleSounds14SetEngineSoundEi+0x308  [('flag548', 'WRITE')]
+001ddfec  _ZN11ShopManager16ItemHasPromotionEjiP13PromotionInfo+0x44  [('flag548', 'READ')]
+001ef6a8  _ZN10IAPManager9InitStoreEv.part.740+0x14  [('flag548', 'READ')]
+001ef6bc  _ZN10IAPManager9InitStoreEv.part.740+0x28  [('acc-4', 'READ')]
+0021afc4  _GLOBAL__sub_I_E__PROYECTOS_TDKR_HRP_trunk_Externals_GLLegacyConfig_Android_release_Batman_UB_Batman_3.cpp+0x1c  [('flag544', 'READ')]
+0024ce78  $a+0x528                  [('acc-4', 'READ')]
+002568cc  _ZN15PlayerComponentC2EP11CGameObjectbii+0x4bc  [('flag544', 'WRITE')]
+00256f60  _ZN15PlayerComponentD2Ev+0x2c0  [('flag544', 'READ')]
+00256f7c  _ZN15PlayerComponentD2Ev+0x2dc  [('flag544', 'WRITE')]
+002579c4  _ZN15PlayerComponent4InitEv+0x524  [('flag544', 'WRITE')]
+002579d0  _ZN15PlayerComponent4InitEv+0x530  [('flag544', 'READ')]
+002579e0  _ZN15PlayerComponent4InitEv+0x540  [('flag544', 'READ')]
+002579f4  _ZN15PlayerComponent4InitEv+0x554  [('flag544', 'READ')]
+00257a08  _ZN15PlayerComponent4InitEv+0x568  [('flag544', 'READ')]
+00257a60  _ZN15PlayerComponent4InitEv+0x5c0  [('flag544', 'READ')]
+00257acc  _ZN15PlayerComponent4InitEv+0x62c  [('flag544', 'READ')]
+00257adc  _ZN15PlayerComponent4InitEv+0x63c  [('flag544', 'READ')]
+00258f20  _ZN15PlayerComponent6UpdateEf+0x38c  [('prevvz', 'READ')]
+0025eb60  _ZN15PlayerComponent7OnEventEiPKv+0xa10  [('prevvz', 'READ')]
+00265628  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x44  [('flag544', 'READ')]
+0026563c  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x58  [('flag544', 'READ')]
+0026565c  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x78  [('flag544', 'READ')]
+002656d8  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0xf4  [('flag544', 'READ')]
+002656f4  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x110  [('flag544', 'READ')]
+00265708  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x124  [('flag544', 'READ')]
+00265838  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x254  [('flag544', 'READ')]
+00265898  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x2b4  [('flag544', 'READ')]
+002658f0  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x30c  [('flag544', 'READ')]
+0026591c  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x338  [('flag544', 'READ')]
+00265930  _ZN15PlayerComponent20TryDisarmRangedGuardEP11CGameObject+0x34c  [('flag544', 'READ')]
+002663e4  _ZN15PlayerComponent18UpdatePlayerCombatEf+0xd0  [('flag544', 'READ')]
+00266418  _ZN15PlayerComponent18UpdatePlayerCombatEf+0x104  [('flag544', 'READ')]
+002665cc  _ZN15PlayerComponent18UpdatePlayerCombatEf+0x2b8  [('flag544', 'READ')]
+002665e4  _ZN15PlayerComponent18UpdatePlayerCombatEf+0x2d0  [('flag544', 'READ')]
+0026d588  $a+0x1bcc                 [('ACC', 'READ')]
+0026f638  $a+0x1a4c                 [('flag548', 'READ')]
+00270144  $a+0x498                  [('prevvz', 'READ')]
+00307170  _ZN3vox18AmbienceFileReader4LoadEPKc+0x74  [('acc-4', 'READ')]
+003167b4  _ZN3vox2vs13VehicleSoundsC2Ev+0x370  [('acc-4', 'WRITE')]
+00317c58  _ZN3vox2vs13VehicleSounds6UpdateERKNS0_18VSUpdateParametersE+0x138  [('acc-4', 'WRITE')]
+00317dec  _ZN3vox2vs13VehicleSounds23UpdateExtrapolationModeEv+0x14  [('acc-4', 'READ')]
+00317f94  _ZN3vox2vs13VehicleSounds23UpdateParametersHistoryERKNS0_18VSUpdateParametersE+0xbc  [('acc-4', 'WRITE')]
+003180d8  _ZN3vox2vs13VehicleSounds5ResetEv+0x11c  [('acc-4', 'WRITE')]
+0031edd0  _ZN5CFont10DrawStringEPKtiiihiiPt+0x34  [('acc-4', 'READ')]
+0031eddc  _ZN5CFont10DrawStringEPKtiiihiiPt+0x40  [('ACC', 'READ')]
+0031ede0  _ZN5CFont10DrawStringEPKtiiihiiPt+0x44  [('prevvz', 'READ')]
+0031edf0  _ZN5CFont10DrawStringEPKtiiihiiPt+0x54  [('flag548', 'READ')]
+0031edf4  _ZN5CFont10DrawStringEPKtiiihiiPt+0x58  [('flag544', 'READ')]
+003268bc  _ZN17CNovaSceneManagerC1ERKN5boost13intrusive_ptrIN6glitch5video12IVideoDriverEEERKNS1_INS2_2io11IFileSystemEEERKNS1_INS2_5scene7ICullerEEE+0x8  [('prevvz', 'READ')]
+003268c4  _ZN17CNovaSceneManagerC1ERKN5boost13intrusive_ptrIN6glitch5video12IVideoDriverEEERKNS1_INS2_2io11IFileSystemEEERKNS1_INS2_5scene7ICullerEEE+0x10  [('ACC', 'READ')]
+003435b8  _ZN17CNavMeshSceneNode4InitEv+0x4  [('flag544', 'READ')]
+0036975c  _Z25GenerateComponentTemplateiP13CMemoryStream+0xc9c  [('ACC', 'READ')]
+0036a138  $a+0x494                  [('flag548', 'READ')]
+00380584  _ZN19CActorBaseComponent14SetTargetAngleEf+0x8  [('flag548', 'WRITE')]
+00380654  _ZN19CActorBaseComponent10StartGlideEbb+0xc4  [('acc-4', 'WRITE')]
+00380690  _ZN19CActorBaseComponent10StartGlideEbb+0x100  [('flag548', 'WRITE')]
+003806c0  _ZN19CActorBaseComponent10StartGlideEbb+0x130  [('flag548', 'WRITE')]
+003806dc  _ZN19CActorBaseComponent10StartGlideEbb+0x14c  [('flag548', 'WRITE')]
+00380830  _ZN19CActorBaseComponent8StartFlyEv+0x70  [('acc-4', 'WRITE')]
+0038086c  _ZN19CActorBaseComponent8StartFlyEv+0xac  [('flag548', 'WRITE')]
+003808e4  _ZN19CActorBaseComponent8StartFlyEv+0x124  [('flag548', 'WRITE')]
+00380b10  _ZN19CActorBaseComponent21StartGlideFromGrapnelEv+0x104  [('acc-4', 'WRITE')]
+00380b74  _ZN19CActorBaseComponent21StartGlideFromGrapnelEv+0x168  [('flag548', 'WRITE')]
+00380c04  _ZN19CActorBaseComponent21StartGlideFromGrapnelEv+0x1f8  [('flag548', 'WRITE')]
+00380e28  _ZN19CActorBaseComponent19PrepareForJumpGlideEv+0x8c  [('flag548', 'WRITE')]
+00380e64  _ZN19CActorBaseComponent20SetInitialGlideAngleEv+0x30  [('flag548', 'WRITE')]
+00380e80  _ZN19CActorBaseComponent20SetInitialGlideAngleEv+0x4c  [('flag548', 'WRITE')]
+003811dc  _ZN19CActorBaseComponent14UpdateNavGlideEf+0x348  [('acc-4', 'READ')]
+003813c8  $a+0xc                    [('acc-4', 'WRITE')]
+00381f9c  $a+0x1f4                  [('acc-4', 'WRITE')]
+0038208c  $a+0x2e4                  [('acc-4', 'WRITE')]
+00382114  $a+0x36c                  [('acc-4', 'WRITE')]
+00382120  $a+0x378                  [('flag548', 'READ')]
+003823a0  $a+0x5f8                  [('flag548', 'WRITE')]
+003825bc  $a+0x160                  [('acc-4', 'WRITE')]
+0038276c  $a+0x310                  [('flag548', 'WRITE')]
+00382d28  $a+0x590                  [('flag548', 'WRITE')]
+00383594  $a+0x658                  [('flag548', 'WRITE')]
+0038393c  _ZN19CActorBaseComponent18RefreshForcesGlideERN6glitch4core8vector3dIfEERNS1_10quaternionE+0x28c  [('flag548', 'WRITE')]
+003d9ea4  _ZN11ApplicationC2Ev+0x48  [('flag548', 'READ')]
+003ed744  $a+0x528                  [('ACC', 'READ')]
+003f2e5c  _ZN6CLevel11RespawnInitEv+0x468  [('acc-4', 'READ')]
+003f6864  _ZN18CLevelStreaming_DB12PrepareFilesESbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEE+0x88  [('ACC', 'READ')]
+003fabbc  _ZN19cAchievementManager19DoThresholdGraphicsEf+0x10  [('ACC', 'READ')]
+003fabc4  _ZN19cAchievementManager19DoThresholdGraphicsEf+0x18  [('acc-4', 'READ')]
+003fd0a0  _ZN19cAchievementManager17SendTrackingEventESbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEE+0x2e0  [('flag544', 'READ')]
+00407e68  _Z16registerHUDEventRKN7gameswf12FunctionCallE+0x470  [('prevvz', 'READ')]
+004122b4  _ZN11CHUDDisplay18shopInitScreenListEiPKc+0x99c  [('ACC', 'READ')]
+004122d0  _ZN11CHUDDisplay18shopInitScreenListEiPKc+0x9b8  [('ACC', 'WRITE')]
+004123e0  _ZN11CHUDDisplay18shopInitScreenListEiPKc+0xac8  [('flag548', 'READ')]
+00412b4c  $a+0x12c                  [('prevvz', 'WRITE')]
+00412b84  $a+0x164                  [('prevvz', 'READ')]
+00412b98  $a+0x178                  [('flag548', 'READ')]
+00417d78  _ZN11CHUDDisplay19AddObjectiveToSceneEP15CGameObjectBaseSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS4_6memory13E_MEMORY_HINTE0EEEESA_bbP7HotSpotbb+0x1e0  [('acc-4', 'WRITE')]
+00418104  _ZN11CHUDDisplay19AddObjectiveToSceneEP15CGameObjectBaseSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS4_6memory13E_MEMORY_HINTE0EEEESA_bbP7HotSpotbb+0x56c  [('prevvz', 'WRITE')]
+0041812c  _ZN11CHUDDisplay19AddObjectiveToSceneEP15CGameObjectBaseSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS4_6memory13E_MEMORY_HINTE0EEEESA_bbP7HotSpotbb+0x594  [('flag544', 'WRITE')]
+0041b638  _ZN11CHUDDisplay17EnableControlGlowEPKcb+0x8  [('prevvz', 'READ')]
+0042149c  _ZN11CHUDDisplay10StartStoryESbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEE+0x304  [('acc-4', 'READ')]
+00422d90  _ZN11CHUDDisplay17RefreshCharactersEb+0x424  [('flag544', 'READ')]
+00422da0  _ZN11CHUDDisplay17RefreshCharactersEb+0x434  [('acc-4', 'READ')]
+004547c0  _ZN11CHUDDisplay19AddObjectiveToSceneEP15CGameObjectBaseSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS4_6memory13E_MEMORY_HINTE0EEEESA_bbP7HotSpotbb.constprop.2539+0x1cc  [('acc-4', 'WRITE')]
+00454b44  _ZN11CHUDDisplay19AddObjectiveToSceneEP15CGameObjectBaseSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS4_6memory13E_MEMORY_HINTE0EEEESA_bbP7HotSpotbb.constprop.2539+0x550  [('prevvz', 'WRITE')]
+00454b6c  _ZN11CHUDDisplay19AddObjectiveToSceneEP15CGameObjectBaseSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS4_6memory13E_MEMORY_HINTE0EEEESA_bbP7HotSpotbb.constprop.2539+0x578  [('flag544', 'WRITE')]
+004787c0  _GLOBAL__sub_I_E__PROYECTOS_TDKR_HRP_trunk_Externals_GLLegacyConfig_Android_release_Batman_UB_Batman_0.cpp+0xbcc  [('flag544', 'READ')]
+0047a274  _ZN6CLevelD2Ev+0x5c0      [('acc-4', 'READ')]
+0047fc50  _ZN6CLevel11StartEffectERKSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEENS3_8vector3dIfEESC_N5boost13intrusive_ptrINS2_5scene10ISceneNodeEEESC_bP11CGameObject+0x38  [('flag548', 'READ')]
+004a1770  _ZN10GS_Loading6CreateEv+0x618  [('prevvz', 'READ')]
+004aa2d0  _ZN13DeviceOptions11LoadOptionsERKSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEE+0xb68  [('prevvz', 'READ')]
+004aae80  $a+0x4b4                  [('ACC', 'READ')]
+004b459c  _ZN14onlineServices13CJanusManager13AddPermissionENS_6UserIDEijNS_15RequestPriorityE+0x158  [('flag548', 'READ')]
+004b54e4  _ZN14onlineServices13CJanusManager16OnRequestSuccessEPNS_8CRequestEPN4glwt11UrlResponseE+0x214  [('prevvz', 'READ')]
+004b6580  _ZN14onlineServices14CHermesManager16RegisterEndpointENS_15HermesTransportESsSsjNS_15RequestPriorityE+0x7c  [('flag548', 'READ')]
+004b6584  _ZN14onlineServices14CHermesManager16RegisterEndpointENS_15HermesTransportESsSsjNS_15RequestPriorityE+0x80  [('flag548', 'READ')]
+004b7448  _ZN14onlineServices14CHermesManager16RetrieveMessagesENS_15HermesTransportEbjNS_15RequestPriorityE+0x28  [('flag548', 'READ')]
+004b7454  _ZN14onlineServices14CHermesManager16RetrieveMessagesENS_15HermesTransportEbjNS_15RequestPriorityE+0x34  [('prevvz', 'READ')]
+004c1054  _ZN14onlineServices11CEveManager21RetrieveConfigurationEjNS_15RequestPriorityE+0x138  [('flag548', 'READ')]
+004c23b0  _ZN14onlineServices18CHermesBaseMessageC2ESsSsbSs+0x170  [('prevvz', 'READ')]
+004cb534  _ZSt22__uninitialized_move_aIPN3iap9StoreItemES2_N4glwt10SAllocatorIS1_LNS3_7MemHintE4EEEET0_T_S8_S7_RT1_.isra.112+0x40  [('acc-4', 'READ')]
+004d0270  _ZN3iap11ItemManager15RefreshItemListEPKcS2_S2_+0x23c  [('flag544', 'READ')]
+004d0274  _ZN3iap11ItemManager15RefreshItemListEPKcS2_S2_+0x240  [('flag544', 'READ')]
+004d8804  _ZN4glot15TrackingManager11SendPackageEv+0x2c  [('flag544', 'WRITE')]
+004d8998  _ZN4glot15TrackingManager11SendPackageEv+0x1c0  [('flag544', 'READ')]
+004d8b80  _ZN4glot15TrackingManager11SendPackageEv+0x3a8  [('ACC', 'READ')]
+004d9320  _ZN4glot15TrackingManager12requestPKGIdEv+0x24c  [('flag548', 'READ')]
+004ffbe0  $a+0x12d8                 [('flag548', 'READ')]
+00502334  $a+0x500                  [('acc-4', 'READ')]
+00513578  $a+0x518                  [('prevvz', 'READ')]
+00514564  Curl_output_digest+0xb8   [('flag548', 'READ')]
+0051cccc  $a+0x10ac                 [('flag548', 'READ')]
+0051f37c  Curl_SOCKS5+0x2b4         [('prevvz', 'READ')]
+0052b3c4  ssl3_change_cipher_state+0xc  [('prevvz', 'READ')]
+00532bbc  ssl_cipher_process_rulestr+0x2c  [('acc-4', 'READ')]
+0054ee34  X509_print_ex+0x7fc       [('prevvz', 'READ')]
+0057a65c  OpenSSL_add_all_ciphers+0x4c  [('prevvz', 'READ')]
+0057a664  OpenSSL_add_all_ciphers+0x54  [('ACC', 'READ')]
+0057a66c  OpenSSL_add_all_ciphers+0x5c  [('acc-4', 'READ')]
+0057a670  OpenSSL_add_all_ciphers+0x60  [('acc-4', 'READ')]
+00593824  PKCS7_dataDecode+0x334    [('prevvz', 'READ')]
+005b0758  $a+0x5b1c                 [('prevvz', 'WRITE')]
+005b0774  $a+0x5b38                 [('acc-4', 'WRITE')]
+005b07b0  $a+0x5b74                 [('ACC', 'WRITE')]
+005b07cc  $a+0x5b90                 [('flag544', 'WRITE')]
+005b08b8  $a+0x5c7c                 [('flag548', 'WRITE')]
+005c2b2c  v2i_crld+0x194            [('flag544', 'READ')]
+005d2e80  ASN1_mbstring_ncopy+0x438  [('prevvz', 'READ')]
+005dfeb8  BN_div+0x56c              [('acc-4', 'READ')]
+005e8cf8  BN_nist_mod_384+0x40      [('prevvz', 'READ')]
+005ed7a8  CAST_decrypt+0x4          [('acc-4', 'READ')]
+0061fcbc  SMIME_read_ASN1+0x70      [('prevvz', 'READ')]
+006338f4  _ZN4Json5Value16resolveReferenceEPKcb+0x2e8  [('acc-4', 'READ')]
+00638338  _ZNSt8_Rb_treeIN4Json5Value8CZStringESt4pairIKS2_S1_ESt10_Select1stIS5_ESt4lessIS2_ESaIS5_EE8_M_eraseEPSt13_Rb_tree_nodeIS5_E+0xbc0  [('acc-4', 'READ')]
+00638e88  $a+0x4e8                  [('acc-4', 'READ')]
+00652024  _ZN7gameswf19define_sound_loaderEPNS_6StreamEiPNS_18MovieDefinitionSubE+0x704  [('flag548', 'READ')]
+0065202c  _ZN7gameswf19define_sound_loaderEPNS_6StreamEiPNS_18MovieDefinitionSubE+0x70c  [('flag544', 'READ')]
+006ae214  _ZN7gameswf23standardPropertyMapInitEv+0xbe8  [('acc-4', 'READ')]
+006b6894  $a+0x478                  [('acc-4', 'READ')]
+006b6e54  $a+0xa38                  [('flag548', 'WRITE')]
+006b6e94  $a+0xa78                  [('acc-4', 'WRITE')]
+006b6ea0  $a+0xa84                  [('ACC', 'WRITE')]
+006b6ea8  $a+0xa8c                  [('prevvz', 'WRITE')]
+006b6eac  $a+0xa90                  [('flag544', 'WRITE')]
+006bc338  _ZN7gameswf15BitmapCharacter7displayEPNS_9CharacterE+0xe8  [('flag548', 'READ')]
+006ec9fc  _ZN7gameswf11AS3Function7executeERNS_5arrayINS_7ASValueEEERNS_11stack_arrayIS2_Lj8EEERNS5_INS_9smart_ptrINS_8ASObjectEEELj16EEEPS2_PNS_13ASEnvironmentE+0x678  [('acc-4', 'READ')]
+0070670c  _ZN7gameswf8mathInitEPNS_6PlayerE+0x3c4  [('flag544', 'READ')]
+0070bf4c  _ZN7gameswf8ASSprite9getBoundsERKNS_12FunctionCallE+0x8  [('flag544', 'READ')]
+00731d64  _ZN6glitch7collada2ps25CParticleSystemStripBaker17createIndexBufferEPNS1_15CParticleSystemEPKNS_5scene11CMeshBufferEPNS_5video16CPrimitiveStreamE+0xec  [('prevvz', 'READ')]
+007401d4  _ZN6glitch7IDevice12checkVersionEPKc+0x6c  [('prevvz', 'READ')]
+007ac6e8  _ZN6glitch5video16S3DSShaderTexEnv21deserializeAttributesEPNS_2io11IAttributesEj+0x28  [('prevvz', 'READ')]
+007beb40  _ZN6glitch7collada16CColladaDatabase19getAnimationTrackExEPKNS0_10SAnimationE+0x850  [('flag548', 'READ')]
+007bf720  $a+0x3a8                  [('acc-4', 'READ')]
+007c0498  $a+0x1120                 [('flag548', 'READ')]
+007c793c  _ZN6glitch7collada8CResFileC2EPKcRKN5boost13intrusive_ptrINS_2io9IReadFileEEEb+0xe0  [('prevvz', 'READ')]
+007ce89c  $a+0x1178                 [('acc-4', 'WRITE')]
+007ce8a4  $a+0x1180                 [('ACC', 'WRITE')]
+007ce8b8  $a+0x1194                 [('prevvz', 'WRITE')]
+007ce8c0  $a+0x119c                 [('flag544', 'WRITE')]
+007ce8dc  $a+0x11b8                 [('flag548', 'WRITE')]
+0080fd38  _ZNK6glitch5video15CImageWriterKTX12writeTextureEPNS_2io10IWriteFileERKNS0_12STextureDescEPKPKvhj+0x4e8  [('prevvz', 'READ')]
+0082052c  _ZN6glitch5video12IVideoDriverD1Ev+0x4  [('flag548', 'READ')]
+00821080  _ZN6glitch5video12IVideoDriver4initEttht+0x4e8  [('flag548', 'READ')]
+0082c814  _ZN6glitch5video20SFixedGLShaderTexEnv21deserializeAttributesEPNS_2io11IAttributesEj+0x14c  [('acc-4', 'READ')]
+0083e1e0  _ZN6glitch5video12IVideoDriver4initEttht.constprop.849+0x494  [('prevvz', 'READ')]
+0086ed78  _ZN6glitch5video7IBuffer8setUsageENS0_14E_BUFFER_USAGEE+0x14c  [('acc-4', 'READ')]
+00881b2c  _ZN6glitch5video15CTextureManager18getTextureInternalEPNS_2io9IReadFileERKSbIcSt11char_traitsIcENS_4core10SAllocatorIcLNS_6memory13E_MEMORY_HINTE0EEEEbRKN5boost13intrusive_ptrINS0_8ITextureEEESK_+0x31c  [('prevvz', 'READ')]
+0088bad4  _ZNSt6vectorIN6glitch3gui9CGUITable4SRowENS0_4core10SAllocatorIS3_LNS0_6memory13E_MEMORY_HINTE0EEEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS3_S9_EERKS3_.constprop.2084+0x18  [('flag548', 'READ')]
+0088d518  _ZNSt6vectorIN6glitch3gui11CGUIListBox9SListItemENS0_4core10SAllocatorIS3_LNS0_6memory13E_MEMORY_HINTE0EEEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS3_S9_EERKS3_.constprop.2124+0x22c  [('flag544', 'READ')]
+008dc428  _ZN6glitch2io20CXMLAttributesReader20readAttributeFromXMLEPNS0_11IAttributesE+0x158  [('flag548', 'READ')]
+008e59b8  _ZN6glitch3gui21CGUIColorSelectDialogC2EPKwPNS0_15IGUIEnvironmentEPNS0_11IGUIElementEi+0x6a8  [('flag548', 'READ')]
+008f76d4  _ZN6glitch3gui8CGUIFont4loadERKN5boost13intrusive_ptrINS_2io13IIrrXMLReaderIwNS_17IReferenceCountedEEEEE+0x3c4  [('flag548', 'READ')]
+0093771c  _ZN6glitch5scene24CDefaultSceneNodeFactory12addSceneNodeENS0_17E_SCENE_NODE_TYPEEPNS0_10ISceneNodeE+0x520  [('prevvz', 'READ')]
+00939218  _ZN6glitch5scene13CSceneManagerD1Ev+0x10  [('flag548', 'READ')]
+009dd2e8  inflate_fast+0x5c8        [('acc-4', 'READ')]
+009e6e94  t1_decoder_parse_charstrings+0x44  [('flag548', 'WRITE')]
+009e71ec  t1_decoder_parse_charstrings+0x39c  [('flag548', 'WRITE')]
+009e7510  t1_decoder_parse_charstrings+0x6c0  [('flag548', 'WRITE')]
+00a03b40  cff_ps_get_font_info+0x78  [('flag544', 'READ')]
+00a03b50  cff_ps_get_font_info+0x88  [('flag548', 'READ')]
+00a03bd8  cff_get_ps_name+0x4       [('acc-4', 'READ')]
+00a06e50  cff_face_init+0x824       [('ACC', 'WRITE')]
+00a06f6c  cff_face_init+0x940       [('acc-4', 'WRITE')]
+00a085d4  cff_face_done+0x558       [('prevvz', 'READ')]
+00a085f4  cff_face_done+0x578       [('acc-4', 'READ')]
+00a085fc  cff_face_done+0x580       [('prevvz', 'WRITE')]
+00a0861c  cff_face_done+0x5a0       [('acc-4', 'WRITE')]
+00a0b4a4  cff_slot_load+0x2b0       [('ACC', 'READ')]
+00a0b4a8  cff_slot_load+0x2b4       [('prevvz', 'READ')]
+00a30b48  tt_face_load_eblc+0x224   [('ACC', 'READ')]
+00a3d998  $a+0x450                  [('ACC', 'READ')]
+00a651bc  newkey+0x24               [('flag548', 'READ')]
+00a6b42c  luaU_print+0x284          [('flag548', 'READ')]
+00a6e164  _ZNSt8ios_base4InitC2Ev+0x8  [('prevvz', 'READ')]
+00a6e16c  _ZNSt8ios_base4InitC2Ev+0x10  [('ACC', 'READ')]
+00aaad84  _ZNKSt8time_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE21_M_extract_via_formatES3_S3_RSt8ios_baseRSt12_Ios_IostateP2tmPKw+0x7e8  [('ACC', 'READ')]

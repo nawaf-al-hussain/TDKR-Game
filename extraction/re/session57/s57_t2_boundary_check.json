@@ -1,0 +1,110 @@
+{
+ "agree": 25,
+ "disagree": 1,
+ "rows": [
+  [
+   "Bane",
+   "MATCH health=1400 aware16[0]=11 f13=180"
+  ],
+  [
+   "Bazooka_Enemy",
+   "MATCH health=90 aware16[0]=70 f13=160"
+  ],
+  [
+   "Blake",
+   "DIFF walk health=150 vs s56 2; aware False"
+  ],
+  [
+   "Crane",
+   "MATCH health=1400 aware16[0]=11 f13=160"
+  ],
+  [
+   "Crowbar_Enemy",
+   "MATCH health=140 aware16[0]=11 f13=160"
+  ],
+  [
+   "Helicopter",
+   "walk hb=121 ab=138 (no s56 ref)"
+  ],
+  [
+   "Helicopter_Bane",
+   "walk hb=121 ab=138 (no s56 ref)"
+  ],
+  [
+   "Knife_Enemy",
+   "MATCH health=150 aware16[0]=11 f13=160"
+  ],
+  [
+   "Knife_Enemy_Prisoner",
+   "MATCH health=150 aware16[0]=11 f13=160"
+  ],
+  [
+   "LeadMerc",
+   "MATCH health=1400 aware16[0]=11 f13=180"
+  ],
+  [
+   "Melee_Enemy_Merc",
+   "MATCH health=120 aware16[0]=11 f13=160"
+  ],
+  [
+   "Melee_Enemy_Pit",
+   "MATCH health=120 aware16[0]=11 f13=160"
+  ],
+  [
+   "Melee_Enemy_Stadium",
+   "MATCH health=120 aware16[0]=11 f13=160"
+  ],
+  [
+   "Melee_Enemy_Test",
+   "MATCH health=120 aware16[0]=11 f13=160"
+  ],
+  [
+   "Military_Heli",
+   "walk hb=121 ab=138 (no s56 ref)"
+  ],
+  [
+   "Military_Officer",
+   "MATCH health=150 aware16[0]=5 f13=120"
+  ],
+  [
+   "Miranda",
+   "MATCH health=1400 aware16[0]=11 f13=160"
+  ],
+  [
+   "NPC",
+   "MATCH health=60 aware16[0]=10 f13=180"
+  ],
+  [
+   "NPC_Female",
+   "MATCH health=60 aware16[0]=13 f13=160"
+  ],
+  [
+   "Pit_Prisoner",
+   "MATCH health=60 aware16[0]=10 f13=180"
+  ],
+  [
+   "Police_Officer",
+   "MATCH health=150 aware16[0]=16 f13=180"
+  ],
+  [
+   "Police_Officer_Melee",
+   "MATCH health=120 aware16[0]=11 f13=160"
+  ],
+  [
+   "Ranged_Enemy_Test",
+   "MATCH health=70 aware16[0]=15 f13=180"
+  ],
+  [
+   "Security_Officer",
+   "MATCH health=150 aware16[0]=5 f13=120"
+  ],
+  [
+   "Test_Object",
+   "walk hb=121 ab=138 (no s56 ref)"
+  ],
+  [
+   "Turhan",
+   "MATCH health=1400 aware16[0]=11 f13=160"
+  ]
+ ]
+}

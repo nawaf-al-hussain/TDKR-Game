@@ -1,0 +1,276 @@
+=== CComponentNpcAI::Load (0x2d70e8, 232 B) ===
+002d70e8 push     {r3, r4, r5, lr}
+002d70ec mov      r4, r0
+002d70f0 mov      r0, r1
+002d70f4 mov      r5, r1
+002d70f8 bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002d70fc str      r0, [r4, #4]
+002d7100 mov      r0, r5
+002d7104 bl       #0x3395d8   ; -> _ZN13CMemoryStream8ReadCharEv+0x0
+002d7108 adds     r3, r0, #0
+002d710c mov      r0, r5
+002d7110 movne    r3, #1
+002d7114 strb     r3, [r4, #8]
+002d7118 bl       #0x3395d8   ; -> _ZN13CMemoryStream8ReadCharEv+0x0
+002d711c adds     r3, r0, #0
+002d7120 mov      r0, r5
+002d7124 movne    r3, #1
+002d7128 strb     r3, [r4, #9]
+002d712c bl       #0x3395d8   ; -> _ZN13CMemoryStream8ReadCharEv+0x0
+002d7130 adds     r3, r0, #0
+002d7134 mov      r0, r5
+002d7138 movne    r3, #1
+002d713c strb     r3, [r4, #0xa]
+002d7140 bl       #0x3395d8   ; -> _ZN13CMemoryStream8ReadCharEv+0x0
+002d7144 adds     r3, r0, #0
+002d7148 mov      r0, r5
+002d714c movne    r3, #1
+002d7150 strb     r3, [r4, #0xb]
+002d7154 bl       #0x3395d8   ; -> _ZN13CMemoryStream8ReadCharEv+0x0
+002d7158 adds     r3, r0, #0
+002d715c mov      r0, r5
+002d7160 movne    r3, #1
+002d7164 strb     r3, [r4, #0xc]
+002d7168 bl       #0x3395d8   ; -> _ZN13CMemoryStream8ReadCharEv+0x0
+002d716c adds     r3, r0, #0
+002d7170 mov      r0, r5
+002d7174 movne    r3, #1
+002d7178 strb     r3, [r4, #0xd]
+002d717c bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002d7180 str      r0, [r4, #0x10]
+002d7184 mov      r0, r5
+002d7188 bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002d718c str      r0, [r4, #0x14]
+002d7190 mov      r0, r5
+002d7194 bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002d7198 str      r0, [r4, #0x18]
+002d719c mov      r0, r5
+002d71a0 bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002d71a4 str      r0, [r4, #0x1c]
+002d71a8 mov      r0, r5
+002d71ac bl       #0x339b94   ; -> _ZN13CMemoryStream9ReadFloatEv+0x0
+002d71b0 str      r0, [r4, #0x20]
+002d71b4 mov      r0, r5
+002d71b8 bl       #0x339b94   ; -> _ZN13CMemoryStream9ReadFloatEv+0x0
+002d71bc str      r0, [r4, #0x24]
+002d71c0 mov      r0, r5
+002d71c4 bl       #0x339b94   ; -> _ZN13CMemoryStream9ReadFloatEv+0x0
+002d71c8 str      r0, [r4, #0x28]
+002d71cc pop      {r3, r4, r5, pc}
+
+=== CComponentWantedGenerator::Load (0x2e0290, 64 B) ===
+002e0290 push     {r3, r4, r5, lr}
+002e0294 mov      r4, r0
+002e0298 mov      r0, r1
+002e029c mov      r5, r1
+002e02a0 bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002e02a4 str      r0, [r4, #4]
+002e02a8 mov      r0, r5
+002e02ac bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002e02b0 str      r0, [r4, #8]
+002e02b4 mov      r0, r5
+002e02b8 bl       #0x339b94   ; -> _ZN13CMemoryStream9ReadFloatEv+0x0
+002e02bc str      r0, [r4, #0xc]
+002e02c0 mov      r0, r5
+002e02c4 bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002e02c8 str      r0, [r4, #0x10]
+002e02cc pop      {r3, r4, r5, pc}
+
+=== CComponentDropCollectible::Load (0x2e27b8, 468 B) ===
+002e27b8 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+002e27bc mov      r6, r0
+002e27c0 sub      sp, sp, #0xc
+002e27c4 mov      r0, r1
+002e27c8 mov      r4, r1
+002e27cc bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002e27d0 ldmib    r6, {r1, r7}
+002e27d4 rsb      sb, r1, r7
+002e27d8 asr      sb, sb, #3
+002e27dc cmp      r0, sb
+002e27e0 mov      r5, r0
+002e27e4 mov      r0, sb
+002e27e8 bls      #0x2e2928
+002e27ec subs     r8, r5, sb
+002e27f0 beq      #0x2e28dc
+002e27f4 ldr      r3, [r6, #0xc]
+002e27f8 rsb      r3, r7, r3
+002e27fc cmp      r8, r3, asr #3
+002e2800 bls      #0x2e2934
+002e2804 movw     r3, #0xffff
+002e2808 movt     r3, #0x1fff
+002e280c rsb      r3, sb, r3
+002e2810 cmp      r8, r3
+002e2814 bhi      #0x2e297c
+002e2818 cmp      r8, sb
+002e281c addhs    r3, sb, r8
+002e2820 addlo    r3, sb, sb
+002e2824 cmp      sb, r3
+002e2828 mvnhi    fp, #7
+002e282c bhi      #0x2e2960
+002e2830 mvn      sl, #0xe0000000
+002e2834 cmp      r3, sl
+002e2838 movlo    sl, r3
+002e283c cmp      sl, #0
+002e2840 lsl      fp, sl, #3
+002e2844 bne      #0x2e2960
+002e2848 add      r3, sl, sb, lsl #3
+002e284c mov      r2, r8
+002e2850 add      r3, r3, #8
+002e2854 mov      ip, #0
+002e2858 subs     r2, r2, #1
+002e285c str      ip, [r3, #-8]
+002e2860 str      ip, [r3, #-4]
+002e2864 add      r3, r3, #8
+002e2868 bne      #0x2e2858
+002e286c cmp      r0, #0
+002e2870 moveq    sb, r0
+002e2874 beq      #0x2e2888
+002e2878 lsl      sb, r0, #3
+002e287c mov      r0, sl
+002e2880 mov      r2, sb
+002e2884 bl       #0xa4ee8   ; -> $d+0xa49f4
+002e2888 ldr      r3, [r6, #8]
+002e288c add      sb, sl, sb
+002e2890 add      sb, sb, r8, lsl #3
+002e2894 rsb      r3, r7, r3
+002e2898 asrs     r8, r3, #3
+002e289c beq      #0x2e28b4
+002e28a0 lsl      r8, r8, #3
+002e28a4 mov      r0, sb
+002e28a8 mov      r1, r7
+002e28ac mov      r2, r8
+002e28b0 bl       #0xa4ee8   ; -> $d+0xa49f4
+002e28b4 ldr      r0, [r6, #4]
+002e28b8 add      r8, sb, r8
+002e28bc cmp      r0, #0
+002e28c0 beq      #0x2e28c8
+002e28c4 bl       #0x3e9260   ; -> _ZdlPv+0x0
+002e28c8 mov      r1, sl
+002e28cc add      fp, sl, fp
+002e28d0 str      sl, [r6, #4]
+002e28d4 str      r8, [r6, #8]
+002e28d8 str      fp, [r6, #0xc]
+002e28dc cmp      r5, #0
+002e28e0 movgt    r7, #0
+002e28e4 bgt      #0x2e28f0
+002e28e8 b        #0x2e2920   ; -> _ZN25CComponentDropCollectible4LoadEP13CMemoryStream+0x168
+002e28ec ldr      r1, [r6, #4]
+002e28f0 mov      r0, r4
+002e28f4 add      r8, r1, r7, lsl #3
+002e28f8 str      r1, [sp, #4]
+002e28fc bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002e2900 ldr      r1, [sp, #4]
+002e2904 str      r0, [r1, r7, lsl #3]
+002e2908 mov      r0, r4
+002e290c bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002e2910 add      r7, r7, #1
+002e2914 cmp      r7, r5
+002e2918 str      r0, [r8, #4]
+002e291c bne      #0x2e28ec
+002e2920 add      sp, sp, #0xc
+002e2924 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+002e2928 addlo    r3, r1, r5, lsl #3
+002e292c strlo    r3, [r6, #8]
+002e2930 b        #0x2e28dc   ; -> _ZN25CComponentDropCollectible4LoadEP13CMemoryStream+0x124
+002e2934 add      r3, r7, #8
+002e2938 mov      r2, r8
+002e293c mov      r0, #0
+002e2940 subs     r2, r2, #1
+002e2944 str      r0, [r3, #-8]
+002e2948 str      r0, [r3, #-4]
+002e294c add      r3, r3, #8
+002e2950 bne      #0x2e2940
+002e2954 add      r7, r7, r8, lsl #3
+002e2958 str      r7, [r6, #8]
+002e295c b        #0x2e28dc   ; -> _ZN25CComponentDropCollectible4LoadEP13CMemoryStream+0x124
+002e2960 mov      r0, fp
+002e2964 bl       #0x3e91f8   ; -> _Znwj+0x0
+002e2968 ldr      r1, [r6, #4]
+002e296c mov      sl, r0
+002e2970 rsb      r0, r1, r7
+002e2974 asr      r0, r0, #3
+002e2978 b        #0x2e2848   ; -> _ZN25CComponentDropCollectible4LoadEP13CMemoryStream+0x90
+002e297c ldr      r0, [pc, #4]
+002e2980 add      r0, pc, r0
+002e2984 bl       #0xa6d760   ; -> _ZSt20__throw_length_errorPKc+0x0
+002e2988 addeq    r5, r5, r4, ror sp
+
+=== CCustomizeActorComponent::Load (0x396db4, 112 B) ===
+00396db4 push     {r3, r4, r5, lr}
+00396db8 subs     r5, r1, #0
+00396dbc mov      r4, r0
+00396dc0 beq      #0x396e10
+00396dc4 ldr      r1, [pc, #0x50]
+00396dc8 mov      r2, #0x2f
+00396dcc mov      r0, #0x18
+00396dd0 add      r1, pc, r1
+00396dd4 bl       #0x3e9204   ; -> _ZnwjPKci+0x0
+00396dd8 ldr      ip, [pc, #0x40]
+00396ddc mov      r2, #0
+00396de0 mov      r1, r5
+00396de4 add      ip, pc, ip
+00396de8 add      ip, ip, #8
+00396dec str      r2, [r0, #4]
+00396df0 str      r2, [r0, #8]
+00396df4 str      r2, [r0, #0xc]
+00396df8 str      r2, [r0, #0x10]
+00396dfc str      r2, [r0, #0x14]
+00396e00 str      ip, [r0]
+00396e04 str      r0, [r4, #0x10]
+00396e08 bl       #0x3bf688   ; -> _ZN24CComponentCustomizeActor4LoadEP13CMemoryStream+0x0
+00396e0c pop      {r3, r4, r5, pc}
+00396e10 ldr      r3, [r0, #8]
+00396e14 str      r3, [r0, #0x10]
+00396e18 pop      {r3, r4, r5, pc}
+00396e1c rsbseq   r8, sl, r4, lsr #9
+00396e20 addeq    r1, r4, r4, ror #24
+
+=== CComponentMotion::Load (tailcall) (0x2d79ec, 24 B) ===
+002d79ec add      r3, r0, #4
+002d79f0 mov      r0, r1
+002d79f4 mov      r1, r3
+002d79f8 b        #0x33a0d4   ; -> _ZN13CMemoryStream10ReadStringERSbIcSt11char_traitsIcEN6glitch4core10SAllocatorIcLNS2_6memory13E_MEMORY_HINTE0EEEE+0x0
+002d79fc movw     r0, #0x2718
+002d7a00 movt     r0, #0xdfe
+
+=== shared reader @0x33a0d4 (Motion target) (0x33a0d4, 160 B) ===
+0033a0d4 ldrb     r3, [r0, #0x34]
+0033a0d8 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+0033a0dc cmp      r3, #0
+0033a0e0 ldr      r4, [pc, #0x360]
+0033a0e4 sub      sp, sp, #0x14
+0033a0e8 mov      r5, r0
+0033a0ec mov      r6, r1
+0033a0f0 add      r4, pc, r4
+0033a0f4 beq      #0x33a1ec
+0033a0f8 ldrb     r3, [r0, #0x35]
+0033a0fc cmp      r3, #0
+0033a100 beq      #0x33a2f0
+0033a104 bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+0033a108 ldr      r8, [pc, #0x33c]
+0033a10c add      r8, pc, r8
+0033a110 ldr      r3, [r8]
+0033a114 tst      r3, #1
+0033a118 mov      r7, r0
+0033a11c beq      #0x33a350
+0033a120 cmp      r7, #0
+0033a124 blt      #0x33a3e0
+0033a128 ldr      r3, [r5, #0x28]
+0033a12c ldr      r2, [r5, #0x2c]
+0033a130 rsb      r2, r3, r2
+0033a134 cmp      r7, r2, asr #2
+0033a138 addlo    r7, r3, r7, lsl #2
+0033a13c ldrhs    r7, [pc, #0x30c]
+0033a140 addhs    r7, pc, r7
+0033a144 ldr      r7, [r7]
+0033a148 ldr      r5, [r7, #-0xc]
+0033a14c add      r5, r7, r5, lsl #2
+0033a150 cmp      r7, r5
+0033a154 beq      #0x33a3f8
+0033a158 rsb      sl, r7, r5
+0033a15c asr      r8, sl, #2
+0033a160 cmn      r8, #0xc0000004
+0033a164 bhi      #0x33a41c
+0033a168 add      sb, r8, #0x1d
+0033a16c mov      r1, #0
+0033a170 cmp      r8, #0

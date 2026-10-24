@@ -1,0 +1,122 @@
+=== CDropCollectibleComponent::Load (0x229e44, 104 B) ===
+00229e44 push     {r3, r4, r5, lr}
+00229e48 subs     r5, r1, #0
+00229e4c mov      r4, r0
+00229e50 beq      #0x229e98
+00229e54 ldr      r1, [pc, #0x48]   ; [r11+0x48]
+00229e58 mov      r2, #0x30
+00229e5c mov      r0, #0x10
+00229e60 add      r1, pc, r1
+00229e64 bl       #0x3e9204   ; -> _ZnwjPKci+0x0
+00229e68 ldr      r2, [pc, #0x38]   ; [r11+0x38]
+00229e6c mov      ip, #0
+00229e70 mov      r1, r5
+00229e74 add      r2, pc, r2
+00229e78 add      r2, r2, #8
+00229e7c str      ip, [r0, #4]   ; [r66+0x4]
+00229e80 str      ip, [r0, #8]   ; [r66+0x8]
+00229e84 str      ip, [r0, #0xc]   ; [r66+0xc]
+00229e88 str      r2, [r0]   ; [r66+0x0]
+00229e8c str      r0, [r4, #0x10]   ; [r70+0x10]
+00229e90 bl       #0x2e27b8   ; -> _ZN25CComponentDropCollectible4LoadEP13CMemoryStream+0x0
+00229e94 pop      {r3, r4, r5, pc}
+00229e98 ldr      r3, [r0, #8]   ; [r66+0x8]
+00229e9c str      r3, [r0, #0x10]   ; [r66+0x10]
+00229ea0 pop      {r3, r4, r5, pc}
+00229ea4 addseq   lr, r0, ip, lsl #22
+00229ea8 ldrsbeq  sb, [sl], ip   ; [r76+0x0]
+
+=== CWantedGeneratorComponent::Load (0x24b23c, 112 B) ===
+0024b23c push     {r3, r4, r5, lr}
+0024b240 subs     r5, r1, #0
+0024b244 mov      r4, r0
+0024b248 beq      #0x24b298
+0024b24c ldr      r1, [pc, #0x50]   ; [r11+0x50]
+0024b250 mov      r2, #0x3b
+0024b254 mov      r0, #0x14
+0024b258 add      r1, pc, r1
+0024b25c bl       #0x3e9204   ; -> _ZnwjPKci+0x0
+0024b260 ldr      r2, [pc, #0x40]   ; [r11+0x40]
+0024b264 mov      r1, #0
+0024b268 mov      ip, #0
+0024b26c add      r2, pc, r2
+0024b270 add      r2, r2, #8
+0024b274 str      r1, [r0, #4]   ; [r66+0x4]
+0024b278 str      r1, [r0, #8]   ; [r66+0x8]
+0024b27c str      r1, [r0, #0x10]   ; [r66+0x10]
+0024b280 mov      r1, r5
+0024b284 str      ip, [r0, #0xc]   ; [r66+0xc]
+0024b288 str      r2, [r0]   ; [r66+0x0]
+0024b28c str      r0, [r4, #0x10]   ; [r70+0x10]
+0024b290 bl       #0x2e0290   ; -> _ZN25CComponentWantedGenerator4LoadEP13CMemoryStream+0x0
+0024b294 pop      {r3, r4, r5, pc}
+0024b298 ldr      r3, [r0, #8]   ; [r66+0x8]
+0024b29c str      r3, [r0, #0x10]   ; [r66+0x10]
+0024b2a0 pop      {r3, r4, r5, pc}
+0024b2a4 addeq    lr, lr, ip, lsl #12
+0024b2a8 ldrheq   r8, [r8], r4   ; [r74+0x0]
+
+=== CNpcAIComponent::Load (0x279e88, 152 B) ===
+00279e88 push     {r3, r4, r5, lr}
+00279e8c subs     r5, r1, #0
+00279e90 mov      r4, r0
+00279e94 beq      #0x279f0c
+00279e98 ldr      r1, [pc, #0x78]   ; [r11+0x78]
+00279e9c mov      r2, #0x6b
+00279ea0 mov      r0, #0x2c
+00279ea4 add      r1, pc, r1
+00279ea8 bl       #0x3e9204   ; -> _ZnwjPKci+0x0
+00279eac ldr      ip, [pc, #0x68]   ; [r11+0x68]
+00279eb0 mov      r2, #0
+00279eb4 mov      r1, #0
+00279eb8 add      ip, pc, ip
+00279ebc add      ip, ip, #8
+00279ec0 str      r1, [r0, #0x20]   ; [r66+0x20]
+00279ec4 str      r1, [r0, #0x24]   ; [r66+0x24]
+00279ec8 str      r1, [r0, #0x28]   ; [r66+0x28]
+00279ecc mov      r1, r5
+00279ed0 str      r2, [r0, #4]   ; [r66+0x4]
+00279ed4 strb     r2, [r0, #8]   ; [r66+0x8]
+00279ed8 strb     r2, [r0, #9]   ; [r66+0x9]
+00279edc strb     r2, [r0, #0xa]   ; [r66+0xa]
+00279ee0 strb     r2, [r0, #0xb]   ; [r66+0xb]
+00279ee4 strb     r2, [r0, #0xc]   ; [r66+0xc]
+00279ee8 strb     r2, [r0, #0xd]   ; [r66+0xd]
+00279eec str      r2, [r0, #0x10]   ; [r66+0x10]
+00279ef0 str      r2, [r0, #0x14]   ; [r66+0x14]
+00279ef4 str      r2, [r0, #0x18]   ; [r66+0x18]
+00279ef8 str      r2, [r0, #0x1c]   ; [r66+0x1c]
+00279efc str      ip, [r0]   ; [r66+0x0]
+00279f00 str      r0, [r4, #0x20]   ; [r70+0x20]
+00279f04 bl       #0x2d70e8   ; -> _ZN15CComponentNpcAI4LoadEP13CMemoryStream+0x0
+00279f08 pop      {r3, r4, r5, pc}
+00279f0c ldr      r3, [r0, #8]   ; [r66+0x8]
+00279f10 str      r3, [r0, #0x20]   ; [r66+0x20]
+00279f14 pop      {r3, r4, r5, pc}
+00279f18 addeq    r0, ip, ip, asr #22
+00279f1c addseq   sb, r5, r0, lsr #25
+
+=== CStateSetComponent::Load (thunk) (0x298f38, 4 B) ===
+00298f38 bx       lr
+
+=== CONTROL: CComponentHealth::Load (0x2d7bf0, 80 B) ===
+002d7bf0 push     {r3, r4, r5, lr}
+002d7bf4 mov      r4, r0
+002d7bf8 mov      r0, r1
+002d7bfc mov      r5, r1
+002d7c00 bl       #0x339b94   ; -> _ZN13CMemoryStream9ReadFloatEv+0x0
+002d7c04 str      r0, [r4, #4]   ; [r70+0x4]
+002d7c08 mov      r0, r5
+002d7c0c bl       #0x3395d8   ; -> _ZN13CMemoryStream8ReadCharEv+0x0
+002d7c10 adds     r3, r0, #0
+002d7c14 mov      r0, r5
+002d7c18 movne    r3, #1
+002d7c1c strb     r3, [r4, #8]   ; [r70+0x8]
+002d7c20 bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002d7c24 str      r0, [r4, #0xc]   ; [r70+0xc]
+002d7c28 mov      r0, r5
+002d7c2c bl       #0x339914   ; -> _ZN13CMemoryStream7ReadIntEv+0x0
+002d7c30 str      r0, [r4, #0x10]   ; [r70+0x10]
+002d7c34 pop      {r3, r4, r5, pc}
+002d7c38 movw     r0, #0xd6c4
+002d7c3c movt     r0, #0xddc
