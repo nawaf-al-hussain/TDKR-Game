@@ -793,3 +793,79 @@ poolchunk. **T5**: real-GPU check PENDING; llvmpipe/Xvfb second renderer negativ
 1.5-2 sessions; full combat/AI 4-6 unchanged.
 Local refs after s55: main <T7-sha>, s55-t1-title-fix 0cea8b8, gh-pages-staged-s44 6145545,
 s41 7b0807e. Bundles: download/bundles_s55/.
+
+## SESSION 56 (round 46, 2026-10-24) — glide engine model APPLIED on branch + control; migration branch; memory floor; enemy templates decoded
+
+**T1 glide on branch s56-t1-glide (77dd3c6+0280152, NOT deployed):** ?s5=1 now runs the s55-note
+engine model (fwd = f5+(f6-f5)*(2/pi)*|p| = 3.5 u/s, sink = f0+(f1-f0)*(2/pi)*|p| = 10.0 u/s at
+-45 deg; was const fwd 16 / sink 4+12|p|); ?s5old=1 keeps the old model as control; ?s5acc=1 runs
+an ACCUMULATOR re-read; ?s5plunge=1 = slot-1 pitch0 -60. Gates: 6 configs ALL PASS 0 errors,
+default digest = LIVE (00ce7970/137893, routes 10/10). Trajectories (s56_t1_traj_metrics.json +
+plot): engine Glider/Plunge vz and fwd EXACT vs analytic (deterministic integration, n=46-55
+frame samples); old control reproduces s55's -13.42 exactly; wrong-parameter and legacy controls
+move every measure. **SEMANTIC CONFLICT (open, one signal each way):** a full re-read of
+RefreshForcesGlide says the f0/f1 formula is the ACCELERATION rate of an airspeed accumulator
+clamped [f0,f1] (pitch<=0 grows toward f1 @0x3839dc, pitch>0 decays toward f0 @0x383724), and
+the f5/f6 family lands in the VERTICAL term (0x383858..0x383880: X,Y = -/+sin(f6 deg)*acc*cos(p),
+cos(f6 deg)*acc*cos(p); Z = sin(p)*acc - (f5+(f6-f5)(2/pi)|p| + helper) - blend). f6=6 does dual
+duty (fwdMax AND a 6-deg side-slip tilt); the f7/f8/f9 blend SUBTRACTS in Z near ground (landing
+assist, not flare). Discriminating needs an engine-side trajectory capture or the StartGlide
+acc-init (absent from the 4 entry functions). Float naming table complete (f2/f3/f12/f16/f17/f19
+confirmed unread; int2=0; int1=slot).
+
+**T2 control (?s5ctl=1, ba85416+cff36da):** scripted pitch control + auto-level on the engine
+model. Validation EXACT: hold -60 deg -> vz -12.0 / fwd 4.333 / slip -6.0 deg (decoded mapping +
+decoded f6 side-slip); zero input -> pitch = -60*exp(-k(t-t1)) with k-fit 2.0000 vs the placeholder
+2.0 (n=26) and per-frame vz residual <= 0.005 u/s. PROVENANCE: the auto-level coefficient and any
+pitch clamps are PLACEHOLDERS (s_glide* dead; f12/f16/f17/f19 unread; UpdateNavGlide pools = nav
+steering 90/pi/180/0.001/360/-180 only) - the validation covers the CONTROL MECHANISM.
+
+**T3 migration branch s56-t3-migrate (69696df+dddaa9e, NOT deployed):** based on the LIVE tree.
+playable/index.html builds Batman IN-BROWSER from the user zip (buildGLB port; zip-built GLB
+268,528 B, 7 clips, RGB888 texture; gate: WALKER ACTIVE, soup sha-verified, 0 errors);
+patch.json + batman.glb + models/ (110.9 MB) + app.js + skybox.jpg REMOVED on the branch; root
+index.html replaced by the zone-renderer prototype (integration_lazy copy at ./playable/ paths;
+gate PASS with the LIVE-identical digest). Post-migration tree = 22 files, 708,208 B (-99.4%);
+residual game-derived = 100,504 B (lvc_gol_templates.json + lvc_readseq_s30.json parse tables;
+in-browser gol.bin decode is future work). Trigger markers retire with patch.json (no in-browser
+CTriggerShapeAABB decoder yet). Rollback if ever deployed = redeploy 6145545.
+
+**T4 memory (1a8e53a):** FINE harness (100 ms) x3 on the SAME config as s53/s55 (pristine 6145545
+poolchunk page): peak RSS 611.3/547.1/592.1 MB (median 592, +/-5.4%), peak at t=5-7 s (build
+transient), steady ~210 MB, first image 8.76-8.98 s, 0 errors. The s55 coarse 2 s number (555.9)
+underestimated the spike ~6%. VERDICT: <600 MB AND <8 s NOT MET - floor ~590 MB / ~8.9 s on this
+2-core swiftshader config; the lever remains dropping decode arrays after upload.
+
+**T5:** real-GPU check still PENDING (paste-back page: integration_lazy.html?gpucheck=1); llvmpipe
+not retried.
+
+**T6 enemy data (2117b9c):** CComponentHealth = 0x0ddcd6c4 and CComponentAwareness = 0x6754056b
+resolved with two anchors each (Load-fingerprint vs s30 readseq; vtable +0x18 = Load). Health::Load
+= ReadFloat->[+4] (HP), ReadChar->bool, 2x ReadInt; Awareness::Load = 16 floats. Melee_Enemy_Merc
+(0x000c351d, 683 B payload): health = 120.0, awareness16 = [11,17,0,0,2,5,0,0,1.5,6,0,0,1.1,160,2.7,1.5]
+(FOV field only takes authored {45,120,160,180}). 37/50 carriers decoded: boss family (Bane,
+LeadMerc, Turhan, Miranda) 1400 HP + 180 deg FOV; civilians 60 HP; vehicles health=2 with
+sensor-only vectors; Melee family vectors identical across Merc/Pit/Test/PoliceMelee (structural
+control). Shuffled-template null on health: z=-0.26, p~0.84 (unremarkable by design). Motion id
+candidate 0x592ce07c NOT pinned (Load = tailcall to a shared reader @0x33a0d4). Damage numbers
+(GiveDamage args in Lua bytecode) NOT decoded - PARTIAL.
+
+**T7:** local main 2117b9c (11 ahead of remote a8e6124: 7 s55 + 3 s56 + delivery), branches
+s56-t1-glide cff36da, s56-t3-migrate dddaa9e; bundles download/bundles_s56/ (verified SHA256 in
+the session record). NOTHING deployed; remote unchanged.
+
+### s56 remaining-work estimate update (sized)
+- IN (unchanged): walkable world, character renderer + animation, Lua shim, browser asset pipeline,
+  user-file material binding, descriptor decoding, engine shader + fog chain, zone renderer
+  (corr 0.9923 standing), glide slice WITH the engine model + control on a branch, grapple slice.
+- CHANGED: glide/grapple FULL behavior (stick dynamics, rope render, QTE, dive/roll variants):
+  +0.5-1 session (the engine model + control mechanism now exist on the branch; remaining =
+  engine-side capture to settle the f0/f1-vs-f5/f6 semantic, 0.25 session, + polish).
+- NEW: user-zip migration (playable/index.html Batman-from-zip DONE on the branch; root prototype
+  DONE; gol.bin in-browser decode for the 100 KB residual: 0.5-1 session; CTriggerShapeAABB
+  in-browser decode: 0.5 session).
+- NOT in (unchanged): combat/AI/mission flow 4-6 sessions (now with decoded Merc data: health 120,
+  awareness16, FOV 160 - the data layer of the combat slice is ~30% surveyed); audio 1-2; UI 1-2;
+  cloth cape 1; cross-region navigation 1-2; city-scale lit rendering from user files 1-2.
+- Combat slice remaining specifics: GiveDamage argument decode (0.25-0.5), Motion component reader
+  (0.25), enemy skeleton clip bindings (bdae anim_pack gap, standing), then implementation 1-1.5.
