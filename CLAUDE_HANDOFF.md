@@ -944,3 +944,108 @@ section + 41 mode-only flips) — restored from HEAD before work.
   cross-region navigation 1-2; city-scale lit rendering from user files 1-2.
 - Memory: streaming rework 0.5-1 session to attempt <500 MB; browser floor + swiftshader copies are
   not in-page addressable (real GPU is the only path below ~350 MB native).
+
+## SESSION 58 (round 48, 2026-10-25) — glide blend distance PINNED (takeoff anchor); template walk 110->326/653; enemy rig found + clips FK-validated; gol-from-user-zip gate live on migration branch
+
+**STATE at start:** remote unchanged (main a8e6124, gh-pages 6145545 LIVE); CLAUDE_HANDOFF.md complete (946 lines, s56+s57 present, NO mode flips); bundles_s57 hashes verified; NO GitHub token files on disk (filename-only scan; only s28 lexical-token scripts) — NOTHING pushed this session (no token supplied).
+
+**T1 glide blend PINNED (branch s56-t1-glide 1abd8e2, main 2614884):** the 0x383788 virtual call is
+[comp+4]->vtable[+0x18] where comp+4 = owner CGameObject (ctor 0x36bfc0 str r1,[r0,#4]); CGameObject
+vtable base 0xbd8028, slot 6 = **CGameObject::GetPosition @0x2d6f1c** ('add r0,r0,#0xc' = &obj->pos
+at +0xc..0x14). **NOT a ground raycast / nav height / collision query.** Distance =
+|GetPosition(obj) − [comp+0x1a4..0x1ac]| where that vec3 cache is stored right after EVERY
+CActorBaseComponent::SetActorPosition (Update 0x36e74c, UpdateNavSimpleBehavior/NormalSimplified/
+TransitionWithMovement/ClimbBox, TryEdgeGrab, UpdateFloorTesting, ResolveAirCollision) and NEVER by
+UpdateNavGlide (0x380e94..0x3813bc: 0 stores; single RefreshForcesGlide call @0x380fbc) => during a
+glide the cache is frozen at the TAKEOFF position: **d = 3D distance travelled since glide start**.
+Blend arithmetic: blend_raw = fB + (1−d/f9)(f7−fB) [fB=[gadget+0x24] floor, f7=[+0x28] start,
+f9=[+0x2c] range]; blend = **max(blend_raw, fB)** (0x3837d4 vmla, 0x3837ec vcmpe, 0x383804 vmovge);
+vz −= blend (0x383814). With the decoded floats (0/2/16) = a 2 u/s extra-sink entry dip decaying
+linearly over the first 16 u of travel. GetGliderGravityHelper 0x1e1508 = UpgradesManager
+std::map[0x1f].SUpgrade+0xc (SUpgrade {u16 key, s16 level=−1, base@+8, value@+0xc}; AddUpgrade
+sets base=value; Upgrade mode 0 add / mode 1 multiply / mode 2 keyed switch; base value is
+DATA-DRIVEN from the ResetUpgrades definition tables — number inconclusive from .text; in-page 0
+stands). Page: proxy (height-over-nm) kept as the ?s5=1 default for digest stability; **?s5blend=1**
+= exact engine measure. Gates 6/6 PASS 0 errs, soup 00ce7970/137893 = LIVE everywhere, routes 10/10,
+land receipts reproduce s57 (417/467/917/450); exact-vs-analytic vz error **0.0048 (Glider n=24) /
+0.0049 (Plunge n=28) u/s** (well under 0.1); proxy-vs-exact control MOVES 0.93 u/s at t=50 ms;
+sink control fwd 3.5 reproduced.
+
+**T2 templates 110 -> 326/653 close (49.9%); carriers 30/50 (main):** three Loads decoded: (1)
+CCollisionComponent::Load 0x2230a8 — instance shape = base CComponentCollision::Load (0x2d72bc:
+c,c,STR,i,c,c,i = 16 B) + ReadChar cnt + cnt*(STR+i+9f+c); **TEMPLATE payload = the 16-B base
+ONLY** (instance shape REFUTED for templates by closure: 0651bdaa@125=[2.0,1.8,1.6] and
+Health@137=2.0 align across 15 vehicle carriers simultaneously); (2) **0x33702f4a =
+CComponentSniper::Load 0x2e4b5c = 5f = 20 B** (unlocks the 9 Batarang*/Assault_Rifle_01 weapon
+templates); (3) CComponentCustomizeActor::Load 0x3bf688 (wrapper 0x396db4) = **i(n) +
+n*(STR,STR,STR,i(m),m*STR) + i + i** — exact walk, no candidate search. Walk re-run (no sanity
+filter): 326/653 close; carriers 30/50 with values: **21 MATCH s56** (health + 16 aware floats +
+ints), **9 CORRECTIONS** (Blake 150 re-confirmed; 8 vehicles = health **300** not s56's 2.0, ints
+−1/−1 not 16320/16448 — s56's vehicle boundary pre-dated the collision fix; aware [5,15,...]).
+Remaining blockers listed per template (top: LEN-MISMATCH 111, 0x4cc04ddb 59, 0x43c8a8d1 24,
+0x67c82e62 14 vehicle-extra, 0x0e1f5b6f Sniper/Ranged_Disarm pair; heli/monorail/Test_Object big
+rep residuals). **Motion shapes explained:** template [c,f,f,c,f,f] speed pairs are the operative
+data (generic template loader); the instance string reader (CMotionComponent::Load 0x2395f8 ->
+CComponentMotion::Load 0x2d79ec -> ReadString) is DORMANT on the placement path — lvc census over
+11/12 files (Test.lvc OOM at 6.5 GB heap): **ZERO Motion instances**; s57's "string names a motion
+set with these speeds" refuted for placement data. **GiveDamage(actorId, damage) @0x155e4c:**
+arg2 = literal lua_tointeger -> float; 8-word info struct {damage, 0, −1 (source), 0×5} dispatched
+via [obj vtable+0xa8] (slot 42), id 0 = level dispatcher path. Census over game_config.gla: **146
+call sites, ALL literal, 12 distinct values: 5 x91, 7 x11, 10 x9, 500 x8, 1000 x7, 50 x6, 25 x5,
+15 x3, 300/20 x2, 30/5000 x1** (the 541-script lvc trigger corpus carries 18, all GiveDamage(0,5)).
+
+**T3 enemy rig FOUND, clips FK-validated; in-page mesh = PARTIAL (branch c6aeb9b):**
+Bane_mercenary.bdae (1,229,264 B) + Bane_mercenary_low.bdae (750,064 B) exist in the user zip's
+actors.gla; textures chara_banemercenarya_c/_n/_mask.tga + gear_mercenaryA..D_LOD00..03 (from the
+exact CustomizeActor walk — template and container agree). Animation file = the SHARED bank
+batman_anims.bdae (921 clips): Merc state table Idle/Walk/Run -> **_014_idle_enemy_combat /
+_166_enemy_walk / _171_enemy_run** (aim/hip variants _167/_172/_173). FK battery (the s35/s36
+Batman machinery, unchanged) on the enemy clips: loop continuity 0.252-0.908 u (batman walk/run
+calibration 0.191-0.575; enemy idle 0.43/0.25), foot band −0.87 u (grounded), walk/run root bob
+0.865-0.966 (±5 cm), rolled wrong-case breaks the step profile. ?enemy=1 wired through the Batman
+GLB path with __GATE.enemy/enemyPlay receipts — **fails cleanly: readBdae's SKIN_OFFS layout is
+batman-hardcoded** (the earlier "1449-vert shared topology" reading was that artifact); merc bdae
+section-table derivation = one focused session (the ONLY remaining step to in-page enemy playback).
+enemy_viewer.html damage 10 -> decoded **5** with GiveDamage provenance. Gates: default digest
+unchanged; ?enemy=1 pass with recorded blocker; 0 errs.
+
+**T4 memory (lever attempted, target NOT MET):** ?texfree=1 (drop decoded texture CPU bytes right
+after GL upload, behind flag, digests identical 00ce7970/137893 on all runs) — peak does NOT move:
+median ~560 MB across 4 fine runs (538.7/568.2/593.9/551.8) vs s56's 592 (same ballpark, ±5% run
+noise); first image 8.5-8.9 s. Spike = zone-build transient: swiftshader native copies (~261 MB,
+s55 breakdown) + soup/batch intermediates; textures were already LRU-capped (64 MB). Floor: empty
+three.js 93 MB (s58), steady ~210 MB. <500 MB / <8 s NOT MET — the remaining JS lever (batch-build
+intermediates refactor) is digest-risky; real GPU is the path below ~350 MB native.
+
+**T5 gol-from-user-zip gate LIVE (branch s56-t3-migrate 47e73d1a):** the migration root prototype
+now slices game_config.gla member **gol.bin (1,270,660 B) from the USER'S zip** and parses it
+in-browser (gol_parse.js). Gate __GATE.golzip = {ok:true, nrec:653, closed:77, digest 5edaa148...
+MATCH, **triggers:2 (BoxTrigger, CylinderTrigger), carriers:50, Merc health=120 aware=11/17
+fov=160** decoded at the walk-proven payload offsets}; soup 00ce7970/137893 unchanged; 0 errors.
+Also noted for a later session: game_config.gla carries **Upgrades.bin (721 B)** — the likely
+T1-helper base-value source.
+
+**T6:** real-GPU check PENDING (no block pasted; load integration_lazy.html?gpucheck=1 on a real
+GPU and paste the block).
+
+**T7:** bundles download/bundles_s58/ verified — main_s58_inc.bundle (requires a8e6124 = remote
+main), branch_glide_s58_inc.bundle (requires 6903059 = the s57 glide bundle), branch_migrate_s58_inc.bundle
+(requires fb7a6b5 = the s57 migrate bundle); SHA256 in the session record. NOTHING deployed; remote
+unchanged. State at handoff: local main ahead 21+ commits (through the s58 receipts + handoff);
+branches s56-t1-glide 22b77bc9, s56-t3-migrate 47e73d1a, s55-t1-title-fix 0cea8b8.
+
+### s58 remaining-work estimate update (sized)
+- IN (unchanged): walkable world, character renderer + animation, Lua shim, browser asset pipeline,
+  user-file material binding, descriptor decoding, engine shader + fog chain, zone renderer, glide
+  slice NOW WITH THE EXACT BLEND (anchor-distance measure implemented; helper number pending
+  Upgrades.bin), grapple slice, gol.bin in-browser parse + user-zip trigger/enemy templates (NEW).
+- CHANGED: combat data slice ~70% (walk coverage 326/653 with collision/customize/sniper specs;
+  carriers 30/50 with corrections; GiveDamage decoded + censused; enemy rig located; enemy clips
+  validated). Remaining: merc bdae section-table derivation 0.25-0.5 session -> in-page enemy
+  playback; remaining comp Loads for the other 327 templates (~0.5-1 session per cluster:
+  0x4cc04ddb/0x43c8a8d1 props cluster, 0x67c82e62 vehicle-extra, 0x0e1f5b6f sniper pair, big-rep
+  behavior templates); Upgrades.bin decode 0.25 session (T1 helper number); combat implementation
+  1-1.5 sessions (unchanged).
+- NOT in (unchanged): AI/mission flow 4-6 sessions total with combat; audio 1-2; UI 1-2; cloth cape 1;
+  cross-region navigation 1-2; city-scale lit rendering from user files 1-2. Memory: the JS levers
+  are exhausted (T4); <500 MB needs a real GPU (or accept the ~560 MB floor).
