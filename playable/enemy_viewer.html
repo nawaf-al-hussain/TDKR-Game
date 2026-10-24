@@ -20,11 +20,11 @@
  <div>CComponentHealth 0x0ddcd6c4 (Load = f,c,i,i @0x2d7bf0):</div>
  <div id="hpText">health = 120.0 HP @payload+121 (structural walk + s56 gap-search agree)</div>
  <div id="hpwrap"><div id="hpbar"></div></div>
- <button id="hitBtn">scripted player hit (placeholder 10 HP — GiveDamage args undecoded)</button>
+ <button id="hitBtn">scripted player hit (5 HP — decoded GiveDamage(actorId,damage), census 5 x91)</button>
  <span id="hits">hits: 0</span>
  <h4>CComponentAwareness 0x6754056b (16 floats @+154):</h4>
  <div>radii f0=11.0 near / f1=17.0 far; f13 = FOV 160 deg (authored set {45,120,160,180}); f12=1.1, f14=2.7, f15=1.5</div>
- <h4>State clips (s36 state table; enemy skeleton bindings = standing bdae gap)</h4>
+ <h4>State clips (s58: rig = Bane_mercenary.bdae, 31 joints, shared 1449-vert topology; clips _014_idle_enemy_combat / _166_enemy_walk / _171_enemy_run play on the shared anim bank - FK battery in extraction/re/session58)</h4>
  <table><tr><td>Enemy_Combat_Idle</td><td>idle family (attack 33 / counter 20 / takedown 14 / hit 9 / block 10 of 921 clips)</td></tr>
  <tr><td>Knife_Combat_Idle</td><td>melee family</td></tr><tr><td>Enemy_Idle_Aim</td><td>aim family</td></tr></table>
  <div id="gateOut">gate: pending</div>
@@ -32,7 +32,7 @@
 <script>
 'use strict';
 // Decoded values (extraction/re/session56/s56_t6_note.md + session57 structural walk)
-var HP0 = 120.0, FOV_DEG = 160.0, R_NEAR = 11.0, R_FAR = 17.0, HIT_DMG = 10.0; // HIT_DMG = PLACEHOLDER
+var HP0 = 120.0, FOV_DEG = 160.0, R_NEAR = 11.0, R_FAR = 17.0, HIT_DMG = 5.0; // GiveDamage 0x155e4c: literal arg2; census game_config.gla 146 calls, 5 x91
 var health = HP0, hits = 0;
 var cv = document.getElementById('c');
 var G = cv.getContext('webgl', {antialias: false});
@@ -107,7 +107,7 @@ document.getElementById('hitBtn').onclick = function () {
 };
 // gate: cone geometry numbers, health change, clip names, wrong-FOV control moves
 var gate = { enabled: true, fovDeg: FOV_DEG, rNear: R_NEAR, rFar: R_FAR, health0: HP0,
-  hitDamage: HIT_DMG, damageProvenance: 'PLACEHOLDER - GiveDamage Lua args undecoded (s57 T2)',
+  hitDamage: HIT_DMG, damageProvenance: 'GiveDamage(actorId,damage) @0x155e4c literal arg2; game_config.gla census: 146 calls, 12 distinct values, 5 x91',
   states: ['Enemy_Combat_Idle', 'Knife_Combat_Idle', 'Enemy_Idle_Aim'],
   clipFamilies: { attack: 33, counter: 20, takedown: 14, hit: 9, block: 10, total: 921 },
   enemyClipBindings: 'UNDONE (bdae anim_pack gap, standing since s36)' };
@@ -122,7 +122,7 @@ function runGate() {
   document.getElementById('hitBtn').onclick();
   gate.healthBefore = HP0; gate.healthAfter = health; gate.healthDelta = HP0 - health;
   gate.pass = gate.coneCheck.drawnApertureDeg === 160 && gate.coneCheck.apertureMoves &&
-              gate.coneCheck.radiiMove && gate.healthAfter === 110.0;
+              gate.coneCheck.radiiMove && gate.healthAfter === 115.0;
   document.getElementById('gateOut').textContent = 'gate: ' + JSON.stringify(gate);
   window.__GATE = gate;
 }

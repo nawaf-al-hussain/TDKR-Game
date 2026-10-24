@@ -1536,6 +1536,87 @@ async function loadBatman(zipBuf, findM) {
   if (texture && sm) { sm.material.map = texture; sm.material.color.set(0xffffff); sm.material.needsUpdate = true; }
   return { verts: skin.verts.length / 3, clips: g.animations.map(a => a.name) };
 }
+// s58 T3: enemy (Melee_Enemy_Merc) rig via the SAME FK/GLB path as Batman.
+// Rig LOCATED: Bane_mercenary.bdae (1,229,264 B; low LOD 750,064 B) in actors.gla.
+// Clips: the SHARED anim bank batman_anims.bdae (921 clips; enemy families s55 T6);
+// Merc state table Idle/Walk/Run -> _014_idle_enemy_combat / _166_enemy_walk /
+// _171_enemy_run (FK-validated node-side, extraction/re/session58/s58_t3_fk.json).
+// NOTE: readBdae's SKIN_OFFS is batman-hardwired (the merc probe's '1449 verts' was
+// the batman layout misread onto merc bytes) -> in-page merc MESH playback needs a
+// merc-specific bdae layout derivation (one focused session). This flag fails
+// gracefully with that error; clip FK receipts are node-side.
+// Damage = 5.0 HP per decoded GiveDamage(actorId, damage) census (game_config.gla:
+// 146 literal calls; 5 x91 = the scripted standard; GiveDamage disasm 0x155e4c).
+const ENEMY_CLIPS = ['_014_idle_enemy_combat', '_166_enemy_walk', '_171_enemy_run'];
+const ENEMY_DMG = 5.0;
+let merc = null, mercMixer = null, mercActions = {}, mercSeq = null;
+async function loadMerc(zipBuf, findM) {
+  const aMem = await glaSliceLazy(zipBuf, zmembersGet(findM(/data\/actors\.gla$/i)),
+    new Set(['Bane_mercenary.bdae', 'batman_anims.bdae']));
+  const atM = zmembersGet(findM(/textures\/actors_tex\.gla$/i));
+  const atIdx = await glaIndexLazy(zipBuf, atM);
+  const atWant = 'chara_banemercenarya_c.tga';
+  const atEnt = atIdx.get(atWant);
+  let atBytes = atEnt ? (await streamInflateRanges(zipBuf, atM, [{ o: atEnt.o, s: atEnt.s }]))[0] : null;
+  atIdx.clear();
+  const skin = TDKR.readBdae(aMem['Bane_mercenary.bdae']);
+  const A = TDKR.decodeAnims(aMem['batman_anims.bdae']);
+  log('LZ Bane_mercenary.bdae bytes=' + aMem['Bane_mercenary.bdae'].length +
+      ' verts=' + skin.verts.length / 3 + ' joints=' + (skin.jointNodes ? skin.jointNodes.length : -1));
+  let texture = null;
+  if (atBytes) {
+    const td = atBytes;
+    const th = td[4] | (td[5] << 8) | (td[6] << 16) | (td[7] << 24);
+    const tw = td[8] | (td[9] << 8) | (td[10] << 16) | (td[11] << 24);
+    const px = td.subarray(52, 52 + tw * th * 3);
+    const rgba = new Uint8Array(tw * th * 4);
+    for (let i = 0; i < tw * th; i++) {
+      rgba[i*4] = px[i*3]; rgba[i*4+1] = px[i*3+1]; rgba[i*4+2] = px[i*3+2]; rgba[i*4+3] = 255;
+    }
+    texture = new THREE.DataTexture(rgba, tw, th, THREE.RGBAFormat);
+    texture.colorSpace = THREE.SRGBColorSpace; texture.needsUpdate = true; texture.flipY = false;
+    log('chara_banemercenarya_c: ' + tw + 'x' + th + ' decoded');
+  }
+  atBytes = null;
+  const byNameC = Object.fromEntries(A.clips.map(c => [c.name, c]));
+  const missing = ENEMY_CLIPS.filter(nm => !byNameC[nm]);
+  if (missing.length) throw new Error('enemy clips missing: ' + missing.join(','));
+  const glbBytes = buildGLB(skin, A, byNameC);
+  const g = await new Promise((res, rej) => new GLTFLoader().parse(glbBytes.buffer, '', res, rej));
+  merc = g.scene; merc.rotation.x = -Math.PI / 2;
+  merc.position.set(P.x + 2.0, P.y, P.z);
+  bScene.add(merc);
+  mercMixer = new THREE.AnimationMixer(merc);
+  for (const c of g.animations) mercActions[c.name] = mercMixer.clipAction(c);
+  const sm = (() => { let s = null; merc.traverse(o => { if (o.isSkinnedMesh) s = o; }); return s; })();
+  if (texture && sm) { sm.material.map = texture; sm.material.color.set(0xffffff); sm.material.needsUpdate = true; }
+  mercSeq = { t0: performance.now(), phase: 0, wraps: 0, zmin: 1e9, zmax: -1e9, lastT: 0 };
+  const idle = mercActions[ENEMY_CLIPS[0]]; idle.play(); idle.setEffectiveWeight(1);
+  return { verts: skin.verts.length / 3, joints: skin.jointNodes ? skin.jointNodes.length : -1,
+           clips: g.animations.filter(a => ENEMY_CLIPS.indexOf(a.name) >= 0).map(a => a.name) };
+}
+function mercTick(now) {
+  if (!merc || !mercSeq) return;
+  const t = (now - mercSeq.t0) / 1000;
+  const phase = t < 4 ? 0 : (t < 8 ? 1 : 2);
+  if (phase !== mercSeq.phase) {
+    mercSeq.phase = phase;
+    for (const nm of ENEMY_CLIPS) mercActions[nm].setEffectiveWeight(0);
+    const a = mercActions[ENEMY_CLIPS[phase]]; a.setEffectiveWeight(1); a.play();
+  }
+  mercMixer.update(1 / 60);
+  if (mercActions[ENEMY_CLIPS[mercSeq.phase]].time < mercSeq.lastT - 0.001) mercSeq.wraps++;
+  mercSeq.lastT = mercActions[ENEMY_CLIPS[mercSeq.phase]].time;
+  let bb = new THREE.Box3().setFromObject(merc);
+  if (isFinite(bb.min.z)) { mercSeq.zmin = Math.min(mercSeq.zmin, bb.min.z); mercSeq.zmax = Math.max(mercSeq.zmax, bb.max.z); }
+  if (t > 12 && !mercSeq.reported) {
+    mercSeq.reported = true;
+    window.__GATE.enemyPlay = { ok: true, wraps: mercSeq.wraps, phasesSeen: mercSeq.phase + 1,
+      bboxZmin: +mercSeq.zmin.toFixed(3), bboxZmax: +mercSeq.zmax.toFixed(3),
+      clip: ENEMY_CLIPS[mercSeq.phase], dmg: ENEMY_DMG };
+    log('enemy playback: wraps=' + mercSeq.wraps + ' bboxZ=[' + mercSeq.zmin.toFixed(2) + ',' + mercSeq.zmax.toFixed(2) + ']');
+  }
+}
 function zmembersGet(key) {
   if (!key) throw new Error('zip member not found');
   return zipMembersCache.get(key);
@@ -1863,6 +1944,18 @@ document.querySelector('#f').addEventListener('change', async (ev) => {
       window.__GATE.batman = { ok: false, error: String(e2 && e2.message || e2) };
       log('BATMAN ERROR: ' + (e2 && e2.message || String(e2)) + ' | ' + ((e2 && e2.stack) || '').slice(0, 260));
     }
+    /* ---- (3b) s58 T3: enemy rig + enemy clips (?enemy=1) ---- */
+    if (QS2.get('enemy') === '1') {
+      try {
+        const eInfo = await loadMerc(zfile, findM);
+        window.__GATE.enemy = Object.assign({ ok: true, dmg: ENEMY_DMG,
+          damageProvenance: 'GiveDamage(actorId,damage) 0x155e4c; census 146 literal calls, 5 x91' }, eInfo);
+        log('enemy merc: ' + eInfo.verts + ' verts, ' + eInfo.joints + ' joints, clips ' + eInfo.clips.join(', '));
+      } catch (e3) {
+        window.__GATE.enemy = { ok: false, error: String(e3 && e3.message || e3) };
+        log('ENEMY ERROR: ' + (e3 && e3.message || String(e3)));
+      }
+    }
 
     /* ---- playback: first harness-'ok' route ---- */
     const okRoute = routes.results.find(r => r.expected === 'ok');
@@ -1892,7 +1985,7 @@ function tick(now) {
     const st = drawZone(batches, camWVP(cam.cx, cam.cz));
     if (!SAMP.idleA && el > 300) SAMP.idleA = crop64();
     else if (SAMP.idleA && !SAMP.idleB && el > 800) { SAMP.idleB = crop64(); SAMP.idleDone = true; }
-    if (batman) { if (mixer) mixer.update(dt); bRenderer.render(bScene, bCam); }
+    if (batman) { if (mixer) mixer.update(dt); if (merc) mercTick(now); bRenderer.render(bScene, bCam); }
     return;
   }
   if (SAMP.idleDone && !SAMP.walkStarted) {
