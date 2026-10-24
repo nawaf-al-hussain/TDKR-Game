@@ -639,16 +639,43 @@ const UA = { n: 0, mm: 0, noTex: 0, mmFirst: [], u0: null, u1: null };
 //   int2=600 (both templates). Named statics (.data): k_glideWallEvadeDistance 6,
 //   k_glideWallEvadeMinDistance 1, k_glideWallEvadeMaxAngle 10, s_fallAheadOffset 0.4.
 // Legacy placeholders (?s5legacy=1): fwd 18, gravity -25, bank 0.35 rad fixed.
+// s56 T1 models (RefreshForcesGlide 0x3836b0..0x383a08, ARM re-read in s56):
+//  ?s5=1        ENGINE MODEL (s55 note): fwd = f5+(f6-f5)*(2/pi)*|p|, sink = f0+(f1-f0)*(2/pi)*|p|,
+//               pitch held at f10 (-45 Glider / -60 Plunge via ?s5plunge=1).
+//  ?s5acc=1     ACCUMULATOR re-read (byte-certain branch structure): acc -> f1 (p<=0, 0x3839dc) /
+//               f0 (p>0, 0x383724) at rate f0+(f1-f0)*(2/pi)*|p|; velocity from 0x383858..0x383880:
+//               v_horiz = acc*cos(p) (direction tilted f6 deg), v_vert = acc*sin(p) - s56(f5,f6) - blend(f7,f8,f9).
+//               NOTE: this maps the f5/f6 family to the VERTICAL term - the opposite semantic of the
+//               s55 note; both models run so the trajectory comparison can discriminate.
+//  ?s5old=1     pre-s56 staged model (const fwd 16, sink 4+12*|p| without 2/pi) - control.
+//  ?s5legacy=1  s53 placeholders (unchanged). Blend distance uses height over nm ground
+//               (engine: dist = |virtual-call position - actor position|; target of the call not pinned).
 const S5ON = QS2.get('s5') === '1';
 const S5LEG = QS2.get('s5legacy') === '1';
+const S5OLD = QS2.get('s5old') === '1';        // s56 T1 control
+const S5ACC = QS2.get('s5acc') === '1';        // s56 T1 accumulator re-read
+const S5PLUNGE = QS2.get('s5plunge') === '1';  // s56 T1: GetGlide(1) 'Glider_Plunge'
+const S5TWO_PI = 2 / Math.PI;                  // engine pool 0.6366198 @0x3839f8
 const S5P = S5LEG
-  ? { fwd: 18.0, pitch0Deg: -30.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35, legacy: true }
-  : { fwd: 16.0, pitch0Deg: -45.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35, legacy: false };
+  ? { mode: 'legacy', fwd: 18.0, pitch0Deg: -30.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35 }
+  : S5OLD
+  ? { mode: 'old', fwd: 16.0, pitch0Deg: -45.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35 }
+  : { mode: S5ACC ? 'acc' : 'engine', fwd: 16.0,
+      pitch0Deg: S5PLUNGE ? -60.0 : -45.0,     // f10: Glider -45 / Glider_Plunge -60
+      sinkMin: 4.0, sinkMax: 16.0,             // f0, f1
+      fwdMin: 1.0, fwdMax: 6.0,                // f5, f6
+      blendMin: 0.0, blendMax: 2.0, blendDist: 16.0,   // f7, f8, f9
+      bank: 0.35 };
+function s5Sink56(pitch) {  // f5/f6 family: f5+(f6-f5)*(2/pi)*|pitch| (upgrade helper 0 - no upgrades)
+  return S5P.fwdMin + (S5P.fwdMax - S5P.fwdMin) * S5TWO_PI * Math.abs(pitch);
+}
+function s5Rate(pitch) {    // f0/f1 family: f0+(f1-f0)*(2/pi)*|pitch| (sink in s55 note / accel rate in acc re-read)
+  return S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * S5TWO_PI * Math.abs(pitch);
+}
 const S5 = { phase: 'off', t0: 0, tGlide: 0, from: null, tgt: null, dur: 1200, vz: 0,
              reached: false, reachDist: null, clipActive: false, landed: false,
              landMs: null, started: false, done: false, bank: 0.35,
-             fwdSpeed: 16.0, pitch0Deg: -45.0, sinkMin: 4.0, sinkMax: 16.0,
-             legacy: false };
+             fwd: 0.0, acc: 0.0, pitch: 0 };
 function s5PickEdge() {
   // s54 T2: prefer REAL CWayPointObject anchors (decoded from YOUR lvc);
   // the portal-edge BFS below stays as fallback when no waypoint qualifies.
@@ -743,9 +770,13 @@ function s5Tick(now) {
       const gz0 = nm_ground(S5.tgt[0], S5.tgt[1], S5.tgt[2] + 2.6);
       if (gz0 > -1e8) { P.z = gz0 + 0.9; }
       S5.pitch = S5P.pitch0Deg * Math.PI / 180;   // engine initial glide pitch (f10, SetInitialGlideAngle)
-      S5.vz = S5P.legacy ? 2.0 : -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch));
-      // engine model (RefreshForcesGlide): descent rate = f0 + (f1-f0)*|pitch|, pitch = f10 = -45 deg
-      //   -> sink = 4 + 12*0.7854 = 13.4 u/s; forward 16 u/s (speed family) => 0.84 u alt / u dist
+      S5.acc = S5P.mode === 'acc' ? S5P.sinkMin : 0.0;   // acc model: StartGlide init not decoded; assume f0
+      S5.vz = S5P.mode === 'legacy' ? 2.0
+            : S5P.mode === 'old' ? -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch))
+            : S5P.mode === 'acc' ? (S5.acc * Math.sin(S5.pitch) - s5Sink56(S5.pitch))
+            : -s5Rate(S5.pitch);
+      // engine (s55 note) at -45 deg: sink = 4 + 12*(2/pi)*0.7854 = 10.0 u/s, fwd = 1 + 5*(2/pi)*0.7854 = 3.5 u/s
+      // acc (s56 re-read) at -45 deg, acc=f0=4: vz = 4*(-0.7071) - 3.5 = -6.33 u/s, acc ramps toward f1=16
       // legacy model: small rise then gravity -25 u/s^2
       s5SetClip('_057_glide_idle');
     }
@@ -754,13 +785,28 @@ function s5Tick(now) {
     S5.t0 = now;
     const dx = S5.tgt[0] - S5.from[0], dy = S5.tgt[1] - S5.from[1];
     const dl = Math.hypot(dx, dy) || 1;
+    // s56 T1 model switch (see header comment); s54 wall-evade analogue kept for all models
+    if (S5P.mode === 'acc') {
+      const rate = s5Rate(S5.pitch);
+      if (S5.pitch <= 0) { if (S5.acc < S5P.sinkMax) S5.acc = Math.min(S5P.sinkMax, S5.acc + rate * dt2); }
+      else if (S5.acc > S5P.sinkMin) { S5.acc = Math.max(S5P.sinkMin, S5.acc - rate * dt2); }
+      const gzh = nm_ground(P.x, P.y, P.z + 2.6);
+      const distH = (gzh > -1e8) ? Math.max(0, P.z - 0.9 - gzh) : 1e9;
+      const blend = distH < S5P.blendDist
+        ? S5P.blendMin + (S5P.blendMax - S5P.blendMin) * (1 - distH / S5P.blendDist) : S5P.blendMin;
+      S5.vz = S5.acc * Math.sin(S5.pitch) - s5Sink56(S5.pitch) - blend;
+      S5.fwd = S5.acc * Math.cos(S5.pitch);
+    } else if (S5P.mode === 'engine') {
+      S5.fwd = s5Sink56(S5.pitch);
+      S5.vz = -s5Rate(S5.pitch);
+    } else if (S5P.mode === 'old') {
+      S5.fwd = S5P.fwd;
+      S5.vz = -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch));
+    } else { S5.vz += -25.0 * dt2; S5.fwd = S5P.fwd; }   // legacy
     // s54 T1: engine k_glideWallEvade analogue - never step forward into void;
     // hold position laterally and keep descending (nm corridor of the decoded region)
-    let gx = P.x + dx / dl * S5.fwdSpeed * dt2, gy = P.y + dy / dl * S5.fwdSpeed * dt2;
+    let gx = P.x + dx / dl * S5.fwd * dt2, gy = P.y + dy / dl * S5.fwd * dt2;
     if (nm_ground(gx, gy, P.z + 2.6) <= -1e8) { gx = P.x; gy = P.y; }
-    if (S5P.legacy) { S5.vz += -25.0 * dt2; }
-    // engine path: constant-rate descent (recomputed each frame from the held pitch)
-    else { S5.vz = -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch)); }
     const nz = P.z + S5.vz * dt2;
     const gz = nm_ground(gx, gy, nz + 2.6);
     P.x = gx; P.y = gy; P.z = nz;
@@ -768,9 +814,12 @@ function s5Tick(now) {
     if (!S5.traj) S5.traj = [];
     if (S5.traj.length === 0 || now - S5.traj[S5.traj.length - 1].t >= 200) {
       S5.traj.push({ t: Math.round(now - S5.tGlide), x: +P.x.toFixed(2), y: +P.y.toFixed(2),
-                     z: +P.z.toFixed(2), vz: +S5.vz.toFixed(2), gz: (gz > -1e8) ? +gz.toFixed(2) : null });
+                     z: +P.z.toFixed(2), vz: +S5.vz.toFixed(2), fwd: +(S5.fwd || 0).toFixed(3),
+                     acc: S5P.mode === 'acc' ? +S5.acc.toFixed(3) : undefined,
+                     gz: (gz > -1e8) ? +gz.toFixed(2) : null });
     }
-    window.__GATE.s5live = { phase: S5.phase, vz: +S5.vz.toFixed(2), z: +P.z.toFixed(2),
+    window.__GATE.s5live = { phase: S5.phase, model: S5P.mode, vz: +S5.vz.toFixed(2),
+                             fwd: +(S5.fwd || 0).toFixed(3), z: +P.z.toFixed(2),
                              gz: (gz > -1e8) ? +gz.toFixed(2) : null, ms: Math.round(now - S5.tGlide) };
     if (batman) { batman.rotation.y = Math.atan2(-dx, -dy) + Math.PI; batman.rotation.z = S5.bank; }
     const glA = actions['_057_glide_idle'];
@@ -785,14 +834,14 @@ function s5Tick(now) {
         if (batman) batman.rotation.z = 0;
         s5SetClip('_065_glide_idle_to_run');   // s54 T3: state table Grapnel_Horizontal_To_Glide_Idle -> _065 (667 ms), then run
         setTimeout(function () { if (S5.phase === 'done') s5SetClip('_008_run'); }, 450);
-        g.s5 = { enabled: true, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
+        g.s5 = { enabled: true, model: S5P.mode, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
                  glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs, traj: S5.traj };
         log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
         startWalkPhase();   // hand back to the standard gate walk phase
       }
     }
     if (now - S5.tGlide > 6000 && !S5.landed) {   // safety: never stall the gate
-      g.s5 = { enabled: true, targetReached: S5.reached, reachDist: S5.reachDist,
+      g.s5 = { enabled: true, model: S5P.mode, targetReached: S5.reached, reachDist: S5.reachDist,
                glideClipActive: S5.clipActive, landed: false, error: 'glide timeout', traj: S5.traj };
       S5.phase = 'done'; S5.done = true;
       startWalkPhase();
