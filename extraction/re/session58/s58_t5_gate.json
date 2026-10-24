@@ -1,0 +1,210 @@
+{
+ "root": {
+  "name": "root",
+  "path": "/",
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [
+   "[.WebGL-0xf54000f9a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+   "[.WebGL-0xf54000fa000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+   "THREE.GLTFLoader: Missing min/max properties for accessor POSITION.",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "[.WebGL-0xf54000f9a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+   "[.WebGL-0xf54000fa000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type",
+   "WebGL: INVALID_ENUM: drawElements: invalid type"
+  ],
+  "elapsed_s": 13.8,
+  "gate": {
+   "done": true,
+   "pass": true,
+   "soup": {
+    "nTri": 137893,
+    "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+   },
+   "routes": {
+    "run": 10,
+    "agree": 10,
+    "results": [
+     {
+      "route": 3,
+      "verdict": "stuck_wall",
+      "dist": 305.23,
+      "expected": "stuck_wall",
+      "expected_dist": 305.2,
+      "agree": true,
+      "dist_delta": 0.03,
+      "ms": 30
+     },
+     {
+      "route": 6,
+      "verdict": "fell",
+      "dist": 321,
+      "expected": "fell",
+      "expected_dist": 321,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 15
+     },
+     {
+      "route": 7,
+      "verdict": "fell",
+      "dist": 382.5,
+      "expected": "fell",
+      "expected_dist": 382.5,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 10,
+      "verdict": "stuck_wall",
+      "dist": 1076.038,
+      "expected": "stuck_wall",
+      "expected_dist": 1076,
+      "agree": true,
+      "dist_delta": 0.038,
+      "ms": 60
+     },
+     {
+      "route": 12,
+      "verdict": "ok",
+      "dist": 392,
+      "expected": "ok",
+      "expected_dist": 392,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 15,
+      "verdict": "stuck_wall",
+      "dist": 443.067,
+      "expected": "stuck_wall",
+      "expected_dist": 443.1,
+      "agree": true,
+      "dist_delta": 0.033,
+      "ms": 30
+     },
+     {
+      "route": 19,
+      "verdict": "ok",
+      "dist": 931,
+      "expected": "ok",
+      "expected_dist": 931,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 42
+     },
+     {
+      "route": 22,
+      "verdict": "fell",
+      "dist": 62.7,
+      "expected": "fell",
+      "expected_dist": 62.7,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 3
+     },
+     {
+      "route": 27,
+      "verdict": "stuck_wall",
+      "dist": 301.235,
+      "expected": "stuck_wall",
+      "expected_dist": 301.2,
+      "agree": true,
+      "dist_delta": 0.035,
+      "ms": 28
+     },
+     {
+      "route": 33,
+      "verdict": "stuck_wall",
+      "dist": 122.009,
+      "expected": "stuck_wall",
+      "expected_dist": 122,
+      "agree": true,
+      "dist_delta": 0.009,
+      "ms": 7
+     }
+    ]
+   },
+   "golzip": {
+    "ok": true,
+    "nrec": 653,
+    "closed": 77,
+    "digest": "5edaa1485e6ca6abcab8c1e74fa7c9187530d65a351d717e8b0465df129bfd47",
+    "expectedDigest": "5edaa1485e6ca6abcab8c1e74fa7c9187530d65a351d717e8b0465df129bfd47",
+    "triggers": 2,
+    "triggerNames": [
+     "BoxTrigger",
+     "CylinderTrigger"
+    ],
+    "carriers": 50,
+    "merc": {
+     "health": 120,
+     "aware0": 11,
+     "aware1": 17,
+     "fov": 160
+    }
+   },
+   "error": null
+  }
+ }
+}
