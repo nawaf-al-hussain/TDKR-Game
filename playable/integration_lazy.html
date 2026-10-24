@@ -663,8 +663,21 @@ const UA = { n: 0, mm: 0, noTex: 0, mmFirst: [], u0: null, u1: null };
 //               sink = f0+(f1-f0)*(2/pi)*|p|.
 //  ?s5acc=1     alias of the default (kept for s56 receipt comparability).
 //  ?s5old=1     pre-s56 staged model (const fwd 16, sink 4+12*|p| without 2/pi) - control.
-//  ?s5legacy=1  s53 placeholders (unchanged). Blend distance uses height over nm ground
-//               (engine: dist = |virtual-call position - actor position|; target of the call not pinned).
+//  ?s5legacy=1  s53 placeholders (unchanged).
+//  s58 T1 BLEND PINNED from the engine (RefreshForcesGlide 0x383788..0x383804):
+//   the virtual call is [comp+4]->vtable[+0x18] = CGameObject::GetPosition (slot 6; vtable base
+//   0xbd8028; GetPosition @0x2d6f1c 'add r0,r0,#0xc' = &obj->pos). NOT a ground raycast/nav query.
+//   d = |GetPosition(obj) - [comp+0x1a4..0x1ac]| where the vec3 cache is stored right after every
+//   SetActorPosition (Update 0x36e74c, ground-nav updates, TryEdgeGrab, UpdateFloorTesting,
+//   ResolveAirCollision) and NEVER by UpdateNavGlide (0x380e94..0x3813bc: 0 stores) -> during a
+//   glide it is frozen at the TAKEOFF position: d = distance travelled since glide start.
+//   blend_raw = fB + (1 - d/f9)*(f7 - fB); blend = max(blend_raw, fB) [0x3837d4/ec,0x383804];
+//   vz -= blend [0x383814]. Gadget floats: fB=[+0x24] floor, f7=[+0x28] start, f9=[+0x2c] range.
+//   ?s5=1 keeps the s56/s57 DECLARED PROXY (height over nm) for digest stability;
+//   ?s5blend=1 runs the exact engine measure (takeoff-anchor distance, same closed form).
+//   GetGliderGravityHelper 0x1e1508 = UpgradesManager::map[0x1f].SUpgrade+0xc (operator[] default
+//   insert; base value data-driven from the ResetUpgrades definition tables, no .text constant;
+//   in-page 0 = no upgrades, additive into the vertical rate at 0x383784).
 // s56 T2 (?s5ctl=1, engine mode only): scripted pitch control + auto-level.
 //  PROVENANCE: pitch mapping f10/sink/speed = decoded; pitch CLAMPS and auto-level coefficient are
 //  NOT engine-decoded (s_glide* dead, f12/f16/f17/f19 unread, UpdateNavGlide = nav steering only)
@@ -679,6 +692,7 @@ const S5SINK = QS2.get('s5sink') === '1';      // s57 T1: s55-note model kept as
 const S5PLUNGE = QS2.get('s5plunge') === '1';  // s56 T1: GetGlide(1) 'Glider_Plunge'
 const S5CTL = QS2.get('s5ctl') === '1';        // s56 T2: scripted pitch control + auto-level
 const S5EARLY = QS2.get('s5ctlEarly') === '1'; // s56 T2b: early release so the decay precedes landing
+const S5BLEND = QS2.get('s5blend') === '1';    // s58 T1: exact engine blend (takeoff-anchor distance)
 const S5CTLV = S5EARLY
   ? { tRamp: 0.25, tHold: 0.45, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 }
   : { tRamp: 0.4, tHold: 1.2, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 };
@@ -798,6 +812,7 @@ function s5Tick(now) {
       if (gz0 > -1e8) { P.z = gz0 + 0.9; }
       S5.pitch = S5P.pitch0Deg * Math.PI / 180;   // engine initial glide pitch (f10, SetInitialGlideAngle)
       S5.acc = S5P.sinkMax;   // s57 T1: engine StartGlide seeds acc = f1 = 16 (0x3806a8)
+      if (S5P.mode === 'acc') S5.anchor = [P.x, P.y, P.z];   // s58 T1: engine blend anchor = takeoff pos
       S5.baseHead = Math.atan2(S5.tgt[1] - S5.from[1], S5.tgt[0] - S5.from[0]);   // s56 T2 slip reference
       S5.vz = S5P.mode === 'legacy' ? 2.0
             : S5P.mode === 'old' ? -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch))
@@ -831,10 +846,17 @@ function s5Tick(now) {
       const rate = s5Rate(S5.pitch);
       if (S5.pitch <= 0) { if (S5.acc < S5P.sinkMax) S5.acc = Math.min(S5P.sinkMax, S5.acc + rate * dt2); }
       else if (S5.acc > S5P.sinkMin) { S5.acc = Math.max(S5P.sinkMin, S5.acc - rate * dt2); }
-      const gzh = nm_ground(P.x, P.y, P.z + 2.6);
-      const distH = (gzh > -1e8) ? Math.max(0, P.z - 0.9 - gzh) : 1e9;
-      const blend = distH < S5P.blendDist
-        ? S5P.blendMin + (S5P.blendMax - S5P.blendMin) * (1 - distH / S5P.blendDist) : S5P.blendMin;
+      let blendD;
+      if (S5BLEND && S5.anchor) {            // s58 T1: ENGINE measure - dist from takeoff anchor
+        blendD = Math.hypot(P.x - S5.anchor[0], P.y - S5.anchor[1], P.z - S5.anchor[2]);
+      } else {                               // s56/s57 declared proxy: height over navmesh
+        const gzh = nm_ground(P.x, P.y, P.z + 2.6);
+        blendD = (gzh > -1e8) ? Math.max(0, P.z - 0.9 - gzh) : 1e9;
+      }
+      // engine: blend_raw = fB + (1 - d/f9)*(f7 - fB); blend = max(blend_raw, fB) [0x3837d4..0x383804]
+      const blend = Math.max(S5P.blendMin,
+        S5P.blendMin + (1 - blendD / S5P.blendDist) * (S5P.blendMax - S5P.blendMin));
+      S5.blendD = blendD; S5.blendV = blend;
       S5.vz = S5.acc * Math.sin(S5.pitch) - s5Sink56(S5.pitch) - blend;
       S5.fwd = S5.acc * Math.cos(S5.pitch);
     } else if (S5P.mode === 'sink56') {
@@ -864,11 +886,15 @@ function s5Tick(now) {
                      acc: S5P.mode === 'acc' ? +S5.acc.toFixed(3) : undefined,
                      pitch: +(S5.pitch * 180 / Math.PI).toFixed(2),
                      head: +((Math.atan2(sdy, sdx) - S5.baseHead) * 180 / Math.PI).toFixed(2),
-                     gz: (gz > -1e8) ? +gz.toFixed(2) : null });
+                     gz: (gz > -1e8) ? +gz.toFixed(2) : null,
+                     blendD: S5P.mode === 'acc' ? +(S5.blendD || 0).toFixed(3) : undefined,
+                     blend: S5P.mode === 'acc' ? +(S5.blendV || 0).toFixed(3) : undefined });
     }
     window.__GATE.s5live = { phase: S5.phase, model: S5P.mode, vz: +S5.vz.toFixed(2),
                              fwd: +(S5.fwd || 0).toFixed(3), z: +P.z.toFixed(2),
-                             gz: (gz > -1e8) ? +gz.toFixed(2) : null, ms: Math.round(now - S5.tGlide) };
+                             gz: (gz > -1e8) ? +gz.toFixed(2) : null, ms: Math.round(now - S5.tGlide),
+                             blendD: S5P.mode === 'acc' ? +(S5.blendD || 0).toFixed(3) : undefined,
+                             blendV: S5P.mode === 'acc' ? +(S5.blendV || 0).toFixed(3) : undefined };
     if (batman) { batman.rotation.y = Math.atan2(-dx, -dy) + Math.PI; batman.rotation.z = S5.bank; }
     const glA = actions['_057_glide_idle'];
     S5.clipActive = !!(glA && glA.getEffectiveWeight() > 0.5 && glA.time > 0.05);   // clip actually sampled
