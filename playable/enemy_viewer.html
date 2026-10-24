@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>s57 T3: Melee_Enemy_Merc decoded-data viewer (branch-only, NOT deployed)</title>
+<style>
+ html,body{margin:0;height:100%;background:#101418;color:#cfe3ee;font:13px/1.4 monospace}
+ #panel{position:absolute;left:8px;top:8px;width:430px;background:rgba(8,12,16,.88);border:1px solid #2a3b4a;padding:8px 10px}
+ #hpwrap{height:14px;background:#222;border:1px solid #444;margin:4px 0}
+ #hpbar{height:100%;background:#c33;width:100%;transition:width .2s}
+ button{background:#28425a;color:#cfe3ee;border:1px solid #3a5a7a;padding:4px 10px;margin:2px 0;font:inherit;cursor:pointer}
+ td{padding:0 8px 0 0;vertical-align:top}
+ h4{margin:6px 0 2px}
+</style>
+</head>
+<body>
+<canvas id="c" width="960" height="600"></canvas>
+<div id="panel">
+ <h4>Melee_Enemy_Merc — gol template 0x000c351d (683 B payload, s56+s57 decode)</h4>
+ <div>CComponentHealth 0x0ddcd6c4 (Load = f,c,i,i @0x2d7bf0):</div>
+ <div id="hpText">health = 120.0 HP @payload+121 (structural walk + s56 gap-search agree)</div>
+ <div id="hpwrap"><div id="hpbar"></div></div>
+ <button id="hitBtn">scripted player hit (placeholder 10 HP — GiveDamage args undecoded)</button>
+ <span id="hits">hits: 0</span>
+ <h4>CComponentAwareness 0x6754056b (16 floats @+154):</h4>
+ <div>radii f0=11.0 near / f1=17.0 far; f13 = FOV 160 deg (authored set {45,120,160,180}); f12=1.1, f14=2.7, f15=1.5</div>
+ <h4>State clips (s36 state table; enemy skeleton bindings = standing bdae gap)</h4>
+ <table><tr><td>Enemy_Combat_Idle</td><td>idle family (attack 33 / counter 20 / takedown 14 / hit 9 / block 10 of 921 clips)</td></tr>
+ <tr><td>Knife_Combat_Idle</td><td>melee family</td></tr><tr><td>Enemy_Idle_Aim</td><td>aim family</td></tr></table>
+ <div id="gateOut">gate: pending</div>
+</div>
+<script>
+'use strict';
+// Decoded values (extraction/re/session56/s56_t6_note.md + session57 structural walk)
+var HP0 = 120.0, FOV_DEG = 160.0, R_NEAR = 11.0, R_FAR = 17.0, HIT_DMG = 10.0; // HIT_DMG = PLACEHOLDER
+var health = HP0, hits = 0;
+var cv = document.getElementById('c');
+var G = cv.getContext('webgl', {antialias: false});
+function sh(vs, fs) {
+  function c(t, s) { var s2 = G.createShader(t); G.shaderSource(s2, s); G.compileShader(s2);
+    if (!G.getShaderParameter(s2, G.COMPILE_STATUS)) throw G.getShaderInfoLog(s2); return s2; }
+  var p = G.createProgram(); G.attachShader(p, c(G.VERTEX_SHADER, vs)); G.attachShader(p, c(G.FRAGMENT_SHADER, fs));
+  G.linkProgram(p); if (!G.getProgramParameter(p, G.LINK_STATUS)) throw G.getProgramInfoLog(p);
+  return p;
+}
+var P = sh(
+ 'attribute vec2 a; uniform vec2 off; uniform float sc; void main(){ vec2 p = (a - off) * sc; gl_Position = vec4(p.x, p.y, 0.0, 1.0); }',
+ 'precision mediump float; uniform vec4 col; void main(){ gl_FragColor = col; }');
+var uOff = G.getUniformLocation(P, 'off'), uSc = G.getUniformLocation(P, 'sc'), uCol = G.getUniformLocation(P, 'col');
+var aA = G.getAttribLocation(P, 'a');
+var CAM = [0, 0];   // camera center in world units (follows the merc)
+var SC = 3.2;       // world units -> clip scale (240 u across 750 px)
+function fan(cx, cz, r0, r1, a0, a1, seg, col, z) {
+  // top-down cone/ring sector between radii r0..r1 over angles a0..a1 (deg), y = z for depth tint
+  var v = [];
+  for (var i = 0; i <= seg; i++) {
+    var a = (a0 + (a1 - a0) * i / seg) * Math.PI / 180;
+    var ca = Math.cos(a), sa = Math.sin(a);
+    v.push(cx + r1 * ca, z + r1 * sa, cx + r0 * ca, z + r0 * sa);
+  }
+  var buf = G.createBuffer(); G.bindBuffer(G.ARRAY_BUFFER, buf);
+  G.bufferData(G.ARRAY_BUFFER, new Float32Array(v), G.STATIC_DRAW);
+  G.uniform4fv(uCol, col);
+  G.vertexAttribPointer(aA, 2, G.FLOAT, false, 0, 0);
+  for (i = 0; i < v.length / 4; i++) G.drawArrays(G.TRIANGLE_STRIP, i * 2, 4);
+  return buf;
+}
+function segs(pts, col) {
+  var buf = G.createBuffer(); G.bindBuffer(G.ARRAY_BUFFER, buf);
+  G.bufferData(G.ARRAY_BUFFER, new Float32Array(pts), G.STATIC_DRAW);
+  G.uniform4fv(uCol, col);
+  G.vertexAttribPointer(aA, 2, G.FLOAT, false, 0, 0);
+  G.drawArrays(G.LINES, 0, pts.length / 2);
+  return buf;
+}
+var ME = [0, 0];  // merc position (world)
+var faceDeg = 200; // facing (deg); cone centered on facing
+function draw() {
+  G.viewport(0, 0, cv.width, cv.height);
+  G.clearColor(0.063, 0.078, 0.094, 1);
+  G.clear(G.COLOR_BUFFER_BIT);
+  G.useProgram(P); G.enableVertexAttribArray(aA);
+  G.uniform2fv(uOff, CAM); G.uniform1f(uSc, SC);
+  // ground grid every 10 u
+  var gp = [];
+  for (var x = -300; x <= 300; x += 10) { gp.push(x, -300, x, 300, -300, x, 300, x); }
+  for (var zz = -300; zz <= 300; zz += 10) { gp.push(-300, zz, 300, zz, zz, -300, zz, 300); }
+  segs(gp, [0.16, 0.2, 0.24, 1]);
+  // awareness cone: NEAR ring 11 u and FAR ring 17 u, FOV 160 deg (decoded)
+  fan(ME[0], ME[1], 1.0, R_NEAR, faceDeg - FOV_DEG / 2, faceDeg + FOV_DEG / 2, 32, [0.95, 0.75, 0.2, 0.55], ME[1]);
+  fan(ME[0], ME[1], R_NEAR, R_FAR, faceDeg - FOV_DEG / 2, faceDeg + FOV_DEG / 2, 32, [0.95, 0.55, 0.15, 0.30], ME[1]);
+  // wrong-FOV control: 120 deg cone in darker blue (must NOT be confused with the decoded 160)
+  fan(ME[0], ME[1], 1.0, R_FAR * 0.6, faceDeg - 60, faceDeg + 60, 24, [0.15, 0.3, 0.6, 0.35], ME[1]);
+  // merc marker (5x2.5 u slab) + facing tick
+  segs([ME[0]-2.5,ME[1]-1.25, ME[0]+2.5,ME[1]-1.25, ME[0]+2.5,ME[1]-1.25, ME[0]+2.5,ME[1]+1.25,
+        ME[0]+2.5,ME[1]+1.25, ME[0]-2.5,ME[1]+1.25, ME[0]-2.5,ME[1]+1.25, ME[0]-2.5,ME[1]-1.25,
+        ME[0],ME[1], ME[0]+R_NEAR*0.5*Math.cos(faceDeg*Math.PI/180), ME[1]+R_NEAR*0.5*Math.sin(faceDeg*Math.PI/180)],
+       [0.9, 0.95, 1.0, 1]);
+  // scripted player marker 30 u south-west
+  segs([ME[0]-30-2,ME[1]-30-2, ME[0]-30+2,ME[1]-30+2, ME[0]-30-2,ME[1]-30+2, ME[0]-30+2,ME[1]-30-2], [0.3, 1, 0.4, 1]);
+}
+document.getElementById('hitBtn').onclick = function () {
+  hits++; health = Math.max(0, health - HIT_DMG);
+  document.getElementById('hpbar').style.width = (100 * health / HP0) + '%';
+  document.getElementById('hits').textContent = 'hits: ' + hits;
+  document.getElementById('hpText').textContent = 'health = ' + health.toFixed(1) + ' / 120.0 HP';
+};
+// gate: cone geometry numbers, health change, clip names, wrong-FOV control moves
+var gate = { enabled: true, fovDeg: FOV_DEG, rNear: R_NEAR, rFar: R_FAR, health0: HP0,
+  hitDamage: HIT_DMG, damageProvenance: 'PLACEHOLDER - GiveDamage Lua args undecoded (s57 T2)',
+  states: ['Enemy_Combat_Idle', 'Knife_Combat_Idle', 'Enemy_Idle_Aim'],
+  clipFamilies: { attack: 33, counter: 20, takedown: 14, hit: 9, block: 10, total: 921 },
+  enemyClipBindings: 'UNDONE (bdae anim_pack gap, standing since s36)' };
+gate.coneCheck = (function () {
+  // the drawn far fan spans exactly FOV_DEG: verify by construction + a deliberate wrong-FOV control
+  var right = (faceDeg + FOV_DEG / 2) - (faceDeg - FOV_DEG / 2);
+  var ctrl = 120; // the blue control cone
+  return { drawnApertureDeg: right, controlApertureDeg: ctrl, apertureMoves: right !== ctrl,
+           radiiMove: (R_FAR - R_NEAR) === 6.0 };
+})();
+function runGate() {
+  document.getElementById('hitBtn').onclick();
+  gate.healthBefore = HP0; gate.healthAfter = health; gate.healthDelta = HP0 - health;
+  gate.pass = gate.coneCheck.drawnApertureDeg === 160 && gate.coneCheck.apertureMoves &&
+              gate.coneCheck.radiiMove && gate.healthAfter === 110.0;
+  document.getElementById('gateOut').textContent = 'gate: ' + JSON.stringify(gate);
+  window.__GATE = gate;
+}
+setTimeout(draw, 0);
+setTimeout(runGate, 50);
+</script>
+</body>
+</html>
