@@ -1,0 +1,17 @@
+{
+ "n_traj": 53,
+ "landMs": 883,
+ "landed": true,
+ "errs": 0,
+ "hold_n": 11,
+ "hold_mean_vz": -12.0,
+ "hold_mean_fwd": 4.333,
+ "hold_mean_pitch": -60.0,
+ "hold_mean_head": -6.0,
+ "level_n": 26,
+ "level_k_fit": 2.0,
+ "level_k_target": 2.0,
+ "vz_residual_max": 0.0047,
+ "vz_residual_mean": 0.0026,
+ "pitch_closedform_max_err_deg": 0.046
+}

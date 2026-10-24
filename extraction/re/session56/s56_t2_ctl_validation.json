@@ -1,0 +1,11 @@
+{
+ "n_traj": 48,
+ "landMs": 800,
+ "landed": true,
+ "errs": 0,
+ "hold_n": 22,
+ "hold_mean_vz": -12.0,
+ "hold_mean_fwd": 4.333,
+ "hold_mean_pitch": -60.0,
+ "hold_mean_head": -6.0
+}
