@@ -650,11 +650,19 @@ const UA = { n: 0, mm: 0, noTex: 0, mmFirst: [], u0: null, u1: null };
 //  ?s5old=1     pre-s56 staged model (const fwd 16, sink 4+12*|p| without 2/pi) - control.
 //  ?s5legacy=1  s53 placeholders (unchanged). Blend distance uses height over nm ground
 //               (engine: dist = |virtual-call position - actor position|; target of the call not pinned).
+// s56 T2 (?s5ctl=1, engine mode only): scripted pitch control + auto-level.
+//  PROVENANCE: pitch mapping f10/sink/speed = decoded; pitch CLAMPS and auto-level coefficient are
+//  NOT engine-decoded (s_glide* dead, f12/f16/f17/f19 unread, UpdateNavGlide = nav steering only)
+//  - the sequence validates the CONTROL MECHANISM against exact analytic outcomes, and the
+//  f6=6-deg side-slip (decoded) is exercised. Scripted: ramp -45->-60 by 0.4s, HOLD -60 in
+//  [0.4,1.2) (sink 12.0 / fwd 4.333 exact), then pitch(t) = -60*exp(-2.0*(t-1.2)) (placeholder k=2/s).
 const S5ON = QS2.get('s5') === '1';
 const S5LEG = QS2.get('s5legacy') === '1';
 const S5OLD = QS2.get('s5old') === '1';        // s56 T1 control
 const S5ACC = QS2.get('s5acc') === '1';        // s56 T1 accumulator re-read
 const S5PLUNGE = QS2.get('s5plunge') === '1';  // s56 T1: GetGlide(1) 'Glider_Plunge'
+const S5CTL = QS2.get('s5ctl') === '1';        // s56 T2: scripted pitch control + auto-level
+const S5CTLV = { tRamp: 0.4, tHold: 1.2, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 };
 const S5TWO_PI = 2 / Math.PI;                  // engine pool 0.6366198 @0x3839f8
 const S5P = S5LEG
   ? { mode: 'legacy', fwd: 18.0, pitch0Deg: -30.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35 }
@@ -675,7 +683,7 @@ function s5Rate(pitch) {    // f0/f1 family: f0+(f1-f0)*(2/pi)*|pitch| (sink in 
 const S5 = { phase: 'off', t0: 0, tGlide: 0, from: null, tgt: null, dur: 1200, vz: 0,
              reached: false, reachDist: null, clipActive: false, landed: false,
              landMs: null, started: false, done: false, bank: 0.35,
-             fwd: 0.0, acc: 0.0, pitch: 0 };
+             fwd: 0.0, acc: 0.0, pitch: 0, baseHead: 0 };
 function s5PickEdge() {
   // s54 T2: prefer REAL CWayPointObject anchors (decoded from YOUR lvc);
   // the portal-edge BFS below stays as fallback when no waypoint qualifies.
@@ -771,6 +779,7 @@ function s5Tick(now) {
       if (gz0 > -1e8) { P.z = gz0 + 0.9; }
       S5.pitch = S5P.pitch0Deg * Math.PI / 180;   // engine initial glide pitch (f10, SetInitialGlideAngle)
       S5.acc = S5P.mode === 'acc' ? S5P.sinkMin : 0.0;   // acc model: StartGlide init not decoded; assume f0
+      S5.baseHead = Math.atan2(S5.tgt[1] - S5.from[1], S5.tgt[0] - S5.from[0]);   // s56 T2 slip reference
       S5.vz = S5P.mode === 'legacy' ? 2.0
             : S5P.mode === 'old' ? -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch))
             : S5P.mode === 'acc' ? (S5.acc * Math.sin(S5.pitch) - s5Sink56(S5.pitch))
@@ -785,6 +794,19 @@ function s5Tick(now) {
     S5.t0 = now;
     const dx = S5.tgt[0] - S5.from[0], dy = S5.tgt[1] - S5.from[1];
     const dl = Math.hypot(dx, dy) || 1;
+    // s56 T2: scripted pitch control (engine mode only) - see header comment for provenance
+    if (S5CTL && S5P.mode === 'engine') {
+      const tG = (now - S5.tGlide) / 1000;
+      let tgtDeg;
+      if (tG < S5CTLV.tRamp) {
+        tgtDeg = S5CTLV.rampFromDeg + (S5CTLV.diveDeg - S5CTLV.rampFromDeg) * (tG / S5CTLV.tRamp);
+        S5.pitch = tgtDeg * Math.PI / 180;                     // linear ramp, exact
+      } else if (tG < S5CTLV.tHold) {
+        S5.pitch = S5CTLV.diveDeg * Math.PI / 180;             // hard hold, exact
+      } else {
+        S5.pitch = S5CTLV.diveDeg * Math.PI / 180 * Math.exp(-S5CTLV.k * (tG - S5CTLV.tHold));  // auto-level
+      }
+    }
     // s56 T1 model switch (see header comment); s54 wall-evade analogue kept for all models
     if (S5P.mode === 'acc') {
       const rate = s5Rate(S5.pitch);
@@ -805,7 +827,12 @@ function s5Tick(now) {
     } else { S5.vz += -25.0 * dt2; S5.fwd = S5P.fwd; }   // legacy
     // s54 T1: engine k_glideWallEvade analogue - never step forward into void;
     // hold position laterally and keep descending (nm corridor of the decoded region)
-    let gx = P.x + dx / dl * S5.fwd * dt2, gy = P.y + dy / dl * S5.fwd * dt2;
+    let sdx = dx, sdy = dy;
+    if (S5CTL && S5P.mode === 'engine') {   // s56 T2: decoded f6 side-slip (RefreshForcesGlide 0x383824..38)
+      const sl = -S5CTLV.slipDeg * Math.PI / 180, cs = Math.cos(sl), sn = Math.sin(sl);
+      sdx = dx * cs - dy * sn; sdy = dx * sn + dy * cs;
+    }
+    let gx = P.x + sdx / dl * S5.fwd * dt2, gy = P.y + sdy / dl * S5.fwd * dt2;
     if (nm_ground(gx, gy, P.z + 2.6) <= -1e8) { gx = P.x; gy = P.y; }
     const nz = P.z + S5.vz * dt2;
     const gz = nm_ground(gx, gy, nz + 2.6);
@@ -816,6 +843,8 @@ function s5Tick(now) {
       S5.traj.push({ t: Math.round(now - S5.tGlide), x: +P.x.toFixed(2), y: +P.y.toFixed(2),
                      z: +P.z.toFixed(2), vz: +S5.vz.toFixed(2), fwd: +(S5.fwd || 0).toFixed(3),
                      acc: S5P.mode === 'acc' ? +S5.acc.toFixed(3) : undefined,
+                     pitch: +(S5.pitch * 180 / Math.PI).toFixed(2),
+                     head: +((Math.atan2(sdy, sdx) - S5.baseHead) * 180 / Math.PI).toFixed(2),
                      gz: (gz > -1e8) ? +gz.toFixed(2) : null });
     }
     window.__GATE.s5live = { phase: S5.phase, model: S5P.mode, vz: +S5.vz.toFixed(2),
@@ -834,7 +863,7 @@ function s5Tick(now) {
         if (batman) batman.rotation.z = 0;
         s5SetClip('_065_glide_idle_to_run');   // s54 T3: state table Grapnel_Horizontal_To_Glide_Idle -> _065 (667 ms), then run
         setTimeout(function () { if (S5.phase === 'done') s5SetClip('_008_run'); }, 450);
-        g.s5 = { enabled: true, model: S5P.mode, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
+        g.s5 = { enabled: true, model: S5P.mode, ctl: !!S5CTL, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
                  glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs, traj: S5.traj };
         log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
         startWalkPhase();   // hand back to the standard gate walk phase
