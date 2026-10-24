@@ -1,0 +1,62 @@
+{
+ "s5_acc_glider": {
+  "n": 25,
+  "max_err_all": 0.005041501015238481,
+  "n_away_ground": 16,
+  "max_err_away_ground": 0.005041501015238481
+ },
+ "s5blend_exact": {
+  "n": 24,
+  "max_err_all": 0.00479150101524084,
+  "n_away_ground": 16,
+  "max_err_away_ground": 0.004708498984758336
+ },
+ "s5blend_plunge": {
+  "n": 28,
+  "max_err_all": 0.004864793884348018,
+  "n_away_ground": 22,
+  "max_err_away_ground": 0.004864793884348018
+ },
+ "s5_sink_control": {
+  "n": 55,
+  "max_err_all": null,
+  "n_away_ground": 0,
+  "max_err_away_ground": null
+ },
+ "control_moves": {
+  "n_matched_t": 24,
+  "max_dvz": 0.9299999999999997,
+  "at_t": 50
+ },
+ "sink_control_fwd_values": [
+  3.5
+ ],
+ "land_receipts": {
+  "default": {
+   "landed": null,
+   "landMs": null
+  },
+  "s5_acc_glider": {
+   "landed": true,
+   "landMs": 417
+  },
+  "s5blend_exact": {
+   "landed": true,
+   "landMs": 400
+  },
+  "s5blend_plunge": {
+   "landed": true,
+   "landMs": 467
+  },
+  "s5_sink_control": {
+   "landed": true,
+   "landMs": 917
+  },
+  "s5_ctl": {
+   "landed": true,
+   "landMs": 450
+  }
+ },
+ "default_digest": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8",
+ "default_nTri": 137893
+}
