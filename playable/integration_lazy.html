@@ -662,7 +662,10 @@ const S5OLD = QS2.get('s5old') === '1';        // s56 T1 control
 const S5ACC = QS2.get('s5acc') === '1';        // s56 T1 accumulator re-read
 const S5PLUNGE = QS2.get('s5plunge') === '1';  // s56 T1: GetGlide(1) 'Glider_Plunge'
 const S5CTL = QS2.get('s5ctl') === '1';        // s56 T2: scripted pitch control + auto-level
-const S5CTLV = { tRamp: 0.4, tHold: 1.2, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 };
+const S5EARLY = QS2.get('s5ctlEarly') === '1'; // s56 T2b: early release so the decay precedes landing
+const S5CTLV = S5EARLY
+  ? { tRamp: 0.25, tHold: 0.45, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 }
+  : { tRamp: 0.4, tHold: 1.2, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 };
 const S5TWO_PI = 2 / Math.PI;                  // engine pool 0.6366198 @0x3839f8
 const S5P = S5LEG
   ? { mode: 'legacy', fwd: 18.0, pitch0Deg: -30.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35 }
