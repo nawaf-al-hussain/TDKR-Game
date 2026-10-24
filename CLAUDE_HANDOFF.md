@@ -869,3 +869,78 @@ the session record). NOTHING deployed; remote unchanged.
   cloth cape 1; cross-region navigation 1-2; city-scale lit rendering from user files 1-2.
 - Combat slice remaining specifics: GiveDamage argument decode (0.25-0.5), Motion component reader
   (0.25), enemy skeleton clip bindings (bdae anim_pack gap, standing), then implementation 1-1.5.
+## SESSION 57 (round 47, 2026-10-24) — glide model DECIDED (accumulator); enemy templates double-signal; enemy viewer; gol JS parity; memory floor restated
+
+**T1 glide DECIDED (branch s56-t1-glide af90aff, NOT deployed):** the s56 accumulator re-read IS the
+engine model; the s55 note had the f0/f1 and f5/f6 families swapped. Byte evidence: RefreshForcesGlide
+0x3836b0 integrates [actor+0x53c] with rate f0+(f1-f0)(2/pi)|p| (grow p<=0 @0x3839dc guarded acc<f1,
+decay p>0 @0x383724 guarded acc>f0, x dt=[actor+0x2a8]); output velocity 0x383858..80: X/Y = ∓/+
+sin/cos(f6deg)*acc*cos(p)*dt (6-deg side-slip), Z = (sin(p)*acc - (f5+(f6-f5)(2/pi)|p| +
+GetGliderGravityHelper()) - blend)*dt — the f5/f6 formula is VERTICAL-only (helper into forward speed
+byte-refuted @0x383784). acc census (computed-base scan; 0x53c is beyond the vldr 1020 range so all
+accesses decompose add #0x530 +0xc): StartGlide 0x3806a8 acc=f1=16 (INIT = clamp-hi),
+StartGlideFromGrapnel 0x380b80/0x380c48 acc=f1=16, UpdateNavGlide 0x381bc0 acc=|v @[actor+0x224]|
+(momentum seed); readers RefreshForcesGlide 0x38379c + UpdateNavGlide 0x381c5c; NO others.
+SetGlideSpeed @0x38a120 (Lua SetActorSpeedGlide) writes [actor+0x3b8] = a SEPARATE scripted-speed
+field (ctor/ReInit write; SaveSave/SlideOnCollisions read) — not the accumulator. Plausibility: acc
+model glides FASTER than a run with distinct Glider/Plunge angles (52.8/66.4 deg); the s55 model gives
+a constant 3.5 u/s (slower than a run) and no role for the accumulator. ?s5=1 default = accumulator
+(seed f1=16); ?s5sink=1 = s55-note control; ?s5acc=1 alias. Gates 5/5 PASS 0 errs, soup
+00ce7970e45adc85/137893 = LIVE on every config, routes 10/10; fwd EXACT 11.314/8.0/3.5 (Glider/
+Plunge/sink-control); vz within 1.14 u/s of sin(p)acc-s56-blend (declared blend-proxy residual);
+ctl on acc: head -6.0 deg EXACT, fwd = 16 cos(pitch) sample-exact.
+
+**T2 enemy templates SECOND SIGNAL (63db87c):** component Load sequences derived from the engine
+(ARM): CStateSet instance Load = 4-B no-op thunk (0x298f38) but TEMPLATE path = 8 STR state-name
+list (Merc: ''-ref,'Idle','Hurt','Death','Idle','Walk','Run','Run'); DropCollectible i+n*(i,i);
+NpcAI 38 B; WantedGenerator 16 B; ActorBase template Load = 3B+16f+3B+2i+n*(i+1B) = 78+5n; Motion
+template = [c,f,f,c,f,f] = 18 B speed pairs (uniform 750.0/750.0/500.0/500.0, flag 1, across Batman
++ all enemies; instance path = CMemoryStream::ReadString 0x33a0d4 PINNED). Structural walk (no
+sanity filter) closes 110/653 templates exactly; Health/Awareness boundaries: 25 carriers MATCH s56
+gap-search values (Merc Health@121/Awareness@154 exact), Blake CORRECTED 2.0->150.0 (walk wins,
+25:1), 4 NEW decodes (Helicopter, Helicopter_Bane, Military_Heli, Test_Object @121/@138); missing
+sequences LISTED (CustomizeActor template variant = [count][count STR] groups; 0x2db081e2 vehicles;
+Sniper blocker). s30 read-seq table = LVC-instance path, not valid for gol walks. GiveDamage Lua
+arg constants NOT decoded (standing).
+
+**T3 enemy viewer (branch s56-t1-glide, enemy_viewer.html, NOT deployed):** Melee_Enemy_Merc data
+in-scene — awareness cone FOV 160 deg (near 11/far 17 u), 120-deg wrong-FOV control cone, health
+120 HP, scripted hit -10 (damage = LABELED PLACEHOLDER; GiveDamage args still open), state-table
+combat states + clip families; enemy skeleton clip bindings remain the standing bdae anim_pack gap
+(no enemy clip playback). Load-tested 0 errors; gate pass (aperture 160 vs 120, radii delta 6,
+health 120->110).
+
+**T5 gol.bin JS parity (branch s56-t3-migrate, playable/gol_parse.js):** dependency-free in-browser
+parser (header, offsets, string table, template table, per-comp walks with the s57 sequences);
+NODE == PYTHON digest on all 653 templates (sha256 5edaa1485e6ca6ab..., closed=77 both; rep-bearing
+specs unresolved both sides). Retires part of the 100 KB parse-table residual.
+
+**T4 memory:** streaming rework NOT attempted (time went to T1/T2); floor by phase restated with
+harness attribution (s57_t4_note.md): empty 84.9 MB (s53 fine), +textures 23.5, build peak median
+592 MB @t=5-7 s (s56 FINE x3; 2 s sampling underestimates ~6%), steady ~210, native residual ~261
+swiftshader copies, first image 8.76-8.98 s. <500 MB / <8 s NOT MET — floor ~590 MB / ~8.9 s.
+
+**T6:** real-GPU check PENDING (no block pasted; load integration_lazy.html?gpucheck=1 on a real
+GPU and paste; a GPU run does not answer the glide question — T1 settled it from code).
+
+**T7:** local main 2 commits ahead of the s56 state (63db87c T2 + T5 receipts), branches
+s56-t1-glide af90aff (+T3 enemy viewer commit), s56-t3-migrate (T5 gol_parse.js), s55-t1-title-fix
+0cea8b8. Bundles download/bundles_s57/ verified (SHA256 in the session record). NOTHING deployed;
+remote unchanged. Working-tree regression found at session start (CLAUDE_HANDOFF.md missing the s56
+section + 41 mode-only flips) — restored from HEAD before work.
+
+### s57 remaining-work estimate update (sized)
+- IN (unchanged): walkable world, character renderer + animation, Lua shim, browser asset pipeline,
+  user-file material binding, descriptor decoding, engine shader + fog chain, zone renderer
+  (corr 0.9923 standing), glide slice NOW WITH THE DECIDED ENGINE MODEL + control, grapple slice,
+  gol.bin in-browser parse (NEW, done this session on the migration branch).
+- CHANGED: glide/grapple FULL behavior +0.25-0.5 session (the semantic conflict is SETTLED; remaining
+  = stick-dynamics polish + rope render + QTE, no more model ambiguity).
+- NEW sizes: combat slice data layer ~60% done (Health/Awareness double-signal, Motion speeds,
+  state/clip families; remaining: GiveDamage Lua arg decode 0.25-0.5, CustomizeActor template
+  variant 0.25-0.5, enemy skeleton clip bindings (bdae anim_pack gap, standing), then implementation
+  1-1.5 sessions). Enemy viewer exists as the data-visualization base.
+- NOT in (unchanged): AI/mission flow 4-6 sessions total with combat; audio 1-2; UI 1-2; cloth cape 1;
+  cross-region navigation 1-2; city-scale lit rendering from user files 1-2.
+- Memory: streaming rework 0.5-1 session to attempt <500 MB; browser floor + swiftshader copies are
+  not in-page addressable (real GPU is the only path below ~350 MB native).
