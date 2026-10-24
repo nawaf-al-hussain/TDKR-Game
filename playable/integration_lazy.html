@@ -580,6 +580,10 @@ function texZget(name, wantAlpha) {
   const o = { tx, alpha: t.alpha, w: t.w, h: t.h, name: name };  // s53 T1: name for the unit audit
   texZ.set(key, o);
   texZstats.decoded++;
+  if (TEXFREE) {          // s58 T4 lever: CPU bytes no longer needed once uploaded
+    t.data = null; if (t.alpha) t.alpha.data = null;
+    texLRU.delete(key); lruBytes -= (t.bytes || 0);
+  }
   return o;
 }
 const alphaTexCache = new Map();
@@ -1085,6 +1089,7 @@ const POOLCHUNK = QS2.get('poolchunk') === '1';
 const LRUMB = QS2.get('lrumb') ? parseInt(QS2.get('lrumb')) : null;
 let LRU_BYTES = 64 * 1048576;
 if (LRUMB) LRU_BYTES = LRUMB * 1048576;
+const TEXFREE = QS2.get('texfree') === '1';   // s58 T4: drop decoded CPU bytes right after GL upload
 function buildBatches(lt, ldd, bi8, le) {
   const { bind, fx } = parseCompiledTable(le);
   const fbuf = new DataView(ldd.buffer, ldd.byteOffset, ldd.byteLength);
