@@ -631,22 +631,37 @@ const UA = { n: 0, mm: 0, noTex: 0, mmFirst: [], u0: null, u1: null };
 // s54 T1: parameters DECODED from the engine data (extraction/re/session54/):
 //  CComponentGlide (class 0x0110ce1f, Load = ReadInt + 21xReadFloat + ReadInt, ARM) template
 //  'Glider' (0x2674, gadget slot 0) gol.bin payload, consumed via CGadgetManager::GetGlide:
-//   f0=4 (min sink u/s), f1=16 (max sink u/s): sink = f0 + (f1-f0)*abs(pitch) (RefreshForcesGlide),
-//   f2=14, f3=4, f4=16 (speed family, consumers not pinned), f5=1, f6=6 (gravity-helper lerp),
+//   f0=4, f1=16: AIRSPEED ACCUMULATOR CLAMPS u/s (s57 T1 decision; rate = f0+(f1-f0)*(2/pi)*|p|),
+//   f2=14, f3=4 (unread), f4 unattributed (the 0x3836e4 read is the ACTOR pitch), f5=1, f6=6
+//   (base vertical sink + slope; f6 ALSO the 6-deg side-slip of the horizontal direction),
 //   f7=0, f8=2 (ground-proximity blend target within f9=16 u), f10=-45 (initial glide pitch DEG,
 //   SetInitialGlideAngle; engine hard default -30; Glider_Plunge slot 1: -60),
 //   f11..f20 = -60,30,35,1.25,0.05,45,0.5,30,30,40 (pitch/roll/yaw clamp+rate family),
 //   int2=600 (both templates). Named statics (.data): k_glideWallEvadeDistance 6,
 //   k_glideWallEvadeMinDistance 1, k_glideWallEvadeMaxAngle 10, s_fallAheadOffset 0.4.
 // Legacy placeholders (?s5legacy=1): fwd 18, gravity -25, bank 0.35 rad fixed.
-// s56 T1 models (RefreshForcesGlide 0x3836b0..0x383a08, ARM re-read in s56):
-//  ?s5=1        ENGINE MODEL (s55 note): fwd = f5+(f6-f5)*(2/pi)*|p|, sink = f0+(f1-f0)*(2/pi)*|p|,
-//               pitch held at f10 (-45 Glider / -60 Plunge via ?s5plunge=1).
-//  ?s5acc=1     ACCUMULATOR re-read (byte-certain branch structure): acc -> f1 (p<=0, 0x3839dc) /
-//               f0 (p>0, 0x383724) at rate f0+(f1-f0)*(2/pi)*|p|; velocity from 0x383858..0x383880:
-//               v_horiz = acc*cos(p) (direction tilted f6 deg), v_vert = acc*sin(p) - s56(f5,f6) - blend(f7,f8,f9).
-//               NOTE: this maps the f5/f6 family to the VERTICAL term - the opposite semantic of the
-//               s55 note; both models run so the trajectory comparison can discriminate.
+// s57 T1 DECISION (round 47): the ACCUMULATOR model IS the engine model - default for ?s5=1.
+//  Evidence (ARM libKRHP.so, this session):
+//   (a) RefreshForcesGlide 0x3836b0..0x383a08: rate s10 = f0+(f1-f0)*(2/pi)*|p| feeds ONLY the
+//       guarded integration of [actor+0x53c] (grow p<=0 @0x3839dc vmlagt/vstrgt, decay p>0 @0x383724
+//       vmlsmi/vstrmi, both xdt=[actor+0x2a8]); output velocity 0x383858..0x383880:
+//       X=-sin(f6deg)*acc*cos(p)*dt, Y=cos(f6deg)*acc*cos(p)*dt, Z=(sin(p)*acc - (f5+(f6-f5)(2/pi)|p|
+//       + GetGliderGravityHelper()) - blend)*dt. The f5/f6 formula appears ONLY in Z; the s55 note
+//       had the two families swapped (and helper into FORWARD speed - byte-refuted: vadd into Z @0x383784).
+//   (b) acc writers census (whole .text, direct+computed bases): StartGlide 0x3806a8 acc=f1=16
+//       (ldr ip,[comp+0xc]; str [actor+0x53c]); StartGlideFromGrapnel 0x380b80+0x380c48 acc=f1=16;
+//       UpdateNavGlide 0x381bc0 acc=|velocity @actor+0x224| (momentum seed); readers: RefreshForcesGlide
+//       (post-update s22 @0x38379c) + UpdateNavGlide 0x381c5c. No other readers/writers exist.
+//   (c) plausibility: acc model fwd = acc*cos(p) in [4,15.9] u/s (faster than a run; glide angle
+//       52.8 deg at -45); s55-note model predicts CONSTANT fwd 3.5 u/s (slower than a run) and a
+//       ~70 deg dive identical for Glider and Plunge - and has no role for the integrated accumulator.
+//  ?s5=1        ACCUMULATOR (engine): acc seeded f1=16 (StartGlide byte-proof), pitch held at f10
+//               (-45 Glider / -60 Plunge via ?s5plunge=1); per-frame: rate = f0+(f1-f0)*(2/pi)*|p|,
+//               acc += rate*dt (p<=0, clamp f1) / acc -= rate*dt (p>0, clamp f0);
+//               fwd = acc*cos(p), vz = acc*sin(p) - s56(f5,f6) - blend(f7,f8,f9).
+//  ?s5sink=1    s55-note model (MISREAD, kept as control): fwd = f5+(f6-f5)*(2/pi)*|p|,
+//               sink = f0+(f1-f0)*(2/pi)*|p|.
+//  ?s5acc=1     alias of the default (kept for s56 receipt comparability).
 //  ?s5old=1     pre-s56 staged model (const fwd 16, sink 4+12*|p| without 2/pi) - control.
 //  ?s5legacy=1  s53 placeholders (unchanged). Blend distance uses height over nm ground
 //               (engine: dist = |virtual-call position - actor position|; target of the call not pinned).
@@ -659,7 +674,8 @@ const UA = { n: 0, mm: 0, noTex: 0, mmFirst: [], u0: null, u1: null };
 const S5ON = QS2.get('s5') === '1';
 const S5LEG = QS2.get('s5legacy') === '1';
 const S5OLD = QS2.get('s5old') === '1';        // s56 T1 control
-const S5ACC = QS2.get('s5acc') === '1';        // s56 T1 accumulator re-read
+const S5ACC = QS2.get('s5acc') === '1';        // s57: alias of the default (accumulator)
+const S5SINK = QS2.get('s5sink') === '1';      // s57 T1: s55-note model kept as control
 const S5PLUNGE = QS2.get('s5plunge') === '1';  // s56 T1: GetGlide(1) 'Glider_Plunge'
 const S5CTL = QS2.get('s5ctl') === '1';        // s56 T2: scripted pitch control + auto-level
 const S5EARLY = QS2.get('s5ctlEarly') === '1'; // s56 T2b: early release so the decay precedes landing
@@ -671,7 +687,7 @@ const S5P = S5LEG
   ? { mode: 'legacy', fwd: 18.0, pitch0Deg: -30.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35 }
   : S5OLD
   ? { mode: 'old', fwd: 16.0, pitch0Deg: -45.0, sinkMin: 4.0, sinkMax: 16.0, bank: 0.35 }
-  : { mode: S5ACC ? 'acc' : 'engine', fwd: 16.0,
+  : { mode: S5SINK ? 'sink56' : 'acc', fwd: 16.0,   // s57 T1: accumulator = engine default
       pitch0Deg: S5PLUNGE ? -60.0 : -45.0,     // f10: Glider -45 / Glider_Plunge -60
       sinkMin: 4.0, sinkMax: 16.0,             // f0, f1
       fwdMin: 1.0, fwdMax: 6.0,                // f5, f6
@@ -781,14 +797,14 @@ function s5Tick(now) {
       const gz0 = nm_ground(S5.tgt[0], S5.tgt[1], S5.tgt[2] + 2.6);
       if (gz0 > -1e8) { P.z = gz0 + 0.9; }
       S5.pitch = S5P.pitch0Deg * Math.PI / 180;   // engine initial glide pitch (f10, SetInitialGlideAngle)
-      S5.acc = S5P.mode === 'acc' ? S5P.sinkMin : 0.0;   // acc model: StartGlide init not decoded; assume f0
+      S5.acc = S5P.sinkMax;   // s57 T1: engine StartGlide seeds acc = f1 = 16 (0x3806a8)
       S5.baseHead = Math.atan2(S5.tgt[1] - S5.from[1], S5.tgt[0] - S5.from[0]);   // s56 T2 slip reference
       S5.vz = S5P.mode === 'legacy' ? 2.0
             : S5P.mode === 'old' ? -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch))
             : S5P.mode === 'acc' ? (S5.acc * Math.sin(S5.pitch) - s5Sink56(S5.pitch))
             : -s5Rate(S5.pitch);
-      // engine (s55 note) at -45 deg: sink = 4 + 12*(2/pi)*0.7854 = 10.0 u/s, fwd = 1 + 5*(2/pi)*0.7854 = 3.5 u/s
-      // acc (s56 re-read) at -45 deg, acc=f0=4: vz = 4*(-0.7071) - 3.5 = -6.33 u/s, acc ramps toward f1=16
+      // acc (ENGINE default, s57) at -45 deg, acc=f1=16: vz = 16*(-0.7071) - 3.5 = -14.81 u/s, fwd = 16*cos(-45) = 11.31
+      // sink56 (s55-note control) at -45 deg: sink = 4 + 12*(2/pi)*0.7854 = 10.0 u/s, fwd = 1 + 5*(2/pi)*0.7854 = 3.5 u/s
       // legacy model: small rise then gravity -25 u/s^2
       s5SetClip('_057_glide_idle');
     }
@@ -798,7 +814,7 @@ function s5Tick(now) {
     const dx = S5.tgt[0] - S5.from[0], dy = S5.tgt[1] - S5.from[1];
     const dl = Math.hypot(dx, dy) || 1;
     // s56 T2: scripted pitch control (engine mode only) - see header comment for provenance
-    if (S5CTL && S5P.mode === 'engine') {
+    if (S5CTL && S5P.mode === 'acc') {
       const tG = (now - S5.tGlide) / 1000;
       let tgtDeg;
       if (tG < S5CTLV.tRamp) {
@@ -821,7 +837,7 @@ function s5Tick(now) {
         ? S5P.blendMin + (S5P.blendMax - S5P.blendMin) * (1 - distH / S5P.blendDist) : S5P.blendMin;
       S5.vz = S5.acc * Math.sin(S5.pitch) - s5Sink56(S5.pitch) - blend;
       S5.fwd = S5.acc * Math.cos(S5.pitch);
-    } else if (S5P.mode === 'engine') {
+    } else if (S5P.mode === 'sink56') {
       S5.fwd = s5Sink56(S5.pitch);
       S5.vz = -s5Rate(S5.pitch);
     } else if (S5P.mode === 'old') {
@@ -831,7 +847,7 @@ function s5Tick(now) {
     // s54 T1: engine k_glideWallEvade analogue - never step forward into void;
     // hold position laterally and keep descending (nm corridor of the decoded region)
     let sdx = dx, sdy = dy;
-    if (S5CTL && S5P.mode === 'engine') {   // s56 T2: decoded f6 side-slip (RefreshForcesGlide 0x383824..38)
+    if (S5CTL && S5P.mode === 'acc') {   // s56 T2: decoded f6 side-slip (RefreshForcesGlide 0x383824..38)
       const sl = -S5CTLV.slipDeg * Math.PI / 180, cs = Math.cos(sl), sn = Math.sin(sl);
       sdx = dx * cs - dy * sn; sdy = dx * sn + dy * cs;
     }
