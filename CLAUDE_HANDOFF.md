@@ -1049,3 +1049,104 @@ branches s56-t1-glide 22b77bc9, s56-t3-migrate 47e73d1a, s55-t1-title-fix 0cea8b
 - NOT in (unchanged): AI/mission flow 4-6 sessions total with combat; audio 1-2; UI 1-2; cloth cape 1;
   cross-region navigation 1-2; city-scale lit rendering from user files 1-2. Memory: the JS levers
   are exhausted (T4); <500 MB needs a real GPU (or accept the ~560 MB floor).
+## SESSION 59 (round 49, 2026-10-25) — glide blend cache writer/state analysis COMPLETE (frozen anchor DECIDED + collision re-anchor refinement); merc rig IN-PAGE (generalized bdae reader, batman digests EQUAL, ?enemy=1 gate PASS); template dispatcher VERIFIED (GOM::Reload -> GenerateComponentTemplate -> [vptr+0x10]); combat behaviour slice gate PASS; helper = 0.0 code-verified
+
+**STATE at start:** remote unchanged (main a8e6124, gh-pages 6145545 LIVE, staged 39298a4, staged-s44 6145545, s41 7b0807e, s40 80274a1, essentials 7c8defc); local main ff94ca0 (21 ahead), s56-t1-glide 22b77bc, s56-t3-migrate 47e73d1, s55-t1-title-fix 0cea8b8 — all as expected. CLAUDE_HANDOFF.md 1051 lines complete. NO token supplied -> NOTHING pushed. No real-GPU block supplied -> T5 = environment-dominated.
+
+**T1 glide blend cache — writer/state analysis COMPLETE (two signals, DECIDED):**
+(1) UpdateNavGlide 0x380e94 has EXACTLY ONE caller: Update.part.2842 0x3a2c58 (the GLIDE case of
+the nav-mode jump table @0x3a33e0). RefreshForcesGlide 0x3836b0 called ONLY from UpdateNavGlide
+@0x380fbc. (2) Update 0x36e394: r5 = UpdateSpeed(dt) return; r5!=0 -> early return (no nav, no
+write). r5==0 -> byteB=[[comp+0x60]+0xa] (CComponentActorBaseComponent bool, template payload
+byte 6): byteB!=0 -> forces path (SetActorPosition + THE cache write 0x36e74c, velocity-predicted
+= GetActorPosition + [comp+0x224] from RefreshForces) and NO nav dispatch; byteB==0 -> part.2842
+nav dispatch (incl. glide), NO cache write. MUTUALLY EXCLUSIVE per frame. (3) Writer census
+(CActorBaseComponent): ctor/ReInit (zero), Update (exclusive branch), TryEdgeGrab, UpdateNav-
+SimpleBehavior, UpdateNavNormalSimplified x4, UpdateNavNormal, UpdateFloorTesting,
+UpdateFloorProjection (strne), UpdateNavGhost (strne), ResolveAirCollision x2. Glide call-cone
+closure: GCT-glide case calls ONLY UpdateNavGlide; its 12 calls touch NO writer; SetActorPosition
+itself writes nothing; RefreshForcesGlide's 10 calls touch none. **=> free-flight glide: cache
+frozen at takeoff (s58 holds). NEW REFINEMENT: UpdateNavGlide @0x382ec0 CheckForContacts ->
+ResolveAirCollision 0x398570 on contact STORES the resolved position into the cache
+(0x3987a4/0x3987d4) -> the blend anchor RE-ANCHORS at every air collision (entry dip restarts);
+code-proven, not page-exercisable (open-sky slice).** Signal 2 (measured, ?s5blend=1 battery
+n=25/28): frozen model closed form 5e-4; per-frame-displacement wrong model errs 0.525 (Glider)/
+1.082 (Plunge) u/s = 100-200x the residual -> data arbitrates for frozen. Gates 6/6 PASS,
+digest 00ce7970=LIVE, land 417/417/467/917/450 (=s57/s58), 0 errs.
+**Upgrades.bin (721 B) decoded: SHOP/LOCALE metadata (u32be 11 + 1 + 9xu16 keys 2..10; records
+{u16 key, u16 5, 4 len-prefixed strings, 25-B tail: prices LE 80/90/180/50/..., 'EOF'}) — NO
+engine floats, NO key 0x1f. GetGliderGravityHelper = map[0x1f].value; map inserted ONLY by
+AddUpgrade (ZERO code refs in the loaded image — symtab artifacts only), ResetUpgrades
+(function-pointer registry @0xc366f8 = shop reset UI), LoadUpgradesStatus (save file ->
+CInventory::SaveLoadGlobal), or operator[] default {0,0,0,0}. => HELPER BASE LEVEL 0 = 0.0
+(code-verified; s58 'inconclusive' resolved; page helper 0 stands, no patch).**
+
+**T2 merc rig IN-PAGE (the s58 blocker closed):** BRES bdae container is self-describing:
+header n_relocs@0x10, offsets@0x18 (reloc table 0x3c..pool0; pool0/pool1/off3/off4; data
+section > off4 relocation-free). **readBdae2 added to tdkr_pipeline.js** (generalized, no
+per-file constants): validated 0x50 node scan (4-B stepping) -> stride run at off4 -> INVB run
+(64-B mats, row3 (0,0,0,1), >=10, BACKWARD-extended) -> palette (8-B 'Bone' entries after
+INVB) -> skin-record run (stride/weights {(20,4),(16,3),...}, run>=200 gives NV) -> verts
+(descriptor-bbox-validated full-run scan; uv at stride-8/-4 /4096) -> u16 index run.
+**VALIDATION: readBdae2(batman.bdae) digests == readBdae(batman.bdae)** (verts bf4cd6849d3834ed,
+idx 968b43d5b220f980/5431, skinJ d1d89fa17550f19b, 31 joints). Merc layout derived: NV=**1294**
+(s58's 1449 = batman layout misread), stride 52, INVB 0x74080 x31, palette 0x748d8 x31, skinrec
+0x749d0 **16-B/3-influence** maxJoint 30 (=31 bones), VERTS 0x53c4, IDX 0x15b16/6007 — python ==
+JS identical. Merc skeleton INDEPENDENTLY validated: |bind origin - skin-weighted centroid|
+median **0.075 u** (batman calibration 0.089; permuted-mapping null 0.64-0.90 ~9x). Clip-channel
+overlap 37/72; ALL 35 missing = Batman cape CBones (enemy clips locomotion-complete). Enemy-clip
+FK on MERC rest locals: walk loops 0.346/0.065, run 0.461/0.264, pelvis z 0.87-0.96 (matches
+s58's batman-skeleton numbers — pelvis translation is clip-carried; leg rest offsets identical
+0.106/0.4098/0.45); rolled-25 control breaks the profile. **?enemy=1 GATE PASS: 0 errs,
+enemy.ok {1294 verts, 31 joints, 3 clips}, enemyPlay {wraps 2, phasesSeen 3, dispIdle 1.330 <
+dispWalk 1.753 < dispRun 1.926 (CPU-skin probe, 150 verts), wrong-clip control 1.769},
+soup 00ce7970 = LIVE unchanged, routes 10/10.** Page changes on branch s56-t1-glide b1f5dfb:
+buildGLB clip-list param + invB count generalized; finalizeGate defers done in enemy mode;
+mercTick hoisted to walk phase; updateMatrixWorld in the control loop.
+
+**T3 template closure — mechanism VERIFIED, classes NAMED; walker rebuild FAILED (PARTIAL):**
+GenerateComponentTemplate 0x368ac0 (11308 B) called from GOM::Load/Reload/CreateObject (the
+gol Reload path). Per case: `new <class>` + common tail @0x368bfc `ldr r3,[r3,#0x10]; blx r3`
+= **[vptr+0x10] = the per-class TEMPLATE reader** (different slot than the instance Load).
+For 0x2db081e2: [vptr+0x10] == CCollisionComponent::Load 0x2230a8 -> s58's 16-B base template
+shape CONSISTENT with the dispatcher. CComponentAwareness::Load = 16 ReadFloat -> +4..+0x40;
+**field 13 engine-NAMED = VisibilityAngle degrees** (ResetVisibilityAngle 0x39638c -> [comp+0x24],
+GetVisibilityAngle, cos table +0x28) = the FOV 160. Blocker classes: 0x4cc04ddb=CBeastOmni
+(GCT case), 0x43c8a8d1=unnamed 0x14-B (GCT case), **0x67c82e62=CVehicleCollisionComponent
+(NO GCT case — the engine's own template path cannot construct it; ids appear NOWHERE as
+literals/movw pairs)**, 0x0e1f5b6f=CSniperComponent (NO GCT case), 0x0116a6fa=trail (NO case),
+0x4cc07242=CBeastSpot, 0x28091330=CCollectible, 0x7d561d33/0x0dd583de (GCT cases). Walker
+rebuild (s30 table + 11 documented overrides) closed only 5/653 — the s57 script was lost with
+its workspace; ~40 legacy-id template specs (0x14ca79 445, 0x152b87 26) unrecoverable from
+receipts in-budget. **Closure stands at s58's 326/653 (49.9%), carriers 30/50 (60%).** Vehicle
+health 300 second signal PARTIAL: engine-verified Awareness field map + named FOV consumer;
+Lua SetActorHealth constant-pool decode remains open.
+
+**T4 combat behaviour slice (enemy_viewer.html, branch-only) GATE PASS 0 errs:** state machine
+(StateSet names Idle/Walk/Hurt/Death); cone test = dist<=17 AND |angle-facing|<=80 deg
+(engine-named FOV); alert Idle->Walk on player-in-cone; hits 5/10 HP (census values) -> Hurt
+(0.4 s) -> Walk; Death at 0 HP. NEGATIVE CONTROL x2: 60 u away -> Idle AND 15 u BEHIND the
+facing (inside R_FAR, outside the cone) -> Idle (the transition discriminates ANGLE). Sequence
+Idle,(Hurt,Walk)x12,Death; hp 120->115->105->0; screenshot receipts.
+
+**T5 memory: environment-dominated** (no real-GPU gpucheck block supplied; standing floor
+~560-592 MB / 8.5-9.0 s restated; the ?gpucheck=1 page remains ready for paste-back).
+
+**T6 refs/bundles:** commits this session on main: T1 (s59 receipts), 610b86c (T2 receipts),
+58d5fce (T3), bfc2eba+cf02f36 (T4), ff66a91 (T5), handoff (this section); on s56-t1-glide:
+b1f5dfb (in-page merc playback). Bundles download/bundles_s59 (verified, SHA256 in the session
+record). NOTHING deployed; remote unchanged.
+
+### s59 remaining-work estimate update (sized)
+- IN (unchanged): walkable world, character renderer + animation, Lua shim, browser asset
+  pipeline, user-file material binding, descriptor decoding, engine shader + fog chain, zone
+  renderer, glide slice NOW WITH the writer/state proof + re-anchor note, grapple slice,
+  gol in-browser parse, **enemy rig IN-PAGE (NEW: readBdae2 generalized reader + merc playback
+  gate PASS)**, **combat behaviour slice (NEW: alert/hurt/death machine on decoded data)**.
+- CHANGED: combat data slice ~85% (mechanism + class table + FOV named; remaining: the ~40
+  legacy-id template specs for the walker (0.5-1 session, needs re-derivation from engine
+  disasm), per-class template Loads for the 5 GCT-case blockers (0.5 session), Lua
+  SetActorHealth constant-pool decode (0.5 session), Hurt/Death clips wired into the in-page
+  merc path (0.25 session)).
+- NOT in (unchanged): AI/mission flow 4-6; audio 1-2; UI 1-2; cloth cape 1; cross-region nav
+  1-2; city-scale lit rendering 1-2. Memory: environment-dominated until a real-GPU block.
