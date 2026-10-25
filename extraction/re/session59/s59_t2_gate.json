@@ -1,0 +1,172 @@
+{
+ "enemy": {
+  "name": "enemy",
+  "qs": "?enemy=1",
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [],
+  "elapsed_s": 19.1,
+  "gate": {
+   "done": true,
+   "pass": true,
+   "soup": {
+    "nTri": 137893,
+    "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+   },
+   "routes": {
+    "run": 10,
+    "agree": 10,
+    "results": [
+     {
+      "route": 3,
+      "verdict": "stuck_wall",
+      "dist": 305.23,
+      "expected": "stuck_wall",
+      "expected_dist": 305.2,
+      "agree": true,
+      "dist_delta": 0.03,
+      "ms": 31
+     },
+     {
+      "route": 6,
+      "verdict": "fell",
+      "dist": 321,
+      "expected": "fell",
+      "expected_dist": 321,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 15
+     },
+     {
+      "route": 7,
+      "verdict": "fell",
+      "dist": 382.5,
+      "expected": "fell",
+      "expected_dist": 382.5,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 10,
+      "verdict": "stuck_wall",
+      "dist": 1076.038,
+      "expected": "stuck_wall",
+      "expected_dist": 1076,
+      "agree": true,
+      "dist_delta": 0.038,
+      "ms": 52
+     },
+     {
+      "route": 12,
+      "verdict": "ok",
+      "dist": 392,
+      "expected": "ok",
+      "expected_dist": 392,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 15,
+      "verdict": "stuck_wall",
+      "dist": 443.067,
+      "expected": "stuck_wall",
+      "expected_dist": 443.1,
+      "agree": true,
+      "dist_delta": 0.033,
+      "ms": 30
+     },
+     {
+      "route": 19,
+      "verdict": "ok",
+      "dist": 931,
+      "expected": "ok",
+      "expected_dist": 931,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 42
+     },
+     {
+      "route": 22,
+      "verdict": "fell",
+      "dist": 62.7,
+      "expected": "fell",
+      "expected_dist": 62.7,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 3
+     },
+     {
+      "route": 27,
+      "verdict": "stuck_wall",
+      "dist": 301.235,
+      "expected": "stuck_wall",
+      "expected_dist": 301.2,
+      "agree": true,
+      "dist_delta": 0.035,
+      "ms": 27
+     },
+     {
+      "route": 33,
+      "verdict": "stuck_wall",
+      "dist": 122.009,
+      "expected": "stuck_wall",
+      "expected_dist": 122,
+      "agree": true,
+      "dist_delta": 0.009,
+      "ms": 7
+     }
+    ]
+   },
+   "zone": {
+    "batches": 138,
+    "texDecoded": 71,
+    "texMiss": 2,
+    "buildMs": 1485
+   },
+   "batman": {
+    "ok": true,
+    "verts": 1449,
+    "clips": [
+     "_001_idle_stand",
+     "_007_walk",
+     "_008_run",
+     "_057_glide_idle",
+     "_089_grapnel_pull",
+     "_088_grapnel_shoot",
+     "_065_glide_idle_to_run"
+    ]
+   },
+   "first_image_ms": 6555,
+   "enemy": {
+    "ok": true,
+    "dmg": 5,
+    "damageProvenance": "GiveDamage(actorId,damage) 0x155e4c; census 146 literal calls, 5 x91",
+    "verts": 1294,
+    "joints": 31,
+    "clips": [
+     "_014_idle_enemy_combat",
+     "_166_enemy_walk",
+     "_171_enemy_run"
+    ]
+   },
+   "enemyPlay": {
+    "ok": true,
+    "wraps": 2,
+    "phasesSeen": 3,
+    "bboxZmin": -0.827,
+    "bboxZmax": 0.961,
+    "clip": "_171_enemy_run",
+    "dmg": 5,
+    "dispIdle": 1.33026,
+    "dispWalk": 1.7525,
+    "dispRun": 1.92586,
+    "dispCtlWrongClip": 1.7685,
+    "ctlClip": "_166_enemy_walk",
+    "probeVerts": 150
+   },
+   "error": null
+  }
+ }
+}

@@ -1,0 +1,15 @@
+BATMAN readBdae : {"verts":"bf4cd6849d3834ed","nV":1449,"idx":"968b43d5b220f980","nIdx":5431,"joints":31,"skinJ":"d1d89fa17550f19b","invB0":[0,-0.23865,-0.97111,0]}
+BATMAN readBdae2: {"verts":"bf4cd6849d3834ed","nV":1449,"idx":"968b43d5b220f980","nIdx":5431,"joints":31,"skinJ":"d1d89fa17550f19b","invB0":[0,-0.23865,-0.97111,0]}
+BATMAN DIGESTS EQUAL: true
+MERC layout: {"pool0":2860,"pool1":10292,"off4":21244,"stridesAt":21372,"stride":52,"invbOff":475264,"nBones":31,"palOff":477400,"srOff":477648,"srStride":16,"srW":3,"maxJoint":30,"NV":1294,"vertsOff":21444,"idxOff":88854,"IDXN":6007}
+MERC joints: 31 first 6: [
+  'Bip01_Pelvis',
+  'Bip01_Spine',
+  'Bip01_Spine1',
+  'Bip01_Neck',
+  'Bip01_Head',
+  'Bip01_L_Clavicle'
+]
+MERC uv sample: [ 7.9155, 0, 4.9714, 9.0486, 8.582, 9.0034 ]
+MERC vert0: [ 0, 0, 0 ]
+MERC idx0: [ 0, 0, 1, 2, 1, 3 ]
