@@ -697,6 +697,8 @@ const S5PLUNGE = QS2.get('s5plunge') === '1';  // s56 T1: GetGlide(1) 'Glider_Pl
 const S5CTL = QS2.get('s5ctl') === '1';        // s56 T2: scripted pitch control + auto-level
 const S5EARLY = QS2.get('s5ctlEarly') === '1'; // s56 T2b: early release so the decay precedes landing
 const S5BLEND = QS2.get('s5blend') === '1';    // s58 T1: exact engine blend (takeoff-anchor distance)
+const S5REAN = QS2.get('s5reanchor') === '1';  // s60 T5: ResolveAirCollision re-anchor case (virtual wall)
+const S5WALL = parseFloat(QS2.get('s5wall') || '40');
 const S5CTLV = S5EARLY
   ? { tRamp: 0.25, tHold: 0.45, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 }
   : { tRamp: 0.4, tHold: 1.2, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 };
@@ -817,6 +819,7 @@ function s5Tick(now) {
       S5.pitch = S5P.pitch0Deg * Math.PI / 180;   // engine initial glide pitch (f10, SetInitialGlideAngle)
       S5.acc = S5P.sinkMax;   // s57 T1: engine StartGlide seeds acc = f1 = 16 (0x3806a8)
       if (S5P.mode === 'acc') S5.anchor = [P.x, P.y, P.z];   // s58 T1: engine blend anchor = takeoff pos
+      if (S5REAN) { S5.reanchors = []; S5.wallHit = null; }  // s60 T5: collision-case receipt
       S5.baseHead = Math.atan2(S5.tgt[1] - S5.from[1], S5.tgt[0] - S5.from[0]);   // s56 T2 slip reference
       S5.vz = S5P.mode === 'legacy' ? 2.0
             : S5P.mode === 'old' ? -(S5P.sinkMin + (S5P.sinkMax - S5P.sinkMin) * Math.abs(S5.pitch))
@@ -879,6 +882,24 @@ function s5Tick(now) {
     }
     let gx = P.x + sdx / dl * S5.fwd * dt2, gy = P.y + sdy / dl * S5.fwd * dt2;
     if (nm_ground(gx, gy, P.z + 2.6) <= -1e8) { gx = P.x; gy = P.y; }
+    if (S5REAN && S5.anchor && S5.wallHit === null) {
+      // s60 T5: virtual wall at S5WALL u from the TAKEOFF anchor along the heading
+      const ax = P.x - S5.anchor[0], ay = P.y - S5.anchor[1];
+      const dBefore = Math.hypot(ax, ay);
+      const nx = gx - S5.anchor[0], ny = gy - S5.anchor[1];
+      const dAfter = Math.hypot(nx, ny);
+      if (dAfter >= S5WALL && dBefore < S5WALL) {
+        // ResolveAirCollision analogue: clamp the horizontal step at the wall plane,
+        // then store the RESOLVED position into the cache (0x398570 -> 0x3987a4/74)
+        const f = (S5WALL - dBefore) / Math.max(1e-9, dAfter - dBefore);
+        gx = P.x + (gx - P.x) * f; gy = P.y + (gy - P.y) * f;
+        S5.anchor = [gx, gy, P.z];            // RE-ANCHOR at the resolved position
+        S5.wallHit = { tMs: Math.round(now - S5.tGlide), pos: [+gx.toFixed(3), +gy.toFixed(3)] };
+        if (!S5.reanchors) S5.reanchors = [];
+        S5.reanchors.push(S5.wallHit);
+        log('s5 re-anchor: wall at ' + S5WALL + ' u, anchor reset @' + S5.wallHit.tMs + ' ms');
+      }
+    }
     const nz = P.z + S5.vz * dt2;
     const gz = nm_ground(gx, gy, nz + 2.6);
     P.x = gx; P.y = gy; P.z = nz;
@@ -913,7 +934,8 @@ function s5Tick(now) {
         s5SetClip('_065_glide_idle_to_run');   // s54 T3: state table Grapnel_Horizontal_To_Glide_Idle -> _065 (667 ms), then run
         setTimeout(function () { if (S5.phase === 'done') s5SetClip('_008_run'); }, 450);
         g.s5 = { enabled: true, model: S5P.mode, ctl: !!S5CTL, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
-                 glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs, traj: S5.traj };
+                 glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs, traj: S5.traj,
+                 reanchors: S5.reanchors || [], wallHit: S5.wallHit };
         log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
         startWalkPhase();   // hand back to the standard gate walk phase
       }
