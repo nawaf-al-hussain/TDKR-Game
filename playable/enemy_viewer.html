@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>s57 T3: Melee_Enemy_Merc decoded-data viewer (branch-only, NOT deployed)</title>
+<title>s59 T4: merc combat behaviour slice (decoded data; branch-only, NOT deployed)</title>
 <style>
  html,body{margin:0;height:100%;background:#101418;color:#cfe3ee;font:13px/1.4 monospace}
- #panel{position:absolute;left:8px;top:8px;width:430px;background:rgba(8,12,16,.88);border:1px solid #2a3b4a;padding:8px 10px}
+ #panel{position:absolute;left:8px;top:8px;width:470px;background:rgba(8,12,16,.88);border:1px solid #2a3b4a;padding:8px 10px}
  #hpwrap{height:14px;background:#222;border:1px solid #444;margin:4px 0}
  #hpbar{height:100%;background:#c33;width:100%;transition:width .2s}
  button{background:#28425a;color:#cfe3ee;border:1px solid #3a5a7a;padding:4px 10px;margin:2px 0;font:inherit;cursor:pointer}
@@ -15,24 +15,29 @@
 </head>
 <body>
 <canvas id="c" width="960" height="600"></canvas>
+<script src="./tdkr_pipeline.js"></script>
 <div id="panel">
- <h4>Melee_Enemy_Merc — gol template 0x000c351d (683 B payload, s56+s57 decode)</h4>
- <div>CComponentHealth 0x0ddcd6c4 (Load = f,c,i,i @0x2d7bf0):</div>
- <div id="hpText">health = 120.0 HP @payload+121 (structural walk + s56 gap-search agree)</div>
+ <h4>Melee_Enemy_Merc — combat behaviour slice (decoded data only)</h4>
+ <div>CComponentHealth 0x0ddcd6c4: health = 120.0 @payload+121 (walk + s56 agree)</div>
  <div id="hpwrap"><div id="hpbar"></div></div>
- <button id="hitBtn">scripted player hit (5 HP — decoded GiveDamage(actorId,damage), census 5 x91)</button>
+ <div id="hpText">health = 120.0 / 120.0</div>
+ <button id="hitBtn">scripted hit (5 HP, GiveDamage 5 x91)</button>
+ <button id="hitBtn10">scripted hit (10 HP, census 10 x9)</button>
  <span id="hits">hits: 0</span>
- <h4>CComponentAwareness 0x6754056b (16 floats @+154):</h4>
- <div>radii f0=11.0 near / f1=17.0 far; f13 = FOV 160 deg (authored set {45,120,160,180}); f12=1.1, f14=2.7, f15=1.5</div>
- <h4>State clips (s58: rig = Bane_mercenary.bdae, 31 joints, shared 1449-vert topology; clips _014_idle_enemy_combat / _166_enemy_walk / _171_enemy_run play on the shared anim bank - FK battery in extraction/re/session58)</h4>
- <table><tr><td>Enemy_Combat_Idle</td><td>idle family (attack 33 / counter 20 / takedown 14 / hit 9 / block 10 of 921 clips)</td></tr>
- <tr><td>Knife_Combat_Idle</td><td>melee family</td></tr><tr><td>Enemy_Idle_Aim</td><td>aim family</td></tr></table>
+ <h4>CComponentAwareness 0x6754056b (16 floats, Load = 16x ReadFloat -&gt; +4..+0x40, s59 engine-verified)</h4>
+ <div>f0=11.0 near / f1=17.0 far; f13 = VisibilityAngle 160 DEG (engine-named: ResetVisibilityAngle 0x39638c -&gt; [comp+0x24], cosf table [comp+0x28])</div>
+ <h4>State machine (state names from the StateSet template: Idle, Hurt, Death, Walk, Run)</h4>
+ <div id="stText">state = Idle</div>
+ <div>clips: Idle=_014_idle_enemy_combat, Walk=_166_enemy_walk, Run=_171_enemy_run, Hurt=_222_enemy_hurtl, Death=_250_enemy_death1 (s58/s59 FK-validated bank)</div>
  <div id="gateOut">gate: pending</div>
+ <h4>s60 T4: real merc in the slice (Bane_mercenary.bdae FK point cloud)</h4>
+ <input type="file" id="zf"><span id="mercStat">merc: not loaded</span>
 </div>
 <script>
 'use strict';
-// Decoded values (extraction/re/session56/s56_t6_note.md + session57 structural walk)
-var HP0 = 120.0, FOV_DEG = 160.0, R_NEAR = 11.0, R_FAR = 17.0, HIT_DMG = 5.0; // GiveDamage 0x155e4c: literal arg2; census game_config.gla 146 calls, 5 x91
+// Decoded values: s56/s57/s58 walks + s59 engine naming (extraction/re/session59/s59_t3_note.md)
+var HP0 = 120.0, FOV_DEG = 160.0, R_NEAR = 11.0, R_FAR = 17.0;
+var DMG5 = 5.0, DMG10 = 10.0;   // GiveDamage(actorId,damage) 0x155e4c literal arg2; census 5 x91, 10 x9
 var health = HP0, hits = 0;
 var cv = document.getElementById('c');
 var G = cv.getContext('webgl', {antialias: false});
@@ -48,10 +53,9 @@ var P = sh(
  'precision mediump float; uniform vec4 col; void main(){ gl_FragColor = col; }');
 var uOff = G.getUniformLocation(P, 'off'), uSc = G.getUniformLocation(P, 'sc'), uCol = G.getUniformLocation(P, 'col');
 var aA = G.getAttribLocation(P, 'a');
-var CAM = [0, 0];   // camera center in world units (follows the merc)
-var SC = 3.2;       // world units -> clip scale (240 u across 750 px)
+var CAM = [0, 0];
+var SC = 3.2;
 function fan(cx, cz, r0, r1, a0, a1, seg, col, z) {
-  // top-down cone/ring sector between radii r0..r1 over angles a0..a1 (deg), y = z for depth tint
   var v = [];
   for (var i = 0; i <= seg; i++) {
     var a = (a0 + (a1 - a0) * i / seg) * Math.PI / 180;
@@ -73,61 +77,416 @@ function segs(pts, col) {
   G.drawArrays(G.LINES, 0, pts.length / 2);
   return buf;
 }
-var ME = [0, 0];  // merc position (world)
-var faceDeg = 200; // facing (deg); cone centered on facing
+var ME = [0, 0];        // merc at origin
+var faceDeg = 200;      // facing (deg); cone centered on facing
+var PL = [0, 0];        // scripted player position
+// ---------- behaviour state machine (names from the StateSet template) ----------
+var ST = 'Idle';        // Idle | Walk | Run | Hurt | Death
+var stSeq = ['Idle'];
+var hurtT = 0;
+function inCone(px, pz) {
+  // engine semantics: within radius AND inside the FOV cone around facing
+  var dx = px - ME[0], dz = pz - ME[1];
+  var d = Math.hypot(dx, dz);
+  if (d > R_FAR) return false;
+  var a = Math.atan2(dz, dx) * 180 / Math.PI;
+  var da = Math.abs(((a - faceDeg) % 360 + 540) % 360 - 180);
+  return da <= FOV_DEG / 2;
+}
+function setState(s) { if (ST !== s) { ST = s; stSeq.push(s);
+  document.getElementById('stText').textContent = 'state = ' + s; } }
+function tick(dt) {
+  if (ST === 'Death') return;
+  if (hurtT > 0) { hurtT -= dt; if (hurtT <= 0) setState(health > 0 ? 'Walk' : 'Death'); return; }
+  // alert transition: player inside the visibility cone (any radius <= R_FAR)
+  // s60 T4: alerted AND player beyond 14 u -> Run (chase approach)
+  if (inCone(PL[0], PL[1])) {
+    var dNow = Math.hypot(PL[0] - ME[0], PL[1] - ME[1]);
+    setState(dNow > 14.0 ? 'Run' : 'Walk');
+  } else setState('Idle');
+}
+function applyHit(dmg) {
+  if (ST === 'Death') return;
+  hits++; health = Math.max(0, health - dmg);
+  document.getElementById('hpbar').style.width = (100 * health / HP0) + '%';
+  document.getElementById('hits').textContent = 'hits: ' + hits;
+  document.getElementById('hpText').textContent = 'health = ' + health.toFixed(1) + ' / 120.0';
+  if (health <= 0) { setState('Death'); return; }
+  setState('Hurt'); hurtT = 0.4;
+}
+document.getElementById('hitBtn').onclick = function () { applyHit(DMG5); };
+document.getElementById('hitBtn10').onclick = function () { applyHit(DMG10); };
+// ---------- draw ----------
 function draw() {
   G.viewport(0, 0, cv.width, cv.height);
   G.clearColor(0.063, 0.078, 0.094, 1);
   G.clear(G.COLOR_BUFFER_BIT);
   G.useProgram(P); G.enableVertexAttribArray(aA);
   G.uniform2fv(uOff, CAM); G.uniform1f(uSc, SC);
-  // ground grid every 10 u
   var gp = [];
   for (var x = -300; x <= 300; x += 10) { gp.push(x, -300, x, 300, -300, x, 300, x); }
   for (var zz = -300; zz <= 300; zz += 10) { gp.push(-300, zz, 300, zz, zz, -300, zz, 300); }
   segs(gp, [0.16, 0.2, 0.24, 1]);
-  // awareness cone: NEAR ring 11 u and FAR ring 17 u, FOV 160 deg (decoded)
-  fan(ME[0], ME[1], 1.0, R_NEAR, faceDeg - FOV_DEG / 2, faceDeg + FOV_DEG / 2, 32, [0.95, 0.75, 0.2, 0.55], ME[1]);
-  fan(ME[0], ME[1], R_NEAR, R_FAR, faceDeg - FOV_DEG / 2, faceDeg + FOV_DEG / 2, 32, [0.95, 0.55, 0.15, 0.30], ME[1]);
-  // wrong-FOV control: 120 deg cone in darker blue (must NOT be confused with the decoded 160)
-  fan(ME[0], ME[1], 1.0, R_FAR * 0.6, faceDeg - 60, faceDeg + 60, 24, [0.15, 0.3, 0.6, 0.35], ME[1]);
-  // merc marker (5x2.5 u slab) + facing tick
+  var colIn = inCone(PL[0], PL[1]);
+  fan(ME[0], ME[1], 1.0, R_NEAR, faceDeg - FOV_DEG / 2, faceDeg + FOV_DEG / 2, 32,
+      colIn ? [0.55, 1, 0.35, 0.6] : [0.95, 0.75, 0.2, 0.55], ME[1]);
+  fan(ME[0], ME[1], R_NEAR, R_FAR, faceDeg - FOV_DEG / 2, faceDeg + FOV_DEG / 2, 32,
+      colIn ? [0.4, 0.9, 0.3, 0.35] : [0.95, 0.55, 0.15, 0.30], ME[1]);
+  fan(ME[0], ME[1], 1.0, R_FAR * 0.6, faceDeg - 60, faceDeg + 60, 24, [0.15, 0.3, 0.6, 0.35], ME[1] - 0.01);
   segs([ME[0]-2.5,ME[1]-1.25, ME[0]+2.5,ME[1]-1.25, ME[0]+2.5,ME[1]-1.25, ME[0]+2.5,ME[1]+1.25,
         ME[0]+2.5,ME[1]+1.25, ME[0]-2.5,ME[1]+1.25, ME[0]-2.5,ME[1]+1.25, ME[0]-2.5,ME[1]-1.25,
         ME[0],ME[1], ME[0]+R_NEAR*0.5*Math.cos(faceDeg*Math.PI/180), ME[1]+R_NEAR*0.5*Math.sin(faceDeg*Math.PI/180)],
        [0.9, 0.95, 1.0, 1]);
-  // scripted player marker 30 u south-west
-  segs([ME[0]-30-2,ME[1]-30-2, ME[0]-30+2,ME[1]-30+2, ME[0]-30-2,ME[1]-30+2, ME[0]-30+2,ME[1]-30-2], [0.3, 1, 0.4, 1]);
+  var pc = (ST === 'Walk') ? [1, 0.35, 0.3, 1] : [0.3, 1, 0.4, 1];
+  segs([PL[0]-2,PL[1]-2, PL[0]+2,PL[1]+2, PL[0]-2,PL[1]+2, PL[0]+2,PL[1]-2], pc);
 }
-document.getElementById('hitBtn').onclick = function () {
-  hits++; health = Math.max(0, health - HIT_DMG);
-  document.getElementById('hpbar').style.width = (100 * health / HP0) + '%';
-  document.getElementById('hits').textContent = 'hits: ' + hits;
-  document.getElementById('hpText').textContent = 'health = ' + health.toFixed(1) + ' / 120.0 HP';
+
+// ================= s60 T4: REAL MERC in the combat slice =================
+// Rig: Bane_mercenary.bdae (readBdae2, header-derived); anims: the SHARED bank
+// batman_anims.bdae (decodeAnims/assembleClip). FK = node hierarchy (BIPED parents),
+// animated rotation channels (nearest key) + root position channel; skin =
+// sum_k w_k * M_{J_k} * invB_{J_k} * v  (same pairing the three.js path validated).
+var CLIPS5 = { Idle: '_014_idle_enemy_combat', Walk: '_166_enemy_walk', Run: '_171_enemy_run',
+               Hurt: '_223_enemy_hurtl', Death: '_250_enemy_death1' };
+var u32leL = function (b, o) { return (b[o] | (b[o+1] << 8) | (b[o+2] << 16) | (b[o+3] << 24)) >>> 0; };
+var u16leL = function (b, o) { return b[o] | (b[o+1] << 8); };
+var LATIN = new TextDecoder('latin1');
+async function zipReadLazyL(file, m) {
+  var hh = new Uint8Array(await file.slice(m.lho, m.lho + 30).arrayBuffer());
+  if (u32leL(hh, 0) !== 0x04034b50) throw new Error('bad local header');
+  var nlen = u16leL(hh, 26), elen = u16leL(hh, 28);
+  var start = m.lho + 30 + nlen + elen;
+  var blob = file.slice(start, start + m.csize);
+  if (m.method === 0) return new Uint8Array(await blob.arrayBuffer());
+  var ds2 = new DecompressionStream('deflate-raw');
+  var st2 = new Response(blob).body.pipeThrough(ds2);
+  return new Uint8Array(await new Response(st2).arrayBuffer());
+}
+async function streamInflateRangesL(file, m, ranges) {
+  var hh = new Uint8Array(await file.slice(m.lho, m.lho + 30).arrayBuffer());
+  var nlen = u16leL(hh, 26), elen = u16leL(hh, 28);
+  var start = m.lho + 30 + nlen + elen;
+  var ds2 = new DecompressionStream('deflate-raw');
+  var src2 = new Response(file.slice(start, start + m.csize)).body.pipeThrough(ds2);
+  var reader = src2.getReader();
+  var outs = ranges.map(function (r) { return new Uint8Array(r.s); });
+  var pos = 0;
+  var endMax = 0; ranges.forEach(function (r) { endMax = Math.max(endMax, r.o + r.s); });
+  while (pos < endMax) {
+    var rd = await reader.read();
+    if (rd.done) break;
+    var v = rd.value;
+    for (var i = 0; i < ranges.length; i++) {
+      var c0 = Math.max(ranges[i].o, pos), c1 = Math.min(ranges[i].o + ranges[i].s, pos + v.length);
+      if (c1 > c0) outs[i].set(v.subarray(c0 - pos, c1 - pos), c0 - ranges[i].o);
+    }
+    pos += v.length;
+  }
+  try { await reader.cancel(); } catch (e) {}
+  return outs;
+}
+async function glaSliceLazyL(file, m, want) {
+  var head = (await streamInflateRangesL(file, m, [{ o: 0, s: 1 << 20 }]))[0];
+  var dv = new DataView(head.buffer, head.byteOffset, head.byteLength);
+  var idxSize = dv.getUint32(4), n = dv.getUint32(12);
+  var pool = head.subarray(16 + n * 16, idxSize);
+  var ents = {};
+  for (var i = 0; i < n; i++) {
+    var b = 16 + i * 16;
+    var o = dv.getUint32(b), s = dv.getUint32(b + 4), no = dv.getUint32(b + 8);
+    var e = pool.indexOf(0, no); if (e < 0) e = no + 96;
+    ents[LATIN.decode(pool.subarray(no, e))] = { o: o, s: s };
+  }
+  var rs = [], names = [];
+  for (var k = 0; k < want.length; k++) {
+    var en = ents[want[k]];
+    if (!en) throw new Error('gla member missing: ' + want[k]);
+    rs.push({ o: en.o, s: en.s }); names.push(want[k]);
+  }
+  var outs = await streamInflateRangesL(file, m, rs.map(function (r) { return { o: r.o, s: r.s + (1 << 16) }; }));
+  var res = {};
+  names.forEach(function (nm, i) { res[nm] = outs[i]; });
+  return res;
+}
+function qmulL(a, b) {
+  var x1 = a[0], y1 = a[1], z1 = a[2], w1 = a[3], x2 = b[0], y2 = b[1], z2 = b[2], w2 = b[3];
+  return [w1*x2 + x1*w2 + y1*z2 - z1*y2, w1*y2 - x1*z2 + y1*w2 + z1*x2,
+          w1*z2 + x1*y2 - y1*x2 + z1*w2, w1*w2 - x1*x2 - y1*y2 - z1*z2];
+}
+function qrotL(q, v) {
+  var vv = [v[0], v[1], v[2], 0];
+  var qc = [-q[0], -q[1], -q[2], q[3]];
+  var o = qmulL(qmulL(q, vv), qc);
+  return [o[0], o[1], o[2]];
+}
+var MC = { ready: false };
+async function loadMercCombat(file) {
+  var dir = await TDKR.zipDirLazy(file);
+  var mActors = null;
+  dir.forEach(function (ent, nm) { if (/data\/actors\.gla$/i.test(nm)) mActors = ent; });
+  if (!mActors) throw new Error('actors.gla not in zip');
+  var mem = await glaSliceLazyL(file, mActors, ['Bane_mercenary.bdae', 'batman_anims.bdae']);
+  var skin = TDKR.readBdae2(mem['Bane_mercenary.bdae']);
+  var A = TDKR.decodeAnims(mem['batman_anims.bdae']);
+  var byName = {};
+  for (var c = 0; c < A.clips.length; c++) byName[A.clips[c].name] = A.clips[c];
+  var chans5 = {};
+  var durs = {};
+  for (var st5 in CLIPS5) {
+    var cl = byName[CLIPS5[st5]];
+    if (!cl) throw new Error('clip missing: ' + CLIPS5[st5]);
+    var as = TDKR.assembleClip(A, cl, 0);
+    chans5[st5] = as.chans;
+    durs[st5] = (cl.te - cl.ts) / 1000.0;
+  }
+  // skeleton: palette joint node names + BIPED parents + node locals
+  var nodes = {};
+  for (var nn = 0; nn < skin.nodes.length; nn++) nodes[skin.nodes[nn].name] = skin.nodes[nn];
+  var order = [];
+  for (var j = 0; j < skin.jointNodes.length; j++) order.push(skin.jointNodes[j]);
+  // topological order (parents first)
+  var placed = {}, topo = [];
+  function place(nm) {
+    if (placed[nm]) return;
+    placed[nm] = true;
+    var p = skin.parentName(nm);
+    if (p && nodes[p] && order.indexOf(p) >= 0) place(p);
+    topo.push(nm);
+  }
+  for (var j2 = 0; j2 < order.length; j2++) place(order[j2]);
+  A_CH = A.CH;
+  MC = { ready: true, skin: skin, chans: chans5, durs: durs, topo: topo,
+         nodes: nodes, NV: skin._layout.NV,
+         vert0: skin.verts, idx: skin.idx,
+         J: skin.skinJ, W: skin.skinW, invB: skin.invB };
+  // point-cloud GL buffers
+  MC.prog = sh('attribute vec2 a; uniform vec2 off; uniform float sc; void main(){ vec2 p = (a - off) * sc; gl_Position = vec4(p.x, p.y, 0.0, 1.0); gl_PointSize = 2.2; }',
+    'precision mediump float; uniform vec4 col; void main(){ gl_FragColor = col; }');
+  MC.uOff = G.getUniformLocation(MC.prog, 'off'); MC.uSc = G.getUniformLocation(MC.prog, 'sc');
+  MC.uCol = G.getUniformLocation(MC.prog, 'col'); MC.aA = G.getAttribLocation(MC.prog, 'a');
+  MC.vbuf = G.createBuffer();
+  document.getElementById('mercStat').textContent = 'merc: ' + skin._layout.NV + ' verts, ' +
+    skin.jointNodes.length + ' joints, 5 clips';
+}
+function chanSample(ch5, tMs) {
+  // nearest key at or before tMs (s35 convention); null channel -> null
+  if (!ch5) return null;
+  var t = ch5.t, v = ch5.v;
+  var lo = 0, hi = t.length - 1;
+  if (tMs <= t[0]) return v[0];
+  if (tMs >= t[hi]) return v[hi];
+  while (hi - lo > 1) { var mid = (lo + hi) >> 1; if (t[mid] <= tMs) lo = mid; else hi = mid; }
+  return v[lo];
+}
+function chanSampleRoot(ch5, tMs) {
+  if (!ch5) return [0, 0, 0];
+  var s = chanSample(ch5, tMs);
+  return s ? [s[0], s[1], s[2]] : [0, 0, 0];
+}
+function fkPose(stateName, tState) {
+  // returns worldP/worldQ per joint name (rig space, z-up)
+  var chans = MC.chans[stateName];
+  var tMs = Math.round(tState * 1000);
+  var chanIdx = {};
+  // CH names carry a '-node' suffix (s35 convention); joint names do not
+  for (var c = 0; c < A_CH.length; c++) chanIdx[A_CH[c].name.replace(/-node$/, '') + '|' + A_CH[c].ty] = c;
+  var WP = {}, WQ = {};
+  for (var i = 0; i < MC.topo.length; i++) {
+    var nm = MC.topo[i];
+    var nd = MC.nodes[nm];
+    var ciR = chanIdx[nm + '|5'];
+    var q = (ciR !== undefined && chans[ciR]) ? chanSample(chans[ciR], tMs) : nd.q;
+    if (!q) q = nd.q;
+    var parent = MC.skin.parentName(nm);
+    if (nm === 'Bip01') {
+      var ciP = chanIdx[nm + '|1'];
+      WP[nm] = chanSampleRoot(ciP !== undefined ? chans[ciP] : null, tMs);
+      WQ[nm] = q;
+    } else if (parent && WP[parent]) {
+      var lt = [nd.t[0] * nd.s[0], nd.t[1] * nd.s[1], nd.t[2] * nd.s[2]];
+      var off = qrotL(WQ[parent], lt);
+      WP[nm] = [WP[parent][0] + off[0], WP[parent][1] + off[1], WP[parent][2] + off[2]];
+      WQ[nm] = qmulL(WQ[parent], q);
+    } else {
+      WP[nm] = [nd.t[0], nd.t[1], nd.t[2]];
+      WQ[nm] = q;
+    }
+  }
+  return { WP: WP, WQ: WQ };
+}
+var A_CH = null;
+function skinFrame(stateName, tState) {
+  var pose = fkPose(stateName, tState);
+  var NV = MC.NV, out = new Float32Array(NV * 2);
+  var hmin = 1e9, hmax = -1e9;
+  var J = MC.J, W = MC.W, V = MC.vert0, invB = MC.invB, WP = pose.WP, WQ = pose.WQ;
+  var nameToIdx = {};
+  for (var k = 0; k < MC.skin.jointNodes.length; k++) nameToIdx[MC.skin.jointNodes[k]] = k;
+  for (var v = 0; v < NV; v++) {
+    var px = V[3*v], py = V[3*v+1], pz = V[3*v+2];
+    var ox = 0, oy = 0, oz = 0;
+    for (var s4 = 0; s4 < 4; s4++) {
+      var w = W[4*v + s4];
+      if (w <= 0) continue;
+      var jn = MC.skin.jointNodes[J[4*v + s4]];
+      if (!jn || !WQ[jn]) continue;
+      var q = WQ[jn], p = WP[jn];
+      var ib = invB[J[4*v + s4]];
+      // invB (file) * v  (affine, column-major 4x4 rows stored flat)
+      var bx = ib[0]*px + ib[4]*py + ib[8]*pz + ib[12];
+      var by = ib[1]*px + ib[5]*py + ib[9]*pz + ib[13];
+      var bz = ib[2]*px + ib[6]*py + ib[10]*pz + ib[14];
+      // rotate by world q, translate by world p
+      var r = qrotL(q, [bx, by, bz]);
+      ox += w * (r[0] + p[0]); oy += w * (r[1] + p[1]); oz += w * (r[2] + p[2]);
+    }
+    out[2*v] = ox; out[2*v+1] = oy;
+    if (oz < hmin) hmin = oz; if (oz > hmax) hmax = oz;
+  }
+  return { xy: out, hmin: hmin, hmax: hmax };
+}
+function drawMerc(stateName, tState) {
+  if (!MC.ready) return;
+  var f = skinFrame(stateName, tState);
+  G.useProgram(MC.prog);
+  G.uniform2fv(MC.uOff, CAM); G.uniform1f(MC.uSc, SC);
+  G.uniform4fv(MC.uCol, stateName === 'Hurt' ? [1, 0.5, 0.2, 1] :
+    (stateName === 'Death' ? [0.5, 0.5, 0.55, 1] : [0.35, 0.9, 1, 1]));
+  G.bindBuffer(G.ARRAY_BUFFER, MC.vbuf);
+  G.bufferData(G.ARRAY_BUFFER, f.xy, G.DYNAMIC_DRAW);
+  G.enableVertexAttribArray(MC.aA);
+  G.vertexAttribPointer(MC.aA, 2, G.FLOAT, false, 0, 0);
+  G.drawArrays(G.POINTS, 0, MC.NV);
+  MC.lastH = [f.hmin, f.hmax];
+  return f;
+}
+// ---- forced wrong-clip control: sample Walk clip while state=Idle ----
+function drawMercWrongClip(tState) {
+  if (!MC.ready) return skinFrame('Idle', tState);
+  var f = skinFrame('Walk', tState);   // WRONG clip for Idle state
+  return f;
+}
+async function runCombatGate() {
+  // reset the machine (the s59 gate ran first and drains health to Death)
+  health = HP0; hits = 0; ST = 'Idle'; stSeq = ['Idle']; hurtT = 0;
+  document.getElementById('hpbar').style.width = '100%';
+  document.getElementById('hits').textContent = 'hits: 0';
+  document.getElementById('hpText').textContent = 'health = 120.0 / 120.0';
+  var g = { enabled: true, states: ['Idle', 'Walk', 'Run', 'Hurt', 'Death'],
+    clipByState: CLIPS5, fovDeg: FOV_DEG, rNear: R_NEAR, rFar: R_FAR, health0: HP0,
+    dmg: [DMG5, DMG10], runRule: 'alerted && dist > 14', hurtHoldSec: 0.4 };
+  var rad = faceDeg * Math.PI / 180;
+  function st(t) { tick(t); return ST; }
+  // controls (s59): far outside cone; inside radius but behind facing
+  PL = [0, 60]; st(0.016);
+  g.ctlFar = { pos: [0, 60], state: ST, clip: CLIPS5[ST] === CLIPS5.Idle };
+  PL = [ME[0] - 15 * Math.cos(rad), ME[1] - 15 * Math.sin(rad)]; st(0.016);
+  g.ctlBehind = { state: ST, clip: CLIPS5[ST] === CLIPS5.Idle };
+  g.ctlPass = g.ctlFar.state === 'Idle' && g.ctlBehind.state === 'Idle';
+  // enter cone near (8 u) -> Walk
+  PL = [ME[0] + 8 * Math.cos(rad), ME[1] + 8 * Math.sin(rad)]; st(0.016);
+  g.walkState = ST;
+  // far-but-in-cone (15.5 u) -> Run
+  PL = [ME[0] + 15.5 * Math.cos(rad), ME[1] + 15.5 * Math.sin(rad)]; st(0.016);
+  g.runState = ST;
+  // back near -> Walk
+  PL = [ME[0] + 8 * Math.cos(rad), ME[1] + 8 * Math.sin(rad)]; st(0.016);
+  g.walk2State = ST;
+  // hits: 5 -> Hurt; expire -> Walk; 10 -> Hurt; drain -> Death
+  applyHit(DMG5);  g.hpAfter5 = health; g.stateAfter5 = ST;
+  tick(0.5);       g.stateAfterHurt = ST;
+  applyHit(DMG10); g.hpAfter10 = health; g.stateAfter10 = ST;
+  tick(0.5);
+  var guard = 0;
+  while (health > 0 && guard < 40) { applyHit(DMG10); tick(0.5); guard++; }
+  g.hpFinal = health; g.stateFinal = ST; g.stateSeq = stSeq.slice(0, 24);
+  // wrong-clip control: while Idle, a Walk-clip skin must DIFFER from the Idle skin
+  PL = [0, 60]; st(0.016);
+  var fIdle = skinFrame('Idle', 0.5), fWrong = drawMercWrongClip(0.5);
+  var d = 0;
+  for (var i = 0; i < fIdle.xy.length; i++) d += Math.abs(fIdle.xy[i] - fWrong.xy[i]);
+  g.ctlWrongClipDiff = +(d / MC.NV).toFixed(4);
+  g.ctlWrongClipDetected = g.ctlWrongClipDiff > 0.05;
+  g.mercLoaded = MC.ready;
+  g.mercVerts = MC.NV;   // skin._layout.NV
+  g.mercH = MC.lastH ? [+MC.lastH[0].toFixed(3), +MC.lastH[1].toFixed(3)] : null;
+  g.pass = g.mercLoaded && g.ctlPass && g.ctlWrongClipDetected &&
+    g.walkState === 'Walk' && g.runState === 'Run' && g.walk2State === 'Walk' &&
+    g.stateAfter5 === 'Hurt' && g.hpAfter5 === 115 && g.stateAfterHurt === 'Walk' &&
+    g.stateAfter10 === 'Hurt' && g.hpAfter10 === 105 && g.hpFinal === 0 && g.stateFinal === 'Death';
+  window.__GATE = window.__GATE || {};
+  window.__GATE.combat = g;
+  document.getElementById('gateOut').textContent = 'combat gate: ' + JSON.stringify(g);
+}
+// hook: load + render loop + run gate after load
+document.getElementById('zf').addEventListener('change', async function (e) {
+  try {
+    await loadMercCombat(e.target.files[0]);
+    runCombatGate();
+  } catch (err) {
+    document.getElementById('mercStat').textContent = 'merc: ERROR ' + (err && err.message || err);
+  }
+});
+var mercClock0 = null;
+var _draw0 = draw;
+draw = function () {
+  _draw0();
+  if (MC.ready) {
+    var dt5 = ST === 'Hurt' ? Math.max(0, 0.4 - Math.max(0, hurtT)) : (performance.now() - (mercClock0 = mercClock0 || performance.now())) / 1000;
+    var tS = ST === 'Death' ? (MC.durs.Death || 1) : (ST === 'Hurt' ? (0.4 - Math.max(0, hurtT)) : (performance.now() / 1000) % Math.max(0.05, MC.durs[ST] || 1));
+    drawMerc(ST, tS);
+  }
 };
-// gate: cone geometry numbers, health change, clip names, wrong-FOV control moves
-var gate = { enabled: true, fovDeg: FOV_DEG, rNear: R_NEAR, rFar: R_FAR, health0: HP0,
-  hitDamage: HIT_DMG, damageProvenance: 'GiveDamage(actorId,damage) @0x155e4c literal arg2; game_config.gla census: 146 calls, 12 distinct values, 5 x91',
-  states: ['Enemy_Combat_Idle', 'Knife_Combat_Idle', 'Enemy_Idle_Aim'],
-  clipFamilies: { attack: 33, counter: 20, takedown: 14, hit: 9, block: 10, total: 921 },
-  enemyClipBindings: 'UNDONE (bdae anim_pack gap, standing since s36)' };
-gate.coneCheck = (function () {
-  // the drawn far fan spans exactly FOV_DEG: verify by construction + a deliberate wrong-FOV control
-  var right = (faceDeg + FOV_DEG / 2) - (faceDeg - FOV_DEG / 2);
-  var ctrl = 120; // the blue control cone
-  return { drawnApertureDeg: right, controlApertureDeg: ctrl, apertureMoves: right !== ctrl,
-           radiiMove: (R_FAR - R_NEAR) === 6.0 };
-})();
+
+// ---------- scripted gate: negative control (outside cone) then inside, hits, death ----------
 function runGate() {
-  document.getElementById('hitBtn').onclick();
-  gate.healthBefore = HP0; gate.healthAfter = health; gate.healthDelta = HP0 - health;
-  gate.pass = gate.coneCheck.drawnApertureDeg === 160 && gate.coneCheck.apertureMoves &&
-              gate.coneCheck.radiiMove && gate.healthAfter === 115.0;
-  document.getElementById('gateOut').textContent = 'gate: ' + JSON.stringify(gate);
-  window.__GATE = gate;
+  var g = { enabled: true, fovDeg: FOV_DEG, rNear: R_NEAR, rFar: R_FAR, health0: HP0,
+    hitDamage5: DMG5, hitDamage10: DMG10,
+    damageProvenance: 'GiveDamage(actorId,damage) @0x155e4c literal arg2; census 146 calls: 5 x91, 10 x9',
+    awarenessProvenance: 'Load = 16x ReadFloat -> +4..+0x40 (s59); f13 VisibilityAngle deg (ResetVisibilityAngle 0x39638c)',
+    states: ['Idle', 'Walk', 'Hurt', 'Death'],
+    clipFamilies: { attack: 33, counter: 20, takedown: 14, hit: 9, block: 10, total: 921 } };
+  // (1) NEGATIVE CONTROL: player far outside the cone -> state must stay Idle
+  PL = [0, 60];   // 60 u behind-left, outside R_FAR and the cone
+  tick(0.016);
+  g.ctlOutsidePos = [0, 60];
+  g.ctlState = ST;
+  // also inside R_FAR but BEHIND the facing (outside the 160-deg cone): 15 u at facing+180
+  var rad = faceDeg * Math.PI / 180;
+  PL = [ME[0] - 15 * Math.cos(rad), ME[1] - 15 * Math.sin(rad)];
+  tick(0.016);
+  g.ctlBehindPos = [PL[0], PL[1]];
+  g.ctlBehindState = ST;
+  g.ctlPass = (g.ctlState === 'Idle' && g.ctlBehindState === 'Idle');
+  // (2) player enters the cone at 8 u (inside R_NEAR)
+  PL = [ME[0] + 8 * Math.cos(rad), ME[1] + 8 * Math.sin(rad)];
+  tick(0.016);
+  g.alertState = ST;                     // expect Walk
+  g.coneGeom = (function () {
+    var right = (faceDeg + FOV_DEG / 2) - (faceDeg - FOV_DEG / 2);
+    return { drawnApertureDeg: right, controlApertureDeg: 120,
+             apertureMoves: right !== 120, radiiMove: (R_FAR - R_NEAR) === 6.0 };
+  })();
+  // (3) scripted hits: 5, then 10 (both census values), then to 0
+  applyHit(DMG5);  g.hpAfterHit5 = health;  g.stateAfterHit5 = ST;   // 115, Hurt
+  tick(0.5);                                          // Hurt expires -> Walk
+  g.stateAfterHurtExpires = ST;
+  applyHit(DMG10); g.hpAfterHit10 = health; g.stateAfterHit10 = ST;  // 105, Hurt
+  tick(0.5);
+  var guard = 0;
+  while (health > 0 && guard < 40) { applyHit(DMG10); tick(0.5); guard++; }
+  g.hpFinal = health; g.stateFinal = ST; g.hitsTotal = hits; g.stateSeq = stSeq;
+  g.pass = g.ctlPass && g.alertState === 'Walk' &&
+           g.coneGeom.drawnApertureDeg === 160 && g.coneGeom.apertureMoves && g.coneGeom.radiiMove &&
+           g.hpAfterHit5 === 115 && g.stateAfterHit5 === 'Hurt' && g.stateAfterHurtExpires === 'Walk' &&
+           g.hpAfterHit10 === 105 && g.hpFinal === 0 && g.stateFinal === 'Death' &&
+           stSeq.indexOf('Death') > stSeq.indexOf('Idle');
+  document.getElementById('gateOut').textContent = 'gate: ' + JSON.stringify(g);
+  window.__GATE = g;
+  draw();
 }
-setTimeout(draw, 0);
-setTimeout(runGate, 50);
+draw();
+setTimeout(runGate, 60);
 </script>
 </body>
 </html>
