@@ -1279,7 +1279,7 @@ function runRouteCheck() {
 
 /* ================= Batman from the USER's zip (s40 T7 pipeline, engine-verified) ================= */
 function u16a(arr) { const o = new Uint16Array(arr.length); o.set(arr); return o; }
-const buildGLB = function buildGLB(skin, A, byNameC) {
+const buildGLB = function buildGLB(skin, A, byNameC, clipsToEmbed) {
     const f32 = a => new Float32Array(a);
     const BIPED = {
       'Bip01_Pelvis':'Bip01','Bip01_Spine':'Bip01_Pelvis','Bip01_Spine1':'Bip01_Spine',
@@ -1318,7 +1318,7 @@ const buildGLB = function buildGLB(skin, A, byNameC) {
     gnodes.push({ name: 'BATMAN_mesh', mesh: 0, skin: 0 });
     const posB = f32(skin.verts), uvB = f32(skin.uvs), wtB = f32(skin.skinW);
     const jnB = u16a(skin.skinJ), idxB = u16a(skin.idx);
-    const ibmB = new Float32Array(31 * 16);
+    const ibmB = new Float32Array(skin.invB.length * 16);
     skin.invB.forEach((m, i) => ibmB.set(m, i * 16));
     const order6 = [['pos', posB], ['uv', uvB], ['wt', wtB], ['jn', jnB], ['idx', idxB], ['ibm', ibmB]];
     const offs = {}; let base = 0;
@@ -1342,9 +1342,9 @@ const buildGLB = function buildGLB(skin, A, byNameC) {
     addAcc(offs.wt, wtB.byteLength, NVV, 5126, 'VEC4');
     addAcc(offs.jn, jnB.byteLength, NVV, 5123, 'VEC4');
     addAcc(offs.idx, idxB.byteLength, idxB.length, 5123, 'SCALAR');
-    gltf.skins[0].inverseBindMatrices = addAcc(offs.ibm, ibmB.byteLength, 31, 5126, 'MAT4');
+    gltf.skins[0].inverseBindMatrices = addAcc(offs.ibm, ibmB.byteLength, skin.invB.length, 5126, 'MAT4');
     const animBins = []; let ab = 0;
-    for (const nm of ['_001_idle_stand', '_007_walk', '_008_run', '_057_glide_idle', '_089_grapnel_pull', '_088_grapnel_shoot', '_065_glide_idle_to_run']) {   // s53 T5 + s54 T3: state-table clips (Glide_Idle, Grapnel pull, Grapnel_Horizontal_To_Glide_Idle -> _065 landing transition)
+    for (const nm of (clipsToEmbed || ['_001_idle_stand', '_007_walk', '_008_run', '_057_glide_idle', '_089_grapnel_pull', '_088_grapnel_shoot', '_065_glide_idle_to_run'])) {   // s53 T5 + s54 T3: state-table clips; s59 T2: caller-suppliable list (enemy clips)
       const clip = byNameC[nm]; if (!clip) continue;
       const { chans } = TDKR.assembleClip(A, clip);
       const samplers = []; const chansG = [];
@@ -1555,6 +1555,7 @@ async function loadBatman(zipBuf, findM) {
 const ENEMY_CLIPS = ['_014_idle_enemy_combat', '_166_enemy_walk', '_171_enemy_run'];
 const ENEMY_DMG = 5.0;
 let merc = null, mercMixer = null, mercActions = {}, mercSeq = null;
+let mercSkinProbe = null, mercDisp = { byClip: {} };
 async function loadMerc(zipBuf, findM) {
   const aMem = await glaSliceLazy(zipBuf, zmembersGet(findM(/data\/actors\.gla$/i)),
     new Set(['Bane_mercenary.bdae', 'batman_anims.bdae']));
@@ -1564,7 +1565,7 @@ async function loadMerc(zipBuf, findM) {
   const atEnt = atIdx.get(atWant);
   let atBytes = atEnt ? (await streamInflateRanges(zipBuf, atM, [{ o: atEnt.o, s: atEnt.s }]))[0] : null;
   atIdx.clear();
-  const skin = TDKR.readBdae(aMem['Bane_mercenary.bdae']);
+  const skin = TDKR.readBdae2(aMem['Bane_mercenary.bdae']);  // s59 T2: layout from the file's own headers
   const A = TDKR.decodeAnims(aMem['batman_anims.bdae']);
   log('LZ Bane_mercenary.bdae bytes=' + aMem['Bane_mercenary.bdae'].length +
       ' verts=' + skin.verts.length / 3 + ' joints=' + (skin.jointNodes ? skin.jointNodes.length : -1));
@@ -1586,7 +1587,7 @@ async function loadMerc(zipBuf, findM) {
   const byNameC = Object.fromEntries(A.clips.map(c => [c.name, c]));
   const missing = ENEMY_CLIPS.filter(nm => !byNameC[nm]);
   if (missing.length) throw new Error('enemy clips missing: ' + missing.join(','));
-  const glbBytes = buildGLB(skin, A, byNameC);
+  const glbBytes = buildGLB(skin, A, byNameC, ENEMY_CLIPS);
   const g = await new Promise((res, rej) => new GLTFLoader().parse(glbBytes.buffer, '', res, rej));
   merc = g.scene; merc.rotation.x = -Math.PI / 2;
   merc.position.set(P.x + 2.0, P.y, P.z);
@@ -1596,6 +1597,19 @@ async function loadMerc(zipBuf, findM) {
   const sm = (() => { let s = null; merc.traverse(o => { if (o.isSkinnedMesh) s = o; }); return s; })();
   if (texture && sm) { sm.material.map = texture; sm.material.color.set(0xffffff); sm.material.needsUpdate = true; }
   mercSeq = { t0: performance.now(), phase: 0, wraps: 0, zmin: 1e9, zmax: -1e9, lastT: 0 };
+  // s59 T2: CPU-skin probe (vertex displacement gate). applyBoneTransform on a
+  // subset; per-phase mean |delta|; wrong-clip negative control at report time.
+  mercSkinProbe = null; mercDisp = { byClip: {} };
+  {
+    const sm0 = (() => { let s = null; merc.traverse(o => { if (o.isSkinnedMesh) s = o; }); return s; })();
+    if (sm0 && sm0.geometry.attributes.position) {
+      const nV = sm0.geometry.attributes.position.count;
+      const step = Math.max(1, Math.floor(nV / 150));
+      const idxs = [];
+      for (let i = 0; i < nV && idxs.length < 150; i += step) idxs.push(i);
+      mercSkinProbe = { sm: sm0, idxs, v: new THREE.Vector3() };
+    }
+  }
   const idle = mercActions[ENEMY_CLIPS[0]]; idle.play(); idle.setEffectiveWeight(1);
   return { verts: skin.verts.length / 3, joints: skin.jointNodes ? skin.jointNodes.length : -1,
            clips: g.animations.filter(a => ENEMY_CLIPS.indexOf(a.name) >= 0).map(a => a.name) };
@@ -1614,12 +1628,62 @@ function mercTick(now) {
   mercSeq.lastT = mercActions[ENEMY_CLIPS[mercSeq.phase]].time;
   let bb = new THREE.Box3().setFromObject(merc);
   if (isFinite(bb.min.z)) { mercSeq.zmin = Math.min(mercSeq.zmin, bb.min.z); mercSeq.zmax = Math.max(mercSeq.zmax, bb.max.z); }
-  if (t > 12 && !mercSeq.reported) {
+  // s59 T2: per-phase mean vertex displacement (CPU skinning on the subset)
+  if (mercSkinProbe) {
+    const pr = mercSkinProbe, out = new Float32Array(pr.idxs.length * 3);
+    for (let k = 0; k < pr.idxs.length; k++) {
+      pr.sm.applyBoneTransform(pr.idxs[k], pr.v);
+      out[k*3] = pr.v.x; out[k*3+1] = pr.v.y; out[k*3+2] = pr.v.z;
+    }
+    if (mercSeq.lastSkin && mercSeq.lastSkin.length === out.length) {
+      let s = 0;
+      for (let i = 0; i < out.length; i++) s += Math.abs(out[i] - mercSeq.lastSkin[i]);
+      const nm = ENEMY_CLIPS[mercSeq.phase];
+      if (!mercDisp.byClip[nm]) mercDisp.byClip[nm] = { sum: 0, n: 0 };
+      mercDisp.byClip[nm].sum += s / pr.idxs.length; mercDisp.byClip[nm].n++;
+    }
+    mercSeq.lastSkin = out;
+  }
+  if (t > 12 && !mercSeq.reported && mercSkinProbe) {
     mercSeq.reported = true;
-    window.__GATE.enemyPlay = { ok: true, wraps: mercSeq.wraps, phasesSeen: mercSeq.phase + 1,
+    // negative control: sample the WRONG clip (walk) labeled as the idle slot;
+    // its displacement must differ from the measured enemy idle.
+    const ctlClip = ENEMY_CLIPS[1];
+    for (const nm of ENEMY_CLIPS) mercActions[nm].setEffectiveWeight(0);
+    const ca = mercActions[ctlClip]; ca.setEffectiveWeight(1); ca.play();
+    let ctlSum = 0, ctlN = 0, prev = null;
+    for (let f = 0; f < 30; f++) {
+      mercMixer.update(1 / 60);
+      merc.updateMatrixWorld(true);   // no render here: refresh bone world matrices for the probe
+      if (mercSkinProbe) {
+        const pr = mercSkinProbe, out = new Float32Array(pr.idxs.length * 3);
+        for (let k = 0; k < pr.idxs.length; k++) {
+          pr.sm.applyBoneTransform(pr.idxs[k], pr.v);
+          out[k*3] = pr.v.x; out[k*3+1] = pr.v.y; out[k*3+2] = pr.v.z;
+        }
+        if (prev) { let s = 0; for (let i = 0; i < out.length; i++) s += Math.abs(out[i] - prev[i]);
+          ctlSum += s / pr.idxs.length; ctlN++; }
+        prev = out;
+      }
+    }
+    ca.setEffectiveWeight(0);
+    const disp = {};
+    for (const k of Object.keys(mercDisp.byClip)) disp[k] = +(mercDisp.byClip[k].sum / Math.max(1, mercDisp.byClip[k].n)).toFixed(5);
+    const dispCtl = +(ctlSum / Math.max(1, ctlN)).toFixed(5);
+    const dIdle = disp[ENEMY_CLIPS[0]], dWalk = disp[ENEMY_CLIPS[1]], dRun = disp[ENEMY_CLIPS[2]];
+    const okGate = isFinite(dIdle) && isFinite(dWalk) && isFinite(dRun) && isFinite(dispCtl) &&
+      dIdle > 0 && dWalk > 0 && dRun > 0 && Math.abs(dispCtl - dIdle) > 1e-4;
+    window.__GATE.enemyPlay = { ok: okGate, wraps: mercSeq.wraps, phasesSeen: mercSeq.phase + 1,
       bboxZmin: +mercSeq.zmin.toFixed(3), bboxZmax: +mercSeq.zmax.toFixed(3),
-      clip: ENEMY_CLIPS[mercSeq.phase], dmg: ENEMY_DMG };
-    log('enemy playback: wraps=' + mercSeq.wraps + ' bboxZ=[' + mercSeq.zmin.toFixed(2) + ',' + mercSeq.zmax.toFixed(2) + ']');
+      clip: ENEMY_CLIPS[mercSeq.phase], dmg: ENEMY_DMG,
+      dispIdle: dIdle, dispWalk: dWalk, dispRun: dRun, dispCtlWrongClip: dispCtl,
+      ctlClip, probeVerts: mercSkinProbe ? mercSkinProbe.idxs.length : 0 };
+    log('enemy playback: wraps=' + mercSeq.wraps + ' disp=' + JSON.stringify(disp) + ' ctlWrong=' + dispCtl +
+        ' bboxZ=[' + mercSeq.zmin.toFixed(2) + ',' + mercSeq.zmax.toFixed(2) + ']');
+    if (window.__GATE.pendingFinalize && !window.__GATE.done) {
+      const extra = window.__GATE.pendingFinalize; window.__GATE.pendingFinalize = null;
+      finalizeGate(extra);
+    }
   }
 }
 function zmembersGet(key) {
@@ -1730,6 +1794,12 @@ function finalizeGate(extra) {
   g.heap_mb_peak = Math.max(heapMB(), ...(g.heapSamples.filter(x => x > 0)));
   g.wall_ms = Math.round(performance.now() - T0GLOBAL);
   g.ready = true;
+  // s59 T2: in enemy mode, hold `done` until the merc playback report exists
+  // (mercTick runs inside the rAF loop, which stops at done), then finish.
+  if (QS2.get('enemy') === '1' && !g.enemyPlay) {
+    g.pendingFinalize = extra || {};
+    return;
+  }
   g.done = true;
 }
 
@@ -2021,6 +2091,7 @@ function tick(now) {
     bCam.lookAt(P.x, P.z - 0.75, -P.y);
     bRenderer.render(bScene, bCam);
   }
+  if (merc) mercTick(now);   // s59 T2: enemy playback continues through the walk phase
   // walk samples at +2s/+4s/+6s after walk phase start
   const wel = now - SAMP.walkT0;
   const plan = [ { at: 2000 }, { at: 4000 }, { at: 6000, final: true } ];
@@ -2035,7 +2106,7 @@ function tick(now) {
       SAMP.s.push(smp);
     }
   }
-  if (SAMP.s.length === 3) finishWalk();
+  if (SAMP.s.length === 3 && !SAMP.walkFinished) { SAMP.walkFinished = true; finishWalk(); }
 }
 function startWalkPhase() {
   SAMP.walkT0 = performance.now();
