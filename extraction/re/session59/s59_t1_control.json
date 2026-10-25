@@ -1,0 +1,28 @@
+{
+ "s5blend_exact": {
+  "n": 25,
+  "max_blend_closedform_err": 0.000500000000000167,
+  "max_vz_err_perframe_model": 0.5247484693044946,
+  "blend_range_measured": [
+   2,
+   1.434
+  ],
+  "blendD_range": [
+   0,
+   4.526
+  ]
+ },
+ "s5blend_plunge": {
+  "n": 28,
+  "max_blend_closedform_err": 0.0004999999999999449,
+  "max_vz_err_perframe_model": 1.0819357513256194,
+  "blend_range_measured": [
+   2,
+   0.875
+  ],
+  "blendD_range": [
+   0,
+   9.003
+  ]
+ }
+}
