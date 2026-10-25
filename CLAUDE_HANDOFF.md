@@ -1150,3 +1150,98 @@ record). NOTHING deployed; remote unchanged.
   merc path (0.25 session)).
 - NOT in (unchanged): AI/mission flow 4-6; audio 1-2; UI 1-2; cloth cape 1; cross-region nav
   1-2; city-scale lit rendering 1-2. Memory: environment-dominated until a real-GPU block.
+
+## SESSION 60 (round 50, 2026-10-25) — template walker REBUILT FROM THE ENGINE (64 GCT cases; engine-true 144/149 pure; hybrid 524/653); vehicle health 300 signal-1-pinned; merc discriminating validation + IoU 0.9516; combat slice runs the REAL merc; glide re-anchor page-verified
+
+**STATE at start:** remote unchanged (main a8e6124, gh-pages 6145545 LIVE, staged 39298a4, staged-s44 6145545, s41 7b0807e, s40 80274a1, essentials 7c8defc); local main 3dea1e3 (28 ahead), s56-t1-glide b1f5dfb, s56-t3-migrate 47e73d1, s55-t1-title-fix 0cea8b8. CLAUDE_HANDOFF.md 1152 lines complete. NO token supplied -> NOTHING pushed. No real-GPU block -> T6 = environment-dominated.
+
+**T1 template walker — REBUILT FROM THE ENGINE, calibration PASSED (751b5c7):**
+- GenerateComponentTemplate 0x368ac0 = pure if-chain, **64 cases** (s59 said 63 - the
+  prologue case 0x365cfd67 compares before push; extractor window bug). Every case:
+  `movw/movt id; cmp r0,r3; beq CASE` -> `bl _Znwj; ldr r3,[pc,..]; add r3,pc,r3;
+  add r3,r3,#8; str r3,[r0]; b 0x368bfc` -> tail `ldr r3,[r4]; ldr r3,[r3,#0x10]; blx r3`
+  = **template reader = [vptr+0x10]** (vptr = vtable+8).
+- **DEFAULT PATH = `mov r4,#0; ldr r3,[r4]` @0x368bf4 = null-deref CRASH** (all 15 bne
+  defaults converge). GOM::Load/Reload call GCT for EVERY comp (no flag check, no skip);
+  CreateObject's `beq -> skip` null-check is unreachable (GCT cannot legally return null).
+  => **classes outside the 64 are engine-unloadable in templates**; records are
+  offset-table framed so unread tails are never consumed by GCT.
+- s59 corrections: 0x14ca79 = CComponentBase::Load 0x1fe924 = c,i,f*9,c,c,c (44 B, 446 uses)
+  and 0x152b87 = CComponentMesh::Load 0x2d6ddc = STR,c,c,c,c (8 B, 441 uses) - the two top
+  "unrecoverable legacy" blockers HAVE cases; 0x0116a6fa HAS a case (CComponentTrail);
+  0x33702f4a -> CComponentDummies::Load (not Sniper). NO case (constants appear nowhere in
+  .text/data): Awareness 0x6754056b, StateSet 0x5441a117, Motion 0x592ce07c, CustomizeActor
+  0x40c6b80a, DropCollectible 0x3ef5108d, CVehicleCollision 0x67c82e62, CBeastSpot,
+  CCollectible, Sniper 0x0e1f5b6f.
+- ActorBase CORRECTED from disasm: **7c + 16f + 3c + i + i + n*(i+c) = 82+5n, loop count =
+  the SECOND int** (s58 said 78+5n, count = first int). Hand-verified readers:
+  MainStoryQuests = i(n) + n*(i,i,4STR,i,STR,c); NewShopItemProperty = s30 spec CONFIRMED.
+- Walk: **ENGINE-TRUE 149/653 templates are pure-case; 144/149 bounds-closed (96.6%),
+  139/149 exact**, 5 NA (empty comps), 5 legit tails (4,4,4,15,21 B). Blockers on pure = 0.
+- **HYBRID (engine 64 + s30 lvc-instance specs + s58 overrides + 1 labelled gol-shape
+  correction): 524/653 bounds-closed (80.2%), 393 exact**, carriers 33 bounded; **18/18
+  s58-comparable carrier values EXACT** (health + 16 aware floats); two position classes:
+  NPC carriers (health@121, aware@138) x14, VEHICLE carriers (health@137, aware@154) x19.
+- Gol-shape correction (labelled data-derived): 0x59a8390c = 16 B in gol vs s30 12 B
+  (159 tail-4 records; exact 234->393) - consistent with the template/instance reader
+  duality; engine cannot verify (no GCT case).
+- s58 blocker ledger: Base 445->0, Mesh 441->0, Beast_Omni 59->0, Objective 24->0,
+  365cfd67 156->0, 0e31d4a0 10->0, Gadget 9->0, LEN-MISMATCH 111->131 small-tails;
+  UNRESOLVED same-cause: Trail 20 (spec incomplete), 7d561d33 18, CVehicleCollision 14,
+  CustomizeActor 12 (CUST OOB), CBeastSpot 11, CCollectible 10.
+- Nulls (documented): spec-permutation 118/149 vs real 144 (weak - fixed-size collisions);
+  payload rot-7 142/149 (length-only closure for all-fixed specs). Strongest basis =
+  engine derivation + 18/18 value agreement.
+
+**T2 vehicle health (c0d5783):** Signal 1 (engine): 19 vehicle carriers read Health via the
+ENGINE reader (f,c,i,i) at aligned offset 137 -> **300.0** (records close to bounds);
+Signal 2 (Lua): SetActorHealth x26 / GetActorHealth x12 / GetActorPercentHealth x4, ALL
+actor-generic (gol scripts embed 1,916 Lua bodies; zero vehicle-word+Health co-refs);
+GiveDamage 146 sites context-decoded: 500 x8 = player hazards, 1000 = window destruction,
+5000 = scripted player kill, 300 = scripted events - NONE target vehicles (the 300-damage
+literal is a coincidence, NOT evidence). Verdict: mechanism agrees (one generic health
+system); the VALUE is pinned by signal 1 only. Open: consumer-named roles for awareness
+fields 0..12; GetActorMaxHealth C++ export untraced.
+
+**T3 merc rig validation (ce4e200 branch + 3445fa3 receipts):** Python readBdae2 port;
+weights sum EXACTLY 1.0 (1449/1294 verts, 100% in window) vs shuffled null 8.0/19.8%
+(sd 0.72-0.74), bad-case 0%; max joint 30 < 31 (100%); heights 1.9164/1.8713; V4
+|world bind - centroid| batman 0.0888 / merc 0.0750 (n=31 each) vs permuted nulls
+0.59-0.91 (reproduces s59; bind origin = NODE-hierarchy world transforms, not the invB
+translation row). Hurt/Death clips wired (_223_enemy_hurtl 1.666 s, _250_enemy_death1
+1.2 s, LoopOnce) - dispHurt 7.14 / dispDeath 12.91, one-shots DONE. **IoU gate PASS:
+page render vs numpy merc reference 0.9516** (batman cross-null 0.6922, x-flipped 0.6772),
+height 1.8713, feetZ -0.0012 (raw WebGL1 + readPixels; rest-pose uses static bind
+geometry - three r160 applyBoneTransform is dead before first render; skinning validated
+by the 5-clip displacement battery). Default soup 00ce7970/137893 unchanged.
+
+**T4 combat slice runs the REAL merc (fe33520):** enemy_viewer.html loads the merc +
+anims from the USER ZIP (lazy gla slices); FK-skinned point cloud (node hierarchy,
+nearest-key rotation channels, root pos channel, file invB pairing; CH names carry
+'-node'); machine = s59 + **Run** (alerted && dist > 14). **Gate PASS 0 errors:**
+far/behind controls -> Idle; Walk/Run/Walk discriminate distance; hp 120 -5=115 Hurt ->
+Walk -10=105 Hurt -> 0 Death; wrong-clip control diff 0.2211 u/vertex; screenshot receipt.
+
+**T5 glide re-anchor (cf74c5b):** ?s5reanchor=1&s5wall=N: wall crossing clamps the
+horizontal step and resets the anchor to the resolved position (engine 0x398570 ->
+[comp+0x1a4]). Gate PASS: wall @267 ms, **blend dip restarts (+0.32 jump)**, trajectory
+vs piecewise analytic max err **0.0047 u/s** (n=25); no-wall control reanchors=[];
+flag-gated; default soup re-verified post-patch (s60_default_gate.json). Helper level-0
+= 0.0 stands ("no evidence of a nonzero value"; labelled constant). Operational: the
+waypoint decode is gated on ?s5=1 - use ?s5=1&s5blend=1 for the blend runs.
+
+**T6 memory: environment-dominated** (no real-GPU block; standing floor ~560-592 MB /
+8.5-9 s; ?gpucheck=1 ready for paste-back).
+
+### s60 remaining-work estimate update (sized)
+- IN (unchanged): walkable world, character renderer + animation, Lua shim, browser asset
+  pipeline, user-file material binding, descriptor decoding, engine shader + fog chain,
+  zone renderer, glide slice (NOW with page-verified re-anchor), grapple slice, gol
+  in-browser parse, enemy rig IN-PAGE (generalized reader + Hurt/Death + IoU-validated
+  mesh), combat behaviour slice (NOW with the real merc in-scene).
+- CHANGED: combat data slice ~92% (walker engine-true; remaining: Trail/MissionsList
+  reader completion (0.25), the 8 no-case classes' gol shapes are data-derived-only by
+  design (documented), CUST OOB on 12 carriers (0.25), Awareness field roles 0..12 from
+  consumers (0.5)).
+- NOT in (unchanged): AI/mission flow 4-6; audio 1-2; UI 1-2; cloth cape 1; cross-region
+  nav 1-2; city-scale lit rendering 1-2. Memory: pending real GPU.
