@@ -1,0 +1,85 @@
+{
+ "console_errors": [],
+ "page_errors": [],
+ "gate": {
+  "enabled": true,
+  "fovDeg": 160,
+  "rNear": 11,
+  "rFar": 17,
+  "health0": 120,
+  "hitDamage5": 5,
+  "hitDamage10": 10,
+  "damageProvenance": "GiveDamage(actorId,damage) @0x155e4c literal arg2; census 146 calls: 5 x91, 10 x9",
+  "awarenessProvenance": "Load = 16x ReadFloat -> +4..+0x40 (s59); f13 VisibilityAngle deg (ResetVisibilityAngle 0x39638c)",
+  "states": [
+   "Idle",
+   "Walk",
+   "Hurt",
+   "Death"
+  ],
+  "clipFamilies": {
+   "attack": 33,
+   "counter": 20,
+   "takedown": 14,
+   "hit": 9,
+   "block": 10,
+   "total": 921
+  },
+  "ctlOutsidePos": [
+   0,
+   60
+  ],
+  "ctlState": "Idle",
+  "ctlBehindPos": [
+   14.095389311788626,
+   5.13030214988503
+  ],
+  "ctlBehindState": "Idle",
+  "ctlPass": true,
+  "alertState": "Walk",
+  "coneGeom": {
+   "drawnApertureDeg": 160,
+   "controlApertureDeg": 120,
+   "apertureMoves": true,
+   "radiiMove": true
+  },
+  "hpAfterHit5": 115,
+  "stateAfterHit5": "Hurt",
+  "stateAfterHurtExpires": "Walk",
+  "hpAfterHit10": 105,
+  "stateAfterHit10": "Hurt",
+  "hpFinal": 0,
+  "stateFinal": "Death",
+  "hitsTotal": 13,
+  "stateSeq": [
+   "Idle",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Death"
+  ],
+  "pass": true
+ }
+}
