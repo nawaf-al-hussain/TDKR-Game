@@ -1,0 +1,478 @@
+{
+ "runs": [
+  {
+   "name": "enemy+IoU",
+   "qs": "?enemy=1",
+   "console_errors": [],
+   "page_errors": [],
+   "logs": [],
+   "elapsed_s": 28.6,
+   "gate": {
+    "done": true,
+    "pass": true,
+    "soup": {
+     "nTri": 137893,
+     "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+    },
+    "routes": {
+     "run": 10,
+     "agree": 10,
+     "results": [
+      {
+       "route": 3,
+       "verdict": "stuck_wall",
+       "dist": 305.23,
+       "expected": "stuck_wall",
+       "expected_dist": 305.2,
+       "agree": true,
+       "dist_delta": 0.03,
+       "ms": 31
+      },
+      {
+       "route": 6,
+       "verdict": "fell",
+       "dist": 321,
+       "expected": "fell",
+       "expected_dist": 321,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 18
+      },
+      {
+       "route": 7,
+       "verdict": "fell",
+       "dist": 382.5,
+       "expected": "fell",
+       "expected_dist": 382.5,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 26
+      },
+      {
+       "route": 10,
+       "verdict": "stuck_wall",
+       "dist": 1076.038,
+       "expected": "stuck_wall",
+       "expected_dist": 1076,
+       "agree": true,
+       "dist_delta": 0.038,
+       "ms": 55
+      },
+      {
+       "route": 12,
+       "verdict": "ok",
+       "dist": 392,
+       "expected": "ok",
+       "expected_dist": 392,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 20
+      },
+      {
+       "route": 15,
+       "verdict": "stuck_wall",
+       "dist": 443.067,
+       "expected": "stuck_wall",
+       "expected_dist": 443.1,
+       "agree": true,
+       "dist_delta": 0.033,
+       "ms": 30
+      },
+      {
+       "route": 19,
+       "verdict": "ok",
+       "dist": 931,
+       "expected": "ok",
+       "expected_dist": 931,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 42
+      },
+      {
+       "route": 22,
+       "verdict": "fell",
+       "dist": 62.7,
+       "expected": "fell",
+       "expected_dist": 62.7,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 3
+      },
+      {
+       "route": 27,
+       "verdict": "stuck_wall",
+       "dist": 301.235,
+       "expected": "stuck_wall",
+       "expected_dist": 301.2,
+       "agree": true,
+       "dist_delta": 0.035,
+       "ms": 27
+      },
+      {
+       "route": 33,
+       "verdict": "stuck_wall",
+       "dist": 122.009,
+       "expected": "stuck_wall",
+       "expected_dist": 122,
+       "agree": true,
+       "dist_delta": 0.009,
+       "ms": 7
+      }
+     ]
+    },
+    "enemy": {
+     "ok": true,
+     "dmg": 5,
+     "damageProvenance": "GiveDamage(actorId,damage) 0x155e4c; census 146 literal calls, 5 x91",
+     "verts": 1294,
+     "joints": 31,
+     "clips": [
+      "_014_idle_enemy_combat",
+      "_166_enemy_walk",
+      "_171_enemy_run",
+      "_223_enemy_hurtl",
+      "_250_enemy_death1"
+     ]
+    },
+    "enemyPlay": {
+     "ok": true,
+     "wraps": 4,
+     "phasesSeen": 5,
+     "bboxZmin": -0.827,
+     "bboxZmax": 0.961,
+     "clip": "_250_enemy_death1",
+     "dmg": 5,
+     "dispIdle": 1.35827,
+     "dispWalk": 1.78509,
+     "dispRun": 1.90984,
+     "dispHurt": 6.66437,
+     "dispDeath": 12.95976,
+     "hurtDur": 1.666,
+     "deathDur": 1.2,
+     "hurtT": 1.633,
+     "deathT": 1.2,
+     "hurtDone": true,
+     "deathDone": true,
+     "dispCtlWrongClip": 3.52064,
+     "ctlClip": "_166_enemy_walk",
+     "probeVerts": 150
+    },
+    "enemyIoU": {
+     "ok": true,
+     "gridHex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080c0c000010303000000000000000000000000000000000000000000000000c0c0e0e003030707000000000000000000000000000000000000000000000000e0e0e0e007070707000000000000000000000000000000000000000000000000e0e0e0e007070707000000000000000000000000000000000000000000000000e0e0e0e00707070f000000000000000000000000000000000000000000000000e0e0e0e00f0f0f0f000000000000000000000000000000000000000000000000e0e0e0f00f1f1f1f000000000000000000000000000000000000000000000000f0f0f0f01f1f1f1f000000000000000000000000000000000000000000000000f8f8f8fe3f3f3f7f000000000000000000000000000000000000000000000000febfffff7f7f7fdf000000000000000000000000000000000000000000000000ffffffffdfdfffff000000000000000000000000000000000000000000800000ffffffffffffffff000101010000000000000000000000000000000080008080ffffffffffffffff0101030300000000000000000000000000000000808080e0ffffffffffffffff0303030700000000000000000000000000000000e0e0e0f0ffffffffffffffff0707070700000000000000000000000000000000f0f0f0f0ffffffffffffffff070f070700000000000000000000000000000000f0f8f8f8ffffffffffffbfbf07071f1f00000000000000000000000000000000f8f8fcfcfdfdfdfcbfbfff7f1f3f3f3f00000000000000000000000000000000fcfcfcfcfcfcfcfc7fffffff3f3f3f7e000000000000000000000000000000007e7f7f7ffcfcfcfcffffffff7fffffff000000000000000000000000000000003f3f3f3ffcfcfcfcffffffffffffffff000000000000000000000000000080803f1f1f1ffcfcfcfcffffffffffffffff000000000000000000000000c0c080801f0f0f0ffcfcfcfcffffbf3fffffffff00030303000000000000000080c0c0c007070703fcf0f0f03f3f3f3ffefefcf8030303030000000000000000c0c0c0c00703c3e3feffffff3f3f3f3ff8f0f0e0030303030000000000000000c0c0c0e0f9fdfffffff7f7f73f3f3f7fc0c08080030307070000000000000000e0e0e0e0ffffffffffffffff7f7f3f3f80808080070707070000000000000000e0e0e0e0fffffbf3ffffffff3f3f3f3f80000000070606060000000000000000e0e06060f3e3c7c7ffffffff3f7f7f7f000000000607070700000000000000002000000087070707fffffefe3f3f3f3f000000000701010100000000000000000000000007060606fcfcfcfc3f3f3f3f008080800101010100000000000000000000000006060e0efcfcfafa3f3f3f3f80808080010100000000000000000000000000000c0c0c0cfcfefcfc3f3f3f3f80c0c0c0000000000000000000000000000000000c0c0c0cfcfcfcfc3f3e7e7ec0c0c0c00000000000000000000000000000000008181818fcfcfcfc3e3e3e3e406060600000000000000000000000000000000018181818fcfcfcfe3e7e7e7e606060600000000000000000000000000000000018101010fef4fcfc7e3f3f3f607030300000000000000000000000000000000030303030fcfcfcfc3f3f3f3f303030300000000000000000000000000000000030303020fefcfcfc7f3f3f3f303838380000000000000000000000000000000060606060fe7c7c783f3f3f3f38181818000000000000000000000000000000006060606078787e763f3f3f7f181c1c1c00000000000000000000000000000000e0c0c0c0767c7c7c7f7f7f7f1c1c1c0c00000000000000000000000000000000c0c0c0c07c7c7c7d7f7f7f7f0c0e0e0e00000000000000000000000000000000c0c0c0807d7d7f797f7f7f3e0e0e0e0e00000000000000000000000000000000808080807979797b3e3e3e3e0e0f07070000000000000000000000000000000080808080727373733e3e3e3e0707070700000000000000000000000000000000800000007b7b7f793ebebebe0707070700000000000000000000000000000000000000007f777777bebebebe03030303000000000000000000000000000000000000000077777f7ebefefefe0303030300000000000000000000000000000000000000007e3e3e3efefefefe0303030100000000000000000000000000000000000000003e3e3e76fefefefe0101010100000000000000000000000000000000000000007e7c7c3cfefefefc0101010100000000000000000000000000000000000000003c3c3c3cfcfcfcfc0100000000000000000000000000000000000000000000003c3c3c38fcfcfcfc0000000000000000000000000000000000000000000000007838787cfcfcfcfc00000000000000000000000000000000000000000000000038783c3c7c7c7c7c000000000000000000000000000000000000000000000000fcfcfcfc7f7f7f7d0000000000000000000000000000000000000000000000007e3e3e187c7c3c1c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+     "grid": 64,
+     "SZ": 256,
+     "meshMin": [
+      -0.609,
+      -0.0012
+     ],
+     "meshMax": [
+      0.609,
+      1.8701
+     ],
+     "height": 1.8713,
+     "feetZ": -0.0012,
+     "nVerts": 1294,
+     "nIdx": 6007,
+     "glErr": 0,
+     "linkOk": true,
+     "lit": 12953
+    }
+   }
+  },
+  {
+   "name": "default-digest",
+   "qs": "",
+   "console_errors": [],
+   "page_errors": [],
+   "logs": [],
+   "elapsed_s": 13.8,
+   "gate": {
+    "done": true,
+    "pass": true,
+    "soup": {
+     "nTri": 137893,
+     "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+    },
+    "routes": {
+     "run": 10,
+     "agree": 10,
+     "results": [
+      {
+       "route": 3,
+       "verdict": "stuck_wall",
+       "dist": 305.23,
+       "expected": "stuck_wall",
+       "expected_dist": 305.2,
+       "agree": true,
+       "dist_delta": 0.03,
+       "ms": 36
+      },
+      {
+       "route": 6,
+       "verdict": "fell",
+       "dist": 321,
+       "expected": "fell",
+       "expected_dist": 321,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 22
+      },
+      {
+       "route": 7,
+       "verdict": "fell",
+       "dist": 382.5,
+       "expected": "fell",
+       "expected_dist": 382.5,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 21
+      },
+      {
+       "route": 10,
+       "verdict": "stuck_wall",
+       "dist": 1076.038,
+       "expected": "stuck_wall",
+       "expected_dist": 1076,
+       "agree": true,
+       "dist_delta": 0.038,
+       "ms": 51
+      },
+      {
+       "route": 12,
+       "verdict": "ok",
+       "dist": 392,
+       "expected": "ok",
+       "expected_dist": 392,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 20
+      },
+      {
+       "route": 15,
+       "verdict": "stuck_wall",
+       "dist": 443.067,
+       "expected": "stuck_wall",
+       "expected_dist": 443.1,
+       "agree": true,
+       "dist_delta": 0.033,
+       "ms": 30
+      },
+      {
+       "route": 19,
+       "verdict": "ok",
+       "dist": 931,
+       "expected": "ok",
+       "expected_dist": 931,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 42
+      },
+      {
+       "route": 22,
+       "verdict": "fell",
+       "dist": 62.7,
+       "expected": "fell",
+       "expected_dist": 62.7,
+       "agree": true,
+       "dist_delta": 0,
+       "ms": 2
+      },
+      {
+       "route": 27,
+       "verdict": "stuck_wall",
+       "dist": 301.235,
+       "expected": "stuck_wall",
+       "expected_dist": 301.2,
+       "agree": true,
+       "dist_delta": 0.035,
+       "ms": 27
+      },
+      {
+       "route": 33,
+       "verdict": "stuck_wall",
+       "dist": 122.009,
+       "expected": "stuck_wall",
+       "expected_dist": 122,
+       "agree": true,
+       "dist_delta": 0.009,
+       "ms": 6
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "iou": {
+  "page_vs_merc_ref": 0.9516,
+  "page_vs_batman_ref": 0.6922,
+  "page_flipped_vs_merc_ref": 0.6772
+ },
+ "iou_verdict": "PASS",
+ "enemyIoU": {
+  "ok": true,
+  "gridHex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080c0c000010303000000000000000000000000000000000000000000000000c0c0e0e003030707000000000000000000000000000000000000000000000000e0e0e0e007070707000000000000000000000000000000000000000000000000e0e0e0e007070707000000000000000000000000000000000000000000000000e0e0e0e00707070f000000000000000000000000000000000000000000000000e0e0e0e00f0f0f0f000000000000000000000000000000000000000000000000e0e0e0f00f1f1f1f000000000000000000000000000000000000000000000000f0f0f0f01f1f1f1f000000000000000000000000000000000000000000000000f8f8f8fe3f3f3f7f000000000000000000000000000000000000000000000000febfffff7f7f7fdf000000000000000000000000000000000000000000000000ffffffffdfdfffff000000000000000000000000000000000000000000800000ffffffffffffffff000101010000000000000000000000000000000080008080ffffffffffffffff0101030300000000000000000000000000000000808080e0ffffffffffffffff0303030700000000000000000000000000000000e0e0e0f0ffffffffffffffff0707070700000000000000000000000000000000f0f0f0f0ffffffffffffffff070f070700000000000000000000000000000000f0f8f8f8ffffffffffffbfbf07071f1f00000000000000000000000000000000f8f8fcfcfdfdfdfcbfbfff7f1f3f3f3f00000000000000000000000000000000fcfcfcfcfcfcfcfc7fffffff3f3f3f7e000000000000000000000000000000007e7f7f7ffcfcfcfcffffffff7fffffff000000000000000000000000000000003f3f3f3ffcfcfcfcffffffffffffffff000000000000000000000000000080803f1f1f1ffcfcfcfcffffffffffffffff000000000000000000000000c0c080801f0f0f0ffcfcfcfcffffbf3fffffffff00030303000000000000000080c0c0c007070703fcf0f0f03f3f3f3ffefefcf8030303030000000000000000c0c0c0c00703c3e3feffffff3f3f3f3ff8f0f0e0030303030000000000000000c0c0c0e0f9fdfffffff7f7f73f3f3f7fc0c08080030307070000000000000000e0e0e0e0ffffffffffffffff7f7f3f3f80808080070707070000000000000000e0e0e0e0fffffbf3ffffffff3f3f3f3f80000000070606060000000000000000e0e06060f3e3c7c7ffffffff3f7f7f7f000000000607070700000000000000002000000087070707fffffefe3f3f3f3f000000000701010100000000000000000000000007060606fcfcfcfc3f3f3f3f008080800101010100000000000000000000000006060e0efcfcfafa3f3f3f3f80808080010100000000000000000000000000000c0c0c0cfcfefcfc3f3f3f3f80c0c0c0000000000000000000000000000000000c0c0c0cfcfcfcfc3f3e7e7ec0c0c0c00000000000000000000000000000000008181818fcfcfcfc3e3e3e3e406060600000000000000000000000000000000018181818fcfcfcfe3e7e7e7e606060600000000000000000000000000000000018101010fef4fcfc7e3f3f3f607030300000000000000000000000000000000030303030fcfcfcfc3f3f3f3f303030300000000000000000000000000000000030303020fefcfcfc7f3f3f3f303838380000000000000000000000000000000060606060fe7c7c783f3f3f3f38181818000000000000000000000000000000006060606078787e763f3f3f7f181c1c1c00000000000000000000000000000000e0c0c0c0767c7c7c7f7f7f7f1c1c1c0c00000000000000000000000000000000c0c0c0c07c7c7c7d7f7f7f7f0c0e0e0e00000000000000000000000000000000c0c0c0807d7d7f797f7f7f3e0e0e0e0e00000000000000000000000000000000808080807979797b3e3e3e3e0e0f07070000000000000000000000000000000080808080727373733e3e3e3e0707070700000000000000000000000000000000800000007b7b7f793ebebebe0707070700000000000000000000000000000000000000007f777777bebebebe03030303000000000000000000000000000000000000000077777f7ebefefefe0303030300000000000000000000000000000000000000007e3e3e3efefefefe0303030100000000000000000000000000000000000000003e3e3e76fefefefe0101010100000000000000000000000000000000000000007e7c7c3cfefefefc0101010100000000000000000000000000000000000000003c3c3c3cfcfcfcfc0100000000000000000000000000000000000000000000003c3c3c38fcfcfcfc0000000000000000000000000000000000000000000000007838787cfcfcfcfc00000000000000000000000000000000000000000000000038783c3c7c7c7c7c000000000000000000000000000000000000000000000000fcfcfcfc7f7f7f7d0000000000000000000000000000000000000000000000007e3e3e187c7c3c1c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "grid": 64,
+  "SZ": 256,
+  "meshMin": [
+   -0.609,
+   -0.0012
+  ],
+  "meshMax": [
+   0.609,
+   1.8701
+  ],
+  "height": 1.8713,
+  "feetZ": -0.0012,
+  "nVerts": 1294,
+  "nIdx": 6007,
+  "glErr": 0,
+  "linkOk": true,
+  "lit": 12953
+ },
+ "enemyPlay": {
+  "ok": true,
+  "wraps": 4,
+  "phasesSeen": 5,
+  "bboxZmin": -0.827,
+  "bboxZmax": 0.961,
+  "clip": "_250_enemy_death1",
+  "dmg": 5,
+  "dispIdle": 1.35827,
+  "dispWalk": 1.78509,
+  "dispRun": 1.90984,
+  "dispHurt": 6.66437,
+  "dispDeath": 12.95976,
+  "hurtDur": 1.666,
+  "deathDur": 1.2,
+  "hurtT": 1.633,
+  "deathT": 1.2,
+  "hurtDone": true,
+  "deathDone": true,
+  "dispCtlWrongClip": 3.52064,
+  "ctlClip": "_166_enemy_walk",
+  "probeVerts": 150
+ },
+ "verdict": "PASS",
+ "default": {
+  "name": "default-digest",
+  "gate": {
+   "done": true,
+   "pass": true,
+   "soup": {
+    "nTri": 137893,
+    "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+   },
+   "routes": {
+    "run": 10,
+    "agree": 10,
+    "results": [
+     {
+      "route": 3,
+      "verdict": "stuck_wall",
+      "dist": 305.23,
+      "expected": "stuck_wall",
+      "expected_dist": 305.2,
+      "agree": true,
+      "dist_delta": 0.03,
+      "ms": 36
+     },
+     {
+      "route": 6,
+      "verdict": "fell",
+      "dist": 321,
+      "expected": "fell",
+      "expected_dist": 321,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 22
+     },
+     {
+      "route": 7,
+      "verdict": "fell",
+      "dist": 382.5,
+      "expected": "fell",
+      "expected_dist": 382.5,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 21
+     },
+     {
+      "route": 10,
+      "verdict": "stuck_wall",
+      "dist": 1076.038,
+      "expected": "stuck_wall",
+      "expected_dist": 1076,
+      "agree": true,
+      "dist_delta": 0.038,
+      "ms": 51
+     },
+     {
+      "route": 12,
+      "verdict": "ok",
+      "dist": 392,
+      "expected": "ok",
+      "expected_dist": 392,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 20
+     },
+     {
+      "route": 15,
+      "verdict": "stuck_wall",
+      "dist": 443.067,
+      "expected": "stuck_wall",
+      "expected_dist": 443.1,
+      "agree": true,
+      "dist_delta": 0.033,
+      "ms": 30
+     },
+     {
+      "route": 19,
+      "verdict": "ok",
+      "dist": 931,
+      "expected": "ok",
+      "expected_dist": 931,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 42
+     },
+     {
+      "route": 22,
+      "verdict": "fell",
+      "dist": 62.7,
+      "expected": "fell",
+      "expected_dist": 62.7,
+      "agree": true,
+      "dist_delta": 0,
+      "ms": 2
+     },
+     {
+      "route": 27,
+      "verdict": "stuck_wall",
+      "dist": 301.235,
+      "expected": "stuck_wall",
+      "expected_dist": 301.2,
+      "agree": true,
+      "dist_delta": 0.035,
+      "ms": 27
+     },
+     {
+      "route": 33,
+      "verdict": "stuck_wall",
+      "dist": 122.009,
+      "expected": "stuck_wall",
+      "expected_dist": 122,
+      "agree": true,
+      "dist_delta": 0.009,
+      "ms": 6
+     }
+    ]
+   }
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "elapsed_s": 13.8
+ },
+ "default_verdict": "PASS"
+}
