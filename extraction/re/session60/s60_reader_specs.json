@@ -1,0 +1,1122 @@
+{
+ "0x00019ee5": {
+  "reader": "0x3c0e60",
+  "sym": "CComponentLOD::Load(CMemoryStream*)",
+  "size": 228,
+  "spec": [
+   "i"
+  ],
+  "notes": [
+   "CALL std::vector<CContainerLod, std::allocator<CContainerLod> >:: @0x3c0ec0 in CComponentLOD::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c0ec8 in CComponentLOD::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c0f2c in CComponentLOD::Load(CMemoryStream*)"
+  ],
+  "n_loops": 3
+ },
+ "0x0014ca79": {
+  "reader": "0x1fe924",
+  "sym": "CComponentBase::Load(CMemoryStream*)",
+  "size": 216,
+  "spec": [
+   "c",
+   "i",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "c",
+   "c",
+   "c"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x00152b87": {
+  "reader": "0x2d6ddc",
+  "sym": "CComponentMesh::Load(CMemoryStream*)",
+  "size": 108,
+  "spec": [
+   "STR",
+   "c",
+   "c",
+   "c",
+   "c"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x00154bb0": {
+  "reader": "0x2d8020",
+  "sym": "CComponentPool::Load(CMemoryStream*)",
+  "size": 4,
+  "spec": [],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x0113317a": {
+  "reader": "0x2e47b0",
+  "sym": "CComponentMelee::Load(CMemoryStream*)",
+  "size": 64,
+  "spec": [
+   "f",
+   "f",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x0113f791": {
+  "reader": "0x2d70e8",
+  "sym": "CComponentNpcAI::Load(CMemoryStream*)",
+  "size": 232,
+  "spec": [
+   "i",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "i",
+   "i",
+   "i",
+   "i",
+   "f",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x0116a6fa": {
+  "reader": "0x2e5318",
+  "sym": "CComponentTrail::Load(CMemoryStream*)",
+  "size": 2108,
+  "spec": [
+   "i",
+   [
+    "call",
+    "void std::fill<CContainerTrail*, CContainerTrail>(CContainer"
+   ],
+   [
+    "call",
+    "void std::fill<CContainerTrail*, CContainerTrail>(CContainer"
+   ]
+  ],
+  "notes": [
+   "CALL operator new(unsigned int) @0x2e5438 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e5494 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e54a0 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e5534 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e5540 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e55e4 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e55f0 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e5658 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e5664 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL operator delete(void*) @0x2e5680 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e56b8 in CComponentTrail::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e56c0 in CComponentTrail::Load(CMemoryStream*)"
+  ],
+  "n_loops": 10
+ },
+ "0x082ea1c6": {
+  "reader": "0x2d89c4",
+  "sym": "CComponentColectibleGeneral::Load(CMemoryStream*)",
+  "size": 40,
+  "spec": [
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x0dc22f56": {
+  "reader": "0x3beeb4",
+  "sym": "CComponentBullet::Load(CMemoryStream*)",
+  "size": 76,
+  "spec": [
+   "f",
+   "STR",
+   "i",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x0dd583de": {
+  "reader": "0x3c0700",
+  "sym": "CComponentGadget::Load(CMemoryStream*)",
+  "size": 72,
+  "spec": [
+   "c",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x0ddcd6c4": {
+  "reader": "0x2d7bf0",
+  "sym": "CComponentHealth::Load(CMemoryStream*)",
+  "size": 72,
+  "spec": [
+   "f",
+   "c",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x0e286154": {
+  "reader": "0x2e09f8",
+  "sym": "CComponentTurret::Load(CMemoryStream*)",
+  "size": 184,
+  "spec": [
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x1402fd4b": {
+  "reader": "0x3bf2c8",
+  "sym": "CComponentCrimeHotspot::Load(CMemoryStream*)",
+  "size": 64,
+  "spec": [
+   "i",
+   "i",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x16fcc6f6": {
+  "reader": "0x3bebd4",
+  "sym": "CComponentBuiltinNavSpace::Load(CMemoryStream*)",
+  "size": 4,
+  "spec": [],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x1721f5ba": {
+  "reader": "0x2e219c",
+  "sym": "CComponentBeast_Directional::Load(CMemoryStream*)",
+  "size": 132,
+  "spec": [
+   "c",
+   "c",
+   "c",
+   "c",
+   "f",
+   "c",
+   "i",
+   "f",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x1963f0c0": {
+  "reader": "0x2e32dc",
+  "sym": "CComponentDistrict::Load(CMemoryStream*)",
+  "size": 40,
+  "spec": [
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x216bb1eb": {
+  "reader": "0x20508c",
+  "sym": "CComponentVehicleAwareness::Load(CMemoryStream*)",
+  "size": 40,
+  "spec": [
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x238767e3": {
+  "reader": "0x2d7cf8",
+  "sym": "CComponentHoverPath::Load(CMemoryStream*)",
+  "size": 52,
+  "spec": [
+   "f",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x26a331e5": {
+  "reader": "0x3bee04",
+  "sym": "CComponentBuiltinWaypointBox::Load(CMemoryStream*)",
+  "size": 4,
+  "spec": [],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x292930b0": {
+  "reader": "0x203858",
+  "sym": "CComponentNewShopCategory::Load(CMemoryStream*)",
+  "size": 52,
+  "spec": [
+   "i",
+   "STR",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x29e7750d": {
+  "reader": "0x201dec",
+  "sym": "CComponentMinimapInit::Load(CMemoryStream*)",
+  "size": 64,
+  "spec": [
+   "f",
+   "STR",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x2ad0cc14": {
+  "reader": "0x3be928",
+  "sym": "CComponentBuiltinCover::Load(CMemoryStream*)",
+  "size": 368,
+  "spec": [
+   "i"
+  ],
+  "notes": [
+   "CALL std::vector<CContainerCoverPoint, std::allocator<CContainerC @0x3be9a4 in CComponentBuiltinCover::Load(CMemoryStream*)"
+  ],
+  "n_loops": 1
+ },
+ "0x2b1efd04": {
+  "reader": "0x2e2638",
+  "sym": "CComponentBeast_Window::Load(CMemoryStream*)",
+  "size": 132,
+  "spec": [
+   "c",
+   "c",
+   "c",
+   "c",
+   "f",
+   "c",
+   "i",
+   "f",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x2cf34785": {
+  "reader": "0x3bec64",
+  "sym": "CComponentBuiltinSkyBox::Load(CMemoryStream*)",
+  "size": 72,
+  "spec": [
+   "STR",
+   "c",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x2db081e2": {
+  "reader": "0x2d72bc",
+  "sym": "CComponentCollision::Load(CMemoryStream*)",
+  "size": 132,
+  "spec": [
+   "c",
+   "c",
+   "STR",
+   "i",
+   "c",
+   "c",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x2e23cdd8": {
+  "reader": "0x3beb88",
+  "sym": "CComponentBuiltinNavMeshAuto::Load(CMemoryStream*)",
+  "size": 4,
+  "spec": [],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x30e3ad7c": {
+  "reader": "0x2e33bc",
+  "sym": "CComponentEngineSounds::Load(CMemoryStream*)",
+  "size": 76,
+  "spec": [
+   "STR",
+   "STR",
+   "f",
+   "STR"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x331052a1": {
+  "reader": "0x3bf218",
+  "sym": "CComponentCraneAI::Load(CMemoryStream*)",
+  "size": 52,
+  "spec": [
+   "i",
+   "STR",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x33601348": {
+  "reader": "0x3c04f4",
+  "sym": "CComponentDroneAI::Load(CMemoryStream*)",
+  "size": 160,
+  "spec": [
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x33702f4a": {
+  "reader": "0x2e3940",
+  "sym": "CComponentDummies::Load(CMemoryStream*)",
+  "size": 956,
+  "spec": [
+   "i"
+  ],
+  "notes": [
+   "CALL operator new(unsigned int) @0x2e39ec in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3a14 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3a44 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3a78 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3aa4 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL operator delete(void*) @0x2e3ac0 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3ae8 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3b34 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3b64 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3ba0 in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3bdc in CComponentDummies::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x2e3c0c in CComponentDummies::Load(CMemoryStream*)"
+  ],
+  "n_loops": 13
+ },
+ "0x3438ab08": {
+  "reader": "0x2e431c",
+  "sym": "CComponentGrenade::Load(CMemoryStream*)",
+  "size": 260,
+  "spec": [
+   "STR",
+   "STR",
+   "STR",
+   "STR",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "i",
+   "c",
+   "c",
+   "STR",
+   "STR",
+   "STR",
+   "STR"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x365cfd67": {
+  "reader": "0x2e1e8c",
+  "sym": "CComponentBeastObjectComponent::Load(CMemoryStream*)",
+  "size": 136,
+  "spec": [
+   "f",
+   "f",
+   "f",
+   "f",
+   "STR",
+   "f",
+   "f",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x36f1fe78": {
+  "reader": "0x3bddb0",
+  "sym": "CComponentAIScripts::Load(CMemoryStream*)",
+  "size": 296,
+  "spec": [
+   "i"
+  ],
+  "notes": [
+   "CALL std::vector<CContainerBehavior, std::allocator<CContainerBeh @0x3bde24 in CComponentAIScripts::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3bde2c in CComponentAIScripts::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3bdec4 in CComponentAIScripts::Load(CMemoryStream*)"
+  ],
+  "n_loops": 3
+ },
+ "0x3755b69f": {
+  "reader": "0x3c35c4",
+  "sym": "CComponentScaling::Load(CMemoryStream*)",
+  "size": 52,
+  "spec": [
+   "f",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x377ea715": {
+  "reader": "0x2e50ac",
+  "sym": "CComponentTargetable::Load(CMemoryStream*)",
+  "size": 128,
+  "spec": [
+   "c",
+   "c",
+   "STR",
+   "f",
+   "f",
+   "f",
+   "f",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x37883208": {
+  "reader": "0x3c40c4",
+  "sym": "CComponentVehicleGears::Load(CMemoryStream*)",
+  "size": 288,
+  "spec": [
+   "f",
+   "f",
+   "i"
+  ],
+  "notes": [
+   "CALL std::vector<CContainerVehicleGears, std::allocator<CContaine @0x3c4150 in CComponentVehicleGears::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c4158 in CComponentVehicleGears::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c41d0 in CComponentVehicleGears::Load(CMemoryStream*)"
+  ],
+  "n_loops": 3
+ },
+ "0x3b912a30": {
+  "reader": "0x2e0454",
+  "sym": "CComponentWantedManager::Load(CMemoryStream*)",
+  "size": 640,
+  "spec": [
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "i",
+   "f",
+   "i",
+   "STR",
+   "i"
+  ],
+  "notes": [
+   "CALL $d @0x2e05ac in CComponentWantedManager::Load(CMemoryStream*)",
+   "CALL $d @0x2e05d8 in CComponentWantedManager::Load(CMemoryStream*)",
+   "CALL operator delete(void*) @0x2e05ec in CComponentWantedManager::Load(CMemoryStream*)",
+   "CALL operator new(unsigned int) @0x2e06ac in CComponentWantedManager::Load(CMemoryStream*)",
+   "CALL std::__throw_length_error(char const*) @0x2e06d0 in CComponentWantedManager::Load(CMemoryStream*)"
+  ],
+  "n_loops": 3
+ },
+ "0x3c3c6b28": {
+  "reader": "0x3c3e50",
+  "sym": "CComponentThrowMotion::Load(CMemoryStream*)",
+  "size": 100,
+  "spec": [
+   "f",
+   "i",
+   "f",
+   "f",
+   "f",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x3e2bb040": {
+  "reader": "0x2e0290",
+  "sym": "CComponentWantedGenerator::Load(CMemoryStream*)",
+  "size": 64,
+  "spec": [
+   "i",
+   "i",
+   "f",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x3ebf0875": {
+  "reader": "0x1ff3fc",
+  "sym": "CComponentTrafficMagnet::Load(CMemoryStream*)",
+  "size": 120,
+  "spec": [
+   "i",
+   "c",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x43c8a8d1": {
+  "reader": "0x3bc9f0",
+  "sym": "CComponentObjective::Load(CMemoryStream*)",
+  "size": 64,
+  "spec": [
+   "STR",
+   "STR",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x44c6e9e5": {
+  "reader": "0x3c2d38",
+  "sym": "CComponentNpcCombat::Load(CMemoryStream*)",
+  "size": 168,
+  "spec": [
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "c",
+   "c",
+   "i",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x44c835d1": {
+  "reader": "0x203764",
+  "sym": "CComponentNewShopItem::Load(CMemoryStream*)",
+  "size": 100,
+  "spec": [
+   "i",
+   "STR",
+   "STR",
+   "i",
+   "STR",
+   "STR"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x4846ed83": {
+  "reader": "0x3c0aa4",
+  "sym": "CComponentGrapplingHook::Load(CMemoryStream*)",
+  "size": 4,
+  "spec": [],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x4ca5f00e": {
+  "reader": "0x202ae4",
+  "sym": "CComponentNewShopItemProperty::Load(CMemoryStream*)",
+  "size": 2984,
+  "spec": [
+   "i",
+   "STR",
+   "STR",
+   "i",
+   "i",
+   "f",
+   "f",
+   "f",
+   "c",
+   "c",
+   "c",
+   "c",
+   "i",
+   [
+    "call",
+    "CContainerShopItemLevels* std::__uninitialized_move_a<CConta"
+   ]
+  ],
+  "notes": [
+   "CALL operator new(unsigned int) @0x202ca4 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202d4c in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202d58 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202d64 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202d70 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202e2c in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202e38 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202e44 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202e50 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202f14 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202f20 in CComponentNewShopItemProperty::Load(CMemoryStream*",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x202f2c in CComponentNewShopItemProperty::Load(CMemoryStream*"
+  ],
+  "n_loops": 12
+ },
+ "0x4cbfd885": {
+  "reader": "0x2e207c",
+  "sym": "CComponentBeast_Area::Load(CMemoryStream*)",
+  "size": 120,
+  "spec": [
+   "c",
+   "c",
+   "c",
+   "c",
+   "f",
+   "c",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x4cc04ddb": {
+  "reader": "0x2e22f8",
+  "sym": "CComponentBeast_Omni::Load(CMemoryStream*)",
+  "size": 188,
+  "spec": [
+   "c",
+   "c",
+   "c",
+   "c",
+   "f",
+   "c",
+   "i",
+   "f",
+   "i",
+   "f",
+   "f",
+   "c",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x500fe00c": {
+  "reader": "0x3c3774",
+  "sym": "CComponentSegments::Load(CMemoryStream*)",
+  "size": 836,
+  "spec": [
+   "i",
+   "i"
+  ],
+  "notes": [
+   "CALL $d @0x3c3834 in CComponentSegments::Load(CMemoryStream*)",
+   "CALL $d @0x3c3860 in CComponentSegments::Load(CMemoryStream*)",
+   "CALL operator delete(void*) @0x3c3874 in CComponentSegments::Load(CMemoryStream*)",
+   "CALL $d @0x3c3974 in CComponentSegments::Load(CMemoryStream*)",
+   "CALL $d @0x3c39a0 in CComponentSegments::Load(CMemoryStream*)",
+   "CALL operator delete(void*) @0x3c39b4 in CComponentSegments::Load(CMemoryStream*)",
+   "CALL operator new(unsigned int) @0x3c3a6c in CComponentSegments::Load(CMemoryStream*)",
+   "CALL operator new(unsigned int) @0x3c3a88 in CComponentSegments::Load(CMemoryStream*)",
+   "CALL std::__throw_length_error(char const*) @0x3c3aa8 in CComponentSegments::Load(CMemoryStream*)",
+   "CALL std::__throw_length_error(char const*) @0x3c3ab4 in CComponentSegments::Load(CMemoryStream*)"
+  ],
+  "n_loops": 6
+ },
+ "0x5471c18b": {
+  "reader": "0x3c18e0",
+  "sym": "CComponentMissionsList::Load(CMemoryStream*)",
+  "size": 3548,
+  "spec": [
+   "i",
+   [
+    "call",
+    "CContainerMission_* std::__uninitialized_move_a<CContainerMi"
+   ],
+   [
+    "call",
+    "CContainerChapter::CContainerChapter(CContainerChapter const"
+   ],
+   [
+    "call",
+    "CContainerChapter* std::__uninitialized_move_a<CContainerCha"
+   ]
+  ],
+  "notes": [
+   "CALL operator new(unsigned int) @0x3c19c8 in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c19f8 in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL operator new(unsigned int) @0x3c1a2c in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c1a60 in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c1a6c in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c1a80 in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c1b00 in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL operator new(unsigned int) @0x3c1b50 in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c1b8c in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c1b98 in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c1bac in CComponentMissionsList::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x3c1c38 in CComponentMissionsList::Load(CMemoryStream*)"
+  ],
+  "n_loops": 28
+ },
+ "0x54989cb1": {
+  "reader": "0x3baee0",
+  "sym": "CComponentActorBaseComponent::Load(CMemoryStream*)",
+  "size": 984,
+  "spec": [
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "c",
+   "c",
+   "c",
+   "i",
+   "i"
+  ],
+  "notes": [
+   "CALL $d @0x3bb190 in CComponentActorBaseComponent::Load(CMemoryStream*)",
+   "CALL $d @0x3bb1bc in CComponentActorBaseComponent::Load(CMemoryStream*)",
+   "CALL operator delete(void*) @0x3bb1d0 in CComponentActorBaseComponent::Load(CMemoryStream*)",
+   "CALL operator new(unsigned int) @0x3bb294 in CComponentActorBaseComponent::Load(CMemoryStream*)",
+   "CALL std::__throw_length_error(char const*) @0x3bb2b4 in CComponentActorBaseComponent::Load(CMemoryStream*)"
+  ],
+  "n_loops": 3
+ },
+ "0x557a594a": {
+  "reader": "0x3be060",
+  "sym": "CComponentAreaDamage::Load(CMemoryStream*)",
+  "size": 52,
+  "spec": [
+   "i",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x5863bd59": {
+  "reader": "0x203cfc",
+  "sym": "CComponentMainStoryQuests::Load(CMemoryStream*)",
+  "size": 432,
+  "spec": [
+   "i"
+  ],
+  "notes": [
+   "CALL std::vector<CContainerStoryQuest, std::allocator<CContainerS @0x203d88 in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203d90 in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203d98 in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203da0 in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203da8 in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203db0 in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203e74 in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203e7c in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203e84 in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203e8c in CComponentMainStoryQuests::Load(CMemoryStream*)",
+   "CALL std::basic_string<char, std::char_traits<char>, glitch::core @0x203e98 in CComponentMainStoryQuests::Load(CMemoryStream*)"
+  ],
+  "n_loops": 3
+ },
+ "0x5a77332f": {
+  "reader": "0x2d8da4",
+  "sym": "CComponentWaypoint_Movement::Load(CMemoryStream*)",
+  "size": 220,
+  "spec": [
+   "c",
+   "i",
+   "i",
+   "i",
+   "c",
+   "i",
+   "i",
+   "i",
+   "c",
+   "i",
+   "STR",
+   "STR",
+   "STR",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x5e35be99": {
+  "reader": "0x3c2c58",
+  "sym": "CComponentNetworkPlayer::Load(CMemoryStream*)",
+  "size": 24,
+  "spec": [
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x5e46be31": {
+  "reader": "0x2d7e50",
+  "sym": "CComponentWaypoint::Load(CMemoryStream*)",
+  "size": 268,
+  "spec": [
+   "i",
+   "c",
+   "f",
+   "f",
+   "f",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "i",
+   "STR",
+   "c",
+   "c",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x650bb301": {
+  "reader": "0x3c329c",
+  "sym": "CComponentPedestrian::Load(CMemoryStream*)",
+  "size": 4,
+  "spec": [],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x68a62e65": {
+  "reader": "0x3bcaac",
+  "sym": "CComponentActorShadow::Load(CMemoryStream*)",
+  "size": 60,
+  "spec": [
+   "STR",
+   "c"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x69540db7": {
+  "reader": "0x3be654",
+  "sym": "CComponentBeast_Skylight::Load(CMemoryStream*)",
+  "size": 260,
+  "spec": [
+   "c",
+   "c",
+   "c",
+   "c",
+   "f",
+   "c",
+   "i",
+   "f",
+   "i",
+   "f",
+   "f",
+   "c",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x69f956fc": {
+  "reader": "0x3bbd50",
+  "sym": "CComponentPlayerControl::Load(CMemoryStream*)",
+  "size": 332,
+  "spec": [
+   "i",
+   "c",
+   "f",
+   "f",
+   "f",
+   "f",
+   "c",
+   "c",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "i",
+   "i"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x6ea4cd6c": {
+  "reader": "0x3c3d74",
+  "sym": "CComponentTentacleAI::Load(CMemoryStream*)",
+  "size": 52,
+  "spec": [
+   "i",
+   "STR"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x749126c3": {
+  "reader": "0x2e1000",
+  "sym": "CComponentBuiltinCylinder::Load(CMemoryStream*)",
+  "size": 312,
+  "spec": [
+   "f",
+   "f",
+   "c",
+   "i",
+   "c",
+   "c",
+   "c",
+   "c",
+   "i",
+   "c",
+   "c",
+   "c",
+   "c",
+   "i",
+   "i",
+   "i",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x7538c652": {
+  "reader": "0x2d82c0",
+  "sym": "CComponentPlayerComponent::Load(CMemoryStream*)",
+  "size": 388,
+  "spec": [
+   "f",
+   "i",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "i",
+   "i",
+   "i",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x75a9de0e": {
+  "reader": "0x3c0af0",
+  "sym": "CComponentGrapplingHookTarget::Load(CMemoryStream*)",
+  "size": 4,
+  "spec": [],
+  "notes": [],
+  "n_loops": 0
+ },
+ "0x7c2f7284": {
+  "reader": "0x2e6b48",
+  "sym": "CComponentIrradianceVolume::Load(CMemoryStream*)",
+  "size": 92,
+  "spec": [
+   "c",
+   "f",
+   "c",
+   "f",
+   "f"
+  ],
+  "notes": [],
+  "n_loops": 0
+ }
+}

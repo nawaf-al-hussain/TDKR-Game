@@ -1,0 +1,751 @@
+{
+ "engine_true": {
+  "pure": 149,
+  "ok": 144,
+  "of653": 653,
+  "exact_ok": 139,
+  "na_empty": 5,
+  "tails": {
+   "empty-comps:0": 3,
+   "empty-comps:16": 1,
+   "tail:4": 3,
+   "empty-comps:4": 1,
+   "tail:15": 1,
+   "tail:21": 1
+  },
+  "n_cases": 64,
+  "incomplete": [
+   "0x0116a6fa",
+   "0x5471c18b"
+  ]
+ },
+ "hybrid": {
+  "ok": 524,
+  "of653": 653,
+  "engine_cannot": 90,
+  "exact_ok": 393,
+  "tails": 5,
+  "fail": 255,
+  "na_empty": 5,
+  "tail_sizes": {
+   "empty-comps:0": 3,
+   "empty-comps:16": 1,
+   "empty-comps:4": 1
+  }
+ },
+ "blockers_hybrid": [
+  [
+   "0x0116a6fa",
+   20
+  ],
+  [
+   "0x7d561d33",
+   18
+  ],
+  [
+   "0x67c82e62",
+   14
+  ],
+  [
+   "0x40c6b80a",
+   12
+  ],
+  [
+   "0x4cc07242",
+   11
+  ],
+  [
+   "0x28091330",
+   10
+  ],
+  [
+   "0x2c9a0e3f",
+   8
+  ],
+  [
+   "0x2cf1c31c",
+   6
+  ],
+  [
+   "0x519ad19b",
+   5
+  ],
+  [
+   "0x20af73b7",
+   2
+  ],
+  [
+   "0x0110ce1f",
+   2
+  ],
+  [
+   "0x0e1f5b6f",
+   2
+  ],
+  [
+   "0x454206a4",
+   1
+  ],
+  [
+   "0x1b2aa571",
+   1
+  ],
+  [
+   "0x6a204677",
+   1
+  ],
+  [
+   "0x4ab8a7cd",
+   1
+  ],
+  [
+   "0x4a04f065",
+   1
+  ],
+  [
+   "0x3164ae79",
+   1
+  ],
+  [
+   "0x73f0fe09",
+   1
+  ],
+  [
+   "0x279c68f5",
+   1
+  ]
+ ],
+ "fails_hybrid": [
+  [
+   "AIController",
+   "0x2649",
+   "nocase:0x454206a4"
+  ],
+  [
+   "BakeGroup",
+   "0x1869f",
+   "nocase:0x1b2aa571"
+  ],
+  [
+   "Bane_SUV",
+   "0x4c731",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "Bane_Suv_No_Doors",
+   "0xc0e54",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "Barricade_Collision_End",
+   "0x4c763",
+   "nocase:0x2c9a0e3f"
+  ],
+  [
+   "Barricade_Collision_Start",
+   "0x4c762",
+   "nocase:0x2c9a0e3f"
+  ],
+  [
+   "BatPod",
+   "0xc38e",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "Batarang",
+   "0x4e27",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "BatarangEMP",
+   "0x4e31",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "BatarangFlash",
+   "0x4e32",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "BatarangGas",
+   "0x4e33",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "BatarangStone",
+   "0x4e2d",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "BatarangZoom",
+   "0x4e37",
+   "nocase:0x6a204677"
+  ],
+  [
+   "Batarang_01",
+   "0x4e26",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Batarang_02",
+   "0x4747",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Batarang_EMP",
+   "0x4e2e",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Batarang_Flash",
+   "0x4e2f",
+   "0x4ab8a7cd FAIL@114"
+  ],
+  [
+   "Batarang_Gas",
+   "0x4e30",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Batarang_Left_01",
+   "0x4746",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Batarang_Left_02",
+   "0x4748",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Batarang_Stone",
+   "0x4e2a",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Batman",
+   "0x4c6f1",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Bazooka_Enemy",
+   "0xc3511",
+   "0x40c6b80a FAIL@435"
+  ],
+  [
+   "Blake",
+   "0x927c6",
+   "0x40c6b80a FAIL@397"
+  ],
+  [
+   "Camera_10_Grapnel_Horizontal",
+   "0x4c73f",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_11_Plunge",
+   "0x4c742",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_12_Bruce",
+   "0x4c743",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_13_Batarang",
+   "0x88b9",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_14_Closeup",
+   "0x4c748",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_15_GlideInit",
+   "0x4c74c",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_16_Batpod",
+   "0x9c41",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_17_TheBat",
+   "0x9c45",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_18_Helicopter",
+   "0x4e35",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_1_Generic",
+   "0x88bb",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_2_Glide",
+   "0x267b",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_3_Generic_No_Collisions",
+   "0x4e21",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_4_Gargoyle",
+   "0x4c719",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_5_Grapnel",
+   "0x4c721",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_6_Grapnel_Horizontal",
+   "0x4c722",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_7_Idle",
+   "0x4c735",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_8_Combat",
+   "0x4c73b",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_9_Menu",
+   "0xdbba1",
+   "nocase:0x7d561d33"
+  ],
+  [
+   "Camera_Combat",
+   "0x88ba",
+   "nocase:0x4a04f065"
+  ],
+  [
+   "Car_Sedan_Minigame",
+   "0x4e24",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "Collectibles_Blueprints",
+   "0x268a",
+   "nocase:0x28091330"
+  ],
+  [
+   "Collectibles_Graffiti",
+   "0x61a83",
+   "nocase:0x28091330"
+  ],
+  [
+   "Collectibles_PoliceFile",
+   "0x61a85",
+   "nocase:0x28091330"
+  ],
+  [
+   "CollisionBoxMulti",
+   "0x264d",
+   "nocase:0x2c9a0e3f"
+  ],
+  [
+   "CollisionMesh",
+   "0x264e",
+   "nocase:0x2c9a0e3f"
+  ],
+  [
+   "CollisionPlaneMulti",
+   "0x264f",
+   "nocase:0x3164ae79"
+  ],
+  [
+   "CombatBatarang",
+   "0x4745",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Crowbar",
+   "0x4c74b",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "District",
+   "0x4749",
+   "nocase:0x20af73b7"
+  ],
+  [
+   "EffectLODs",
+   "0x163a6",
+   "nocase:0x73f0fe09"
+  ],
+  [
+   "Fist_01",
+   "0x4740",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "Fist_Npc",
+   "0x4e36",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "GC_AB_Spot",
+   "0x187e8",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_Bull_Spot",
+   "0x18826",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_Prop_Park_Spot_Blue",
+   "0x187c1",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_Res_Prop_Streetlight_Spot_Blue",
+   "0x18788",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_Res_Prop_Streetlight_Spot_Red",
+   "0x18789",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_Res_Prop_Streetlight_Spot_Yellow",
+   "0x18787",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_Res_Prop_Streetlight_Spotlight",
+   "0x1877f",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_SE_Spot",
+   "0x187c4",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_VPOW_Spot",
+   "0x187e9",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "GC_WT_Spot",
+   "0x187c6",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "Glider",
+   "0x2674",
+   "nocase:0x0110ce1f"
+  ],
+  [
+   "Glider_Plunge",
+   "0x4c741",
+   "nocase:0x0110ce1f"
+  ],
+  [
+   "GlobalIllumination",
+   "0x2669",
+   "nocase:0x279c68f5"
+  ],
+  [
+   "GrapplingGun",
+   "0x2673",
+   "nocase:0x2cf1c31c"
+  ],
+  [
+   "GrapplingGun_Combat",
+   "0x4c71f",
+   "nocase:0x2cf1c31c"
+  ],
+  [
+   "GrapplingGun_Flying",
+   "0x4c71e",
+   "nocase:0x2cf1c31c"
+  ],
+  [
+   "GrapplingGun_Gargoyle",
+   "0x4c720",
+   "nocase:0x2cf1c31c"
+  ],
+  [
+   "GrapplingGun_MiniGame",
+   "0x14ff1",
+   "nocase:0x2cf1c31c"
+  ],
+  [
+   "GrapplingGun_Vehicle",
+   "0x4e22",
+   "nocase:0x2cf1c31c"
+  ],
+  [
+   "GroupObjects",
+   "0x2648",
+   "0x2ad2a046 FAIL@44"
+  ],
+  [
+   "Knife",
+   "0x900ce",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "LevelProperties",
+   "0x2657",
+   "nocase:0x409a2d0e"
+  ],
+  [
+   "Melee_Enemy_Merc",
+   "0xc351d",
+   "0x40c6b80a FAIL@451"
+  ],
+  [
+   "Melee_Enemy_Pit",
+   "0xc3521",
+   "0x40c6b80a FAIL@451"
+  ],
+  [
+   "Melee_Enemy_Stadium",
+   "0xea61",
+   "0x40c6b80a FAIL@451"
+  ],
+  [
+   "Melee_Enemy_Test",
+   "0x4c71a",
+   "0x40c6b80a FAIL@451"
+  ],
+  [
+   "MetaZone",
+   "0xbba",
+   "nocase:0x20af73b7"
+  ],
+  [
+   "Military_Officer",
+   "0xc3513",
+   "0x40c6b80a FAIL@397"
+  ],
+  [
+   "MuzzleBatpod",
+   "0x9c43",
+   "nocase:0x519ad19b"
+  ],
+  [
+   "MuzzleEmpty",
+   "0x4e25",
+   "nocase:0x519ad19b"
+  ],
+  [
+   "MuzzleGeneric",
+   "0x1194",
+   "nocase:0x519ad19b"
+  ],
+  [
+   "MuzzlePunch",
+   "0x4c72d",
+   "nocase:0x519ad19b"
+  ],
+  [
+   "MuzzleTurret",
+   "0x1195",
+   "nocase:0x519ad19b"
+  ],
+  [
+   "NavMesh",
+   "0x2659",
+   "nocase:0x46b0c1c3"
+  ],
+  [
+   "PickUp_Batarang",
+   "0x4c764",
+   "nocase:0x28091330"
+  ],
+  [
+   "PickUp_EMP_Batarang",
+   "0x4c765",
+   "nocase:0x28091330"
+  ],
+  [
+   "PickUp_Flash_Grenades",
+   "0x4c767",
+   "nocase:0x28091330"
+  ],
+  [
+   "PickUp_Smoke_Grenades",
+   "0x4c766",
+   "nocase:0x28091330"
+  ],
+  [
+   "Pit_Prisoner",
+   "0x4c76b",
+   "0x40c6b80a FAIL@381"
+  ],
+  [
+   "PointLight",
+   "0x265e",
+   "nocase:0x0112e126"
+  ],
+  [
+   "Police_Officer",
+   "0x4c725",
+   "0x40c6b80a FAIL@397"
+  ],
+  [
+   "Police_Officer_Melee",
+   "0x4c758",
+   "0x40c6b80a FAIL@427"
+  ],
+  [
+   "Police_Station_Spotlight",
+   "0x16f36",
+   "nocase:0x2c9a0e3f"
+  ],
+  [
+   "Police_Station_Water_Spotlight",
+   "0x927c2",
+   "nocase:0x2c9a0e3f"
+  ],
+  [
+   "Ranged_Disarm_Dummy",
+   "0x4757",
+   "nocase:0x0e1f5b6f"
+  ],
+  [
+   "Ranged_Enemy_Test",
+   "0x26f5",
+   "0x40c6b80a FAIL@435"
+  ],
+  [
+   "RewardHigh",
+   "0x19f0a2",
+   "nocase:0x28091330"
+  ],
+  [
+   "RewardMedium",
+   "0x19f0a1",
+   "nocase:0x28091330"
+  ],
+  [
+   "RewardSmall",
+   "0x474b",
+   "nocase:0x28091330"
+  ],
+  [
+   "Rocket",
+   "0x4e2b",
+   "nocase:0x35c5e0a0"
+  ],
+  [
+   "Security_Officer",
+   "0xc3514",
+   "0x40c6b80a FAIL@397"
+  ],
+  [
+   "Sniper",
+   "0x4c745",
+   "nocase:0x0e1f5b6f"
+  ],
+  [
+   "Spot",
+   "0x2697",
+   "nocase:0x4cc07242"
+  ],
+  [
+   "Sword",
+   "0x2671",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "TheBatDrive",
+   "0x9c44",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "Umbrella",
+   "0x4c732",
+   "0x0116a6fa spec:call"
+  ],
+  [
+   "VehicleCarSUV",
+   "0xc365",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "VehicleCarTaxi",
+   "0xc366",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "VehicleCoupe",
+   "0xc350a",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "VehicleHatch",
+   "0xc367",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "VehiclePolice",
+   "0xc36f",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "VehicleSWAT",
+   "0xc370",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "VehicleSedan",
+   "0xc3509",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "VehicleTruck",
+   "0xc35c",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "VehicleVan",
+   "0xc35b",
+   "nocase:0x67c82e62"
+  ],
+  [
+   "Waypoint",
+   "0x2666",
+   "nocase:0x2c9a0e3f"
+  ],
+  [
+   "WaypointSpline",
+   "0x4741",
+   "nocase:0x2c9a0e3f"
+  ],
+  [
+   "Zone",
+   "0x2667",
+   "nocase:0x352b0a2e"
+  ]
+ ],
+ "calibration": {
+  "carriers_both": 18,
+  "health_exact": 18,
+  "aware_exact": 18,
+  "both_exact": 18,
+  "diffs": []
+ },
+ "nulls": {
+  "perm": 118,
+  "rot7": 142
+ }
+}
