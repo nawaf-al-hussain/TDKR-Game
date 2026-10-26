@@ -698,6 +698,7 @@ const S5CTL = QS2.get('s5ctl') === '1';        // s56 T2: scripted pitch control
 const S5EARLY = QS2.get('s5ctlEarly') === '1'; // s56 T2b: early release so the decay precedes landing
 const S5BLEND = QS2.get('s5blend') === '1';    // s58 T1: exact engine blend (takeoff-anchor distance)
 const S5REAN = QS2.get('s5reanchor') === '1';  // s60 T5: ResolveAirCollision re-anchor case (virtual wall)
+const S5REAL = QS2.get('s5real') === '1';   // s62 T4: REAL soup air-collision re-anchor
 const S5WALL = parseFloat(QS2.get('s5wall') || '40');
 const S5CTLV = S5EARLY
   ? { tRamp: 0.25, tHold: 0.45, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 }
@@ -789,12 +790,47 @@ function s5SetClip(name) {
 }
 function s5Begin() {
   S5.started = true;
-  const tgt = s5PickEdge();
+  let tgt = s5PickEdge();   // s62 T4 (patch4): let - REAL staging retargets tgt
   if (!tgt) { S5.phase = 'done'; S5.done = true;
     window.__GATE.s5 = { enabled: true, error: 'no edge in range' };
     startWalkPhase(); return; }
   S5.from = [P.x, P.y, P.z];
+  if (S5REAL) {
+    // s62 T4 staging v3 (s62_t4_patch6.py): DETECT-ONLY. v2's retarget placed the glide
+    // start 8 u short of the facade, but that point had NO navmesh under it (nm_ground
+    // void) -> the glide fell straight down and timed out; and with the engine-default
+    // glide (pitch0 fixed, sink ~10 u/s) the reach from a ~9 u ledge is ~3 u, so a
+    // 12+ u facade is unreachable mid-glide. The engine-true pattern is natural: the
+    // picked ledge IS facade-adjacent -> first glide step crosses real collision ->
+    // slide -> re-anchor -> blendD reset -> land. v3 records the facade census (16 rays
+    // at glide altitudes) as provenance and leaves the pick untouched.
+    const ft0 = P.z - 0.9;
+    const ledgeFt = tgt[2] - 0.9;
+    const reach = Math.max(0, (ledgeFt - ft0) / 2.86);   // u of flight until ground contact
+    const alts = [ledgeFt - 0.5, ledgeFt - 15.0, ft0 + 0.5];
+    const dir = [tgt[0] - P.x, tgt[1] - P.y];
+    const rays = [];
+    for (let a = 0; a < 16; a++) {
+      const ang = a * Math.PI / 8;
+      const ca = Math.cos(ang), sa = Math.sin(ang);
+      const d2 = [dir[0] * ca - dir[1] * sa, dir[0] * sa + dir[1] * ca];
+      const dn = Math.hypot(d2[0], d2[1]) || 1;
+      let first = null;
+      for (let dd = 12; dd <= 160 && first === null; dd += 2) {
+        const qx = P.x + d2[0] / dn * dd, qy = P.y + d2[1] / dn * dd;
+        for (let zi = 0; zi < alts.length; zi++) {
+          if (blocked([qx, qy, alts[zi]], 0.45)) { first = dd; break; }
+        }
+      }
+      if (first !== null) rays.push({ angDeg: Math.round(a * 22.5), first: first });
+    }
+    S5.realStaged = { mode: 'detect-only', reach: +reach.toFixed(2),
+                      nRays: rays.length, rays: rays.slice(0, 6) };
+    log('s5 REAL staging v3: detect-only, reach ' + reach.toFixed(1) +
+        ' u, facades ' + rays.length + '/16');
+  }
   S5.tgt = tgt; S5.t0 = performance.now();
+  window.__S5DBG = { from: S5.from.slice(), tgt: tgt.slice(), wpsN: (window.__S5WPS || []).length };   // s62 T4 patch5
   S5.phase = 'grapnel';
   s5SetClip('_089_grapnel_pull');
   log('S5 grapple: portal-edge midpoint ' + tgt.map(v => v.toFixed(1)).join(',') +
@@ -902,6 +938,31 @@ function s5Tick(now) {
     }
     const nz = P.z + S5.vz * dt2;
     const gz = nm_ground(gx, gy, nz + 2.6);
+    if (S5REAL && S5.anchor) {
+      // s62 T4 (relocated by s62_t4_patch2.py: nz TDZ fix) - REAL soup air collision
+      // (blocked = the walker's capsule-vs-soup query
+      // at the capsule's air altitude). Resolve via the walker's wall-slide, store the
+      // RESOLVED position into the glide cache and RE-ANCHOR (ResolveAirCollision
+      // analogue, 0x398570). Edge-triggered on a not-blocked -> blocked transition.
+      const feet = nz - 0.9;
+      const hitNow = blocked([gx, gy, feet], 0.45);
+      if (hitNow && !S5.lastBlocked) {
+        const mvx = gx - P.x, mvy = gy - P.y;
+        const mvl = Math.hypot(mvx, mvy);
+        const sl = try_slide([P.x, P.y, feet], mvx, mvy, Math.max(mvl, 0.05));
+        if (sl) { gx = sl[0][0]; gy = sl[0][1]; }
+        S5.anchor = [gx, gy, P.z];            // RE-ANCHOR at the resolved position
+        if (!S5.reanchors) S5.reanchors = [];
+        const rec = { tMs: Math.round(now - S5.tGlide), pos: [+gx.toFixed(3), +gy.toFixed(3)],
+                      z: +P.z.toFixed(3), kind: 'real' };
+        S5.reanchors.push(rec);
+        if (!S5.wallHit) S5.wallHit = rec;
+        S5.blendD = 0;   // blend distance restarts from the new anchor (dip restart)
+        log('s5 REAL re-anchor #' + S5.reanchors.length + ' @' + rec.tMs + ' ms pos ' +
+            rec.pos.join(','));
+      }
+      S5.lastBlocked = hitNow;
+    }
     P.x = gx; P.y = gy; P.z = nz;
     // s54 T1: in-page trajectory record (alt-lost-per-metre comparison, gate-visible)
     if (!S5.traj) S5.traj = [];
@@ -935,14 +996,18 @@ function s5Tick(now) {
         setTimeout(function () { if (S5.phase === 'done') s5SetClip('_008_run'); }, 450);
         g.s5 = { enabled: true, model: S5P.mode, ctl: !!S5CTL, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
                  glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs, traj: S5.traj,
-                 reanchors: S5.reanchors || [], wallHit: S5.wallHit };
+                 reanchors: S5.reanchors || [], wallHit: S5.wallHit,
+                 realStaged: S5.realStaged || null, real: !!S5REAL,
+                 from: S5.from.slice(), tgt: S5.tgt.slice(), wpsN: (window.__S5WPS || []).length };
         log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
         startWalkPhase();   // hand back to the standard gate walk phase
       }
     }
     if (now - S5.tGlide > 6000 && !S5.landed) {   // safety: never stall the gate
       g.s5 = { enabled: true, model: S5P.mode, targetReached: S5.reached, reachDist: S5.reachDist,
-               glideClipActive: S5.clipActive, landed: false, error: 'glide timeout', traj: S5.traj };
+               glideClipActive: S5.clipActive, landed: false, error: 'glide timeout', traj: S5.traj,
+               from: S5.from.slice(), tgt: S5.tgt.slice(), wpsN: (window.__S5WPS || []).length ,
+               realStaged: S5.realStaged || null };
       S5.phase = 'done'; S5.done = true;
       startWalkPhase();
     }
@@ -1340,8 +1405,10 @@ const buildGLB = function buildGLB(skin, A, byNameC, clipsToEmbed) {
     gnodes.push({ name: 'BATMAN_mesh', mesh: 0, skin: 0 });
     const posB = f32(skin.verts), uvB = f32(skin.uvs), wtB = f32(skin.skinW);
     const jnB = u16a(skin.skinJ), idxB = u16a(skin.idx);
-    const ibmB = new Float32Array(skin.invB.length * 16);
-    skin.invB.forEach((m, i) => ibmB.set(m, i * 16));
+    // s62 T2 FIX (numpy-computed): inverse binds = inv(BIPED-FK rest), column-major GLB
+    const __S62_IB = [-0.0, 2e-06, 1.0, 0.0, 2e-06, -1.0, 2e-06, 0.0, 1.0, 2e-06, 0.0, 0.0, -0.980574, -2e-06, -0.0, 1.0, 1e-06, -2e-06, 1.0, 0.0, 0.005879, -0.999983, -2e-06, 0.0, 0.999983, 0.005879, -1e-06, 0.0, -1.09366, -0.011082, 1e-06, 1.0, 1e-06, -2e-06, 1.0, 0.0, 0.005879, -0.999983, -2e-06, 0.0, 0.999983, 0.005879, -1e-06, 0.0, -1.303276, -0.010865, 1e-06, 1.0, 1e-06, -2e-06, 1.0, 0.0, -0.147729, -0.989028, -2e-06, 0.0, 0.989028, -0.147729, -2e-06, 0.0, -1.570526, 0.263904, 2e-06, 1.0, 1e-06, -3e-06, 1.0, 0.0, -0.163583, -0.986529, -2e-06, 0.0, 0.986529, -0.163583, -2e-06, 0.0, -1.630016, 0.287117, 2e-06, 1.0, 0.996238, -0.071014, 0.049667, 0.0, 0.070592, 0.997453, 0.010201, 0.0, -0.050265, -0.006656, 0.998714, 0.0, 0.046196, -0.005336, -1.542728, 1.0, 0.568526, -0.255251, 0.782064, 0.0, 0.025721, 0.955698, 0.293223, 0.0, -0.822263, -0.14659, 0.549905, 0.0, 1.14856, 0.247098, -1.007321, 1.0, 0.622986, -0.016222, 0.782064, 0.0, -0.344879, 0.891672, 0.293223, 0.0, -0.702101, -0.452392, 0.549905, 0.0, 0.695783, 0.558687, -1.007321, 1.0, 0.405356, -0.91154, 0.069143, 0.0, -0.294462, -0.058592, 0.953865, 0.0, -0.865435, -0.407015, -0.292165, 0.0, 0.730407, 0.929791, 0.339173, 1.0, -0.034756, 0.665574, 0.745522, 0.0, -0.434385, 0.661764, -0.611047, 0.0, -0.900056, -0.345082, 0.266115, 0.0, 0.926024, 0.089391, -0.736507, 1.0, -0.021597, 0.666131, 0.745522, 0.0, -0.421223, 0.670218, -0.611047, 0.0, -0.9067, -0.327228, 0.266115, 0.0, 0.886202, 0.071893, -0.736507, 1.0, 0.164226, -0.946258, 0.278613, 0.0, -0.361107, 0.20517, 0.909674, 0.0, -0.91795, -0.250001, -0.308006, 0.0, 0.809683, 0.821441, 0.266895, 1.0, -0.027835, -0.963914, 0.264754, 0.0, -0.295416, 0.260959, 0.919037, 0.0, -0.954963, -0.052631, -0.292019, 0.0, 0.929003, 0.642224, 0.260179, 1.0, 0.193021, -0.975624, -0.104407, 0.0, -0.039266, -0.114003, 0.992704, 0.0, -0.980408, -0.187513, -0.060314, 0.0, 0.883969, 0.75349, 0.19578, 1.0, -0.046959, -0.979029, -0.198231, 0.0, -0.109741, -0.192192, 0.975202, 0.0, -0.99285, 0.067548, -0.098414, 0.0, 0.995259, 0.49897, 0.287471, 1.0, -0.996238, 0.071015, 0.049664, 0.0, 0.070594, 0.997453, -0.010198, 0.0, -0.050262, -0.006654, -0.998714, 0.0, 0.046193, -0.00534, 1.542728, 1.0, -0.568529, 0.255252, 0.782062, 0.0, 0.025724, 0.955697, -0.293223, 0.0, -0.822261, -0.146588, -0.549908, 0.0, 1.148558, 0.247094, 1.007324, 1.0, -0.622989, 0.016222, 0.782062, 0.0, -0.344876, 0.891673, -0.293223, 0.0, -0.7021, -0.452389, -0.549908, 0.0, 0.695783, 0.558683, 1.007324, 1.0, -0.405359, 0.911539, 0.069142, 0.0, -0.294459, -0.058592, -0.953866, 0.0, -0.865435, -0.407018, 0.292162, 0.0, 0.730407, 0.929794, -0.339169, 1.0, 0.034752, -0.665574, 0.745523, 0.0, -0.434382, 0.661766, 0.611046, 0.0, -0.900057, -0.345078, -0.266115, 0.0, 0.926026, 0.089387, 0.736506, 1.0, 0.021593, -0.66613, 0.745523, 0.0, -0.42122, 0.670221, 0.611046, 0.0, -0.906701, -0.327224, -0.266115, 0.0, 0.886204, 0.071889, 0.736506, 1.0, -0.164229, 0.946257, 0.278612, 0.0, -0.361104, 0.205169, -0.909675, 0.0, -0.91795, -0.250003, 0.308003, 0.0, 0.809684, 0.821442, -0.26689, 1.0, 0.027832, 0.963914, 0.264753, 0.0, -0.295413, 0.260957, -0.919038, 0.0, -0.954964, -0.052633, 0.292016, 0.0, 0.929004, 0.642225, -0.260174, 1.0, -0.193024, 0.975623, -0.104409, 0.0, -0.039263, -0.114005, -0.992704, 0.0, -0.980409, -0.187516, 0.060312, 0.0, 0.883969, 0.753493, -0.195776, 1.0, 0.046955, 0.979029, -0.198233, 0.0, -0.109738, -0.192194, -0.975201, 0.0, -0.992851, 0.067545, 0.098412, 0.0, 0.99526, 0.498973, -0.287467, 1.0, 0.039431, 0.206549, -0.977641, 0.0, -0.055148, -0.976461, -0.208524, 0.0, -0.997699, 0.062138, -0.027112, 0.0, 0.974138, -0.082825, 0.130219, 1.0, -0.003373, 0.210252, -0.977641, 0.0, 0.144468, -0.967288, -0.208524, 0.0, -0.989504, -0.141941, -0.027112, 0.0, 0.569352, 0.033596, 0.130219, 1.0, -6e-06, 0.126829, -0.991924, 0.0, -0.0, -0.991924, -0.126829, 0.0, -1.0, -0.0, 6e-06, 0.0, 0.126424, 0.026761, 0.12505, 1.0, -0.039431, -0.20655, -0.977641, 0.0, -0.05515, -0.976461, 0.208525, 0.0, -0.997699, 0.062139, 0.027111, 0.0, 0.974138, -0.082828, -0.130219, 1.0, 0.003373, -0.210253, -0.977641, 0.0, 0.144465, -0.967288, 0.208525, 0.0, -0.989504, -0.141939, 0.027111, 0.0, 0.569352, 0.033594, -0.130219, 1.0, 7e-06, -0.126829, -0.991924, 0.0, -3e-06, -0.991924, 0.126829, 0.0, -1.0, 2e-06, -7e-06, 0.0, 0.126425, 0.026758, -0.125049, 1.0];
+    const ibmB = new Float32Array(__S62_IB);
+
     const order6 = [['pos', posB], ['uv', uvB], ['wt', wtB], ['jn', jnB], ['idx', idxB], ['ibm', ibmB]];
     const offs = {}; let base = 0;
     for (const [k, c] of order6) { while (base % 4) base++; offs[k] = base; base += c.byteLength; }
@@ -1659,6 +1726,91 @@ function captureRestIoU(smIo) {
 // Recipe per frame: action.time=t; mixer.update(0); merc.updateMatrixWorld(true);
 // skeleton.update(); then applyBoneTransform == numpy convention
 // (boneMat = boneWorld x fileInvB, weights x4).
+
+function captureBindBisect(smIo, mercObj) {
+    // S62 T2: rest/bind convention gap bisection (task spec a-d)
+    const out = { ok: true };
+    const skel = smIo.skeleton;
+    const NB = skel.bones.length;
+    // (a) per-bone boneInverses + bone.matrixWorld (bind/rest pose, mesh transform zeroed)
+    const keepR = mercObj.rotation.x, keepP = mercObj.position.clone(), keepS = mercObj.scale.clone();
+    mercObj.rotation.set(0, 0, 0); mercObj.position.set(0, 0, 0); mercObj.scale.set(1, 1, 1);
+    mercObj.updateMatrixWorld(true); skel.update();
+    out.scaleWas = { x: keepS.x, y: keepS.y, z: keepS.z };
+    out.rotWas = keepR;
+    const inv = [], mw = [], bn = [];
+    for (let i = 0; i < NB; i++) {
+      inv.push(Array.from(skel.boneInverses[i].elements));
+      mw.push(Array.from(skel.bones[i].matrixWorld.elements));
+      bn.push(skel.bones[i].name || ('bone' + i));
+    }
+    out.boneNames = bn;
+    out.boneInverses = inv;
+    out.boneMatrixWorld = mw;
+    // bindMatrix / bindMatrixInverse
+    out.bindMatrix = Array.from(smIo.bindMatrix.elements);
+    out.bindMatrixInverse = Array.from(smIo.bindMatrixInverse.elements);
+    // (b) node TRS as the loader parsed them (same values the GLB carried)
+    out.nodeTRS = skel.bones.map(b => ({
+      name: b.name || ('bone' + bn.indexOf(b)),
+      pos: [b.position.x, b.position.y, b.position.z],
+      quat: [b.quaternion.x, b.quaternion.y, b.quaternion.z, b.quaternion.w],
+      scl: [b.scale.x, b.scale.y, b.scale.z] }));
+    out.meshNode = { pos: [mercObj.position.x, mercObj.position.y, mercObj.position.z],
+      quat: [mercObj.quaternion.x, mercObj.quaternion.y, mercObj.quaternion.z, mercObj.quaternion.w],
+      scl: [mercObj.scale.x, mercObj.scale.y, mercObj.scale.z] };
+    out.skelRoot = skel.bones[0] ? skel.bones[0].name : null;
+    // (c) skin attributes as LOADED
+    const g = smIo.geometry;
+    const si = g.attributes.skinIndex, sw = g.attributes.skinWeight;
+    out.skinAttrs = { skinIndex: si ? { itemSize: si.itemSize, count: si.count,
+      arrayType: si.array.constructor.name } : null,
+      skinWeight: sw ? { itemSize: sw.itemSize, count: sw.count,
+        arrayType: sw.array.constructor.name } : null };
+    if (sw) {
+      let bad = 0, maxDev = 0;
+      for (let i = 0; i < sw.count; i++) {
+        let s2 = 0;
+        for (let k = 0; k < 4; k++) s2 += sw.getComponent(i, k);
+        const d = Math.abs(s2 - 1);
+        if (d > 1e-3) bad++;
+        if (d > maxDev) maxDev = d;
+      }
+      out.weightSums = { bad: bad, maxDev: +maxDev.toFixed(6), count: sw.count };
+    }
+    // (d) one-vertex identity test: skin vertex 0 with identity boneMatrices
+    const v0 = new THREE.Vector3();
+    g.attributes.position.getX(0); // touch
+    const px0 = g.attributes.position.getX(0), py0 = g.attributes.position.getY(0),
+          pz0 = g.attributes.position.getZ(0);
+    // identity skin: set every boneMatrix = I (save first)
+    const saved = new Float32Array(skel.boneMatrices);
+    for (let i = 0; i < NB * 16; i++) skel.boneMatrices[i] = 0;
+    for (let i = 0; i < NB; i++) {
+      skel.boneMatrices[i*16+0] = 1; skel.boneMatrices[i*16+5] = 1;
+      skel.boneMatrices[i*16+10] = 1; skel.boneMatrices[i*16+15] = 1;
+    }
+    smIo.applyBoneTransform(0, v0);
+    out.oneVertexIdentity = { in: [px0, py0, pz0], out: [v0.x, v0.y, v0.z],
+      maxDev: +Math.max(Math.abs(v0.x - px0), Math.abs(v0.y - py0), Math.abs(v0.z - pz0)).toFixed(6) };
+    // s62 T2: non-degenerate vertex probes through the REAL rest chain
+    out.vertexRest = [];
+    for (const idx of [1, 100, 500, 900, 1200]) {
+      const v1 = new THREE.Vector3();
+      v1.fromBufferAttribute(g.attributes.position, idx);  // s62: r160 seeds from the PASSED vector
+      smIo.applyBoneTransform(idx, v1);
+      out.vertexRest.push({ idx,
+        bind: [g.attributes.position.getX(idx), g.attributes.position.getY(idx), g.attributes.position.getZ(idx)],
+        rest: [+v1.x.toFixed(4), +v1.y.toFixed(4), +v1.z.toFixed(4)] });
+    }
+    out.inv1 = Array.from(skel.boneInverses[1].elements).map(x => +x.toFixed(6));
+    // restore
+    skel.boneMatrices.set(saved);
+    mercObj.rotation.x = keepR; mercObj.position.copy(keepP); mercObj.scale.copy(keepS);
+    mercObj.updateMatrixWorld(true); skel.update();
+    return out;
+  }
+
 function captureSkinnedFrames(smIo, mercObj, mixer, actions, clips) {
   try {
     log('IoU2-start clips=' + clips.length);
@@ -1666,7 +1818,11 @@ function captureSkinnedFrames(smIo, mercObj, mixer, actions, clips) {
     const NVi = geo.attributes.position.count;
     const vTmp = new THREE.Vector3();
     const skinAll = () => { const out = new Float32Array(NVi * 3);
-      for (let i = 0; i < NVi; i++) { smIo.applyBoneTransform(i, vTmp);
+      // s62 T2 ROOT FIX: r160 applyBoneTransform uses the PASSED vector as the base
+      // position (_basePosition.copy(vector)) - seed it with the bind position first.
+      for (let i = 0; i < NVi; i++) {
+        vTmp.fromBufferAttribute(geo.attributes.position, i);
+        smIo.applyBoneTransform(i, vTmp);
         out[i*3] = vTmp.x; out[i*3+1] = vTmp.y; out[i*3+2] = vTmp.z; }
       return out; };
     // s61 T3 fix: the CPU applyBoneTransform chain = bindMatrixInverse x boneWorld x invB x bindMatrix
@@ -1783,8 +1939,49 @@ function captureSkinnedFrames(smIo, mercObj, mixer, actions, clips) {
     }
     mercObj.rotation.x = __rot0; mercObj.position.copy(__pos0);
     mercObj.updateMatrixWorld(true); smIo.skeleton.update();
+    // s62 T2: dump posed bone worlds + skinned verts per captured frame (numpy cross-check)
+    const bwDump = {}; const bmDump = {}; const probeDump = {};
+    try {
+      const BW = new Float32Array(smIo.skeleton.boneMatrices); // boneWorld x boneInverse (THREE convention)
+      const worldDump = [];
+      for (let i = 0; i < smIo.skeleton.bones.length; i++)
+        worldDump.push(Array.from(smIo.skeleton.bones[i].matrixWorld.elements));
+      const vDump = {};
+      for (const nm of clips) {
+        const a = actions[nm]; if (!a) continue;
+        for (const nm2 of clips) { const a2 = actions[nm2];
+          if (a2) { a2.setEffectiveWeight(0); if (a2.isRunning()) a2.stop(); } }
+        a.reset(); a.setEffectiveWeight(1); a.play();
+        const dur = a.getClip().duration;
+        for (const frac of [0.25, 0.5, 0.75]) {
+          a.time = frac * dur; mixer.update(0);
+          // s62 T2: the enemy clips' root channel overwrites mercObj placement each
+          // mixer.update - re-zero AFTER the mixer so the CPU skin stays in bind space.
+          mercObj.rotation.set(0, 0, 0); mercObj.position.set(0, 0, 0);
+          mercObj.updateMatrixWorld(true); smIo.skeleton.update();
+          const va = skinAll();
+          vDump[nm + '@' + frac] = va.map(x => +x.toFixed(4));
+          bmDump[nm + '@' + frac] = Array.from(smIo.skeleton.boneMatrices).map(x => +x.toFixed(6));
+          // same-frame probe: vertex 100 (single joint 24)
+          const __pv = new THREE.Vector3();
+          __pv.fromBufferAttribute(geo.attributes.position, 100);
+          const __bin = [__pv.x, __pv.y, __pv.z];
+          smIo.applyBoneTransform(100, __pv);
+          probeDump[nm + '@' + frac] = {
+            bind: __bin, out: [+__pv.x.toFixed(5), +__pv.y.toFixed(5), +__pv.z.toFixed(5)],
+            mw24: Array.from(smIo.skeleton.bones[24].matrixWorld.elements).map(x => +x.toFixed(6)),
+            ib24: Array.from(smIo.skeleton.boneInverses[24].elements).map(x => +x.toFixed(6)) };
+        }
+        a.setEffectiveWeight(0); a.stop();
+      }
+      bwDump.boneMatrices = Array.from(BW).map(x => +x.toFixed(6));
+      bwDump.worlds = worldDump.map(w => w.map(x => +x.toFixed(6)));
+      bwVerts = vDump;
+      bwDump.boneMats = bmDump; bwDump.probe = probeDump;
+    } catch (eBW) { log('bwDump fail: ' + (eBW && eBW.message)); }
+    var bwVerts = bwVerts || {};
     const __res = { ok: true, restMaxDev: +restMaxDev.toFixed(5), nVerts: NVi, frames, gridDiff,
-      skinDiff, glErr: gl.getError() };
+      skinDiff, glErr: gl.getError(), bw: bwDump, bwVerts };
     log('IoU2-done restMaxDev=' + __res.restMaxDev + ' clips=' + Object.keys(frames).length + ' gridDiff=' + gridDiff);
     return __res;
   } catch (e4) {
@@ -1866,6 +2063,8 @@ async function loadMerc(zipBuf, findM) {
     if (smI2) {
       log('IoU2-call');
       window.__GATE.enemyIoU2 = captureSkinnedFrames(smI2, merc, mercMixer, mercActions, ENEMY_CLIPS);
+      try { window.__GATE.bindBisect = captureBindBisect(smI2, merc); } catch (eBB) {
+        window.__GATE.bindBisect = { ok: false, error: String(eBB && eBB.message || eBB) }; }
     } else window.__GATE.enemyIoU2 = { ok: false, error: 'no skinned mesh' };
   } catch (eI2) { log('IoU2-throw: ' + (eI2 && eI2.message)); window.__GATE.enemyIoU2 = { ok: false, error: String(eI2 && eI2.message) }; }
   return { verts: skin.verts.length / 3, joints: skin.jointNodes ? skin.jointNodes.length : -1,
