@@ -1,0 +1,245 @@
+{
+ "0x34747ebe": {
+  "sym": "CComponentInteraction::Load(CMemoryStream*)",
+  "reader": "0x2d8834",
+  "templates": 4,
+  "names": [
+   "AlarmPost",
+   "Bomb_Barrels",
+   "WeaponCache",
+   "WeaponCache_DECOR"
+  ],
+  "causes": {
+   "OOB": 4
+  }
+ },
+ "0x0f5f8cfd": {
+  "sym": "?",
+  "reader": "?",
+  "templates": 7,
+  "names": [
+   "AnimatedObject",
+   "Bane_Suv_Doors",
+   "Barricade",
+   "GC_Residential_Props_Gotham_Beam",
+   "PoliceFlasher",
+   "PunchEffect",
+   "RainDropSplash"
+  ],
+  "causes": {
+   "OOB": 7
+  }
+ },
+ "0x4ab8a7cd": {
+  "sym": "CComponentSmartLight::Load(CMemoryStream*)",
+  "reader": "0x2e30bc",
+  "templates": 1,
+  "names": [
+   "AnimatedObjectLight"
+  ],
+  "causes": {
+   "OOB": 1
+  }
+ },
+ "0x592ce07c": {
+  "sym": "CComponentSurveillanceCam::Load(CMemoryStream*)",
+  "reader": "0x2e4e98",
+  "templates": 15,
+  "names": [
+   "Bane",
+   "Briefcase",
+   "Crane",
+   "Interactive_Animated_Object",
+   "Interactive_Object",
+   "LotteryBox",
+   "Miranda",
+   "NPC",
+   "NPC_Female",
+   "PickUp_Batarang",
+   "PickUp_EMP_Batarang",
+   "PickUp_Flash_Grenades",
+   "PickUp_Smoke_Grenades",
+   "StashedReleased",
+   "Turhan"
+  ],
+  "causes": {
+   "OOB": 15
+  }
+ },
+ "0x2c9a0e3f": {
+  "sym": "CComponentMuzzleFlash::Load(CMemoryStream*)",
+  "reader": "0x3c2a48",
+  "templates": 7,
+  "names": [
+   "Barricade_Collision_End",
+   "Barricade_Collision_Start",
+   "CollisionBoxMulti",
+   "CollisionMesh",
+   "CollisionPlaneMulti",
+   "Waypoint",
+   "WaypointSpline"
+  ],
+  "causes": {
+   "OOB": 7
+  }
+ },
+ "0x0116a6fa": {
+  "sym": "CComponentTrail::Load(CMemoryStream*)",
+  "reader": "0x2e5318",
+  "templates": 21,
+  "names": [
+   "Batarang",
+   "BatarangEMP",
+   "BatarangFlash",
+   "BatarangGas",
+   "BatarangStone",
+   "Batarang_01",
+   "Batarang_02",
+   "Batarang_EMP",
+   "Batarang_Flash",
+   "Batarang_Gas",
+   "Batarang_Left_01",
+   "Batarang_Left_02",
+   "Batarang_Stone",
+   "Batman",
+   "CombatBatarang",
+   "Crowbar",
+   "Fist_01",
+   "Fist_Npc",
+   "Knife",
+   "Sword",
+   "Umbrella"
+  ],
+  "causes": {
+   "call": 21
+  }
+ },
+ "0x6a204677": {
+  "sym": "CComponentVehicleSoundEvents::Load(CMemoryStream*)",
+  "reader": "0x205458",
+  "templates": 1,
+  "names": [
+   "BatarangZoom"
+  ],
+  "causes": {
+   "OOB": 1
+  }
+ },
+ "0x40c6b80a": {
+  "sym": "CComponentCustomizeActor::Load(CMemoryStream*)",
+  "reader": "0x3bf688",
+  "templates": 18,
+  "names": [
+   "Bazooka_Enemy",
+   "Blake",
+   "Crowbar_Enemy",
+   "Knife_Enemy",
+   "Knife_Enemy_Prisoner",
+   "LeadMerc",
+   "Melee_Enemy_Merc",
+   "Melee_Enemy_Pit",
+   "Melee_Enemy_Stadium",
+   "Melee_Enemy_Test",
+   "Military_Officer",
+   "Pit_Prisoner",
+   "Police_Officer",
+   "Police_Officer_Melee",
+   "Ranged_Disarm_Dummy",
+   "Ranged_Enemy_Test",
+   "Security_Officer",
+   "Sniper"
+  ],
+  "causes": {
+   "call": 18
+  }
+ },
+ "0x4a04f065": {
+  "sym": "CComponentCustomizeActor::Load(CMemoryStream*)",
+  "reader": "0x3bf688",
+  "templates": 1,
+  "names": [
+   "Camera_Combat"
+  ],
+  "causes": {
+   "call": 1
+  }
+ },
+ "0x4de3f7c4": {
+  "sym": "CComponentVehicleSoundEvents::Load(CMemoryStream*)",
+  "reader": "0x205458",
+  "templates": 13,
+  "names": [
+   "Car_Sedan_Minigame",
+   "Coupe",
+   "Generic_Car",
+   "Hatch",
+   "Limousine",
+   "Military_Jeep",
+   "Military_Truck",
+   "PickUpTruck",
+   "SUV",
+   "Sedan",
+   "SwatVan",
+   "Taxi",
+   "Van"
+  ],
+  "causes": {
+   "OOB": 13
+  }
+ },
+ "0x1d50aa73": {
+  "sym": "CComponentVehicleLogic::Load(CMemoryStream*)",
+  "reader": "0x201044",
+  "templates": 1,
+  "names": [
+   "CharacterLevelUps"
+  ],
+  "causes": {
+   "OOB": 1
+  }
+ },
+ "0x0651bdaa": {
+  "sym": "?",
+  "reader": "?",
+  "templates": 1,
+  "names": [
+   "Door_AlarmPost"
+  ],
+  "causes": {
+   "OOB": 1
+  }
+ },
+ "0x010fcfd6": {
+  "sym": "?",
+  "reader": "?",
+  "templates": 1,
+  "names": [
+   "Gargoyle"
+  ],
+  "causes": {
+   "OOB": 1
+  }
+ },
+ "0x2ad2a046": {
+  "sym": "CComponentGrapplingGun::Load(CMemoryStream*)",
+  "reader": "0x3bb510",
+  "templates": 1,
+  "names": [
+   "GroupObjects"
+  ],
+  "causes": {
+   "OOB": 1
+  }
+ },
+ "0x2db081e2": {
+  "sym": "CComponentCollision::Load(CMemoryStream*)",
+  "reader": "0x2d72bc",
+  "templates": 1,
+  "names": [
+   "Military_Laser"
+  ],
+  "causes": {
+   "OOB": 1
+  }
+ }
+}

@@ -1,0 +1,614 @@
+{
+ "reassign": {
+  "0x5471c18b": [
+   "0x003c18e0",
+   "CComponentMissionsList::Load(CMemoryStream*)"
+  ],
+  "0x68a62e65": [
+   "0x003bcaac",
+   "CComponentActorShadow::Load(CMemoryStream*)"
+  ],
+  "0x749126c3": [
+   "0x002e1000",
+   "CComponentBuiltinCylinder::Load(CMemoryStream*)"
+  ],
+  "0x6ea4cd6c": [
+   "0x003c3d74",
+   "CComponentTentacleAI::Load(CMemoryStream*)"
+  ],
+  "0x69f956fc": [
+   "0x003bbd50",
+   "CComponentPlayerControl::Load(CMemoryStream*)"
+  ],
+  "0x69540db7": [
+   "0x003be654",
+   "CComponentBeast_Skylight::Load(CMemoryStream*)"
+  ],
+  "0x216bb1eb": [
+   "0x0020508c",
+   "CComponentVehicleAwareness::Load(CMemoryStream*)"
+  ],
+  "0x2cf34785": [
+   "0x003bec64",
+   "CComponentBuiltinSkyBox::Load(CMemoryStream*)"
+  ],
+  "0x292930b0": [
+   "0x00203858",
+   "CComponentNewShopCategory::Load(CMemoryStream*)"
+  ],
+  "0x26a331e5": [
+   "0x003bee04",
+   "CComponentBuiltinWaypointBox::Load(CMemoryStream*)"
+  ],
+  "0x238767e3": [
+   "0x002d7cf8",
+   "CComponentHoverPath::Load(CMemoryStream*)"
+  ],
+  "0x222567e3": [
+   "0x002e164c",
+   "CComponentTheBatHandle::Load(CMemoryStream*)"
+  ],
+  "0x43c8a8d1": [
+   "0x003bc9f0",
+   "CComponentObjective::Load(CMemoryStream*)"
+  ],
+  "0x4ca5f00e": [
+   "0x00202ae4",
+   "CComponentNewShopItemProperty::Load(CMemoryStream*)"
+  ],
+  "0x4846ed83": [
+   "0x003c0aa4",
+   "CComponentGrapplingHook::Load(CMemoryStream*)"
+  ],
+  "0x44c835d1": [
+   "0x00203764",
+   "CComponentNewShopItem::Load(CMemoryStream*)"
+  ],
+  "0x44c6e9e5": [
+   "0x003c2d38",
+   "CComponentNpcCombat::Load(CMemoryStream*)"
+  ],
+  "0x0dc22f56": [
+   "0x003beeb4",
+   "CComponentBullet::Load(CMemoryStream*)"
+  ],
+  "0x1402fd4b": [
+   "0x003bf2c8",
+   "CComponentCrimeHotspot::Load(CMemoryStream*)"
+  ],
+  "0x0e286154": [
+   "0x002e09f8",
+   "CComponentTurret::Load(CMemoryStream*)"
+  ],
+  "0x0dd583de": [
+   "0x003c0700",
+   "CComponentGadget::Load(CMemoryStream*)"
+  ],
+  "0x331052a1": [
+   "0x003bf218",
+   "CComponentCraneAI::Load(CMemoryStream*)"
+  ],
+  "0x30e3ad7c": [
+   "0x002e33bc",
+   "CComponentEngineSounds::Load(CMemoryStream*)"
+  ],
+  "0x2e23cdd8": [
+   "0x003beb88",
+   "CComponentBuiltinNavMeshAuto::Load(CMemoryStream*)"
+  ],
+  "0x2db081e2": [
+   "0x002d72bc",
+   "CComponentCollision::Load(CMemoryStream*)"
+  ],
+  "0x0113317a": [
+   "0x002e47b0",
+   "CComponentMelee::Load(CMemoryStream*)"
+  ],
+  "0x00154bb0": [
+   "0x002d8020",
+   "CComponentPool::Load(CMemoryStream*)"
+  ],
+  "0x0014ca79": [
+   "0x001fe924",
+   "CComponentBase::Load(CMemoryStream*)"
+  ],
+  "0x00152b87": [
+   "0x002d6ddc",
+   "CComponentMesh::Load(CMemoryStream*)"
+  ],
+  "0x00019ee5": [
+   "0x003c0e60",
+   "CComponentLOD::Load(CMemoryStream*)"
+  ],
+  "0x5a77332f": [
+   "0x002d8da4",
+   "CComponentWaypoint_Movement::Load(CMemoryStream*)"
+  ],
+  "0x5863bd59": [
+   "0x00203cfc",
+   "CComponentMainStoryQuests::Load(CMemoryStream*)"
+  ],
+  "0x54989cb1": [
+   "0x003baee0",
+   "CComponentActorBaseComponent::Load(CMemoryStream*)"
+  ],
+  "0x3b912a30": [
+   "0x002e0454",
+   "CComponentWantedManager::Load(CMemoryStream*)"
+  ],
+  "0x37883208": [
+   "0x003c40c4",
+   "CComponentVehicleGears::Load(CMemoryStream*)"
+  ],
+  "0x3755b69f": [
+   "0x003c35c4",
+   "CComponentScaling::Load(CMemoryStream*)"
+  ],
+  "0x377ea715": [
+   "0x002e50ac",
+   "CComponentTargetable::Load(CMemoryStream*)"
+  ],
+  "0x36f1fe78": [
+   "0x003bddb0",
+   "CComponentAIScripts::Load(CMemoryStream*)"
+  ],
+  "0x3ebf0875": [
+   "0x001ff3fc",
+   "CComponentTrafficMagnet::Load(CMemoryStream*)"
+  ],
+  "0x3e2bb040": [
+   "0x002e0290",
+   "CComponentWantedGenerator::Load(CMemoryStream*)"
+  ],
+  "0x3c3c6b28": [
+   "0x003c3e50",
+   "CComponentThrowMotion::Load(CMemoryStream*)"
+  ],
+  "0x1963f0c0": [
+   "0x002e32dc",
+   "CComponentDistrict::Load(CMemoryStream*)"
+  ],
+  "0x1721f5ba": [
+   "0x002e219c",
+   "CComponentBeast_Directional::Load(CMemoryStream*)"
+  ],
+  "0x16fcc6f6": [
+   "0x003bebd4",
+   "CComponentBuiltinNavSpace::Load(CMemoryStream*)"
+  ],
+  "0x3438ab08": [
+   "0x002e431c",
+   "CComponentGrenade::Load(CMemoryStream*)"
+  ],
+  "0x33702f4a": [
+   "0x002e3940",
+   "CComponentDummies::Load(CMemoryStream*)"
+  ],
+  "0x33601348": [
+   "0x003c04f4",
+   "CComponentDroneAI::Load(CMemoryStream*)"
+  ],
+  "0x500fe00c": [
+   "0x003c3774",
+   "CComponentSegments::Load(CMemoryStream*)"
+  ],
+  "0x4cc04ddb": [
+   "0x002e22f8",
+   "CComponentBeast_Omni::Load(CMemoryStream*)"
+  ],
+  "0x4cbfd885": [
+   "0x002e207c",
+   "CComponentBeast_Area::Load(CMemoryStream*)"
+  ],
+  "0x2b1efd04": [
+   "0x002e2638",
+   "CComponentBeast_Window::Load(CMemoryStream*)"
+  ],
+  "0x2ad0cc14": [
+   "0x003be928",
+   "CComponentBuiltinCover::Load(CMemoryStream*)"
+  ],
+  "0x29e7750d": [
+   "0x00201dec",
+   "CComponentMinimapInit::Load(CMemoryStream*)"
+  ],
+  "0x7c2f7284": [
+   "0x002e6b48",
+   "CComponentIrradianceVolume::Load(CMemoryStream*)"
+  ],
+  "0x75a9de0e": [
+   "0x003c0af0",
+   "CComponentGrapplingHookTarget::Load(CMemoryStream*)"
+  ],
+  "0x7538c652": [
+   "0x002d82c0",
+   "CComponentPlayerComponent::Load(CMemoryStream*)"
+  ],
+  "0x0113f791": [
+   "0x002d70e8",
+   "CComponentNpcAI::Load(CMemoryStream*)"
+  ],
+  "0x650bb301": [
+   "0x003c329c",
+   "CComponentPedestrian::Load(CMemoryStream*)"
+  ],
+  "0x5e46be31": [
+   "0x002d7e50",
+   "CComponentWaypoint::Load(CMemoryStream*)"
+  ],
+  "0x5e35be99": [
+   "0x003c2c58",
+   "CComponentNetworkPlayer::Load(CMemoryStream*)"
+  ],
+  "0x0c69a6a7": [
+   "0x002e7430",
+   "CComponentZonesLink::Load(CMemoryStream*)"
+  ],
+  "0x2b9b5fed": [
+   "0x00202698",
+   "CComponentVehiclePhysics::Load(CMemoryStream*)"
+  ],
+  "0x519ad19b": [
+   "0x003c2a48",
+   "CComponentMuzzleFlash::Load(CMemoryStream*)"
+  ],
+  "0x34747ebe": [
+   "0x002d8834",
+   "CComponentInteraction::Load(CMemoryStream*)"
+  ],
+  "0x7cbf8411": [
+   "0x003c3214",
+   "CComponentObject_Scaling::Load(CMemoryStream*)"
+  ],
+  "0x1b2aa571": [
+   "0x003be548",
+   "CComponentBeastBakeGroup::Load(CMemoryStream*)"
+  ],
+  "0x378ab920": [
+   "0x00201044",
+   "CComponentVehicleLogic::Load(CMemoryStream*)"
+  ],
+  "0x3ef5108d": [
+   "0x002e27b8",
+   "CComponentDropCollectible::Load(CMemoryStream*)"
+  ],
+  "0x3189e053": [
+   "0x001ffa1c",
+   "CComponentTrafficSetting::Load(CMemoryStream*)"
+  ],
+  "0x3164ae79": [
+   "0x002e1d70",
+   "CComponentBuiltinCollisionPlane::Load(CMemoryStream*)"
+  ],
+  "0x278bdd36": [
+   "0x003c0658",
+   "CComponentFireTrailAI::Load(CMemoryStream*)"
+  ],
+  "0x001560d4": [
+   "0x003c3be0",
+   "CComponentShop::Load(CMemoryStream*)"
+  ],
+  "0x0e31d4a0": [
+   "0x002e00dc",
+   "CComponentWeapon::Load(CMemoryStream*)"
+  ],
+  "0x6754056b": [
+   "0x003bbb68",
+   "CComponentAwareness::Load(CMemoryStream*)"
+  ],
+  "0x65da04ed": [
+   "0x002e4114",
+   "CComponentExhaustFan::Load(CMemoryStream*)"
+  ],
+  "0x58b2b422": [
+   "0x003c3f30",
+   "CComponentTutorial::Load(CMemoryStream*)"
+  ],
+  "0x62353c58": [
+   "0x002e4e98",
+   "CComponentSurveillanceCam::Load(CMemoryStream*)"
+  ],
+  "0x59a8390c": [
+   "0x002e1fb0",
+   "CComponentBeastObjectComponentGlobal::Load(CMemoryStream*)"
+  ],
+  "0x068d1134": [
+   "0x002e3500",
+   "CComponentDestroyable::Load(CMemoryStream*)"
+  ],
+  "0x0d6f39c4": [
+   "0x002d8c20",
+   "CComponentPlatform_Properties::Load(CMemoryStream*)"
+  ],
+  "0x0e1f5b6f": [
+   "0x002e4b5c",
+   "CComponentSniper::Load(CMemoryStream*)"
+  ],
+  "0x55d743c0": [
+   "0x003c3150",
+   "CComponentObject_Rotation::Load(CMemoryStream*)"
+  ],
+  "0x25fe2587": [
+   "0x002d8f24",
+   "CComponentHasSound::Load(CMemoryStream*)"
+  ],
+  "0x35c5e0a0": [
+   "0x001fee48",
+   "CComponentMissile::Load(CMemoryStream*)"
+  ],
+  "0x3638f4e3": [
+   "0x002e1ad4",
+   "CComponentDebugDraw::Load(CMemoryStream*)"
+  ],
+  "0x30951655": [
+   "0x001ff584",
+   "CComponentTrafficParking::Load(CMemoryStream*)"
+  ],
+  "0x6bb478e6": [
+   "0x003c3540",
+   "CComponentPlayerCaughtComponent::Load(CMemoryStream*)"
+  ],
+  "0x4de3f7c4": [
+   "0x00205458",
+   "CComponentVehicleSoundEvents::Load(CMemoryStream*)"
+  ],
+  "0x54505898": [
+   "0x002e4c80",
+   "CComponentSteammer::Load(CMemoryStream*)"
+  ],
+  "0x2ad64f3d": [
+   "0x002e74e0",
+   "CComponentBuiltinPlane::Load(CMemoryStream*)"
+  ],
+  "0x2cf1c31c": [
+   "0x003bb510",
+   "CComponentGrapplingGun::Load(CMemoryStream*)"
+  ],
+  "0x67c82e62": [
+   "0x002e143c",
+   "CComponentVehicleCollision::Load(CMemoryStream*)"
+  ],
+  "0x73f0fe09": [
+   "0x003bb89c",
+   "CComponentEffectsLOD::Load(CMemoryStream*)"
+  ],
+  "0x3e8cdd06": [
+   "0x002e1b64",
+   "CComponentLensFlare::Load(CMemoryStream*)"
+  ],
+  "0x11ff6781": [
+   "0x003bc27c",
+   "CComponentPlayerCombat::Load(CMemoryStream*)"
+  ],
+  "0x2888019a": [
+   "0x002e6a08",
+   "CComponentBaseWorldBox::Load(CMemoryStream*)"
+  ],
+  "0x0112e126": [
+   "0x003c125c",
+   "CComponentLight::Load(CMemoryStream*)"
+  ],
+  "0x17ac851f": [
+   "0x002dce20",
+   "CComponentCinematic::Load(CMemoryStream*)"
+  ],
+  "0x4ab8a7cd": [
+   "0x002e30bc",
+   "CComponentSmartLight::Load(CMemoryStream*)"
+  ],
+  "0x40c6b80a": [
+   "0x003bf688",
+   "CComponentCustomizeActor::Load(CMemoryStream*)"
+  ],
+  "0x31c00731": [
+   "0x00204790",
+   "CComponentTrafficSpawner::Load(CMemoryStream*)"
+  ],
+  "0x20af73b7": [
+   "0x003c05dc",
+   "CComponentFileName::Load(CMemoryStream*)"
+  ],
+  "0x39e32181": [
+   "0x003c13f8",
+   "CComponentMetaZone::Load(CMemoryStream*)"
+  ],
+  "0x786f6ecb": [
+   "0x002d6914",
+   "CComponentHelicopterLogic::Load(CMemoryStream*)"
+  ],
+  "0x7f88e44e": [
+   "0x002e1c58",
+   "CComponentBuiltinCollisionBox::Load(CMemoryStream*)"
+  ],
+  "0x46b0c1c3": [
+   "0x0020599c",
+   "CComponentBuiltinNavMesh::Load(CMemoryStream*)"
+  ],
+  "0x339bfc0c": [
+   "0x002e1944",
+   "CComponentPlayerCape::Load(CMemoryStream*)"
+  ],
+  "0x33f89aaa": [
+   "0x003bcb74",
+   "CComponentMeshUVTransform::Load(CMemoryStream*)"
+  ]
+ },
+ "need_derive": {
+  "0x0c7d8baf": [
+   "0x001ff0b0",
+   "CComponentTrafficRoad::Load(CMemoryStream*)"
+  ],
+  "0x2c9a0e3f": [
+   "0x003be7a0",
+   "CComponentBuiltinColors::Load(CMemoryStream*)"
+  ],
+  "0x522b4939": [
+   "0x003c2818",
+   "CComponentMorphValueList::Load(CMemoryStream*)"
+  ],
+  "0x352b0a2e": [
+   "0x003c0fdc",
+   "CComponentLazyLoad::Load(CMemoryStream*)"
+  ],
+  "0x7d561d33": [
+   "0x003bf038",
+   "CComponentCameraParams::Load(CMemoryStream*)"
+  ],
+  "0x1d50aa73": [
+   "0x00205d00",
+   "CComponentCharXPLevels::Load(CMemoryStream*)"
+  ],
+  "0x378ded9b": [
+   "0x00204a18",
+   "CComponentVehicleState::Load(CMemoryStream*)"
+  ],
+  "0x406510ec": [
+   "0x002027d0",
+   "CComponentNpcSound::Load(CMemoryStream*)"
+  ],
+  "0x4891830c": [
+   "0x002e080c",
+   "CComponentMiniGameObject::Load(CMemoryStream*)"
+  ],
+  "0x4880cfb2": [
+   "0x003bed64",
+   "CComponentBuiltinTerrain::Load(CMemoryStream*)"
+  ],
+  "0x279c68f5": [
+   "0x00202000",
+   "CComponentBaseGlobalIllum::Load(CMemoryStream*)"
+  ],
+  "0x010fcfd6": [
+   "0x002e3e50",
+   "CComponentDummy::Load(CMemoryStream*)"
+  ],
+  "0x0f5f8cfd": [
+   "0x003bce84",
+   "CComponentAnimated::Load(CMemoryStream*)"
+  ],
+  "0x727dddd6": [
+   "0x003c3330",
+   "CComponentPendulum_Movement::Load(CMemoryStream*)"
+  ],
+  "0x71c81d7a": [
+   "0x003c1100",
+   "CComponentLevelGlobalIllum::Load(CMemoryStream*)"
+  ],
+  "0x592ce07c": [
+   "0x003bdf78",
+   "CComponentActorSpecialEffects::Load(CMemoryStream*)"
+  ],
+  "0x6133228b": [
+   "0x003beb0c",
+   "CComponentBuiltinIrradianceVolume::Load(CMemoryStream*)"
+  ],
+  "0x5941c179": [
+   "0x001ff270",
+   "CComponentTrafficCrossroad::Load(CMemoryStream*)"
+  ],
+  "0x0651bdaa": [
+   "0x003bba48",
+   "CComponentActorsCollision::Load(CMemoryStream*)"
+  ],
+  "0x0d1839c4": [
+   "0x002e1298",
+   "CComponentBatpodHandle::Load(CMemoryStream*)"
+  ],
+  "0x0dfe2718": [
+   "0x002d79ec",
+   "CComponentMotion::Load(CMemoryStream*)"
+  ],
+  "0x55a6393b": [
+   "0x00200ecc",
+   "CComponentQuest_Parameters::Load(CMemoryStream*)"
+  ],
+  "0x25fadb96": [
+   "0x002d9008",
+   "CComponentHasLight::Load(CMemoryStream*)"
+  ],
+  "0x2ef26c52": [
+   "0x001feb64",
+   "CComponentSoundAndLight::Load(CMemoryStream*)"
+  ],
+  "0x6a204677": [
+   "0x003c07d8",
+   "CComponentGadgetZoom::Load(CMemoryStream*)"
+  ],
+  "0x4cc07242": [
+   "0x002e24b0",
+   "CComponentBeast_Spot::Load(CMemoryStream*)"
+  ],
+  "0x5441a117": [
+   "0x003b8e9c",
+   "CComponentStateSet::Load(CMemoryStream*)"
+  ],
+  "0x2ad2a046": [
+   "0x002e67cc",
+   "CComponentBuiltinGroup::Load(CMemoryStream*)"
+  ],
+  "0x2ca13c06": [
+   "0x002d7ad8",
+   "CComponentBuiltinEffect::Load(CMemoryStream*)"
+  ],
+  "0x675d6313": [
+   "0x002e2a8c",
+   "CComponentDropActors::Load(CMemoryStream*)"
+  ],
+  "0x729ec572": [
+   "0x002e0d78",
+   "CComponentBuiltinBox::Load(CMemoryStream*)"
+  ],
+  "0x3e5bbba8": [
+   "0x003c425c",
+   "CComponentZombieConverter::Load(CMemoryStream*)"
+  ],
+  "0x0f992a02": [
+   "0x003be2ac",
+   "CComponentBatarang::Load(CMemoryStream*)"
+  ],
+  "0x28091330": [
+   "0x002d86e4",
+   "CComponentCollectible::Load(CMemoryStream*)"
+  ],
+  "0x0110ce1f": [
+   "0x003c0938",
+   "CComponentGlide::Load(CMemoryStream*)"
+  ],
+  "0x1791e34f": [
+   "0x002051fc",
+   "CComponentVehicleGraphics::Load(CMemoryStream*)"
+  ],
+  "0x4a04f065": [
+   "0x003c0c1c",
+   "CComponentKombatCameraParams::Load(CMemoryStream*)"
+  ],
+  "0x409a2d0e": [
+   "0x002018f0",
+   "CComponentLevelInit::Load(CMemoryStream*)"
+  ],
+  "0x3198c7c5": [
+   "0x001ff69c",
+   "CComponentTrafficSemaphore::Load(CMemoryStream*)"
+  ],
+  "0x1d7644a4": [
+   "0x002d90fc",
+   "CComponentRunScript::Load(CMemoryStream*)"
+  ],
+  "0x37f7a8ae": [
+   "0x002e0bcc",
+   "CComponentTrigger::Load(CMemoryStream*)"
+  ],
+  "0x78048724": [
+   "0x003c3448",
+   "CComponentPendulum_Properties::Load(CMemoryStream*)"
+  ],
+  "0x7f305b9b": [
+   "0x003c2eb8",
+   "CComponentNpcGlobals::Load(CMemoryStream*)"
+  ],
+  "0x454206a4": [
+   "0x003bdbec",
+   "CComponentAIController::Load(CMemoryStream*)"
+  ]
+ }
+}

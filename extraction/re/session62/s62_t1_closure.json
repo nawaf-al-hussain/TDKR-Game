@@ -1,0 +1,64 @@
+{
+ "S62_ENGINE": {
+  "exact": 473,
+  "bounds": 169,
+  "fail": 6,
+  "na": 5,
+  "tails": {
+   "tail:4": 27,
+   "tail:2": 18,
+   "tail:16": 7,
+   "tail:8": 5,
+   "tail:814": 4,
+   "tail:261": 4,
+   "tail:64": 3,
+   "tail:24": 2,
+   "tail:1848": 2,
+   "tail:1188": 2,
+   "tail:440": 2,
+   "tail:1672": 2,
+   "tail:56": 2,
+   "tail:60": 2
+  },
+  "fails": [
+   {
+    "oid": "0xc38e",
+    "name": "BatPod",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c724",
+    "name": "Helicopter",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc351e",
+    "name": "Helicopter_Bane",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c769",
+    "name": "Military_Heli",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c6f0",
+    "name": "Test_Object",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x9c44",
+    "name": "TheBatDrive",
+    "reason": "OOB"
+   }
+  ]
+ },
+ "NULL_PERM": {
+  "exact": 24,
+  "pass": 204
+ },
+ "NULL_ROT7": {
+  "exact": 349,
+  "pass": 498
+ }
+}
