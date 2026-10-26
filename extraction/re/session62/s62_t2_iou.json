@@ -1,0 +1,173 @@
+{
+ "rows": [
+  {
+   "clip": "_014_idle_enemy_combat",
+   "frac": "0.25",
+   "meanVertDist": 0.0,
+   "iou": 0.894,
+   "litPage": 12059,
+   "litNumpy": 860,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_014_idle_enemy_combat",
+   "frac": "0.5",
+   "meanVertDist": 0.0,
+   "iou": 0.9041,
+   "litPage": 11930,
+   "litNumpy": 854,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_014_idle_enemy_combat",
+   "frac": "0.75",
+   "meanVertDist": 0.0,
+   "iou": 0.9115,
+   "litPage": 11715,
+   "litNumpy": 849,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_166_enemy_walk",
+   "frac": "0.25",
+   "meanVertDist": 0.0,
+   "iou": 0.8951,
+   "litPage": 11223,
+   "litNumpy": 810,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_166_enemy_walk",
+   "frac": "0.5",
+   "meanVertDist": 0.0,
+   "iou": 0.9176,
+   "litPage": 11597,
+   "litNumpy": 849,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_166_enemy_walk",
+   "frac": "0.75",
+   "meanVertDist": 0.0,
+   "iou": 0.92,
+   "litPage": 11903,
+   "litNumpy": 853,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_171_enemy_run",
+   "frac": "0.25",
+   "meanVertDist": 0.0,
+   "iou": 0.9179,
+   "litPage": 10370,
+   "litNumpy": 758,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_171_enemy_run",
+   "frac": "0.5",
+   "meanVertDist": 0.0,
+   "iou": 0.8993,
+   "litPage": 9862,
+   "litNumpy": 720,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_171_enemy_run",
+   "frac": "0.75",
+   "meanVertDist": 0.0,
+   "iou": 0.923,
+   "litPage": 10267,
+   "litNumpy": 743,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_223_enemy_hurtl",
+   "frac": "0.25",
+   "meanVertDist": 0.0,
+   "iou": 0.9136,
+   "litPage": 12101,
+   "litNumpy": 855,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_223_enemy_hurtl",
+   "frac": "0.5",
+   "meanVertDist": 0.0,
+   "iou": 0.9149,
+   "litPage": 16844,
+   "litNumpy": 1166,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_223_enemy_hurtl",
+   "frac": "0.75",
+   "meanVertDist": 0.0,
+   "iou": 0.9389,
+   "litPage": 11088,
+   "litNumpy": 765,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_250_enemy_death1",
+   "frac": "0.25",
+   "meanVertDist": 0.0,
+   "iou": 0.9097,
+   "litPage": 10687,
+   "litNumpy": 757,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_250_enemy_death1",
+   "frac": "0.5",
+   "meanVertDist": 0.0,
+   "iou": 0.8546,
+   "litPage": 9119,
+   "litNumpy": 699,
+   "nVerts": 1294
+  },
+  {
+   "clip": "_250_enemy_death1",
+   "frac": "0.75",
+   "meanVertDist": 0.0,
+   "iou": 0.788,
+   "litPage": 7359,
+   "litNumpy": 562,
+   "nVerts": 1294
+  }
+ ],
+ "nullRolled": [
+  0.4767,
+  0.3709,
+  0.327,
+  0.3819,
+  0.5182,
+  0.4825,
+  0.4363,
+  0.457,
+  0.3386,
+  0.3795,
+  0.0506,
+  0.0,
+  0.5478,
+  0.2336,
+  0.2396
+ ],
+ "nullBatman": [
+  0.5619,
+  0.5578,
+  0.5624,
+  0.5593,
+  0.5835,
+  0.6004,
+  0.5286,
+  0.5022,
+  0.5243,
+  0.3126,
+  0.1842,
+  0.0127,
+  0.4437,
+  0.4048,
+  0.227
+ ]
+}
