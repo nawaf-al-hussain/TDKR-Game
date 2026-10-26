@@ -1297,3 +1297,74 @@ waypoint decode is gated on ?s5=1 - use ?s5=1&s5blend=1 for the blend runs.
   template-coverage residual = hand-verify ~18 rep-heavy reader sequences (0.5) + T3 convention
   gap (0.5-1); NOT in (unchanged): AI/mission flow 4-6, audio 1-2, UI 1-2, cloth cape 1,
   cross-region nav 1-2, city-scale lit rendering 1-2. Memory: pending real GPU.
+## SESSION 62 (round 52, 2026-10-26) — s61's 3 residuals CLOSED (engine-true template closure 473/653 exact, zero fitted rules; posed skinning restMaxDev 1.87 -> 0; combat slice runs the SKINNED merc mesh); REAL-soup glide re-anchor gate PASS; STR = string-table INDEX correction
+
+- **T1 (104f78a):** engine-true closure with hand-derived readers - **exact 473/653 (72.4%),
+  pass 642/653 (98.3%), ZERO fitted rules** (s61: 313 exact + 1 fitted golshape; +160 exact,
+  +87 pass, fitted rule REMOVED). TWO s61 extraction defects found and fixed: (a) tail-call
+  reads missed (BeastObjectComponentGlobal/BeastObject/SurveillanceCam/Destroyable/Motion
+  read strings at function end); (b) the id->case pairing was SHIFTED for 42/137 ids (s61
+  paired cmp sites in tree order with ids in value order) - re-extracted from the
+  movw/movt pair feeding each cmp; validated by GetId co-location, template names
+  (Batarang_* contain 0x0f992a02=CComponentBatarang), s57's page-validated 0x5441a117.
+  Corrections incl. 0x0f5f8cfd=Animated (NOT ExhaustFan), 0x62353c58=SurveillanceCam,
+  0x519ad19b=MuzzleFlash, 0x1d50aa73=CharXPLevels; s61's "0x3c3f30=CComponentTutorial for
+  0x59a8390c" was wrong (0x59a8390c = the GCT fall-through BeastObjectComponentGlobal).
+  44 readers hand-derived incl. Trail [i, rep(c,STR,STR,f6)], CustomizeActor (nested),
+  ActorBase [c7,f16,c3,i,i, rep(i: i,c)], StateSet [i(count), rep(count: CCS::Load), STRx7].
+  Nulls: spec-perm 473 -> 24 (collapse, discriminative); rot-7 349 (length-only, documented).
+  Residual 6 fails = StateSet count>0 templates (CContainerStateAnimation body) -> T5.
+- **T2 (a6bc03d):** posed merc skinning FIXED IN PAGE - restMaxDev 1.87 -> **0**. The gap
+  was TWO stacked defects, neither skeleton/invB: (1) r160 applyBoneTransform CALLING
+  CONVENTION - `_basePosition.copy(vector).applyMatrix4(bindMatrix)`: the PASSED vector is
+  the base position and the geometry is never read; s61's capture passed (0,0,0) -> every
+  CPU-skinned vertex was exactly 0 (restMaxDev 1.87 = max|bind coords|, a body-height).
+  FIX: seed vTmp.fromBufferAttribute before every call. (2) the enemy clips' ROOT CHANNEL
+  overwrites mercObj placement per mixer.update - re-zero AFTER the mixer. GLB/skeleton
+  needed NO change: file invB == inv(BIPED-FK rest) EXACTLY (prior "mismatch" was an
+  orientation bug in the comparison); numpy cross-check: 15 frames mean vertex distance
+  0.0000, IoU mean 0.9001 (nulls: rolled 0.0-0.55, batman cross 0.4377); default soup
+  digest 00ce7970/137893 unchanged, 0 errors.
+- **T3 (a56c4dc):** combat slice runs the SKINNED MERC MESH - enemy_viewer triangle raster
+  replaces the s60 FK point cloud; per-state skinned silhouettes Idle/Walk/Run/Hurt/Death
+  lit 1364-1717 px @128 raster; diffs idleWalk 60 / walkRun 44 / idleDeath 39 / idleHurt 41
+  occupancy cells; mesh wrong-clip control 60 = detected. Gate PASS: stateSeq
+  Idle,Walk,Run,Walk,(Hurt,Walk)xN,Death; hp 120-5=115 Hurt, -10=105, drain->0 Death;
+  cone FOV 160, negatives far/behind -> Idle; 0 console errors; s60 point-cloud gates
+  re-verified green.
+- **T4 (68df188 main + 73fbecb glide page):** REAL collision-soup air-collision re-anchor
+  for the glide (?s5real=1) - GATE PASS. The walker's blocked() capsule query at the
+  DESTINATION altitude; edge-triggered not-blocked->blocked; try_slide resolution;
+  S5.anchor reset = the ResolveAirCollision analogue (0x398570). 2 real re-anchors
+  @17/300 ms (distinct slide-resolved positions), blendD dip restart measured @300 ms,
+  landed, control reanchors=[], soup digest 00ce7970/137893 unchanged, 0 errors. THREE
+  defects caught by gating and fixed by patches 2/4/6 (kept as generators): nz TDZ
+  (block referenced `const nz` before declaration); staging v1 probed 3 u BELOW the
+  ground plane (never fired) while v2's retarget landed the glide start on nm_ground
+  VOID (straight fall, 3 identical probe runs) -> v3 DETECT-ONLY facade census (8/16
+  rays at 64..156 u); `const tgt` -> let once staging fires. Physics recorded: with the
+  engine-default glide (pitch0 fixed) the reach from a ~9 u ledge is 2.51 u - mid-glide
+  facade hits at 12+ u are unreachable; the natural facade-adjacent-ledge pattern is the
+  engine-true demonstration; the s60 virtual-wall case remains the controlled geometry
+  test. s5 gate object gained from/tgt/wpsN/realStaged provenance on BOTH finalize paths.
+- **T5 (65e2b2d):** CAS decode PARTIAL with 2 structural findings: (1) **payload STR =
+  u32 string-table INDEX** (gol-mode ReadString path 0x33a2f0 bounds-checks the index
+  into the wired table; Helicopter reads 0x0fcc..0x0fd1 sequentially = state/anim/script
+  names; NO inline ASCII in any residual payload) - SIZE-compatible, closure numbers
+  STAND, s61's STR readers reinterpreted as index-reads; (2) state boundaries directly
+  observable: Helicopter 13 states (159/175/131/... B), BatPod 2x110 B + S x7 tail, and
+  EVERY state reads its first CAS name at EXACTLY +82 ('-- NONE --' for Idle,
+  'propeller_rotate'/'fly'/'land') -> CCS fixed head = 82 B, f10 byte-verified
+  [0,0,0,0,1,1,1,0,0,20] at +0x17. Blocker: the inlined trigger element [i6,f,i2,S,i]
+  (44 B address-order) cannot fit 131-B states (animName@82 + scriptName@110) -> the
+  inline loop blocks are compiler-reordered; needs a real CFG trace of the loop bodies.
+  Zero speculative rules committed; residual stays 6 fails.
+- **T6:** no real-GPU gpucheck block supplied -> environment-dominated, pending real GPU
+  (unchanged).
+- **T7:** handoff section; bundles_s62 (main 8d8a6a9..65e2b2d, glide cf74c5b..73fbecb)
+  with SHA256SUMS.txt; NO push this session (no token supplied; remote READ-verified at
+  session start: main 8d8a6a9, gh-pages 6145545 LIVE, staged 39298a4 - all as expected).
+  Estimate: T5 finish = CFG-trace the trigger loop bodies 0x3b88cc..0x3b8988 + CAS sweep
+  with the +82 anchor (0.25-0.5); NOT in (unchanged): AI/mission flow 4-6, audio 1-2,
+  UI 1-2, cloth cape 1, cross-region nav 1-2, city-scale lit rendering 1-2. Memory:
+  pending real GPU.
