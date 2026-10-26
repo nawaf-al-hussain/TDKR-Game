@@ -1,0 +1,516 @@
+{
+ "0x14ca79": {
+  "vtable": "0xbd0c98",
+  "reader": "0x1fe924",
+  "reader_sym": "CComponentBase::Load(CMemoryStream*)"
+ },
+ "0x152b87": {
+  "vtable": "0xbd3b88",
+  "reader": "0x2d6ddc",
+  "reader_sym": "CComponentMesh::Load(CMemoryStream*)"
+ },
+ "0x154bb0": {
+  "vtable": "0xbd34f0",
+  "reader": "0x2d8020",
+  "reader_sym": "CComponentPool::Load(CMemoryStream*)"
+ },
+ "0x10fcfd6": {
+  "vtable": "0xbd2f80",
+  "reader": "0x2e3e50",
+  "reader_sym": "CComponentDummy::Load(CMemoryStream*)"
+ },
+ "0x110ce1f": {
+  "vtable": "0xbd8998",
+  "reader": "0x3c0938",
+  "reader_sym": "CComponentGlide::Load(CMemoryStream*)"
+ },
+ "0x112e126": {
+  "status": "NO-VTABLE"
+ },
+ "0x113317a": {
+  "vtable": "0xbd2f00",
+  "reader": "0x2e47b0",
+  "reader_sym": "CComponentMelee::Load(CMemoryStream*)"
+ },
+ "0x113f791": {
+  "status": "NO-VTABLE"
+ },
+ "0x116a6fa": {
+  "vtable": "0xbd2e60",
+  "reader": "0x2e5318",
+  "reader_sym": "CComponentTrail::Load(CMemoryStream*)"
+ },
+ "0x651bdaa": {
+  "vtable": "0xbd8db8",
+  "reader": "0x3bba48",
+  "reader_sym": "CComponentActorsCollision::Load(CMemoryStream*)"
+ },
+ "0x68d1134": {
+  "status": "NO-VTABLE"
+ },
+ "0xc69a6a7": {
+  "status": "NO-VTABLE"
+ },
+ "0xc7d8baf": {
+  "vtable": "0xbd0c38",
+  "reader": "0x1ff0b0",
+  "reader_sym": "CComponentTrafficRoad::Load(CMemoryStream*)"
+ },
+ "0xd1839c4": {
+  "vtable": "0xbd3240",
+  "reader": "0x2e1298",
+  "reader_sym": "CComponentBatpodHandle::Load(CMemoryStream*)"
+ },
+ "0xdd583de": {
+  "status": "NO-VTABLE"
+ },
+ "0xddcd6c4": {
+  "vtable": "0xbd3550",
+  "reader": "0x2d7bf0",
+  "reader_sym": "CComponentHealth::Load(CMemoryStream*)"
+ },
+ "0xdfe2718": {
+  "vtable": "0xbd3590",
+  "reader": "0x2d79ec",
+  "reader_sym": "CComponentMotion::Load(CMemoryStream*)"
+ },
+ "0xe1f5b6f": {
+  "status": "NO-VTABLE"
+ },
+ "0xe286154": {
+  "vtable": "0xbd32d0",
+  "reader": "0x2e09f8",
+  "reader_sym": "CComponentTurret::Load(CMemoryStream*)"
+ },
+ "0xe31d4a0": {
+  "status": "NO-VTABLE"
+ },
+ "0xf5f8cfd": {
+  "vtable": "0xbd8cd8",
+  "reader": "0x3bce84",
+  "reader_sym": "CComponentAnimated::Load(CMemoryStream*)"
+ },
+ "0xf992a02": {
+  "vtable": "0xbd8c38",
+  "reader": "0x3be2ac",
+  "reader_sym": "CComponentBatarang::Load(CMemoryStream*)"
+ },
+ "0x11ff6781": {
+  "status": "NO-VTABLE"
+ },
+ "0x1402fd4b": {
+  "vtable": "0xbd8a78",
+  "reader": "0x3bf2c8",
+  "reader_sym": "CComponentCrimeHotspot::Load(CMemoryStream*)"
+ },
+ "0x1721f5ba": {
+  "vtable": "0xbd30e0",
+  "reader": "0x2e219c",
+  "reader_sym": "CComponentBeast_Directional::Load(CMemoryStream*)"
+ },
+ "0x1791e34f": {
+  "vtable": "0xbd0928",
+  "reader": "0x2051fc",
+  "reader_sym": "CComponentVehicleGraphics::Load(CMemoryStream*)"
+ },
+ "0x17ac851f": {
+  "status": "NO-VTABLE"
+ },
+ "0x1963f0c0": {
+  "vtable": "0xbd3000",
+  "reader": "0x2e32dc",
+  "reader_sym": "CComponentDistrict::Load(CMemoryStream*)"
+ },
+ "0x1b2aa571": {
+  "status": "NO-VTABLE"
+ },
+ "0x1d50aa73": {
+  "vtable": "0xbd0890",
+  "reader": "0x205d00",
+  "reader_sym": "CComponentCharXPLevels::Load(CMemoryStream*)"
+ },
+ "0x20af73b7": {
+  "status": "NO-VTABLE"
+ },
+ "0x216bb1eb": {
+  "vtable": "0xbd0948",
+  "reader": "0x20508c",
+  "reader_sym": "CComponentVehicleAwareness::Load(CMemoryStream*)"
+ },
+ "0x238767e3": {
+  "vtable": "0xbd3530",
+  "reader": "0x2d7cf8",
+  "reader_sym": "CComponentHoverPath::Load(CMemoryStream*)"
+ },
+ "0x26a331e5": {
+  "vtable": "0xbd8af8",
+  "reader": "0x3bee04",
+  "reader_sym": "CComponentBuiltinWaypointBox::Load(CMemoryStream*)"
+ },
+ "0x279c68f5": {
+  "vtable": "0xbd0ae8",
+  "reader": "0x202000",
+  "reader_sym": "CComponentBaseGlobalIllum::Load(CMemoryStream*)"
+ },
+ "0x28091330": {
+  "vtable": "0xbd3490",
+  "reader": "0x2d86e4",
+  "reader_sym": "CComponentCollectible::Load(CMemoryStream*)"
+ },
+ "0x2888019a": {
+  "status": "NO-VTABLE"
+ },
+ "0x292930b0": {
+  "vtable": "0xbd09f0",
+  "reader": "0x203858",
+  "reader_sym": "CComponentNewShopCategory::Load(CMemoryStream*)"
+ },
+ "0x29e7750d": {
+  "status": "NO-VTABLE"
+ },
+ "0x2ad2a046": {
+  "vtable": "0xbd0f38",
+  "reader": "0x2e67cc",
+  "reader_sym": "CComponentBuiltinGroup::Load(CMemoryStream*)"
+ },
+ "0x2ad64f3d": {
+  "status": "NO-VTABLE"
+ },
+ "0x2b1efd04": {
+  "vtable": "0xbd3080",
+  "reader": "0x2e2638",
+  "reader_sym": "CComponentBeast_Window::Load(CMemoryStream*)"
+ },
+ "0x2b9b5fed": {
+  "status": "NO-VTABLE"
+ },
+ "0x2c9a0e3f": {
+  "vtable": "0xbd8bd8",
+  "reader": "0x3be7a0",
+  "reader_sym": "CComponentBuiltinColors::Load(CMemoryStream*)"
+ },
+ "0x2ca13c06": {
+  "vtable": "0xbd3570",
+  "reader": "0x2d7ad8",
+  "reader_sym": "CComponentBuiltinEffect::Load(CMemoryStream*)"
+ },
+ "0x2cf1c31c": {
+  "status": "NO-VTABLE"
+ },
+ "0x2cf34785": {
+  "vtable": "0xbd8b38",
+  "reader": "0x3bec64",
+  "reader_sym": "CComponentBuiltinSkyBox::Load(CMemoryStream*)"
+ },
+ "0x2db081e2": {
+  "status": "NO-VTABLE"
+ },
+ "0x2e23cdd8": {
+  "vtable": "0xbd8b78",
+  "reader": "0x3beb88",
+  "reader_sym": "CComponentBuiltinNavMeshAuto::Load(CMemoryStream*)"
+ },
+ "0x2ef26c52": {
+  "vtable": "0xbd0c78",
+  "reader": "0x1feb64",
+  "reader_sym": "CComponentSoundAndLight::Load(CMemoryStream*)"
+ },
+ "0x30951655": {
+  "status": "NO-VTABLE"
+ },
+ "0x30e3ad7c": {
+  "vtable": "0xbd2fe0",
+  "reader": "0x2e33bc",
+  "reader_sym": "CComponentEngineSounds::Load(CMemoryStream*)"
+ },
+ "0x3164ae79": {
+  "status": "NO-VTABLE"
+ },
+ "0x3189e053": {
+  "vtable": "0xbd0b98",
+  "reader": "0x1ffa1c",
+  "reader_sym": "CComponentTrafficSetting::Load(CMemoryStream*)"
+ },
+ "0x3198c7c5": {
+  "vtable": "0xbd0bb8",
+  "reader": "0x1ff69c",
+  "reader_sym": "CComponentTrafficSemaphore::Load(CMemoryStream*)"
+ },
+ "0x31c00731": {
+  "status": "NO-VTABLE"
+ },
+ "0x33702f4a": {
+  "vtable": "0xbd2fa0",
+  "reader": "0x2e3940",
+  "reader_sym": "CComponentDummies::Load(CMemoryStream*)"
+ },
+ "0x339bfc0c": {
+  "vtable": "0xbd31e0",
+  "reader": "0x2e1944",
+  "reader_sym": "CComponentPlayerCape::Load(CMemoryStream*)"
+ },
+ "0x3438ab08": {
+  "vtable": "0xbd2f40",
+  "reader": "0x2e431c",
+  "reader_sym": "CComponentGrenade::Load(CMemoryStream*)"
+ },
+ "0x34747ebe": {
+  "status": "NO-VTABLE"
+ },
+ "0x352b0a2e": {
+  "vtable": "0xbd88f8",
+  "reader": "0x3c0fdc",
+  "reader_sym": "CComponentLazyLoad::Load(CMemoryStream*)"
+ },
+ "0x35c5e0a0": {
+  "vtable": "0xbd0c58",
+  "reader": "0x1fee48",
+  "reader_sym": "CComponentMissile::Load(CMemoryStream*)"
+ },
+ "0x365cfd67": {
+  "vtable": "0xbd3140",
+  "reader": "0x2e1e8c",
+  "reader_sym": "CComponentBeastObjectComponent::Load(CMemoryStream*)"
+ },
+ "0x36f1fe78": {
+  "status": "NO-VTABLE"
+ },
+ "0x3755b69f": {
+  "vtable": "0xbd86f8",
+  "reader": "0x3c35c4",
+  "reader_sym": "CComponentScaling::Load(CMemoryStream*)"
+ },
+ "0x377ea715": {
+  "vtable": "0xbd2e80",
+  "reader": "0x2e50ac",
+  "reader_sym": "CComponentTargetable::Load(CMemoryStream*)"
+ },
+ "0x37883208": {
+  "vtable": "0xbd8638",
+  "reader": "0x3c40c4",
+  "reader_sym": "CComponentVehicleGears::Load(CMemoryStream*)"
+ },
+ "0x378ab920": {
+  "status": "NO-VTABLE"
+ },
+ "0x378ded9b": {
+  "vtable": "0xbd0968",
+  "reader": "0x204a18",
+  "reader_sym": "CComponentVehicleState::Load(CMemoryStream*)"
+ },
+ "0x37f7a8ae": {
+  "vtable": "0xbd32b0",
+  "reader": "0x2e0bcc",
+  "reader_sym": "CComponentTrigger::Load(CMemoryStream*)"
+ },
+ "0x39e32181": {
+  "status": "NO-VTABLE"
+ },
+ "0x3b912a30": {
+  "vtable": "0xbd3310",
+  "reader": "0x2e0454",
+  "reader_sym": "CComponentWantedManager::Load(CMemoryStream*)"
+ },
+ "0x3e2bb040": {
+  "vtable": "0xbd3330",
+  "reader": "0x2e0290",
+  "reader_sym": "CComponentWantedGenerator::Load(CMemoryStream*)"
+ },
+ "0x3ebf0875": {
+  "vtable": "0xbd0bf8",
+  "reader": "0x1ff3fc",
+  "reader_sym": "CComponentTrafficMagnet::Load(CMemoryStream*)"
+ },
+ "0x3ef5108d": {
+  "status": "NO-VTABLE"
+ },
+ "0x406510ec": {
+  "vtable": "0xbd0a50",
+  "reader": "0x2027d0",
+  "reader_sym": "CComponentNpcSound::Load(CMemoryStream*)"
+ },
+ "0x409a2d0e": {
+  "vtable": "0xbd0b28",
+  "reader": "0x2018f0",
+  "reader_sym": "CComponentLevelInit::Load(CMemoryStream*)"
+ },
+ "0x40c6b80a": {
+  "status": "NO-VTABLE"
+ },
+ "0x43c8a8d1": {
+  "vtable": "0xbd8d38",
+  "reader": "0x3bc9f0",
+  "reader_sym": "CComponentObjective::Load(CMemoryStream*)"
+ },
+ "0x44c6e9e5": {
+  "status": "NO-VTABLE"
+ },
+ "0x44c835d1": {
+  "vtable": "0xbd0a10",
+  "reader": "0x203764",
+  "reader_sym": "CComponentNewShopItem::Load(CMemoryStream*)"
+ },
+ "0x454206a4": {
+  "vtable": "0xbd8cb8",
+  "reader": "0x3bdbec",
+  "reader_sym": "CComponentAIController::Load(CMemoryStream*)"
+ },
+ "0x46b0c1c3": {
+  "status": "NO-VTABLE"
+ },
+ "0x4891830c": {
+  "vtable": "0xbd32f0",
+  "reader": "0x2e080c",
+  "reader_sym": "CComponentMiniGameObject::Load(CMemoryStream*)"
+ },
+ "0x4a04f065": {
+  "vtable": "0xbd8938",
+  "reader": "0x3c0c1c",
+  "reader_sym": "CComponentKombatCameraParams::Load(CMemoryStream*)"
+ },
+ "0x4ab8a7cd": {
+  "status": "NO-VTABLE"
+ },
+ "0x4ca5f00e": {
+  "vtable": "0xbd0a30",
+  "reader": "0x202ae4",
+  "reader_sym": "CComponentNewShopItemProperty::Load(CMemoryStream*)"
+ },
+ "0x4cbfd885": {
+  "status": "NO-VTABLE"
+ },
+ "0x4cc04ddb": {
+  "vtable": "0xbd30c0",
+  "reader": "0x2e22f8",
+  "reader_sym": "CComponentBeast_Omni::Load(CMemoryStream*)"
+ },
+ "0x4cc07242": {
+  "vtable": "0xbd30a0",
+  "reader": "0x2e24b0",
+  "reader_sym": "CComponentBeast_Spot::Load(CMemoryStream*)"
+ },
+ "0x4de3f7c4": {
+  "status": "NO-VTABLE"
+ },
+ "0x519ad19b": {
+  "status": "NO-VTABLE"
+ },
+ "0x5441a117": {
+  "vtable": "0xbd9760",
+  "reader": "0x3b8e9c",
+  "reader_sym": "CComponentStateSet::Load(CMemoryStream*)"
+ },
+ "0x54989cb1": {
+  "status": "NO-VTABLE"
+ },
+ "0x55a6393b": {
+  "vtable": "0xbd0b68",
+  "reader": "0x200ecc",
+  "reader_sym": "CComponentQuest_Parameters::Load(CMemoryStream*)"
+ },
+ "0x5863bd59": {
+  "vtable": "0xbd09c0",
+  "reader": "0x203cfc",
+  "reader_sym": "CComponentMainStoryQuests::Load(CMemoryStream*)"
+ },
+ "0x592ce07c": {
+  "vtable": "0xbd8c78",
+  "reader": "0x3bdf78",
+  "reader_sym": "CComponentActorSpecialEffects::Load(CMemoryStream*)"
+ },
+ "0x5941c179": {
+  "vtable": "0xbd0c18",
+  "reader": "0x1ff270",
+  "reader_sym": "CComponentTrafficCrossroad::Load(CMemoryStream*)"
+ },
+ "0x59a8390c": {
+  "status": "NO-VTABLE"
+ },
+ "0x5e46be31": {
+  "vtable": "0xbd3510",
+  "reader": "0x2d7e50",
+  "reader_sym": "CComponentWaypoint::Load(CMemoryStream*)"
+ },
+ "0x62353c58": {
+  "status": "NO-VTABLE"
+ },
+ "0x650bb301": {
+  "vtable": "0xbd8778",
+  "reader": "0x3c329c",
+  "reader_sym": "CComponentPedestrian::Load(CMemoryStream*)"
+ },
+ "0x65da04ed": {
+  "status": "NO-VTABLE"
+ },
+ "0x6754056b": {
+  "vtable": "0xbd8d98",
+  "reader": "0x3bbb68",
+  "reader_sym": "CComponentAwareness::Load(CMemoryStream*)"
+ },
+ "0x675d6313": {
+  "vtable": "0xbd3040",
+  "reader": "0x2e2a8c",
+  "reader_sym": "CComponentDropActors::Load(CMemoryStream*)"
+ },
+ "0x67c82e62": {
+  "status": "NO-VTABLE"
+ },
+ "0x68a62e65": {
+  "vtable": "0xbd8d18",
+  "reader": "0x3bcaac",
+  "reader_sym": "CComponentActorShadow::Load(CMemoryStream*)"
+ },
+ "0x69540db7": {
+  "status": "NO-VTABLE"
+ },
+ "0x69f956fc": {
+  "vtable": "0xbd8d78",
+  "reader": "0x3bbd50",
+  "reader_sym": "CComponentPlayerControl::Load(CMemoryStream*)"
+ },
+ "0x6a204677": {
+  "vtable": "0xbd89b8",
+  "reader": "0x3c07d8",
+  "reader_sym": "CComponentGadgetZoom::Load(CMemoryStream*)"
+ },
+ "0x729ec572": {
+  "vtable": "0xbd3290",
+  "reader": "0x2e0d78",
+  "reader_sym": "CComponentBuiltinBox::Load(CMemoryStream*)"
+ },
+ "0x73f0fe09": {
+  "status": "NO-VTABLE"
+ },
+ "0x749126c3": {
+  "vtable": "0xbd3270",
+  "reader": "0x2e1000",
+  "reader_sym": "CComponentBuiltinCylinder::Load(CMemoryStream*)"
+ },
+ "0x7538c652": {
+  "status": "NO-VTABLE"
+ },
+ "0x786f6ecb": {
+  "status": "NO-VTABLE"
+ },
+ "0x7c2f7284": {
+  "vtable": "0xbd0ef8",
+  "reader": "0x2e6b48",
+  "reader_sym": "CComponentIrradianceVolume::Load(CMemoryStream*)"
+ },
+ "0x7d561d33": {
+  "vtable": "0xbd8ab8",
+  "reader": "0x3bf038",
+  "reader_sym": "CComponentCameraParams::Load(CMemoryStream*)"
+ },
+ "0x7f305b9b": {
+  "vtable": "0xbd87d8",
+  "reader": "0x3c2eb8",
+  "reader_sym": "CComponentNpcGlobals::Load(CMemoryStream*)"
+ },
+ "0x7f88e44e": {
+  "status": "NO-VTABLE"
+ },
+ "0x222500f6": {
+  "status": "UNCASED"
+ }
+}

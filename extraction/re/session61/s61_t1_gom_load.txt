@@ -1,0 +1,510 @@
+00365780 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+00365784 sub      sp, sp, #0x9c
+00365788 mov      r7, r0
+0036578c bl       #0x3e91e4  ; -> GetDevice()
+00365790 ldr      r2, [pc, #0x7e0]  ; [0x365f78] = 0x7d92c8 glf::task_detail::TRunnable<glitch::video::(anonymous namespace)::SShaderManagerCreateShaderFromShaderCodeTask>::~TRunnable()
+00365794 add      r2, pc, r2
+00365798 ldr      r3, [r0]
+0036579c add      r0, sp, #0x28
+003657a0 ldr      r1, [r3, #0x28]
+003657a4 ldr      r3, [r1]
+003657a8 ldr      r3, [r3, #0xc]
+003657ac blx      r3
+003657b0 ldr      r0, [sp, #0x28]
+003657b4 cmp      r0, #0
+003657b8 beq      #0x3658b4
+003657bc ldr      r3, [r0]
+003657c0 mov      r5, #0
+003657c4 ldr      r4, [pc, #0x7b0]  ; [0x365f7c] = 0x7d9294 glf::task_detail::TRunnable<glitch::video::(anonymous namespace)::SShaderManagerCreateShaderFromShaderCodeTask>::~TRunnable()
+003657c8 mov      r8, #1
+003657cc ldr      r3, [r3, #0x20]
+003657d0 add      r4, pc, r4
+003657d4 blx      r3
+003657d8 mov      r2, #0xa9
+003657dc mov      r1, r4
+003657e0 mov      r6, r0
+003657e4 bl       #0x3e9214  ; -> operator new[](unsigned int, char const*, int)
+003657e8 mov      r2, r6
+003657ec mov      sl, r0
+003657f0 ldr      r0, [sp, #0x28]
+003657f4 mov      r1, sl
+003657f8 ldr      r3, [r0]
+003657fc ldr      r3, [r3, #0xc]
+00365800 blx      r3
+00365804 mov      r1, r4
+00365808 mov      r2, #0xae
+0036580c mov      r0, #0x38
+00365810 bl       #0x3e9204  ; -> operator new(unsigned int, char const*, int)
+00365814 str      r5, [r0, #0x10]
+00365818 mov      r4, r0
+0036581c str      r5, [r0, #0x14]
+00365820 str      r5, [r0, #0x18]
+00365824 str      r5, [r0, #0x1c]
+00365828 str      r5, [r0, #0x20]
+0036582c str      r5, [r0, #0x24]
+00365830 str      r5, [r0, #0x28]
+00365834 str      r5, [r0, #0x2c]
+00365838 str      r5, [r0, #0x30]
+0036583c str      r6, [r0, #4]
+00365840 str      r6, [r0, #8]
+00365844 str      r5, [r0, #0xc]
+00365848 str      sl, [r0]
+0036584c strb     r8, [r0, #0x35]
+00365850 strb     r8, [r0, #0x34]
+00365854 bl       #0x339914  ; -> CMemoryStream::ReadInt()
+00365858 movw     r3, #0x4354
+0036585c movt     r3, #0x4449
+00365860 cmp      r0, r3
+00365864 beq      #0x365954
+00365868 mov      r2, r5
+0036586c mov      r1, #2
+00365870 mov      r0, r8
+00365874 mov      ip, r5
+00365878 str      r5, [r4, #0xc]
+0036587c strb     r5, [r4, #0x34]
+00365880 ldr      r3, [r4]
+00365884 ldrb     r5, [r3, r2]
+00365888 str      r0, [r4, #0xc]
+0036588c ldrb     r2, [r3, r8]
+00365890 str      r1, [r4, #0xc]
+00365894 orr      r0, r2, r5, lsl #8
+00365898 movw     r2, #0x474f
+0036589c cmp      r0, r2
+003658a0 beq      #0x3658bc
+003658a4 ldr      r0, [sp, #0x28]
+003658a8 cmp      r0, #0
+003658ac beq      #0x3658b4
+003658b0 bl       #0x1fd770  ; -> glitch::intrusive_ptr_release(glitch::IReferenceCounted const*)
+003658b4 add      sp, sp, #0x9c
+003658b8 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+003658bc add      r2, ip, #3
+003658c0 ldrb     r1, [r3, r1]
+003658c4 str      r2, [r4, #0xc]
+003658c8 add      ip, ip, #4
+003658cc ldrb     r3, [r3, r2]
+003658d0 str      ip, [r4, #0xc]
+003658d4 orr      r3, r3, r1, lsl #8
+003658d8 cmp      r3, #3
+003658dc bne      #0x3658a4
+003658e0 mov      r0, r4
+003658e4 mov      r5, #0
+003658e8 bl       #0x339914  ; -> CMemoryStream::ReadInt()
+003658ec str      r5, [sp, #0x58]
+003658f0 str      r5, [sp, #0x5c]
+003658f4 str      r5, [sp, #0x60]
+003658f8 cmp      r0, #0
+003658fc str      r0, [sp, #0x18]
+00365900 ble      #0x365f44  ; -> CGameObjectManager::Load()
+00365904 mov      r6, r0
+00365908 b        #0x365928
+0036590c cmp      r3, #0
+00365910 strne    r0, [r3]
+00365914 add      r3, r3, #4
+00365918 str      r3, [sp, #0x5c]
+0036591c add      r5, r5, #1
+00365920 cmp      r5, r6
+00365924 beq      #0x365974
+00365928 mov      r0, r4
+0036592c bl       #0x339914  ; -> CMemoryStream::ReadInt()
+00365930 ldr      r3, [sp, #0x5c]
+00365934 ldr      r2, [sp, #0x60]
+00365938 cmp      r3, r2
+0036593c str      r0, [sp, #0x2c]
+00365940 bne      #0x36590c
+00365944 add      r0, sp, #0x58
+00365948 add      r1, sp, #0x2c
+0036594c bl       #0x39d1e8  ; -> std::vector<int, std::allocator<int> >::push_back(int const&) [clone .part.2276]
+00365950 b        #0x36591c
+00365954 mov      r0, r4
+00365958 bl       #0x39e97c  ; -> CMemoryStream::BeginRead() [clone .part.2551]
+0036595c ldr      ip, [r4, #0xc]
+00365960 add      r0, ip, #1
+00365964 add      r1, ip, #2
+00365968 mov      r2, ip
+0036596c mov      r8, r0
+00365970 b        #0x365880
+00365974 add      r5, r7, #0x30
+00365978 str      r5, [sp, #0x1c]
+0036597c ldr      r5, [pc, #0x5fc]  ; [0x365f80] = 0x8a2300 boost::enable_if<glitch::video::detail::SIsValidSetMaterialParamaterOverload<glitch::core::vector2d<int> >, bool>::type glitch::video::detail::IMaterialParameters<glitch::video::CMaterial, glitch::ISharedMemoryBlockHeader<glitch::video::CMaterial> >::setParameterCvt<glitch::core::vector2d<int> >(unsigned short, unsigned int, glitch::core::vector2d<int> const&)
+00365980 ldr      r1, [r7, #0x38]
+00365984 ldr      r0, [sp, #0x1c]
+00365988 str      r5, [sp, #0x14]
+0036598c movw     r5, #0x5555
+00365990 str      r5, [sp, #0x20]
+00365994 add      r5, r7, #0x18
+00365998 str      r5, [sp, #0x10]
+0036599c bl       #0x20b8e4  ; -> std::_Rb_tree<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >, std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int>, std::_Select1st<std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int> >, std::less<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > >, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int> >*)
+003659a0 add      r5, sp, #0x64
+003659a4 str      r5, [sp, #8]
+003659a8 ldr      r5, [sp, #0x14]
+003659ac mov      r3, #0
+003659b0 ldr      r2, [pc, #0x5cc]  ; [0x365f84] = 0x8b1bc8 std::_Rb_tree<glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SName, std::pair<glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SName const, glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SIdValue>, std::_Select1st<std::pair<glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SName const, glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SIdValue> >, std::less<glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SName>, glitch::core::SAllocator<std::pair<glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SName const, glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SIdValue>, (glitch::memory::E_MEMORY_HINT)0> >::_M_erase(std::_Rb_tree_node<std::pair<glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SName const, glitch::core::detail::SIDedCollection<boost::intrusive_ptr<glitch::video::ITexture>, unsigned short, false, glitch::video::detail::SLookupTableProperties, glitch::core::detail::sidedcollection::SValueTraits>::SIdValue> >*)
+003659b4 ldr      r5, [pc, r5]
+003659b8 str      r5, [sp, #0x14]
+003659bc ldr      r5, [sp, #0x20]
+003659c0 add      r2, pc, r2
+003659c4 str      r3, [sp, #0xc]
+003659c8 movt     r5, #0x1555
+003659cc str      r2, [sp, #0x24]
+003659d0 str      r5, [sp, #0x20]
+003659d4 add      r2, r7, #0x34
+003659d8 str      r3, [r7, #0x38]
+003659dc str      r2, [r7, #0x3c]
+003659e0 str      r2, [r7, #0x40]
+003659e4 str      r3, [r7, #0x44]
+003659e8 ldr      r5, [sp, #0xc]
+003659ec mov      r0, r4
+003659f0 ldr      r3, [sp, #0x58]
+003659f4 ldr      r3, [r3, r5, lsl #2]
+003659f8 str      r3, [r4, #0xc]
+003659fc bl       #0x339914  ; -> CMemoryStream::ReadInt()
+00365a00 add      r1, sp, #0x30
+00365a04 str      r0, [sp, #0x30]
+00365a08 ldr      r0, [sp, #0x10]
+00365a0c bl       #0x209094  ; -> std::map<int, std::vector<int, std::allocator<int> >, std::less<int>, std::allocator<std::pair<int const, std::vector<int, std::allocator<int> > > > >::operator[](int const&)
+00365a10 ldr      r5, [sp, #8]
+00365a14 mov      r3, #0
+00365a18 str      r3, [sp, #0x64]
+00365a1c str      r3, [sp, #0x68]
+00365a20 str      r3, [sp, #0x6c]
+00365a24 cmp      r0, r5
+00365a28 ldrne    r3, [r0]
+00365a2c strne    r3, [r0, #4]
+00365a30 mov      r0, r4
+00365a34 bl       #0x339914  ; -> CMemoryStream::ReadInt()
+00365a38 subs     sl, r0, #0
+00365a3c ble      #0x365b50  ; -> CGameObjectManager::Load()
+00365a40 ldr      sb, [sp, #0x10]
+00365a44 mov      r5, #0
+00365a48 add      r6, r7, #0x1c
+00365a4c mov      r8, r5
+00365a50 ldr      r2, [r7, #0x20]
+00365a54 mov      fp, r6
+00365a58 ldr      r3, [sp, #0x30]
+00365a5c cmp      r2, #0
+00365a60 beq      #0x365a80
+00365a64 ldr      r1, [r2, #0x10]
+00365a68 cmp      r3, r1
+00365a6c movle    fp, r2
+00365a70 ldrgt    r2, [r2, #0xc]
+00365a74 ldrle    r2, [r2, #8]
+00365a78 cmp      r2, #0
+00365a7c bne      #0x365a64
+00365a80 cmp      r6, fp
+00365a84 beq      #0x365a94
+00365a88 ldr      r2, [fp, #0x10]
+00365a8c cmp      r3, r2
+00365a90 bge      #0x365b18
+00365a94 cmp      fp, r6
+00365a98 str      r3, [sp, #0x88]
+00365a9c str      r8, [sp, #0x8c]
+00365aa0 str      r8, [sp, #0x94]
+00365aa4 str      r8, [sp, #0x90]
+00365aa8 beq      #0x365e6c
+00365aac ldr      r2, [fp, #0x10]
+00365ab0 cmp      r3, r2
+00365ab4 bge      #0x365d24
+00365ab8 ldr      r2, [r7, #0x24]
+00365abc cmp      fp, r2
+00365ac0 beq      #0x365af0
+00365ac4 mov      r0, fp
+00365ac8 str      r3, [sp, #4]
+00365acc bl       #0xa71b94  ; -> std::_Rb_tree_decrement(std::_Rb_tree_node_base const*)
+00365ad0 ldr      r3, [sp, #4]
+00365ad4 ldr      r1, [r0, #0x10]
+00365ad8 mov      r2, r0
+00365adc cmp      r3, r1
+00365ae0 ble      #0x365ec0  ; -> CGameObjectManager::Load()
+00365ae4 ldr      r1, [r0, #0xc]
+00365ae8 cmp      r1, #0
+00365aec beq      #0x365d0c
+00365af0 mov      r1, fp
+00365af4 mov      r0, sb
+00365af8 mov      r2, r1
+00365afc add      r3, sp, #0x88
+00365b00 bl       #0x3ab6d4  ; -> std::_Rb_tree<int, std::pair<int const, std::vector<int, std::allocator<int> > >, std::_Select1st<std::pair<int const, std::vector<int, std::allocator<int> > > >, std::less<int>, std::allocator<std::pair<int const, std::vector<int, std::allocator<int> > > > >::_M_insert_(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<int const, std::vector<int, std::allocator<int> > > const&) [clone .constprop.3157]
+00365b04 mov      fp, r0
+00365b08 ldr      r0, [sp, #0x8c]
+00365b0c cmp      r0, #0
+00365b10 beq      #0x365b18
+00365b14 bl       #0x3e9260  ; -> operator delete(void*)
+00365b18 mov      r0, r4
+00365b1c bl       #0x339914  ; -> CMemoryStream::ReadInt()
+00365b20 ldr      r3, [fp, #0x18]
+00365b24 ldr      r2, [fp, #0x1c]
+00365b28 cmp      r3, r2
+00365b2c str      r0, [sp, #0x34]
+00365b30 beq      #0x365d88
+00365b34 cmp      r3, #0
+00365b38 strne    r0, [r3]
+00365b3c add      r3, r3, #4
+00365b40 str      r3, [fp, #0x18]
+00365b44 add      r5, r5, #1
+00365b48 cmp      r5, sl
+00365b4c bne      #0x365a50
+00365b50 ldr      r3, [r4, #0xc]
+00365b54 mov      r0, r4
+00365b58 ldr      ip, [r4]
+00365b5c add      r1, sp, #0x38
+00365b60 add      r2, r3, #1
+00365b64 add      r6, r3, #2
+00365b68 ldr      r5, [sp, #0x14]
+00365b6c ldrb     r3, [ip, r3]
+00365b70 str      r2, [r4, #0xc]
+00365b74 add      lr, r5, #0xc
+00365b78 ldrb     r8, [ip, r2]
+00365b7c mov      r5, #0
+00365b80 str      r6, [r4, #0xc]
+00365b84 orr      r8, r8, r3, lsl #8
+00365b88 str      lr, [sp, #0x38]
+00365b8c bl       #0x33a0d4  ; -> CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+00365b90 add      r1, sp, #0x38
+00365b94 ldr      r0, [sp, #0x1c]
+00365b98 sxth     r8, r8
+00365b9c bl       #0x3c4f1c  ; -> std::map<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >, int, std::less<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > >, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int> > >::operator[](std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+00365ba0 ldr      r3, [sp, #0x30]
+00365ba4 add      r1, sp, #0x30
+00365ba8 str      r3, [r0]
+00365bac mov      r0, r7
+00365bb0 bl       #0x3c6084  ; -> std::map<int, std::vector<CGameObjectManager::TObjectData, std::allocator<CGameObjectManager::TObjectData> >, std::less<int>, std::allocator<std::pair<int const, std::vector<CGameObjectManager::TObjectData, std::allocator<CGameObjectManager::TObjectData> > > > >::operator[](int const&)
+00365bb4 cmp      r8, r5
+00365bb8 str      r5, [sp, #0x78]
+00365bbc str      r5, [sp, #0x70]
+00365bc0 moveq    r3, r8
+00365bc4 str      r5, [sp, #0x74]
+00365bc8 streq    r8, [sp, #0x78]
+00365bcc mov      r6, r0
+00365bd0 beq      #0x365c18
+00365bd4 ldr      r2, [sp, #0x20]
+00365bd8 cmp      r8, r2
+00365bdc bhi      #0x365f74
+00365be0 add      sl, r8, r8, lsl #1
+00365be4 lsl      sl, sl, #2
+00365be8 mov      r0, sl
+00365bec bl       #0x3e91f8  ; -> operator new(unsigned int)
+00365bf0 mov      r2, r8
+00365bf4 add      r3, r0, sl
+00365bf8 str      r0, [sp, #0x70]
+00365bfc str      r3, [sp, #0x78]
+00365c00 cmp      r0, #0
+00365c04 strbne   r5, [r0]
+00365c08 strne    r5, [r0, #4]
+00365c0c subs     r2, r2, #1
+00365c10 add      r0, r0, #0xc
+00365c14 bne      #0x365c00
+00365c18 mov      r0, r6
+00365c1c add      r1, sp, #0x70
+00365c20 str      r3, [sp, #0x74]
+00365c24 bl       #0x3a6f88  ; -> std::vector<CGameObjectManager::TObjectData, std::allocator<CGameObjectManager::TObjectData> >::operator=(std::vector<CGameObjectManager::TObjectData, std::allocator<CGameObjectManager::TObjectData> > const&) [clone .constprop.3127]
+00365c28 ldr      r0, [sp, #0x70]
+00365c2c cmp      r0, #0
+00365c30 beq      #0x365c38
+00365c34 bl       #0x3e9260  ; -> operator delete(void*)
+00365c38 mov      r0, r7
+00365c3c add      r1, sp, #0x30
+00365c40 bl       #0x3c6084  ; -> std::map<int, std::vector<CGameObjectManager::TObjectData, std::allocator<CGameObjectManager::TObjectData> >, std::less<int>, std::allocator<std::pair<int const, std::vector<CGameObjectManager::TObjectData, std::allocator<CGameObjectManager::TObjectData> > > > >::operator[](int const&)
+00365c44 cmn      r8, #0xc0000001
+00365c48 mov      r3, #0
+00365c4c str      r3, [sp, #0x7c]
+00365c50 str      r3, [sp, #0x80]
+00365c54 str      r3, [sp, #0x84]
+00365c58 mov      sl, r0
+00365c5c bhi      #0x365f68
+00365c60 cmp      r8, #0
+00365c64 bne      #0x365edc
+00365c68 cmp      r8, #0
+00365c6c ble      #0x365dd0  ; -> CGameObjectManager::Load()
+00365c70 mov      r5, #0
+00365c74 mov      r6, r5
+00365c78 b        #0x365ce0
+00365c7c cmp      r3, #0
+00365c80 strne    r0, [r3]
+00365c84 add      r3, r3, #4
+00365c88 str      r3, [sp, #0x80]
+00365c8c ldr      r2, [sp, #0x7c]
+00365c90 ldr      r3, [r4, #0xc]
+00365c94 ldr      r1, [sl]
+00365c98 ldr      fp, [r2, r6, lsl #2]
+00365c9c add      r0, r3, #1
+00365ca0 ldr      ip, [r4]
+00365ca4 add      sb, r1, r5
+00365ca8 add      lr, r3, #2
+00365cac add      r6, r6, #1
+00365cb0 str      fp, [sb, #8]
+00365cb4 ldrb     r3, [ip, r3]
+00365cb8 str      r0, [r4, #0xc]
+00365cbc ldrb     r0, [ip, r0]
+00365cc0 str      lr, [r4, #0xc]
+00365cc4 orrs     r0, r0, r3, lsl #8
+00365cc8 moveq    r3, #0
+00365ccc movne    r3, #1
+00365cd0 cmp      r6, r8
+00365cd4 strb     r3, [r1, r5]
+00365cd8 add      r5, r5, #0xc
+00365cdc bge      #0x365d98
+00365ce0 mov      r0, r4
+00365ce4 bl       #0x339914  ; -> CMemoryStream::ReadInt()
+00365ce8 ldr      r3, [sp, #0x80]
+00365cec ldr      r2, [sp, #0x84]
+00365cf0 cmp      r3, r2
+00365cf4 str      r0, [sp, #0x3c]
+00365cf8 bne      #0x365c7c
+00365cfc add      r0, sp, #0x7c
+00365d00 add      r1, sp, #0x3c
+00365d04 bl       #0x39d1e8  ; -> std::vector<int, std::allocator<int> >::push_back(int const&) [clone .part.2276]
+00365d08 b        #0x365c8c
+00365d0c mov      r0, sb
+00365d10 add      r3, sp, #0x88
+00365d14 bl       #0x3ab6d4  ; -> std::_Rb_tree<int, std::pair<int const, std::vector<int, std::allocator<int> > >, std::_Select1st<std::pair<int const, std::vector<int, std::allocator<int> > > >, std::less<int>, std::allocator<std::pair<int const, std::vector<int, std::allocator<int> > > > >::_M_insert_(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<int const, std::vector<int, std::allocator<int> > > const&) [clone .constprop.3157]
+00365d18 mov      fp, r0
+00365d1c ldr      r0, [sp, #0x8c]
+00365d20 b        #0x365b0c
+00365d24 ble      #0x365b18  ; -> CGameObjectManager::Load()
+00365d28 ldr      r2, [r7, #0x28]
+00365d2c cmp      fp, r2
+00365d30 moveq    r0, sb
+00365d34 moveq    r1, #0
+00365d38 beq      #0x365d70
+00365d3c mov      r0, fp
+00365d40 str      r3, [sp, #4]
+00365d44 bl       #0xa71b14  ; -> std::_Rb_tree_increment(std::_Rb_tree_node_base const*)
+00365d48 ldr      r3, [sp, #4]
+00365d4c ldr      r2, [r0, #0x10]
+00365d50 cmp      r3, r2
+00365d54 bge      #0x365f10
+00365d58 ldr      r3, [fp, #0xc]
+00365d5c cmp      r3, #0
+00365d60 movne    r1, r0
+00365d64 bne      #0x365af4
+00365d68 mov      r0, sb
+00365d6c mov      r1, r3
+00365d70 mov      r2, fp
+00365d74 add      r3, sp, #0x88
+00365d78 bl       #0x3ab6d4  ; -> std::_Rb_tree<int, std::pair<int const, std::vector<int, std::allocator<int> > >, std::_Select1st<std::pair<int const, std::vector<int, std::allocator<int> > > >, std::less<int>, std::allocator<std::pair<int const, std::vector<int, std::allocator<int> > > > >::_M_insert_(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<int const, std::vector<int, std::allocator<int> > > const&) [clone .constprop.3157]
+00365d7c mov      fp, r0
+00365d80 ldr      r0, [sp, #0x8c]
+00365d84 b        #0x365b0c
+00365d88 add      r0, fp, #0x14
+00365d8c add      r1, sp, #0x34
+00365d90 bl       #0x39d1e8  ; -> std::vector<int, std::allocator<int> >::push_back(int const&) [clone .part.2276]
+00365d94 b        #0x365b44
+00365d98 mov      r6, #0
+00365d9c mov      r5, r6
+00365da0 b        #0x365da8
+00365da4 ldr      r2, [sp, #0x7c]
+00365da8 ldr      r0, [r2, r5, lsl #2]
+00365dac mov      r1, r4
+00365db0 bl       #0x368ac0  ; -> GenerateComponentTemplate(int, CMemoryStream*)
+00365db4 ldr      r3, [sl]
+00365db8 add      r5, r5, #1
+00365dbc add      r3, r3, r6
+00365dc0 cmp      r5, r8
+00365dc4 add      r6, r6, #0xc
+00365dc8 str      r0, [r3, #4]
+00365dcc blt      #0x365da4  ; -> CGameObjectManager::Load()
+00365dd0 ldr      r2, [sp, #0x30]
+00365dd4 movw     r3, #0x63a6
+00365dd8 movt     r3, #1
+00365ddc cmp      r2, r3
+00365de0 beq      #0x365f2c
+00365de4 ldr      r0, [sp, #0x7c]
+00365de8 cmp      r0, #0
+00365dec beq      #0x365df4
+00365df0 bl       #0x3e9260  ; -> operator delete(void*)
+00365df4 ldr      r5, [sp, #0xc]
+00365df8 add      r0, sp, #0x38
+00365dfc add      r5, r5, #1
+00365e00 str      r5, [sp, #0xc]
+00365e04 bl       #0x2069fc  ; -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+00365e08 ldr      r2, [sp, #0x18]
+00365e0c cmp      r5, r2
+00365e10 bne      #0x3659e8
+00365e14 mov      r0, r4
+00365e18 add      r6, r7, #4
+00365e1c bl       #0x33c8f8  ; -> CMemoryStream::EndRead()
+00365e20 ldr      r5, [r7, #0xc]
+00365e24 b        #0x365e40
+00365e28 ldr      r1, [r5, #0x10]
+00365e2c mov      r0, r7
+00365e30 bl       #0x365f8c  ; -> CGameObjectManager::CheckObjectCategory(int)
+00365e34 mov      r0, r5
+00365e38 bl       #0xa71aa0  ; -> std::_Rb_tree_increment(std::_Rb_tree_node_base*)
+00365e3c mov      r5, r0
+00365e40 cmp      r6, r5
+00365e44 bne      #0x365e28
+00365e48 mov      r0, r4
+00365e4c bl       #0x339294  ; -> CMemoryStream::~CMemoryStream()
+00365e50 mov      r0, r4
+00365e54 bl       #0x3e9260  ; -> operator delete(void*)
+00365e58 ldr      r0, [sp, #0x58]
+00365e5c cmp      r0, #0
+00365e60 beq      #0x3658a4
+00365e64 bl       #0x3e9260  ; -> operator delete(void*)
+00365e68 b        #0x3658a4
+00365e6c ldr      r2, [r7, #0x2c]
+00365e70 cmp      r2, #0
+00365e74 beq      #0x365ea4
+00365e78 ldr      r2, [r7, #0x28]
+00365e7c ldr      r1, [r2, #0x10]
+00365e80 cmp      r3, r1
+00365e84 ble      #0x365ea4  ; -> CGameObjectManager::Load()
+00365e88 mov      r0, sb
+00365e8c mov      r1, #0
+00365e90 add      r3, sp, #0x88
+00365e94 bl       #0x3ab6d4  ; -> std::_Rb_tree<int, std::pair<int const, std::vector<int, std::allocator<int> > >, std::_Select1st<std::pair<int const, std::vector<int, std::allocator<int> > > >, std::less<int>, std::allocator<std::pair<int const, std::vector<int, std::allocator<int> > > > >::_M_insert_(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<int const, std::vector<int, std::allocator<int> > > const&) [clone .constprop.3157]
+00365e98 mov      fp, r0
+00365e9c ldr      r0, [sp, #0x8c]
+00365ea0 b        #0x365b0c
+00365ea4 add      r0, sp, #0x40
+00365ea8 mov      r1, sb
+00365eac add      r2, sp, #0x88
+00365eb0 bl       #0x3ad0c8  ; -> std::_Rb_tree<int, std::pair<int const, std::vector<int, std::allocator<int> > >, std::_Select1st<std::pair<int const, std::vector<int, std::allocator<int> > > >, std::less<int>, std::allocator<std::pair<int const, std::vector<int, std::allocator<int> > > > >::_M_insert_unique(std::pair<int const, std::vector<int, std::allocator<int> > > const&) [clone .constprop.3170]
+00365eb4 ldr      fp, [sp, #0x40]
+00365eb8 ldr      r0, [sp, #0x8c]
+00365ebc b        #0x365b0c
+00365ec0 add      r0, sp, #0x48
+00365ec4 mov      r1, sb
+00365ec8 add      r2, sp, #0x88
+00365ecc bl       #0x3ad0c8  ; -> std::_Rb_tree<int, std::pair<int const, std::vector<int, std::allocator<int> > >, std::_Select1st<std::pair<int const, std::vector<int, std::allocator<int> > > >, std::less<int>, std::allocator<std::pair<int const, std::vector<int, std::allocator<int> > > > >::_M_insert_unique(std::pair<int const, std::vector<int, std::allocator<int> > > const&) [clone .constprop.3170]
+00365ed0 ldr      fp, [sp, #0x48]
+00365ed4 ldr      r0, [sp, #0x8c]
+00365ed8 b        #0x365b0c
+00365edc lsl      r6, r8, #2
+00365ee0 mov      r0, r6
+00365ee4 bl       #0x3e91f8  ; -> operator new(unsigned int)
+00365ee8 mov      r5, r0
+00365eec ldr      r0, [sp, #0x7c]
+00365ef0 cmp      r0, #0
+00365ef4 beq      #0x365efc
+00365ef8 bl       #0x3e9260  ; -> operator delete(void*)
+00365efc add      r6, r5, r6
+00365f00 str      r5, [sp, #0x7c]
+00365f04 str      r5, [sp, #0x80]
+00365f08 str      r6, [sp, #0x84]
+00365f0c b        #0x365c68
+00365f10 add      r0, sp, #0x50
+00365f14 mov      r1, sb
+00365f18 add      r2, sp, #0x88
+00365f1c bl       #0x3ad0c8  ; -> std::_Rb_tree<int, std::pair<int const, std::vector<int, std::allocator<int> > >, std::_Select1st<std::pair<int const, std::vector<int, std::allocator<int> > > >, std::less<int>, std::allocator<std::pair<int const, std::vector<int, std::allocator<int> > > > >::_M_insert_unique(std::pair<int const, std::vector<int, std::allocator<int> > > const&) [clone .constprop.3170]
+00365f20 ldr      fp, [sp, #0x50]
+00365f24 ldr      r0, [sp, #0x8c]
+00365f28 b        #0x365b0c
+00365f2c ldr      r3, [sl]
+00365f30 ldr      r5, [sp, #0x24]
+00365f34 ldr      r1, [r3, #4]
+00365f38 ldr      r0, [r5]
+00365f3c bl       #0x35779c  ; -> CEffectsManager::LoadLODs(CComponentEffectsLOD*)
+00365f40 b        #0x365de4
+00365f44 add      r0, r7, #0x30
+00365f48 ldr      r1, [r7, #0x38]
+00365f4c bl       #0x20b8e4  ; -> std::_Rb_tree<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >, std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int>, std::_Select1st<std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int> >, std::less<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > >, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const, int> >*)
+00365f50 add      r3, r7, #0x34
+00365f54 str      r5, [r7, #0x38]
+00365f58 str      r3, [r7, #0x3c]
+00365f5c str      r3, [r7, #0x40]
+00365f60 str      r5, [r7, #0x44]
+00365f64 b        #0x365e14
+00365f68 ldr      r0, [pc, #0x18]  ; [0x365f88] = 0x7d83bc glitch::collada::CRootSceneNode::addSceneNodeAlias(char const*, glitch::scene::ISceneNode*)
+00365f6c add      r0, pc, r0
+00365f70 bl       #0xa6d760  ; -> std::__throw_length_error(char const*)
+00365f74 bl       #0xa6d514  ; -> std::__throw_bad_alloc()

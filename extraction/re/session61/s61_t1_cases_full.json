@@ -1,0 +1,667 @@
+{
+ "0x14ca79": {
+  "beq": "0x369620",
+  "site": "0x368dc0",
+  "vtable": "0xbd0c98",
+  "vtable_sym": "vtable for CComponentBase",
+  "status": "s60"
+ },
+ "0x152b87": {
+  "beq": "0x3695f0",
+  "site": "0x368dd0",
+  "vtable": "0x10036881c",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x154bb0": {
+  "beq": "0x3693b4",
+  "site": "0x368dac",
+  "vtable": "0xbd34f0",
+  "vtable_sym": "vtable for CComponentPool",
+  "status": "s60"
+ },
+ "0x10fcfd6": {
+  "beq": "0x36a420",
+  "site": "0x36a3c4",
+  "vtable": "0x10036964c",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x110ce1f": {
+  "beq": "0x36b0e0",
+  "site": "0x36b0a0",
+  "vtable": "0xbd8998",
+  "vtable_sym": "vtable for CComponentGlide",
+  "status": "NEW"
+ },
+ "0x113317a": {
+  "beq": "0x369214",
+  "site": "0x368d98",
+  "vtable": "0xbd2f00",
+  "vtable_sym": "vtable for CComponentMelee",
+  "status": "s60"
+ },
+ "0x116a6fa": {
+  "beq": "0x369ce4",
+  "site": "0x369180",
+  "vtable": "0xbd2e60",
+  "vtable_sym": "vtable for CComponentTrail",
+  "status": "s60"
+ },
+ "0x651bdaa": {
+  "beq": "0x36a7c4",
+  "site": "0x36a768",
+  "vtable": "0xbd8db8",
+  "vtable_sym": "vtable for CComponentActorsCollision",
+  "status": "NEW"
+ },
+ "0x82ea1c6": {
+  "beq": "0x369d14",
+  "site": "0x36916c",
+  "vtable": "0x100368f40",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0xc7d8baf": {
+  "beq": "0x369d88",
+  "site": "0x369d4c",
+  "vtable": "0x100368fb4",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0xd1839c4": {
+  "beq": "0x36a838",
+  "site": "0x36a7ec",
+  "vtable": "0x100369a64",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0xdc22f56": {
+  "beq": "0x369698",
+  "site": "0x368c9c",
+  "vtable": "0x1003688c4",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0xddcd6c4": {
+  "beq": "0x369ca4",
+  "site": "0x368cd8",
+  "vtable": "0xbd3550",
+  "vtable_sym": "vtable for CComponentHealth",
+  "status": "s60"
+ },
+ "0xdfe2718": {
+  "beq": "0x36a8b8",
+  "site": "0x36a880",
+  "vtable": "0x100369ae4",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0xe286154": {
+  "beq": "0x369434",
+  "site": "0x368cc4",
+  "vtable": "0xbd32d0",
+  "vtable_sym": "vtable for CComponentTurret",
+  "status": "s60"
+ },
+ "0xf5f8cfd": {
+  "beq": "0x36a4a8",
+  "site": "0x36a458",
+  "vtable": "0x1003696d8",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0xf992a02": {
+  "beq": "0x36afa0",
+  "site": "0x36af2c",
+  "vtable": "0x10036a1cc",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x1402fd4b": {
+  "beq": "0x369414",
+  "site": "0x368cb0",
+  "vtable": "0xbd8a78",
+  "vtable_sym": "vtable for CComponentCrimeHotspot",
+  "status": "s60"
+ },
+ "0x1721f5ba": {
+  "beq": "0x3696c8",
+  "site": "0x368fb0",
+  "vtable": "0xbd30e0",
+  "vtable_sym": "vtable for CComponentBeast_Directional",
+  "status": "s60"
+ },
+ "0x1791e34f": {
+  "beq": "0x36b180",
+  "site": "0x36b108",
+  "vtable": "0xbd0928",
+  "vtable_sym": "vtable for CComponentVehicleGraphics",
+  "status": "NEW"
+ },
+ "0x1963f0c0": {
+  "beq": "0x3696f0",
+  "site": "0x368f9c",
+  "vtable": "0x10036891c",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x1d50aa73": {
+  "beq": "0x36a048",
+  "site": "0x369ff8",
+  "vtable": "0xbd0890",
+  "vtable_sym": "vtable for CComponentCharXPLevels",
+  "status": "NEW"
+ },
+ "0x1d7644a4": {
+  "beq": "0x36b39c",
+  "site": "0x36b364",
+  "vtable": "0x10036a5c8",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x216bb1eb": {
+  "beq": "0x369990",
+  "site": "0x368b88",
+  "vtable": "0xbd0948",
+  "vtable_sym": "vtable for CComponentVehicleAwareness",
+  "status": "s60"
+ },
+ "0x238767e3": {
+  "beq": "0x369880",
+  "site": "0x368bd8",
+  "vtable": "0xbd3530",
+  "vtable_sym": "vtable for CComponentHoverPath",
+  "status": "s60"
+ },
+ "0x25fadb96": {
+  "beq": "0x36a9b8",
+  "site": "0x36a970",
+  "vtable": "0xbd33b0",
+  "vtable_sym": "vtable for CComponentHasLight",
+  "status": "NEW"
+ },
+ "0x26a331e5": {
+  "beq": "0x369394",
+  "site": "0x368bc4",
+  "vtable": "0xbd8af8",
+  "vtable_sym": "vtable for CComponentBuiltinWaypointBox",
+  "status": "s60"
+ },
+ "0x279c68f5": {
+  "beq": "0x36a330",
+  "site": "0x36a2f4",
+  "vtable": null,
+  "vtable_sym": null,
+  "status": "NEW"
+ },
+ "0x28091330": {
+  "beq": "0x36b058",
+  "site": "0x36b004",
+  "vtable": "0x10036a284",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x292930b0": {
+  "beq": "0x3692fc",
+  "site": "0x368bb0",
+  "vtable": "0x100368528",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x2ad0cc14": {
+  "beq": "0x369a60",
+  "site": "0x3690c0",
+  "vtable": "0xbd8bb8",
+  "vtable_sym": "vtable for CComponentBuiltinCover",
+  "status": "s60"
+ },
+ "0x2ad2a046": {
+  "beq": "0x36ad14",
+  "site": "0x36acc8",
+  "vtable": "0xbd0f38",
+  "vtable_sym": "vtable for CComponentBuiltinGroup",
+  "status": "NEW"
+ },
+ "0x2b1efd04": {
+  "beq": "0x369a90",
+  "site": "0x3690ac",
+  "vtable": "0xbd3080",
+  "vtable_sym": "vtable for CComponentBeast_Window",
+  "status": "s60"
+ },
+ "0x2c9a0e3f": {
+  "beq": "0x369e0c",
+  "site": "0x369dd0",
+  "vtable": "0xbd8bd8",
+  "vtable_sym": "vtable for CComponentBuiltinColors",
+  "status": "NEW"
+ },
+ "0x2ca13c06": {
+  "beq": "0x36ad74",
+  "site": "0x36ad3c",
+  "vtable": "0x100369fa0",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x2cf34785": {
+  "beq": "0x369810",
+  "site": "0x368b9c",
+  "vtable": "0x100368a3c",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x2e23cdd8": {
+  "beq": "0x369a20",
+  "site": "0x368d44",
+  "vtable": "0xbd8b78",
+  "vtable_sym": "vtable for CComponentBuiltinNavMeshAuto",
+  "status": "s60"
+ },
+ "0x2ef26c52": {
+  "beq": "0x36aac4",
+  "site": "0x36aa5c",
+  "vtable": "0x100369cf4",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x30e3ad7c": {
+  "beq": "0x369520",
+  "site": "0x368d30",
+  "vtable": "0x10036874c",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x3189e053": {
+  "beq": "0x36a1e4",
+  "site": "0x36a19c",
+  "vtable": "0x100369414",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x3198c7c5": {
+  "beq": "0x36b33c",
+  "site": "0x36b2e4",
+  "vtable": "0xbd0bb8",
+  "vtable_sym": "vtable for CComponentTrafficSemaphore",
+  "status": "NEW"
+ },
+ "0x331052a1": {
+  "beq": "0x36955c",
+  "site": "0x368d1c",
+  "vtable": "0x100368788",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x33702f4a": {
+  "beq": "0x369790",
+  "site": "0x369008",
+  "vtable": "0xbd2fa0",
+  "vtable_sym": "vtable for CComponentDummies",
+  "status": "s60"
+ },
+ "0x339bfc0c": {
+  "beq": "0x36b61c",
+  "site": "0x36b5d4",
+  "vtable": "0xbd31e0",
+  "vtable_sym": "vtable for CComponentPlayerCape",
+  "status": "NEW"
+ },
+ "0x3438ab08": {
+  "beq": "0x3697c0",
+  "site": "0x368ff4",
+  "vtable": "0x1003689ec",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x352b0a2e": {
+  "beq": "0x369f2c",
+  "site": "0x369ee0",
+  "vtable": "0x100369158",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x35c5e0a0": {
+  "beq": "0x36aa20",
+  "site": "0x36a9e8",
+  "vtable": "0x100369c4c",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x365cfd67": {
+  "beq": "0x369938",
+  "site": "0x368acc",
+  "vtable": "0x100368b68",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x3755b69f": {
+  "beq": "0x3694f0",
+  "site": "0x368ec4",
+  "vtable": "0xbd86f8",
+  "vtable_sym": "vtable for CComponentScaling",
+  "status": "s60"
+ },
+ "0x377ea715": {
+  "beq": "0x3694b0",
+  "site": "0x368ed4",
+  "vtable": "0x1003686e0",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x37883208": {
+  "beq": "0x369720",
+  "site": "0x368eb0",
+  "vtable": "0xbd8638",
+  "vtable_sym": "vtable for CComponentVehicleGears",
+  "status": "s60"
+ },
+ "0x378ded9b": {
+  "beq": "0x36a0bc",
+  "site": "0x36a080",
+  "vtable": "0x1003692ec",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x37f7a8ae": {
+  "beq": "0x36b41c",
+  "site": "0x36b3d4",
+  "vtable": null,
+  "vtable_sym": null,
+  "status": "NEW"
+ },
+ "0x3b912a30": {
+  "beq": "0x3693d4",
+  "site": "0x368e9c",
+  "vtable": "0x100368604",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x3e2bb040": {
+  "beq": "0x369454",
+  "site": "0x368f48",
+  "vtable": "0xbd3330",
+  "vtable_sym": "vtable for CComponentWantedGenerator",
+  "status": "s60"
+ },
+ "0x3e5bbba8": {
+  "beq": "0x36af04",
+  "site": "0x36aebc",
+  "vtable": "0xbd8618",
+  "vtable_sym": "vtable for CComponentZombieConverter",
+  "status": "NEW"
+ },
+ "0x3ebf0875": {
+  "beq": "0x369474",
+  "site": "0x368f34",
+  "vtable": "0xbd0bf8",
+  "vtable_sym": "vtable for CComponentTrafficMagnet",
+  "status": "s60"
+ },
+ "0x406510ec": {
+  "beq": "0x36a160",
+  "site": "0x36a114",
+  "vtable": "0x10036938c",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x409a2d0e": {
+  "beq": "0x36b280",
+  "site": "0x36b238",
+  "vtable": "0x10036a4b0",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x43c8a8d1": {
+  "beq": "0x369904",
+  "site": "0x368c1c",
+  "vtable": "0x100368b30",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x44c835d1": {
+  "beq": "0x369750",
+  "site": "0x368c58",
+  "vtable": "0x10036897c",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x454206a4": {
+  "beq": "0x36b5ac",
+  "site": "0x36b574",
+  "vtable": "0xbd8cb8",
+  "vtable_sym": "vtable for CComponentAIController",
+  "status": "NEW"
+ },
+ "0x4846ed83": {
+  "beq": "0x3695d0",
+  "site": "0x368c44",
+  "vtable": "0xbd8978",
+  "vtable_sym": "vtable for CComponentGrapplingHook",
+  "status": "s60"
+ },
+ "0x4891830c": {
+  "beq": "0x36a2a8",
+  "site": "0x36a248",
+  "vtable": "0x1003694d4",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x4a04f065": {
+  "beq": "0x36b210",
+  "site": "0x36b1b8",
+  "vtable": "0xbd8938",
+  "vtable_sym": "vtable for CComponentKombatCameraParams",
+  "status": "NEW"
+ },
+ "0x4ca5f00e": {
+  "beq": "0x36958c",
+  "site": "0x368c30",
+  "vtable": "0x1003687bc",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x4cc04ddb": {
+  "beq": "0x3698a0",
+  "site": "0x369060",
+  "vtable": "0xbd30c0",
+  "vtable_sym": "vtable for CComponentBeast_Omni",
+  "status": "s60"
+ },
+ "0x4cc07242": {
+  "beq": "0x36abe4",
+  "site": "0x36ab7c",
+  "vtable": "0xbd30a0",
+  "vtable_sym": "vtable for CComponentBeast_Spot",
+  "status": "NEW"
+ },
+ "0x500fe00c": {
+  "beq": "0x3698c8",
+  "site": "0x36904c",
+  "vtable": "0xbd86d8",
+  "vtable_sym": "vtable for CComponentSegments",
+  "status": "s60"
+ },
+ "0x522b4939": {
+  "beq": "0x369ea8",
+  "site": "0x369e34",
+  "vtable": "0xbd8858",
+  "vtable_sym": "vtable for CComponentMorphValueList",
+  "status": "NEW"
+ },
+ "0x5441a117": {
+  "beq": "0x36ac68",
+  "site": "0x36ac14",
+  "vtable": "0x100369e94",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x5471c18b": {
+  "beq": "0x3699b0",
+  "site": "0x368aec",
+  "vtable": "0xbd8878",
+  "vtable_sym": "vtable for CComponentMissionsList",
+  "status": "s60"
+ },
+ "0x557a594a": {
+  "beq": "0x369cc4",
+  "site": "0x368e48",
+  "vtable": "0xbd8c58",
+  "vtable_sym": "vtable for CComponentAreaDamage",
+  "status": "s60"
+ },
+ "0x55a6393b": {
+  "beq": "0x36a928",
+  "site": "0x36a8f0",
+  "vtable": "0x100369b54",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x5863bd59": {
+  "beq": "0x36926c",
+  "site": "0x368e34",
+  "vtable": "0xbd09c0",
+  "vtable_sym": "vtable for CComponentMainStoryQuests",
+  "status": "s60"
+ },
+ "0x592ce07c": {
+  "beq": "0x36a640",
+  "site": "0x36a604",
+  "vtable": "0xbd8c78",
+  "vtable_sym": "vtable for CComponentActorSpecialEffects",
+  "status": "NEW"
+ },
+ "0x5941c179": {
+  "beq": "0x36a730",
+  "site": "0x36a6e8",
+  "vtable": "0xbd0c18",
+  "vtable_sym": "vtable for CComponentTrafficCrossroad",
+  "status": "NEW"
+ },
+ "0x5a77332f": {
+  "beq": "0x369234",
+  "site": "0x368e20",
+  "vtable": "0x100368460",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x5e46be31": {
+  "beq": "0x36929c",
+  "site": "0x3691d8",
+  "vtable": "0x1003684c8",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x6133228b": {
+  "beq": "0x36a6b0",
+  "site": "0x36a668",
+  "vtable": "0xbd8b98",
+  "vtable_sym": "vtable for CComponentBuiltinIrradianceVolume",
+  "status": "NEW"
+ },
+ "0x650bb301": {
+  "beq": "0x3692dc",
+  "site": "0x3691c4",
+  "vtable": "0xbd8778",
+  "vtable_sym": "vtable for CComponentPedestrian",
+  "status": "s60"
+ },
+ "0x6754056b": {
+  "beq": "0x36a544",
+  "site": "0x36a4f8",
+  "vtable": "0xbd8d98",
+  "vtable_sym": "vtable for CComponentAwareness",
+  "status": "NEW"
+ },
+ "0x675d6313": {
+  "beq": "0x36ade8",
+  "site": "0x36adb0",
+  "vtable": "0xbd3040",
+  "vtable_sym": "vtable for CComponentDropActors",
+  "status": "NEW"
+ },
+ "0x68a62e65": {
+  "beq": "0x369668",
+  "site": "0x368b00",
+  "vtable": "0x100368894",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x69f956fc": {
+  "beq": "0x369a40",
+  "site": "0x368b3c",
+  "vtable": "0xbd8d78",
+  "vtable_sym": "vtable for CComponentPlayerControl",
+  "status": "s60"
+ },
+ "0x6a204677": {
+  "beq": "0x36ab54",
+  "site": "0x36ab0c",
+  "vtable": "0xbd89b8",
+  "vtable_sym": "vtable for CComponentGadgetZoom",
+  "status": "NEW"
+ },
+ "0x6ea4cd6c": {
+  "beq": "0x369360",
+  "site": "0x368b28",
+  "vtable": "0x10036858c",
+  "vtable_sym": "_end",
+  "status": "s60"
+ },
+ "0x727dddd6": {
+  "beq": "0x36a5dc",
+  "site": "0x36a56c",
+  "vtable": "0xbd8758",
+  "vtable_sym": "vtable for CComponentPendulum_Movement",
+  "status": "NEW"
+ },
+ "0x729ec572": {
+  "beq": "0x36ae68",
+  "site": "0x36ae20",
+  "vtable": null,
+  "vtable_sym": null,
+  "status": "NEW"
+ },
+ "0x749126c3": {
+  "beq": "0x36932c",
+  "site": "0x368b14",
+  "vtable": "0xbd3270",
+  "vtable_sym": "vtable for CComponentBuiltinCylinder",
+  "status": "s60"
+ },
+ "0x75a9de0e": {
+  "beq": "0x3699e0",
+  "site": "0x369128",
+  "vtable": "0xbd8958",
+  "vtable_sym": "vtable for CComponentGrapplingHookTarget",
+  "status": "s60"
+ },
+ "0x78048724": {
+  "beq": "0x36b4b4",
+  "site": "0x36b47c",
+  "vtable": "0x10036a6e0",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x7c2f7284": {
+  "beq": "0x369a00",
+  "site": "0x369114",
+  "vtable": "0xbd0ef8",
+  "vtable_sym": "vtable for CComponentIrradianceVolume",
+  "status": "s60"
+ },
+ "0x7d561d33": {
+  "beq": "0x369fa0",
+  "site": "0x369f64",
+  "vtable": "0x1003691cc",
+  "vtable_sym": "_end",
+  "status": "NEW"
+ },
+ "0x7f305b9b": {
+  "beq": "0x36b538",
+  "site": "0x36b4f0",
+  "vtable": "0xbd87d8",
+  "vtable_sym": "vtable for CComponentNpcGlobals",
+  "status": "NEW"
+ }
+}

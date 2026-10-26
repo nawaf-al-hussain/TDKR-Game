@@ -1,0 +1,719 @@
+{
+ "0x14ca79": {
+  "cmp": "0x368dc0",
+  "beq": "0x369620",
+  "vtable": "0xbd0c98",
+  "sym": "vtable for CComponentBase"
+ },
+ "0x152b87": {
+  "cmp": "0x368dd0",
+  "beq": "0x3695f0",
+  "vtable": "0xbd3b88",
+  "sym": "vtable for CComponentMesh"
+ },
+ "0x154bb0": {
+  "cmp": "0x368dac",
+  "beq": "0x3693b4",
+  "vtable": "0xbd34f0",
+  "sym": "vtable for CComponentPool"
+ },
+ "0x10fcfd6": {
+  "cmp": "0x36a3c4",
+  "beq": "0x36a420",
+  "vtable": "0xbd2f80",
+  "sym": "vtable for CComponentDummy"
+ },
+ "0x110ce1f": {
+  "cmp": "0x36b0a0",
+  "beq": "0x36b0e0",
+  "vtable": "0xbd8998",
+  "sym": "vtable for CComponentGlide"
+ },
+ "0x112e126": {
+  "cmp": "0x36b0b0",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x113317a": {
+  "cmp": "0x368d98",
+  "beq": "0x369214",
+  "vtable": "0xbd2f00",
+  "sym": "vtable for CComponentMelee"
+ },
+ "0x113f791": {
+  "cmp": "0x369194",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x116a6fa": {
+  "cmp": "0x369180",
+  "beq": "0x369ce4",
+  "vtable": "0xbd2e60",
+  "sym": "vtable for CComponentTrail"
+ },
+ "0x651bdaa": {
+  "cmp": "0x36a768",
+  "beq": "0x36a7c4",
+  "vtable": "0xbd8db8",
+  "sym": "vtable for CComponentActorsCollision"
+ },
+ "0x68d1134": {
+  "cmp": "0x36a778",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0xc69a6a7": {
+  "cmp": "0x369d60",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0xc7d8baf": {
+  "cmp": "0x369d4c",
+  "beq": "0x369d88",
+  "vtable": "0xbd0c38",
+  "sym": "vtable for CComponentTrafficRoad"
+ },
+ "0xd1839c4": {
+  "cmp": "0x36a7ec",
+  "beq": "0x36a838",
+  "vtable": "0xbd3240",
+  "sym": "vtable for CComponentBatpodHandle"
+ },
+ "0xdd583de": {
+  "cmp": "0x368cec",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0xddcd6c4": {
+  "cmp": "0x368cd8",
+  "beq": "0x369ca4",
+  "vtable": "0xbd3550",
+  "sym": "vtable for CComponentHealth"
+ },
+ "0xdfe2718": {
+  "cmp": "0x36a880",
+  "beq": "0x36a8b8",
+  "vtable": "0xbd3590",
+  "sym": "vtable for CComponentMotion"
+ },
+ "0xe1f5b6f": {
+  "cmp": "0x36a890",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0xe286154": {
+  "cmp": "0x368cc4",
+  "beq": "0x369434",
+  "vtable": "0xbd32d0",
+  "sym": "vtable for CComponentTurret"
+ },
+ "0xe31d4a0": {
+  "cmp": "0x36a46c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0xf5f8cfd": {
+  "cmp": "0x36a458",
+  "beq": "0x36a4a8",
+  "vtable": "0xbd8cd8",
+  "sym": "vtable for CComponentAnimated"
+ },
+ "0xf992a02": {
+  "cmp": "0x36af2c",
+  "beq": "0x36afa0",
+  "vtable": "0xbd8c38",
+  "sym": "vtable for CComponentBatarang"
+ },
+ "0x11ff6781": {
+  "cmp": "0x36af3c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x1402fd4b": {
+  "cmp": "0x368cb0",
+  "beq": "0x369414",
+  "vtable": "0xbd8a78",
+  "sym": "vtable for CComponentCrimeHotspot"
+ },
+ "0x1721f5ba": {
+  "cmp": "0x368fb0",
+  "beq": "0x3696c8",
+  "vtable": "0xbd30e0",
+  "sym": "vtable for CComponentBeast_Directional"
+ },
+ "0x1791e34f": {
+  "cmp": "0x36b108",
+  "beq": "0x36b180",
+  "vtable": "0xbd0928",
+  "sym": "vtable for CComponentVehicleGraphics"
+ },
+ "0x17ac851f": {
+  "cmp": "0x36b118",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x1963f0c0": {
+  "cmp": "0x368f9c",
+  "beq": "0x3696f0",
+  "vtable": "0xbd3000",
+  "sym": "vtable for CComponentDistrict"
+ },
+ "0x1b2aa571": {
+  "cmp": "0x36a00c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x1d50aa73": {
+  "cmp": "0x369ff8",
+  "beq": "0x36a048",
+  "vtable": "0xbd0890",
+  "sym": "vtable for CComponentCharXPLevels"
+ },
+ "0x20af73b7": {
+  "cmp": "0x36b374",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x216bb1eb": {
+  "cmp": "0x368b88",
+  "beq": "0x369990",
+  "vtable": "0xbd0948",
+  "sym": "vtable for CComponentVehicleAwareness"
+ },
+ "0x238767e3": {
+  "cmp": "0x368bd8",
+  "beq": "0x369880",
+  "vtable": "0xbd3530",
+  "sym": "vtable for CComponentHoverPath"
+ },
+ "0x26a331e5": {
+  "cmp": "0x368bc4",
+  "beq": "0x369394",
+  "vtable": "0xbd8af8",
+  "sym": "vtable for CComponentBuiltinWaypointBox"
+ },
+ "0x279c68f5": {
+  "cmp": "0x36a2f4",
+  "beq": "0x36a330",
+  "vtable": "0xbd0ae8",
+  "sym": "vtable for CComponentBaseGlobalIllum"
+ },
+ "0x28091330": {
+  "cmp": "0x36b004",
+  "beq": "0x36b058",
+  "vtable": "0xbd3490",
+  "sym": "vtable for CComponentCollectible"
+ },
+ "0x2888019a": {
+  "cmp": "0x36b014",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x292930b0": {
+  "cmp": "0x368bb0",
+  "beq": "0x3692fc",
+  "vtable": "0xbd09f0",
+  "sym": "vtable for CComponentNewShopCategory"
+ },
+ "0x29e7750d": {
+  "cmp": "0x3690d4",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x2ad2a046": {
+  "cmp": "0x36acc8",
+  "beq": "0x36ad14",
+  "vtable": "0xbd0f38",
+  "sym": "vtable for CComponentBuiltinGroup"
+ },
+ "0x2ad64f3d": {
+  "cmp": "0x36acd8",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x2b1efd04": {
+  "cmp": "0x3690ac",
+  "beq": "0x369a90",
+  "vtable": "0xbd3080",
+  "sym": "vtable for CComponentBeast_Window"
+ },
+ "0x2b9b5fed": {
+  "cmp": "0x369de4",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x2c9a0e3f": {
+  "cmp": "0x369dd0",
+  "beq": "0x369e0c",
+  "vtable": "0xbd8bd8",
+  "sym": "vtable for CComponentBuiltinColors"
+ },
+ "0x2ca13c06": {
+  "cmp": "0x36ad3c",
+  "beq": "0x36ad74",
+  "vtable": "0xbd3570",
+  "sym": "vtable for CComponentBuiltinEffect"
+ },
+ "0x2cf1c31c": {
+  "cmp": "0x36ad4c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x2cf34785": {
+  "cmp": "0x368b9c",
+  "beq": "0x369810",
+  "vtable": "0xbd8b38",
+  "sym": "vtable for CComponentBuiltinSkyBox"
+ },
+ "0x2db081e2": {
+  "cmp": "0x368d58",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x2e23cdd8": {
+  "cmp": "0x368d44",
+  "beq": "0x369a20",
+  "vtable": "0xbd8b78",
+  "sym": "vtable for CComponentBuiltinNavMeshAuto"
+ },
+ "0x2ef26c52": {
+  "cmp": "0x36aa5c",
+  "beq": "0x36aac4",
+  "vtable": "0xbd0c78",
+  "sym": "vtable for CComponentSoundAndLight"
+ },
+ "0x30951655": {
+  "cmp": "0x36aa6c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x30e3ad7c": {
+  "cmp": "0x368d30",
+  "beq": "0x369520",
+  "vtable": "0xbd2fe0",
+  "sym": "vtable for CComponentEngineSounds"
+ },
+ "0x3164ae79": {
+  "cmp": "0x36a1b0",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x3189e053": {
+  "cmp": "0x36a19c",
+  "beq": "0x36a1e4",
+  "vtable": "0xbd0b98",
+  "sym": "vtable for CComponentTrafficSetting"
+ },
+ "0x3198c7c5": {
+  "cmp": "0x36b2e4",
+  "beq": "0x36b33c",
+  "vtable": "0xbd0bb8",
+  "sym": "vtable for CComponentTrafficSemaphore"
+ },
+ "0x31c00731": {
+  "cmp": "0x36b2f4",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x33702f4a": {
+  "cmp": "0x369008",
+  "beq": "0x369790",
+  "vtable": "0xbd2fa0",
+  "sym": "vtable for CComponentDummies"
+ },
+ "0x339bfc0c": {
+  "cmp": "0x36b5d4",
+  "beq": "0x36b61c",
+  "vtable": "0xbd31e0",
+  "sym": "vtable for CComponentPlayerCape"
+ },
+ "0x3438ab08": {
+  "cmp": "0x368ff4",
+  "beq": "0x3697c0",
+  "vtable": "0xbd2f40",
+  "sym": "vtable for CComponentGrenade"
+ },
+ "0x34747ebe": {
+  "cmp": "0x369ef4",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x352b0a2e": {
+  "cmp": "0x369ee0",
+  "beq": "0x369f2c",
+  "vtable": "0xbd88f8",
+  "sym": "vtable for CComponentLazyLoad"
+ },
+ "0x35c5e0a0": {
+  "cmp": "0x36a9e8",
+  "beq": "0x36aa20",
+  "vtable": "0xbd0c58",
+  "sym": "vtable for CComponentMissile"
+ },
+ "0x365cfd67": {
+  "cmp": "0x368acc",
+  "beq": "0x369938",
+  "vtable": "0xbd3140",
+  "sym": "vtable for CComponentBeastObjectComponent"
+ },
+ "0x36f1fe78": {
+  "cmp": "0x368ee4",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x3755b69f": {
+  "cmp": "0x368ec4",
+  "beq": "0x3694f0",
+  "vtable": "0xbd86f8",
+  "sym": "vtable for CComponentScaling"
+ },
+ "0x377ea715": {
+  "cmp": "0x368ed4",
+  "beq": "0x3694b0",
+  "vtable": "0xbd2e80",
+  "sym": "vtable for CComponentTargetable"
+ },
+ "0x37883208": {
+  "cmp": "0x368eb0",
+  "beq": "0x369720",
+  "vtable": "0xbd8638",
+  "sym": "vtable for CComponentVehicleGears"
+ },
+ "0x378ab920": {
+  "cmp": "0x36a094",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x378ded9b": {
+  "cmp": "0x36a080",
+  "beq": "0x36a0bc",
+  "vtable": "0xbd0968",
+  "sym": "vtable for CComponentVehicleState"
+ },
+ "0x37f7a8ae": {
+  "cmp": "0x36b3d4",
+  "beq": "0x36b41c",
+  "vtable": "0xbd32b0",
+  "sym": "vtable for CComponentTrigger"
+ },
+ "0x39e32181": {
+  "cmp": "0x36b3e4",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x3b912a30": {
+  "cmp": "0x368e9c",
+  "beq": "0x3693d4",
+  "vtable": "0xbd3310",
+  "sym": "vtable for CComponentWantedManager"
+ },
+ "0x3e2bb040": {
+  "cmp": "0x368f48",
+  "beq": "0x369454",
+  "vtable": "0xbd3330",
+  "sym": "vtable for CComponentWantedGenerator"
+ },
+ "0x3ebf0875": {
+  "cmp": "0x368f34",
+  "beq": "0x369474",
+  "vtable": "0xbd0bf8",
+  "sym": "vtable for CComponentTrafficMagnet"
+ },
+ "0x3ef5108d": {
+  "cmp": "0x36a128",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x406510ec": {
+  "cmp": "0x36a114",
+  "beq": "0x36a160",
+  "vtable": "0xbd0a50",
+  "sym": "vtable for CComponentNpcSound"
+ },
+ "0x409a2d0e": {
+  "cmp": "0x36b238",
+  "beq": "0x36b280",
+  "vtable": "0xbd0b28",
+  "sym": "vtable for CComponentLevelInit"
+ },
+ "0x40c6b80a": {
+  "cmp": "0x36b248",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x43c8a8d1": {
+  "cmp": "0x368c1c",
+  "beq": "0x369904",
+  "vtable": "0xbd8d38",
+  "sym": "vtable for CComponentObjective"
+ },
+ "0x44c6e9e5": {
+  "cmp": "0x368c6c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x44c835d1": {
+  "cmp": "0x368c58",
+  "beq": "0x369750",
+  "vtable": "0xbd0a10",
+  "sym": "vtable for CComponentNewShopItem"
+ },
+ "0x454206a4": {
+  "cmp": "0x36b574",
+  "beq": "0x36b5ac",
+  "vtable": "0xbd8cb8",
+  "sym": "vtable for CComponentAIController"
+ },
+ "0x46b0c1c3": {
+  "cmp": "0x36b584",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x4891830c": {
+  "cmp": "0x36a248",
+  "beq": "0x36a2a8",
+  "vtable": "0xbd32f0",
+  "sym": "vtable for CComponentMiniGameObject"
+ },
+ "0x4a04f065": {
+  "cmp": "0x36b1b8",
+  "beq": "0x36b210",
+  "vtable": "0xbd8938",
+  "sym": "vtable for CComponentKombatCameraParams"
+ },
+ "0x4ab8a7cd": {
+  "cmp": "0x36b1c8",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x4ca5f00e": {
+  "cmp": "0x368c30",
+  "beq": "0x36958c",
+  "vtable": "0xbd0a30",
+  "sym": "vtable for CComponentNewShopItemProperty"
+ },
+ "0x4cbfd885": {
+  "cmp": "0x369074",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x4cc04ddb": {
+  "cmp": "0x369060",
+  "beq": "0x3698a0",
+  "vtable": "0xbd30c0",
+  "sym": "vtable for CComponentBeast_Omni"
+ },
+ "0x4cc07242": {
+  "cmp": "0x36ab7c",
+  "beq": "0x36abe4",
+  "vtable": "0xbd30a0",
+  "sym": "vtable for CComponentBeast_Spot"
+ },
+ "0x4de3f7c4": {
+  "cmp": "0x36ab8c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x519ad19b": {
+  "cmp": "0x369e48",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x5441a117": {
+  "cmp": "0x36ac14",
+  "beq": "0x36ac68",
+  "vtable": "0xbd9760",
+  "sym": "vtable for CComponentStateSet"
+ },
+ "0x54989cb1": {
+  "cmp": "0x368e5c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x55a6393b": {
+  "cmp": "0x36a8f0",
+  "beq": "0x36a928",
+  "vtable": "0xbd0b68",
+  "sym": "vtable for CComponentQuest_Parameters"
+ },
+ "0x5863bd59": {
+  "cmp": "0x368e34",
+  "beq": "0x36926c",
+  "vtable": "0xbd09c0",
+  "sym": "vtable for CComponentMainStoryQuests"
+ },
+ "0x592ce07c": {
+  "cmp": "0x36a604",
+  "beq": "0x36a640",
+  "vtable": "0xbd8c78",
+  "sym": "vtable for CComponentActorSpecialEffects"
+ },
+ "0x5941c179": {
+  "cmp": "0x36a6e8",
+  "beq": "0x36a730",
+  "vtable": "0xbd0c18",
+  "sym": "vtable for CComponentTrafficCrossroad"
+ },
+ "0x59a8390c": {
+  "cmp": "0x36a6f8",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x5e46be31": {
+  "cmp": "0x3691d8",
+  "beq": "0x36929c",
+  "vtable": "0xbd3510",
+  "sym": "vtable for CComponentWaypoint"
+ },
+ "0x62353c58": {
+  "cmp": "0x36a678",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x650bb301": {
+  "cmp": "0x3691c4",
+  "beq": "0x3692dc",
+  "vtable": "0xbd8778",
+  "sym": "vtable for CComponentPedestrian"
+ },
+ "0x65da04ed": {
+  "cmp": "0x36a50c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x6754056b": {
+  "cmp": "0x36a4f8",
+  "beq": "0x36a544",
+  "vtable": "0xbd8d98",
+  "sym": "vtable for CComponentAwareness"
+ },
+ "0x675d6313": {
+  "cmp": "0x36adb0",
+  "beq": "0x36ade8",
+  "vtable": "0xbd3040",
+  "sym": "vtable for CComponentDropActors"
+ },
+ "0x67c82e62": {
+  "cmp": "0x36adc0",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x68a62e65": {
+  "cmp": "0x368b00",
+  "beq": "0x369668",
+  "vtable": "0xbd8d18",
+  "sym": "vtable for CComponentActorShadow"
+ },
+ "0x69540db7": {
+  "cmp": "0x368b50",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x69f956fc": {
+  "cmp": "0x368b3c",
+  "beq": "0x369a40",
+  "vtable": "0xbd8d78",
+  "sym": "vtable for CComponentPlayerControl"
+ },
+ "0x6a204677": {
+  "cmp": "0x36ab0c",
+  "beq": "0x36ab54",
+  "vtable": "0xbd89b8",
+  "sym": "vtable for CComponentGadgetZoom"
+ },
+ "0x729ec572": {
+  "cmp": "0x36ae20",
+  "beq": "0x36ae68",
+  "vtable": "0xbd3290",
+  "sym": "vtable for CComponentBuiltinBox"
+ },
+ "0x73f0fe09": {
+  "cmp": "0x36ae30",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x749126c3": {
+  "cmp": "0x368b14",
+  "beq": "0x36932c",
+  "vtable": "0xbd3270",
+  "sym": "vtable for CComponentBuiltinCylinder"
+ },
+ "0x7538c652": {
+  "cmp": "0x36913c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x786f6ecb": {
+  "cmp": "0x36b48c",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x7c2f7284": {
+  "cmp": "0x369114",
+  "beq": "0x369a00",
+  "vtable": "0xbd0ef8",
+  "sym": "vtable for CComponentIrradianceVolume"
+ },
+ "0x7d561d33": {
+  "cmp": "0x369f64",
+  "beq": "0x369fa0",
+  "vtable": "0xbd8ab8",
+  "sym": "vtable for CComponentCameraParams"
+ },
+ "0x7f305b9b": {
+  "cmp": "0x36b4f0",
+  "beq": "0x36b538",
+  "vtable": "0xbd87d8",
+  "sym": "vtable for CComponentNpcGlobals"
+ },
+ "0x7f88e44e": {
+  "cmp": "0x36b500",
+  "beq": null,
+  "vtable": null,
+  "sym": "?"
+ },
+ "0x222500f6": {
+  "status": "UNCASED"
+ }
+}

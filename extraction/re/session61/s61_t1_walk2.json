@@ -1,0 +1,1291 @@
+{
+ "RAW": {
+  "exact": 159,
+  "bounds": 396,
+  "fail": 93,
+  "na": 5,
+  "blockers": {},
+  "tails": {
+   "tail:8": 160,
+   "tail:63": 18,
+   "tail:20": 17,
+   "tail:4": 13,
+   "tail:18": 13,
+   "tail:176": 13,
+   "tail:15": 7,
+   "tail:70": 4,
+   "tail:830": 4,
+   "tail:11": 4,
+   "tail:16": 4,
+   "tail:256": 4
+  },
+  "fails": [
+   {
+    "oid": "0x4c727",
+    "name": "AlarmPost",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264a",
+    "name": "AnimatedObject",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc350c",
+    "name": "AnimatedObjectLight",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c73a",
+    "name": "Bane",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc0e55",
+    "name": "Bane_Suv_Doors",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c761",
+    "name": "Barricade",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c763",
+    "name": "Barricade_Collision_End",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c762",
+    "name": "Barricade_Collision_Start",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4e27",
+    "name": "Batarang",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e31",
+    "name": "BatarangEMP",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e32",
+    "name": "BatarangFlash",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e33",
+    "name": "BatarangGas",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2d",
+    "name": "BatarangStone",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e37",
+    "name": "BatarangZoom",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4e26",
+    "name": "Batarang_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4747",
+    "name": "Batarang_02",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2e",
+    "name": "Batarang_EMP",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2f",
+    "name": "Batarang_Flash",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e30",
+    "name": "Batarang_Gas",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4746",
+    "name": "Batarang_Left_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4748",
+    "name": "Batarang_Left_02",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2a",
+    "name": "Batarang_Stone",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c6f1",
+    "name": "Batman",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3511",
+    "name": "Bazooka_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x927c6",
+    "name": "Blake",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c72a",
+    "name": "Bomb_Barrels",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c768",
+    "name": "Briefcase",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x88ba",
+    "name": "Camera_Combat",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e24",
+    "name": "Car_Sedan_Minigame",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x474c",
+    "name": "CharacterLevelUps",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264d",
+    "name": "CollisionBoxMulti",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264e",
+    "name": "CollisionMesh",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264f",
+    "name": "CollisionPlaneMulti",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4745",
+    "name": "CombatBatarang",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc351a",
+    "name": "Coupe",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x927c3",
+    "name": "Crane",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c74b",
+    "name": "Crowbar",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c749",
+    "name": "Crowbar_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x61a82",
+    "name": "Door_AlarmPost",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4740",
+    "name": "Fist_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e36",
+    "name": "Fist_Npc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x1871b",
+    "name": "GC_Residential_Props_Gotham_Beam",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x266d",
+    "name": "Gargoyle",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c726",
+    "name": "Generic_Car",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x2648",
+    "name": "GroupObjects",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc3516",
+    "name": "Hatch",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x900cf",
+    "name": "Interactive_Animated_Object",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c729",
+    "name": "Interactive_Object",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x900ce",
+    "name": "Knife",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3512",
+    "name": "Knife_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3520",
+    "name": "Knife_Enemy_Prisoner",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x900d0",
+    "name": "LeadMerc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc351c",
+    "name": "Limousine",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x14ff5",
+    "name": "LotteryBox",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc351d",
+    "name": "Melee_Enemy_Merc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3521",
+    "name": "Melee_Enemy_Pit",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xea61",
+    "name": "Melee_Enemy_Stadium",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c71a",
+    "name": "Melee_Enemy_Test",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c75f",
+    "name": "Military_Jeep",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xdbbba",
+    "name": "Military_Laser",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc3513",
+    "name": "Military_Officer",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x7992",
+    "name": "Military_Truck",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x927c5",
+    "name": "Miranda",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x2658",
+    "name": "NPC",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c75d",
+    "name": "NPC_Female",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c760",
+    "name": "PickUpTruck",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c764",
+    "name": "PickUp_Batarang",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c765",
+    "name": "PickUp_EMP_Batarang",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c767",
+    "name": "PickUp_Flash_Grenades",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c766",
+    "name": "PickUp_Smoke_Grenades",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c76b",
+    "name": "Pit_Prisoner",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc38d",
+    "name": "PoliceFlasher",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c725",
+    "name": "Police_Officer",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c758",
+    "name": "Police_Officer_Melee",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x16378",
+    "name": "PunchEffect",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4758",
+    "name": "RainDropSplash",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4757",
+    "name": "Ranged_Disarm_Dummy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x26f5",
+    "name": "Ranged_Enemy_Test",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3518",
+    "name": "SUV",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc3514",
+    "name": "Security_Officer",
+    "reason": "incomplete:call"
+   }
+  ],
+  "incomplete_specs": [
+   "0x0116a6fa",
+   "0x40c6b80a",
+   "0x4a04f065",
+   "0x5471c18b"
+  ]
+ },
+ "PATCHED": {
+  "exact": 159,
+  "bounds": 396,
+  "fail": 93,
+  "na": 5,
+  "blockers": {},
+  "tails": {
+   "tail:8": 160,
+   "tail:63": 18,
+   "tail:20": 17,
+   "tail:4": 13,
+   "tail:18": 13,
+   "tail:176": 13,
+   "tail:15": 7,
+   "tail:70": 4,
+   "tail:830": 4,
+   "tail:11": 4,
+   "tail:16": 4,
+   "tail:256": 4
+  },
+  "fails": [
+   {
+    "oid": "0x4c727",
+    "name": "AlarmPost",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264a",
+    "name": "AnimatedObject",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc350c",
+    "name": "AnimatedObjectLight",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c73a",
+    "name": "Bane",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc0e55",
+    "name": "Bane_Suv_Doors",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c761",
+    "name": "Barricade",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c763",
+    "name": "Barricade_Collision_End",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c762",
+    "name": "Barricade_Collision_Start",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4e27",
+    "name": "Batarang",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e31",
+    "name": "BatarangEMP",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e32",
+    "name": "BatarangFlash",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e33",
+    "name": "BatarangGas",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2d",
+    "name": "BatarangStone",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e37",
+    "name": "BatarangZoom",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4e26",
+    "name": "Batarang_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4747",
+    "name": "Batarang_02",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2e",
+    "name": "Batarang_EMP",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2f",
+    "name": "Batarang_Flash",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e30",
+    "name": "Batarang_Gas",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4746",
+    "name": "Batarang_Left_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4748",
+    "name": "Batarang_Left_02",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2a",
+    "name": "Batarang_Stone",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c6f1",
+    "name": "Batman",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3511",
+    "name": "Bazooka_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x927c6",
+    "name": "Blake",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c72a",
+    "name": "Bomb_Barrels",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c768",
+    "name": "Briefcase",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x88ba",
+    "name": "Camera_Combat",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e24",
+    "name": "Car_Sedan_Minigame",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x474c",
+    "name": "CharacterLevelUps",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264d",
+    "name": "CollisionBoxMulti",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264e",
+    "name": "CollisionMesh",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264f",
+    "name": "CollisionPlaneMulti",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4745",
+    "name": "CombatBatarang",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc351a",
+    "name": "Coupe",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x927c3",
+    "name": "Crane",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c74b",
+    "name": "Crowbar",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c749",
+    "name": "Crowbar_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x61a82",
+    "name": "Door_AlarmPost",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4740",
+    "name": "Fist_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e36",
+    "name": "Fist_Npc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x1871b",
+    "name": "GC_Residential_Props_Gotham_Beam",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x266d",
+    "name": "Gargoyle",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c726",
+    "name": "Generic_Car",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x2648",
+    "name": "GroupObjects",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc3516",
+    "name": "Hatch",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x900cf",
+    "name": "Interactive_Animated_Object",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c729",
+    "name": "Interactive_Object",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x900ce",
+    "name": "Knife",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3512",
+    "name": "Knife_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3520",
+    "name": "Knife_Enemy_Prisoner",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x900d0",
+    "name": "LeadMerc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc351c",
+    "name": "Limousine",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x14ff5",
+    "name": "LotteryBox",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc351d",
+    "name": "Melee_Enemy_Merc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3521",
+    "name": "Melee_Enemy_Pit",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xea61",
+    "name": "Melee_Enemy_Stadium",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c71a",
+    "name": "Melee_Enemy_Test",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c75f",
+    "name": "Military_Jeep",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xdbbba",
+    "name": "Military_Laser",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc3513",
+    "name": "Military_Officer",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x7992",
+    "name": "Military_Truck",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x927c5",
+    "name": "Miranda",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x2658",
+    "name": "NPC",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c75d",
+    "name": "NPC_Female",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c760",
+    "name": "PickUpTruck",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c764",
+    "name": "PickUp_Batarang",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c765",
+    "name": "PickUp_EMP_Batarang",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c767",
+    "name": "PickUp_Flash_Grenades",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c766",
+    "name": "PickUp_Smoke_Grenades",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c76b",
+    "name": "Pit_Prisoner",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc38d",
+    "name": "PoliceFlasher",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c725",
+    "name": "Police_Officer",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c758",
+    "name": "Police_Officer_Melee",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x16378",
+    "name": "PunchEffect",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4758",
+    "name": "RainDropSplash",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4757",
+    "name": "Ranged_Disarm_Dummy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x26f5",
+    "name": "Ranged_Enemy_Test",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3518",
+    "name": "SUV",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc3514",
+    "name": "Security_Officer",
+    "reason": "incomplete:call"
+   }
+  ],
+  "incomplete_specs": [
+   "0x0116a6fa",
+   "0x40c6b80a",
+   "0x4a04f065",
+   "0x5471c18b"
+  ]
+ },
+ "GOLSHAPE": {
+  "exact": 313,
+  "bounds": 240,
+  "fail": 95,
+  "na": 5,
+  "blockers": {},
+  "tails": {
+   "tail:20": 19,
+   "tail:63": 18,
+   "tail:18": 13,
+   "tail:176": 13,
+   "tail:4": 11,
+   "tail:15": 7,
+   "tail:8": 6,
+   "tail:16": 5,
+   "tail:70": 4,
+   "tail:830": 4,
+   "tail:11": 4,
+   "tail:256": 4
+  },
+  "fails": [
+   {
+    "oid": "0x4c727",
+    "name": "AlarmPost",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264a",
+    "name": "AnimatedObject",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc350c",
+    "name": "AnimatedObjectLight",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x18799",
+    "name": "AnimatedObjectWithCollision_BEAST",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x1879a",
+    "name": "AnimatedObject_BEAST",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c73a",
+    "name": "Bane",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc0e55",
+    "name": "Bane_Suv_Doors",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c761",
+    "name": "Barricade",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c763",
+    "name": "Barricade_Collision_End",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c762",
+    "name": "Barricade_Collision_Start",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4e27",
+    "name": "Batarang",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e31",
+    "name": "BatarangEMP",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e32",
+    "name": "BatarangFlash",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e33",
+    "name": "BatarangGas",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2d",
+    "name": "BatarangStone",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e37",
+    "name": "BatarangZoom",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4e26",
+    "name": "Batarang_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4747",
+    "name": "Batarang_02",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2e",
+    "name": "Batarang_EMP",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2f",
+    "name": "Batarang_Flash",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e30",
+    "name": "Batarang_Gas",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4746",
+    "name": "Batarang_Left_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4748",
+    "name": "Batarang_Left_02",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e2a",
+    "name": "Batarang_Stone",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c6f1",
+    "name": "Batman",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3511",
+    "name": "Bazooka_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x927c6",
+    "name": "Blake",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c72a",
+    "name": "Bomb_Barrels",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c768",
+    "name": "Briefcase",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x88ba",
+    "name": "Camera_Combat",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e24",
+    "name": "Car_Sedan_Minigame",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x474c",
+    "name": "CharacterLevelUps",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264d",
+    "name": "CollisionBoxMulti",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264e",
+    "name": "CollisionMesh",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x264f",
+    "name": "CollisionPlaneMulti",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4745",
+    "name": "CombatBatarang",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc351a",
+    "name": "Coupe",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x927c3",
+    "name": "Crane",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c74b",
+    "name": "Crowbar",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c749",
+    "name": "Crowbar_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x61a82",
+    "name": "Door_AlarmPost",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4740",
+    "name": "Fist_01",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4e36",
+    "name": "Fist_Npc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x1871b",
+    "name": "GC_Residential_Props_Gotham_Beam",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x266d",
+    "name": "Gargoyle",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c726",
+    "name": "Generic_Car",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x2648",
+    "name": "GroupObjects",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc3516",
+    "name": "Hatch",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x900cf",
+    "name": "Interactive_Animated_Object",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c729",
+    "name": "Interactive_Object",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x900ce",
+    "name": "Knife",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3512",
+    "name": "Knife_Enemy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3520",
+    "name": "Knife_Enemy_Prisoner",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x900d0",
+    "name": "LeadMerc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc351c",
+    "name": "Limousine",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x14ff5",
+    "name": "LotteryBox",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc351d",
+    "name": "Melee_Enemy_Merc",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc3521",
+    "name": "Melee_Enemy_Pit",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xea61",
+    "name": "Melee_Enemy_Stadium",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c71a",
+    "name": "Melee_Enemy_Test",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c75f",
+    "name": "Military_Jeep",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xdbbba",
+    "name": "Military_Laser",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc3513",
+    "name": "Military_Officer",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x7992",
+    "name": "Military_Truck",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x927c5",
+    "name": "Miranda",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x2658",
+    "name": "NPC",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c75d",
+    "name": "NPC_Female",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c760",
+    "name": "PickUpTruck",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c764",
+    "name": "PickUp_Batarang",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c765",
+    "name": "PickUp_EMP_Batarang",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c767",
+    "name": "PickUp_Flash_Grenades",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c766",
+    "name": "PickUp_Smoke_Grenades",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c76b",
+    "name": "Pit_Prisoner",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0xc38d",
+    "name": "PoliceFlasher",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c725",
+    "name": "Police_Officer",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x4c758",
+    "name": "Police_Officer_Melee",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x16378",
+    "name": "PunchEffect",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4758",
+    "name": "RainDropSplash",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4757",
+    "name": "Ranged_Disarm_Dummy",
+    "reason": "incomplete:call"
+   },
+   {
+    "oid": "0x26f5",
+    "name": "Ranged_Enemy_Test",
+    "reason": "incomplete:call"
+   }
+  ]
+ },
+ "NULL_PERM": {
+  "exact": 3,
+  "bounds": 379
+ },
+ "NULL_ROT7": {
+  "exact": 311,
+  "bounds": 551
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "n": 50,
+ "closed": 13,
+ "values": [
+  [
+   "Bane_SUV",
+   -201326592.0,
+   null
+  ],
+  [
+   "Bane_Suv_No_Doors",
+   -201326592.0,
+   null
+  ],
+  [
+   "Destroyable_SUV",
+   9.693522803355793e-27,
+   300.0
+  ],
+  [
+   "Helicopter",
+   9.183549615799121e-41,
+   null
+  ],
+  [
+   "Helicopter_Bane",
+   9.183549615799121e-41,
+   null
+  ],
+  [
+   "Military_Heli",
+   9.183549615799121e-41,
+   null
+  ],
+  [
+   "Monorail_Back",
+   3.587324068671532e-43,
+   null
+  ],
+  [
+   "Monorail_Car",
+   3.587324068671532e-43,
+   null
+  ],
+  [
+   "Monorail_Front",
+   3.587324068671532e-43,
+   null
+  ],
+  [
+   "Police_Car",
+   6.352747104407253e-22,
+   null
+  ],
+  [
+   "Subway_Car",
+   3.587324068671532e-43,
+   null
+  ],
+  [
+   "Test_Object",
+   0.0,
+   null
+  ],
+  [
+   "Tumbler",
+   1.066507993030541e-14,
+   300.0
+  ]
+ ],
+ "fail_reasons": {
+  "OOB": 19,
+  "ValueError:call": 18
+ }
+}

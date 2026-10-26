@@ -1,0 +1,674 @@
+{
+ "0x113317a": {
+  "beq": "0x369214",
+  "vtable": "0xbd2f00",
+  "reader": "0x2e47b0",
+  "reader_sym": "CComponentMelee::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentMelee"
+ },
+ "0x5a77332f": {
+  "beq": "0x369234",
+  "vtable": "0xbd33f0",
+  "reader": "0x2d8da4",
+  "reader_sym": "CComponentWaypoint_Movement::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentWaypoint_Movement"
+ },
+ "0x5863bd59": {
+  "beq": "0x36926c",
+  "vtable": "0xbd09c0",
+  "reader": "0x203cfc",
+  "reader_sym": "CComponentMainStoryQuests::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentMainStoryQuests"
+ },
+ "0x5e46be31": {
+  "beq": "0x36929c",
+  "vtable": "0xbd3510",
+  "reader": "0x2d7e50",
+  "reader_sym": "CComponentWaypoint::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentWaypoint"
+ },
+ "0x650bb301": {
+  "beq": "0x3692dc",
+  "vtable": "0xbd8778",
+  "reader": "0x3c329c",
+  "reader_sym": "CComponentPedestrian::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentPedestrian"
+ },
+ "0x292930b0": {
+  "beq": "0x3692fc",
+  "vtable": "0xbd09f0",
+  "reader": "0x203858",
+  "reader_sym": "CComponentNewShopCategory::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentNewShopCategory"
+ },
+ "0x749126c3": {
+  "beq": "0x36932c",
+  "vtable": "0xbd3270",
+  "reader": "0x2e1000",
+  "reader_sym": "CComponentBuiltinCylinder::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinCylinder"
+ },
+ "0x6ea4cd6c": {
+  "beq": "0x369360",
+  "vtable": "0xbd8698",
+  "reader": "0x3c3d74",
+  "reader_sym": "CComponentTentacleAI::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTentacleAI"
+ },
+ "0x26a331e5": {
+  "beq": "0x369394",
+  "vtable": "0xbd8af8",
+  "reader": "0x3bee04",
+  "reader_sym": "CComponentBuiltinWaypointBox::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinWaypointBox"
+ },
+ "0x154bb0": {
+  "beq": "0x3693b4",
+  "vtable": "0xbd34f0",
+  "reader": "0x2d8020",
+  "reader_sym": "CComponentPool::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentPool"
+ },
+ "0x3b912a30": {
+  "beq": "0x3693d4",
+  "vtable": "0xbd3310",
+  "reader": "0x2e0454",
+  "reader_sym": "CComponentWantedManager::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentWantedManager"
+ },
+ "0x1402fd4b": {
+  "beq": "0x369414",
+  "vtable": "0xbd8a78",
+  "reader": "0x3bf2c8",
+  "reader_sym": "CComponentCrimeHotspot::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentCrimeHotspot"
+ },
+ "0xe286154": {
+  "beq": "0x369434",
+  "vtable": "0xbd32d0",
+  "reader": "0x2e09f8",
+  "reader_sym": "CComponentTurret::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTurret"
+ },
+ "0x3e2bb040": {
+  "beq": "0x369454",
+  "vtable": "0xbd3330",
+  "reader": "0x2e0290",
+  "reader_sym": "CComponentWantedGenerator::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentWantedGenerator"
+ },
+ "0x3ebf0875": {
+  "beq": "0x369474",
+  "vtable": "0xbd0bf8",
+  "reader": "0x1ff3fc",
+  "reader_sym": "CComponentTrafficMagnet::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTrafficMagnet"
+ },
+ "0x377ea715": {
+  "beq": "0x3694b0",
+  "vtable": "0xbd2e80",
+  "reader": "0x2e50ac",
+  "reader_sym": "CComponentTargetable::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTargetable"
+ },
+ "0x3755b69f": {
+  "beq": "0x3694f0",
+  "vtable": "0xbd86f8",
+  "reader": "0x3c35c4",
+  "reader_sym": "CComponentScaling::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentScaling"
+ },
+ "0x30e3ad7c": {
+  "beq": "0x369520",
+  "vtable": "0xbd2fe0",
+  "reader": "0x2e33bc",
+  "reader_sym": "CComponentEngineSounds::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentEngineSounds"
+ },
+ "0x331052a1": {
+  "beq": "0x36955c",
+  "vtable": "0xbd8a98",
+  "reader": "0x3bf218",
+  "reader_sym": "CComponentCraneAI::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentCraneAI"
+ },
+ "0x4ca5f00e": {
+  "beq": "0x36958c",
+  "vtable": "0xbd0a30",
+  "reader": "0x202ae4",
+  "reader_sym": "CComponentNewShopItemProperty::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentNewShopItemProperty"
+ },
+ "0x4846ed83": {
+  "beq": "0x3695d0",
+  "vtable": "0xbd8978",
+  "reader": "0x3c0aa4",
+  "reader_sym": "CComponentGrapplingHook::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentGrapplingHook"
+ },
+ "0x152b87": {
+  "beq": "0x3695f0",
+  "vtable": "0xbd3b88",
+  "reader": "0x2d6ddc",
+  "reader_sym": "CComponentMesh::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentMesh"
+ },
+ "0x14ca79": {
+  "beq": "0x369620",
+  "vtable": "0xbd0c98",
+  "reader": "0x1fe924",
+  "reader_sym": "CComponentBase::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBase"
+ },
+ "0x68a62e65": {
+  "beq": "0x369668",
+  "vtable": "0xbd8d18",
+  "reader": "0x3bcaac",
+  "reader_sym": "CComponentActorShadow::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentActorShadow"
+ },
+ "0xdc22f56": {
+  "beq": "0x369698",
+  "vtable": "0xbd8ad8",
+  "reader": "0x3beeb4",
+  "reader_sym": "CComponentBullet::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBullet"
+ },
+ "0x1721f5ba": {
+  "beq": "0x3696c8",
+  "vtable": "0xbd30e0",
+  "reader": "0x2e219c",
+  "reader_sym": "CComponentBeast_Directional::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBeast_Directional"
+ },
+ "0x1963f0c0": {
+  "beq": "0x3696f0",
+  "vtable": "0xbd3000",
+  "reader": "0x2e32dc",
+  "reader_sym": "CComponentDistrict::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentDistrict"
+ },
+ "0x37883208": {
+  "beq": "0x369720",
+  "vtable": "0xbd8638",
+  "reader": "0x3c40c4",
+  "reader_sym": "CComponentVehicleGears::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentVehicleGears"
+ },
+ "0x44c835d1": {
+  "beq": "0x369750",
+  "vtable": "0xbd0a10",
+  "reader": "0x203764",
+  "reader_sym": "CComponentNewShopItem::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentNewShopItem"
+ },
+ "0x33702f4a": {
+  "beq": "0x369790",
+  "vtable": "0xbd2fa0",
+  "reader": "0x2e3940",
+  "reader_sym": "CComponentDummies::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentDummies"
+ },
+ "0x3438ab08": {
+  "beq": "0x3697c0",
+  "vtable": "0xbd2f40",
+  "reader": "0x2e431c",
+  "reader_sym": "CComponentGrenade::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentGrenade"
+ },
+ "0x2cf34785": {
+  "beq": "0x369810",
+  "vtable": "0xbd8b38",
+  "reader": "0x3bec64",
+  "reader_sym": "CComponentBuiltinSkyBox::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinSkyBox"
+ },
+ "0x222500f6": {
+  "beq": "0x369840",
+  "vtable": "0xbd3200",
+  "reader": "0x2e164c",
+  "reader_sym": "CComponentTheBatHandle::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTheBatHandle"
+ },
+ "0x238767e3": {
+  "beq": "0x369880",
+  "vtable": "0xbd3530",
+  "reader": "0x2d7cf8",
+  "reader_sym": "CComponentHoverPath::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentHoverPath"
+ },
+ "0x4cc04ddb": {
+  "beq": "0x3698a0",
+  "vtable": "0xbd30c0",
+  "reader": "0x2e22f8",
+  "reader_sym": "CComponentBeast_Omni::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBeast_Omni"
+ },
+ "0x500fe00c": {
+  "beq": "0x3698c8",
+  "vtable": "0xbd86d8",
+  "reader": "0x3c3774",
+  "reader_sym": "CComponentSegments::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentSegments"
+ },
+ "0x43c8a8d1": {
+  "beq": "0x369904",
+  "vtable": "0xbd8d38",
+  "reader": "0x3bc9f0",
+  "reader_sym": "CComponentObjective::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentObjective"
+ },
+ "0x365cfd67": {
+  "beq": "0x369938",
+  "vtable": "0xbd3140",
+  "reader": "0x2e1e8c",
+  "reader_sym": "CComponentBeastObjectComponent::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBeastObjectComponent"
+ },
+ "0x216bb1eb": {
+  "beq": "0x369990",
+  "vtable": "0xbd0948",
+  "reader": "0x20508c",
+  "reader_sym": "CComponentVehicleAwareness::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentVehicleAwareness"
+ },
+ "0x5471c18b": {
+  "beq": "0x3699b0",
+  "vtable": "0xbd8878",
+  "reader": "0x3c18e0",
+  "reader_sym": "CComponentMissionsList::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentMissionsList"
+ },
+ "0x75a9de0e": {
+  "beq": "0x3699e0",
+  "vtable": "0xbd8958",
+  "reader": "0x3c0af0",
+  "reader_sym": "CComponentGrapplingHookTarget::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentGrapplingHookTarget"
+ },
+ "0x7c2f7284": {
+  "beq": "0x369a00",
+  "vtable": "0xbd0ef8",
+  "reader": "0x2e6b48",
+  "reader_sym": "CComponentIrradianceVolume::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentIrradianceVolume"
+ },
+ "0x2e23cdd8": {
+  "beq": "0x369a20",
+  "vtable": "0xbd8b78",
+  "reader": "0x3beb88",
+  "reader_sym": "CComponentBuiltinNavMeshAuto::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinNavMeshAuto"
+ },
+ "0x69f956fc": {
+  "beq": "0x369a40",
+  "vtable": "0xbd8d78",
+  "reader": "0x3bbd50",
+  "reader_sym": "CComponentPlayerControl::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentPlayerControl"
+ },
+ "0x2ad0cc14": {
+  "beq": "0x369a60",
+  "vtable": "0xbd8bb8",
+  "reader": "0x3be928",
+  "reader_sym": "CComponentBuiltinCover::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinCover"
+ },
+ "0x2b1efd04": {
+  "beq": "0x369a90",
+  "vtable": "0xbd3080",
+  "reader": "0x2e2638",
+  "reader_sym": "CComponentBeast_Window::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBeast_Window"
+ },
+ "0xddcd6c4": {
+  "beq": "0x369ca4",
+  "vtable": "0xbd3550",
+  "reader": "0x2d7bf0",
+  "reader_sym": "CComponentHealth::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentHealth"
+ },
+ "0x557a594a": {
+  "beq": "0x369cc4",
+  "vtable": "0xbd8c58",
+  "reader": "0x3be060",
+  "reader_sym": "CComponentAreaDamage::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentAreaDamage"
+ },
+ "0x116a6fa": {
+  "beq": "0x369ce4",
+  "vtable": "0xbd2e60",
+  "reader": "0x2e5318",
+  "reader_sym": "CComponentTrail::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTrail"
+ },
+ "0x82ea1c6": {
+  "beq": "0x369d14",
+  "vtable": "0xbd0e30",
+  "reader": "0x2e7430",
+  "reader_sym": "CComponentZonesLink::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentZonesLink"
+ },
+ "0xc7d8baf": {
+  "beq": "0x369d88",
+  "vtable": "0xbd0a70",
+  "reader": "0x202698",
+  "reader_sym": "CComponentVehiclePhysics::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentVehiclePhysics"
+ },
+ "0x2c9a0e3f": {
+  "beq": "0x369e0c",
+  "vtable": "0xbd8838",
+  "reader": "0x3c2a48",
+  "reader_sym": "CComponentMuzzleFlash::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentMuzzleFlash"
+ },
+ "0x522b4939": {
+  "beq": "0x369ea8",
+  "vtable": "0xbd3470",
+  "reader": "0x2d8834",
+  "reader_sym": "CComponentInteraction::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentInteraction"
+ },
+ "0x352b0a2e": {
+  "beq": "0x369f2c",
+  "vtable": "0xbd8798",
+  "reader": "0x3c3214",
+  "reader_sym": "CComponentObject_Scaling::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentObject_Scaling"
+ },
+ "0x7d561d33": {
+  "beq": "0x369fa0",
+  "vtable": "0xbd8c18",
+  "reader": "0x3be548",
+  "reader_sym": "CComponentBeastBakeGroup::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBeastBakeGroup"
+ },
+ "0x1d50aa73": {
+  "beq": "0x36a048",
+  "vtable": "0xbd0b48",
+  "reader": "0x201044",
+  "reader_sym": "CComponentVehicleLogic::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentVehicleLogic"
+ },
+ "0x378ded9b": {
+  "beq": "0x36a0bc",
+  "vtable": "0xbd3060",
+  "reader": "0x2e27b8",
+  "reader_sym": "CComponentDropCollectible::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentDropCollectible"
+ },
+ "0x406510ec": {
+  "beq": "0x36a160",
+  "vtable": "0xbd3160",
+  "reader": "0x2e1d70",
+  "reader_sym": "CComponentBuiltinCollisionPlane::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinCollisionPlane"
+ },
+ "0x3189e053": {
+  "beq": "0x36a1e4",
+  "vtable": "0xbd0b98",
+  "reader": "0x1ffa1c",
+  "reader_sym": "CComponentTrafficSetting::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTrafficSetting"
+ },
+ "0x4891830c": {
+  "beq": "0x36a2a8",
+  "vtable": "0xbd89f8",
+  "reader": "0x3c0658",
+  "reader_sym": "CComponentFireTrailAI::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentFireTrailAI"
+ },
+ "0x279c68f5": {
+  "beq": "0x36a330",
+  "vtable": "0xbd86b8",
+  "reader": "0x3c3be0",
+  "reader_sym": "CComponentShop::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentShop"
+ },
+ "0x10fcfd6": {
+  "beq": "0x36a420",
+  "vtable": "0xbd3350",
+  "reader": "0x2e00dc",
+  "reader_sym": "CComponentWeapon::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentWeapon"
+ },
+ "0xf5f8cfd": {
+  "beq": "0x36a4a8",
+  "vtable": "0xbd2f60",
+  "reader": "0x2e4114",
+  "reader_sym": "CComponentExhaustFan::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentExhaustFan"
+ },
+ "0x6754056b": {
+  "beq": "0x36a544",
+  "vtable": "0xbd8d98",
+  "reader": "0x3bbb68",
+  "reader_sym": "CComponentAwareness::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentAwareness"
+ },
+ "0x727dddd6": {
+  "beq": "0x36a5dc",
+  "vtable": "0xbd8658",
+  "reader": "0x3c3f30",
+  "reader_sym": "CComponentTutorial::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTutorial"
+ },
+ "0x592ce07c": {
+  "beq": "0x36a640",
+  "vtable": "0xbd2ea0",
+  "reader": "0x2e4e98",
+  "reader_sym": "CComponentSurveillanceCam::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentSurveillanceCam"
+ },
+ "0x6133228b": {
+  "beq": "0x36a6b0",
+  "vtable": "0xbd3120",
+  "reader": "0x2e1fb0",
+  "reader_sym": "CComponentBeastObjectComponentGlobal::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBeastObjectComponentGlobal"
+ },
+ "0x5941c179": {
+  "beq": "0x36a730",
+  "vtable": "0xbd2fc0",
+  "reader": "0x2e3500",
+  "reader_sym": "CComponentDestroyable::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentDestroyable"
+ },
+ "0x651bdaa": {
+  "beq": "0x36a7c4",
+  "vtable": "0xbd3410",
+  "reader": "0x2d8c20",
+  "reader_sym": "CComponentPlatform_Properties::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentPlatform_Properties"
+ },
+ "0xd1839c4": {
+  "beq": "0x36a838",
+  "vtable": "0xbd2ee0",
+  "reader": "0x2e4b5c",
+  "reader_sym": "CComponentSniper::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentSniper"
+ },
+ "0xdfe2718": {
+  "beq": "0x36a8b8",
+  "vtable": "0xbd87b8",
+  "reader": "0x3c3150",
+  "reader_sym": "CComponentObject_Rotation::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentObject_Rotation"
+ },
+ "0x55a6393b": {
+  "beq": "0x36a928",
+  "vtable": "0xbd33d0",
+  "reader": "0x2d8f24",
+  "reader_sym": "CComponentHasSound::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentHasSound"
+ },
+ "0x25fadb96": {
+  "beq": "0x36a9b8",
+  "vtable": "0xbd31c0",
+  "reader": "0x2e1ad4",
+  "reader_sym": "CComponentDebugDraw::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentDebugDraw"
+ },
+ "0x35c5e0a0": {
+  "beq": "0x36aa20",
+  "vtable": "0xbd0c58",
+  "reader": "0x1fee48",
+  "reader_sym": "CComponentMissile::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentMissile"
+ },
+ "0x2ef26c52": {
+  "beq": "0x36aac4",
+  "vtable": "0xbd8718",
+  "reader": "0x3c3540",
+  "reader_sym": "CComponentPlayerCaughtComponent::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentPlayerCaughtComponent"
+ },
+ "0x6a204677": {
+  "beq": "0x36ab54",
+  "vtable": "0xbd0908",
+  "reader": "0x205458",
+  "reader_sym": "CComponentVehicleSoundEvents::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentVehicleSoundEvents"
+ },
+ "0x4cc07242": {
+  "beq": "0x36abe4",
+  "vtable": "0xbd2ec0",
+  "reader": "0x2e4c80",
+  "reader_sym": "CComponentSteammer::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentSteammer"
+ },
+ "0x5441a117": {
+  "beq": "0x36ac68",
+  "vtable": "0xbd0e10",
+  "reader": "0x2e74e0",
+  "reader_sym": "CComponentBuiltinPlane::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinPlane"
+ },
+ "0x2ad2a046": {
+  "beq": "0x36ad14",
+  "vtable": "0xbd8e08",
+  "reader": "0x3bb510",
+  "reader_sym": "CComponentGrapplingGun::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentGrapplingGun"
+ },
+ "0x2ca13c06": {
+  "beq": "0x36ad74",
+  "vtable": "0xbd3220",
+  "reader": "0x2e143c",
+  "reader_sym": "CComponentVehicleCollision::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentVehicleCollision"
+ },
+ "0x675d6313": {
+  "beq": "0x36ade8",
+  "vtable": "0xbd8dd8",
+  "reader": "0x3bb89c",
+  "reader_sym": "CComponentEffectsLOD::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentEffectsLOD"
+ },
+ "0x729ec572": {
+  "beq": "0x36ae68",
+  "vtable": "0xbd31a0",
+  "reader": "0x2e1b64",
+  "reader_sym": "CComponentLensFlare::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentLensFlare"
+ },
+ "0x3e5bbba8": {
+  "beq": "0x36af04",
+  "vtable": "0xbd8d58",
+  "reader": "0x3bc27c",
+  "reader_sym": "CComponentPlayerCombat::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentPlayerCombat"
+ },
+ "0xf992a02": {
+  "beq": "0x36afa0",
+  "vtable": "0xbd0f18",
+  "reader": "0x2e6a08",
+  "reader_sym": "CComponentBaseWorldBox::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBaseWorldBox"
+ },
+ "0x28091330": {
+  "beq": "0x36b058",
+  "vtable": "0xbd88b8",
+  "reader": "0x3c125c",
+  "reader_sym": "CComponentLight::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentLight"
+ },
+ "0x110ce1f": {
+  "beq": "0x36b0e0",
+  "vtable": "0xbd3370",
+  "reader": "0x2dce20",
+  "reader_sym": "CComponentCinematic::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentCinematic"
+ },
+ "0x1791e34f": {
+  "beq": "0x36b180",
+  "vtable": "0xbd3020",
+  "reader": "0x2e30bc",
+  "reader_sym": "CComponentSmartLight::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentSmartLight"
+ },
+ "0x4a04f065": {
+  "beq": "0x36b210",
+  "vtable": "0xbd8a58",
+  "reader": "0x3bf688",
+  "reader_sym": "CComponentCustomizeActor::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentCustomizeActor"
+ },
+ "0x409a2d0e": {
+  "beq": "0x36b280",
+  "vtable": "0xbd0988",
+  "reader": "0x204790",
+  "reader_sym": "CComponentTrafficSpawner::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentTrafficSpawner"
+ },
+ "0x3198c7c5": {
+  "beq": "0x36b33c",
+  "vtable": "0xbd8a18",
+  "reader": "0x3c05dc",
+  "reader_sym": "CComponentFileName::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentFileName"
+ },
+ "0x1d7644a4": {
+  "beq": "0x36b39c",
+  "vtable": "0xbd8898",
+  "reader": "0x3c13f8",
+  "reader_sym": "CComponentMetaZone::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentMetaZone"
+ },
+ "0x37f7a8ae": {
+  "beq": "0x36b41c",
+  "vtable": "0xbd3be0",
+  "reader": "0x2d6914",
+  "reader_sym": "CComponentHelicopterLogic::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentHelicopterLogic"
+ },
+ "0x78048724": {
+  "beq": "0x36b4b4",
+  "vtable": "0xbd3180",
+  "reader": "0x2e1c58",
+  "reader_sym": "CComponentBuiltinCollisionBox::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinCollisionBox"
+ },
+ "0x7f305b9b": {
+  "beq": "0x36b538",
+  "vtable": "0xbd08e8",
+  "reader": "0x20599c",
+  "reader_sym": "CComponentBuiltinNavMesh::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentBuiltinNavMesh"
+ },
+ "0x454206a4": {
+  "beq": "0x36b5ac",
+  "vtable": "0xbd8cf8",
+  "reader": "0x3bcb74",
+  "reader_sym": "CComponentMeshUVTransform::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentMeshUVTransform"
+ },
+ "0x339bfc0c": {
+  "beq": "0x36b61c",
+  "vtable": "0xbd31e0",
+  "reader": "0x2e1944",
+  "reader_sym": "CComponentPlayerCape::Load(CMemoryStream*)",
+  "vtable_sym": "vtable for CComponentPlayerCape"
+ }
+}
