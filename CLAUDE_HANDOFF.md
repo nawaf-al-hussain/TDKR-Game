@@ -1245,3 +1245,55 @@ waypoint decode is gated on ?s5=1 - use ?s5=1&s5blend=1 for the blend runs.
   consumers (0.5)).
 - NOT in (unchanged): AI/mission flow 4-6; audio 1-2; UI 1-2; cloth cape 1; cross-region
   nav 1-2; city-scale lit rendering 1-2. Memory: pending real GPU.
+
+## SESSION 61 (round 51, 2026-10-26) — id-space question RESOLVED (engine loads ALL 653 templates; s60 "504 unknown" = capstone-stall artifact; complete 120-id reader registry); vehicle-health 2nd-signal search closed (single-signal PARTIAL); skinning root cause proven (3 concrete causes, one-bone repro exact); posed capture landed on the enemy page (PARTIAL on the convention gap)
+
+- **T1 (400fef9):** GenerateComponentTemplate 0x368ac0..0x36b658 is a BINARY-SEARCH compare tree
+  split across two code islands ($d pools at 0x369ab8/0x36b658 halt naive linear disassembly -
+  s60's "64 cases" = island-1 movw compares only). Restart-on-invalid + raw movw/movt/mov+movt
+  scanning: **ALL 120 distinct component ids in gol.bin have GCT cases** (incl. 0x222500f6 via
+  `mov r3,#0xf6; movt r3,#0x2225` @0x368be4). GOM::Load (ctor-only, from CLevel::CLevel) parses
+  game_config.gla's gol.bin COMPLETELY: DICT magic -> BeginRead (rewind, gol mode, consumes
+  tableOff+pad, wires the STRING TABLE into [stream+0x28]) -> "GO"+ver3 header -> 653 records:
+  oid, refs-list (M[oid], read by GetObjectReferencesTemplateFromObject), name (u32 string-table
+  index -> M2 name->oid), cnt2 x (classId u32, flag u16) -> TObjectData{flag,comp,id}, then
+  cnt2 x GCT(classId, stream) - NO filter and none needed. CheckObjectCategory post-scan:
+  0x3438ab08=CComponentGrenade (gadget), 0x378ded9b=CComponentDropCollectible (vehicle template).
+  Case-body extraction gives the COMPLETE registry (vtable[+0x10]=Load, no RTTI prefix):
+  120/120 ids -> named readers (0x5441a117=CComponentBuiltinPlane NOT "StateSet",
+  0x6754056b=CComponentAwareness, 0x222500f6=CComponentTheBatHandle, 0x2ca13c06=
+  CComponentVehicleCollision...). Hash hypothesis MOOT. Closure (denominator 653): engine-true
+  bounds **555/653 (85.0%)**, exact **313/653 (47.9%)** with ONE labelled fitted rule (0x59a8390c
+  template shape 16 B); 93 fails = auto-extractor sequence gaps (18 call-incomplete specs:
+  Trail/MissionsList/Awareness auto-specs need hand verification, est. 0.5 session). Nulls:
+  perm 313->3 (collapse), rot7 311 (length-only, weak, documented). Carriers: s58 30/50 (fitted)
+  + s60 18/18-exact (hybrid) remain the value source; under pure engine specs 13/50 close with
+  misaligned values (same auto-spec gaps). REMOVES s60's "engine-cannot bucket 90" entirely.
+- **T2 (bae0faf):** second-signal search CLOSED - 300.0 occurs EXACTLY ONCE per vehicle payload
+  (at the Health position; heli 2783/3048 hits = float-array coincidence at family-specific
+  offsets). Signal 1 now engine-NAMED (CComponentHealth::Load via the case body). Verdict
+  unchanged: PARTIAL single-signal (mechanism corroborated, value has no independent signal).
+- **T3 (22daa84 branch + e4386ee main):** s60's applyBoneTransform zeros ROOT-CAUSED with a
+  one-bone repro (jsverify/s61_t3_repro.mjs): (a) r160 applyBoneTransform reads 4-component
+  skin attrs unconditionally (1-comp attrs -> undefined weights -> bones[undefined]);
+  (b) bind() without explicit bindMatrix RECOMPUTES inverses from the posed state (explicit
+  `bind(skel, new Matrix4())` keeps the file invB - verified exact);
+  (c) skeleton.pose() clobbers the clip pose. Per-frame recipe proven:
+  action.time -> mixer.update(0) -> updateMatrixWorld(true) -> skeleton.update() ->
+  applyBoneTransform == numpy convention. Page: captureSkinnedFrames landed (15 posed frames,
+  3x5 clips, raw WebGL1 raster, skinDiff wrong-clip 6.4824, 0 errors, play gate intact).
+  PARTIAL: CPU-chain rest/bind convention gap remains (restMaxDev 1.87 = body-height; posed
+  heights 26-154 u vs render 1.87 u; mesh-transform zeroing ruled out) -> posed numpy IoU
+  table + rolled/batman nulls NOT achieved (est. 0.5-1 session: dump page boneWorlds, numpy
+  re-skin, IoU).
+- **T4:** PARTIAL/not-attempted - the combat slice keeps the s60 point cloud; the skinned-mesh
+  swap is blocked by the same T3 convention gap (the point cloud uses its own node-hierarchy FK
+  and was already validated).
+- **T5:** INCONCLUSIVE - not attempted this session (time; the virtual-wall re-anchor gate from
+  s60 stands; real-soup collision re-anchor remains scoped).
+- **T6:** no real-GPU gpucheck block supplied -> environment-dominated, pending real GPU (unchanged).
+- **T7:** bundles_s61 built (main 8d8a6a9..HEAD, glide cf74c5b..22daa84), SHA256 in
+  download/bundles_s61/SHA256SUMS.txt; NO push this session (no token supplied); estimate:
+  template-coverage residual = hand-verify ~18 rep-heavy reader sequences (0.5) + T3 convention
+  gap (0.5-1); NOT in (unchanged): AI/mission flow 4-6, audio 1-2, UI 1-2, cloth cape 1,
+  cross-region nav 1-2, city-scale lit rendering 1-2. Memory: pending real GPU.
