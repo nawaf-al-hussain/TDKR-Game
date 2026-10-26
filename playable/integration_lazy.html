@@ -1649,6 +1649,149 @@ function captureRestIoU(smIo) {
     return { ok: false, error: String(e4 && e4.message || e4) };
   }
 }
+
+// s61 T3: POSED skinned capture. Root-cause fix proven in-page:
+// (a) skinIndex/skinWeight are VEC4 from the GLB (r160 applyBoneTransform reads 4 comps
+//     unconditionally - 1-comp attrs made getComponent(i>0) undefined and the weight
+//     check `undefined !== 0` pass -> bones[undefined] crash/zeros - the s60 failure);
+// (b) bind() must keep the FILE invB (GLTFLoader binds with identity bindMatrix at parse);
+// (c) NEVER skeleton.pose() per frame (it overwrites the clip pose from boneInverses).
+// Recipe per frame: action.time=t; mixer.update(0); merc.updateMatrixWorld(true);
+// skeleton.update(); then applyBoneTransform == numpy convention
+// (boneMat = boneWorld x fileInvB, weights x4).
+function captureSkinnedFrames(smIo, mercObj, mixer, actions, clips) {
+  try {
+    log('IoU2-start clips=' + clips.length);
+    const geo = smIo.geometry;
+    const NVi = geo.attributes.position.count;
+    const vTmp = new THREE.Vector3();
+    const skinAll = () => { const out = new Float32Array(NVi * 3);
+      for (let i = 0; i < NVi; i++) { smIo.applyBoneTransform(i, vTmp);
+        out[i*3] = vTmp.x; out[i*3+1] = vTmp.y; out[i*3+2] = vTmp.z; }
+      return out; };
+    // s61 T3 fix: the CPU applyBoneTransform chain = bindMatrixInverse x boneWorld x invB x bindMatrix
+    // with bindMatrix = identity (loader bind) -> any mesh transform applied AFTER bind leaks into
+    // the CPU result. Zero the mesh transform for the capture (file space = bind verts space).
+    const __rot0 = mercObj.rotation.x, __pos0 = mercObj.position.clone();
+    mercObj.rotation.set(0, 0, 0); mercObj.position.set(0, 0, 0);
+    mercObj.updateMatrixWorld(true); smIo.skeleton.update();
+    const rest = skinAll();
+    const pa = geo.attributes.position.array;
+    let restMaxDev = 0;
+    for (let i = 0; i < NVi * 3; i++) restMaxDev = Math.max(restMaxDev, Math.abs(rest[i] - pa[i]));
+    const SZ = 256, GRID = 64;
+    const cv = document.createElement('canvas'); cv.width = SZ; cv.height = SZ;
+    const gl = cv.getContext('webgl', { preserveDrawingBuffer: true });
+    const sh = (t, s2) => { const o = gl.createShader(t); gl.shaderSource(o, s2); gl.compileShader(o); return o; };
+    const prog = gl.createProgram();
+    gl.attachShader(prog, sh(gl.VERTEX_SHADER, 'attribute vec2 q; void main(){ gl_Position = vec4(q, 0.0, 1.0); }'));
+    gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, 'void main(){ gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0); }'));
+    gl.linkProgram(prog); gl.useProgram(prog);
+    const loc = gl.getAttribLocation(prog, 'q');
+    gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    gl.viewport(0, 0, SZ, SZ); gl.clearColor(0, 0, 0, 1);
+    const vb = gl.createBuffer(), ib = gl.createBuffer();
+    const ia = geo.index.array, IN = geo.index.count;
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ib); gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, ia, gl.STATIC_DRAW);
+    // fixed projection: scale from the REST cpu-skin bbox; each frame recentred on the
+    // PELVIS bone world position (root-relative - the root-motion channel is cm-scale)
+    let rmnx = 1e9, rmxx = -1e9, rmnz = 1e9, rmxz = -1e9;
+    for (let i = 0; i < NVi; i++) { rmnx = Math.min(rmnx, rest[i*3]); rmxx = Math.max(rmxx, rest[i*3]);
+      rmnz = Math.min(rmnz, rest[i*3+2]); rmxz = Math.max(rmxz, rest[i*3+2]); }
+    const rsc = Math.min(2.0 / Math.max(1e-6, rmxx - rmnx), 2.0 / Math.max(1e-6, rmxz - rmnz)) * 0.9;
+    const pelvis = smIo.skeleton.bones.find(b => /pelvis/i.test(b.name || '')) || smIo.skeleton.bones[0];
+    const pv = new THREE.Vector3();
+    const raster = (vAll) => {
+      pelvis.getWorldPosition(pv);
+      const ccx = pv.x, ccz = pv.z;
+      let mnx = 1e9, mxx = -1e9, mnz = 1e9, mxz = -1e9;
+      for (let i = 0; i < NVi; i++) { mnx = Math.min(mnx, vAll[i*3]); mxx = Math.max(mxx, vAll[i*3]);
+        mnz = Math.min(mnz, vAll[i*3+2]); mxz = Math.max(mxz, vAll[i*3+2]); }
+      const xy = new Float32Array(NVi * 2);
+      for (let i = 0; i < NVi; i++) { xy[i*2] = (vAll[i*3] - ccx) * rsc; xy[i*2+1] = (vAll[i*3+2] - ccz) * rsc; }
+      gl.bindBuffer(gl.ARRAY_BUFFER, vb); gl.bufferData(gl.ARRAY_BUFFER, xy, gl.STATIC_DRAW);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.drawElements(gl.TRIANGLES, IN, gl.UNSIGNED_SHORT, 0);
+      const px = new Uint8Array(SZ * SZ * 4);
+      gl.readPixels(0, 0, SZ, SZ, gl.RGBA, gl.UNSIGNED_BYTE, px);
+      let lit = 0;
+      for (let i = 0; i < SZ * SZ; i++) if (px[i*4] > 32) lit++;
+      let hex = '';
+      for (let gy = 0; gy < GRID; gy++) for (let gx = 0; gx < GRID / 8; gx++) {
+        let b = 0;
+        for (let gy2 = 0; gy2 < 4; gy2++) for (let gx2 = 0; gx2 < 8; gx2++) {
+          for (let sy = 0; sy < 4; sy++) for (let sx2 = 0; sx2 < 4; sx2++) {
+            const X = (gx * 8 + gx2) * 4 + sx2, Y = (GRID - 1 - gy) * 4 + gy2;
+            const o = (Y * SZ + X) * 4;
+            if (px[o] > 32) { b |= 1 << (gy2 * 8 + gx2); sy = 4; sx2 = 4; }
+          }
+        }
+        hex += ('0000000' + (b >>> 0).toString(16)).slice(-8);
+      }
+      return { gridHex: hex, lit, height: +(mxz - mnz).toFixed(4), feetZ: +mnz.toFixed(4) };
+    };
+    const frames = {};
+    for (const nm of clips) {
+      const a = actions[nm]; if (!a) continue;
+      for (const nm2 of clips) { const a2 = actions[nm2];
+        if (a2) { a2.setEffectiveWeight(0); if (a2.isRunning()) a2.stop(); } }
+      a.reset(); a.setEffectiveWeight(1); a.play();
+      const dur = a.getClip().duration;
+      const fr = []; let prev = null;
+      for (const frac of [0.25, 0.5, 0.75]) {
+        a.time = frac * dur; mixer.update(0);
+        mercObj.updateMatrixWorld(true); smIo.skeleton.update();
+        const vAll = skinAll();
+        const r = raster(vAll);
+        let fd = 0;
+        if (prev) { let s3 = 0; for (let i = 0; i < vAll.length; i++) s3 += Math.abs(vAll[i] - prev[i]);
+          fd = +(s3 / NVi).toFixed(4); }
+        prev = vAll;
+        fr.push(Object.assign({ frac, frameDisp: fd, nVerts: NVi }, r));
+      }
+      frames[nm] = fr;
+      a.setEffectiveWeight(0); a.stop();
+    }
+    // wrong-clip control v2: mean |idle_skin - walk_skin| at frac 0.25 (vertex space)
+    let skinDiff = -1;
+    try {
+      const A = actions[clips[0]], B = actions[clips[1]];
+      const snap = (act, frac) => {
+        for (const nm2 of clips) { const a2 = actions[nm2];
+          if (a2) { a2.setEffectiveWeight(0); if (a2.isRunning()) a2.stop(); } }
+        act.reset(); act.setEffectiveWeight(1); act.play();
+        act.time = frac * act.getClip().duration; mixer.update(0);
+        mercObj.updateMatrixWorld(true); smIo.skeleton.update();
+        return skinAll();
+      };
+      const va = snap(A, 0.25), vbw = snap(B, 0.25);
+      let sd = 0;
+      for (let i = 0; i < va.length; i++) sd += Math.abs(va[i] - vbw[i]);
+      skinDiff = +(sd / va.length).toFixed(4);
+      A.setEffectiveWeight(0); A.stop(); B.setEffectiveWeight(0); B.stop();
+    } catch (eSD) { log('IoU2 skinDiff fail: ' + (eSD && eSD.message)); }
+    let gridDiff = -1;
+    if (frames[clips[0]] && frames[clips[1]]) {
+      const A = frames[clips[0]][0].gridHex, B = frames[clips[1]][0].gridHex;
+      let d = 0;
+      for (let i = 0; i < A.length; i += 8) {
+        const x = (parseInt(A.slice(i, i + 8), 16) ^ parseInt(B.slice(i, i + 8), 16)) >>> 0;
+        d += x.toString(2).split('1').length - 1;
+      }
+      gridDiff = d;
+    }
+    mercObj.rotation.x = __rot0; mercObj.position.copy(__pos0);
+    mercObj.updateMatrixWorld(true); smIo.skeleton.update();
+    const __res = { ok: true, restMaxDev: +restMaxDev.toFixed(5), nVerts: NVi, frames, gridDiff,
+      skinDiff, glErr: gl.getError() };
+    log('IoU2-done restMaxDev=' + __res.restMaxDev + ' clips=' + Object.keys(frames).length + ' gridDiff=' + gridDiff);
+    return __res;
+  } catch (e4) {
+    log('enemyIoU2 FAILED: ' + (e4 && e4.message || e4));
+    return { ok: false, error: String(e4 && e4.message || e4) };
+  }
+}
 async function loadMerc(zipBuf, findM) {
   const aMem = await glaSliceLazy(zipBuf, zmembersGet(findM(/data\/actors\.gla$/i)),
     new Set(['Bane_mercenary.bdae', 'batman_anims.bdae']));
@@ -1686,6 +1829,8 @@ async function loadMerc(zipBuf, findM) {
   { // s60 T3: capture the rest pose BEFORE the root transform (bind = parse-time world)
     const smR = (() => { let s = null; merc.traverse(o => { if (o.isSkinnedMesh) s = o; }); return s; })();
     mercRestIoU = smR ? captureRestIoU(smR) : { ok: false, error: 'no skinned mesh' };
+  // s61 T3: posed skinned capture (root-cause fix proof + per-clip posed frames)
+
   }
   merc.rotation.x = -Math.PI / 2;
   merc.position.set(P.x + 2.0, P.y, P.z);
@@ -1715,6 +1860,14 @@ async function loadMerc(zipBuf, findM) {
   mercActions['_223_enemy_hurtl'].clampWhenFinished = true;
   mercActions['_250_enemy_death1'].loop = THREE.LoopOnce;
   mercActions['_250_enemy_death1'].clampWhenFinished = true;
+  // s61 T3: posed skinned capture (after mixer + actions exist; root-cause fix proof)
+  try {
+    const smI2 = (() => { let s5 = null; merc.traverse(o => { if (o.isSkinnedMesh) s5 = o; }); return s5; })();
+    if (smI2) {
+      log('IoU2-call');
+      window.__GATE.enemyIoU2 = captureSkinnedFrames(smI2, merc, mercMixer, mercActions, ENEMY_CLIPS);
+    } else window.__GATE.enemyIoU2 = { ok: false, error: 'no skinned mesh' };
+  } catch (eI2) { log('IoU2-throw: ' + (eI2 && eI2.message)); window.__GATE.enemyIoU2 = { ok: false, error: String(eI2 && eI2.message) }; }
   return { verts: skin.verts.length / 3, joints: skin.jointNodes ? skin.jointNodes.length : -1,
            clips: g.animations.filter(a => ENEMY_CLIPS.indexOf(a.name) >= 0).map(a => a.name) };
 }
