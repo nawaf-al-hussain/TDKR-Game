@@ -1,0 +1,26 @@
+{
+ "tree": "s56-t1-glide b7df902",
+ "batch": "b",
+ "pages": {
+  "/playable/integration.html": {
+   "console_errors": [],
+   "failed": [],
+   "requests": 11,
+   "elapsed_s": 100.2
+  },
+  "/playable/integration_lazy.html": {
+   "console_errors": [],
+   "failed": [],
+   "requests": 11,
+   "elapsed_s": 100.3
+  },
+  "/playable/enemy_viewer.html": {
+   "console_errors": [],
+   "failed": [],
+   "requests": 2,
+   "combat_gate_pass": true,
+   "elapsed_s": 170.2
+  }
+ },
+ "all_clean": true
+}

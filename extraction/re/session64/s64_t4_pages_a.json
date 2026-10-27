@@ -1,0 +1,25 @@
+{
+ "tree": "s56-t1-glide b7df902",
+ "batch": "a",
+ "pages": {
+  "/index.html": {
+   "console_errors": [],
+   "failed": [],
+   "requests": 144,
+   "elapsed_s": 75.3
+  },
+  "/playable/walktest.html": {
+   "console_errors": [],
+   "failed": [],
+   "requests": 8,
+   "elapsed_s": 70.2
+  },
+  "/playable/index.html": {
+   "console_errors": [],
+   "failed": [],
+   "requests": 10,
+   "elapsed_s": 105.1
+  }
+ },
+ "all_clean": true
+}
