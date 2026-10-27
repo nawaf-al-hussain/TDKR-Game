@@ -1503,3 +1503,73 @@ waypoint decode is gated on ?s5=1 - use ?s5=1&s5blend=1 for the blend runs.
 - Token hygiene: askpass script shredded after push #2; remote URL stays credential-free
   (https://github.com/nawaf-al-hussain/TDKR-Game.git). The token appeared in chat
   plaintext (again) — ROTATION RECOMMENDED.
+
+## SESSION 64 (round 54, 2026-10-27) — the 13 residual template fails CLOSED (closure exact 588/653 = 90.05%, pass 648 = 99.23%, fail 0); SECOND REAL RE-ANCHOR achieved (64-u soup facade, blendD 60.3 u decay, dip restart); vehicle-health second signal closed-negative on all four angles; deploy candidate reviewed and ready; NOT deployed, NOT pushed (no token)
+
+- **STATE at session start:** remote main = d9f06c8 (the s63 PUSH receipt — the s63
+  backlog was ALREADY pushed in the s63 continuation; the brief's "main a4d9c19
+  expected" was stale), s56-t1-glide aeabaa5, gh-pages 6145545 LIVE untouched, staged
+  39298a4. Environment migration: NEW rootfs (8.5 GB free; the 100% disk crisis and the
+  /home/z mirrors are gone), capstone reinstalled. NO token this session -> local
+  commits + verified bundles only.
+- **T1 (main deaa6de): ALL 13 residual template fails CLOSED engine-true.** Root cause
+  (one cause for all 13): the s63 SlowMotion (list5) element spec carried a spurious
+  trailing "param" int with NO engine counterpart. CContainerStateAnimation::Load is
+  ONE function 0x3b45f4..0x3b6498: Sound inline from 0x3b4610, Script ~0x3b4bb8
+  (ldrb @0x3b57dc), TrackEffectEvent 0x3b5d0c..0x3b6008 (tracks i,i,STR,i,c; ldrb
+  @0x3b5fd4), Effect 0x3b600c..0x3b61e8 (tracks i,i,STR,STR,c; ldrb @0x3b61b8),
+  SlowMotion list count @0x3b61ec + per element ReadInt(k) @0x3b62a0 + k x
+  (i,i,f,f,i,c,c) (22 B; ldrb @0x3b643c/@0x3b6450) then RETURN — NO param read. The s63
+  param was a solver artifact that cancelled on the calibration set (SlowMotion
+  count = 0 there) and bit the 13 behaviour payloads (the first with count > 0).
+  Two more code-derived fixes: CameraParams (0x3bf038) missed the c,c stream bytes
+  before the strings (77 -> 79 B; fixes all 18 tail:2 Camera_* templates) and Glide
+  (0x3c0938) = i + 21f + i = 92 B (fixes Glider/Glider_Plunge tail:4). Closure
+  trajectory 313 -> 552 -> **588/653 exact (90.05%), pass 648 (99.23%), fail 0, na 5**.
+  Nulls: perm 24, rot7 367, ss-swap 0 (content templates fail), param-restored
+  REJECTS the content templates, cam-revert 0/8, glide-revert 0/2. Remaining 60
+  bounds-pass = per-reader trailing under-reads (tail:4 x27 across >= 6 readers incl.
+  BatPod/TheBatDrive; tail values vary = real fields; ~0.25-0.5 session to close).
+- **T2 (branch b7df902 + main 0db9f36): SECOND REAL RE-ANCHOR — PASS.** The s63
+  geometry blocker was a MODEL MISMATCH: s63 used the 2.857 u/u sink56 comparator
+  ratio; the LIVE glide runs the acc model (vz 14.81 / fwd 11.31 = 1.31 u/u), so the
+  64-u facade IS reachable. ?s5airto=<ms> glide phase-timeout override added (default
+  6000 unchanged; 3 asserted edits; node --check PASS). Gate (4 runs, soup digest
+  00ce7970/137893 byte-identical, 0 errors): control reproduces s62 (2 re-anchors
+  @17/300 ms, blendD 0); **s5air=85: REAL re-anchor @3233 ms at [-427.4, -671.1] z=45.8,
+  pre-hit blendD max 60.306 u over 194 samples, dip restart 60.3 -> 0 -> 0.247,
+  landed, gate pass=true**; s5air=185 negative calibration (passes the facade at
+  110 u altitude -> pinned the 1.31 ratio); no-soup staged control = 0 re-anchors +
+  glide timeout (the re-anchor is attributable to the REAL soup). Analytic vz max err
+  4.2479 u/s (n=181 window / 371 total; the s60 acc-transient dominance).
+- **T3 (main 288960f): vehicle health second signal — FINAL LOOK, all NEGATIVE.**
+  (1) save-game: NO CComponent*::Save/SaveSave/LoadSave anywhere; only
+  PlayerComponent::Save/LoadMaxHealth (player-only). (2) zero CVehicle* health symbols.
+  (3) CGameObject::SetHealth/GetMaxHealth/SetMaxHealth = 35 xrefs -> exactly 7 enclosing
+  functions (Lua impl, GameObjectCacheManager recycle = same signal re-applied,
+  Destroyable, ElectricTurret, SurveillanceCamera, PlayerComponent, HUD) — none
+  vehicle. (4) no health/armor upgrade path. (5) Lua actor args are variables at all
+  146+63 call sites = not statically enumerable (bounded by angle 3). Verdict: vehicle
+  300.0 stays **PARTIAL single-signal**; STOP per the brief.
+- **T4 (main 35e013d): deploy candidate review — READY, NOT deployed.** Exact tree
+  s56-t1-glide @ b7df902 vs LIVE 6145545: fast-forward; deploy_site.py dry-run PASS
+  (5 added / 2 changed / 0 deleted; URL gate 98/98; manifest v21, 263 meshes); site
+  delta = enemy_viewer.html (new 27,860 B) + integration_lazy.html (141,240 B) +
+  tdkr_pipeline.js (28,576 B); zero blobs > 5 MB; zero game-derived assets added;
+  6-page headless battery on the exact tree ALL CLEAN (incl. enemy_viewer combat gate
+  True); rollback = force-push gh-pages to 6145545.
+- **T5 (main 2db221d): disk/asset inventory (report only).** Rootfs healthy (881 MB /
+  9.9 GB used). Proposals (user decision): delete work/TDKR_zip.zip (854 MB,
+  cmp-verified duplicate), the 5.5 GB s26 analysis JSONs (regenerable via session26
+  generators), apk_obb/obb_extract overlap (1.8 GB). Nothing deleted.
+- **T6 (main 2db221d): environment-dominated, pending real GPU** (no gpucheck block).
+- **T7:** handoff + worklog; bundles_s64 (main d9f06c8..HEAD, glide aeabaa5..b7df902)
+  with SHA256SUMS.txt; NO push (no token supplied this session).
+- **Estimate update:** template closure now 588/653 exact with fail 0 — remaining =
+  60 bounds-pass trailing fields (0.25-0.5 session) + the 5 na (by construction).
+  In: walkable world, character renderer/animation, Lua shim, asset pipeline,
+  user-file material binding, descriptor decode, shader/fog chain, zone renderer,
+  glide/grapple slices (now incl. the second real re-anchor), skinned merc + combat
+  slice. NOT in: AI, mission flow, audio, UI, cloth cape, cross-region nav, city-scale
+  lit rendering (1-2 sessions each unless noted: audio 1-2, UI 1-2, cloth 1, nav 1-2,
+  city lit 1-2, AI+missions 4-6).

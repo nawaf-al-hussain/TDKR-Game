@@ -852,3 +852,22 @@ Work Log:
 Stage Summary:
 - Remote AFTER: main = this receipt commit, s56-t1-glide aeabaa5, gh-pages 6145545 LIVE (untouched), staged 39298a4.
 - The COMPLETE s63 session (T1 closure 552/653 exact, T2 null matrix, T3 s5air PARTIAL, T4 carriers 57/57, T5 gates+deploy plan, T6 note, T7 delivery) is now on the remote; deployment of the glide-branch page state remains the user's explicit step.
+
+---
+Task ID: s64 (round 54)
+Agent: main agent (Z.ai session 64)
+Task: T1 close the 13 residual template fails; T2 second real re-anchor; T3 vehicle health last look; T4 deploy candidate review; T5 disk inventory; T6 GPU; T7 delivery. No token supplied -> local commits + verified bundles only.
+
+Work Log:
+- STATE: remote main d9f06c8 (s63 already pushed in the continuation - brief was stale), glide aeabaa5, gh-pages 6145545 LIVE; NEW rootfs after env migration (8.5 GB free, /home/z mirrors gone, capstone reinstalled); no token -> nothing pushed.
+- T1 (deaa6de): root cause of all 13 OOB fails = s63 SlowMotion spec's spurious per-element param (code-exact CAS map: ONE function 0x3b45f4..0x3b6498; SlowMotion element = [i k, k x (i,i,f,f,i,c,c)], RETURN - no param read; the param was a solver artifact cancelling on calibration templates whose SlowMotion count = 0). + CameraParams c,c fix (77->79 B, +18 templates) + Glide 21-float fix (88->92 B, +2). Closure exact 588/653 (90.05%), pass 648 (99.23%), fail 0, na 5; nulls perm 24 / rot7 367 / ss-swap 0 / param-restored rejects / cam-revert 0-8 / glide-revert 0-2; remaining 60 bounds-pass = per-reader trailing fields (tail census documented).
+- T2 (branch b7df902 + receipt 0db9f36): s63's blocker was a model mismatch (2.857 sink56 comparator vs the LIVE 1.31 acc-model ratio); ?s5airto override (default unchanged); SECOND REAL RE-ANCHOR at s5air=85: re-anchor @3233ms, pre-hit blendD 60.3u/194 samples, dip 60.3->0->0.247, landed; controls = s62 reproduction, s5air=185 negative (pins the ratio), no-soup staged run (0 re-anchors, timeout).
+- T3 (288960f): all four second-signal angles NEGATIVE (no component save serialization; no CVehicle health code; SetHealth 35 xrefs -> 7 functions none vehicle; no upgrade path; Lua args non-enumerable) -> single-signal PARTIAL stands, stopped.
+- T4 (35e013d): deploy candidate ready - dry-run PASS (5/2/0, URL gate 98/98, v21 263 meshes), 6-page battery ALL CLEAN + combat gate True on the exact tree b7df902, 0 blobs >5MB, 0 game-derived assets added, rollback force-push 6145545; NOT deployed.
+- T5/T6 (2db221d): inventory report only (854 MB duplicate zip + 5.5 GB regenerable s26 JSONs proposed, nothing deleted); GPU pending user.
+- T7: handoff s64 section, this worklog, bundles_s64 built + verified + mirrored, ls-remote at end.
+
+Stage Summary:
+- Verdicts: T1 PASS (13 -> 0 fails, 588/653 exact 90.05%, zero fitted rules), T2 PASS (second real re-anchor with decayed blend + dip restart + controls), T3 PASS (closed-negative x4, single-signal stands), T4 PASS (candidate ready, not deployed), T5 done (report only), T6 pending-user, T7 done (no push).
+- Template walk denominator 653: exact 588 (90.05%), bounds 60, na 5, fail 0.
+- Local after s64: main = T7 commit; s56-t1-glide b7df902; bundles download/bundles_s64/; nothing pushed, nothing deployed.
