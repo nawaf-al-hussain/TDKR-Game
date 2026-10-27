@@ -699,6 +699,7 @@ const S5EARLY = QS2.get('s5ctlEarly') === '1'; // s56 T2b: early release so the 
 const S5BLEND = QS2.get('s5blend') === '1';    // s58 T1: exact engine blend (takeoff-anchor distance)
 const S5REAN = QS2.get('s5reanchor') === '1';  // s60 T5: ResolveAirCollision re-anchor case (virtual wall)
 const S5REAL = QS2.get('s5real') === '1';   // s62 T4: REAL soup air-collision re-anchor
+const S5AIR = parseFloat(QS2.get('s5air') || '0') || 0;   // s63 T3: mid-air glide start (elevated grapple anchor)
 const S5WALL = parseFloat(QS2.get('s5wall') || '40');
 const S5CTLV = S5EARLY
   ? { tRamp: 0.25, tHold: 0.45, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 }
@@ -852,6 +853,7 @@ function s5Tick(now) {
       // s54 T1: the grapple ends AT the anchor (ledge) - stand on its surface, then glide
       const gz0 = nm_ground(S5.tgt[0], S5.tgt[1], S5.tgt[2] + 2.6);
       if (gz0 > -1e8) { P.z = gz0 + 0.9; }
+      if (S5AIR > 0) { P.z += S5AIR; }   // s63 T3: grapple-elevated anchor - glide starts N u mid-air
       S5.pitch = S5P.pitch0Deg * Math.PI / 180;   // engine initial glide pitch (f10, SetInitialGlideAngle)
       S5.acc = S5P.sinkMax;   // s57 T1: engine StartGlide seeds acc = f1 = 16 (0x3806a8)
       if (S5P.mode === 'acc') S5.anchor = [P.x, P.y, P.z];   // s58 T1: engine blend anchor = takeoff pos
@@ -997,7 +999,7 @@ function s5Tick(now) {
         g.s5 = { enabled: true, model: S5P.mode, ctl: !!S5CTL, targetReached: S5.reached, reachDist: S5.reachDist === null ? null : Math.round(S5.reachDist * 100) / 100,
                  glideClipActive: S5.clipActive, landed: true, landMs: S5.landMs, traj: S5.traj,
                  reanchors: S5.reanchors || [], wallHit: S5.wallHit,
-                 realStaged: S5.realStaged || null, real: !!S5REAL,
+                 realStaged: S5.realStaged || null, real: !!S5REAL, s5air: S5AIR,
                  from: S5.from.slice(), tgt: S5.tgt.slice(), wpsN: (window.__S5WPS || []).length };
         log('S5 landed: ground z ' + gz.toFixed(2) + ', glide lasted ' + S5.landMs + ' ms');
         startWalkPhase();   // hand back to the standard gate walk phase
@@ -1007,7 +1009,7 @@ function s5Tick(now) {
       g.s5 = { enabled: true, model: S5P.mode, targetReached: S5.reached, reachDist: S5.reachDist,
                glideClipActive: S5.clipActive, landed: false, error: 'glide timeout', traj: S5.traj,
                from: S5.from.slice(), tgt: S5.tgt.slice(), wpsN: (window.__S5WPS || []).length ,
-               realStaged: S5.realStaged || null };
+               realStaged: S5.realStaged || null, s5air: S5AIR };
       S5.phase = 'done'; S5.done = true;
       startWalkPhase();
     }
