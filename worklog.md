@@ -816,3 +816,23 @@ Work Log:
 Stage Summary:
 - Remote AFTER: main = this receipt commit, s56-t1-glide 73fbecb, gh-pages 6145545 LIVE (12 commits ahead of the local ref; untouched), gh-pages-staged 39298a4; s56-t3-migrate 47e73d1 already on the remote.
 - s61+s62 backlog FULLY on the remote; deployment of the s62 glide-branch page state remains the user's explicit step.
+
+---
+Task ID: s63 (round 53)
+Agent: main agent (Z.ai session 63)
+Task: T1 StateSet closure (CContainerStateAnimation); T2 posed merc skinning tables; T3 glide re-anchor 2nd case; T4 carrier values; T5 gate re-run + deploy plan; T6 GPU; T7 delivery. Token policy: no token supplied -> local commits + verified bundles only.
+
+Work Log:
+- STATE: ls-remote matched the baseline exactly (main a4d9c19, glide 73fbecb, gh-pages 6145545 LIVE untouched, staged 39298a4, s44 6145545, migrate 47e73d1, title-fix 0cea8b8, s41 7b0807e, s40 80274a1, essentials 7c8defc, tag v1.1.6b); no token on disk -> NO push this session.
+- T1 (main f26faef): CAS closed engine-true - STR + 5 lists (Sound 20B / Script 13B / 17B / 17B / 22B tracks; FIVE inline ldrb byte-reads found after fixing the s62 tracer + skeleton-scan blind spots); CCS 82-B head exact; states pack 2-mod-4 (s62's 110-B model + "reordered trigger loop" = 4-alignment artifacts); closure exact 552/653 (84.5%, +79), pass 635, fail 13 = ONE cause (deep CAS content in Batman_*/Enemy_* payloads, offsets pinpointed); calibration clean; nulls perm 24 / rot7 347 / ss-shape-swap 0 on content templates.
+- T2 (main 0330956): 15-row posed table restated with full n (IoU mean 0.9001, nVerts 1294, meanVertDist 0) + NEW wrong-clip matrix (20 pairs 0.353-0.684; moving clips drop >= 0.32) + rolled 0.000-0.548 + batman-cross 0.013-0.600; weak discriminator NAMED (rest-frame cross-rig comparisons share BIPED rest offsets -> no evidence value).
+- T3 (branch aeabaa5 + receipt c377c76): ?s5air=N landed (default 0 = s62 behaviour; provenance both finalize paths); gates: control reproduces s62 (2 real re-anchors), s5air=28/180 clean runs ZERO re-anchors; geometry blocker measured (reachable band 2.5..52 u vs facades {0.6, 64+} = empty) -> PARTIAL; finish = census 2..12 u or phase-timeout lift (0.25).
+- T4 (main b6f4f63): carriers 57/57 with the nested specs (s62 51/57); 6 new + 4 s62 CORRECTIONS (Monorail x3 + Subway_Car 300.0, vehicle awareness family, payload_end true); vehicle-300 family 18->25; lvc scan: Health id 0x0ddcd6c4 ZERO in ALL .lvc + s13 instance-path evidence -> single-signal CONFIRMED, verdict stays PARTIAL.
+- T5 (main 59019ae): combat-slice gate re-run PASS (0 errs, wrong-clip controls move); default soup digest UNCHANGED 00ce7970/137893 on the glide tree; deploy plan written (3-file fast-forward delta vs LIVE 6145545, rollback force-push; NOT deployed).
+- T6 (main c77e397): environment-dominated, pending real GPU; no time spent per brief.
+- T7: handoff s63 section; this worklog; bundles_s63 built + git-bundle-verified + SHA256SUMS; ls-remote re-read at end.
+
+Stage Summary:
+- Verdicts: T1 PASS (closure complete to 552/653 exact; 13 fails = one pinpointed cause), T2 PASS (full-n table + discriminating/weak nulls separated), T3 PARTIAL (machinery proven, geometry blocker measured, finish defined), T4 PASS-with-corrections (57/57 walk + lvc negative -> single-signal PARTIAL stands), T5 PASS (gates + digest + plan; nothing deployed), T6 pending-user, T7 done (no push).
+- Closure numerator moved 313 (s61) -> 473 (s62) -> 552/653 (s63), zero fitted rules throughout; remaining 13 fails are deep CAS track CONTENT (behaviour payloads), not structure.
+- Local after s63: main = T7 commit; s56-t1-glide aeabaa5 (s63 T3 included); bundles download/bundles_s63/; nothing pushed, nothing deployed.

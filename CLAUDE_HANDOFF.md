@@ -1391,3 +1391,89 @@ waypoint decode is gated on ?s5=1 - use ?s5=1&s5blend=1 for the blend runs.
   67a30e62... bundle that stopped at 99c8a7e); branch_glide_s62_inc.bundle UNCHANGED
   (cf74c5b..73fbecb, 03033b7f...). SHA256 in download/bundles_s62/SHA256SUMS.txt; bundles
   stay untracked artifacts, mirrored to /home/z/my-project/download/bundles_s62/.
+
+## SESSION 63 (round 53, 2026-10-27) — StateSet closure COMPLETE (engine-true 552/653 exact, 84.5%); posed-skinning null matrix restated with full n; s5air second re-anchor PARTIAL (geometry blocker measured); carriers 57/57 + lvc single-signal confirmed; gates PASS, digest unchanged; NOT deployed, NOT pushed (no token)
+
+- **STATE verified at session start (public ls-remote read):** main a4d9c19, s56-t1-glide
+  73fbecb, gh-pages 6145545 LIVE (12 commits ahead of the local gh-pages ref, untouched),
+  gh-pages-staged 39298a4, gh-pages-staged-s44 6145545, s56-t3-migrate 47e73d1,
+  s55-t1-title-fix 0cea8b8, s41-city-slice 7b0807e, s40-user-zip-slice 80274a1,
+  essentials-s36 7c8defc, tag v1.1.6b — all matched the baseline. NO GitHub token files
+  on disk -> nothing pushed this session (local commits + verified bundles only).
+- **T1 (main f26faef): CContainerStateAnimation CLOSED engine-true, zero fitted rules.**
+  CAS (0x3b45f4..0x3b7928, 13.1 KB; the symtab LIE at 0x3b555c documented) = STR(animName)
+  + FIVE lists, each i(count) + count x element: Sound 20-B tracks, Script 13-B (ONE
+  inline ldrb @0x3b57dc), 17-B (inline ldrb @0x3b5fd4), 17-B (inline ldrb @0x3b61b8),
+  22-B with TWO inline ldrb (@0x3b643c/@0x3b6450) and the [count, rep, param] stream
+  order; the CContainerTracks_{Sound,Script,Effect} copy-ctors at 0x3b7928+ confirm the
+  three track families. CCS head is EXACTLY 82 B (STR,i,i,c7,f,f,i,f7,c,f,i,i,i,c2,animN)
+  and states pack at 2-mod-4 offsets — s62's "110-B states"/"compiler-reordered trigger
+  loop" were 4-alignment artifacts; the trigger element [i6,f,i2,STR,i] = 44 B is REAL and
+  sits after the CAS list. Tooling fixes: the s62 CFG tracer (fall-through-only) and the
+  skeleton scan (hardcoded r4 + 12-insn window that MISSED the five inline ldrb reads)
+  both corrected; exactly FIVE stream byte-reads exist (grep over the full disasm).
+  Closure (s63_t1_closure3.py, denominator 653): **exact 552 (84.5%, +79 vs s62), pass
+  635 (97.2%), fail 13, na 5**. The 6 s62 residual templates: Helicopter/Helicopter_Bane/
+  Military_Heli/Test_Object now EXACT; BatPod/TheBatDrive bounds-pass with the documented
+  tail:4 class (SS part exact at 252 B). The 13 remaining fails have ONE cause: deep
+  multi-element CAS track content in the Batman_*/Enemy_* behaviour payloads (the nested
+  spec EXPOSES content the flat spec silently under-read; failing offsets pinpointed;
+  est. 0.25-0.5 session). Calibration: count=0 StateSets still close; no previously-exact
+  template regressed. Nulls: perm exact 24 (real 552); rot7 exact 347; ss-shape-swap
+  drops the 4 content templates to exact 0. 48 track-shape combos close the bytes
+  byte-wise; the engine-true combo is pinned by the five inline ldrb sites (code-derived,
+  not fit). Artifacts: s63_t1_*.py/.txt + s63_t1_closure.json + s63_t1_final_specs.json
+  (nested StateSet spec now IN the id->spec table).
+- **T2 (main 0330956): posed merc skinning nulls RESTATED with full n** (s63_t2_table.py
+  -> .json; derives from the s62 capture, reproduction check OK). 15 real rows (5 clips x
+  frac 0.25/0.5/0.75): IoU 0.7880..0.9389 mean 0.9001, nVerts 1294 all rows, page lit
+  9,862..16,844 px, numpy lit 720..1,166 px, meanVertDist 0.0000 (the s62 restMaxDev-0
+  fix holds). Batman rest row (s60, different rest-frame pipeline) 0.9516 with its nulls.
+  Nulls: rolled-pose 0.0000..0.5478 (all below the real min); batman-mesh-cross
+  0.0127..0.6004; NEW wrong-clip matrix (20 ordered pairs, frac 0.5) 0.3528..0.6838 —
+  every moving-clip-as-page row drops >= 0.32 below the real band; Idle<->Walk/Run pairs
+  0.57..0.68 = discriminative with a narrower margin (pose-similar clips, reported as
+  such). Weak discriminators NAMED: rest-frame rig cross-checks between rigs sharing the
+  BIPED rest offsets are NOT evidence (rest silhouettes dominated by the shared offsets);
+  the posed-frame nulls are the discriminating ones.
+- **T3 (branch aeabaa5 + main receipt c377c76): second real re-anchor PARTIAL —
+  machinery proven, geometry blocks the hit.** ?s5air=N added (s63_t3_patch.py
+  generator, single-match asserts, node --check PASS): glide starts N u above the ledge
+  anchor, before the takeoff-anchor capture; provenance on both finalize paths; defaults
+  unchanged. Gates (s63_t3_gate.py, all runs soup 00ce7970/137893, 0 errors): s5air=0
+  reproduces s62 (2 real re-anchors @17/300 ms, blend never decays before the first
+  sample hit); s5air=28 lands clean (144 samples, ZERO re-anchors — near facade cleared);
+  s5air=180 phase-timeout (361 samples, ZERO re-anchors — envelope ends ~50 u, far
+  facades 64+ u). Geometry blocker MEASURED: reachable decayed-blend band = facades at
+  2.5..52 u (N = 2.857*d - 0.5); the census facades sit at {0.6, 64+} -> EMPTY
+  intersection. Finish (0.25 session): extend the census down to 2..12 u or lift the
+  phase timeout for s5air runs (N ~= 182 reaches the 64-u band).
+- **T4 (main b6f4f63): carriers 57/57 OK with the nested specs (s62: 51/57).** New 6
+  (the old StateSet fails): Helicopter/Helicopter_Bane/Military_Heli 300.0, BatPod/
+  TheBatDrive 150.0, Test_Object 60.0. 4 s62 CORRECTIONS: Monorail_Back/Car/Front +
+  Subway_Car 0.0 -> 300.0 with payload_end TRUE and the vehicle awareness family (the
+  s62 flat-spec misalignment). Vehicle-300 family 18 -> 25. Health distribution: 300x25,
+  150x8, 1400x5 (bosses), 120x5, 60x4 (civilians), 1x4, 50x2, 100/90/140x1. Second
+  signal for vehicle 300.0: CLOSED-NEGATIVE at the instance level — Health id 0x0ddcd6c4
+  has ZERO occurrences across ALL .lvc files, and the s13 engine evidence (instance path
+  reads exactly Base+Mesh) says instances cannot carry a Health override -> vehicle
+  health stays **PARTIAL single-signal** (the one signal is engine-NAMED and walks
+  cleanly for 25/25 vehicle carriers).
+- **T5 (main 59019ae): gates re-run after T1-T3 — ALL PASS.** Combat slice
+  (enemy_viewer.html, skinned merc 1294 verts): PASS, 0 console errors, hp 120->115->
+  105->0, stateSeq correct, wrong-clip controls move at both levels (point 0.2211,
+  mesh silhouette 60 lit px). Default page soup digest UNCHANGED
+  00ce7970e45adc85.../nTri 137893 on the glide branch tree (0 errors). Deploy plan
+  written (s63_t5_note.md): s56-t1-glide @ aeabaa5 vs LIVE 6145545 = merge-base == LIVE
+  head -> pure fast-forward; delta = M integration_lazy.html (90,706->141,048 B),
+  M tdkr_pipeline.js (19,420->28,576 B), A enemy_viewer.html (27,860 B); root viewer/
+  walktest/batman.glb byte-identical; all new flags default-OFF; rollback = force-push
+  gh-pages to 6145545. **NOT deployed (policy: explicit user instruction only).**
+- **T6 (main c77e397): environment-dominated, pending real GPU** — no gpucheck block
+  supplied; standing s55 breakdown unchanged; no time spent per the brief.
+- **T7:** handoff section; worklog; bundles_s63 (main a4d9c19..HEAD, glide 73fbecb..
+  aeabaa5) with SHA256SUMS.txt; NO push this session (no token supplied; remote
+  READ-verified at session start as above). Estimate: CAS content fails 0.25-0.5
+  (same data+code method, offsets pinpointed); s5air finish 0.25; NOT in (unchanged):
+  AI/mission flow 4-6, audio 1-2, UI 1-2, cloth cape 1, cross-region nav 1-2, city-scale
+  lit rendering 1-2; memory pending real GPU.
