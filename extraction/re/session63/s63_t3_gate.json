@@ -1,0 +1,28 @@
+{
+ "air": {
+  "n_traj": 361,
+  "reanchors": [],
+  "landed": false,
+  "wallHit": null,
+  "s5air": 180,
+  "from": [
+   -462.23699951171875,
+   -767.7160034179688,
+   1.105601006746292
+  ],
+  "tgt": [
+   -439.82501220703125,
+   -705.5180053710938,
+   8.29800033569336
+  ],
+  "analytic_vz_err_max": 4.2479,
+  "analytic_n": 361,
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [],
+  "soup": {
+   "nTri": 137893,
+   "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+  }
+ }
+}
