@@ -1,0 +1,95 @@
+CAS::Load 3b45f4..3b555c (3944 B), sym=_ZN24CContainerStateAnimation4LoadEP13CMemoryStream
+insns: 986
+003b4610  READ STR
+003b4618  READ i
+003b4660  bl-inner 3b4b60 (CContainerStateAnimation::Load(CMemoryStream)
+003b4684  CALL $a+1d40
+003b46b8  CALL $a+1b10
+003b46c4  CALL operator new(unsigned int)+0
+003b46fc  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4748  CALL operator new(unsigned int)+0
+003b477c  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b47ac  LOOPBACK -> 3b476c (dist 64)
+003b47c0  LOOPBACK -> 3b46f0 (dist 208)
+003b4824  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4894  CALL operator new(unsigned int)+0
+003b48d0  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4900  LOOPBACK -> 3b48c0 (dist 64)
+003b4924  LOOPBACK -> 3b480c (dist 280)
+003b4988  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b49f8  CALL operator new(unsigned int)+0
+003b4a34  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4a64  LOOPBACK -> 3b4a24 (dist 64)
+003b4a88  LOOPBACK -> 3b4970 (dist 280)
+003b4ae0  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4ae8  LOOPBACK -> 3b4ad8 (dist 16)
+003b4afc  CALL operator delete(void*)+0
+003b4b08  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4b10  LOOPBACK -> 3b4ac0 (dist 80)
+003b4b2c  CALL operator delete(void*)+0
+003b4b68  CALL $a+19bc
+003b4b70  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4b7c  bl-inner 3b4e80 (CContainerStateAnimation::Load(CMemoryStream)
+003b4bb4  READ STR
+003b4bbc  READ i
+003b4c00  bl-inner 3b5344 (CContainerStateAnimation::Load(CMemoryStream)
+003b4c44  bl-inner 3b5390 (CContainerStateAnimation::Load(CMemoryStream)
+003b4c9c  CALL operator new(unsigned int)+0
+003b4cd4  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4d00  LOOPBACK -> 3b4cc4 (dist 60)
+003b4d28  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4d58  LOOPBACK -> 3b4d18 (dist 64)
+003b4d84  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4db4  LOOPBACK -> 3b4d74 (dist 64)
+003b4dd0  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4dd8  LOOPBACK -> 3b4dc8 (dist 16)
+003b4dec  CALL operator delete(void*)+0
+003b4e08  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4e10  bl-inner 3b4e70 (CContainerStateAnimation::Load(CMemoryStream)
+003b4e34  READ STR
+003b4e3c  READ i
+003b4e48  READ i
+003b4e54  READ i
+003b4e60  READ i
+003b4e6c  LOOPBACK -> 3b4e1c (dist 80)
+003b4e7c  LOOPBACK -> 3b4ba0 (dist 732)
+003b4e88  READ i
+003b4ecc  CALL $a+0
+003b4ef0  CALL $a+1b88
+003b4f24  CALL $a+1b58
+003b4f30  CALL operator new(unsigned int)+0
+003b4f60  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4f94  CALL operator new(unsigned int)+0
+003b4fd8  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b4ff0  LOOPBACK -> 3b4fb8 (dist 56)
+003b5004  LOOPBACK -> 3b4f54 (dist 176)
+003b505c  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b50ac  CALL operator new(unsigned int)+0
+003b50f8  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b5110  LOOPBACK -> 3b50d8 (dist 56)
+003b5134  LOOPBACK -> 3b5044 (dist 240)
+003b518c  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b51e0  CALL operator new(unsigned int)+0
+003b522c  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b5244  LOOPBACK -> 3b520c (dist 56)
+003b5268  LOOPBACK -> 3b5174 (dist 244)
+003b52c0  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b52c8  LOOPBACK -> 3b52b8 (dist 16)
+003b52dc  CALL operator delete(void*)+0
+003b52e8  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b52f0  LOOPBACK -> 3b52a0 (dist 80)
+003b530c  CALL operator delete(void*)+0
+003b5350  LOOPBACK -> 3b4e08 (dist 1352)
+003b5370  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b5378  LOOPBACK -> 3b5368 (dist 16)
+003b538c  LOOPBACK -> 3b4e08 (dist 1412)
+003b53a0  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b543c  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b546c  LOOPBACK -> 3b542c (dist 64)
+003b54a8  bl-inner 3b5504 (CContainerStateAnimation::Load(CMemoryStream)
+003b54cc  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b54fc  LOOPBACK -> 3b54c4 (dist 56)
+003b551c  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b5548  LOOPBACK -> 3b5514 (dist 52)
+003b5550  CALL std::basic_string<char, std::char_traits<char>, glitch::core+0
+003b5558  LOOPBACK -> 3b4e08 (dist 1872)

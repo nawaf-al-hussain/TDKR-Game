@@ -1,0 +1,3277 @@
+003b45f4 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+003b45f8 sub      sp, sp, #0x144
+003b45fc mov      r4, r1
+003b4600 mov      fp, #0
+003b4604 str      r0, [sp, #0x10]
+003b4608 mov      r0, r1
+003b460c ldr      r1, [sp, #0x10]
+003b4610 bl       #0x33a0d4 ; -> 0033a0d4 CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+003b4614 mov      r0, r4
+003b4618 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b461c ldr      ip, [sp, #0x10]
+003b4620 ldr      r3, [sp, #0x10]
+003b4624 str      fp, [sp, #0x68]
+003b4628 ldr      r8, [ip, #4]
+003b462c ldr      r3, [r3, #8]
+003b4630 ldr      ip, [pc, #0xf24] ; [003b555c]=00853678 glitch::gui::CGUISkin::draw3DButtonPanePressed(boost::intrusive_ptr<glitch::gui::IGUIElement> const&, glitch::core::rect<int> const&, glitch::core::rect<int> const*)+504
+003b4634 rsb      r5, r8, r3
+003b4638 str      fp, [sp, #0x6c]
+003b463c ldr      ip, [pc, ip]
+003b4640 str      r3, [sp, #4]
+003b4644 asr      r5, r5, #4
+003b4648 add      r3, ip, #0xc
+003b464c str      ip, [sp, #0x24]
+003b4650 str      fp, [sp, #0x70]
+003b4654 str      r3, [sp, #0x64]
+003b4658 cmp      r0, r5
+003b465c str      r0, [sp, #0xc]
+003b4660 bls      #0x3b4b60
+003b4664 subs     r2, r0, r5
+003b4668 str      r2, [sp, #0x20]
+003b466c beq      #0x3b6fec
+003b4670 ldr      ip, [sp, #0x10]
+003b4674 ldr      r3, [ip, #0xc]
+003b4678 ldr      ip, [sp, #4]
+003b467c rsb      r3, ip, r3
+003b4680 cmp      r2, r3, asr #4
+003b4684 bls      #0x3b72a0
+003b4688 movw     r3, #0xffff
+003b468c ldr      ip, [sp, #0x20]
+003b4690 movt     r3, #0xfff
+003b4694 mvn      r2, #0xf0000000
+003b4698 rsb      r3, r5, r3
+003b469c cmp      ip, r3
+003b46a0 bhi      #0x3b78c4
+003b46a4 cmp      ip, r5
+003b46a8 addhs    r3, r5, ip
+003b46ac addlo    r3, r5, r5
+003b46b0 cmp      r5, r3
+003b46b4 strhi    r2, [sp, #0x28]
+003b46b8 bls      #0x3b7070
+003b46bc ldr      r2, [sp, #0x28]
+003b46c0 lsl      r0, r2, #4
+003b46c4 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b46c8 mov      ip, r0
+003b46cc str      r0, [sp, #0x14]
+003b46d0 add      r5, ip, r5, lsl #4
+003b46d4 ldr      fp, [sp, #0x20]
+003b46d8 movw     r7, #0xcccc
+003b46dc add      r8, r5, #4
+003b46e0 add      sl, r5, #0xc
+003b46e4 movt     r7, #0xccc
+003b46e8 mov      sb, #0
+003b46ec str      r4, [sp, #8]
+003b46f0 subs     r0, r8, #4
+003b46f4 beq      #0x3b47b4
+003b46f8 add      r1, sp, #0x64
+003b46fc bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4700 ldr      r2, [sp, #0x6c]
+003b4704 ldr      r3, [sp, #0x68]
+003b4708 str      sb, [r8]
+003b470c rsb      r3, r3, r2
+003b4710 str      sb, [r8, #4]
+003b4714 str      sb, [r8, #8]
+003b4718 asr      r3, r3, #2
+003b471c add      r5, r3, r3, lsl #1
+003b4720 add      r5, r5, r5, lsl #4
+003b4724 add      r5, r5, r5, lsl #8
+003b4728 add      r5, r5, r5, lsl #16
+003b472c adds     r5, r3, r5, lsl #2
+003b4730 beq      #0x3b6ff8
+003b4734 cmp      r5, r7
+003b4738 bhi      #0x3b78c0
+003b473c add      r5, r5, r5, lsl #2
+003b4740 lsl      r5, r5, #2
+003b4744 mov      r0, r5
+003b4748 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b474c mov      r4, r0
+003b4750 str      r4, [sl, #-8]
+003b4754 add      r5, r4, r5
+003b4758 stmda    sl, {r4, r5}
+003b475c ldr      r5, [sp, #0x68]
+003b4760 ldr      r6, [sp, #0x6c]
+003b4764 cmp      r5, r6
+003b4768 beq      #0x3b47b0
+003b476c cmp      r4, #0
+003b4770 beq      #0x3b47a0
+003b4774 mov      r0, r4
+003b4778 mov      r1, r5
+003b477c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4780 ldr      r3, [r5, #4]
+003b4784 str      r3, [r4, #4]
+003b4788 ldr      r3, [r5, #8]
+003b478c str      r3, [r4, #8]
+003b4790 ldr      r3, [r5, #0xc]
+003b4794 str      r3, [r4, #0xc]
+003b4798 ldr      r3, [r5, #0x10]
+003b479c str      r3, [r4, #0x10]
+003b47a0 add      r5, r5, #0x14
+003b47a4 add      r4, r4, #0x14
+003b47a8 cmp      r6, r5
+003b47ac bne      #0x3b476c
+003b47b0 str      r4, [r8, #4]
+003b47b4 subs     fp, fp, #1
+003b47b8 add      sl, sl, #0x10
+003b47bc add      r8, r8, #0x10
+003b47c0 bne      #0x3b46f0
+003b47c4 ldr      r2, [sp, #0x10]
+003b47c8 ldr      r3, [sp, #4]
+003b47cc ldr      r4, [sp, #8]
+003b47d0 ldr      r2, [r2, #4]
+003b47d4 cmp      r3, r2
+003b47d8 str      r2, [sp, #0x18]
+003b47dc beq      #0x3b76d8
+003b47e0 mov      r3, r2
+003b47e4 ldr      r2, [sp, #0x14]
+003b47e8 add      r7, r3, #4
+003b47ec mov      sb, r3
+003b47f0 add      r8, r2, #0xc
+003b47f4 add      fp, r2, #4
+003b47f8 mov      sl, r2
+003b47fc movw     ip, #0xcccc
+003b4800 str      r4, [sp, #0x2c]
+003b4804 movt     ip, #0xccc
+003b4808 str      ip, [sp, #0x1c]
+003b480c cmp      sl, #0
+003b4810 beq      #0x3b4910
+003b4814 ldr      ip, [sp, #0x18]
+003b4818 mov      r1, sb
+003b481c mov      r0, sl
+003b4820 rsb      r5, ip, sb
+003b4824 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4828 add      r6, r5, r7
+003b482c ldr      r2, [sp, #0x14]
+003b4830 ldr      r3, [r5, r7]
+003b4834 rsb      r0, fp, r8
+003b4838 ldr      r1, [r6, #4]
+003b483c rsb      r2, r2, sl
+003b4840 str      r2, [sp, #8]
+003b4844 mov      r2, #0
+003b4848 rsb      r3, r3, r1
+003b484c ldr      r1, [sp, #8]
+003b4850 asr      r3, r3, #2
+003b4854 str      r2, [r1, fp]!
+003b4858 str      r2, [r1, #4]
+003b485c str      r2, [fp, r0]
+003b4860 add      r2, r3, r3, lsl #1
+003b4864 add      r2, r2, r2, lsl #4
+003b4868 add      r2, r2, r2, lsl #8
+003b486c add      r2, r2, r2, lsl #16
+003b4870 adds     r3, r3, r2, lsl #2
+003b4874 beq      #0x3b7048
+003b4878 ldr      ip, [sp, #0x1c]
+003b487c cmp      r3, ip
+003b4880 bhi      #0x3b78c0
+003b4884 add      r3, r3, r3, lsl #2
+003b4888 lsl      r3, r3, #2
+003b488c str      r3, [sp]
+003b4890 mov      r0, r3
+003b4894 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b4898 ldr      r3, [sp]
+003b489c mov      r4, r0
+003b48a0 str      r4, [r8, #-8]
+003b48a4 add      r3, r4, r3
+003b48a8 str      r4, [r8, #-4]
+003b48ac str      r3, [r8]
+003b48b0 ldr      r5, [r5, r7]
+003b48b4 ldr      r6, [r6, #4]
+003b48b8 cmp      r5, r6
+003b48bc beq      #0x3b4904
+003b48c0 cmp      r4, #0
+003b48c4 beq      #0x3b48f4
+003b48c8 mov      r0, r4
+003b48cc mov      r1, r5
+003b48d0 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b48d4 ldr      r3, [r5, #4]
+003b48d8 str      r3, [r4, #4]
+003b48dc ldr      r3, [r5, #8]
+003b48e0 str      r3, [r4, #8]
+003b48e4 ldr      r3, [r5, #0xc]
+003b48e8 str      r3, [r4, #0xc]
+003b48ec ldr      r3, [r5, #0x10]
+003b48f0 str      r3, [r4, #0x10]
+003b48f4 add      r5, r5, #0x14
+003b48f8 add      r4, r4, #0x14
+003b48fc cmp      r6, r5
+003b4900 bne      #0x3b48c0
+003b4904 ldr      r2, [sp, #8]
+003b4908 add      r3, r2, fp
+003b490c str      r4, [r3, #4]
+003b4910 ldr      r3, [sp, #4]
+003b4914 add      sb, sb, #0x10
+003b4918 add      sl, sl, #0x10
+003b491c add      r8, r8, #0x10
+003b4920 cmp      r3, sb
+003b4924 bne      #0x3b480c
+003b4928 ldr      r4, [sp, #0x2c]
+003b492c ldr      ip, [sp, #0x10]
+003b4930 ldr      r3, [sp, #4]
+003b4934 ldr      r2, [sp, #0x20]
+003b4938 ldr      ip, [ip, #8]
+003b493c cmp      r3, ip
+003b4940 add      sl, sl, r2, lsl #4
+003b4944 str      ip, [sp, #0x1c]
+003b4948 str      sl, [sp, #0x18]
+003b494c beq      #0x3b76e0
+003b4950 add      r8, sl, #0xc
+003b4954 add      r7, r3, #4
+003b4958 add      fp, sl, #4
+003b495c mov      sb, r3
+003b4960 movw     ip, #0xcccc
+003b4964 str      r4, [sp, #0x2c]
+003b4968 movt     ip, #0xccc
+003b496c str      ip, [sp, #0x20]
+003b4970 cmp      sl, #0
+003b4974 beq      #0x3b4a74
+003b4978 ldr      r3, [sp, #4]
+003b497c mov      r1, sb
+003b4980 mov      r0, sl
+003b4984 rsb      r5, r3, sb
+003b4988 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b498c add      r6, r5, r7
+003b4990 ldr      ip, [sp, #0x18]
+003b4994 ldr      r3, [r5, r7]
+003b4998 rsb      r0, fp, r8
+003b499c ldr      r1, [r6, #4]
+003b49a0 rsb      ip, ip, sl
+003b49a4 mov      r2, #0
+003b49a8 str      ip, [sp, #8]
+003b49ac rsb      r3, r3, r1
+003b49b0 mov      r1, ip
+003b49b4 str      r2, [r1, fp]!
+003b49b8 asr      r3, r3, #2
+003b49bc str      r2, [r1, #4]
+003b49c0 str      r2, [fp, r0]
+003b49c4 add      r2, r3, r3, lsl #1
+003b49c8 add      r2, r2, r2, lsl #4
+003b49cc add      r2, r2, r2, lsl #8
+003b49d0 add      r2, r2, r2, lsl #16
+003b49d4 adds     r3, r3, r2, lsl #2
+003b49d8 beq      #0x3b7050
+003b49dc ldr      r2, [sp, #0x20]
+003b49e0 cmp      r3, r2
+003b49e4 bhi      #0x3b78c0
+003b49e8 add      r3, r3, r3, lsl #2
+003b49ec lsl      r3, r3, #2
+003b49f0 str      r3, [sp]
+003b49f4 mov      r0, r3
+003b49f8 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b49fc ldr      r3, [sp]
+003b4a00 mov      r4, r0
+003b4a04 str      r4, [r8, #-8]
+003b4a08 add      r3, r4, r3
+003b4a0c str      r4, [r8, #-4]
+003b4a10 str      r3, [r8]
+003b4a14 ldr      r5, [r5, r7]
+003b4a18 ldr      r6, [r6, #4]
+003b4a1c cmp      r5, r6
+003b4a20 beq      #0x3b4a68
+003b4a24 cmp      r4, #0
+003b4a28 beq      #0x3b4a58
+003b4a2c mov      r0, r4
+003b4a30 mov      r1, r5
+003b4a34 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4a38 ldr      r3, [r5, #4]
+003b4a3c str      r3, [r4, #4]
+003b4a40 ldr      r3, [r5, #8]
+003b4a44 str      r3, [r4, #8]
+003b4a48 ldr      r3, [r5, #0xc]
+003b4a4c str      r3, [r4, #0xc]
+003b4a50 ldr      r3, [r5, #0x10]
+003b4a54 str      r3, [r4, #0x10]
+003b4a58 add      r5, r5, #0x14
+003b4a5c add      r4, r4, #0x14
+003b4a60 cmp      r6, r5
+003b4a64 bne      #0x3b4a24
+003b4a68 ldr      ip, [sp, #8]
+003b4a6c add      r3, ip, fp
+003b4a70 str      r4, [r3, #4]
+003b4a74 ldr      r2, [sp, #0x1c]
+003b4a78 add      sb, sb, #0x10
+003b4a7c add      sl, sl, #0x10
+003b4a80 add      r8, r8, #0x10
+003b4a84 cmp      r2, sb
+003b4a88 bne      #0x3b4970
+003b4a8c ldr      r3, [sp, #0x10]
+003b4a90 ldr      r4, [sp, #0x2c]
+003b4a94 ldr      r3, [r3, #8]
+003b4a98 mov      r2, r3
+003b4a9c str      r3, [sp, #0x1c]
+003b4aa0 ldr      ip, [sp, #0x10]
+003b4aa4 ldr      sb, [ip, #4]
+003b4aa8 cmp      sb, r2
+003b4aac beq      #0x3b4b20
+003b4ab0 add      fp, sb, #4
+003b4ab4 str      r4, [sp, #4]
+003b4ab8 mov      r7, sb
+003b4abc mov      r4, r2
+003b4ac0 rsb      r8, sb, r7
+003b4ac4 mov      r3, r8
+003b4ac8 ldr      r5, [r3, fp]!
+003b4acc ldr      r6, [r3, #4]
+003b4ad0 cmp      r5, r6
+003b4ad4 beq      #0x3b4af0
+003b4ad8 mov      r0, r5
+003b4adc add      r5, r5, #0x14
+003b4ae0 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b4ae4 cmp      r6, r5
+003b4ae8 bne      #0x3b4ad8
+003b4aec ldr      r5, [r8, fp]
+003b4af0 cmp      r5, #0
+003b4af4 beq      #0x3b4b00
+003b4af8 mov      r0, r5
+003b4afc bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b4b00 mov      r0, r7
+003b4b04 add      r7, r7, #0x10
+003b4b08 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b4b0c cmp      r7, r4
+003b4b10 bne      #0x3b4ac0
+003b4b14 ldr      ip, [sp, #0x10]
+003b4b18 ldr      r4, [sp, #4]
+003b4b1c ldr      sb, [ip, #4]
+003b4b20 cmp      sb, #0
+003b4b24 beq      #0x3b4b30
+003b4b28 mov      r0, sb
+003b4b2c bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b4b30 ldr      ip, [sp, #0x28]
+003b4b34 ldr      r2, [sp, #0x14]
+003b4b38 ldr      r5, [sp, #0x68]
+003b4b3c add      r3, r2, ip, lsl #4
+003b4b40 ldr      ip, [sp, #0x10]
+003b4b44 ldr      fp, [sp, #0x6c]
+003b4b48 stmib    ip, {r2, sl}
+003b4b4c add      ip, sp, #0x64
+003b4b50 str      ip, [sp, #8]
+003b4b54 ldr      ip, [sp, #0x10]
+003b4b58 str      r3, [ip, #0xc]
+003b4b5c b        #0x3b6fac ; -> 003b6fac $a
+003b4b60 addhs    ip, sp, #0x64
+003b4b64 strhs    ip, [sp, #8]
+003b4b68 blo      #0x3b6f1c
+003b4b6c ldr      r0, [sp, #8]
+003b4b70 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b4b74 ldr      r3, [sp, #0xc]
+003b4b78 cmp      r3, #0
+003b4b7c ble      #0x3b4e80
+003b4b80 mov      sb, #0
+003b4b84 ldr      r2, [sp, #0x24]
+003b4b88 mov      fp, sb
+003b4b8c movw     ip, #0xcccc
+003b4b90 add      r2, r2, #0xc
+003b4b94 movt     ip, #0xccc
+003b4b98 str      r2, [sp, #0x14]
+003b4b9c str      ip, [sp, #0x28]
+003b4ba0 ldr      ip, [sp, #0x10]
+003b4ba4 mov      r0, r4
+003b4ba8 ldr      r5, [ip, #4]
+003b4bac add      r5, r5, sb, lsl #4
+003b4bb0 mov      r1, r5
+003b4bb4 bl       #0x33a0d4 ; -> 0033a0d4 CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+003b4bb8 mov      r0, r4
+003b4bbc bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b4bc0 ldmib    r5, {r2, r8}
+003b4bc4 ldr      ip, [sp, #0x14]
+003b4bc8 rsb      r3, r2, r8
+003b4bcc str      fp, [sp, #0xc8]
+003b4bd0 str      fp, [sp, #0xcc]
+003b4bd4 asr      r3, r3, #2
+003b4bd8 str      fp, [sp, #0xd0]
+003b4bdc str      fp, [sp, #0xd4]
+003b4be0 add      r6, r3, r3, lsl #1
+003b4be4 str      ip, [sp, #0xc4]
+003b4be8 add      r6, r6, r6, lsl #4
+003b4bec add      r6, r6, r6, lsl #8
+003b4bf0 add      r6, r6, r6, lsl #16
+003b4bf4 add      r6, r3, r6, lsl #2
+003b4bf8 cmp      r0, r6
+003b4bfc mov      r7, r0
+003b4c00 bls      #0x3b5344
+003b4c04 subs     r2, r0, r6
+003b4c08 str      r2, [sp, #8]
+003b4c0c addeq    r3, sp, #0xc4
+003b4c10 streq    r3, [sp, #4]
+003b4c14 moveq    r0, r3
+003b4c18 beq      #0x3b4e08
+003b4c1c ldr      r3, [r5, #0xc]
+003b4c20 mov      ip, r2
+003b4c24 rsb      r3, r8, r3
+003b4c28 asr      r3, r3, #2
+003b4c2c add      r2, r3, r3, lsl #1
+003b4c30 add      r2, r2, r2, lsl #4
+003b4c34 add      r2, r2, r2, lsl #8
+003b4c38 add      r2, r2, r2, lsl #16
+003b4c3c add      r2, r3, r2, lsl #2
+003b4c40 cmp      ip, r2
+003b4c44 bls      #0x3b5390
+003b4c48 movw     r3, #0xcccc
+003b4c4c movt     r3, #0xccc
+003b4c50 rsb      r3, r6, r3
+003b4c54 cmp      ip, r3
+003b4c58 bhi      #0x3b78f4
+003b4c5c cmp      ip, r6
+003b4c60 addhs    r3, r6, ip
+003b4c64 addlo    r3, r6, r6
+003b4c68 cmp      r6, r3
+003b4c6c mvnhi    r3, #0xf
+003b4c70 strhi    r3, [sp, #0x1c]
+003b4c74 bhi      #0x3b4c98
+003b4c78 ldr      r2, [sp, #0x28]
+003b4c7c cmp      r3, r2
+003b4c80 movhs    r3, r2
+003b4c84 cmp      r3, #0
+003b4c88 add      r2, r3, r3, lsl #2
+003b4c8c lsl      r2, r2, #2
+003b4c90 str      r2, [sp, #0x1c]
+003b4c94 beq      #0x3b7000
+003b4c98 ldr      r0, [sp, #0x1c]
+003b4c9c bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b4ca0 mov      r2, r0
+003b4ca4 str      r0, [sp, #0x18]
+003b4ca8 add      r6, r6, r6, lsl #2
+003b4cac add      ip, sp, #0xc4
+003b4cb0 ldr      sl, [sp, #8]
+003b4cb4 add      r6, r2, r6, lsl #2
+003b4cb8 str      sb, [sp, #0x20]
+003b4cbc mov      sb, ip
+003b4cc0 str      ip, [sp, #4]
+003b4cc4 cmp      r6, #0
+003b4cc8 beq      #0x3b4cf8
+003b4ccc mov      r0, r6
+003b4cd0 mov      r1, sb
+003b4cd4 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4cd8 ldr      r3, [sp, #0xc8]
+003b4cdc str      r3, [r6, #4]
+003b4ce0 ldr      r3, [sp, #0xcc]
+003b4ce4 str      r3, [r6, #8]
+003b4ce8 ldr      r3, [sp, #0xd0]
+003b4cec str      r3, [r6, #0xc]
+003b4cf0 ldr      r3, [sp, #0xd4]
+003b4cf4 str      r3, [r6, #0x10]
+003b4cf8 subs     sl, sl, #1
+003b4cfc add      r6, r6, #0x14
+003b4d00 bne      #0x3b4cc4
+003b4d04 ldr      sl, [r5, #4]
+003b4d08 ldr      sb, [sp, #0x20]
+003b4d0c cmp      r8, sl
+003b4d10 ldr      r6, [sp, #0x18]
+003b4d14 beq      #0x3b4d5c
+003b4d18 cmp      r6, #0
+003b4d1c beq      #0x3b4d4c
+003b4d20 mov      r0, r6
+003b4d24 mov      r1, sl
+003b4d28 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4d2c ldr      r3, [sl, #4]
+003b4d30 str      r3, [r6, #4]
+003b4d34 ldr      r3, [sl, #8]
+003b4d38 str      r3, [r6, #8]
+003b4d3c ldr      r3, [sl, #0xc]
+003b4d40 str      r3, [r6, #0xc]
+003b4d44 ldr      r3, [sl, #0x10]
+003b4d48 str      r3, [r6, #0x10]
+003b4d4c add      sl, sl, #0x14
+003b4d50 add      r6, r6, #0x14
+003b4d54 cmp      r8, sl
+003b4d58 bne      #0x3b4d18
+003b4d5c ldr      ip, [sp, #8]
+003b4d60 ldr      sl, [r5, #8]
+003b4d64 add      r3, ip, ip, lsl #2
+003b4d68 cmp      r8, sl
+003b4d6c add      r6, r6, r3, lsl #2
+003b4d70 beq      #0x3b4dbc
+003b4d74 cmp      r6, #0
+003b4d78 beq      #0x3b4da8
+003b4d7c mov      r0, r6
+003b4d80 mov      r1, r8
+003b4d84 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4d88 ldr      r3, [r8, #4]
+003b4d8c str      r3, [r6, #4]
+003b4d90 ldr      r3, [r8, #8]
+003b4d94 str      r3, [r6, #8]
+003b4d98 ldr      r3, [r8, #0xc]
+003b4d9c str      r3, [r6, #0xc]
+003b4da0 ldr      r3, [r8, #0x10]
+003b4da4 str      r3, [r6, #0x10]
+003b4da8 add      r8, r8, #0x14
+003b4dac add      r6, r6, #0x14
+003b4db0 cmp      sl, r8
+003b4db4 bne      #0x3b4d74
+003b4db8 ldr      sl, [r5, #8]
+003b4dbc ldr      r8, [r5, #4]
+003b4dc0 cmp      r8, sl
+003b4dc4 beq      #0x3b4de0
+003b4dc8 mov      r0, r8
+003b4dcc add      r8, r8, #0x14
+003b4dd0 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b4dd4 cmp      r8, sl
+003b4dd8 bne      #0x3b4dc8
+003b4ddc ldr      r8, [r5, #4]
+003b4de0 cmp      r8, #0
+003b4de4 beq      #0x3b4df0
+003b4de8 mov      r0, r8
+003b4dec bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b4df0 ldr      r2, [sp, #0x18]
+003b4df4 ldr      r0, [sp, #4]
+003b4df8 ldr      ip, [sp, #0x1c]
+003b4dfc stmib    r5, {r2, r6}
+003b4e00 add      r3, r2, ip
+003b4e04 str      r3, [r5, #0xc]
+003b4e08 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b4e0c cmp      r7, #0
+003b4e10 ble      #0x3b4e70
+003b4e14 mov      r8, #0
+003b4e18 mov      sl, r8
+003b4e1c ldr      r6, [r5, #4]
+003b4e20 mov      r0, r4
+003b4e24 add      sl, sl, #1
+003b4e28 add      r6, r6, r8
+003b4e2c add      r8, r8, #0x14
+003b4e30 mov      r1, r6
+003b4e34 bl       #0x33a0d4 ; -> 0033a0d4 CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+003b4e38 mov      r0, r4
+003b4e3c bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b4e40 str      r0, [r6, #4]
+003b4e44 mov      r0, r4
+003b4e48 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b4e4c str      r0, [r6, #8]
+003b4e50 mov      r0, r4
+003b4e54 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b4e58 str      r0, [r6, #0xc]
+003b4e5c mov      r0, r4
+003b4e60 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b4e64 cmp      sl, r7
+003b4e68 str      r0, [r6, #0x10]
+003b4e6c bne      #0x3b4e1c
+003b4e70 ldr      ip, [sp, #0xc]
+003b4e74 add      sb, sb, #1
+003b4e78 cmp      sb, ip
+003b4e7c bne      #0x3b4ba0
+003b4e80 mov      r0, r4
+003b4e84 mov      fp, #0
+003b4e88 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b4e8c ldr      r3, [sp, #0x10]
+003b4e90 ldr      ip, [sp, #0x24]
+003b4e94 str      fp, [sp, #0x78]
+003b4e98 ldr      r3, [r3, #0x14]
+003b4e9c str      fp, [sp, #0x7c]
+003b4ea0 str      fp, [sp, #0x80]
+003b4ea4 str      r3, [sp, #4]
+003b4ea8 add      r3, ip, #0xc
+003b4eac ldr      ip, [sp, #0x10]
+003b4eb0 str      r3, [sp, #0x74]
+003b4eb4 ldr      r8, [ip, #0x10]
+003b4eb8 ldr      ip, [sp, #4]
+003b4ebc rsb      r5, r8, ip
+003b4ec0 asr      r5, r5, #4
+003b4ec4 cmp      r0, r5
+003b4ec8 str      r0, [sp, #8]
+003b4ecc bls      #0x3b5560
+003b4ed0 subs     r2, r0, r5
+003b4ed4 str      r2, [sp, #0x1c]
+003b4ed8 beq      #0x3b6fe0
+003b4edc ldr      ip, [sp, #0x10]
+003b4ee0 ldr      r3, [ip, #0x18]
+003b4ee4 ldr      ip, [sp, #4]
+003b4ee8 rsb      r3, ip, r3
+003b4eec cmp      r2, r3, asr #4
+003b4ef0 bls      #0x3b70e8
+003b4ef4 movw     r3, #0xffff
+003b4ef8 ldr      ip, [sp, #0x1c]
+003b4efc movt     r3, #0xfff
+003b4f00 mvn      r2, #0xf0000000
+003b4f04 rsb      r3, r5, r3
+003b4f08 cmp      ip, r3
+003b4f0c bhi      #0x3b78d0
+003b4f10 cmp      ip, r5
+003b4f14 addhs    r3, r5, ip
+003b4f18 addlo    r3, r5, r5
+003b4f1c cmp      r5, r3
+003b4f20 strhi    r2, [sp, #0x20]
+003b4f24 bls      #0x3b70b8
+003b4f28 ldr      r2, [sp, #0x20]
+003b4f2c lsl      r0, r2, #4
+003b4f30 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b4f34 mov      ip, r0
+003b4f38 str      r0, [sp, #0x14]
+003b4f3c ldr      r3, [sp, #0x1c]
+003b4f40 add      r5, ip, r5, lsl #4
+003b4f44 add      r8, r5, #4
+003b4f48 add      sl, r5, #0xc
+003b4f4c mov      sb, #0
+003b4f50 mov      fp, r3
+003b4f54 subs     r0, r8, #4
+003b4f58 beq      #0x3b4ff8
+003b4f5c add      r1, sp, #0x74
+003b4f60 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4f64 ldr      r6, [sp, #0x7c]
+003b4f68 ldr      r3, [sp, #0x78]
+003b4f6c str      sb, [r8]
+003b4f70 rsb      r6, r3, r6
+003b4f74 str      sb, [r8, #4]
+003b4f78 str      sb, [r8, #8]
+003b4f7c asrs     r6, r6, #4
+003b4f80 beq      #0x3b7034
+003b4f84 cmn      r6, #0xf0000001
+003b4f88 bhi      #0x3b78c0
+003b4f8c lsl      r6, r6, #4
+003b4f90 mov      r0, r6
+003b4f94 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b4f98 mov      r5, r0
+003b4f9c str      r5, [sl, #-8]
+003b4fa0 add      r6, r5, r6
+003b4fa4 stmda    sl, {r5, r6}
+003b4fa8 ldr      r6, [sp, #0x78]
+003b4fac ldr      r7, [sp, #0x7c]
+003b4fb0 cmp      r6, r7
+003b4fb4 beq      #0x3b4ff4
+003b4fb8 cmp      r5, #0
+003b4fbc beq      #0x3b4fe4
+003b4fc0 ldr      r3, [r6]
+003b4fc4 add      r0, r5, #8
+003b4fc8 add      r1, r6, #8
+003b4fcc str      r3, [r5]
+003b4fd0 ldr      r3, [r6, #4]
+003b4fd4 str      r3, [r5, #4]
+003b4fd8 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b4fdc ldrb     r3, [r6, #0xc]
+003b4fe0 strb     r3, [r5, #0xc]
+003b4fe4 add      r6, r6, #0x10
+003b4fe8 add      r5, r5, #0x10
+003b4fec cmp      r7, r6
+003b4ff0 bne      #0x3b4fb8
+003b4ff4 str      r5, [r8, #4]
+003b4ff8 subs     fp, fp, #1
+003b4ffc add      sl, sl, #0x10
+003b5000 add      r8, r8, #0x10
+003b5004 bne      #0x3b4f54
+003b5008 ldr      r2, [sp, #0x10]
+003b500c ldr      ip, [sp, #4]
+003b5010 ldr      r2, [r2, #0x10]
+003b5014 cmp      ip, r2
+003b5018 str      r2, [sp, #0xc]
+003b501c beq      #0x3b76c8
+003b5020 ldr      sl, [sp, #0x14]
+003b5024 mov      ip, r2
+003b5028 ldr      r2, [sp, #0x14]
+003b502c add      fp, ip, #4
+003b5030 mov      sb, ip
+003b5034 str      r4, [sp, #0x28]
+003b5038 add      r8, r2, #0xc
+003b503c add      r2, r2, #4
+003b5040 str      r2, [sp, #0x18]
+003b5044 cmp      sl, #0
+003b5048 beq      #0x3b5120
+003b504c ldr      r3, [sp, #0xc]
+003b5050 mov      r0, sl
+003b5054 mov      r1, sb
+003b5058 rsb      r5, r3, sb
+003b505c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5060 add      r6, r5, fp
+003b5064 ldr      ip, [sp, #0x14]
+003b5068 ldr      r3, [r5, fp]
+003b506c mov      r0, #0
+003b5070 ldr      r2, [r6, #4]
+003b5074 rsb      r7, ip, sl
+003b5078 ldr      ip, [sp, #0x18]
+003b507c rsb      r3, r3, r2
+003b5080 mov      r2, r7
+003b5084 asrs     r3, r3, #4
+003b5088 str      r0, [r2, ip]!
+003b508c str      r0, [r2, #4]
+003b5090 str      r0, [r8]
+003b5094 beq      #0x3b702c
+003b5098 cmn      r3, #0xf0000001
+003b509c bhi      #0x3b78c0
+003b50a0 lsl      r3, r3, #4
+003b50a4 str      r3, [sp]
+003b50a8 mov      r0, r3
+003b50ac bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b50b0 ldr      r3, [sp]
+003b50b4 mov      r4, r0
+003b50b8 str      r4, [r8, #-8]
+003b50bc add      r3, r4, r3
+003b50c0 str      r4, [r8, #-4]
+003b50c4 str      r3, [r8]
+003b50c8 ldr      r5, [r5, fp]
+003b50cc ldr      r6, [r6, #4]
+003b50d0 cmp      r5, r6
+003b50d4 beq      #0x3b5114
+003b50d8 cmp      r4, #0
+003b50dc beq      #0x3b5104
+003b50e0 ldr      r3, [r5]
+003b50e4 add      r0, r4, #8
+003b50e8 add      r1, r5, #8
+003b50ec str      r3, [r4]
+003b50f0 ldr      r3, [r5, #4]
+003b50f4 str      r3, [r4, #4]
+003b50f8 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b50fc ldrb     r3, [r5, #0xc]
+003b5100 strb     r3, [r4, #0xc]
+003b5104 add      r5, r5, #0x10
+003b5108 add      r4, r4, #0x10
+003b510c cmp      r6, r5
+003b5110 bne      #0x3b50d8
+003b5114 ldr      r2, [sp, #0x18]
+003b5118 add      r7, r7, r2
+003b511c str      r4, [r7, #4]
+003b5120 ldr      r3, [sp, #4]
+003b5124 add      sb, sb, #0x10
+003b5128 add      sl, sl, #0x10
+003b512c add      r8, r8, #0x10
+003b5130 cmp      r3, sb
+003b5134 bne      #0x3b5044
+003b5138 ldr      r4, [sp, #0x28]
+003b513c ldr      ip, [sp, #0x10]
+003b5140 ldr      r3, [sp, #4]
+003b5144 ldr      r2, [sp, #0x1c]
+003b5148 ldr      ip, [ip, #0x14]
+003b514c cmp      r3, ip
+003b5150 add      sl, sl, r2, lsl #4
+003b5154 str      ip, [sp, #0x18]
+003b5158 str      sl, [sp, #0x1c]
+003b515c beq      #0x3b76d0
+003b5160 add      r8, sl, #0xc
+003b5164 add      r7, r3, #4
+003b5168 add      fp, sl, #4
+003b516c mov      sb, r3
+003b5170 str      r4, [sp, #0x28]
+003b5174 cmp      sl, #0
+003b5178 beq      #0x3b5254
+003b517c ldr      ip, [sp, #4]
+003b5180 mov      r1, sb
+003b5184 mov      r0, sl
+003b5188 rsb      r5, ip, sb
+003b518c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5190 add      r6, r5, r7
+003b5194 ldr      ip, [sp, #0x1c]
+003b5198 ldr      r3, [r5, r7]
+003b519c rsb      r1, fp, r8
+003b51a0 ldr      r2, [r6, #4]
+003b51a4 rsb      ip, ip, sl
+003b51a8 mov      r0, #0
+003b51ac str      ip, [sp, #0xc]
+003b51b0 rsb      r3, r3, r2
+003b51b4 mov      r2, ip
+003b51b8 str      r0, [r2, fp]!
+003b51bc asrs     r3, r3, #4
+003b51c0 str      r0, [r2, #4]
+003b51c4 str      r0, [fp, r1]
+003b51c8 beq      #0x3b7024
+003b51cc cmn      r3, #0xf0000001
+003b51d0 bhi      #0x3b78c0
+003b51d4 lsl      r3, r3, #4
+003b51d8 str      r3, [sp]
+003b51dc mov      r0, r3
+003b51e0 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b51e4 ldr      r3, [sp]
+003b51e8 mov      r4, r0
+003b51ec str      r4, [r8, #-8]
+003b51f0 add      r3, r4, r3
+003b51f4 str      r4, [r8, #-4]
+003b51f8 str      r3, [r8]
+003b51fc ldr      r5, [r5, r7]
+003b5200 ldr      r6, [r6, #4]
+003b5204 cmp      r5, r6
+003b5208 beq      #0x3b5248
+003b520c cmp      r4, #0
+003b5210 beq      #0x3b5238
+003b5214 ldr      r3, [r5]
+003b5218 add      r0, r4, #8
+003b521c add      r1, r5, #8
+003b5220 str      r3, [r4]
+003b5224 ldr      r3, [r5, #4]
+003b5228 str      r3, [r4, #4]
+003b522c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5230 ldrb     r3, [r5, #0xc]
+003b5234 strb     r3, [r4, #0xc]
+003b5238 add      r5, r5, #0x10
+003b523c add      r4, r4, #0x10
+003b5240 cmp      r6, r5
+003b5244 bne      #0x3b520c
+003b5248 ldr      r2, [sp, #0xc]
+003b524c add      r3, r2, fp
+003b5250 str      r4, [r3, #4]
+003b5254 ldr      r3, [sp, #0x18]
+003b5258 add      sb, sb, #0x10
+003b525c add      sl, sl, #0x10
+003b5260 add      r8, r8, #0x10
+003b5264 cmp      r3, sb
+003b5268 bne      #0x3b5174
+003b526c ldr      ip, [sp, #0x10]
+003b5270 ldr      r4, [sp, #0x28]
+003b5274 ldr      ip, [ip, #0x14]
+003b5278 mov      r2, ip
+003b527c str      ip, [sp, #0x18]
+003b5280 ldr      ip, [sp, #0x10]
+003b5284 ldr      sb, [ip, #0x10]
+003b5288 cmp      r2, sb
+003b528c beq      #0x3b5300
+003b5290 add      fp, sb, #4
+003b5294 str      r4, [sp, #4]
+003b5298 mov      r7, sb
+003b529c mov      r4, r2
+003b52a0 rsb      r8, sb, r7
+003b52a4 mov      r3, r8
+003b52a8 ldr      r5, [r3, fp]!
+003b52ac ldr      r6, [r3, #4]
+003b52b0 cmp      r5, r6
+003b52b4 beq      #0x3b52d0
+003b52b8 add      r0, r5, #8
+003b52bc add      r5, r5, #0x10
+003b52c0 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b52c4 cmp      r6, r5
+003b52c8 bne      #0x3b52b8
+003b52cc ldr      r5, [r8, fp]
+003b52d0 cmp      r5, #0
+003b52d4 beq      #0x3b52e0
+003b52d8 mov      r0, r5
+003b52dc bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b52e0 mov      r0, r7
+003b52e4 add      r7, r7, #0x10
+003b52e8 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b52ec cmp      r4, r7
+003b52f0 bne      #0x3b52a0
+003b52f4 ldr      ip, [sp, #0x10]
+003b52f8 ldr      r4, [sp, #4]
+003b52fc ldr      sb, [ip, #0x10]
+003b5300 cmp      sb, #0
+003b5304 beq      #0x3b5310
+003b5308 mov      r0, sb
+003b530c bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b5310 ldr      ip, [sp, #0x20]
+003b5314 ldr      r2, [sp, #0x14]
+003b5318 ldr      r5, [sp, #0x78]
+003b531c add      r3, r2, ip, lsl #4
+003b5320 ldr      ip, [sp, #0x10]
+003b5324 ldr      fp, [sp, #0x7c]
+003b5328 str      r2, [ip, #0x10]
+003b532c str      sl, [ip, #0x14]
+003b5330 add      ip, sp, #0x74
+003b5334 str      ip, [sp, #0xc]
+003b5338 ldr      ip, [sp, #0x10]
+003b533c str      r3, [ip, #0x18]
+003b5340 b        #0x3b6ee8 ; -> 003b6ee8 $a
+003b5344 addhs    r2, sp, #0xc4
+003b5348 strhs    r2, [sp, #4]
+003b534c movhs    r0, r2
+003b5350 bhs      #0x3b4e08
+003b5354 add      r6, r7, r7, lsl #2
+003b5358 add      r6, r2, r6, lsl #2
+003b535c cmp      r8, r6
+003b5360 beq      #0x3b537c
+003b5364 mov      sl, r6
+003b5368 mov      r0, sl
+003b536c add      sl, sl, #0x14
+003b5370 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5374 cmp      r8, sl
+003b5378 bne      #0x3b5368
+003b537c add      r3, sp, #0xc4
+003b5380 str      r6, [r5, #8]
+003b5384 str      r3, [sp, #4]
+003b5388 mov      r0, r3
+003b538c b        #0x3b4e08 ; -> 003b4e08 CContainerStateAnimation::Load(CMemoryStream*)
+003b5390 add      r2, sp, #0xc4
+003b5394 add      r0, sp, #0x100
+003b5398 str      r2, [sp, #4]
+003b539c mov      r1, r2
+003b53a0 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b53a4 ldr      r3, [r5, #8]
+003b53a8 ldr      r2, [sp, #0xc8]
+003b53ac ldr      r1, [sp, #0xcc]
+003b53b0 str      r3, [sp, #0x18]
+003b53b4 rsb      r3, r8, r3
+003b53b8 str      r2, [sp, #0x104]
+003b53bc asr      r3, r3, #2
+003b53c0 str      r1, [sp, #0x108]
+003b53c4 ldr      r1, [sp, #0xd0]
+003b53c8 add      r2, r3, r3, lsl #1
+003b53cc ldr      ip, [sp, #8]
+003b53d0 add      r2, r2, r2, lsl #4
+003b53d4 str      r1, [sp, #0x10c]
+003b53d8 ldr      r1, [sp, #0xd4]
+003b53dc add      r2, r2, r2, lsl #8
+003b53e0 add      r2, r2, r2, lsl #16
+003b53e4 str      r1, [sp, #0x110]
+003b53e8 add      r2, r3, r2, lsl #2
+003b53ec str      r2, [sp, #0x1c]
+003b53f0 cmp      ip, r2
+003b53f4 bhs      #0x3b6bf0
+003b53f8 add      r3, ip, ip, lsl #2
+003b53fc ldr      r2, [sp, #0x18]
+003b5400 lsl      r3, r3, #2
+003b5404 str      r3, [sp, #0x1c]
+003b5408 rsb      r2, r3, r2
+003b540c ldr      r3, [sp, #0x18]
+003b5410 str      r2, [sp, #8]
+003b5414 cmp      r3, r2
+003b5418 beq      #0x3b5478
+003b541c str      sb, [sp, #0x20]
+003b5420 mov      sl, r2
+003b5424 mov      r6, r3
+003b5428 mov      sb, r3
+003b542c cmp      r6, #0
+003b5430 beq      #0x3b5460
+003b5434 mov      r0, r6
+003b5438 mov      r1, sl
+003b543c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5440 ldr      r3, [sl, #4]
+003b5444 str      r3, [r6, #4]
+003b5448 ldr      r3, [sl, #8]
+003b544c str      r3, [r6, #8]
+003b5450 ldr      r3, [sl, #0xc]
+003b5454 str      r3, [r6, #0xc]
+003b5458 ldr      r3, [sl, #0x10]
+003b545c str      r3, [r6, #0x10]
+003b5460 add      sl, sl, #0x14
+003b5464 add      r6, r6, #0x14
+003b5468 cmp      sb, sl
+003b546c bne      #0x3b542c
+003b5470 ldr      sb, [sp, #0x20]
+003b5474 ldr      r3, [r5, #8]
+003b5478 ldr      ip, [sp, #8]
+003b547c rsb      r2, r8, ip
+003b5480 ldr      ip, [sp, #0x1c]
+003b5484 asr      r2, r2, #2
+003b5488 add      r3, r3, ip
+003b548c str      r3, [r5, #8]
+003b5490 add      r3, r2, r2, lsl #1
+003b5494 add      r3, r3, r3, lsl #4
+003b5498 add      r3, r3, r3, lsl #8
+003b549c add      r3, r3, r3, lsl #16
+003b54a0 add      r3, r2, r3, lsl #2
+003b54a4 cmp      r3, #0
+003b54a8 ble      #0x3b5504
+003b54ac ldr      r2, [sp, #8]
+003b54b0 ldr      ip, [sp, #0x18]
+003b54b4 sub      sl, r2, #0x10
+003b54b8 str      sb, [sp, #8]
+003b54bc sub      r6, ip, #0x10
+003b54c0 mov      sb, r3
+003b54c4 sub      r0, r6, #4
+003b54c8 sub      r1, sl, #4
+003b54cc bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b54d0 ldr      r3, [sl]
+003b54d4 subs     sb, sb, #1
+003b54d8 str      r3, [r6]
+003b54dc ldr      r3, [sl, #4]
+003b54e0 str      r3, [r6, #4]
+003b54e4 ldr      r3, [sl, #8]
+003b54e8 str      r3, [r6, #8]
+003b54ec ldr      r3, [sl, #0xc]
+003b54f0 sub      sl, sl, #0x14
+003b54f4 str      r3, [r6, #0xc]
+003b54f8 sub      r6, r6, #0x14
+003b54fc bne      #0x3b54c4
+003b5500 ldr      sb, [sp, #8]
+003b5504 ldr      r2, [sp, #0x1c]
+003b5508 add      r6, r8, r2
+003b550c cmp      r8, r6
+003b5510 beq      #0x3b554c
+003b5514 mov      r0, r8
+003b5518 add      r1, sp, #0x100
+003b551c bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5520 ldr      r3, [sp, #0x104]
+003b5524 str      r3, [r8, #4]
+003b5528 ldr      r3, [sp, #0x108]
+003b552c str      r3, [r8, #8]
+003b5530 ldr      r3, [sp, #0x10c]
+003b5534 str      r3, [r8, #0xc]
+003b5538 ldr      r3, [sp, #0x110]
+003b553c str      r3, [r8, #0x10]
+003b5540 add      r8, r8, #0x14
+003b5544 cmp      r6, r8
+003b5548 bne      #0x3b5514
+003b554c add      r0, sp, #0x100
+003b5550 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5554 ldr      r0, [sp, #4]
+003b5558 b        #0x3b4e08 ; -> 003b4e08 CContainerStateAnimation::Load(CMemoryStream*)
+003b555c addeq    r3, r5, r8, ror r6
+003b5560 addhs    ip, sp, #0x74
+003b5564 strhs    ip, [sp, #0xc]
+003b5568 blo      #0x3b6e58
+003b556c ldr      r0, [sp, #0xc]
+003b5570 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5574 ldr      r3, [sp, #8]
+003b5578 cmp      r3, #0
+003b557c ble      #0x3b5808
+003b5580 ldr      ip, [sp, #0x24]
+003b5584 mov      r8, #0
+003b5588 add      ip, ip, #0xc
+003b558c str      ip, [sp, #0xc]
+003b5590 ldr      ip, [sp, #0x10]
+003b5594 mov      r0, r4
+003b5598 ldr      r5, [ip, #0x10]
+003b559c add      r5, r5, r8, lsl #4
+003b55a0 mov      r1, r5
+003b55a4 bl       #0x33a0d4 ; -> 0033a0d4 CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+003b55a8 mov      r0, r4
+003b55ac bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b55b0 ldmib    r5, {r3, r7}
+003b55b4 ldr      r2, [sp, #0xc]
+003b55b8 rsb      sb, r3, r7
+003b55bc asr      sb, sb, #4
+003b55c0 str      r2, [sp, #0x8c]
+003b55c4 mov      r6, r0
+003b55c8 cmp      r6, sb
+003b55cc mov      r0, #0
+003b55d0 str      r0, [sp, #0x84]
+003b55d4 str      r0, [sp, #0x88]
+003b55d8 strb     r0, [sp, #0x90]
+003b55dc bls      #0x3b649c
+003b55e0 subs     r3, r6, sb
+003b55e4 str      r3, [sp, #4]
+003b55e8 beq      #0x3b64a0
+003b55ec mov      ip, r3
+003b55f0 ldr      r3, [r5, #0xc]
+003b55f4 rsb      r3, r7, r3
+003b55f8 cmp      ip, r3, asr #4
+003b55fc bls      #0x3b6894
+003b5600 movw     r3, #0xffff
+003b5604 movt     r3, #0xfff
+003b5608 rsb      r3, sb, r3
+003b560c cmp      ip, r3
+003b5610 bhi      #0x3b78dc
+003b5614 cmp      ip, sb
+003b5618 addhs    r3, sb, ip
+003b561c addlo    r3, sb, sb
+003b5620 cmp      sb, r3
+003b5624 mvnhi    r3, #0xf
+003b5628 strhi    r3, [sp, #0x18]
+003b562c bhi      #0x3b564c
+003b5630 mvn      r0, #0xf0000000
+003b5634 cmp      r3, r0
+003b5638 movhs    r3, r0
+003b563c cmp      r3, #0
+003b5640 lsl      r2, r3, #4
+003b5644 str      r2, [sp, #0x18]
+003b5648 beq      #0x3b7058
+003b564c ldr      r0, [sp, #0x18]
+003b5650 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b5654 mov      ip, r0
+003b5658 str      r0, [sp, #0x14]
+003b565c ldr      fp, [sp, #4]
+003b5660 add      sb, ip, sb, lsl #4
+003b5664 add      sl, sp, #0x8c
+003b5668 cmp      sb, #0
+003b566c beq      #0x3b5694
+003b5670 ldr      r3, [sp, #0x84]
+003b5674 add      r0, sb, #8
+003b5678 mov      r1, sl
+003b567c str      r3, [sb]
+003b5680 ldr      r3, [sp, #0x88]
+003b5684 str      r3, [sb, #4]
+003b5688 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b568c ldrb     r3, [sp, #0x90]
+003b5690 strb     r3, [sb, #0xc]
+003b5694 subs     fp, fp, #1
+003b5698 add      sb, sb, #0x10
+003b569c bne      #0x3b5668
+003b56a0 ldr      sb, [r5, #4]
+003b56a4 ldr      fp, [sp, #0x14]
+003b56a8 cmp      r7, sb
+003b56ac beq      #0x3b56ec
+003b56b0 cmp      fp, #0
+003b56b4 beq      #0x3b56dc
+003b56b8 ldr      r3, [sb]
+003b56bc add      r0, fp, #8
+003b56c0 add      r1, sb, #8
+003b56c4 str      r3, [fp]
+003b56c8 ldr      r3, [sb, #4]
+003b56cc str      r3, [fp, #4]
+003b56d0 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b56d4 ldrb     r3, [sb, #0xc]
+003b56d8 strb     r3, [fp, #0xc]
+003b56dc add      sb, sb, #0x10
+003b56e0 add      fp, fp, #0x10
+003b56e4 cmp      r7, sb
+003b56e8 bne      #0x3b56b0
+003b56ec ldr      sb, [r5, #8]
+003b56f0 ldr      r2, [sp, #4]
+003b56f4 cmp      r7, sb
+003b56f8 add      fp, fp, r2, lsl #4
+003b56fc beq      #0x3b5740
+003b5700 cmp      fp, #0
+003b5704 beq      #0x3b572c
+003b5708 ldr      r3, [r7]
+003b570c add      r0, fp, #8
+003b5710 add      r1, r7, #8
+003b5714 str      r3, [fp]
+003b5718 ldr      r3, [r7, #4]
+003b571c str      r3, [fp, #4]
+003b5720 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5724 ldrb     r3, [r7, #0xc]
+003b5728 strb     r3, [fp, #0xc]
+003b572c add      r7, r7, #0x10
+003b5730 add      fp, fp, #0x10
+003b5734 cmp      sb, r7
+003b5738 bne      #0x3b5700
+003b573c ldr      sb, [r5, #8]
+003b5740 ldr      r7, [r5, #4]
+003b5744 cmp      r7, sb
+003b5748 beq      #0x3b5764
+003b574c add      r0, r7, #8
+003b5750 add      r7, r7, #0x10
+003b5754 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5758 cmp      r7, sb
+003b575c bne      #0x3b574c
+003b5760 ldr      r7, [r5, #4]
+003b5764 cmp      r7, #0
+003b5768 beq      #0x3b5774
+003b576c mov      r0, r7
+003b5770 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b5774 ldr      ip, [sp, #0x14]
+003b5778 ldr      r2, [sp, #0x18]
+003b577c str      fp, [r5, #8]
+003b5780 add      r3, ip, r2
+003b5784 str      ip, [r5, #4]
+003b5788 str      r3, [r5, #0xc]
+003b578c mov      r0, sl
+003b5790 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5794 cmp      r6, #0
+003b5798 ble      #0x3b57f8
+003b579c mov      r7, #0
+003b57a0 mov      r0, r4
+003b57a4 ldr      sb, [r5, #4]
+003b57a8 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b57ac add      sl, sb, r7, lsl #4
+003b57b0 str      r0, [sb, r7, lsl #4]
+003b57b4 mov      r0, r4
+003b57b8 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b57bc add      r1, sl, #8
+003b57c0 add      r7, r7, #1
+003b57c4 str      r0, [sl, #4]
+003b57c8 mov      r0, r4
+003b57cc bl       #0x33a0d4 ; -> 0033a0d4 CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+003b57d0 ldr      r3, [r4, #0xc]
+003b57d4 ldr      r1, [r4]
+003b57d8 add      r2, r3, #1
+003b57dc ldrb     r3, [r1, r3]
+003b57e0 str      r2, [r4, #0xc]
+003b57e4 adds     r3, r3, #0
+003b57e8 movne    r3, #1
+003b57ec cmp      r7, r6
+003b57f0 strb     r3, [sl, #0xc]
+003b57f4 bne      #0x3b57a0
+003b57f8 ldr      r3, [sp, #8]
+003b57fc add      r8, r8, #1
+003b5800 cmp      r8, r3
+003b5804 bne      #0x3b5590
+003b5808 mov      r0, r4
+003b580c mov      fp, #0
+003b5810 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b5814 ldr      ip, [sp, #0x10]
+003b5818 str      fp, [sp, #0x34]
+003b581c str      fp, [sp, #0x38]
+003b5820 ldr      r5, [ip, #0x20]
+003b5824 ldr      r2, [ip, #0x1c]
+003b5828 str      fp, [sp, #0x3c]
+003b582c rsb      r3, r2, r5
+003b5830 asr      r3, r3, #2
+003b5834 add      sl, r3, r3, lsl #2
+003b5838 add      sl, sl, sl, lsl #4
+003b583c add      sl, sl, sl, lsl #8
+003b5840 add      sl, sl, sl, lsl #16
+003b5844 add      sl, r3, sl, lsl #1
+003b5848 cmp      r0, sl
+003b584c str      r0, [sp, #0x14]
+003b5850 bls      #0x3b5c3c
+003b5854 subs     r2, r0, sl
+003b5858 str      r2, [sp, #4]
+003b585c beq      #0x3b5cdc
+003b5860 ldr      r3, [ip, #0x24]
+003b5864 ldr      ip, [sp, #4]
+003b5868 rsb      r3, r5, r3
+003b586c asr      r3, r3, #2
+003b5870 add      r2, r3, r3, lsl #2
+003b5874 add      r2, r2, r2, lsl #4
+003b5878 add      r2, r2, r2, lsl #8
+003b587c add      r2, r2, r2, lsl #16
+003b5880 add      r3, r3, r2, lsl #1
+003b5884 cmp      ip, r3
+003b5888 bls      #0x3b7488
+003b588c movw     r3, #0x5555
+003b5890 movt     r3, #0x1555
+003b5894 rsb      r3, sl, r3
+003b5898 movw     r2, #0x5555
+003b589c cmp      ip, r3
+003b58a0 movt     r2, #0x1555
+003b58a4 bhi      #0x3b78b4
+003b58a8 cmp      ip, sl
+003b58ac addhs    r3, sl, ip
+003b58b0 addlo    r3, sl, sl
+003b58b4 cmp      sl, r3
+003b58b8 strhi    r2, [sp, #8]
+003b58bc bls      #0x3b7094
+003b58c0 ldr      r2, [sp, #8]
+003b58c4 add      r0, r2, r2, lsl #1
+003b58c8 lsl      r0, r0, #2
+003b58cc bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b58d0 mov      ip, r0
+003b58d4 str      r0, [sp, #0xc]
+003b58d8 add      sl, sl, sl, lsl #1
+003b58dc ldr      fp, [sp, #4]
+003b58e0 movw     r8, #0xcccc
+003b58e4 movt     r8, #0xccc
+003b58e8 add      sl, ip, sl, lsl #2
+003b58ec mov      sb, #0
+003b58f0 str      r5, [sp, #0x18]
+003b58f4 cmp      sl, #0
+003b58f8 beq      #0x3b59b0
+003b58fc ldr      r2, [sp, #0x38]
+003b5900 ldr      r3, [sp, #0x34]
+003b5904 str      sb, [sl]
+003b5908 rsb      r3, r3, r2
+003b590c str      sb, [sl, #4]
+003b5910 str      sb, [sl, #8]
+003b5914 asr      r3, r3, #2
+003b5918 add      r6, r3, r3, lsl #1
+003b591c add      r6, r6, r6, lsl #4
+003b5920 add      r6, r6, r6, lsl #8
+003b5924 add      r6, r6, r6, lsl #16
+003b5928 adds     r3, r3, r6, lsl #2
+003b592c beq      #0x3b7018
+003b5930 cmp      r3, r8
+003b5934 bhi      #0x3b78c0
+003b5938 add      r3, r3, r3, lsl #2
+003b593c lsl      r6, r3, #2
+003b5940 mov      r0, r6
+003b5944 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b5948 mov      r5, r0
+003b594c str      r5, [sl]
+003b5950 add      r6, r5, r6
+003b5954 stmib    sl, {r5, r6}
+003b5958 ldr      r6, [sp, #0x34]
+003b595c ldr      r7, [sp, #0x38]
+003b5960 cmp      r6, r7
+003b5964 beq      #0x3b59ac
+003b5968 cmp      r5, #0
+003b596c beq      #0x3b599c
+003b5970 ldr      r3, [r6]
+003b5974 add      r0, r5, #8
+003b5978 add      r1, r6, #8
+003b597c str      r3, [r5]
+003b5980 ldr      r3, [r6, #4]
+003b5984 str      r3, [r5, #4]
+003b5988 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b598c ldr      r3, [r6, #0xc]
+003b5990 str      r3, [r5, #0xc]
+003b5994 ldrb     r3, [r6, #0x10]
+003b5998 strb     r3, [r5, #0x10]
+003b599c add      r6, r6, #0x14
+003b59a0 add      r5, r5, #0x14
+003b59a4 cmp      r7, r6
+003b59a8 bne      #0x3b5968
+003b59ac str      r5, [sl, #4]
+003b59b0 subs     fp, fp, #1
+003b59b4 add      sl, sl, #0xc
+003b59b8 bne      #0x3b58f4
+003b59bc ldr      ip, [sp, #0x10]
+003b59c0 ldr      r5, [sp, #0x18]
+003b59c4 ldr      sb, [ip, #0x1c]
+003b59c8 cmp      r5, sb
+003b59cc beq      #0x3b76e8
+003b59d0 ldr      sl, [sp, #0xc]
+003b59d4 movw     r8, #0xcccc
+003b59d8 movt     r8, #0xccc
+003b59dc str      r4, [sp, #0x18]
+003b59e0 cmp      sl, #0
+003b59e4 beq      #0x3b5a98
+003b59e8 ldr      r2, [sb, #4]
+003b59ec ldr      r3, [sb]
+003b59f0 str      fp, [sl]
+003b59f4 rsb      r3, r3, r2
+003b59f8 str      fp, [sl, #4]
+003b59fc str      fp, [sl, #8]
+003b5a00 asr      r3, r3, #2
+003b5a04 add      r6, r3, r3, lsl #1
+003b5a08 add      r6, r6, r6, lsl #4
+003b5a0c add      r6, r6, r6, lsl #8
+003b5a10 add      r6, r6, r6, lsl #16
+003b5a14 adds     r3, r3, r6, lsl #2
+003b5a18 beq      #0x3b700c
+003b5a1c cmp      r3, r8
+003b5a20 bhi      #0x3b78c0
+003b5a24 add      r3, r3, r3, lsl #2
+003b5a28 lsl      r6, r3, #2
+003b5a2c mov      r0, r6
+003b5a30 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b5a34 mov      r4, r0
+003b5a38 add      r6, r4, r6
+003b5a3c str      r4, [sl]
+003b5a40 stmib    sl, {r4, r6}
+003b5a44 ldm      sb, {r6, r7}
+003b5a48 cmp      r6, r7
+003b5a4c beq      #0x3b5a94
+003b5a50 cmp      r4, #0
+003b5a54 beq      #0x3b5a84
+003b5a58 ldr      r3, [r6]
+003b5a5c add      r0, r4, #8
+003b5a60 add      r1, r6, #8
+003b5a64 str      r3, [r4]
+003b5a68 ldr      r3, [r6, #4]
+003b5a6c str      r3, [r4, #4]
+003b5a70 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5a74 ldr      r3, [r6, #0xc]
+003b5a78 str      r3, [r4, #0xc]
+003b5a7c ldrb     r3, [r6, #0x10]
+003b5a80 strb     r3, [r4, #0x10]
+003b5a84 add      r6, r6, #0x14
+003b5a88 add      r4, r4, #0x14
+003b5a8c cmp      r7, r6
+003b5a90 bne      #0x3b5a50
+003b5a94 str      r4, [sl, #4]
+003b5a98 add      sb, sb, #0xc
+003b5a9c add      sl, sl, #0xc
+003b5aa0 cmp      r5, sb
+003b5aa4 bne      #0x3b59e0
+003b5aa8 ldr      r4, [sp, #0x18]
+003b5aac ldr      ip, [sp, #0x10]
+003b5ab0 ldr      r2, [sp, #4]
+003b5ab4 ldr      fp, [ip, #0x20]
+003b5ab8 add      r3, r2, r2, lsl #1
+003b5abc cmp      r5, fp
+003b5ac0 add      sl, sl, r3, lsl #2
+003b5ac4 beq      #0x3b5bac
+003b5ac8 movw     r8, #0xcccc
+003b5acc movt     r8, #0xccc
+003b5ad0 mov      sb, #0
+003b5ad4 str      r4, [sp, #4]
+003b5ad8 cmp      sl, #0
+003b5adc beq      #0x3b5b90
+003b5ae0 ldr      r2, [r5, #4]
+003b5ae4 ldr      r3, [r5]
+003b5ae8 str      sb, [sl]
+003b5aec rsb      r3, r3, r2
+003b5af0 str      sb, [sl, #4]
+003b5af4 str      sb, [sl, #8]
+003b5af8 asr      r3, r3, #2
+003b5afc add      r6, r3, r3, lsl #1
+003b5b00 add      r6, r6, r6, lsl #4
+003b5b04 add      r6, r6, r6, lsl #8
+003b5b08 add      r6, r6, r6, lsl #16
+003b5b0c adds     r3, r3, r6, lsl #2
+003b5b10 beq      #0x3b703c
+003b5b14 cmp      r3, r8
+003b5b18 bhi      #0x3b78c0
+003b5b1c add      r3, r3, r3, lsl #2
+003b5b20 lsl      r6, r3, #2
+003b5b24 mov      r0, r6
+003b5b28 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b5b2c mov      r4, r0
+003b5b30 add      r6, r4, r6
+003b5b34 str      r4, [sl]
+003b5b38 stmib    sl, {r4, r6}
+003b5b3c ldm      r5, {r6, r7}
+003b5b40 cmp      r6, r7
+003b5b44 beq      #0x3b5b8c
+003b5b48 cmp      r4, #0
+003b5b4c beq      #0x3b5b7c
+003b5b50 ldr      r3, [r6]
+003b5b54 add      r0, r4, #8
+003b5b58 add      r1, r6, #8
+003b5b5c str      r3, [r4]
+003b5b60 ldr      r3, [r6, #4]
+003b5b64 str      r3, [r4, #4]
+003b5b68 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5b6c ldr      r3, [r6, #0xc]
+003b5b70 str      r3, [r4, #0xc]
+003b5b74 ldrb     r3, [r6, #0x10]
+003b5b78 strb     r3, [r4, #0x10]
+003b5b7c add      r6, r6, #0x14
+003b5b80 add      r4, r4, #0x14
+003b5b84 cmp      r7, r6
+003b5b88 bne      #0x3b5b48
+003b5b8c str      r4, [sl, #4]
+003b5b90 add      r5, r5, #0xc
+003b5b94 add      sl, sl, #0xc
+003b5b98 cmp      fp, r5
+003b5b9c bne      #0x3b5ad8
+003b5ba0 ldr      ip, [sp, #0x10]
+003b5ba4 ldr      r4, [sp, #4]
+003b5ba8 ldr      fp, [ip, #0x20]
+003b5bac ldr      r7, [ip, #0x1c]
+003b5bb0 cmp      fp, r7
+003b5bb4 beq      #0x3b5c00
+003b5bb8 ldm      r7, {r5, r6}
+003b5bbc cmp      r5, r6
+003b5bc0 beq      #0x3b5bdc
+003b5bc4 add      r0, r5, #8
+003b5bc8 add      r5, r5, #0x14
+003b5bcc bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5bd0 cmp      r6, r5
+003b5bd4 bne      #0x3b5bc4
+003b5bd8 ldr      r5, [r7]
+003b5bdc cmp      r5, #0
+003b5be0 beq      #0x3b5bec
+003b5be4 mov      r0, r5
+003b5be8 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b5bec add      r7, r7, #0xc
+003b5bf0 cmp      fp, r7
+003b5bf4 bne      #0x3b5bb8
+003b5bf8 ldr      ip, [sp, #0x10]
+003b5bfc ldr      r7, [ip, #0x1c]
+003b5c00 cmp      r7, #0
+003b5c04 beq      #0x3b5c10
+003b5c08 mov      r0, r7
+003b5c0c bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b5c10 ldr      r2, [sp, #8]
+003b5c14 ldr      r0, [sp, #0x10]
+003b5c18 ldr      ip, [sp, #0xc]
+003b5c1c add      r3, r2, r2, lsl #1
+003b5c20 ldr      r5, [sp, #0x34]
+003b5c24 str      sl, [r0, #0x20]
+003b5c28 add      r3, ip, r3, lsl #2
+003b5c2c str      ip, [r0, #0x1c]
+003b5c30 str      r3, [r0, #0x24]
+003b5c34 ldr      fp, [sp, #0x38]
+003b5c38 b        #0x3b5cac ; -> 003b5cac $a
+003b5c3c bhs      #0x3b5cdc
+003b5c40 ldr      r3, [sp, #0x14]
+003b5c44 add      r8, r3, r3, lsl #1
+003b5c48 add      r8, r2, r8, lsl #2
+003b5c4c cmp      r5, r8
+003b5c50 moveq    r5, fp
+003b5c54 beq      #0x3b5ca4
+003b5c58 mov      sl, r8
+003b5c5c ldm      sl, {r6, r7}
+003b5c60 cmp      r6, r7
+003b5c64 beq      #0x3b5c80
+003b5c68 add      r0, r6, #8
+003b5c6c add      r6, r6, #0x14
+003b5c70 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5c74 cmp      r7, r6
+003b5c78 bne      #0x3b5c68
+003b5c7c ldr      r6, [sl]
+003b5c80 cmp      r6, #0
+003b5c84 beq      #0x3b5c90
+003b5c88 mov      r0, r6
+003b5c8c bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b5c90 add      sl, sl, #0xc
+003b5c94 cmp      r5, sl
+003b5c98 bne      #0x3b5c5c
+003b5c9c ldr      r5, [sp, #0x34]
+003b5ca0 ldr      fp, [sp, #0x38]
+003b5ca4 ldr      ip, [sp, #0x10]
+003b5ca8 str      r8, [ip, #0x20]
+003b5cac cmp      fp, r5
+003b5cb0 beq      #0x3b5ccc
+003b5cb4 add      r0, r5, #8
+003b5cb8 add      r5, r5, #0x14
+003b5cbc bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5cc0 cmp      fp, r5
+003b5cc4 bne      #0x3b5cb4
+003b5cc8 ldr      r5, [sp, #0x34]
+003b5ccc cmp      r5, #0
+003b5cd0 beq      #0x3b5cdc
+003b5cd4 mov      r0, r5
+003b5cd8 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b5cdc ldr      r3, [sp, #0x14]
+003b5ce0 cmp      r3, #0
+003b5ce4 ble      #0x3b600c
+003b5ce8 mov      r8, #0
+003b5cec ldr      r2, [sp, #0x24]
+003b5cf0 mov      sl, r8
+003b5cf4 movw     ip, #0xcccc
+003b5cf8 add      r2, r2, #0xc
+003b5cfc movt     ip, #0xccc
+003b5d00 str      r2, [sp, #0x18]
+003b5d04 str      ip, [sp, #0x2c]
+003b5d08 str      r8, [sp, #4]
+003b5d0c ldr      ip, [sp, #0x10]
+003b5d10 mov      r0, r4
+003b5d14 ldr      r7, [ip, #0x1c]
+003b5d18 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b5d1c ldr      ip, [sp, #0x18]
+003b5d20 add      r5, r7, r8
+003b5d24 str      sl, [sp, #0xd8]
+003b5d28 ldr      r2, [r7, r8]
+003b5d2c ldr      r7, [r5, #4]
+003b5d30 str      sl, [sp, #0xdc]
+003b5d34 rsb      r3, r2, r7
+003b5d38 str      sl, [sp, #0xe4]
+003b5d3c strb     sl, [sp, #0xe8]
+003b5d40 asr      r3, r3, #2
+003b5d44 str      ip, [sp, #0xe0]
+003b5d48 add      sb, r3, r3, lsl #1
+003b5d4c add      sb, sb, sb, lsl #4
+003b5d50 add      sb, sb, sb, lsl #8
+003b5d54 add      sb, sb, sb, lsl #16
+003b5d58 add      sb, r3, sb, lsl #2
+003b5d5c cmp      r0, sb
+003b5d60 mov      r6, r0
+003b5d64 bls      #0x3b64d8
+003b5d68 subs     r2, r0, sb
+003b5d6c str      r2, [sp, #0xc]
+003b5d70 addeq    r3, sp, #0xe0
+003b5d74 streq    r3, [sp, #8]
+003b5d78 moveq    r0, r3
+003b5d7c beq      #0x3b5f6c
+003b5d80 ldr      r3, [r5, #8]
+003b5d84 mov      ip, r2
+003b5d88 rsb      r3, r7, r3
+003b5d8c asr      r3, r3, #2
+003b5d90 add      r2, r3, r3, lsl #1
+003b5d94 add      r2, r2, r2, lsl #4
+003b5d98 add      r2, r2, r2, lsl #8
+003b5d9c add      r2, r2, r2, lsl #16
+003b5da0 add      r2, r3, r2, lsl #2
+003b5da4 cmp      ip, r2
+003b5da8 bls      #0x3b66bc
+003b5dac movw     r3, #0xcccc
+003b5db0 movt     r3, #0xccc
+003b5db4 rsb      r3, sb, r3
+003b5db8 cmp      ip, r3
+003b5dbc bhi      #0x3b7900
+003b5dc0 cmp      ip, sb
+003b5dc4 addhs    r3, sb, ip
+003b5dc8 addlo    r3, sb, sb
+003b5dcc cmp      sb, r3
+003b5dd0 mvnhi    r3, #0xf
+003b5dd4 strhi    r3, [sp, #0x20]
+003b5dd8 bhi      #0x3b5dfc
+003b5ddc ldr      r2, [sp, #0x2c]
+003b5de0 cmp      r3, r2
+003b5de4 movhs    r3, r2
+003b5de8 cmp      r3, #0
+003b5dec add      r2, r3, r3, lsl #2
+003b5df0 lsl      r2, r2, #2
+003b5df4 str      r2, [sp, #0x20]
+003b5df8 beq      #0x3b7064
+003b5dfc ldr      r0, [sp, #0x20]
+003b5e00 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b5e04 mov      r2, r0
+003b5e08 str      r0, [sp, #0x1c]
+003b5e0c add      sb, sb, sb, lsl #2
+003b5e10 add      ip, sp, #0xe0
+003b5e14 ldr      fp, [sp, #0xc]
+003b5e18 add      sb, r2, sb, lsl #2
+003b5e1c str      r5, [sp, #0x28]
+003b5e20 mov      r5, ip
+003b5e24 str      ip, [sp, #8]
+003b5e28 cmp      sb, #0
+003b5e2c beq      #0x3b5e5c
+003b5e30 ldr      r3, [sp, #0xd8]
+003b5e34 add      r0, sb, #8
+003b5e38 mov      r1, r5
+003b5e3c str      r3, [sb]
+003b5e40 ldr      r3, [sp, #0xdc]
+003b5e44 str      r3, [sb, #4]
+003b5e48 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5e4c ldr      r3, [sp, #0xe4]
+003b5e50 str      r3, [sb, #0xc]
+003b5e54 ldrb     r3, [sp, #0xe8]
+003b5e58 strb     r3, [sb, #0x10]
+003b5e5c subs     fp, fp, #1
+003b5e60 add      sb, sb, #0x14
+003b5e64 bne      #0x3b5e28
+003b5e68 ldr      r5, [sp, #0x28]
+003b5e6c ldr      sb, [sp, #0x1c]
+003b5e70 ldr      fp, [r5]
+003b5e74 cmp      r7, fp
+003b5e78 beq      #0x3b5ec0
+003b5e7c cmp      sb, #0
+003b5e80 beq      #0x3b5eb0
+003b5e84 ldr      r3, [fp]
+003b5e88 add      r0, sb, #8
+003b5e8c add      r1, fp, #8
+003b5e90 str      r3, [sb]
+003b5e94 ldr      r3, [fp, #4]
+003b5e98 str      r3, [sb, #4]
+003b5e9c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5ea0 ldr      r3, [fp, #0xc]
+003b5ea4 str      r3, [sb, #0xc]
+003b5ea8 ldrb     r3, [fp, #0x10]
+003b5eac strb     r3, [sb, #0x10]
+003b5eb0 add      fp, fp, #0x14
+003b5eb4 add      sb, sb, #0x14
+003b5eb8 cmp      r7, fp
+003b5ebc bne      #0x3b5e7c
+003b5ec0 ldr      ip, [sp, #0xc]
+003b5ec4 ldr      fp, [r5, #4]
+003b5ec8 add      r3, ip, ip, lsl #2
+003b5ecc cmp      r7, fp
+003b5ed0 add      sb, sb, r3, lsl #2
+003b5ed4 beq      #0x3b5f20
+003b5ed8 cmp      sb, #0
+003b5edc beq      #0x3b5f0c
+003b5ee0 ldr      r3, [r7]
+003b5ee4 add      r0, sb, #8
+003b5ee8 add      r1, r7, #8
+003b5eec str      r3, [sb]
+003b5ef0 ldr      r3, [r7, #4]
+003b5ef4 str      r3, [sb, #4]
+003b5ef8 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b5efc ldr      r3, [r7, #0xc]
+003b5f00 str      r3, [sb, #0xc]
+003b5f04 ldrb     r3, [r7, #0x10]
+003b5f08 strb     r3, [sb, #0x10]
+003b5f0c add      r7, r7, #0x14
+003b5f10 add      sb, sb, #0x14
+003b5f14 cmp      fp, r7
+003b5f18 bne      #0x3b5ed8
+003b5f1c ldr      fp, [r5, #4]
+003b5f20 ldr      r7, [r5]
+003b5f24 cmp      r7, fp
+003b5f28 beq      #0x3b5f44
+003b5f2c add      r0, r7, #8
+003b5f30 add      r7, r7, #0x14
+003b5f34 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5f38 cmp      r7, fp
+003b5f3c bne      #0x3b5f2c
+003b5f40 ldr      r7, [r5]
+003b5f44 cmp      r7, #0
+003b5f48 beq      #0x3b5f54
+003b5f4c mov      r0, r7
+003b5f50 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b5f54 ldr      r2, [sp, #0x1c]
+003b5f58 ldr      r0, [sp, #8]
+003b5f5c ldr      ip, [sp, #0x20]
+003b5f60 stm      r5, {r2, sb}
+003b5f64 add      r3, r2, ip
+003b5f68 str      r3, [r5, #8]
+003b5f6c bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b5f70 cmp      r6, #0
+003b5f74 ble      #0x3b5ff0
+003b5f78 mov      sb, #0
+003b5f7c mov      fp, sb
+003b5f80 ldr      r3, [r5]
+003b5f84 mov      r0, r4
+003b5f88 add      fp, fp, #1
+003b5f8c str      r3, [sp]
+003b5f90 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b5f94 ldr      r3, [sp]
+003b5f98 add      r7, r3, sb
+003b5f9c str      r0, [r3, sb]
+003b5fa0 mov      r0, r4
+003b5fa4 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b5fa8 add      r1, r7, #8
+003b5fac add      sb, sb, #0x14
+003b5fb0 str      r0, [r7, #4]
+003b5fb4 mov      r0, r4
+003b5fb8 bl       #0x33a0d4 ; -> 0033a0d4 CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+003b5fbc mov      r0, r4
+003b5fc0 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b5fc4 ldr      r3, [r4, #0xc]
+003b5fc8 ldr      r1, [r4]
+003b5fcc add      r2, r3, #1
+003b5fd0 str      r0, [r7, #0xc]
+003b5fd4 ldrb     r3, [r1, r3]
+003b5fd8 str      r2, [r4, #0xc]
+003b5fdc adds     r3, r3, #0
+003b5fe0 movne    r3, #1
+003b5fe4 cmp      fp, r6
+003b5fe8 strb     r3, [r7, #0x10]
+003b5fec bne      #0x3b5f80
+003b5ff0 ldr      ip, [sp, #4]
+003b5ff4 add      r8, r8, #0xc
+003b5ff8 ldr      r3, [sp, #0x14]
+003b5ffc add      ip, ip, #1
+003b6000 str      ip, [sp, #4]
+003b6004 cmp      ip, r3
+003b6008 bne      #0x3b5d0c
+003b600c mov      r0, r4
+003b6010 mov      r6, #0
+003b6014 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b6018 ldr      ip, [sp, #0x10]
+003b601c str      r6, [sp, #0x40]
+003b6020 str      r6, [sp, #0x44]
+003b6024 ldr      sl, [ip, #0x2c]
+003b6028 ldr      r1, [ip, #0x28]
+003b602c str      r6, [sp, #0x48]
+003b6030 rsb      r3, r1, sl
+003b6034 asr      r3, r3, #2
+003b6038 add      r2, r3, r3, lsl #2
+003b603c add      r2, r2, r2, lsl #4
+003b6040 add      r2, r2, r2, lsl #8
+003b6044 add      r2, r2, r2, lsl #16
+003b6048 add      r2, r3, r2, lsl #1
+003b604c cmp      r0, r2
+003b6050 str      r0, [sp, #8]
+003b6054 bls      #0x3b6a64
+003b6058 add      r0, ip, #0x28
+003b605c ldr      ip, [sp, #8]
+003b6060 mov      r1, sl
+003b6064 add      r3, sp, #0x40
+003b6068 rsb      r2, r2, ip
+003b606c bl       #0x3b047c ; -> 003b047c std::vector<CContainerTracks_Effect, std::allocator<CContainerTracks_Effect> >::_M_fill_insert(__gnu_cxx::__normal_iterator<CContainerTracks_Effect*, std::vector<CContainerTracks_Effect, std::allocator<CContainerTracks_Effect> > >, unsigned int, CContainerTracks_Effect const&) [clone .constprop.3201]
+003b6070 ldr      r5, [sp, #0x40]
+003b6074 ldr      r6, [sp, #0x44]
+003b6078 cmp      r6, r5
+003b607c beq      #0x3b60a0
+003b6080 add      r0, r5, #0xc
+003b6084 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6088 add      r0, r5, #8
+003b608c add      r5, r5, #0x14
+003b6090 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6094 cmp      r6, r5
+003b6098 bne      #0x3b6080
+003b609c ldr      r5, [sp, #0x40]
+003b60a0 cmp      r5, #0
+003b60a4 beq      #0x3b60b0
+003b60a8 mov      r0, r5
+003b60ac bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b60b0 ldr      ip, [sp, #8]
+003b60b4 cmp      ip, #0
+003b60b8 ble      #0x3b61e8
+003b60bc mov      r7, #0
+003b60c0 ldr      ip, [sp, #0x24]
+003b60c4 mov      r8, r7
+003b60c8 add      ip, ip, #0xc
+003b60cc str      ip, [sp, #4]
+003b60d0 ldr      ip, [sp, #0x10]
+003b60d4 mov      r0, r4
+003b60d8 ldr      sl, [ip, #0x28]
+003b60dc bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b60e0 ldr      ip, [sp, #4]
+003b60e4 add      r6, sl, r7
+003b60e8 ldr      r1, [sl, r7]
+003b60ec ldr      sb, [r6, #4]
+003b60f0 str      ip, [sp, #0xf4]
+003b60f4 rsb      r3, r1, sb
+003b60f8 str      ip, [sp, #0xf8]
+003b60fc asr      r3, r3, #2
+003b6100 add      r2, r3, r3, lsl #1
+003b6104 add      r2, r2, r2, lsl #4
+003b6108 add      r2, r2, r2, lsl #8
+003b610c add      r2, r2, r2, lsl #16
+003b6110 add      r2, r3, r2, lsl #2
+003b6114 mov      r5, r0
+003b6118 cmp      r5, r2
+003b611c mov      r0, #0
+003b6120 str      r0, [sp, #0xec]
+003b6124 str      r0, [sp, #0xf0]
+003b6128 strb     r0, [sp, #0xfc]
+003b612c bls      #0x3b6524
+003b6130 mov      r0, r6
+003b6134 mov      r1, sb
+003b6138 rsb      r2, r2, r5
+003b613c add      r3, sp, #0xec
+003b6140 bl       #0x3a490c ; -> 003a490c std::vector<CContainerTrackEffectEvent, std::allocator<CContainerTrackEffectEvent> >::_M_fill_insert(__gnu_cxx::__normal_iterator<CContainerTrackEffectEvent*, std::vector<CContainerTrackEffectEvent, std::allocator<CContainerTrackEffectEvent> > >, unsigned int, CContainerTrackEffectEvent const&) [clone .constprop.3069]
+003b6144 add      r0, sp, #0xf8
+003b6148 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b614c add      r0, sp, #0xf4
+003b6150 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6154 cmp      r5, #0
+003b6158 ble      #0x3b61d4
+003b615c mov      sb, #0
+003b6160 mov      fp, sb
+003b6164 ldr      r3, [r6]
+003b6168 mov      r0, r4
+003b616c add      fp, fp, #1
+003b6170 str      r3, [sp]
+003b6174 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b6178 ldr      r3, [sp]
+003b617c add      sl, r3, sb
+003b6180 str      r0, [r3, sb]
+003b6184 mov      r0, r4
+003b6188 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b618c add      r1, sl, #8
+003b6190 add      sb, sb, #0x14
+003b6194 str      r0, [sl, #4]
+003b6198 mov      r0, r4
+003b619c bl       #0x33a0d4 ; -> 0033a0d4 CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+003b61a0 add      r1, sl, #0xc
+003b61a4 mov      r0, r4
+003b61a8 bl       #0x33a0d4 ; -> 0033a0d4 CMemoryStream::ReadString(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >&)
+003b61ac ldr      r3, [r4, #0xc]
+003b61b0 ldr      r1, [r4]
+003b61b4 add      r2, r3, #1
+003b61b8 ldrb     r3, [r1, r3]
+003b61bc str      r2, [r4, #0xc]
+003b61c0 adds     r3, r3, #0
+003b61c4 movne    r3, #1
+003b61c8 cmp      fp, r5
+003b61cc strb     r3, [sl, #0x10]
+003b61d0 bne      #0x3b6164
+003b61d4 ldr      ip, [sp, #8]
+003b61d8 add      r8, r8, #1
+003b61dc add      r7, r7, #0xc
+003b61e0 cmp      r8, ip
+003b61e4 bne      #0x3b60d0
+003b61e8 mov      r0, r4
+003b61ec bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b61f0 ldr      ip, [sp, #0x10]
+003b61f4 mov      r3, #0
+003b61f8 str      r3, [sp, #0x4c]
+003b61fc str      r3, [sp, #0x50]
+003b6200 ldr      r6, [ip, #0x38]
+003b6204 str      r3, [sp, #0x54]
+003b6208 str      r0, [sp, #0x18]
+003b620c ldr      r0, [ip, #0x34]
+003b6210 ldr      ip, [sp, #0x18]
+003b6214 rsb      r1, r0, r6
+003b6218 asr      r1, r1, #2
+003b621c add      r2, r1, r1, lsl #2
+003b6220 add      r2, r2, r2, lsl #4
+003b6224 add      r2, r2, r2, lsl #8
+003b6228 add      r2, r2, r2, lsl #16
+003b622c add      r2, r1, r2, lsl #1
+003b6230 cmp      ip, r2
+003b6234 bls      #0x3b6a18
+003b6238 ldr      ip, [sp, #0x10]
+003b623c mov      r1, r6
+003b6240 add      r3, sp, #0x4c
+003b6244 add      r0, ip, #0x34
+003b6248 ldr      ip, [sp, #0x18]
+003b624c rsb      r2, r2, ip
+003b6250 bl       #0x3af6f8 ; -> 003af6f8 std::vector<CContainerTracks_SlowMotion, std::allocator<CContainerTracks_SlowMotion> >::_M_fill_insert(__gnu_cxx::__normal_iterator<CContainerTracks_SlowMotion*, std::vector<CContainerTracks_SlowMotion, std::allocator<CContainerTracks_SlowMotion> > >, unsigned int, CContainerTracks_SlowMotion const&) [clone .constprop.3200]
+003b6254 ldr      r0, [sp, #0x4c]
+003b6258 cmp      r0, #0
+003b625c beq      #0x3b6264
+003b6260 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b6264 ldr      ip, [sp, #0x18]
+003b6268 cmp      ip, #0
+003b626c ble      #0x3b6494
+003b6270 mov      fp, #0
+003b6274 mov      r6, r4
+003b6278 mov      ip, #0
+003b627c str      ip, [sp, #4]
+003b6280 movw     ip, #0xaaaa
+003b6284 movt     ip, #0xaaa
+003b6288 str      ip, [sp, #0x1c]
+003b628c mov      ip, #0
+003b6290 str      ip, [sp, #8]
+003b6294 ldr      ip, [sp, #0x10]
+003b6298 mov      r0, r6
+003b629c ldr      r4, [ip, #0x34]
+003b62a0 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b62a4 ldr      ip, [sp, #4]
+003b62a8 add      sb, r4, ip
+003b62ac ldr      r7, [r4, ip]
+003b62b0 ldr      ip, [sb, #4]
+003b62b4 rsb      r3, r7, ip
+003b62b8 str      ip, [sp, #0xc]
+003b62bc asr      r3, r3, #3
+003b62c0 add      r4, r3, r3, lsl #2
+003b62c4 add      r4, r4, r4, lsl #4
+003b62c8 add      r4, r4, r4, lsl #8
+003b62cc add      r4, r4, r4, lsl #16
+003b62d0 add      r4, r3, r4, lsl #1
+003b62d4 mov      r1, r4
+003b62d8 cmp      r0, r4
+003b62dc mov      r8, r0
+003b62e0 bls      #0x3b6560
+003b62e4 subs     ip, r0, r4
+003b62e8 str      ip, [sp, #0x14]
+003b62ec beq      #0x3b63cc
+003b62f0 ldr      ip, [sp, #0xc]
+003b62f4 ldr      r3, [sb, #8]
+003b62f8 rsb      r3, ip, r3
+003b62fc ldr      ip, [sp, #0x14]
+003b6300 asr      r3, r3, #3
+003b6304 add      r2, r3, r3, lsl #2
+003b6308 add      r2, r2, r2, lsl #4
+003b630c add      r2, r2, r2, lsl #8
+003b6310 add      r2, r2, r2, lsl #16
+003b6314 add      r2, r3, r2, lsl #1
+003b6318 cmp      ip, r2
+003b631c bhi      #0x3b6570
+003b6320 mov      r3, #0
+003b6324 mov      r2, ip
+003b6328 ldr      r0, [sp, #0xc]
+003b632c mov      sl, r3
+003b6330 str      sb, [sp, #0x24]
+003b6334 mov      sb, r8
+003b6338 mov      r8, r7
+003b633c mov      r7, r6
+003b6340 mov      r6, r2
+003b6344 add      ip, r0, #0x18
+003b6348 str      r3, [sp, #0x128]
+003b634c mov      r0, #0
+003b6350 str      r3, [sp, #0x12c]
+003b6354 str      r0, [sp, #0x130]
+003b6358 str      r0, [sp, #0x134]
+003b635c str      r3, [sp, #0x138]
+003b6360 strb     r3, [sp, #0x13c]
+003b6364 strb     r3, [sp, #0x13d]
+003b6368 add      r4, sp, #0x128
+003b636c sub      r5, ip, #0x18
+003b6370 subs     r6, r6, #1
+003b6374 ldm      r4!, {r0, r1, r2, r3}
+003b6378 stm      r5!, {r0, r1, r2, r3}
+003b637c ldm      r4, {r0, r1}
+003b6380 stm      r5, {r0, r1}
+003b6384 str      fp, [ip, #-0x10]
+003b6388 str      sl, [ip, #-0x18]
+003b638c str      fp, [ip, #-0xc]
+003b6390 str      sl, [ip, #-0x14]
+003b6394 str      sl, [ip, #-8]
+003b6398 strb     sl, [ip, #-4]
+003b639c strb     sl, [ip, #-3]
+003b63a0 add      ip, ip, #0x18
+003b63a4 bne      #0x3b6368
+003b63a8 ldr      ip, [sp, #0x14]
+003b63ac mov      r6, r7
+003b63b0 mov      r7, r8
+003b63b4 mov      r8, sb
+003b63b8 ldr      sb, [sp, #0x24]
+003b63bc add      r3, ip, ip, lsl #1
+003b63c0 ldr      ip, [sp, #0xc]
+003b63c4 add      r3, ip, r3, lsl #3
+003b63c8 str      r3, [sb, #4]
+003b63cc cmp      r8, #0
+003b63d0 movgt    r5, #0
+003b63d4 movgt    sl, r5
+003b63d8 bgt      #0x3b63e4
+003b63dc b        #0x3b646c ; -> 003b646c $a
+003b63e0 ldr      r7, [sb]
+003b63e4 mov      r0, r6
+003b63e8 add      r4, r7, r5
+003b63ec bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b63f0 add      sl, sl, #1
+003b63f4 str      r0, [r7, r5]
+003b63f8 mov      r0, r6
+003b63fc bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b6400 add      r5, r5, #0x18
+003b6404 str      r0, [r4, #4]
+003b6408 mov      r0, r6
+003b640c bl       #0x339b94 ; -> 00339b94 CMemoryStream::ReadFloat()
+003b6410 str      r0, [r4, #8]
+003b6414 mov      r0, r6
+003b6418 bl       #0x339b94 ; -> 00339b94 CMemoryStream::ReadFloat()
+003b641c str      r0, [r4, #0xc]
+003b6420 mov      r0, r6
+003b6424 bl       #0x339914 ; -> 00339914 CMemoryStream::ReadInt()
+003b6428 ldr      r3, [r6, #0xc]
+003b642c ldr      r1, [r6]
+003b6430 add      r2, r3, #1
+003b6434 add      ip, r3, #2
+003b6438 str      r0, [r4, #0x10]
+003b643c ldrb     r3, [r1, r3]
+003b6440 str      r2, [r6, #0xc]
+003b6444 adds     r3, r3, #0
+003b6448 movne    r3, #1
+003b644c strb     r3, [r4, #0x14]
+003b6450 ldrb     r3, [r1, r2]
+003b6454 str      ip, [r6, #0xc]
+003b6458 adds     r3, r3, #0
+003b645c movne    r3, #1
+003b6460 cmp      sl, r8
+003b6464 strb     r3, [r4, #0x15]
+003b6468 bne      #0x3b63e0
+003b646c ldr      ip, [sp, #8]
+003b6470 ldr      r0, [sp, #0x18]
+003b6474 add      ip, ip, #1
+003b6478 str      ip, [sp, #8]
+003b647c ldr      ip, [sp, #4]
+003b6480 add      ip, ip, #0xc
+003b6484 str      ip, [sp, #4]
+003b6488 ldr      ip, [sp, #8]
+003b648c cmp      ip, r0
+003b6490 bne      #0x3b6294
+003b6494 add      sp, sp, #0x144
+003b6498 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+003b649c blo      #0x3b64a8
+003b64a0 add      sl, sp, #0x8c
+003b64a4 b        #0x3b578c ; -> 003b578c $a
+003b64a8 add      sb, r3, r6, lsl #4
+003b64ac cmp      r7, sb
+003b64b0 beq      #0x3b64cc
+003b64b4 mov      sl, sb
+003b64b8 add      r0, sl, #8
+003b64bc add      sl, sl, #0x10
+003b64c0 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b64c4 cmp      r7, sl
+003b64c8 bne      #0x3b64b8
+003b64cc add      sl, sp, #0x8c
+003b64d0 str      sb, [r5, #8]
+003b64d4 b        #0x3b578c ; -> 003b578c $a
+003b64d8 addhs    r2, sp, #0xe0
+003b64dc strhs    r2, [sp, #8]
+003b64e0 movhs    r0, r2
+003b64e4 bhs      #0x3b5f6c
+003b64e8 add      sb, r6, r6, lsl #2
+003b64ec add      sb, r2, sb, lsl #2
+003b64f0 cmp      r7, sb
+003b64f4 beq      #0x3b6510
+003b64f8 mov      fp, sb
+003b64fc add      r0, fp, #8
+003b6500 add      fp, fp, #0x14
+003b6504 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6508 cmp      r7, fp
+003b650c bne      #0x3b64fc
+003b6510 add      r3, sp, #0xe0
+003b6514 str      sb, [r5, #4]
+003b6518 str      r3, [sp, #8]
+003b651c mov      r0, r3
+003b6520 b        #0x3b5f6c ; -> 003b5f6c $a
+003b6524 bhs      #0x3b6144
+003b6528 add      fp, r5, r5, lsl #2
+003b652c add      fp, r1, fp, lsl #2
+003b6530 cmp      sb, fp
+003b6534 beq      #0x3b6558
+003b6538 mov      sl, fp
+003b653c add      r0, sl, #0xc
+003b6540 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6544 add      r0, sl, #8
+003b6548 add      sl, sl, #0x14
+003b654c bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6550 cmp      sb, sl
+003b6554 bne      #0x3b653c
+003b6558 str      fp, [r6, #4]
+003b655c b        #0x3b6144 ; -> 003b6144 $a
+003b6560 addlo    r3, r0, r0, lsl #1
+003b6564 addlo    r3, r7, r3, lsl #3
+003b6568 strlo    r3, [sb, #4]
+003b656c b        #0x3b63cc ; -> 003b63cc $a
+003b6570 movw     r3, #0xaaaa
+003b6574 movt     r3, #0xaaa
+003b6578 rsb      r3, r4, r3
+003b657c cmp      ip, r3
+003b6580 bhi      #0x3b78e8
+003b6584 cmp      ip, r4
+003b6588 addhs    r2, r4, ip
+003b658c addlo    r2, r4, r4
+003b6590 cmp      r4, r2
+003b6594 mvnhi    sl, #0xf
+003b6598 bhi      #0x3b65b8
+003b659c ldr      ip, [sp, #0x1c]
+003b65a0 cmp      r2, ip
+003b65a4 movhs    r2, ip
+003b65a8 cmp      r2, #0
+003b65ac add      r3, r2, r2, lsl #1
+003b65b0 lsl      sl, r3, #3
+003b65b4 beq      #0x3b70dc
+003b65b8 mov      r0, sl
+003b65bc bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b65c0 ldr      ip, [sb]
+003b65c4 mov      r7, r0
+003b65c8 ldr      r0, [sp, #0xc]
+003b65cc rsb      r3, ip, r0
+003b65d0 asr      r3, r3, #3
+003b65d4 add      r1, r3, r3, lsl #2
+003b65d8 add      r1, r1, r1, lsl #4
+003b65dc add      r1, r1, r1, lsl #8
+003b65e0 add      r1, r1, r1, lsl #16
+003b65e4 add      r1, r3, r1, lsl #1
+003b65e8 add      r4, r4, r4, lsl #1
+003b65ec ldr      r0, [sp, #0x14]
+003b65f0 mov      r2, #0
+003b65f4 add      r3, r7, r4, lsl #3
+003b65f8 add      r3, r3, #0x18
+003b65fc subs     r0, r0, #1
+003b6600 str      r2, [r3, #-0x18]
+003b6604 str      r2, [r3, #-0x14]
+003b6608 str      fp, [r3, #-0x10]
+003b660c str      fp, [r3, #-0xc]
+003b6610 str      r2, [r3, #-8]
+003b6614 strb     r2, [r3, #-4]
+003b6618 strb     r2, [r3, #-3]
+003b661c add      r3, r3, #0x18
+003b6620 bne      #0x3b65fc
+003b6624 cmp      r1, #0
+003b6628 moveq    r4, r1
+003b662c beq      #0x3b6648
+003b6630 add      r4, r1, r1, lsl #1
+003b6634 mov      r0, r7
+003b6638 mov      r1, ip
+003b663c lsl      r4, r4, #3
+003b6640 mov      r2, r4
+003b6644 bl       #0xa4ee8 ; -> 000a4ee8 $d
+003b6648 ldr      ip, [sp, #0x14]
+003b664c add      r4, r7, r4
+003b6650 ldr      r3, [sb, #4]
+003b6654 add      r2, ip, ip, lsl #1
+003b6658 ldr      ip, [sp, #0xc]
+003b665c rsb      r3, ip, r3
+003b6660 add      r5, r4, r2, lsl #3
+003b6664 asr      r3, r3, #3
+003b6668 add      r2, r3, r3, lsl #2
+003b666c add      r2, r2, r2, lsl #4
+003b6670 add      r2, r2, r2, lsl #8
+003b6674 add      r2, r2, r2, lsl #16
+003b6678 adds     r4, r3, r2, lsl #1
+003b667c beq      #0x3b6698
+003b6680 add      r4, r4, r4, lsl #1
+003b6684 mov      r0, r5
+003b6688 mov      r1, ip
+003b668c lsl      r4, r4, #3
+003b6690 mov      r2, r4
+003b6694 bl       #0xa4ee8 ; -> 000a4ee8 $d
+003b6698 ldr      r0, [sb]
+003b669c add      r4, r5, r4
+003b66a0 cmp      r0, #0
+003b66a4 beq      #0x3b66ac
+003b66a8 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b66ac add      sl, r7, sl
+003b66b0 str      r7, [sb]
+003b66b4 stmib    sb, {r4, sl}
+003b66b8 b        #0x3b63cc ; -> 003b63cc $a
+003b66bc add      r2, sp, #0xe0
+003b66c0 add      r0, sp, #0x11c
+003b66c4 str      r2, [sp, #8]
+003b66c8 mov      r1, r2
+003b66cc str      sl, [sp, #0x114]
+003b66d0 str      sl, [sp, #0x118]
+003b66d4 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b66d8 ldr      r3, [r5, #4]
+003b66dc ldrb     r1, [sp, #0xe8]
+003b66e0 rsb      r2, r7, r3
+003b66e4 ldr      ip, [sp, #0xc]
+003b66e8 ldr      r0, [sp, #0xe4]
+003b66ec asr      r2, r2, #2
+003b66f0 strb     r1, [sp, #0x124]
+003b66f4 add      r1, r2, r2, lsl #1
+003b66f8 str      r0, [sp, #0x120]
+003b66fc add      r1, r1, r1, lsl #4
+003b6700 add      r1, r1, r1, lsl #8
+003b6704 add      r1, r1, r1, lsl #16
+003b6708 add      r1, r2, r1, lsl #2
+003b670c str      r1, [sp, #0x1c]
+003b6710 cmp      ip, r1
+003b6714 bhs      #0x3b6d20
+003b6718 add      r2, ip, ip, lsl #2
+003b671c lsl      r2, r2, #2
+003b6720 str      r2, [sp, #0xc]
+003b6724 rsb      r2, r2, r3
+003b6728 cmp      r3, r2
+003b672c moveq    r1, r3
+003b6730 beq      #0x3b679c
+003b6734 str      r5, [sp, #0x1c]
+003b6738 mov      fp, r2
+003b673c mov      sb, r3
+003b6740 mov      r5, r3
+003b6744 str      r2, [sp, #0x20]
+003b6748 cmp      sb, #0
+003b674c beq      #0x3b677c
+003b6750 ldr      r3, [fp]
+003b6754 add      r0, sb, #8
+003b6758 add      r1, fp, #8
+003b675c str      r3, [sb]
+003b6760 ldr      r3, [fp, #4]
+003b6764 str      r3, [sb, #4]
+003b6768 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b676c ldr      r3, [fp, #0xc]
+003b6770 str      r3, [sb, #0xc]
+003b6774 ldrb     r3, [fp, #0x10]
+003b6778 strb     r3, [sb, #0x10]
+003b677c add      fp, fp, #0x14
+003b6780 add      sb, sb, #0x14
+003b6784 cmp      r5, fp
+003b6788 bne      #0x3b6748
+003b678c mov      r3, r5
+003b6790 ldr      r5, [sp, #0x1c]
+003b6794 ldr      r2, [sp, #0x20]
+003b6798 ldr      r1, [r5, #4]
+003b679c ldr      ip, [sp, #0xc]
+003b67a0 rsb      r0, r7, r2
+003b67a4 add      r1, r1, ip
+003b67a8 str      r1, [r5, #4]
+003b67ac asr      r1, r0, #2
+003b67b0 add      ip, r1, r1, lsl #1
+003b67b4 add      ip, ip, ip, lsl #4
+003b67b8 add      ip, ip, ip, lsl #8
+003b67bc add      ip, ip, ip, lsl #16
+003b67c0 add      ip, r1, ip, lsl #2
+003b67c4 cmp      ip, #0
+003b67c8 ble      #0x3b683c
+003b67cc sub      fp, r2, #8
+003b67d0 sub      sb, r3, #8
+003b67d4 str      r5, [sp, #0x1c]
+003b67d8 mov      r5, ip
+003b67dc str      r6, [sp, #0x20]
+003b67e0 mov      r6, r2
+003b67e4 str      r7, [sp, #0x28]
+003b67e8 mov      r7, r3
+003b67ec ldr      ip, [fp, #-0xc]
+003b67f0 sub      r0, r7, #0xc
+003b67f4 sub      r1, r6, #0xc
+003b67f8 sub      r7, r7, #0x14
+003b67fc sub      r6, r6, #0x14
+003b6800 str      ip, [sb, #-0xc]
+003b6804 ldr      r3, [fp, #-8]
+003b6808 str      r3, [sb, #-8]
+003b680c bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6810 ldr      r3, [fp]
+003b6814 subs     r5, r5, #1
+003b6818 str      r3, [sb]
+003b681c ldrb     r3, [fp, #4]
+003b6820 sub      fp, fp, #0x14
+003b6824 strb     r3, [sb, #4]
+003b6828 sub      sb, sb, #0x14
+003b682c bne      #0x3b67ec
+003b6830 ldr      r5, [sp, #0x1c]
+003b6834 ldr      r6, [sp, #0x20]
+003b6838 ldr      r7, [sp, #0x28]
+003b683c ldr      r2, [sp, #0xc]
+003b6840 add      sb, r7, r2
+003b6844 cmp      r7, sb
+003b6848 beq      #0x3b6884
+003b684c ldr      r3, [sp, #0x114]
+003b6850 add      r0, r7, #8
+003b6854 add      r1, sp, #0x11c
+003b6858 str      r3, [r7]
+003b685c ldr      r3, [sp, #0x118]
+003b6860 str      r3, [r7, #4]
+003b6864 bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6868 ldr      r3, [sp, #0x120]
+003b686c str      r3, [r7, #0xc]
+003b6870 ldrb     r3, [sp, #0x124]
+003b6874 strb     r3, [r7, #0x10]
+003b6878 add      r7, r7, #0x14
+003b687c cmp      sb, r7
+003b6880 bne      #0x3b684c
+003b6884 add      r0, sp, #0x11c
+003b6888 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b688c ldr      r0, [sp, #8]
+003b6890 b        #0x3b5f6c ; -> 003b5f6c $a
+003b6894 add      sl, sp, #0x8c
+003b6898 mov      r0, #0
+003b689c str      r0, [sp, #0xb4]
+003b68a0 add      r0, sp, #0xbc
+003b68a4 mov      r1, sl
+003b68a8 mov      r2, #0
+003b68ac str      r2, [sp, #0xb8]
+003b68b0 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b68b4 ldr      r3, [r5, #8]
+003b68b8 ldr      ip, [sp, #4]
+003b68bc rsb      r1, r7, r3
+003b68c0 ldrb     r2, [sp, #0x90]
+003b68c4 asr      r1, r1, #4
+003b68c8 str      r1, [sp, #0x14]
+003b68cc cmp      ip, r1
+003b68d0 strb     r2, [sp, #0xc0]
+003b68d4 bhs      #0x3b6ae0
+003b68d8 lsl      r2, ip, #4
+003b68dc str      r2, [sp, #4]
+003b68e0 rsb      r2, r2, r3
+003b68e4 cmp      r3, r2
+003b68e8 moveq    r1, r3
+003b68ec beq      #0x3b6950
+003b68f0 str      r8, [sp, #0x14]
+003b68f4 mov      fp, r2
+003b68f8 mov      sb, r3
+003b68fc mov      r8, r3
+003b6900 str      r2, [sp, #0x18]
+003b6904 cmp      sb, #0
+003b6908 beq      #0x3b6930
+003b690c ldr      r3, [fp]
+003b6910 add      r0, sb, #8
+003b6914 add      r1, fp, #8
+003b6918 str      r3, [sb]
+003b691c ldr      r3, [fp, #4]
+003b6920 str      r3, [sb, #4]
+003b6924 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6928 ldrb     r3, [fp, #0xc]
+003b692c strb     r3, [sb, #0xc]
+003b6930 add      fp, fp, #0x10
+003b6934 add      sb, sb, #0x10
+003b6938 cmp      r8, fp
+003b693c bne      #0x3b6904
+003b6940 mov      r3, r8
+003b6944 ldr      r2, [sp, #0x18]
+003b6948 ldr      r8, [sp, #0x14]
+003b694c ldr      r1, [r5, #8]
+003b6950 rsb      ip, r7, r2
+003b6954 ldr      r0, [sp, #4]
+003b6958 asr      ip, ip, #4
+003b695c add      r1, r1, r0
+003b6960 cmp      ip, #0
+003b6964 str      r1, [r5, #8]
+003b6968 ble      #0x3b69cc
+003b696c sub      sb, r2, #4
+003b6970 sub      fp, r3, #4
+003b6974 str      r8, [sp, #0x14]
+003b6978 mov      r8, r3
+003b697c str      r5, [sp, #0x18]
+003b6980 mov      r5, ip
+003b6984 str      r6, [sp, #0x1c]
+003b6988 mov      r6, r2
+003b698c ldr      ip, [sb, #-0xc]
+003b6990 sub      r0, r8, #8
+003b6994 sub      r1, r6, #8
+003b6998 sub      r8, r8, #0x10
+003b699c sub      r6, r6, #0x10
+003b69a0 str      ip, [fp, #-0xc]
+003b69a4 ldr      r3, [sb, #-8]
+003b69a8 str      r3, [fp, #-8]
+003b69ac bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b69b0 ldrb     r3, [sb], #-0x10
+003b69b4 subs     r5, r5, #1
+003b69b8 strb     r3, [fp], #-0x10
+003b69bc bne      #0x3b698c
+003b69c0 ldr      r8, [sp, #0x14]
+003b69c4 ldr      r5, [sp, #0x18]
+003b69c8 ldr      r6, [sp, #0x1c]
+003b69cc ldr      r2, [sp, #4]
+003b69d0 add      sb, r7, r2
+003b69d4 cmp      r7, sb
+003b69d8 beq      #0x3b6a0c
+003b69dc ldr      r3, [sp, #0xb4]
+003b69e0 add      r0, r7, #8
+003b69e4 add      r1, sp, #0xbc
+003b69e8 str      r3, [r7]
+003b69ec ldr      r3, [sp, #0xb8]
+003b69f0 str      r3, [r7, #4]
+003b69f4 bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b69f8 ldrb     r3, [sp, #0xc0]
+003b69fc strb     r3, [r7, #0xc]
+003b6a00 add      r7, r7, #0x10
+003b6a04 cmp      sb, r7
+003b6a08 bne      #0x3b69dc
+003b6a0c add      r0, sp, #0xbc
+003b6a10 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6a14 b        #0x3b578c ; -> 003b578c $a
+003b6a18 bhs      #0x3b6264
+003b6a1c ldr      ip, [sp, #0x18]
+003b6a20 add      r7, ip, ip, lsl #1
+003b6a24 add      r7, r0, r7, lsl #2
+003b6a28 cmp      r6, r7
+003b6a2c moveq    r0, r3
+003b6a30 beq      #0x3b6a58
+003b6a34 mov      r5, r7
+003b6a38 ldr      r0, [r5]
+003b6a3c cmp      r0, #0
+003b6a40 beq      #0x3b6a48
+003b6a44 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b6a48 add      r5, r5, #0xc
+003b6a4c cmp      r6, r5
+003b6a50 bne      #0x3b6a38
+003b6a54 ldr      r0, [sp, #0x4c]
+003b6a58 ldr      ip, [sp, #0x10]
+003b6a5c str      r7, [ip, #0x38]
+003b6a60 b        #0x3b6258 ; -> 003b6258 $a
+003b6a64 bhs      #0x3b60b0
+003b6a68 ldr      ip, [sp, #8]
+003b6a6c add      r8, ip, ip, lsl #1
+003b6a70 add      r8, r1, r8, lsl #2
+003b6a74 cmp      sl, r8
+003b6a78 moveq    r5, r6
+003b6a7c beq      #0x3b6ad4
+003b6a80 mov      r7, r8
+003b6a84 ldm      r7, {r5, r6}
+003b6a88 cmp      r5, r6
+003b6a8c beq      #0x3b6ab0
+003b6a90 add      r0, r5, #0xc
+003b6a94 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6a98 add      r0, r5, #8
+003b6a9c add      r5, r5, #0x14
+003b6aa0 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6aa4 cmp      r6, r5
+003b6aa8 bne      #0x3b6a90
+003b6aac ldr      r5, [r7]
+003b6ab0 cmp      r5, #0
+003b6ab4 beq      #0x3b6ac0
+003b6ab8 mov      r0, r5
+003b6abc bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b6ac0 add      r7, r7, #0xc
+003b6ac4 cmp      sl, r7
+003b6ac8 bne      #0x3b6a84
+003b6acc ldr      r5, [sp, #0x40]
+003b6ad0 ldr      r6, [sp, #0x44]
+003b6ad4 ldr      ip, [sp, #0x10]
+003b6ad8 str      r8, [ip, #0x2c]
+003b6adc b        #0x3b6078 ; -> 003b6078 $a
+003b6ae0 subs     ip, ip, r1
+003b6ae4 str      ip, [sp, #4]
+003b6ae8 moveq    sb, r3
+003b6aec beq      #0x3b6b3c
+003b6af0 mov      fp, ip
+003b6af4 mov      sb, r3
+003b6af8 str      r3, [sp, #0x18]
+003b6afc cmp      sb, #0
+003b6b00 beq      #0x3b6b28
+003b6b04 ldr      r3, [sp, #0xb4]
+003b6b08 add      r0, sb, #8
+003b6b0c add      r1, sp, #0xbc
+003b6b10 str      r3, [sb]
+003b6b14 ldr      r3, [sp, #0xb8]
+003b6b18 str      r3, [sb, #4]
+003b6b1c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6b20 ldrb     r3, [sp, #0xc0]
+003b6b24 strb     r3, [sb, #0xc]
+003b6b28 subs     fp, fp, #1
+003b6b2c add      sb, sb, #0x10
+003b6b30 bne      #0x3b6afc
+003b6b34 ldr      r3, [sp, #0x18]
+003b6b38 ldr      sb, [r5, #8]
+003b6b3c ldr      ip, [sp, #4]
+003b6b40 cmp      r7, r3
+003b6b44 add      sb, sb, ip, lsl #4
+003b6b48 str      sb, [r5, #8]
+003b6b4c beq      #0x3b76ac
+003b6b50 str      r8, [sp, #4]
+003b6b54 mov      fp, r7
+003b6b58 mov      r8, r3
+003b6b5c cmp      sb, #0
+003b6b60 beq      #0x3b6b88
+003b6b64 ldr      r3, [fp]
+003b6b68 add      r0, sb, #8
+003b6b6c add      r1, fp, #8
+003b6b70 str      r3, [sb]
+003b6b74 ldr      r3, [fp, #4]
+003b6b78 str      r3, [sb, #4]
+003b6b7c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6b80 ldrb     r3, [fp, #0xc]
+003b6b84 strb     r3, [sb, #0xc]
+003b6b88 add      fp, fp, #0x10
+003b6b8c add      sb, sb, #0x10
+003b6b90 cmp      r8, fp
+003b6b94 bne      #0x3b6b5c
+003b6b98 mov      r3, r8
+003b6b9c ldr      ip, [sp, #0x14]
+003b6ba0 ldr      r8, [sp, #4]
+003b6ba4 mov      sb, r3
+003b6ba8 ldr      r2, [r5, #8]
+003b6bac add      r2, r2, ip, lsl #4
+003b6bb0 str      r2, [r5, #8]
+003b6bb4 ldr      r3, [sp, #0xb4]
+003b6bb8 add      r0, r7, #8
+003b6bbc add      r1, sp, #0xbc
+003b6bc0 str      r3, [r7]
+003b6bc4 ldr      r3, [sp, #0xb8]
+003b6bc8 str      r3, [r7, #4]
+003b6bcc bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6bd0 ldrb     r3, [sp, #0xc0]
+003b6bd4 strb     r3, [r7, #0xc]
+003b6bd8 add      r7, r7, #0x10
+003b6bdc cmp      sb, r7
+003b6be0 bne      #0x3b6bb4
+003b6be4 add      r0, sp, #0xbc
+003b6be8 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6bec b        #0x3b578c ; -> 003b578c $a
+003b6bf0 mov      r3, ip
+003b6bf4 ldr      ip, [sp, #0x1c]
+003b6bf8 subs     r3, r3, ip
+003b6bfc str      r3, [sp, #8]
+003b6c00 beq      #0x3b76bc
+003b6c04 ldr      r6, [sp, #0x18]
+003b6c08 mov      sl, r3
+003b6c0c cmp      r6, #0
+003b6c10 beq      #0x3b6c40
+003b6c14 mov      r0, r6
+003b6c18 add      r1, sp, #0x100
+003b6c1c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6c20 ldr      r3, [sp, #0x104]
+003b6c24 str      r3, [r6, #4]
+003b6c28 ldr      r3, [sp, #0x108]
+003b6c2c str      r3, [r6, #8]
+003b6c30 ldr      r3, [sp, #0x10c]
+003b6c34 str      r3, [r6, #0xc]
+003b6c38 ldr      r3, [sp, #0x110]
+003b6c3c str      r3, [r6, #0x10]
+003b6c40 subs     sl, sl, #1
+003b6c44 add      r6, r6, #0x14
+003b6c48 bne      #0x3b6c0c
+003b6c4c ldr      r3, [r5, #8]
+003b6c50 ldr      ip, [sp, #0x18]
+003b6c54 ldr      r2, [sp, #8]
+003b6c58 cmp      r8, ip
+003b6c5c add      r6, r2, r2, lsl #2
+003b6c60 add      r6, r3, r6, lsl #2
+003b6c64 str      r6, [r5, #8]
+003b6c68 beq      #0x3b7684
+003b6c6c str      sb, [sp, #8]
+003b6c70 mov      sl, r8
+003b6c74 mov      sb, ip
+003b6c78 cmp      r6, #0
+003b6c7c beq      #0x3b6cac
+003b6c80 mov      r0, r6
+003b6c84 mov      r1, sl
+003b6c88 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6c8c ldr      r3, [sl, #4]
+003b6c90 str      r3, [r6, #4]
+003b6c94 ldr      r3, [sl, #8]
+003b6c98 str      r3, [r6, #8]
+003b6c9c ldr      r3, [sl, #0xc]
+003b6ca0 str      r3, [r6, #0xc]
+003b6ca4 ldr      r3, [sl, #0x10]
+003b6ca8 str      r3, [r6, #0x10]
+003b6cac add      sl, sl, #0x14
+003b6cb0 add      r6, r6, #0x14
+003b6cb4 cmp      sb, sl
+003b6cb8 bne      #0x3b6c78
+003b6cbc ldr      ip, [sp, #0x1c]
+003b6cc0 ldr      sb, [sp, #8]
+003b6cc4 ldr      r6, [sp, #0x18]
+003b6cc8 ldr      r3, [r5, #8]
+003b6ccc add      r2, ip, ip, lsl #2
+003b6cd0 add      r3, r3, r2, lsl #2
+003b6cd4 str      r3, [r5, #8]
+003b6cd8 mov      r0, r8
+003b6cdc add      r1, sp, #0x100
+003b6ce0 bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6ce4 ldr      r3, [sp, #0x104]
+003b6ce8 str      r3, [r8, #4]
+003b6cec ldr      r3, [sp, #0x108]
+003b6cf0 str      r3, [r8, #8]
+003b6cf4 ldr      r3, [sp, #0x10c]
+003b6cf8 str      r3, [r8, #0xc]
+003b6cfc ldr      r3, [sp, #0x110]
+003b6d00 str      r3, [r8, #0x10]
+003b6d04 add      r8, r8, #0x14
+003b6d08 cmp      r6, r8
+003b6d0c bne      #0x3b6cd8
+003b6d10 add      r0, sp, #0x100
+003b6d14 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6d18 ldr      r0, [sp, #4]
+003b6d1c b        #0x3b4e08 ; -> 003b4e08 CContainerStateAnimation::Load(CMemoryStream*)
+003b6d20 subs     ip, ip, r1
+003b6d24 mov      r2, r1
+003b6d28 str      ip, [sp, #0xc]
+003b6d2c moveq    r2, r3
+003b6d30 beq      #0x3b6d88
+003b6d34 mov      fp, ip
+003b6d38 mov      sb, r3
+003b6d3c str      r3, [sp, #0x20]
+003b6d40 cmp      sb, #0
+003b6d44 beq      #0x3b6d74
+003b6d48 ldr      r3, [sp, #0x114]
+003b6d4c add      r0, sb, #8
+003b6d50 add      r1, sp, #0x11c
+003b6d54 str      r3, [sb]
+003b6d58 ldr      r3, [sp, #0x118]
+003b6d5c str      r3, [sb, #4]
+003b6d60 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6d64 ldr      r3, [sp, #0x120]
+003b6d68 str      r3, [sb, #0xc]
+003b6d6c ldrb     r3, [sp, #0x124]
+003b6d70 strb     r3, [sb, #0x10]
+003b6d74 subs     fp, fp, #1
+003b6d78 add      sb, sb, #0x14
+003b6d7c bne      #0x3b6d40
+003b6d80 ldr      r3, [sp, #0x20]
+003b6d84 ldr      r2, [r5, #4]
+003b6d88 ldr      ip, [sp, #0xc]
+003b6d8c cmp      r7, r3
+003b6d90 add      sb, ip, ip, lsl #2
+003b6d94 add      sb, r2, sb, lsl #2
+003b6d98 str      sb, [r5, #4]
+003b6d9c beq      #0x3b7698
+003b6da0 str      r5, [sp, #0xc]
+003b6da4 mov      fp, r7
+003b6da8 mov      r5, r3
+003b6dac cmp      sb, #0
+003b6db0 beq      #0x3b6de0
+003b6db4 ldr      r3, [fp]
+003b6db8 add      r0, sb, #8
+003b6dbc add      r1, fp, #8
+003b6dc0 str      r3, [sb]
+003b6dc4 ldr      r3, [fp, #4]
+003b6dc8 str      r3, [sb, #4]
+003b6dcc bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6dd0 ldr      r3, [fp, #0xc]
+003b6dd4 str      r3, [sb, #0xc]
+003b6dd8 ldrb     r3, [fp, #0x10]
+003b6ddc strb     r3, [sb, #0x10]
+003b6de0 add      fp, fp, #0x14
+003b6de4 add      sb, sb, #0x14
+003b6de8 cmp      r5, fp
+003b6dec bne      #0x3b6dac
+003b6df0 mov      r3, r5
+003b6df4 ldr      ip, [sp, #0x1c]
+003b6df8 ldr      r5, [sp, #0xc]
+003b6dfc mov      sb, r3
+003b6e00 add      r2, ip, ip, lsl #2
+003b6e04 ldr      r1, [r5, #4]
+003b6e08 add      r2, r1, r2, lsl #2
+003b6e0c str      r2, [r5, #4]
+003b6e10 ldr      r3, [sp, #0x114]
+003b6e14 add      r0, r7, #8
+003b6e18 add      r1, sp, #0x11c
+003b6e1c str      r3, [r7]
+003b6e20 ldr      r3, [sp, #0x118]
+003b6e24 str      r3, [r7, #4]
+003b6e28 bl       #0x206c64 ; -> 00206c64 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::operator=(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b6e2c ldr      r3, [sp, #0x120]
+003b6e30 str      r3, [r7, #0xc]
+003b6e34 ldrb     r3, [sp, #0x124]
+003b6e38 strb     r3, [r7, #0x10]
+003b6e3c add      r7, r7, #0x14
+003b6e40 cmp      sb, r7
+003b6e44 bne      #0x3b6e10
+003b6e48 add      r0, sp, #0x11c
+003b6e4c bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6e50 ldr      r0, [sp, #8]
+003b6e54 b        #0x3b5f6c ; -> 003b5f6c $a
+003b6e58 ldr      r3, [sp, #8]
+003b6e5c ldr      ip, [sp, #4]
+003b6e60 add      r8, r8, r3, lsl #4
+003b6e64 cmp      ip, r8
+003b6e68 moveq    r5, fp
+003b6e6c beq      #0x3b6ed8
+003b6e70 add      sb, r8, #4
+003b6e74 mov      r7, r8
+003b6e78 mov      fp, ip
+003b6e7c rsb      sl, r8, r7
+003b6e80 mov      r3, sl
+003b6e84 ldr      r5, [r3, sb]!
+003b6e88 ldr      r6, [r3, #4]
+003b6e8c cmp      r5, r6
+003b6e90 beq      #0x3b6eac
+003b6e94 add      r0, r5, #8
+003b6e98 add      r5, r5, #0x10
+003b6e9c bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6ea0 cmp      r6, r5
+003b6ea4 bne      #0x3b6e94
+003b6ea8 ldr      r5, [sl, sb]
+003b6eac cmp      r5, #0
+003b6eb0 beq      #0x3b6ebc
+003b6eb4 mov      r0, r5
+003b6eb8 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b6ebc mov      r0, r7
+003b6ec0 add      r7, r7, #0x10
+003b6ec4 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6ec8 cmp      fp, r7
+003b6ecc bne      #0x3b6e7c
+003b6ed0 ldr      r5, [sp, #0x78]
+003b6ed4 ldr      fp, [sp, #0x7c]
+003b6ed8 ldr      ip, [sp, #0x10]
+003b6edc add      r3, sp, #0x74
+003b6ee0 str      r3, [sp, #0xc]
+003b6ee4 str      r8, [ip, #0x14]
+003b6ee8 cmp      r5, fp
+003b6eec beq      #0x3b6f08
+003b6ef0 add      r0, r5, #8
+003b6ef4 add      r5, r5, #0x10
+003b6ef8 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6efc cmp      r5, fp
+003b6f00 bne      #0x3b6ef0
+003b6f04 ldr      r5, [sp, #0x78]
+003b6f08 cmp      r5, #0
+003b6f0c beq      #0x3b556c
+003b6f10 mov      r0, r5
+003b6f14 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b6f18 b        #0x3b556c ; -> 003b556c $a
+003b6f1c ldr      r3, [sp, #0xc]
+003b6f20 ldr      ip, [sp, #4]
+003b6f24 add      r8, r8, r3, lsl #4
+003b6f28 cmp      ip, r8
+003b6f2c moveq    r5, fp
+003b6f30 beq      #0x3b6f9c
+003b6f34 add      sb, r8, #4
+003b6f38 mov      r7, r8
+003b6f3c mov      fp, ip
+003b6f40 rsb      sl, r8, r7
+003b6f44 mov      r3, sl
+003b6f48 ldr      r5, [r3, sb]!
+003b6f4c ldr      r6, [r3, #4]
+003b6f50 cmp      r5, r6
+003b6f54 beq      #0x3b6f70
+003b6f58 mov      r0, r5
+003b6f5c add      r5, r5, #0x14
+003b6f60 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6f64 cmp      r6, r5
+003b6f68 bne      #0x3b6f58
+003b6f6c ldr      r5, [sl, sb]
+003b6f70 cmp      r5, #0
+003b6f74 beq      #0x3b6f80
+003b6f78 mov      r0, r5
+003b6f7c bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b6f80 mov      r0, r7
+003b6f84 add      r7, r7, #0x10
+003b6f88 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6f8c cmp      fp, r7
+003b6f90 bne      #0x3b6f40
+003b6f94 ldr      r5, [sp, #0x68]
+003b6f98 ldr      fp, [sp, #0x6c]
+003b6f9c ldr      ip, [sp, #0x10]
+003b6fa0 add      r3, sp, #0x64
+003b6fa4 str      r3, [sp, #8]
+003b6fa8 str      r8, [ip, #8]
+003b6fac cmp      fp, r5
+003b6fb0 beq      #0x3b6fcc
+003b6fb4 mov      r0, r5
+003b6fb8 add      r5, r5, #0x14
+003b6fbc bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b6fc0 cmp      r5, fp
+003b6fc4 bne      #0x3b6fb4
+003b6fc8 ldr      r5, [sp, #0x68]
+003b6fcc cmp      r5, #0
+003b6fd0 beq      #0x3b4b6c
+003b6fd4 mov      r0, r5
+003b6fd8 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b6fdc b        #0x3b4b6c ; -> 003b4b6c CContainerStateAnimation::Load(CMemoryStream*)
+003b6fe0 add      r3, sp, #0x74
+003b6fe4 str      r3, [sp, #0xc]
+003b6fe8 b        #0x3b556c ; -> 003b556c $a
+003b6fec add      r3, sp, #0x64
+003b6ff0 str      r3, [sp, #8]
+003b6ff4 b        #0x3b4b6c ; -> 003b4b6c CContainerStateAnimation::Load(CMemoryStream*)
+003b6ff8 mov      r4, r5
+003b6ffc b        #0x3b4750 ; -> 003b4750 CContainerStateAnimation::Load(CMemoryStream*)
+003b7000 str      r3, [sp, #0x18]
+003b7004 mov      r2, r3
+003b7008 b        #0x3b4ca8 ; -> 003b4ca8 CContainerStateAnimation::Load(CMemoryStream*)
+003b700c mov      r6, r3
+003b7010 mov      r4, r3
+003b7014 b        #0x3b5a38 ; -> 003b5a38 $a
+003b7018 mov      r6, r3
+003b701c mov      r5, r3
+003b7020 b        #0x3b594c ; -> 003b594c $a
+003b7024 mov      r4, r3
+003b7028 b        #0x3b51ec ; -> 003b51ec CContainerStateAnimation::Load(CMemoryStream*)
+003b702c mov      r4, r3
+003b7030 b        #0x3b50b8 ; -> 003b50b8 CContainerStateAnimation::Load(CMemoryStream*)
+003b7034 mov      r5, r6
+003b7038 b        #0x3b4f9c ; -> 003b4f9c CContainerStateAnimation::Load(CMemoryStream*)
+003b703c mov      r6, r3
+003b7040 mov      r4, r3
+003b7044 b        #0x3b5b30 ; -> 003b5b30 $a
+003b7048 mov      r4, r3
+003b704c b        #0x3b48a0 ; -> 003b48a0 CContainerStateAnimation::Load(CMemoryStream*)
+003b7050 mov      r4, r3
+003b7054 b        #0x3b4a04 ; -> 003b4a04 CContainerStateAnimation::Load(CMemoryStream*)
+003b7058 str      r3, [sp, #0x14]
+003b705c mov      ip, r3
+003b7060 b        #0x3b565c ; -> 003b565c $a
+003b7064 str      r3, [sp, #0x1c]
+003b7068 mov      r2, r3
+003b706c b        #0x3b5e0c ; -> 003b5e0c $a
+003b7070 cmp      r3, r2
+003b7074 movhs    r3, r2
+003b7078 str      r3, [sp, #0x28]
+003b707c cmp      r3, #0
+003b7080 bne      #0x3b46bc
+003b7084 ldr      r3, [sp, #0x28]
+003b7088 str      r3, [sp, #0x14]
+003b708c mov      ip, r3
+003b7090 b        #0x3b46d0 ; -> 003b46d0 CContainerStateAnimation::Load(CMemoryStream*)
+003b7094 cmp      r3, r2
+003b7098 movhs    r3, r2
+003b709c str      r3, [sp, #8]
+003b70a0 cmp      r3, #0
+003b70a4 bne      #0x3b58c0
+003b70a8 ldr      r3, [sp, #8]
+003b70ac str      r3, [sp, #0xc]
+003b70b0 mov      ip, r3
+003b70b4 b        #0x3b58d8 ; -> 003b58d8 $a
+003b70b8 cmp      r3, r2
+003b70bc movhs    r3, r2
+003b70c0 str      r3, [sp, #0x20]
+003b70c4 cmp      r3, #0
+003b70c8 bne      #0x3b4f28
+003b70cc ldr      r3, [sp, #0x20]
+003b70d0 str      r3, [sp, #0x14]
+003b70d4 mov      ip, r3
+003b70d8 b        #0x3b4f3c ; -> 003b4f3c CContainerStateAnimation::Load(CMemoryStream*)
+003b70dc mov      ip, r7
+003b70e0 mov      r7, r2
+003b70e4 b        #0x3b65e8 ; -> 003b65e8 $a
+003b70e8 add      r3, sp, #0x74
+003b70ec add      r0, sp, #0xa4
+003b70f0 str      r3, [sp, #0xc]
+003b70f4 mov      r1, r3
+003b70f8 bl       #0x3b7928 ; -> 003b7928 CContainerTracks_Sound::CContainerTracks_Sound(CContainerTracks_Sound const&)
+003b70fc ldr      ip, [sp, #0x10]
+003b7100 ldr      r2, [sp, #0x1c]
+003b7104 ldr      r5, [ip, #0x14]
+003b7108 ldr      ip, [sp, #4]
+003b710c rsb      r3, ip, r5
+003b7110 asr      r3, r3, #4
+003b7114 str      r3, [sp, #0x14]
+003b7118 cmp      r2, r3
+003b711c blo      #0x3b780c
+003b7120 subs     ip, r2, r3
+003b7124 str      ip, [sp, #0x18]
+003b7128 beq      #0x3b7894
+003b712c add      sl, r5, #4
+003b7130 add      sb, r5, #0xc
+003b7134 mov      r8, ip
+003b7138 str      r5, [sp, #0x1c]
+003b713c subs     r0, sl, #4
+003b7140 beq      #0x3b71e0
+003b7144 add      r1, sp, #0xa4
+003b7148 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b714c ldr      r2, [sp, #0xac]
+003b7150 ldr      r3, [sp, #0xa8]
+003b7154 str      fp, [sl]
+003b7158 rsb      r3, r3, r2
+003b715c str      fp, [sl, #4]
+003b7160 str      fp, [sl, #8]
+003b7164 asrs     r6, r3, #4
+003b7168 beq      #0x3b767c
+003b716c cmn      r6, #0xf0000001
+003b7170 bhi      #0x3b78c0
+003b7174 lsl      r6, r6, #4
+003b7178 mov      r0, r6
+003b717c bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b7180 mov      r5, r0
+003b7184 str      r5, [sb, #-8]
+003b7188 add      r6, r5, r6
+003b718c stmda    sb, {r5, r6}
+003b7190 ldr      r6, [sp, #0xa8]
+003b7194 ldr      r7, [sp, #0xac]
+003b7198 cmp      r6, r7
+003b719c beq      #0x3b71dc
+003b71a0 cmp      r5, #0
+003b71a4 beq      #0x3b71cc
+003b71a8 ldr      r3, [r6]
+003b71ac add      r0, r5, #8
+003b71b0 add      r1, r6, #8
+003b71b4 str      r3, [r5]
+003b71b8 ldr      r3, [r6, #4]
+003b71bc str      r3, [r5, #4]
+003b71c0 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b71c4 ldrb     r3, [r6, #0xc]
+003b71c8 strb     r3, [r5, #0xc]
+003b71cc add      r6, r6, #0x10
+003b71d0 add      r5, r5, #0x10
+003b71d4 cmp      r7, r6
+003b71d8 bne      #0x3b71a0
+003b71dc str      r5, [sl, #4]
+003b71e0 subs     r8, r8, #1
+003b71e4 add      sb, sb, #0x10
+003b71e8 add      sl, sl, #0x10
+003b71ec bne      #0x3b713c
+003b71f0 ldr      ip, [sp, #0x10]
+003b71f4 ldr      r5, [sp, #0x1c]
+003b71f8 ldr      r2, [ip, #0x14]
+003b71fc ldr      r3, [sp, #0x18]
+003b7200 mov      r1, r5
+003b7204 ldr      r0, [sp, #4]
+003b7208 add      r2, r2, r3, lsl #4
+003b720c str      r2, [ip, #0x14]
+003b7210 bl       #0x39d868 ; -> 0039d868 CContainerTracks_Sound* std::__uninitialized_move_a<CContainerTracks_Sound*, CContainerTracks_Sound*, std::allocator<CContainerTracks_Sound> >(CContainerTracks_Sound*, CContainerTracks_Sound*, CContainerTracks_Sound*, std::allocator<CContainerTracks_Sound>&) [clone .isra.2505]
+003b7214 ldr      ip, [sp, #0x10]
+003b7218 ldr      r3, [ip, #0x14]
+003b721c ldr      ip, [sp, #4]
+003b7220 cmp      ip, r5
+003b7224 ldr      ip, [sp, #0x14]
+003b7228 add      r3, r3, ip, lsl #4
+003b722c ldr      ip, [sp, #0x10]
+003b7230 str      r3, [ip, #0x14]
+003b7234 beq      #0x3b7254
+003b7238 ldr      r6, [sp, #4]
+003b723c mov      r0, r6
+003b7240 add      r1, sp, #0xa4
+003b7244 add      r6, r6, #0x10
+003b7248 bl       #0x3d3894 ; -> 003d3894 CContainerTracks_Sound::operator=(CContainerTracks_Sound const&)
+003b724c cmp      r5, r6
+003b7250 bne      #0x3b723c
+003b7254 ldr      r5, [sp, #0xa8]
+003b7258 ldr      r6, [sp, #0xac]
+003b725c cmp      r5, r6
+003b7260 beq      #0x3b727c
+003b7264 add      r0, r5, #8
+003b7268 add      r5, r5, #0x10
+003b726c bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b7270 cmp      r6, r5
+003b7274 bne      #0x3b7264
+003b7278 ldr      r5, [sp, #0xa8]
+003b727c cmp      r5, #0
+003b7280 beq      #0x3b728c
+003b7284 mov      r0, r5
+003b7288 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b728c add      r0, sp, #0xa4
+003b7290 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b7294 ldr      r5, [sp, #0x78]
+003b7298 ldr      fp, [sp, #0x7c]
+003b729c b        #0x3b6ee8 ; -> 003b6ee8 $a
+003b72a0 add      r3, sp, #0x64
+003b72a4 add      r0, sp, #0x94
+003b72a8 str      r3, [sp, #8]
+003b72ac mov      r1, r3
+003b72b0 bl       #0x3b4510 ; -> 003b4510 CContainerTracks_GameEvent::CContainerTracks_GameEvent(CContainerTracks_GameEvent const&)
+003b72b4 ldr      ip, [sp, #0x10]
+003b72b8 ldr      r2, [sp, #0x20]
+003b72bc ldr      r5, [ip, #8]
+003b72c0 ldr      ip, [sp, #4]
+003b72c4 rsb      r3, ip, r5
+003b72c8 asr      r3, r3, #4
+003b72cc str      r3, [sp, #0x18]
+003b72d0 cmp      r2, r3
+003b72d4 blo      #0x3b7784
+003b72d8 subs     ip, r2, r3
+003b72dc str      ip, [sp, #0x1c]
+003b72e0 beq      #0x3b78a8
+003b72e4 add      sl, r5, #4
+003b72e8 add      sb, r5, #0xc
+003b72ec mov      r8, ip
+003b72f0 str      r5, [sp, #0x20]
+003b72f4 movw     ip, #0xcccc
+003b72f8 movt     ip, #0xccc
+003b72fc str      ip, [sp, #0x14]
+003b7300 subs     r0, sl, #4
+003b7304 beq      #0x3b73c8
+003b7308 add      r1, sp, #0x94
+003b730c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b7310 ldr      r2, [sp, #0x9c]
+003b7314 ldr      r3, [sp, #0x98]
+003b7318 str      fp, [sl]
+003b731c rsb      r3, r3, r2
+003b7320 str      fp, [sl, #4]
+003b7324 str      fp, [sl, #8]
+003b7328 asr      r3, r3, #2
+003b732c add      r2, r3, r3, lsl #1
+003b7330 add      r2, r2, r2, lsl #4
+003b7334 add      r2, r2, r2, lsl #8
+003b7338 add      r2, r2, r2, lsl #16
+003b733c adds     r6, r3, r2, lsl #2
+003b7340 beq      #0x3b7674
+003b7344 ldr      r2, [sp, #0x14]
+003b7348 cmp      r6, r2
+003b734c bhi      #0x3b78c0
+003b7350 add      r6, r6, r6, lsl #2
+003b7354 lsl      r6, r6, #2
+003b7358 mov      r0, r6
+003b735c bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b7360 mov      r5, r0
+003b7364 str      r5, [sb, #-8]
+003b7368 add      r6, r5, r6
+003b736c stmda    sb, {r5, r6}
+003b7370 ldr      r6, [sp, #0x98]
+003b7374 ldr      r7, [sp, #0x9c]
+003b7378 cmp      r6, r7
+003b737c beq      #0x3b73c4
+003b7380 cmp      r5, #0
+003b7384 beq      #0x3b73b4
+003b7388 mov      r0, r5
+003b738c mov      r1, r6
+003b7390 bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b7394 ldr      r3, [r6, #4]
+003b7398 str      r3, [r5, #4]
+003b739c ldr      r3, [r6, #8]
+003b73a0 str      r3, [r5, #8]
+003b73a4 ldr      r3, [r6, #0xc]
+003b73a8 str      r3, [r5, #0xc]
+003b73ac ldr      r3, [r6, #0x10]
+003b73b0 str      r3, [r5, #0x10]
+003b73b4 add      r6, r6, #0x14
+003b73b8 add      r5, r5, #0x14
+003b73bc cmp      r7, r6
+003b73c0 bne      #0x3b7380
+003b73c4 str      r5, [sl, #4]
+003b73c8 subs     r8, r8, #1
+003b73cc add      sb, sb, #0x10
+003b73d0 add      sl, sl, #0x10
+003b73d4 bne      #0x3b7300
+003b73d8 ldr      ip, [sp, #0x10]
+003b73dc ldr      r5, [sp, #0x20]
+003b73e0 ldr      r2, [ip, #8]
+003b73e4 ldr      r3, [sp, #0x1c]
+003b73e8 mov      r1, r5
+003b73ec ldr      r0, [sp, #4]
+003b73f0 add      r2, r2, r3, lsl #4
+003b73f4 str      r2, [ip, #8]
+003b73f8 bl       #0x39d6ec ; -> 0039d6ec CContainerTracks_GameEvent* std::__uninitialized_move_a<CContainerTracks_GameEvent*, CContainerTracks_GameEvent*, std::allocator<CContainerTracks_GameEvent> >(CContainerTracks_GameEvent*, CContainerTracks_GameEvent*, CContainerTracks_GameEvent*, std::allocator<CContainerTracks_GameEvent>&) [clone .isra.2502]
+003b73fc ldr      ip, [sp, #0x10]
+003b7400 ldr      r3, [ip, #8]
+003b7404 ldr      ip, [sp, #4]
+003b7408 cmp      ip, r5
+003b740c ldr      ip, [sp, #0x18]
+003b7410 add      r3, r3, ip, lsl #4
+003b7414 ldr      ip, [sp, #0x10]
+003b7418 str      r3, [ip, #8]
+003b741c beq      #0x3b743c
+003b7420 ldr      r6, [sp, #4]
+003b7424 mov      r0, r6
+003b7428 add      r1, sp, #0x94
+003b742c add      r6, r6, #0x10
+003b7430 bl       #0x3d3594 ; -> 003d3594 CContainerTracks_GameEvent::operator=(CContainerTracks_GameEvent const&)
+003b7434 cmp      r5, r6
+003b7438 bne      #0x3b7424
+003b743c ldr      r5, [sp, #0x98]
+003b7440 ldr      r6, [sp, #0x9c]
+003b7444 cmp      r5, r6
+003b7448 beq      #0x3b7464
+003b744c mov      r0, r5
+003b7450 add      r5, r5, #0x14
+003b7454 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b7458 cmp      r6, r5
+003b745c bne      #0x3b744c
+003b7460 ldr      r5, [sp, #0x98]
+003b7464 cmp      r5, #0
+003b7468 beq      #0x3b7474
+003b746c mov      r0, r5
+003b7470 bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b7474 add      r0, sp, #0x94
+003b7478 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b747c ldr      r5, [sp, #0x68]
+003b7480 ldr      fp, [sp, #0x6c]
+003b7484 b        #0x3b6fac ; -> 003b6fac $a
+003b7488 add      r1, sp, #0x34
+003b748c add      r0, sp, #0x58
+003b7490 bl       #0x3b79e0 ; -> 003b79e0 CContainerTracks_Script::CContainerTracks_Script(CContainerTracks_Script const&)
+003b7494 ldr      ip, [sp, #0x10]
+003b7498 ldr      r6, [ip, #0x20]
+003b749c rsb      r3, r5, r6
+003b74a0 asr      r3, r3, #2
+003b74a4 add      r2, r3, r3, lsl #2
+003b74a8 add      r2, r2, r2, lsl #4
+003b74ac add      r2, r2, r2, lsl #8
+003b74b0 add      r2, r2, r2, lsl #16
+003b74b4 add      r2, r3, r2, lsl #1
+003b74b8 ldr      r3, [sp, #4]
+003b74bc str      r2, [sp, #8]
+003b74c0 cmp      r3, r2
+003b74c4 blo      #0x3b76f0
+003b74c8 mov      r2, r3
+003b74cc ldr      r3, [sp, #8]
+003b74d0 subs     r2, r2, r3
+003b74d4 str      r2, [sp, #0xc]
+003b74d8 beq      #0x3b78a0
+003b74dc mov      sl, r2
+003b74e0 mov      sb, r6
+003b74e4 movw     ip, #0xcccc
+003b74e8 str      r5, [sp, #0x18]
+003b74ec movt     ip, #0xccc
+003b74f0 str      ip, [sp, #4]
+003b74f4 cmp      sb, #0
+003b74f8 beq      #0x3b75b4
+003b74fc ldr      r2, [sp, #0x5c]
+003b7500 ldr      r3, [sp, #0x58]
+003b7504 str      fp, [sb]
+003b7508 rsb      r3, r3, r2
+003b750c str      fp, [sb, #4]
+003b7510 str      fp, [sb, #8]
+003b7514 asr      r3, r3, #2
+003b7518 add      r7, r3, r3, lsl #1
+003b751c add      r7, r7, r7, lsl #4
+003b7520 add      r7, r7, r7, lsl #8
+003b7524 add      r7, r7, r7, lsl #16
+003b7528 adds     r7, r3, r7, lsl #2
+003b752c beq      #0x3b766c
+003b7530 ldr      r2, [sp, #4]
+003b7534 cmp      r7, r2
+003b7538 bhi      #0x3b78c0
+003b753c add      r7, r7, r7, lsl #2
+003b7540 lsl      r7, r7, #2
+003b7544 mov      r0, r7
+003b7548 bl       #0x3e91f8 ; -> 003e91f8 operator new(unsigned int)
+003b754c mov      r5, r0
+003b7550 str      r5, [sb]
+003b7554 add      r7, r5, r7
+003b7558 stmib    sb, {r5, r7}
+003b755c ldr      r7, [sp, #0x58]
+003b7560 ldr      r8, [sp, #0x5c]
+003b7564 cmp      r7, r8
+003b7568 beq      #0x3b75b0
+003b756c cmp      r5, #0
+003b7570 beq      #0x3b75a0
+003b7574 ldr      r3, [r7]
+003b7578 add      r0, r5, #8
+003b757c add      r1, r7, #8
+003b7580 str      r3, [r5]
+003b7584 ldr      r3, [r7, #4]
+003b7588 str      r3, [r5, #4]
+003b758c bl       #0x206a60 ; -> 00206a60 std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::basic_string(std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> > const&)
+003b7590 ldr      r3, [r7, #0xc]
+003b7594 str      r3, [r5, #0xc]
+003b7598 ldrb     r3, [r7, #0x10]
+003b759c strb     r3, [r5, #0x10]
+003b75a0 add      r7, r7, #0x14
+003b75a4 add      r5, r5, #0x14
+003b75a8 cmp      r8, r7
+003b75ac bne      #0x3b756c
+003b75b0 str      r5, [sb, #4]
+003b75b4 subs     sl, sl, #1
+003b75b8 add      sb, sb, #0xc
+003b75bc bne      #0x3b74f4
+003b75c0 ldr      ip, [sp, #0x10]
+003b75c4 ldr      r5, [sp, #0x18]
+003b75c8 ldr      r3, [ip, #0x20]
+003b75cc ldr      ip, [sp, #0xc]
+003b75d0 mov      r0, r5
+003b75d4 mov      r1, r6
+003b75d8 add      r2, ip, ip, lsl #1
+003b75dc ldr      ip, [sp, #0x10]
+003b75e0 add      r2, r3, r2, lsl #2
+003b75e4 str      r2, [ip, #0x20]
+003b75e8 bl       #0x39d9b0 ; -> 0039d9b0 CContainerTracks_Script* std::__uninitialized_move_a<CContainerTracks_Script*, CContainerTracks_Script*, std::allocator<CContainerTracks_Script> >(CContainerTracks_Script*, CContainerTracks_Script*, CContainerTracks_Script*, std::allocator<CContainerTracks_Script>&) [clone .isra.2508]
+003b75ec ldr      ip, [sp, #0x10]
+003b75f0 cmp      r5, r6
+003b75f4 ldr      r3, [ip, #0x20]
+003b75f8 ldr      ip, [sp, #8]
+003b75fc add      r2, ip, ip, lsl #1
+003b7600 ldr      ip, [sp, #0x10]
+003b7604 add      r3, r3, r2, lsl #2
+003b7608 str      r3, [ip, #0x20]
+003b760c beq      #0x3b7628
+003b7610 mov      r0, r5
+003b7614 add      r1, sp, #0x58
+003b7618 add      r5, r5, #0xc
+003b761c bl       #0x3d3ae0 ; -> 003d3ae0 CContainerTracks_Script::operator=(CContainerTracks_Script const&)
+003b7620 cmp      r6, r5
+003b7624 bne      #0x3b7610
+003b7628 ldr      r5, [sp, #0x58]
+003b762c ldr      r6, [sp, #0x5c]
+003b7630 cmp      r5, r6
+003b7634 beq      #0x3b7650
+003b7638 add      r0, r5, #8
+003b763c add      r5, r5, #0x14
+003b7640 bl       #0x2069fc ; -> 002069fc std::basic_string<char, std::char_traits<char>, glitch::core::SAllocator<char, (glitch::memory::E_MEMORY_HINT)0> >::~basic_string()
+003b7644 cmp      r6, r5
+003b7648 bne      #0x3b7638
+003b764c ldr      r5, [sp, #0x58]
+003b7650 cmp      r5, #0
+003b7654 beq      #0x3b7660
+003b7658 mov      r0, r5
+003b765c bl       #0x3e9260 ; -> 003e9260 operator delete(void*)
+003b7660 ldr      r5, [sp, #0x34]
+003b7664 ldr      fp, [sp, #0x38]
+003b7668 b        #0x3b5cac ; -> 003b5cac $a
+003b766c mov      r5, r7
+003b7670 b        #0x3b7550 ; -> 003b7550 $a
+003b7674 mov      r5, r6
+003b7678 b        #0x3b7364 ; -> 003b7364 $a
+003b767c mov      r5, r6
+003b7680 b        #0x3b7184 ; -> 003b7184 $a
+003b7684 ldr      r2, [sp, #0x1c]
+003b7688 add      r3, r2, r2, lsl #2
+003b768c add      r6, r6, r3, lsl #2
+003b7690 str      r6, [r5, #8]
+003b7694 b        #0x3b554c ; -> 003b554c CContainerStateAnimation::Load(CMemoryStream*)
+003b7698 ldr      ip, [sp, #0x1c]
+003b769c add      r3, ip, ip, lsl #2
+003b76a0 add      sb, sb, r3, lsl #2
+003b76a4 str      sb, [r5, #4]
+003b76a8 b        #0x3b6884 ; -> 003b6884 $a
+003b76ac ldr      r3, [sp, #0x14]
+003b76b0 add      sb, sb, r3, lsl #4
+003b76b4 str      sb, [r5, #8]
+003b76b8 b        #0x3b6a0c ; -> 003b6a0c $a
+003b76bc ldr      r3, [sp, #0x18]
+003b76c0 mov      ip, r3
+003b76c4 b        #0x3b6c54 ; -> 003b6c54 $a
+003b76c8 ldr      sl, [sp, #0x14]
+003b76cc b        #0x3b513c ; -> 003b513c CContainerStateAnimation::Load(CMemoryStream*)
+003b76d0 ldr      r2, [sp, #0x18]
+003b76d4 b        #0x3b5280 ; -> 003b5280 CContainerStateAnimation::Load(CMemoryStream*)
+003b76d8 ldr      sl, [sp, #0x14]
+003b76dc b        #0x3b492c ; -> 003b492c CContainerStateAnimation::Load(CMemoryStream*)
+003b76e0 ldr      r2, [sp, #0x1c]
+003b76e4 b        #0x3b4aa0 ; -> 003b4aa0 CContainerStateAnimation::Load(CMemoryStream*)
+003b76e8 ldr      sl, [sp, #0xc]
+003b76ec b        #0x3b5aac ; -> 003b5aac $a
+003b76f0 add      r8, r3, r3, lsl #1
+003b76f4 mov      r2, r6
+003b76f8 mov      r1, r6
+003b76fc lsl      r8, r8, #2
+003b7700 rsb      r7, r8, r6
+003b7704 mov      r0, r7
+003b7708 bl       #0x39d9b0 ; -> 0039d9b0 CContainerTracks_Script* std::__uninitialized_move_a<CContainerTracks_Script*, CContainerTracks_Script*, std::allocator<CContainerTracks_Script> >(CContainerTracks_Script*, CContainerTracks_Script*, CContainerTracks_Script*, std::allocator<CContainerTracks_Script>&) [clone .isra.2508]
+003b770c rsb      r3, r5, r7
+003b7710 ldr      ip, [sp, #0x10]
+003b7714 asr      r3, r3, #2
+003b7718 add      sl, r3, r3, lsl #2
+003b771c ldr      r2, [ip, #0x20]
+003b7720 add      sl, sl, sl, lsl #4
+003b7724 add      r2, r2, r8
+003b7728 str      r2, [ip, #0x20]
+003b772c add      sl, sl, sl, lsl #8
+003b7730 add      sl, sl, sl, lsl #16
+003b7734 add      sl, r3, sl, lsl #1
+003b7738 cmp      sl, fp
+003b773c ble      #0x3b775c
+003b7740 sub      r6, r6, #0xc
+003b7744 sub      r7, r7, #0xc
+003b7748 mov      r0, r6
+003b774c mov      r1, r7
+003b7750 bl       #0x3d3ae0 ; -> 003d3ae0 CContainerTracks_Script::operator=(CContainerTracks_Script const&)
+003b7754 subs     sl, sl, #1
+003b7758 bne      #0x3b7740
+003b775c add      r8, r5, r8
+003b7760 cmp      r5, r8
+003b7764 beq      #0x3b7628
+003b7768 mov      r0, r5
+003b776c add      r1, sp, #0x58
+003b7770 add      r5, r5, #0xc
+003b7774 bl       #0x3d3ae0 ; -> 003d3ae0 CContainerTracks_Script::operator=(CContainerTracks_Script const&)
+003b7778 cmp      r8, r5
+003b777c bne      #0x3b7768
+003b7780 b        #0x3b7628 ; -> 003b7628 $a
+003b7784 lsl      r8, r2, #4
+003b7788 mov      r1, r5
+003b778c rsb      r6, r8, r5
+003b7790 mov      r2, r5
+003b7794 mov      r0, r6
+003b7798 bl       #0x39d6ec ; -> 0039d6ec CContainerTracks_GameEvent* std::__uninitialized_move_a<CContainerTracks_GameEvent*, CContainerTracks_GameEvent*, std::allocator<CContainerTracks_GameEvent> >(CContainerTracks_GameEvent*, CContainerTracks_GameEvent*, CContainerTracks_GameEvent*, std::allocator<CContainerTracks_GameEvent>&) [clone .isra.2502]
+003b779c ldr      r3, [sp, #4]
+003b77a0 ldr      ip, [sp, #0x10]
+003b77a4 rsb      r7, r3, r6
+003b77a8 asr      r7, r7, #4
+003b77ac ldr      r3, [ip, #8]
+003b77b0 cmp      r7, fp
+003b77b4 add      r3, r3, r8
+003b77b8 str      r3, [ip, #8]
+003b77bc ble      #0x3b77dc
+003b77c0 sub      r5, r5, #0x10
+003b77c4 sub      r6, r6, #0x10
+003b77c8 mov      r0, r5
+003b77cc mov      r1, r6
+003b77d0 bl       #0x3d3594 ; -> 003d3594 CContainerTracks_GameEvent::operator=(CContainerTracks_GameEvent const&)
+003b77d4 subs     r7, r7, #1
+003b77d8 bne      #0x3b77c0
+003b77dc ldr      r3, [sp, #4]
+003b77e0 add      r8, r3, r8
+003b77e4 cmp      r3, r8
+003b77e8 beq      #0x3b743c
+003b77ec mov      r5, r3
+003b77f0 mov      r0, r5
+003b77f4 add      r1, sp, #0x94
+003b77f8 add      r5, r5, #0x10
+003b77fc bl       #0x3d3594 ; -> 003d3594 CContainerTracks_GameEvent::operator=(CContainerTracks_GameEvent const&)
+003b7800 cmp      r8, r5
+003b7804 bne      #0x3b77f0
+003b7808 b        #0x3b743c ; -> 003b743c $a
+003b780c lsl      r8, r2, #4
+003b7810 mov      r1, r5
+003b7814 rsb      r6, r8, r5
+003b7818 mov      r2, r5
+003b781c mov      r0, r6
+003b7820 bl       #0x39d868 ; -> 0039d868 CContainerTracks_Sound* std::__uninitialized_move_a<CContainerTracks_Sound*, CContainerTracks_Sound*, std::allocator<CContainerTracks_Sound> >(CContainerTracks_Sound*, CContainerTracks_Sound*, CContainerTracks_Sound*, std::allocator<CContainerTracks_Sound>&) [clone .isra.2505]
+003b7824 ldr      r3, [sp, #4]
+003b7828 ldr      ip, [sp, #0x10]
+003b782c rsb      r7, r3, r6
+003b7830 asr      r7, r7, #4
+003b7834 ldr      r3, [ip, #0x14]
+003b7838 cmp      r7, fp
+003b783c add      r3, r3, r8
+003b7840 str      r3, [ip, #0x14]
+003b7844 ble      #0x3b7864
+003b7848 sub      r5, r5, #0x10
+003b784c sub      r6, r6, #0x10
+003b7850 mov      r0, r5
+003b7854 mov      r1, r6
+003b7858 bl       #0x3d3894 ; -> 003d3894 CContainerTracks_Sound::operator=(CContainerTracks_Sound const&)
+003b785c subs     r7, r7, #1
+003b7860 bne      #0x3b7848
+003b7864 ldr      r3, [sp, #4]
+003b7868 add      r8, r3, r8
+003b786c cmp      r3, r8
+003b7870 beq      #0x3b7254
+003b7874 mov      r5, r3
+003b7878 mov      r0, r5
+003b787c add      r1, sp, #0xa4
+003b7880 add      r5, r5, #0x10
+003b7884 bl       #0x3d3894 ; -> 003d3894 CContainerTracks_Sound::operator=(CContainerTracks_Sound const&)
+003b7888 cmp      r8, r5
+003b788c bne      #0x3b7878
+003b7890 b        #0x3b7254 ; -> 003b7254 $a
+003b7894 mov      r2, r5
+003b7898 ldr      ip, [sp, #0x10]
+003b789c b        #0x3b71fc ; -> 003b71fc $a
+003b78a0 mov      r3, r6
+003b78a4 b        #0x3b75cc ; -> 003b75cc $a
+003b78a8 mov      r2, r5
+003b78ac ldr      ip, [sp, #0x10]
+003b78b0 b        #0x3b73e4 ; -> 003b73e4 $a
+003b78b4 ldr      r0, [pc, #0x50] ; [003b790c]=0078581c $a+300
+003b78b8 add      r0, pc, r0
+003b78bc bl       #0xa6d760 ; -> 00a6d760 std::__throw_length_error(char const*)
+003b78c0 bl       #0xa6d514 ; -> 00a6d514 std::__throw_bad_alloc()
+003b78c4 ldr      r0, [pc, #0x44] ; [003b7910]=0078580c $a+284
+003b78c8 add      r0, pc, r0
+003b78cc bl       #0xa6d760 ; -> 00a6d760 std::__throw_length_error(char const*)
+003b78d0 ldr      r0, [pc, #0x3c] ; [003b7914]=00785800 $a+272
+003b78d4 add      r0, pc, r0
+003b78d8 bl       #0xa6d760 ; -> 00a6d760 std::__throw_length_error(char const*)
+003b78dc ldr      r0, [pc, #0x34] ; [003b7918]=007857f4 $a+260
+003b78e0 add      r0, pc, r0
+003b78e4 bl       #0xa6d760 ; -> 00a6d760 std::__throw_length_error(char const*)
+003b78e8 ldr      r0, [pc, #0x2c] ; [003b791c]=007857e8 $a+248
+003b78ec add      r0, pc, r0
+003b78f0 bl       #0xa6d760 ; -> 00a6d760 std::__throw_length_error(char const*)
+003b78f4 ldr      r0, [pc, #0x24] ; [003b7920]=007857dc $a+236
+003b78f8 add      r0, pc, r0
+003b78fc bl       #0xa6d760 ; -> 00a6d760 std::__throw_length_error(char const*)
+003b7900 ldr      r0, [pc, #0x1c] ; [003b7924]=007857d0 $a+224
+003b7904 add      r0, pc, r0
+003b7908 bl       #0xa6d760 ; -> 00a6d760 std::__throw_length_error(char const*)
+003b790c rsbseq   r5, r8, ip, lsl r8
+003b7910 rsbseq   r5, r8, ip, lsl #16
+003b7914 rsbseq   r5, r8, r0, lsl #16
+003b7918 ldrshteq r5, [r8], #-0x74
+003b791c rsbseq   r5, r8, r8, ror #15
+003b7920 ldrsbteq r5, [r8], #-0x7c
+003b7924 ldrsbteq r5, [r8], #-0x70

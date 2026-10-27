@@ -1,0 +1,109 @@
+{
+ "S62_ENGINE": {
+  "exact": 552,
+  "bounds": 83,
+  "fail": 13,
+  "na": 5,
+  "tails": {
+   "tail:4": 29,
+   "tail:2": 18,
+   "tail:16": 7,
+   "tail:8": 5,
+   "tail:64": 3,
+   "tail:40": 2,
+   "tail:24": 2,
+   "tail:56": 2,
+   "tail:60": 2,
+   "tail:166": 1,
+   "tail:124": 1,
+   "tail:254": 1,
+   "tail:400": 1,
+   "tail:62": 1
+  },
+  "fails": [
+   {
+    "oid": "0x4c6f2",
+    "name": "Batman_01_Movement",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c6f3",
+    "name": "Batman_02_Flying",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c6f5",
+    "name": "Batman_04_Combat",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc0e47",
+    "name": "Batman_08_Takedown",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xdbba7",
+    "name": "Batman_30_Combat_Strike1",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xdbba8",
+    "name": "Batman_31_Combat_Strike2",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xdbba9",
+    "name": "Batman_32_Combat_Strike3",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xdbbaa",
+    "name": "Batman_33_Combat_HeavyStrike",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xdbbad",
+    "name": "Batman_39_Combat_CounterStrike",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x7a12a",
+    "name": "Enemy_Melee_Attack",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0xc0df9",
+    "name": "Enemy_Melee_Hurt",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x7a128",
+    "name": "Enemy_Melee_Movement",
+    "reason": "OOB"
+   },
+   {
+    "oid": "0x4c72b",
+    "name": "Enemy_Ranged_Hurt",
+    "reason": "OOB"
+   }
+  ]
+ },
+ "NULL_PERM": {
+  "exact": 24,
+  "pass": 204
+ },
+ "NULL_ROT7": {
+  "exact": 347,
+  "pass": 449
+ },
+ "NULL_SS_SWAP": {
+  "exact": 0,
+  "pass": 2,
+  "fails": [
+   "Helicopter",
+   "Helicopter_Bane",
+   "Military_Heli",
+   "Test_Object"
+  ]
+ }
+}

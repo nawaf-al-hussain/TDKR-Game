@@ -1,0 +1,557 @@
+003b85e8 push    {r4, r5, r6, r7, r8, sb, sl, lr}
+003b85ec mov     r4, r1
+003b85f0 mov     r5, r0
+003b85f4 sub     sp, sp, #0x70
+003b85f8 mov     r1, r0
+003b85fc mov     r0, r4
+003b8600 bl      #0x33a0d4  >>> READ STR
+003b8604 mov     r0, r4
+003b8608 bl      #0x339914  >>> READ i
+003b860c ldr     r7, [pc, #0x3dc]  ; [003b89f0]=0084f4c0
+003b8610 str     r0, [r5, #4]
+003b8614 mov     r0, r4
+003b8618 bl      #0x339914  >>> READ i
+003b861c ldr     r2, [r4]
+003b8620 ldr     r3, [r4, #0xc]
+003b8624 add     lr, r3, #4
+003b8628 add     ip, r3, #5
+003b862c add     r1, r3, #6
+003b8630 add     sl, r3, #1
+003b8634 add     r6, r3, #3
+003b8638 add     r8, r3, #2
+003b863c add     sb, r3, #7
+003b8640 str     r0, [r5, #8]
+003b8644 mov     r0, r4
+003b8648 ldrb    r3, [r2, r3]
+003b864c str     sl, [r4, #0xc]
+003b8650 adds    r3, r3, #0
+003b8654 movne   r3, #1
+003b8658 strb    r3, [r5, #0xc]
+003b865c ldrb    r3, [r2, sl]
+003b8660 str     r8, [r4, #0xc]
+003b8664 adds    r3, r3, #0
+003b8668 movne   r3, #1
+003b866c strb    r3, [r5, #0xd]
+003b8670 ldrb    r3, [r2, r8]
+003b8674 str     r6, [r4, #0xc]
+003b8678 adds    r3, r3, #0
+003b867c movne   r3, #1
+003b8680 strb    r3, [r5, #0xe]
+003b8684 ldrb    r3, [r2, r6]
+003b8688 str     lr, [r4, #0xc]
+003b868c adds    r3, r3, #0
+003b8690 movne   r3, #1
+003b8694 strb    r3, [r5, #0xf]
+003b8698 ldrb    r3, [r2, lr]
+003b869c str     ip, [r4, #0xc]
+003b86a0 adds    r3, r3, #0
+003b86a4 movne   r3, #1
+003b86a8 strb    r3, [r5, #0x10]
+003b86ac ldrb    r3, [r2, ip]
+003b86b0 str     r1, [r4, #0xc]
+003b86b4 adds    r3, r3, #0
+003b86b8 movne   r3, #1
+003b86bc strb    r3, [r5, #0x11]
+003b86c0 ldrb    r3, [r2, r1]
+003b86c4 str     sb, [r4, #0xc]
+003b86c8 adds    r3, r3, #0
+003b86cc movne   r3, #1
+003b86d0 strb    r3, [r5, #0x12]
+003b86d4 bl      #0x339b94  >>> READ f
+003b86d8 str     r0, [r5, #0x14]
+003b86dc mov     r0, r4
+003b86e0 bl      #0x339b94  >>> READ f
+003b86e4 str     r0, [r5, #0x18]
+003b86e8 mov     r0, r4
+003b86ec bl      #0x339914  >>> READ i
+003b86f0 str     r0, [r5, #0x1c]
+003b86f4 mov     r0, r4
+003b86f8 bl      #0x339b94  >>> READ f
+003b86fc str     r0, [r5, #0x20]
+003b8700 mov     r0, r4
+003b8704 bl      #0x339b94  >>> READ f
+003b8708 str     r0, [r5, #0x24]
+003b870c mov     r0, r4
+003b8710 bl      #0x339b94  >>> READ f
+003b8714 str     r0, [r5, #0x28]
+003b8718 mov     r0, r4
+003b871c bl      #0x339b94  >>> READ f
+003b8720 str     r0, [r5, #0x2c]
+003b8724 mov     r0, r4
+003b8728 bl      #0x339b94  >>> READ f
+003b872c str     r0, [r5, #0x30]
+003b8730 mov     r0, r4
+003b8734 bl      #0x339b94  >>> READ f
+003b8738 str     r0, [r5, #0x34]
+003b873c mov     r0, r4
+003b8740 bl      #0x339b94  >>> READ f
+003b8744 ldr     r1, [r4]
+003b8748 ldr     r3, [r4, #0xc]
+003b874c add     r2, r3, #1
+003b8750 str     r0, [r5, #0x38]
+003b8754 mov     r0, r4
+003b8758 ldrb    r3, [r1, r3]
+003b875c str     r2, [r4, #0xc]
+003b8760 adds    r3, r3, #0
+003b8764 movne   r3, #1
+003b8768 strb    r3, [r5, #0x3c]
+003b876c bl      #0x339b94  >>> READ f
+003b8770 str     r0, [r5, #0x40]
+003b8774 mov     r0, r4
+003b8778 bl      #0x339914  >>> READ i
+003b877c str     r0, [r5, #0x44]
+003b8780 mov     r0, r4
+003b8784 bl      #0x339914  >>> READ i
+003b8788 str     r0, [r5, #0x48]
+003b878c mov     r0, r4
+003b8790 bl      #0x339914  >>> READ i
+003b8794 ldr     r3, [r4, #0xc]
+003b8798 ldr     r1, [r4]
+003b879c add     r2, r3, #1
+003b87a0 add     ip, r3, #2
+003b87a4 str     r0, [r5, #0x4c]
+003b87a8 mov     r0, r4
+003b87ac ldrb    r3, [r1, r3]
+003b87b0 str     r2, [r4, #0xc]
+003b87b4 adds    r3, r3, #0
+003b87b8 movne   r3, #1
+003b87bc strb    r3, [r5, #0x50]
+003b87c0 ldrb    r3, [r1, r2]
+003b87c4 str     ip, [r4, #0xc]
+003b87c8 adds    r3, r3, #0
+003b87cc movne   r3, #1
+003b87d0 strb    r3, [r5, #0x51]
+003b87d4 bl      #0x339914  >>> READ i
+003b87d8 mov     r2, #0x40
+003b87dc mov     r1, #0
+003b87e0 mov     r6, r0
+003b87e4 add     r0, sp, #0x30
+003b87e8 bl      #0xa4e88  -> $d
+003b87ec ldr     sl, [r5, #0x58]
+003b87f0 ldr     sb, [r5, #0x54]
+003b87f4 ldr     r7, [pc, r7]
+003b87f8 add     r3, r7, #0xc
+003b87fc str     r3, [sp, #0x30]
+003b8800 rsb     r2, sb, sl
+003b8804 asr     r2, r2, #6
+003b8808 cmp     r6, r2
+003b880c bls     #0x3b89c0  -> CContainerState::Load(CMemoryStream*)
+003b8810 add     r0, r5, #0x54
+003b8814 mov     r1, sl
+003b8818 rsb     r2, r2, r6
+003b881c add     r3, sp, #0x30
+003b8820 bl      #0x3cb3ac  -> std::vector<CContainerStateAnimation, std::allocator<CContainerStateAn
+003b8824 add     r0, sp, #0x30
+003b8828 bl      #0x3b7ba4  -> CContainerStateAnimation::~CContainerStateAnimation()
+003b882c cmp     r6, #0
+003b8830 ble     #0x3b8854  -> CContainerState::Load(CMemoryStream*)
+003b8834 mov     r8, #0
+003b8838 ldr     r0, [r5, #0x54]
+003b883c mov     r1, r4
+003b8840 add     r0, r0, r8, lsl #6
+003b8844 add     r8, r8, #1
+003b8848 bl      #0x3b45f4  -> CContainerStateAnimation::Load(CMemoryStream*)
+003b884c cmp     r8, r6
+003b8850 bne     #0x3b8838
+003b8854 mov     r0, r4
+003b8858 add     r7, r7, #0xc
+003b885c bl      #0x339914  >>> READ i
+003b8860 ldr     r8, [r5, #0x64]
+003b8864 movw    r1, #0x8ba3
+003b8868 movt    r1, #0xba2e
+003b886c mov     r3, #0
+003b8870 str     r7, [sp, #0x28]
+003b8874 str     r3, [sp, #4]
+003b8878 str     r3, [sp, #8]
+003b887c str     r3, [sp, #0xc]
+003b8880 str     r3, [sp, #0x10]
+003b8884 str     r3, [sp, #0x14]
+003b8888 str     r3, [sp, #0x18]
+003b888c str     r3, [sp, #0x20]
+003b8890 str     r3, [sp, #0x24]
+003b8894 str     r3, [sp, #0x2c]
+003b8898 mov     r6, r0
+003b889c ldr     r0, [r5, #0x60]
+003b88a0 rsb     r2, r0, r8
+003b88a4 asr     r2, r2, #2
+003b88a8 mul     r2, r1, r2
+003b88ac mov     r1, #0
+003b88b0 str     r1, [sp, #0x1c]
+003b88b4 cmp     r6, r2
+003b88b8 bls     #0x3b898c  -> CContainerState::Load(CMemoryStream*)
+003b88bc add     r0, r5, #0x60
+003b88c0 mov     r1, r8
+003b88c4 rsb     r2, r2, r6
+003b88c8 add     r3, sp, #4
+003b88cc bl      #0x3cb6ac  -> std::vector<CContainerTrigger, std::allocator<CContainerTrigger> >::_M
+003b88d0 add     r0, sp, #0x28
+003b88d4 bl      #0x2069fc  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b88d8 cmp     r6, #0
+003b88dc ble     #0x3b8984  -> CContainerState::Load(CMemoryStream*)
+003b88e0 mov     r8, #0
+003b88e4 mov     sl, r8
+003b88e8 mov     r0, r4
+003b88ec ldr     sb, [r5, #0x60]
+003b88f0 bl      #0x339914  >>> READ i
+003b88f4 add     sl, sl, #1
+003b88f8 add     r7, sb, r8
+003b88fc str     r0, [sb, r8]
+003b8900 mov     r0, r4
+003b8904 bl      #0x339914  >>> READ i
+003b8908 add     r8, r8, #0x2c
+003b890c str     r0, [r7, #4]
+003b8910 mov     r0, r4
+003b8914 bl      #0x339914  >>> READ i
+003b8918 str     r0, [r7, #8]
+003b891c mov     r0, r4
+003b8920 bl      #0x339914  >>> READ i
+003b8924 str     r0, [r7, #0xc]
+003b8928 mov     r0, r4
+003b892c bl      #0x339914  >>> READ i
+003b8930 str     r0, [r7, #0x10]
+003b8934 mov     r0, r4
+003b8938 bl      #0x339914  >>> READ i
+003b893c str     r0, [r7, #0x14]
+003b8940 mov     r0, r4
+003b8944 bl      #0x339b94  >>> READ f
+003b8948 str     r0, [r7, #0x18]
+003b894c mov     r0, r4
+003b8950 bl      #0x339914  >>> READ i
+003b8954 str     r0, [r7, #0x1c]
+003b8958 mov     r0, r4
+003b895c bl      #0x339914  >>> READ i
+003b8960 add     r1, r7, #0x24
+003b8964 str     r0, [r7, #0x20]
+003b8968 mov     r0, r4
+003b896c bl      #0x33a0d4  >>> READ STR
+003b8970 mov     r0, r4
+003b8974 bl      #0x339914  >>> READ i
+003b8978 cmp     sl, r6
+003b897c str     r0, [r7, #0x28]
+003b8980 bne     #0x3b88e8
+003b8984 add     sp, sp, #0x70
+003b8988 pop     {r4, r5, r6, r7, r8, sb, sl, pc}
+003b898c bhs     #0x3b88d0
+003b8990 mov     sl, #0x2c
+003b8994 mla     sl, sl, r6, r0
+003b8998 cmp     r8, sl
+003b899c beq     #0x3b89b8
+003b89a0 mov     r7, sl
+003b89a4 add     r0, r7, #0x24
+003b89a8 add     r7, r7, #0x2c
+003b89ac bl      #0x2069fc  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b89b0 cmp     r8, r7
+003b89b4 bne     #0x3b89a4
+003b89b8 str     sl, [r5, #0x64]
+003b89bc b       #0x3b88d0
+003b89c0 bhs     #0x3b8824
+003b89c4 add     sb, sb, r6, lsl #6
+003b89c8 cmp     sl, sb
+003b89cc beq     #0x3b89e8
+003b89d0 mov     r8, sb
+003b89d4 mov     r0, r8
+003b89d8 add     r8, r8, #0x40
+003b89dc bl      #0x3b7ba4  -> CContainerStateAnimation::~CContainerStateAnimation()
+003b89e0 cmp     sl, r8
+003b89e4 bne     #0x3b89d4
+003b89e8 str     sb, [r5, #0x58]
+003b89ec b       #0x3b8824
+003b89f0 addeq   pc, r4, r0, asr #9
+003b89f4 push    {r3, lr}
+003b89f8 mov     r0, #0x2c
+003b89fc bl      #0x3e91f8  -> operator new(unsigned int)
+003b8a00 ldr     ip, [pc, #0x44]  ; [003b8a4c]=00820d44
+003b8a04 ldr     r2, [pc, #0x44]  ; [003b8a50]=0084f2a4
+003b8a08 mov     r1, #0
+003b8a0c add     ip, pc, ip
+003b8a10 ldr     r2, [pc, r2]
+003b8a14 add     ip, ip, #8
+003b8a18 add     r2, r2, #0xc
+003b8a1c str     r1, [r0, #4]
+003b8a20 str     r1, [r0, #8]
+003b8a24 str     r1, [r0, #0xc]
+003b8a28 str     ip, [r0]
+003b8a2c str     r2, [r0, #0x10]
+003b8a30 str     r2, [r0, #0x14]
+003b8a34 str     r2, [r0, #0x18]
+003b8a38 str     r2, [r0, #0x1c]
+003b8a3c str     r2, [r0, #0x20]
+003b8a40 str     r2, [r0, #0x24]
+003b8a44 str     r2, [r0, #0x28]
+003b8a48 pop     {r3, pc}
+003b8a4c addeq   r0, r2, r4, asr #26
+003b8a50 addeq   pc, r4, r4, lsr #5
+003b8a54 push    {r4, r5, r6, r7, r8, lr}
+003b8a58 mov     r8, r0
+003b8a5c mov     r0, #0x2c
+003b8a60 bl      #0x3e91f8  -> operator new(unsigned int)
+003b8a64 ldr     r3, [r8, #4]
+003b8a68 ldr     r1, [pc, #0x110]  ; [003b8b80]=00820ce0
+003b8a6c mov     r2, #0
+003b8a70 add     r1, pc, r1
+003b8a74 add     r1, r1, #8
+003b8a78 mov     r6, r0
+003b8a7c ldr     r0, [r8, #8]
+003b8a80 str     r2, [r6, #4]
+003b8a84 rsb     r3, r3, r0
+003b8a88 str     r2, [r6, #8]
+003b8a8c str     r2, [r6, #0xc]
+003b8a90 asr     r3, r3, #2
+003b8a94 str     r1, [r6]
+003b8a98 add     r5, r3, r3, lsl #3
+003b8a9c add     r5, r3, r5, lsl #1
+003b8aa0 rsb     r5, r5, r5, lsl #9
+003b8aa4 add     r5, r5, r5, lsl #18
+003b8aa8 rsb     r5, r5, #0
+003b8aac cmp     r5, r2
+003b8ab0 moveq   r4, r5
+003b8ab4 beq     #0x3b8adc
+003b8ab8 movw    r3, #0xd097
+003b8abc movt    r3, #0x25e
+003b8ac0 cmp     r5, r3
+003b8ac4 bhi     #0x3b8b7c
+003b8ac8 mov     r3, #0x6c
+003b8acc mul     r5, r3, r5
+003b8ad0 mov     r0, r5
+003b8ad4 bl      #0x3e91f8  -> operator new(unsigned int)
+003b8ad8 mov     r4, r0
+003b8adc add     r3, r4, r5
+003b8ae0 str     r4, [r6, #4]
+003b8ae4 str     r4, [r6, #8]
+003b8ae8 ldmib   r8, {r5, r7}
+003b8aec str     r3, [r6, #0xc]
+003b8af0 cmp     r5, r7
+003b8af4 beq     #0x3b8b1c
+003b8af8 cmp     r4, #0
+003b8afc beq     #0x3b8b0c
+003b8b00 mov     r0, r4
+003b8b04 mov     r1, r5
+003b8b08 bl      #0x3b8c0c  -> CContainerState::CContainerState(CContainerState const&)
+003b8b0c add     r5, r5, #0x6c
+003b8b10 add     r4, r4, #0x6c
+003b8b14 cmp     r7, r5
+003b8b18 bne     #0x3b8af8
+003b8b1c add     r1, r8, #0x10
+003b8b20 str     r4, [r6, #8]
+003b8b24 add     r0, r6, #0x10
+003b8b28 bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8b2c add     r1, r8, #0x14
+003b8b30 add     r0, r6, #0x14
+003b8b34 bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8b38 add     r1, r8, #0x18
+003b8b3c add     r0, r6, #0x18
+003b8b40 bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8b44 add     r1, r8, #0x1c
+003b8b48 add     r0, r6, #0x1c
+003b8b4c bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8b50 add     r1, r8, #0x20
+003b8b54 add     r0, r6, #0x20
+003b8b58 bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8b5c add     r1, r8, #0x24
+003b8b60 add     r0, r6, #0x24
+003b8b64 bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8b68 add     r0, r6, #0x28
+003b8b6c add     r1, r8, #0x28
+003b8b70 bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8b74 mov     r0, r6
+003b8b78 pop     {r4, r5, r6, r7, r8, pc}
+003b8b7c bl      #0xa6d514  -> std::__throw_bad_alloc()
+003b8b80 addeq   r0, r2, r0, ror #25
+003b8b84 push    {r4, r5, r6, lr}
+003b8b88 mov     r6, r0
+003b8b8c ldr     r4, [r0, #0x60]
+003b8b90 ldr     r5, [r0, #0x64]
+003b8b94 cmp     r4, r5
+003b8b98 beq     #0x3b8bb4
+003b8b9c add     r0, r4, #0x24
+003b8ba0 add     r4, r4, #0x2c
+003b8ba4 bl      #0x2069fc  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8ba8 cmp     r5, r4
+003b8bac bne     #0x3b8b9c
+003b8bb0 ldr     r4, [r6, #0x60]
+003b8bb4 cmp     r4, #0
+003b8bb8 beq     #0x3b8bc4
+003b8bbc mov     r0, r4
+003b8bc0 bl      #0x3e9260  -> operator delete(void*)
+003b8bc4 ldr     r4, [r6, #0x54]
+003b8bc8 ldr     r5, [r6, #0x58]
+003b8bcc cmp     r4, r5
+003b8bd0 beq     #0x3b8bec
+003b8bd4 mov     r0, r4
+003b8bd8 add     r4, r4, #0x40
+003b8bdc bl      #0x3b7ba4  -> CContainerStateAnimation::~CContainerStateAnimation()
+003b8be0 cmp     r5, r4
+003b8be4 bne     #0x3b8bd4
+003b8be8 ldr     r4, [r6, #0x54]
+003b8bec cmp     r4, #0
+003b8bf0 beq     #0x3b8bfc
+003b8bf4 mov     r0, r4
+003b8bf8 bl      #0x3e9260  -> operator delete(void*)
+003b8bfc mov     r0, r6
+003b8c00 bl      #0x2069fc  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8c04 mov     r0, r6
+003b8c08 pop     {r4, r5, r6, pc}
+003b8c0c push    {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
+003b8c10 mov     r5, r1
+003b8c14 mov     r4, r0
+003b8c18 bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8c1c ldr     sl, [r5, #4]
+003b8c20 ldr     r2, [r5, #0x14]
+003b8c24 ldrb    r8, [r5, #0xc]
+003b8c28 ldr     r3, [r5, #0x18]
+003b8c2c ldrb    r7, [r5, #0xd]
+003b8c30 str     sl, [r4, #4]
+003b8c34 ldr     sl, [r5, #8]
+003b8c38 ldrb    r6, [r5, #0xe]
+003b8c3c ldrb    ip, [r5, #0xf]
+003b8c40 ldrb    r0, [r5, #0x10]
+003b8c44 ldrb    r1, [r5, #0x11]
+003b8c48 ldr     sb, [r5, #0x20]
+003b8c4c ldr     fp, [r5, #0x24]
+003b8c50 str     r2, [r4, #0x14]
+003b8c54 str     r3, [r4, #0x18]
+003b8c58 ldrb    r2, [r5, #0x12]
+003b8c5c ldr     r3, [r5, #0x1c]
+003b8c60 str     sl, [r4, #8]
+003b8c64 strb    r8, [r4, #0xc]
+003b8c68 ldr     sl, [r5, #0x28]
+003b8c6c ldr     r8, [r5, #0x2c]
+003b8c70 strb    r7, [r4, #0xd]
+003b8c74 ldr     r7, [r5, #0x30]
+003b8c78 str     sl, [r4, #0x28]
+003b8c7c str     r8, [r4, #0x2c]
+003b8c80 strb    r6, [r4, #0xe]
+003b8c84 mov     r6, #0
+003b8c88 strb    ip, [r4, #0xf]
+003b8c8c strb    r0, [r4, #0x10]
+003b8c90 strb    r1, [r4, #0x11]
+003b8c94 strb    r2, [r4, #0x12]
+003b8c98 str     r3, [r4, #0x1c]
+003b8c9c str     sb, [r4, #0x20]
+003b8ca0 str     fp, [r4, #0x24]
+003b8ca4 str     r7, [r4, #0x30]
+003b8ca8 ldr     r1, [r5, #0x54]
+003b8cac ldr     r7, [r5, #0x58]
+003b8cb0 ldr     r2, [r5, #0x34]
+003b8cb4 ldr     r3, [r5, #0x38]
+003b8cb8 rsb     r7, r1, r7
+003b8cbc ldrb    r8, [r5, #0x3c]
+003b8cc0 ldr     sl, [r5, #0x40]
+003b8cc4 asrs    r7, r7, #6
+003b8cc8 ldr     ip, [r5, #0x44]
+003b8ccc ldr     r0, [r5, #0x48]
+003b8cd0 ldr     r1, [r5, #0x4c]
+003b8cd4 str     r2, [r4, #0x34]
+003b8cd8 str     r3, [r4, #0x38]
+003b8cdc ldrb    r2, [r5, #0x50]
+003b8ce0 ldrb    r3, [r5, #0x51]
+003b8ce4 str     sl, [r4, #0x40]
+003b8ce8 strb    r8, [r4, #0x3c]
+003b8cec str     ip, [r4, #0x44]
+003b8cf0 str     r0, [r4, #0x48]
+003b8cf4 str     r1, [r4, #0x4c]
+003b8cf8 strb    r2, [r4, #0x50]
+003b8cfc strb    r3, [r4, #0x51]
+003b8d00 str     r6, [r4, #0x54]
+003b8d04 str     r6, [r4, #0x58]
+003b8d08 str     r6, [r4, #0x5c]
+003b8d0c beq     #0x3b8e88
+003b8d10 cmn     r7, #0xfc000001
+003b8d14 bhi     #0x3b8e98
+003b8d18 lsl     r7, r7, #6
+003b8d1c mov     r0, r7
+003b8d20 bl      #0x3e91f8  -> operator new(unsigned int)
+003b8d24 mov     r6, r0
+003b8d28 add     r3, r6, r7
+003b8d2c str     r6, [r4, #0x54]
+003b8d30 str     r6, [r4, #0x58]
+003b8d34 ldr     r7, [r5, #0x54]
+003b8d38 ldr     r8, [r5, #0x58]
+003b8d3c str     r3, [r4, #0x5c]
+003b8d40 cmp     r7, r8
+003b8d44 beq     #0x3b8d6c
+003b8d48 cmp     r6, #0
+003b8d4c beq     #0x3b8d5c
+003b8d50 mov     r0, r6
+003b8d54 mov     r1, r7
+003b8d58 bl      #0x3b7dcc  -> CContainerStateAnimation::CContainerStateAnimation(CContainerStateAnim
+003b8d5c add     r7, r7, #0x40
+003b8d60 add     r6, r6, #0x40
+003b8d64 cmp     r8, r7
+003b8d68 bne     #0x3b8d48
+003b8d6c ldr     r7, [r5, #0x64]
+003b8d70 movw    r2, #0x8ba3
+003b8d74 ldr     r1, [r5, #0x60]
+003b8d78 movt    r2, #0xba2e
+003b8d7c mov     r3, #0
+003b8d80 str     r6, [r4, #0x58]
+003b8d84 rsb     r7, r1, r7
+003b8d88 str     r3, [r4, #0x60]
+003b8d8c str     r3, [r4, #0x64]
+003b8d90 asr     r7, r7, #2
+003b8d94 str     r3, [r4, #0x68]
+003b8d98 mul     r7, r2, r7
+003b8d9c cmp     r7, r3
+003b8da0 beq     #0x3b8e90
+003b8da4 movw    r3, #0x745d
+003b8da8 movt    r3, #0x5d1
+003b8dac cmp     r7, r3
+003b8db0 bhi     #0x3b8e98
+003b8db4 mov     r3, #0x2c
+003b8db8 mul     r7, r3, r7
+003b8dbc mov     r0, r7
+003b8dc0 bl      #0x3e91f8  -> operator new(unsigned int)
+003b8dc4 mov     r6, r0
+003b8dc8 str     r6, [r4, #0x60]
+003b8dcc add     r7, r6, r7
+003b8dd0 str     r6, [r4, #0x64]
+003b8dd4 ldr     r3, [r5, #0x60]
+003b8dd8 ldr     sb, [r5, #0x64]
+003b8ddc str     r7, [r4, #0x68]
+003b8de0 cmp     r3, sb
+003b8de4 beq     #0x3b8e7c
+003b8de8 add     sl, r6, #0x2c
+003b8dec add     r8, r3, #0x2c
+003b8df0 mov     r5, r3
+003b8df4 mov     r7, sl
+003b8df8 b       #0x3b8e00
+003b8dfc add     sl, sl, #0x2c
+003b8e00 cmp     r6, #0
+003b8e04 beq     #0x3b8e64
+003b8e08 ldr     r3, [r8, #-0x2c]
+003b8e0c add     r0, r6, #0x24
+003b8e10 add     r1, r5, #0x24
+003b8e14 str     r3, [r7, #-0x2c]
+003b8e18 ldr     r3, [r8, #-0x28]
+003b8e1c str     r3, [r7, #-0x28]
+003b8e20 ldr     r3, [r5, #8]
+003b8e24 str     r3, [r6, #8]
+003b8e28 ldr     r3, [r5, #0xc]
+003b8e2c str     r3, [r6, #0xc]
+003b8e30 ldr     r3, [r5, #0x10]
+003b8e34 str     r3, [r6, #0x10]
+003b8e38 ldr     r3, [r5, #0x14]
+003b8e3c str     r3, [r6, #0x14]
+003b8e40 ldr     r3, [r8, #-0x14]
+003b8e44 str     r3, [r7, #-0x14]
+003b8e48 ldr     r3, [r5, #0x1c]
+003b8e4c str     r3, [r6, #0x1c]
+003b8e50 ldr     r3, [r5, #0x20]
+003b8e54 str     r3, [r6, #0x20]
+003b8e58 bl      #0x206a60  -> std::basic_string<char, std::char_traits<char>, glitch::core::SAllocat
+003b8e5c ldr     r3, [r5, #0x28]
+003b8e60 str     r3, [r6, #0x28]
+003b8e64 add     r5, r5, #0x2c
+003b8e68 mov     r6, sl
+003b8e6c cmp     sb, r5
+003b8e70 add     r8, r8, #0x2c
+003b8e74 add     r7, r7, #0x2c
+003b8e78 bne     #0x3b8dfc
+003b8e7c str     r6, [r4, #0x64]
+003b8e80 mov     r0, r4
+003b8e84 pop     {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
+003b8e88 mov     r6, r7
+003b8e8c b       #0x3b8d28
+003b8e90 mov     r6, r7
+003b8e94 b       #0x3b8dc8
+003b8e98 bl      #0xa6d514  -> std::__throw_bad_alloc()
