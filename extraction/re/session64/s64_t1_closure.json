@@ -1,0 +1,365 @@
+{
+ "S64_ENGINE": {
+  "exact": 588,
+  "bounds": 60,
+  "fail": 0,
+  "na": 5,
+  "tails": {
+   "tail:4": 27,
+   "tail:16": 7,
+   "tail:8": 5,
+   "tail:64": 3,
+   "tail:24": 2,
+   "tail:56": 2,
+   "tail:60": 2,
+   "tail:166": 1,
+   "tail:124": 1,
+   "tail:400": 1,
+   "tail:62": 1,
+   "tail:82": 1,
+   "tail:924": 1,
+   "tail:12": 1,
+   "tail:15": 1,
+   "tail:80": 1
+  },
+  "fails": [],
+  "tailinfo": [
+   {
+    "name": "AIController",
+    "tail": 166,
+    "lastcomp": "0x36f1fe78"
+   },
+   {
+    "name": "Bane_SUV",
+    "tail": 24,
+    "lastcomp": "0x675d6313"
+   },
+   {
+    "name": "Bane_Suv_No_Doors",
+    "tail": 24,
+    "lastcomp": "0x675d6313"
+   },
+   {
+    "name": "BatPod",
+    "tail": 4,
+    "lastcomp": "0x0d1839c4"
+   },
+   {
+    "name": "Batarang",
+    "tail": 16,
+    "lastcomp": "0x0f992a02"
+   },
+   {
+    "name": "BatarangEMP",
+    "tail": 16,
+    "lastcomp": "0x0f992a02"
+   },
+   {
+    "name": "BatarangFlash",
+    "tail": 16,
+    "lastcomp": "0x0f992a02"
+   },
+   {
+    "name": "BatarangGas",
+    "tail": 16,
+    "lastcomp": "0x0f992a02"
+   },
+   {
+    "name": "BatarangStone",
+    "tail": 16,
+    "lastcomp": "0x0f992a02"
+   },
+   {
+    "name": "Batman",
+    "tail": 124,
+    "lastcomp": "0x592ce07c"
+   },
+   {
+    "name": "BoxTrigger",
+    "tail": 4,
+    "lastcomp": "0x729ec572"
+   },
+   {
+    "name": "CinematicObject",
+    "tail": 8,
+    "lastcomp": "0x17ac851f"
+   },
+   {
+    "name": "Collectibles_Blueprints",
+    "tail": 4,
+    "lastcomp": "0x28091330"
+   },
+   {
+    "name": "Collectibles_Graffiti",
+    "tail": 4,
+    "lastcomp": "0x28091330"
+   },
+   {
+    "name": "Collectibles_PoliceFile",
+    "tail": 4,
+    "lastcomp": "0x28091330"
+   },
+   {
+    "name": "CombatBatarang",
+    "tail": 16,
+    "lastcomp": "0x0f992a02"
+   },
+   {
+    "name": "Coupe",
+    "tail": 8,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "CylinderTrigger",
+    "tail": 4,
+    "lastcomp": "0x749126c3"
+   },
+   {
+    "name": "District",
+    "tail": 4,
+    "lastcomp": "0x1963f0c0"
+   },
+   {
+    "name": "DistrictZone",
+    "tail": 4,
+    "lastcomp": "0x729ec572"
+   },
+   {
+    "name": "EffectLODs",
+    "tail": 400,
+    "lastcomp": "0x73f0fe09"
+   },
+   {
+    "name": "Gargoyle",
+    "tail": 4,
+    "lastcomp": "0x59a8390c"
+   },
+   {
+    "name": "GlobalIllumination",
+    "tail": 62,
+    "lastcomp": "0x20af73b7"
+   },
+   {
+    "name": "Grenade",
+    "tail": 4,
+    "lastcomp": "0x3438ab08"
+   },
+   {
+    "name": "Hatch",
+    "tail": 8,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "LevelProperties",
+    "tail": 82,
+    "lastcomp": "0x279c68f5"
+   },
+   {
+    "name": "MainStory",
+    "tail": 924,
+    "lastcomp": "0x5863bd59"
+   },
+   {
+    "name": "MetaZone",
+    "tail": 4,
+    "lastcomp": "0x20af73b7"
+   },
+   {
+    "name": "MiniGameAnimatedObject",
+    "tail": 4,
+    "lastcomp": "0x4891830c"
+   },
+   {
+    "name": "NewShopItem",
+    "tail": 4,
+    "lastcomp": "0x44c835d1"
+   },
+   {
+    "name": "Occluder",
+    "tail": 4,
+    "lastcomp": "0x00152b87"
+   },
+   {
+    "name": "PickUpTruck",
+    "tail": 4,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "PickUp_Batarang",
+    "tail": 4,
+    "lastcomp": "0x592ce07c"
+   },
+   {
+    "name": "PickUp_EMP_Batarang",
+    "tail": 4,
+    "lastcomp": "0x592ce07c"
+   },
+   {
+    "name": "PickUp_Flash_Grenades",
+    "tail": 4,
+    "lastcomp": "0x592ce07c"
+   },
+   {
+    "name": "PickUp_Smoke_Grenades",
+    "tail": 4,
+    "lastcomp": "0x592ce07c"
+   },
+   {
+    "name": "Portal",
+    "tail": 8,
+    "lastcomp": "0x2ad64f3d"
+   },
+   {
+    "name": "Quest",
+    "tail": 4,
+    "lastcomp": "0x55a6393b"
+   },
+   {
+    "name": "RewardHigh",
+    "tail": 4,
+    "lastcomp": "0x28091330"
+   },
+   {
+    "name": "RewardMedium",
+    "tail": 4,
+    "lastcomp": "0x28091330"
+   },
+   {
+    "name": "RewardSmall",
+    "tail": 4,
+    "lastcomp": "0x28091330"
+   },
+   {
+    "name": "Rocket",
+    "tail": 4,
+    "lastcomp": "0x35c5e0a0"
+   },
+   {
+    "name": "SUV",
+    "tail": 8,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "Sedan",
+    "tail": 12,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "SkyBox",
+    "tail": 4,
+    "lastcomp": "0x2cf34785"
+   },
+   {
+    "name": "Spawnpoint",
+    "tail": 15,
+    "lastcomp": "0x0014ca79"
+   },
+   {
+    "name": "TheBatDrive",
+    "tail": 4,
+    "lastcomp": "0x222500f6"
+   },
+   {
+    "name": "Umbrella",
+    "tail": 16,
+    "lastcomp": "0x1791e34f"
+   },
+   {
+    "name": "Van",
+    "tail": 4,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehicleCarSUV",
+    "tail": 64,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehicleCarTaxi",
+    "tail": 56,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehicleCoupe",
+    "tail": 64,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehicleHatch",
+    "tail": 64,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehiclePolice",
+    "tail": 80,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehicleSWAT",
+    "tail": 56,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehicleSedan",
+    "tail": 68,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehicleTruck",
+    "tail": 60,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "VehicleVan",
+    "tail": 60,
+    "lastcomp": "0x4de3f7c4"
+   },
+   {
+    "name": "Window",
+    "tail": 21,
+    "lastcomp": "0x2b1efd04"
+   },
+   {
+    "name": "Zone",
+    "tail": 782004,
+    "lastcomp": "0x20af73b7"
+   }
+  ]
+ },
+ "NULL_PERM": {
+  "exact": 24,
+  "pass": 204
+ },
+ "NULL_ROT7": {
+  "exact": 367,
+  "pass": 449
+ },
+ "NULL_SS_SWAP": {
+  "exact": 0,
+  "pass": 2,
+  "fails": [
+   "Batman_01_Movement",
+   "Enemy_Melee_Attack",
+   "Helicopter",
+   "Helicopter_Bane",
+   "Military_Heli",
+   "Test_Object"
+  ]
+ },
+ "NULL_PARAM_RESTORED": {
+  "exact": 4,
+  "pass": 6,
+  "fails": [
+   "Batman_01_Movement",
+   "Enemy_Melee_Movement"
+  ]
+ },
+ "NULL_CAM_REVERT": {
+  "exact": 0,
+  "n": 8
+ },
+ "NULL_GLIDE_REVERT": {
+  "exact": 0,
+  "n": 2
+ }
+}
