@@ -1368,3 +1368,26 @@ waypoint decode is gated on ?s5=1 - use ?s5=1&s5blend=1 for the blend runs.
   with the +82 anchor (0.25-0.5); NOT in (unchanged): AI/mission flow 4-6, audio 1-2,
   UI 1-2, cloth cape 1, cross-region nav 1-2, city-scale lit rendering 1-2. Memory:
   pending real GPU.
+
+## SESSION 62 CONTINUATION (2026-10-27) — PUSHED: the s61+s62 local backlog is ON THE REMOTE (token supplied after T7)
+
+- **STATE verified at push time (public ls-remote read, no auth needed):** main 8d8a6a9,
+  gh-pages 6145545 LIVE, gh-pages-staged 39298a4, gh-pages-staged-s44 6145545, s56-t1-glide
+  cf74c5b, s56-t3-migrate 47e73d1, s55-t1-title-fix 0cea8b8, s41-city-slice 7b0807e,
+  s40-user-zip-slice 80274a1, essentials-s36 7c8defc, tag v1.1.6b — ALL matched the baseline
+  exactly; only the s61+s62 commits were local-only.
+- **PUSHED and ls-remote-verified:** main 8d8a6a9 -> 99c8a7e (the 4 s61 commits
+  400fef9/bae0faf/e4386ee/bd41a61 + the 6 s62 commits
+  104f78a/a6bc03d/a56c4dc/68df188/65e2b2d/99c8a7e) and s56-t1-glide cf74c5b -> 73fbecb
+  (22daa84 s61 T3 posed capture + 73fbecb s62 T2/T3/T4 page state) in a single push;
+  post-push ls-remote receipts main=99c8a7e4..., glide=73fbecbe.... A receipt commit (this
+  commit, authored after push #1) records the event and is pushed immediately after
+  (push #2) — its exact hash is in the outer worklog and in the rebuilt bundle range.
+- **gh-pages NOT touched:** origin/gh-pages is 12 commits ahead of the LOCAL gh-pages ref
+  (past deployments); staged/LIVE deployment remains an explicit separate step — the s62
+  page state on s56-t1-glide is NOT deployed (same policy as s55/s60/s61).
+- Pre-push blob audit on BOTH push ranges: zero blobs > 5 MB (game data still out of git).
+- Bundles: main_s62_inc.bundle REBUILT post-receipt to cover 8d8a6a9..HEAD (supersedes the
+  67a30e62... bundle that stopped at 99c8a7e); branch_glide_s62_inc.bundle UNCHANGED
+  (cf74c5b..73fbecb, 03033b7f...). SHA256 in download/bundles_s62/SHA256SUMS.txt; bundles
+  stay untracked artifacts, mirrored to /home/z/my-project/download/bundles_s62/.

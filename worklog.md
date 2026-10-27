@@ -803,3 +803,16 @@ Work Log:
 Stage Summary:
 - T1 PASS (blend pinned end-to-end; helper number = data-driven inconclusive), T2 PASS (coverage 326/653 + 30/50 carriers with corrections; Motion dormant-instance verdict; GiveDamage decoded+censused), T3 PARTIAL (rig+clips+FK DONE node-side; in-page mesh blocked by the batman-specific bdae reader), T4 PARTIAL/NOT-MET (lever no-op; floor documented), T5 PASS (user-zip gol gate live on the migration branch), T6 pending, T7 done.
 - Key decisions: collision TEMPLATE spec = 16-B base flat (instance shape refuted); blend measure = takeoff-anchor distance (ground-query hypothesis refuted); enemy anim = shared batman bank.
+
+---
+Task ID: s61+s62 receipts + push (recorded 2026-10-27)
+Agent: main agent (Z.ai sessions 61-62; the repo worklog was last synced at s58 - this section backfills the headline results)
+
+Work Log:
+- s61 (round 51, 2026-10-26): id-space RESOLVED - engine loads ALL 653 gol templates (GOM::Load fully decoded; GCT = 2-island binary-search tree; 120/120 ids -> named readers from case bodies); engine-true closure bounds 555/653, exact 313; vehicle-health 2nd-signal search CLOSED (single-signal PARTIAL stands, 300.0 unique at the Health position); skinning root cause proven (one-bone repro exact) + posed capture landed on the enemy page (PARTIAL convention gap). Commits 400fef9/bae0faf/e4386ee/bd41a61 + branch 22daa84.
+- s62 (round 52, 2026-10-26): s61 residuals CLOSED - engine-true closure 473/653 exact, ZERO fitted rules (42/137 id->case pairings corrected + tail-call reads recovered); posed skinning restMaxDev 1.87 -> 0 (r160 applyBoneTransform seeds from the PASSED vector; numpy IoU 0.9001); combat slice runs the SKINNED merc mesh (gate PASS, s60 point-cloud gates re-verified); REAL-soup glide re-anchor ?s5real=1 GATE PASS (2 real re-anchors @17/300ms, blendD dip restart, 3 gate-caught defects fixed by patches 2/4/6); CAS decode PARTIAL (STR = u32 string-table INDEX; CCS fixed head = 82 B; blocker = compiler-reordered inline trigger loops, needs CFG trace). Commits 104f78a/a6bc03d/a56c4dc/68df188/65e2b2d/99c8a7e + branch 73fbecb. Bundles_s62 built + git-bundle-verified.
+- PUSH (2026-10-27, token supplied after T7): pre-push blob audit zero >5 MB in both ranges; single push main 8d8a6a9 -> 99c8a7e + s56-t1-glide cf74c5b -> 73fbecb, ls-remote-verified; receipt commit (this one) pushed immediately after; gh-pages untouched; main_s62_inc.bundle rebuilt 8d8a6a9..HEAD post-receipt.
+
+Stage Summary:
+- Remote AFTER: main = this receipt commit, s56-t1-glide 73fbecb, gh-pages 6145545 LIVE (12 commits ahead of the local ref; untouched), gh-pages-staged 39298a4; s56-t3-migrate 47e73d1 already on the remote.
+- s61+s62 backlog FULLY on the remote; deployment of the s62 glide-branch page state remains the user's explicit step.
