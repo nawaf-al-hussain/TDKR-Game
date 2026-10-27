@@ -700,6 +700,7 @@ const S5BLEND = QS2.get('s5blend') === '1';    // s58 T1: exact engine blend (ta
 const S5REAN = QS2.get('s5reanchor') === '1';  // s60 T5: ResolveAirCollision re-anchor case (virtual wall)
 const S5REAL = QS2.get('s5real') === '1';   // s62 T4: REAL soup air-collision re-anchor
 const S5AIR = parseFloat(QS2.get('s5air') || '0') || 0;   // s63 T3: mid-air glide start (elevated grapple anchor)
+const S5AIRTO = parseFloat(QS2.get('s5airto') || '0') || 0;   // s64 T2: glide phase timeout override (0 = engine-default 6000)
 const S5WALL = parseFloat(QS2.get('s5wall') || '40');
 const S5CTLV = S5EARLY
   ? { tRamp: 0.25, tHold: 0.45, diveDeg: -60.0, k: 2.0, slipDeg: 6.0, rampFromDeg: -45.0 }
@@ -1005,11 +1006,11 @@ function s5Tick(now) {
         startWalkPhase();   // hand back to the standard gate walk phase
       }
     }
-    if (now - S5.tGlide > 6000 && !S5.landed) {   // safety: never stall the gate
+    if (now - S5.tGlide > (S5AIRTO || 6000) && !S5.landed) {   // safety: never stall the gate (s64 T2: ?s5airto override)
       g.s5 = { enabled: true, model: S5P.mode, targetReached: S5.reached, reachDist: S5.reachDist,
                glideClipActive: S5.clipActive, landed: false, error: 'glide timeout', traj: S5.traj,
                from: S5.from.slice(), tgt: S5.tgt.slice(), wpsN: (window.__S5WPS || []).length ,
-               realStaged: S5.realStaged || null, s5air: S5AIR };
+               realStaged: S5.realStaged || null, s5air: S5AIR, s5airto: S5AIRTO || 0 };
       S5.phase = 'done'; S5.done = true;
       startWalkPhase();
     }
