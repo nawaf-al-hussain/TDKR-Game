@@ -1,0 +1,147 @@
+{
+ "control-s62": {
+  "n_traj": 25,
+  "reanchors": [
+   {
+    "tMs": 17,
+    "pos": [
+     -439.761,
+     -705.34
+    ],
+    "z": 9.279,
+    "kind": "real"
+   },
+   {
+    "tMs": 300,
+    "pos": [
+     -438.674,
+     -702.325
+    ],
+    "z": 8.706,
+    "kind": "real"
+   }
+  ],
+  "landed": true,
+  "wallHit": {
+   "tMs": 17,
+   "pos": [
+    -439.761,
+    -705.34
+   ],
+   "z": 9.279,
+   "kind": "real"
+  },
+  "s5air": 0,
+  "s5airto": null,
+  "glide_err": null,
+  "realStaged_first": {
+   "angDeg": 0,
+   "first": 64
+  },
+  "pre_hit_samples": 1,
+  "pre_hit_blendD_max": 0,
+  "pre_hit_blendD_last": 0,
+  "post_hit_blendD_min": 0,
+  "dip_restart": false,
+  "analytic_vz_err_max_all": 4.2469,
+  "analytic_n_all": 25,
+  "analytic_vz_err_max_win": 4.2469,
+  "analytic_n_win": 25,
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [],
+  "soup": {
+   "nTri": 137893,
+   "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+  },
+  "pass": true
+ },
+ "air-185-lifted": {
+  "n_traj": 779,
+  "reanchors": [],
+  "landed": true,
+  "wallHit": null,
+  "s5air": 185,
+  "s5airto": null,
+  "glide_err": null,
+  "realStaged_first": {
+   "angDeg": 0,
+   "first": 64
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [],
+  "soup": {
+   "nTri": 137893,
+   "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+  },
+  "pass": true
+ },
+ "air-85-lifted": {
+  "n_traj": 371,
+  "reanchors": [
+   {
+    "tMs": 3233,
+    "pos": [
+     -427.424,
+     -671.103
+    ],
+    "z": 45.802,
+    "kind": "real"
+   }
+  ],
+  "landed": true,
+  "wallHit": {
+   "tMs": 3233,
+   "pos": [
+    -427.424,
+    -671.103
+   ],
+   "z": 45.802,
+   "kind": "real"
+  },
+  "s5air": 85,
+  "s5airto": null,
+  "glide_err": null,
+  "realStaged_first": {
+   "angDeg": 0,
+   "first": 64
+  },
+  "pre_hit_samples": 194,
+  "pre_hit_blendD_max": 60.306,
+  "pre_hit_blendD_last": 0,
+  "post_hit_blendD_min": 0.247,
+  "dip_restart": false,
+  "analytic_vz_err_max_all": 4.2479,
+  "analytic_n_all": 371,
+  "analytic_vz_err_max_win": 4.2479,
+  "analytic_n_win": 181,
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [],
+  "soup": {
+   "nTri": 137893,
+   "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+  },
+  "pass": true
+ },
+ "nosoup-staged-85": {
+  "n_traj": 361,
+  "reanchors": [],
+  "landed": false,
+  "wallHit": null,
+  "s5air": 85,
+  "s5airto": 0,
+  "glide_err": "glide timeout",
+  "realStaged_first": null,
+  "console_errors": [],
+  "page_errors": [],
+  "logs": [],
+  "soup": {
+   "nTri": 137893,
+   "sha256": "00ce7970e45adc854ac7cae6d0f97797b602342d101e1ecb5eb1c2c01016beb8"
+  },
+  "pass": true
+ },
+ "note": "runs 2026-10-27; soup digest 00ce7970/137893 in all 4; 0 console/page errors in all 4"
+}
