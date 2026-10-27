@@ -1,0 +1,111 @@
+{
+ "console_errors": [],
+ "gate": {
+  "enabled": true,
+  "states": [
+   "Idle",
+   "Walk",
+   "Run",
+   "Hurt",
+   "Death"
+  ],
+  "clipByState": {
+   "Idle": "_014_idle_enemy_combat",
+   "Walk": "_166_enemy_walk",
+   "Run": "_171_enemy_run",
+   "Hurt": "_223_enemy_hurtl",
+   "Death": "_250_enemy_death1"
+  },
+  "fovDeg": 160,
+  "rNear": 11,
+  "rFar": 17,
+  "health0": 120,
+  "dmg": [
+   5,
+   10
+  ],
+  "runRule": "alerted && dist > 14",
+  "hurtHoldSec": 0.4,
+  "ctlFar": {
+   "pos": [
+    0,
+    60
+   ],
+   "state": "Idle",
+   "clip": true
+  },
+  "ctlBehind": {
+   "state": "Idle",
+   "clip": true
+  },
+  "ctlPass": true,
+  "walkState": "Walk",
+  "runState": "Run",
+  "walk2State": "Walk",
+  "hpAfter5": 115,
+  "stateAfter5": "Hurt",
+  "stateAfterHurt": "Walk",
+  "hpAfter10": 105,
+  "stateAfter10": "Hurt",
+  "hpFinal": 0,
+  "stateFinal": "Death",
+  "stateSeq": [
+   "Idle",
+   "Walk",
+   "Run",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk",
+   "Hurt",
+   "Walk"
+  ],
+  "ctlWrongClipDiff": 0.2211,
+  "ctlWrongClipDetected": true,
+  "mercLoaded": true,
+  "mercVerts": 1294,
+  "meshSil": {
+   "Idle": {
+    "lit": 1627
+   },
+   "Walk": {
+    "lit": 1364
+   },
+   "Run": {
+    "lit": 1471
+   },
+   "Hurt": {
+    "lit": 1690
+   },
+   "Death": {
+    "lit": 1717
+   }
+  },
+  "meshSilDiff": {
+   "idleWalk": 60,
+   "walkRun": 44,
+   "idleDeath": 39,
+   "idleHurt": 41
+  },
+  "meshSilPass": true,
+  "meshWrongClipDiff": 60,
+  "meshWrongClipDetected": true,
+  "mercH": null,
+  "pass": true
+ }
+}
