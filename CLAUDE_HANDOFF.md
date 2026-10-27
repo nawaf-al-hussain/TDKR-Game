@@ -1477,3 +1477,29 @@ waypoint decode is gated on ?s5=1 - use ?s5=1&s5blend=1 for the blend runs.
   (same data+code method, offsets pinpointed); s5air finish 0.25; NOT in (unchanged):
   AI/mission flow 4-6, audio 1-2, UI 1-2, cloth cape 1, cross-region nav 1-2, city-scale
   lit rendering 1-2; memory pending real GPU.
+
+## SESSION 63 PUSH (2026-10-27) — PUSHED: the s63 backlog is ON THE REMOTE (token supplied after T7)
+
+- **STATE verified at push time (public ls-remote read):** main a4d9c19, s56-t1-glide
+  73fbecb, gh-pages 6145545 LIVE, staged 39298a4 — all matched the baseline exactly;
+  only the 7 s63 commits (f26faef/0330956/c377c76/b6f4f63/59019ae/c77e397/e525239 on
+  main + aeabaa5 on the glide branch) were local-only.
+- **Pre-push audits:** >5 MB blob scan on BOTH push ranges (a4d9c19..e525239 main,
+  73fbecb..aeabaa5 glide): ZERO blobs > 5 MB (game data still out of git). Token
+  validated via api.github.com (HTTP 200, repo scope present) after one askpass-format
+  fix (the first attempt echoed both username and password lines unconditionally ->
+  "Invalid username or token"; the fixed script branches on the prompt). Token file
+  perms 700; token never echoed into command output.
+- **PUSHED and ls-remote-verified (single push invocation):** main a4d9c19 -> e525239
+  and s56-t1-glide 73fbecb -> aeabaa5. Post-push receipts: main = e5252397..., glide =
+  aeabaa5e.... A receipt commit (this commit, authored after push #1) records the event
+  and is pushed immediately after (push #2); the main_s63_inc.bundle is REBUILT to
+  cover a4d9c19..HEAD post-receipt (supersedes the ab30f5f6... bundle that stopped at
+  e525239).
+- **gh-pages NOT touched:** origin/gh-pages remains 6145545 LIVE (12 commits ahead of
+  the local gh-pages ref, past deployments); the s63 page state on s56-t1-glide is NOT
+  deployed — deployment stays an explicit user step (rollback anchor unchanged:
+  force-push gh-pages to 6145545).
+- Token hygiene: askpass script shredded after push #2; remote URL stays credential-free
+  (https://github.com/nawaf-al-hussain/TDKR-Game.git). The token appeared in chat
+  plaintext (again) — ROTATION RECOMMENDED.
