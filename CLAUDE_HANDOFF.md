@@ -1573,3 +1573,37 @@ waypoint decode is gated on ?s5=1 - use ?s5=1&s5blend=1 for the blend runs.
   slice. NOT in: AI, mission flow, audio, UI, cloth cape, cross-region nav, city-scale
   lit rendering (1-2 sessions each unless noted: audio 1-2, UI 1-2, cloth 1, nav 1-2,
   city lit 1-2, AI+missions 4-6).
+
+## SESSION 64 DEPLOY (2026-10-28, token supplied post-T7 with the instruction "deploy") — gh-pages 6145545 -> b7df902 DEPLOYED AND LIVE-VERIFIED
+
+- **Pre-deploy gates re-run at deploy time (tree unchanged since T4 — same commit b7df902,
+  so the T4 6-page local battery carries over byte-identical):** deploy_site.py-crawler
+  URL gate on the b7df902 tree 98/98 + aux 9/9 + manifest v21 (263 meshes); blob audit
+  6145545..b7df902 zero > 5 MB; delta still 5 added / 2 changed / 0 deleted; staged
+  worktree clean vs b7df902 (untracked files only, not in the tree). deploy_site.py
+  file-sync semantics are subsumed by the git fast-forward; its recorded T4 dry-run
+  remains the plan of record.
+- **Token protocol:** api.github.com validation HTTP 200 (repo scope present); askpass
+  prompt-branching (s63 lesson applied), token env-only, never echoed to output or
+  files; single-invocation pushes; askpass shredded after use.
+- **DEPLOY (single invocation):** `git push b7df902:refs/heads/gh-pages` ->
+  `6145545..b7df902` fast-forward accepted; ls-remote-verified (gh-pages = b7df902).
+  GitHub Pages rebuild visible ~45 s after push.
+- **Live verification:** (1) bytes — the 3 site files fetched from
+  https://nawaf-al-hussain.github.io/TDKR-Game/ have SHA256 identical to the b7df902
+  blobs: enemy_viewer.html 27,860 B (1e17d2c0...), integration_lazy.html 141,240 B
+  (a672eacb...), tdkr_pipeline.js 28,576 B (6ee4f474...); root index.html + app.js 200.
+  (2) live 6-page headless battery (playwright, real 895 MB zip via the file input, all
+  site requests to the live origin): index.html 73 reqs, walktest 6, playable/index 10,
+  integration 9, integration_lazy 9, enemy_viewer 2 — **0 console errors, 0 failed
+  requests on all six; enemy_viewer combat gate True on LIVE.** Results:
+  scripts/s64_live_pages_{a,b}.json (mirrored to /home/z/my-project/scripts/).
+- **Receipt push (single invocation, after this commit):** main d9f06c8 -> this receipt
+  (the 6 s64 commits + receipt) + s56-t1-glide aeabaa5 -> b7df902; ls-remote-verified.
+- **Rollback:** force-push gh-pages to 6145545 (the pre-deploy LIVE head; tree then
+  equals the s62-era site). Nothing on the site changed outside the 3-file delta.
+- **Hygiene:** remote URL credential-free; no token in tree or history; the token
+  appeared in chat plaintext — **ROTATION RECOMMENDED** (it is a full-scope PAT).
+- **Bundles:** main_s64_inc.bundle REBUILT to d9f06c8..HEAD-post-receipt (supersedes
+  the T7 one), glide_s64_inc.bundle aeabaa5..b7df902 unchanged; both git-bundle-verified
+  with SHA256SUMS.txt, mirrored to /home/z/my-project/download/bundles_s64/.

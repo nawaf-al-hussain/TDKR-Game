@@ -871,3 +871,22 @@ Stage Summary:
 - Verdicts: T1 PASS (13 -> 0 fails, 588/653 exact 90.05%, zero fitted rules), T2 PASS (second real re-anchor with decayed blend + dip restart + controls), T3 PASS (closed-negative x4, single-signal stands), T4 PASS (candidate ready, not deployed), T5 done (report only), T6 pending-user, T7 done (no push).
 - Template walk denominator 653: exact 588 (90.05%), bounds 60, na 5, fail 0.
 - Local after s64: main = T7 commit; s56-t1-glide b7df902; bundles download/bundles_s64/; nothing pushed, nothing deployed.
+
+---
+Task ID: s64-deploy (recorded 2026-10-28)
+Agent: main agent (Z.ai session 64 continuation - deploy round)
+Task: deploy the reviewed candidate after the user supplied a token with the instruction "deploy" (gh-pages 6145545 -> b7df902 per the s64 T4 review).
+
+Work Log:
+- STATE: remote main d9f06c8, glide aeabaa5, gh-pages 6145545 LIVE; local ahead by 6 s64 main commits + glide b7df902; tree unchanged since the T4 review (same commit), so the T4 battery carries over.
+- Pre-deploy gates re-run: URL gate (deploy_site.py crawler) 98/98 + aux 9/9 + manifest v21 (263 meshes) on the b7df902 tree; blob audit 6145545..b7df902 zero >5MB; delta 5/2/0; staged worktree clean vs b7df902.
+- Token: api.github.com HTTP 200 (repo scope); askpass prompt-branching, env-only, never echoed; single-invocation pushes; shredded after.
+- DEPLOY push: b7df902:refs/heads/gh-pages accepted as fast-forward 6145545..b7df902; ls-remote-verified; Pages rebuild visible ~45s.
+- Live verify: 3 site files byte-identical to b7df902 blobs on https://nawaf-al-hussain.github.io/TDKR-Game/ (27,860 / 141,240 / 28,576 B); live 6-page headless battery ALL CLEAN (0 console errors, 0 failed requests; enemy_viewer combat gate True on LIVE); results s64_live_pages_{a,b}.json.
+- Receipt: handoff SESSION 64 DEPLOY section + this worklog; commit on main; receipt push main (d9f06c8 -> receipt) + s56-t1-glide (aeabaa5 -> b7df902) in one invocation; bundles main_s64_inc rebuilt to d9f06c8..HEAD, glide_s64_inc unchanged, SHA256SUMS, mirrored to /home/z/my-project/download/bundles_s64/.
+- Hygiene: remote URL credential-free; no token in tree/history; token appeared in chat plaintext -> ROTATION RECOMMENDED (full-scope PAT).
+
+Stage Summary:
+- LIVE: gh-pages @ b7df902 (site delta: enemy_viewer.html new + integration_lazy.html 90,706->141,240 B + tdkr_pipeline.js 19,420->28,576 B; zero game-derived assets added; nothing removed).
+- Rollback: force-push gh-pages to 6145545.
+- Remote AFTER: main = this receipt commit, s56-t1-glide b7df902, gh-pages b7df902 LIVE.
